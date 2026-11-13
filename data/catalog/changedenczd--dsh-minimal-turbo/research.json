@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "1f3998b256b4eb3b1d47e700f1e8fa63",
+    "identity": "github:1334871947:root",
+    "slug": "changedenczd--dsh-minimal-turbo",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334871947:root",
+            "repository_id": 1334871947,
+            "component_id": "root",
+            "repository": "ChangedenCZD/dsh-minimal-turbo",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-minimal-turbo",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7d47dcefcc48d7245bf3ccbd3132d4156e88043466d0214b128538b5069a4905",
+                "code": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                "maintenance": "717a240a8389badfccd52e394d481afa8d73055b283832652568b0aed2118015"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-12-01-github-1334871947-root-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-12T02:25:32.160Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-12-01-github-1334871947-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "README.md",
+                            "content_sha256": "0e7c9c376240564ac3591bef28a1c020955cf4ce457bb1d521206b83616b56af"
+                        }
+                    ],
+                    "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                    "captured_at": "2026-11-12T02:25:32.160Z",
+                    "summary": "为 DSH 提供极简模式覆盖配置和新增的许愿模式预设。",
+                    "artifact": "data/runs/2026-11-12-01/changedenczd--dsh-minimal-turbo/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-12-01-github-1334871947-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "README.md",
+                            "content_sha256": "0e7c9c376240564ac3591bef28a1c020955cf4ce457bb1d521206b83616b56af"
+                        },
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "minimal/agent.cordis.yml",
+                            "content_sha256": "05f96afed8b3ef1108f8e0ee75b7225298e94772595789e953ea87a5200abfe9"
+                        },
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "wish/agent.cordis.yml",
+                            "content_sha256": "b280d2a01c5b9b4a2db40df035508e42aecbafb0dca9e4b90ce5d90826a21007"
+                        },
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "wish/preset.yml",
+                            "content_sha256": "1df04a6b93a96fd94d58ed067ecb72924de77c7d3c81ccf5d07b9d2f33dfec2b"
+                        },
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "scripts/install-minimal.sh",
+                            "content_sha256": "9004c4422dbe4b3b3f60469ef00c3573aa3787c86900fedc82150eab110e934e"
+                        },
+                        {
+                            "repository_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo",
+                            "commit": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                            "path": "scripts/install-wish.sh",
+                            "content_sha256": "088f5d3c2ae601ba32c80f7ab250921926fa30aaf536d11e6283bca9be3ecb03"
+                        }
+                    ],
+                    "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                    "captured_at": "2026-11-12T02:25:32.160Z",
+                    "summary": "核查 README.md、minimal/agent.cordis.yml、wish/agent.cordis.yml、wish/preset.yml、scripts/install-minimal.sh、scripts/install-wish.sh；通过脚本写入宿主预设目录，组合宿主 persona、shell 和文件等模块，按模式选择生效。",
+                    "artifact": "data/runs/2026-11-12-01/changedenczd--dsh-minimal-turbo/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定预设和 shell 安装路径。未执行配置、模型、脚本或宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向希望调整 DSH Agent 工具范围与首轮探索方式的使用者。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "通过脚本写入宿主预设目录，组合宿主 persona、shell 和文件等模块，按模式选择生效。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定预设和 shell 安装路径。未执行配置、模型、脚本或宿主。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定根组件为预设配置与脚本，没有独立 npm 模块或包版本。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 含对应模块的 DSH | 必需 | 解析 YAML 和工具 | 保持原预设 |\n| 可丢弃宿主副本 | 试用条件 | 隔离安装写入 | 先只核配置 |",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 环境成本未知 | 定位路径、备份与核依赖 | 会改变宿主目录 |\n| 持续 | 模型费用未知 | 验升级后预设和工具 | 版本兼容未验证 |\n| 恢复 | 重跑成本未知 | 核逐文件状态并回退 | 备份需读回 |",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 先只读比较配置。试用应在独占宿主副本核实际模块、访问范围和备份，缺项即退原模式。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 模式组合 | 宿主工具和 persona 声明 | 安装和执行 |\n| 任务表现 | 作者案例与提示设计 | 对照用时和质量 |",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 用 realm 分配服务，实际模块由宿主解析。[Q03](#research-q03) 的文件写入和备份需分别读回。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 与 [Q02](#research-q02) 将较窄本地编辑配置和首轮探索提示整理为两份可选预设。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "[Q03](#research-q03) 的直接覆盖会改变宿主目录，且本地文件服务的实际权限需要核查。提示词约束无法直接保证思考或质量。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "business_innovation",
+                    "basis": "unverified",
+                    "text": "[Q04](#research-q04) 用固定任务对比标准与 wish，若测试通过、时间及人工补救无改善则保留原配置。",
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334871947:root",
+                            "area": "code",
+                            "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-12T02:25:32.160Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-12T02:25:32.160Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                "reviewed_at": "2026-11-12T02:25:32.160Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334871947:root",
+                        "area": "code",
+                        "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q02](#research-q02) 组合现有宿主模块，创新和执行机制均为局部。预设提示和配置可改写到同类环境，依赖宿主模块，小幅迁移。脚本减少手动复制但无事务回滚，小幅简化。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "[Q01](#research-q01) 通过预设选择调整任务入口，小幅流程变化。已有任务输出类型未改变，未识别交付增量。支持两种平台配置，但未验实际覆盖，小幅可及。[Q04](#research-q04) 未显示已改变成本结构。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "2026-11-12-01-github-1334871947-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "希望比较 DSH 极简与许愿模式的用户，可以先核对两份预设的工具和提示配置。它们把原本手改的提示和平台工具选择整理为可切换的组合。如果目标宿主缺少声明模块或当前安装无法安全备份，就保留原预设。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 的两种 YAML 与 README 对应明确的重复编辑和复杂任务，超过偶发便利。真实使用必要性未直接支持，取部分。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 的实际平台分支和 persona 配置有局部便利，高于无差异。模块来自宿主，任务增益未对照，未到部分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 的挂载配置和 [Q03](#research-q03) 的脚本支持主要写入和加载前提，超过声明。没有真实宿主，止于源码。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) 的 install-wish.sh 27–42 行存在逐个移动及覆盖，隔离副本有退路，高于无法退出。但共享安装回滚、更新和局部失败仍要人工处理，取有限档。"
+                    }
+                },
+                "score": 39,
+                "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                "reviewed_at": "2026-11-12T02:25:32.160Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-12-01-github-1334871947-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334871947:root",
+                        "area": "code",
+                        "fingerprint": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334871947:root",
+            "repository": "ChangedenCZD/dsh-minimal-turbo",
+            "path": "",
+            "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+            "fingerprints": {
+                "directory": "7d47dcefcc48d7245bf3ccbd3132d4156e88043466d0214b128538b5069a4905",
+                "code": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+                "maintenance": "717a240a8389badfccd52e394d481afa8d73055b283832652568b0aed2118015"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-12T01:43:13Z",
+            "analysis_sha256": "11aa385aa72edb9d556bf2ffe039cf93fc94eead646ef95fee04465e02ff68d9"
+        },
+        "publication.metadata": "data/catalog/changedenczd--dsh-minimal-turbo/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供极简模式覆盖配置和新增的许愿模式预设。",
+            "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+            "source_url": "https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+            "items": {
+                "Agent/Preset": "组合宿主已有工具和 persona，提供 minimal 和 wish 两种预设"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| minimal | 缩小会话工具及上下文组合 | 覆盖宿主内置文件，依赖本地服务 |\n| wish | 选用定制提示及完整工具组合 | 宿主版本和模块需匹配 |"
+        },
+        "publication.advice": {
+            "revision": "cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a",
+            "text": "[Q03](#research-q03) 先只读比较配置。试用应在独占宿主副本核实际模块、访问范围和备份，缺项即退原模式。"
+        },
+        "registry": "data/plugins/changedenczd--dsh-minimal-turbo",
+        "reports": "# dsh-minimal-turbo\n\n> 为 DSH 提供极简模式覆盖配置和新增的许愿模式预设。\n\n## 研究范围\n\n- **仓库**：[ChangedenCZD/dsh-minimal-turbo](https://github.com/ChangedenCZD/dsh-minimal-turbo)\n- **版本号**：未声明（[固定提交 cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a](https://github.com/ChangedenCZD/dsh-minimal-turbo/tree/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a)）\n- **版本日期**：2026-08-18（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码确认预设组合与真实写入位置，宿主加载、平台及任务收益待验证。\n\n## 洞察短评\n\n- **用途**：面向希望调整 DSH Agent 工具范围与首轮探索方式的使用者。\n- **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 将较窄本地编辑配置和首轮探索提示整理为两份可选预设。\n- **思考**：[Q03](#research-q03) 的直接覆盖会改变宿主目录，且本地文件服务的实际权限需要核查。提示词约束无法直接保证思考或质量。\n- **建议**：[Q04](#research-q04) 用固定任务对比标准与 wish，若测试通过、时间及人工补救无改善则保留原配置。\n\n采用建议：[Q03](#research-q03) 先只读比较配置。试用应在独占宿主副本核实际模块、访问范围和备份，缺项即退原模式。\n\n## 核心贡献\n\n[Q01](#research-q01) 与 [Q02](#research-q02) 将较窄本地编辑配置和首轮探索提示整理为两份可选预设。\n\n## 关键质疑\n\n[Q03](#research-q03) 的直接覆盖会改变宿主目录，且本地文件服务的实际权限需要核查。提示词约束无法直接保证思考或质量。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q04](#research-q04) 用固定任务对比标准与 wish，若测试通过、时间及人工补救无改善则保留原配置。\n\n按 [Q04](#research-q04) 固定模型、权限和结果测试，比较原模式与 wish。\n\n## 场景与替代办法\n\n面向希望调整 DSH Agent 工具范围与首轮探索方式的使用者。\n\n以当前宿主内置 minimal 和标准预设为参照，评估工具清单与最终通过的任务。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 含对应模块的 DSH | 必需 | 解析 YAML 和工具 | 保持原预设 |\n| 可丢弃宿主副本 | 试用条件 | 隔离安装写入 | 先只核配置 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 检查目标安装与备份 | 确认是独占副本 |\n| 验证 | 重新启动并查看预设 | 工具清单符合预期 |\n| 退出 | 恢复原件或弃用副本 | 回原模式 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 环境成本未知 | 定位路径、备份与核依赖 | 会改变宿主目录 |\n| 持续 | 模型费用未知 | 验升级后预设和工具 | 版本兼容未验证 |\n| 恢复 | 重跑成本未知 | 核逐文件状态并回退 | 备份需读回 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 模式组合 | 宿主工具和 persona 声明 | 安装和执行 |\n| 任务表现 | 作者案例与提示设计 | 对照用时和质量 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：固定配置怎样改变 DSH Agent 预设，安装范围和收益应如何判断？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 两种预设对日常工作提出什么不同的取舍？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n想试验更窄的本地编辑环境，或希望对复杂任务改变首轮探索方式的 DSH 使用者，可以检查这两份预设。minimal 选用固定 persona、关闭运行上下文并声明较少的工具；wish 保留较多标准工具，对模型首轮提出先查看工作区、少做长推演的要求。基线是宿主现有 minimal 或标准模式。作者示例可作为测试任务线索；其报告的速度和质量没有等条件对照。合格的任务需要实际可用文件或测试结果，模型话语风格不作为完成指标。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:15-23](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/README.md#L15-L23)\n\n作者声明两种模式与适用任务。\n\n```text\n## 模式对比\n\n| 特性 | minimal（极简模式） | wish（许愿模式） |\n| --- | --- | --- |\n| 基于 | 官方极简模式配置，兼容 Windows | 官方标准模式工具链，新增独立模式 |\n| 核心思路 | 最少开销、最快响应 | 打断首次思考，防止直接雷霆思考 |\n| 思考链 | 无上下文压缩，思考轮次少 | 系统提示词约束首轮快速跳过，`Let me` 起手不影响效果 |\n| 适用场景 | 纯文件编辑 / 命令行操作的简单任务 | 复杂、多步骤任务，追求高质量输出 |\n| 安装方式 | 覆盖官方预设 | 新增目录，不影响官方预设 |\n```\n\n**依据 2 · 源码核查**：[minimal/agent.cordis.yml:8-35](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/minimal/agent.cordis.yml#L8-L35)\n\n固定 persona 与持久 shell。\n\n<details>\n<summary>查看原文（28行）</summary>\n\n```text\n- id: persona\n  name: '@deepseek-ai/dsh-persona'\n  config:\n    text: You are a helpful software engineer assistant.\n    complete: true\n    includeRuntimeContext: false\n\n# The PTY registry is an agent-owned service, so it lives in an entry-local\n# realm. The backend still consumes the host sandbox policy and subprocess\n# implementation, while the tool registers into this agent's scoped catalog.\n- id: persistent-shell\n  name: cordis:group\n  group: true\n  isolate:\n    terminals: true\n  config:\n    - id: pty\n      name: '@deepseek-ai/dsh-terminal'\n\n    - id: terminal-bash\n      name: '@deepseek-ai/dsh-terminal-bash'\n      config:\n        timeoutMs: 300000\n\n    - id: persistent-bash\n      name: '@deepseek-ai/dsh-tool-bash-persistent'\n      config:\n        timeoutMs: 300000\n```\n\n</details>\n\n**依据 3 · 源码核查**：[wish/agent.cordis.yml:24-45](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/wish/agent.cordis.yml#L24-L45)\n\n完整 persona 与首轮提示。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n- id: persona\n  name: '@deepseek-ai/dsh-persona'\n  config:\n    text: |-\n      **You are a helpful software engineer assistant.**\n\n      ## Attention\n      1. **In the first round, You must use the tool I provided to understand the overall situation of the current workspace and user's requirements  rather than engaging in deep thinking directly. After that, implement the next plan.** \n      2. **Use short reasoning instead of long reasoning. First, through multiple reasoning processes and combined with multiple tool invocations, we aim to gain a comprehensive understanding of the project and user requirements, in order to better achieve the user's goals.**\n      3. **When you successfully create or modify files, mention the primary outputs in your final response. To make those and any other changed-file references clickable in Web, format them as Markdown inline code using the exact file-tool path, or a basename when unique among the files changed in that turn.**\n      4. **谨记章北海父亲的话：你要多想，在达成用户目标之前，我只能告诉你，要多想**\n\n      ## Hot to use tools\n      - Use the read tool, not shell(bash, pwsh) commands like cat — to inspect text files. \n      - Use the glob tool, not shell(bash, pwsh) find — to discover files by path pattern.\n      - Use the grep tool, not shell(bash, pwsh) grep or rg — to search file contents.\n      - Non-zero exits are reported as [exit code: N] markers; investigate failures before moving on. On Windows a killed process settles as [exit code: 1] without a signal marker; treat a bare exit 1 after an interruption as a termination, not a command failure.\n\n      Your working directory is '{{cwd}}'.\n\n    complete: true\n    includeRuntimeContext: false\n```\n\n</details>\n\n#### 缺口\n\n- 没有同一宿主内置预设的运行差异和收益。\n  **影响**：不能将作者示例归因给改动。\n  **进一步探讨**：固定模型、任务和工具权限对照。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 预设实际组合了什么，哪些能力仍属于宿主？\n\n**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n这是可被宿主 agent preset 目录发现的 YAML 组合，未附新的 npm 宿主模块。minimal 在隔离 terminal realm 声明 PTY、terminal-bash 与持久 Bash，在另一个 fs realm 声明本地文件服务与字符串替换编辑器，并按平台决定 PowerShell。wish 声明 persona、Windows 和非 Windows 分别启用的 Shell、宿主已有文件与搜索工具，另有独立 planMode 作用域。工具实现、依赖可解析性和执行权限仍由宿主决定。提示词要求减少首轮推演只能改变模型收到的文本，不能强制其推理预算和工具行为。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[minimal/agent.cordis.yml:18-35](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/minimal/agent.cordis.yml#L18-L35)\n\nPTY 作用域及实际工具模块。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n- id: persistent-shell\n  name: cordis:group\n  group: true\n  isolate:\n    terminals: true\n  config:\n    - id: pty\n      name: '@deepseek-ai/dsh-terminal'\n\n    - id: terminal-bash\n      name: '@deepseek-ai/dsh-terminal-bash'\n      config:\n        timeoutMs: 300000\n\n    - id: persistent-bash\n      name: '@deepseek-ai/dsh-tool-bash-persistent'\n      config:\n        timeoutMs: 300000\n```\n\n</details>\n\n**依据 2 · 源码核查**：[minimal/agent.cordis.yml:46-67](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/minimal/agent.cordis.yml#L46-L67)\n\n文件服务与平台条件。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n# The bare local filesystem shadows the host's sandboxed provider only for this\n# preset. The editor shares that realm and requires absolute paths.\n- id: filesystem\n  name: cordis:group\n  group: true\n  isolate:\n    fs: true\n  config:\n    - id: fs-local\n      name: '@deepseek-ai/dsh-fs-local'\n      config:\n        cwd: !!js process.env.DSH_CWD ?? process.cwd()\n\n    - id: str-replace-editor\n      name: '@deepseek-ai/dsh-tool-str-replace-editor'\n      config:\n        maxOutputChars: 16000\n\n\n- id: tool-pwsh\n  name: '@deepseek-ai/dsh-tool-pwsh'\n  disabled: !!js process.platform !== 'win32'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[wish/agent.cordis.yml:61-79](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/wish/agent.cordis.yml#L61-L79)\n\n按平台启用 Shell 与文件搜索。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n- id: tool-bash\n  name: '@deepseek-ai/dsh-tool-bash'\n  disabled: !!js process.platform === 'win32'\n\n- id: tool-pwsh\n  name: '@deepseek-ai/dsh-tool-pwsh'\n  disabled: !!js process.platform !== 'win32'\n\n# ── filesystem ──────────────────────────────────────────────────────────────\n\n# Both register into the host `tools` registry and provide nothing, so\n# they need no realm. The `fs` service and its policy stay in the host.\n- id: tool-fs\n  name: '@deepseek-ai/dsh-tool-fs'\n\n- id: tool-fs-search\n  name: '@deepseek-ai/dsh-tool-fs-search'\n  config:\n    sampleOverCapGlobResults: false\n```\n\n</details>\n\n**依据 4 · 源码核查**：[wish/agent.cordis.yml:119-141](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/wish/agent.cordis.yml#L119-L141)\n\n挂载计划模式及说明。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\n# Plan state is per-agent by nature, so an entry-local realm is not a\n# workaround here — it is the correct lifetime.\n- id: planning\n  name: cordis:group\n  group: true\n  isolate:\n    planMode: true\n  config:\n    - id: plan-mode\n      name: '@deepseek-ai/dsh-plan-mode'\n      config:\n        section: |\n              You are in plan mode. Stay in plan mode until exit_plan_mode succeeds or the user switches the session mode. Imperative language to implement changes means plan the implementation, not execute it. A user's conversational agreement — including an answer confirming something you asked — approves nothing and does not end plan mode; fold the confirmed decision into the plan and submit it through exit_plan_mode.\n\n              Explore first. Use non-mutating reads, searches, static analysis, and checks to ground the plan in the actual repository. Do not edit or write files, change configuration, run formatters or code generation that rewrites tracked files, commit, or otherwise carry out the plan. Prefer existing functions and patterns over new machinery.\n\n              The tool catalog stays the same across modes for request-cache stability. These plan-mode rules override any later tool description or guidance that suggests using mutation tools; those tools remain listed to keep the tool catalog unchanged. Do not use todo_write to track this planning phase: it tracks implementation after an approved plan, while the plan itself belongs in exit_plan_mode.\n\n              Resolve discoverable facts by inspection. Use ask_user_question only for user-owned choices or material ambiguity that inspection cannot answer. Do not ask the user where code lives or how current behavior works when you can find out.\n\n              Make the plan decision-complete: state the goal and success criteria; group implementation changes by subsystem; identify public API, schema, and data-flow changes; cover edge cases, failure modes, tests, acceptance criteria, and explicit assumptions. Keep it concise enough to review but detailed enough that another engineer can implement it without making design decisions.\n\n              When ready, call exit_plan_mode with the complete plan markdown, starting with a # title. Make exit_plan_mode the only and final tool call in that assistant response: it presents the plan for approval, and implementation begins only in a later step after approval. Do not paste the final plan as a plain reply or ask \"should I proceed?\" through prose or ask_user_question. If review rejects it, incorporate the feedback and present again. If the review channel is unavailable or aborted, stay in plan mode and ask the user to switch modes manually; do not proceed with implementation.\n```\n\n</details>\n\n**依据 5 · 源码核查**：[wish/preset.yml:1-3](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/wish/preset.yml#L1-L3)\n\n宿主发现所需的模式元数据。\n\n```text\nname: 许愿模式\ndescription: 为您提供一键许愿能力 Agent。\norder: 14\n```\n\n#### 缺口\n\n- 目标宿主是否包含各模块与服务未验。\n  **影响**：静态配置可解析不代表工具成功挂载。\n  **进一步探讨**：启动固定独立宿主并检查模式和工具列表。\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 覆盖宿主目录和本地文件访问有什么代价？\n\n**研究主题**：缺陷与关键质疑、效果与总成本、采用判断\n\n#### 完整回答\n\n安装脚本使用 DSH_PATH 或查找 npm 安装，将 minimal 写到宿主内置预设目录，有原文件时先复制备份。wish 安装将目标目录原有文件逐个移走再复制两份配置，过程没有事务恢复。中途失败时需要检查实际已搬移的文件，更新宿主也可能改写安装目录。minimal 明确选择本地文件服务并为其设置 cwd，工具的可达范围和权限需在独立环境验收，不能靠“极简”名称推定。\n\n建议先观察有无需要，只在可丢弃的宿主副本试，避免覆盖共用安装。若预设未出现、重要工具缺失或权限超出预期，恢复原目录或弃用该副本。人力成本包括路径确认、备份和宿主升级后重做，资源与任务收益未测。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[scripts/install-minimal.sh:12-41](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/scripts/install-minimal.sh#L12-L41)\n\n定位 npm 安装、备份并直接覆盖。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\ndsh_dir=\"${DSH_PATH:-}\"\nif [ -z \"$dsh_dir\" ]; then\n    prefix=\"$(npm prefix -g 2>/dev/null || true)\"\n    if [ -n \"$prefix\" ] && [ -d \"$prefix/node_modules/@deepseek-ai/dsh\" ]; then\n        dsh_dir=\"$prefix/node_modules/@deepseek-ai/dsh\"\n    fi\nfi\nif [ -z \"$dsh_dir\" ] && [ -d \"$(pwd)/node_modules/@deepseek-ai/dsh\" ]; then\n    dsh_dir=\"$(pwd)/node_modules/@deepseek-ai/dsh\"\nfi\nif [ -z \"$dsh_dir\" ]; then\n    echo \"错误: 未找到 dsh 安装目录，可通过 DSH_PATH 环境变量指定\" >&2\n    exit 1\nfi\n\ntarget_dir=\"$dsh_dir/config/agent-presets/minimal\"\ntarget_file=\"$target_dir/agent.cordis.yml\"\n\nif [ ! -d \"$target_dir\" ]; then\n    echo \"错误: 目标目录不存在: $target_dir\" >&2\n    exit 1\nfi\n\nif [ -f \"$target_file\" ]; then\n    backup=\"$target_dir/agent.cordis.yml.bak-$(date +%Y%m%d-%H%M%S)\"\n    cp \"$target_file\" \"$backup\"\n    echo \"已备份原配置 -> $backup\"\nfi\n\ncp \"$src_file\" \"$target_file\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[scripts/install-wish.sh:27-42](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/scripts/install-wish.sh#L27-L42)\n\n对文件逐项移动并复制新配置。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\ntarget_dir=\"$dsh_dir/config/agent-presets/wish\"\n\nif [ -d \"$target_dir\" ]; then\n    ts=\"$(date +%Y%m%d-%H%M%S)\"\n    for f in \"$target_dir\"/*; do\n        [ -f \"$f\" ] || continue\n        mv \"$f\" \"$f.bak-$ts\"\n        echo \"已备份原文件 -> $f.bak-$ts\"\n    done\nelse\n    mkdir -p \"$target_dir\"\nfi\n\ncp \"$src_dir/agent.cordis.yml\" \"$src_dir/preset.yml\" \"$target_dir/\"\necho \"已复制 -> $target_dir\"\necho \"完成！重启 dsh 后选择许愿模式。\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[minimal/agent.cordis.yml:46-62](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/minimal/agent.cordis.yml#L46-L62)\n\n选择本地文件服务和编辑器。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n# The bare local filesystem shadows the host's sandboxed provider only for this\n# preset. The editor shares that realm and requires absolute paths.\n- id: filesystem\n  name: cordis:group\n  group: true\n  isolate:\n    fs: true\n  config:\n    - id: fs-local\n      name: '@deepseek-ai/dsh-fs-local'\n      config:\n        cwd: !!js process.env.DSH_CWD ?? process.cwd()\n\n    - id: str-replace-editor\n      name: '@deepseek-ai/dsh-tool-str-replace-editor'\n      config:\n        maxOutputChars: 16000\n```\n\n</details>\n\n#### 缺口\n\n- 升级覆盖、跨平台解析与局部失败未实测。\n  **影响**：无法保证现有安装可低成本恢复。\n  **进一步探讨**：用测试副本模拟复制中断并逐份读回。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样证明提示词改动改善最终任务？\n\n**研究主题**：新假设与验证\n\n#### 完整回答\n\n可检验的假设是先查看工作区再展开推演的提示，能在部分编码任务里减少返工。固定宿主、模型、工具权限和题目，让标准预设和 wish 各做一组等价修改，分别记录首次工具步骤、通过测试的交付比例、总耗时、模型用量和人工补救。对最小任务与复杂任务分开观察，控制提示词与工具列表变动。若仅模型措辞改变或先动手带来更多返工，则保留标准预设。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[wish/agent.cordis.yml:24-45](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/wish/agent.cordis.yml#L24-L45)\n\n真实待检验提示内容。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n- id: persona\n  name: '@deepseek-ai/dsh-persona'\n  config:\n    text: |-\n      **You are a helpful software engineer assistant.**\n\n      ## Attention\n      1. **In the first round, You must use the tool I provided to understand the overall situation of the current workspace and user's requirements  rather than engaging in deep thinking directly. After that, implement the next plan.** \n      2. **Use short reasoning instead of long reasoning. First, through multiple reasoning processes and combined with multiple tool invocations, we aim to gain a comprehensive understanding of the project and user requirements, in order to better achieve the user's goals.**\n      3. **When you successfully create or modify files, mention the primary outputs in your final response. To make those and any other changed-file references clickable in Web, format them as Markdown inline code using the exact file-tool path, or a basename when unique among the files changed in that turn.**\n      4. **谨记章北海父亲的话：你要多想，在达成用户目标之前，我只能告诉你，要多想**\n\n      ## Hot to use tools\n      - Use the read tool, not shell(bash, pwsh) commands like cat — to inspect text files. \n      - Use the glob tool, not shell(bash, pwsh) find — to discover files by path pattern.\n      - Use the grep tool, not shell(bash, pwsh) grep or rg — to search file contents.\n      - Non-zero exits are reported as [exit code: N] markers; investigate failures before moving on. On Windows a killed process settles as [exit code: 1] without a signal marker; treat a bare exit 1 after an interruption as a termination, not a command failure.\n\n      Your working directory is '{{cwd}}'.\n\n    complete: true\n    includeRuntimeContext: false\n```\n\n</details>\n\n**依据 2 · 作者声明**：[README.md:75-82](https://github.com/ChangedenCZD/dsh-minimal-turbo/blob/cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a/README.md#L75-L82)\n\n作者提供案例入口，未提供对照。\n\n```text\n## 效果展示\n\n许愿模式下完成的真实案例（见 [`wish-demo`](wish-demo) 目录，含单文件 HTML 成品与原始 prompt）：\n\n| 案例 | Flash Max | Pro Max |\n| --- | --- | --- |\n| Kerr-Newman 黑洞 WebGL 渲染（raymarching + 体积吸积盘 + 后处理） | [查看](wish-demo/kerr-newman-with-flash-max/kerr_newman.html) | [查看](wish-demo/kerr-newman-with-pro-max/kerr_newman.html) |\n| 我的世界风格 3D 游戏 | [查看](wish-demo/minecraft-with-flash-max/minecraft.html) | [查看](wish-demo/minecraft-with-pro-max/minecraft.html) |\n```\n\n#### 缺口\n\n- 尚未执行等条件对照。\n  **影响**：无法判断是否更快或更完整。\n  **进一步探讨**：保留测试、请求计数和人工复核依据。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：6b4fc04332be86f025f55ba61078c0c283ba7fbeccff2d1075afbb4970f00b20。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 1 | 100 | — | — | 846 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| minimal | 缩小会话工具及上下文组合 | 覆盖宿主内置文件，依赖本地服务 |\n| wish | 选用定制提示及完整工具组合 | 宿主版本和模块需匹配 |\n\n## 工程亮点\n\n[Q02](#research-q02) 用 realm 分配服务，实际模块由宿主解析。[Q03](#research-q03) 的文件写入和备份需分别读回。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 README.md、minimal/agent.cordis.yml、wish/agent.cordis.yml、wish/preset.yml、scripts/install-minimal.sh、scripts/install-wish.sh 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定预设和 shell 安装路径。未执行配置、模型、脚本或宿主。\n- 下一步：按 [Q04](#research-q04) 固定模型、权限和结果测试，比较原模式与 wish。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-12-01/changedenczd--dsh-minimal-turbo/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"ChangedenCZD/dsh-minimal-turbo\",\n  \"revision\": \"cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"minimal/agent.cordis.yml\",\n    \"wish/agent.cordis.yml\",\n    \"wish/preset.yml\",\n    \"scripts/install-minimal.sh\",\n    \"scripts/install-wish.sh\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"固定配置怎样改变 DSH Agent 预设，安装范围和收益应如何判断？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"两种预设对日常工作提出什么不同的取舍？\",\n        \"answer\": \"想试验更窄的本地编辑环境，或希望对复杂任务改变首轮探索方式的 DSH 使用者，可以检查这两份预设。minimal 选用固定 persona、关闭运行上下文并声明较少的工具；wish 保留较多标准工具，对模型首轮提出先查看工作区、少做长推演的要求。基线是宿主现有 minimal 或标准模式。作者示例可作为测试任务线索；其报告的速度和质量没有等条件对照。合格的任务需要实际可用文件或测试结果，模型话语风格不作为完成指标。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 15,\n            \"line_end\": 23,\n            \"observation\": \"作者声明两种模式与适用任务。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"minimal/agent.cordis.yml\",\n            \"line_start\": 8,\n            \"line_end\": 35,\n            \"observation\": \"固定 persona 与持久 shell。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"wish/agent.cordis.yml\",\n            \"line_start\": 24,\n            \"line_end\": 45,\n            \"observation\": \"完整 persona 与首轮提示。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有同一宿主内置预设的运行差异和收益。\",\n            \"impact\": \"不能将作者示例归因给改动。\",\n            \"next_step\": \"固定模型、任务和工具权限对照。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"预设实际组合了什么，哪些能力仍属于宿主？\",\n        \"answer\": \"这是可被宿主 agent preset 目录发现的 YAML 组合，未附新的 npm 宿主模块。minimal 在隔离 terminal realm 声明 PTY、terminal-bash 与持久 Bash，在另一个 fs realm 声明本地文件服务与字符串替换编辑器，并按平台决定 PowerShell。wish 声明 persona、Windows 和非 Windows 分别启用的 Shell、宿主已有文件与搜索工具，另有独立 planMode 作用域。工具实现、依赖可解析性和执行权限仍由宿主决定。提示词要求减少首轮推演只能改变模型收到的文本，不能强制其推理预算和工具行为。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"minimal/agent.cordis.yml\",\n            \"line_start\": 18,\n            \"line_end\": 35,\n            \"observation\": \"PTY 作用域及实际工具模块。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"minimal/agent.cordis.yml\",\n            \"line_start\": 46,\n            \"line_end\": 67,\n            \"observation\": \"文件服务与平台条件。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"wish/agent.cordis.yml\",\n            \"line_start\": 61,\n            \"line_end\": 79,\n            \"observation\": \"按平台启用 Shell 与文件搜索。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"wish/agent.cordis.yml\",\n            \"line_start\": 119,\n            \"line_end\": 141,\n            \"observation\": \"挂载计划模式及说明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"wish/preset.yml\",\n            \"line_start\": 1,\n            \"line_end\": 3,\n            \"observation\": \"宿主发现所需的模式元数据。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"目标宿主是否包含各模块与服务未验。\",\n            \"impact\": \"静态配置可解析不代表工具成功挂载。\",\n            \"next_step\": \"启动固定独立宿主并检查模式和工具列表。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"cost\",\n          \"adoption\"\n        ],\n        \"question\": \"覆盖宿主目录和本地文件访问有什么代价？\",\n        \"answer\": \"安装脚本使用 DSH_PATH 或查找 npm 安装，将 minimal 写到宿主内置预设目录，有原文件时先复制备份。wish 安装将目标目录原有文件逐个移走再复制两份配置，过程没有事务恢复。中途失败时需要检查实际已搬移的文件，更新宿主也可能改写安装目录。minimal 明确选择本地文件服务并为其设置 cwd，工具的可达范围和权限需在独立环境验收，不能靠“极简”名称推定。\\n\\n建议先观察有无需要，只在可丢弃的宿主副本试，避免覆盖共用安装。若预设未出现、重要工具缺失或权限超出预期，恢复原目录或弃用该副本。人力成本包括路径确认、备份和宿主升级后重做，资源与任务收益未测。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/install-minimal.sh\",\n            \"line_start\": 12,\n            \"line_end\": 41,\n            \"observation\": \"定位 npm 安装、备份并直接覆盖。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"scripts/install-wish.sh\",\n            \"line_start\": 27,\n            \"line_end\": 42,\n            \"observation\": \"对文件逐项移动并复制新配置。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"minimal/agent.cordis.yml\",\n            \"line_start\": 46,\n            \"line_end\": 62,\n            \"observation\": \"选择本地文件服务和编辑器。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"升级覆盖、跨平台解析与局部失败未实测。\",\n            \"impact\": \"无法保证现有安装可低成本恢复。\",\n            \"next_step\": \"用测试副本模拟复制中断并逐份读回。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\"\n        ],\n        \"question\": \"怎样证明提示词改动改善最终任务？\",\n        \"answer\": \"可检验的假设是先查看工作区再展开推演的提示，能在部分编码任务里减少返工。固定宿主、模型、工具权限和题目，让标准预设和 wish 各做一组等价修改，分别记录首次工具步骤、通过测试的交付比例、总耗时、模型用量和人工补救。对最小任务与复杂任务分开观察，控制提示词与工具列表变动。若仅模型措辞改变或先动手带来更多返工，则保留标准预设。\",\n        \"status\": \"partial\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"wish/agent.cordis.yml\",\n            \"line_start\": 24,\n            \"line_end\": 45,\n            \"observation\": \"真实待检验提示内容。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 75,\n            \"line_end\": 82,\n            \"observation\": \"作者提供案例入口，未提供对照。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"尚未执行等条件对照。\",\n            \"impact\": \"无法判断是否更快或更完整。\",\n            \"next_step\": \"保留测试、请求计数和人工复核依据。\",\n            \"kind\": \"research_gap\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-minimal-turbo\\n\\nDeepseek Harness 极简模式 / 许愿模式 Windows 适配，享用满血 Deepseek-V4 系列模型。\\n\\n## 背景\\n\\n经多次验证，`Let me` 思考链并不是\\\"拉\\\"的原因，`We need` 思考链同样会产出\\\"拉\\\"的结果。真正的原因大概是首轮思考直接进入雷霆思考（长时间思考），陷入闭门造车工作流。\\n\\n基于这个现象开发了**许愿模式**：工具链沿用官方基准模式，提示词使用\\\"专武\\\"强化，添加了首轮思考约束，使首轮高概率以最简短方式思考；再结合一些 PUA，让模型多想、多想、多想。\\n\\n> **注意**：覆盖保存后，记得**重启 dsh**，再选择对应模式重新开任务。\\n>\\n> **已知问题**：一 shot 可能会报错（语法错误或引用错误），把报错复制给模型，第二轮基本直接成功。\\n\\n## 模式对比\\n\\n| 特性 | minimal（极简模式） | wish（许愿模式） |\\n| --- | --- | --- |\\n| 基于 | 官方极简模式配置，兼容 Windows | 官方标准模式工具链，新增独立模式 |\\n| 核心思路 | 最少开销、最快响应 | 打断首次思考，防止直接雷霆思考 |\\n| 思考链 | 无上下文压缩，思考轮次少 | 系统提示词约束首轮快速跳过，`Let me` 起手不影响效果 |\\n| 适用场景 | 纯文件编辑 / 命令行操作的简单任务 | 复杂、多步骤任务，追求高质量输出 |\\n| 安装方式 | 覆盖官方预设 | 新增目录，不影响官方预设 |\\n\\n## 快速开始\\n\\n### 一键安装脚本\\n\\n自动定位 dsh 安装目录（优先 npm 全局安装目录，回退到当前目录 `node_modules`），备份现有配置后，将本仓库配置复制到运行环境对应目录。\\n\\n**Windows（PowerShell）**\\n\\n```powershell\\npowershell -ExecutionPolicy Bypass -File scripts\\\\install-minimal.ps1\\npowershell -ExecutionPolicy Bypass -File scripts\\\\install-wish.ps1\\n```\\n\\n**Linux（bash）**\\n\\n```bash\\nbash ./scripts/install-minimal.sh   # 覆盖官方极简模式\\nbash ./scripts/install-wish.sh      # 安装许愿模式\\n```\\n\\n安装目录不在默认位置时：\\n\\n```powershell\\n# Windows\\npowershell -ExecutionPolicy Bypass -File scripts\\\\install-minimal.ps1 -DshPath \\\"D:\\\\path\\\\to\\\\dsh\\\"\\npowershell -ExecutionPolicy Bypass -File scripts\\\\install-wish.ps1 -DshPath \\\"D:\\\\path\\\\to\\\\dsh\\\"\\n```\\n\\n```bash\\n# Linux\\nDSH_PATH=/path/to/dsh bash ./scripts/install-minimal.sh\\nDSH_PATH=/path/to/dsh bash ./scripts/install-wish.sh\\n```\\n\\n脚本执行时会自动将原 `agent.cordis.yml`（wish 脚本含 `preset.yml`）备份为 `*.bak-<时间戳>`（位于原目录），可随时手动恢复。\\n\\n### 手动安装\\n\\n**minimal**\\n\\n1. 进入 nodejs 包管理目录 `node_modules`\\n2. 打开 `@deepseek-ai\\\\dsh\\\\config\\\\agent-presets\\\\minimal`\\n3. 用本仓库 [`minimal/agent.cordis.yml`](minimal/agent.cordis.yml) 的内容覆盖 `agent.cordis.yml`\\n\\n**wish（许愿模式）**\\n\\n1. 将本仓库 [`wish`](wish) 目录整个复制到 `node_modules\\\\@deepseek-ai\\\\dsh\\\\config\\\\agent-presets\\\\` 下\\n2. 确认目录结构为 `node_modules\\\\@deepseek-ai\\\\dsh\\\\config\\\\agent-presets\\\\wish\\\\`，内含 `agent.cordis.yml` 和 `preset.yml`\\n3. 重启 dsh 后，在模式选择中即可看到「许愿模式」\\n\\n## 效果展示\\n\\n许愿模式下完成的真实案例（见 [`wish-demo`](wish-demo) 目录，含单文件 HTML 成品与原始 prompt）：\\n\\n| 案例 | Flash Max | Pro Max |\\n| --- | --- | --- |\\n| Kerr-Newman 黑洞 WebGL 渲染（raymarching + 体积吸积盘 + 后处理） | [查看](wish-demo/kerr-newman-with-flash-max/kerr_newman.html) | [查看](wish-demo/kerr-newman-with-pro-max/kerr_newman.html) |\\n| 我的世界风格 3D 游戏 | [查看](wish-demo/minecraft-with-flash-max/minecraft.html) | [查看](wish-demo/minecraft-with-pro-max/minecraft.html) |\\n\\n## 目录结构\\n\\n```\\ndsh-minimal-turbo/\\n├── minimal/                 # 极简模式配置（覆盖官方 minimal 预设）\\n│   └── agent.cordis.yml\\n├── wish/                    # 许愿模式配置（独立新增预设）\\n│   ├── agent.cordis.yml\\n│   └── preset.yml\\n├── scripts/                 # 一键安装脚本（Windows / Linux）\\n├── wish-demo/               # 许愿模式效果展示案例\\n└── README.md\\n```\\n\\n## License\\n\\n[MIT](LICENSE)\\n\"\n    },\n    {\n      \"path\": \"minimal/agent.cordis.yml\",\n      \"content\": \"# The `minimal` agent preset: a fixed-prompt, two-tool coding-agent composition.\\n#\\n# The persona is the complete system prompt, so global identity, Web orientation,\\n# tool guidance, and later assembly listeners cannot add prompt text. Runtime\\n# context snapshots are suppressed for this preset, and the model composes only\\n# persistent `bash` and `str_replace_editor`. Context compaction is absent.\\n\\n- id: persona\\n  name: '@deepseek-ai/dsh-persona'\\n  config:\\n    text: You are a helpful software engineer assistant.\\n    complete: true\\n    includeRuntimeContext: false\\n\\n# The PTY registry is an agent-owned service, so it lives in an entry-local\\n# realm. The backend still consumes the host sandbox policy and subprocess\\n# implementation, while the tool registers into this agent's scoped catalog.\\n- id: persistent-shell\\n  name: cordis:group\\n  group: true\\n  isolate:\\n    terminals: true\\n  config:\\n    - id: pty\\n      name: '@deepseek-ai/dsh-terminal'\\n\\n    - id: terminal-bash\\n      name: '@deepseek-ai/dsh-terminal-bash'\\n      config:\\n        timeoutMs: 300000\\n\\n    - id: persistent-bash\\n      name: '@deepseek-ai/dsh-tool-bash-persistent'\\n      config:\\n        timeoutMs: 300000\\n        description: |-\\n          Run commands in a bash shell\\n          * When invoking this tool, the contents of the \\\"command\\\" parameter does NOT need to be XML-escaped.\\n          * You don't have access to the internet via this tool.\\n          * You do have access to a mirror of common linux and python packages via apt and pip.\\n          * State is persistent across command calls and discussions with the user.\\n          * To inspect a particular line range of a file, e.g. lines 10-25, try 'sed -n 10,25p /path/to/the/file'.\\n          * Please avoid commands that may produce a very large amount of output.\\n          * Please run long lived commands in the background, e.g. 'sleep 10 &' or start a server in the background.\\n\\n# The bare local filesystem shadows the host's sandboxed provider only for this\\n# preset. The editor shares that realm and requires absolute paths.\\n- id: filesystem\\n  name: cordis:group\\n  group: true\\n  isolate:\\n    fs: true\\n  config:\\n    - id: fs-local\\n      name: '@deepseek-ai/dsh-fs-local'\\n      config:\\n        cwd: !!js process.env.DSH_CWD ?? process.cwd()\\n\\n    - id: str-replace-editor\\n      name: '@deepseek-ai/dsh-tool-str-replace-editor'\\n      config:\\n        maxOutputChars: 16000\\n\\n\\n- id: tool-pwsh\\n  name: '@deepseek-ai/dsh-tool-pwsh'\\n  disabled: !!js process.platform !== 'win32'\\n\"\n    },\n    {\n      \"path\": \"wish/agent.cordis.yml\",\n      \"content\": \"# The `wish` agent preset: the full coding agent, mounted once per process.\\n#\\n# This file is an AGENT-PLANE composition. The roster mounts it ONCE under a\\n# standing scope; every session naming it joins by scope parentage, so the\\n# tools and prompt sections registered here cover each joined agent while a\\n# session's own state stays keyed per Session/Agent inside the plugins. The\\n# host composition (`base.cordis.yml` + `web.cordis.yml`) keeps everything a\\n# preset must not own: the registries themselves, the sandbox and approval\\n# stack, persistence, and the model route.\\n#\\n# A service row here MUST sit inside a group carrying an `isolate` realm.\\n# Without one it publishes into the root realm, where it is process-global —\\n# another preset publishing the same name collides, and a host reader would\\n# resolve one preset's instance for every session; `dsh-agent-presets` rejects\\n# that at mount. `true` means an entry-local realm: this standing mount's own\\n# private instance, apart from every other preset's. (A shared label does NOT\\n# pool instances — `provide()` throws on the second registration under the\\n# same realm symbol; labels join REALMS, and are not what this file needs.)\\n\\n# ── identity ────────────────────────────────────────────────────────────────\\n\\n# The preset's own persona, shadowing the deployment default for this agent.\\n# `{{model}}` and `{{cwd}}` resolve from the agent's own route and workspace.\\n- id: persona\\n  name: '@deepseek-ai/dsh-persona'\\n  config:\\n    text: |-\\n      **You are a helpful software engineer assistant.**\\n\\n      ## Attention\\n      1. **In the first round, You must use the tool I provided to understand the overall situation of the current workspace and user's requirements  rather than engaging in deep thinking directly. After that, implement the next plan.** \\n      2. **Use short reasoning instead of long reasoning. First, through multiple reasoning processes and combined with multiple tool invocations, we aim to gain a comprehensive understanding of the project and user requirements, in order to better achieve the user's goals.**\\n      3. **When you successfully create or modify files, mention the primary outputs in your final response. To make those and any other changed-file references clickable in Web, format them as Markdown inline code using the exact file-tool path, or a basename when unique among the files changed in that turn.**\\n      4. **谨记章北海父亲的话：你要多想，在达成用户目标之前，我只能告诉你，要多想**\\n\\n      ## Hot to use tools\\n      - Use the read tool, not shell(bash, pwsh) commands like cat — to inspect text files. \\n      - Use the glob tool, not shell(bash, pwsh) find — to discover files by path pattern.\\n      - Use the grep tool, not shell(bash, pwsh) grep or rg — to search file contents.\\n      - Non-zero exits are reported as [exit code: N] markers; investigate failures before moving on. On Windows a killed process settles as [exit code: 1] without a signal marker; treat a bare exit 1 after an interruption as a termination, not a command failure.\\n\\n      Your working directory is '{{cwd}}'.\\n\\n    complete: true\\n    includeRuntimeContext: false\\n\\n- id: agent-instructions\\n  name: '@deepseek-ai/dsh-agent-instructions'\\n  config:\\n    maxBytes: 65536\\n\\n# ── shell ───────────────────────────────────────────────────────────────────\\n\\n# `shell-env` stays in the HOST composition: `apps/cli/src/web.ts` injects it to\\n# publish `DSH_WEB_URL`/`DSH_WEB_MODE`, and a host row that injects a service is\\n# the criterion for host-plane ownership — injection resolves before any session\\n# exists, so there is no agent to key by. Behind a preset realm those variables\\n# never reached the model's shell at all. Both shell tools consume the host\\n# registry from here; their executors (`bash-sandbox`/`pwsh-sandbox`) are\\n# host-plane too.\\n- id: tool-bash\\n  name: '@deepseek-ai/dsh-tool-bash'\\n  disabled: !!js process.platform === 'win32'\\n\\n- id: tool-pwsh\\n  name: '@deepseek-ai/dsh-tool-pwsh'\\n  disabled: !!js process.platform !== 'win32'\\n\\n# ── filesystem ──────────────────────────────────────────────────────────────\\n\\n# Both register into the host `tools` registry and provide nothing, so\\n# they need no realm. The `fs` service and its policy stay in the host.\\n- id: tool-fs\\n  name: '@deepseek-ai/dsh-tool-fs'\\n\\n- id: tool-fs-search\\n  name: '@deepseek-ai/dsh-tool-fs-search'\\n  config:\\n    sampleOverCapGlobResults: false\\n\\n# ── background jobs ────────────────────────────────────────────────────────\\n\\n# Only the model-facing controls. The task REGISTRY stays on the host plane:\\n# its producers sit outside any realm this file could put it in — `tool-bash`\\n# above resolves it with `ctx.get`, and an entry-local realm here is invisible\\n# to every sibling row, so `run_in_background` would answer \\\"background jobs\\n# unavailable\\\" while these controls sat in the catalog. The registry is keyed by\\n# owning agent anyway, so one host instance serves every session. What a preset\\n# chooses is whether its agent can collect and stop background work at all.\\n- id: tool-jobs\\n  name: '@deepseek-ai/dsh-tool-jobs'\\n\\n# ── skills ──────────────────────────────────────────────────────────────────\\n\\n# The skill REGISTRY lives in the host composition and is layered per scope:\\n# these rows register into THIS preset's layer of it, so they need no realm.\\n# `skill-filesystem` contributes local-root discovery for agents on this preset, and\\n# `tool-skill` gives them the catalog and loader; the merged catalog also\\n# carries whatever the deployment registered globally (repository plugins).\\n- id: skill-filesystem\\n  name: '@deepseek-ai/dsh-skill-filesystem'\\n\\n- id: tool-skill\\n  name: '@deepseek-ai/dsh-tool-skill'\\n\\n# ── goals ───────────────────────────────────────────────────────────────────\\n\\n# Only the model-facing tool. The goal SERVICE, its session driver, and the\\n# `/goal` command stay on the host plane: the Gateway serves the goal domain as\\n# Remote endpoints whose receiver comes from a generated descriptor, so it\\n# resolves `goals` on the host and an entry-local realm here would hide it. The\\n# registry is keyed by session anyway, so one host instance serves every\\n# session. What a preset chooses is whether its agent can call the goal tool.\\n- id: tool-goal\\n  name: '@deepseek-ai/dsh-tool-goal'\\n\\n# ── plan mode ───────────────────────────────────────────────────────────────\\n\\n# Plan state is per-agent by nature, so an entry-local realm is not a\\n# workaround here — it is the correct lifetime.\\n- id: planning\\n  name: cordis:group\\n  group: true\\n  isolate:\\n    planMode: true\\n  config:\\n    - id: plan-mode\\n      name: '@deepseek-ai/dsh-plan-mode'\\n      config:\\n        section: |\\n              You are in plan mode. Stay in plan mode until exit_plan_mode succeeds or the user switches the session mode. Imperative language to implement changes means plan the implementation, not execute it. A user's conversational agreement — including an answer confirming something you asked — approves nothing and does not end plan mode; fold the confirmed decision into the plan and submit it through exit_plan_mode.\\n\\n              Explore first. Use non-mutating reads, searches, static analysis, and checks to ground the plan in the actual repository. Do not edit or write files, change configuration, run formatters or code generation that rewrites tracked files, commit, or otherwise carry out the plan. Prefer existing functions and patterns over new machinery.\\n\\n              The tool catalog stays the same across modes for request-cache stability. These plan-mode rules override any later tool description or guidance that suggests using mutation tools; those tools remain listed to keep the tool catalog unchanged. Do not use todo_write to track this planning phase: it tracks implementation after an approved plan, while the plan itself belongs in exit_plan_mode.\\n\\n              Resolve discoverable facts by inspection. Use ask_user_question only for user-owned choices or material ambiguity that inspection cannot answer. Do not ask the user where code lives or how current behavior works when you can find out.\\n\\n              Make the plan decision-complete: state the goal and success criteria; group implementation changes by subsystem; identify public API, schema, and data-flow changes; cover edge cases, failure modes, tests, acceptance criteria, and explicit assumptions. Keep it concise enough to review but detailed enough that another engineer can implement it without making design decisions.\\n\\n              When ready, call exit_plan_mode with the complete plan markdown, starting with a # title. Make exit_plan_mode the only and final tool call in that assistant response: it presents the plan for approval, and implementation begins only in a later step after approval. Do not paste the final plan as a plain reply or ask \\\"should I proceed?\\\" through prose or ask_user_question. If review rejects it, incorporate the feedback and present again. If the review channel is unavailable or aborted, stay in plan mode and ask the user to switch modes manually; do not proceed with implementation.\\n\\n# ── compaction ──────────────────────────────────────────────────────────────\\n\\n# `compaction-basic` reads `toolResultPrune` through `ctx.get`, so the pruner must\\n# share this realm rather than sit outside it.\\n#\\n# `tokenMeter` is deliberately NOT in this realm: the meter stays on the HOST\\n# plane, and the rows here resolve that one instance. It takes no configuration,\\n# keys every fold by Session, and owns the context-meter projection units the\\n# browser reads for every session — behind a realm those units would come and go\\n# with whichever presets happen to be mounted. What a preset chooses is whether\\n# its agent compacts at all, which is `compaction-basic` below.\\n- id: compaction\\n  name: cordis:group\\n  group: true\\n  isolate:\\n    compaction: true\\n    toolResultPruner: true\\n  config:\\n    - id: compaction-basic\\n      name: '@deepseek-ai/dsh-compaction-basic'\\n\\n    - id: command-compact\\n      name: '@deepseek-ai/dsh-command-compact'\\n\\n    - id: tool-result-pruner\\n      name: '@deepseek-ai/dsh-compaction-tool-result-pruner'\\n      config:\\n        thresholdChars: 8192\\n        headChars: 4096\\n        tailChars: 1024\\n\\n# ── delegation and workflows ────────────────────────────────────────────────\\n\\n# The `subagents` registry and its spawn/fork backends live in the HOST\\n# composition: the registry is a process singleton whose cross-session queries\\n# the api-proxy serves to the browser, and a provider name may only be\\n# registered once. This preset contributes the delegation TOOLS, which resolve\\n# that host registry.\\n#\\n# `workflows` is different — nothing outside an agent reads it — so every row\\n# that reaches it shares one entry-local realm here, and a consumer left\\n# outside would resolve a host registry this preset does not populate.\\n#\\n# `tool-subagent-report` is host-plane for the same reason as the registry,\\n# not because a preset may not want it: it registers a CONTINUABLE SETUP on\\n# that singleton rather than a tool this agent calls, and the setup list is\\n# not scope-aware — one copy per mounted preset means every child gets\\n# `report` registered once per live session, which throws on the second.\\n- id: delegation\\n  name: cordis:group\\n  group: true\\n  isolate:\\n    workflowEngine: true\\n  config:\\n    - id: tool-subagent-control\\n      name: '@deepseek-ai/dsh-tool-subagent-control'\\n\\n    - id: tool-subagent-list-agents\\n      name: '@deepseek-ai/dsh-tool-subagent-control/list-agents'\\n\\n    - id: tool-subagent\\n      name: '@deepseek-ai/dsh-tool-subagent'\\n      config:\\n        provider: spawn\\n        toolName: subagent\\n        backgroundMode: continuable\\n\\n    - id: tool-subagent-fork\\n      name: '@deepseek-ai/dsh-tool-subagent'\\n      config:\\n        provider: fork\\n        toolName: subagent_fork\\n        backgroundMode: continuable\\n\\n    # Production dsh does not install these optional providers. An opting-in\\n    # Profile mounts each provider once on the host plane; copy this preset,\\n    # then remove `disabled` from the matching tool row.\\n    - id: tool-subagent-codex\\n      name: '@deepseek-ai/dsh-tool-subagent'\\n      disabled: true\\n      config:\\n        provider: codex\\n        toolName: subagent_codex\\n        backgroundMode: one-shot\\n        maxDepth: provider-managed\\n\\n    - id: tool-subagent-claude-code\\n      name: '@deepseek-ai/dsh-tool-subagent'\\n      disabled: true\\n      config:\\n        provider: claude-code\\n        toolName: subagent_claude_code\\n        backgroundMode: one-shot\\n        maxDepth: provider-managed\\n\\n    - id: workflow-worker-thread\\n      name: '@deepseek-ai/dsh-workflow-worker-thread'\\n      config:\\n        provider: spawn\\n\\n    - id: tool-workflow\\n      name: '@deepseek-ai/dsh-tool-workflow'\\n\\n    - id: tool-ralph\\n      name: '@deepseek-ai/dsh-tool-ralph'\\n      config:\\n        subagentProvider: spawn\\n        maxRounds: 64\\n\\n# ── remaining model-facing rows ─────────────────────────────────────────────\\n\\n- id: tool-ask-user\\n  name: '@deepseek-ai/dsh-tool-ask-user'\\n\\n- id: tool-todo\\n  name: '@deepseek-ai/dsh-tool-todo'\\n  config:\\n    allowParallelInProgress: true\\n\\n# The `web` service and its search provider stay in the host composition; only\\n# the model-facing tool is per-session.\\n- id: tool-web\\n  name: '@deepseek-ai/dsh-tool-web'\\n  config:\\n    fetch: false\\n    searchTimeoutMs: 60000\\n\"\n    },\n    {\n      \"path\": \"wish/preset.yml\",\n      \"content\": \"name: 许愿模式\\ndescription: 为您提供一键许愿能力 Agent。\\norder: 14\\n\"\n    },\n    {\n      \"path\": \"scripts/install-minimal.sh\",\n      \"content\": \"#!/usr/bin/env bash\\nset -euo pipefail\\n\\nrepo_dir=\\\"$(cd \\\"$(dirname \\\"${BASH_SOURCE[0]}\\\")/..\\\" && pwd)\\\"\\nsrc_file=\\\"$repo_dir/minimal/agent.cordis.yml\\\"\\n\\nif [ ! -f \\\"$src_file\\\" ]; then\\n    echo \\\"错误: 未找到源文件: $src_file\\\" >&2\\n    exit 1\\nfi\\n\\ndsh_dir=\\\"${DSH_PATH:-}\\\"\\nif [ -z \\\"$dsh_dir\\\" ]; then\\n    prefix=\\\"$(npm prefix -g 2>/dev/null || true)\\\"\\n    if [ -n \\\"$prefix\\\" ] && [ -d \\\"$prefix/node_modules/@deepseek-ai/dsh\\\" ]; then\\n        dsh_dir=\\\"$prefix/node_modules/@deepseek-ai/dsh\\\"\\n    fi\\nfi\\nif [ -z \\\"$dsh_dir\\\" ] && [ -d \\\"$(pwd)/node_modules/@deepseek-ai/dsh\\\" ]; then\\n    dsh_dir=\\\"$(pwd)/node_modules/@deepseek-ai/dsh\\\"\\nfi\\nif [ -z \\\"$dsh_dir\\\" ]; then\\n    echo \\\"错误: 未找到 dsh 安装目录，可通过 DSH_PATH 环境变量指定\\\" >&2\\n    exit 1\\nfi\\n\\ntarget_dir=\\\"$dsh_dir/config/agent-presets/minimal\\\"\\ntarget_file=\\\"$target_dir/agent.cordis.yml\\\"\\n\\nif [ ! -d \\\"$target_dir\\\" ]; then\\n    echo \\\"错误: 目标目录不存在: $target_dir\\\" >&2\\n    exit 1\\nfi\\n\\nif [ -f \\\"$target_file\\\" ]; then\\n    backup=\\\"$target_dir/agent.cordis.yml.bak-$(date +%Y%m%d-%H%M%S)\\\"\\n    cp \\\"$target_file\\\" \\\"$backup\\\"\\n    echo \\\"已备份原配置 -> $backup\\\"\\nfi\\n\\ncp \\\"$src_file\\\" \\\"$target_file\\\"\\necho \\\"已复制新配置 -> $target_file\\\"\\necho \\\"完成！重启 dsh 后选择极简模式。\\\"\\n\"\n    },\n    {\n      \"path\": \"scripts/install-wish.sh\",\n      \"content\": \"#!/usr/bin/env bash\\nset -euo pipefail\\n\\nrepo_dir=\\\"$(cd \\\"$(dirname \\\"${BASH_SOURCE[0]}\\\")/..\\\" && pwd)\\\"\\nsrc_dir=\\\"$repo_dir/wish\\\"\\n\\nif [ ! -d \\\"$src_dir\\\" ]; then\\n    echo \\\"错误: 未找到源目录: $src_dir\\\" >&2\\n    exit 1\\nfi\\n\\ndsh_dir=\\\"${DSH_PATH:-}\\\"\\nif [ -z \\\"$dsh_dir\\\" ]; then\\n    prefix=\\\"$(npm prefix -g 2>/dev/null || true)\\\"\\n    if [ -n \\\"$prefix\\\" ] && [ -d \\\"$prefix/node_modules/@deepseek-ai/dsh\\\" ]; then\\n        dsh_dir=\\\"$prefix/node_modules/@deepseek-ai/dsh\\\"\\n    fi\\nfi\\nif [ -z \\\"$dsh_dir\\\" ] && [ -d \\\"$(pwd)/node_modules/@deepseek-ai/dsh\\\" ]; then\\n    dsh_dir=\\\"$(pwd)/node_modules/@deepseek-ai/dsh\\\"\\nfi\\nif [ -z \\\"$dsh_dir\\\" ]; then\\n    echo \\\"错误: 未找到 dsh 安装目录，可通过 DSH_PATH 环境变量指定\\\" >&2\\n    exit 1\\nfi\\n\\ntarget_dir=\\\"$dsh_dir/config/agent-presets/wish\\\"\\n\\nif [ -d \\\"$target_dir\\\" ]; then\\n    ts=\\\"$(date +%Y%m%d-%H%M%S)\\\"\\n    for f in \\\"$target_dir\\\"/*; do\\n        [ -f \\\"$f\\\" ] || continue\\n        mv \\\"$f\\\" \\\"$f.bak-$ts\\\"\\n        echo \\\"已备份原文件 -> $f.bak-$ts\\\"\\n    done\\nelse\\n    mkdir -p \\\"$target_dir\\\"\\nfi\\n\\ncp \\\"$src_dir/agent.cordis.yml\\\" \\\"$src_dir/preset.yml\\\" \\\"$target_dir/\\\"\\necho \\\"已复制 -> $target_dir\\\"\\necho \\\"完成！重启 dsh 后选择许愿模式。\\\"\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"cdbf96a0f2e4c886c9f9e8d0cb21a45f5122355a\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"6b4fc04332be86f025f55ba61078c0c283ba7fbeccff2d1075afbb4970f00b20\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 100,\n        \"words\": 846\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "d2392445e5ba4397b265d0f7326da7129cfefd29667f63c21ce04c5472d65887"
+        }
+    },
+    "unavailable_artifacts": []
+}

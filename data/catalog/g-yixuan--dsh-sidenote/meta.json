@@ -1,0 +1,66 @@
+{
+    "repository": "g-yixuan/dsh-sidenote",
+    "repository_id": 1339293057,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 42,
+    "pushed_at": "2026-11-11T19:08:16Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ag-yixuan%2Fdsh-sidenote%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 874E:19F5FB:A59B8D:B04109:6AF51C85 and timestamp 2026-11-12 01:55:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ag-yixuan%2Fdsh-sidenote%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 879C:3E270:A2FA04:ADA353:6AF51C86 and timestamp 2026-11-12 01:55:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ag-yixuan%2Fdsh-sidenote%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8838:3F775F:A92181:B3D0F9:6AF51C87 and timestamp 2026-11-12 01:55:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ag-yixuan%2Fdsh-sidenote%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88AC:C3A27:A4A7EF:AF4D82:6AF51C88 and timestamp 2026-11-12 01:55:20 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ag-yixuan%2Fdsh-sidenote%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 88F0:35F289:B3878B:BE3457:6AF51C89 and timestamp 2026-11-12 01:55:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T01:17:36.623Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-sidenote",
+        "captured_at": "2026-11-08T17:57:25.757Z",
+        "window_start": "2026-10-09",
+        "window_end": "2026-11-07",
+        "downloads_30d": 6840,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-sidenote",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-28T15:53:42.750Z",
+            "captured_at": "2026-11-08T17:57:25.757Z",
+            "source_url": "https://registry.npmjs.org/dsh-sidenote",
+            "error": null,
+            "latest_version": "0.8.4",
+            "latest_published_at": "2026-11-08T15:30:38.450Z",
+            "latest_error": null
+        }
+    }
+}

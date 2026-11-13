@@ -1,0 +1,66 @@
+{
+    "repository": "dreamfarer-space/deepseek-harness-intelligent-ui",
+    "repository_id": 1412721907,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 38,
+    "pushed_at": "2026-11-10T09:47:46Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Adreamfarer-space%2Fdeepseek-harness-intelligent-ui%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 40CE:2CC647:AC1399:2204CBE:6AF51CCF and timestamp 2026-11-12 01:56:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Adreamfarer-space%2Fdeepseek-harness-intelligent-ui%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 410A:351496:AC61A1:220BA66:6AF51CD0 and timestamp 2026-11-12 01:56:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adreamfarer-space%2Fdeepseek-harness-intelligent-ui%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 417E:1B9792:2C60F27:8CA8D12:6AF51CD1 and timestamp 2026-11-12 01:56:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adreamfarer-space%2Fdeepseek-harness-intelligent-ui%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 41AE:351496:AC6C0E:220DBA2:6AF51CD2 and timestamp 2026-11-12 01:56:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adreamfarer-space%2Fdeepseek-harness-intelligent-ui%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 41FA:318CC8:B376DF:2361071:6AF51CD3 and timestamp 2026-11-12 01:56:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-11T07:11:08.089Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "deepseek-harness-intelligent-ui",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 4273,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/deepseek-harness-intelligent-ui",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-11T03:38:12.318Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
+            "source_url": "https://registry.npmjs.org/deepseek-harness-intelligent-ui",
+            "error": null,
+            "latest_version": "0.2.15",
+            "latest_published_at": "2026-11-09T19:14:05.271Z",
+            "latest_error": null
+        }
+    }
+}

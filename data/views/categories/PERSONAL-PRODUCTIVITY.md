@@ -92,7 +92,7 @@
 | [DSH Message Ops](#plugin-1389945615-root) | 为 DSH Web 提供消息回撤、遮蔽恢复、分叉入口、编辑回填与会话回收站。 | [Q04](../../plugins/240xu--dsh-message-ops/INSIGHT.md#research-q04) 保持观察；只在可重载副本先测小区间，确认正文与进度和外部文件状态。 |
 | [DSH Mobile](#plugin-1334817483-root) | 通过设备配对让 Android 或手机浏览器访问电脑上的 DeepSeek Harness 会话和工作区。 | [Q04](../../plugins/saya-ch--dsh-mobile/INSIGHT.md#research-q04) 从可信局域网只读会话和设备撤销起步，异常后回电脑核对原任务。 |
 | [DSH Mobile APK](#plugin-1333629201-root) | 把 DSH 与设备控制交互带到 Android 手机。 | [Q04](../../plugins/kelai141--dsh-mobile-apk/INSIGHT.md#research-q04) 在隔离设备先验证权限、会话恢复并备份，保留桌面退路。 |
-| [DSH Notify Me](#plugin-1361444540-root) | 在页面离开和关闭时按配置发送任务提醒 | [Q04](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q04) 从本地通知逐步验证到外推和退出。 |
+| [DSH Notify Me](#plugin-1361444540-root) | 为 DSH 等待交互和后台完成提供系统提醒，并支持审批快捷入口与外部推送。 | 先关闭外发，验证无害通知及真实待办。 |
 | [DSH Omi Voice](#plugin-1337972266-root) | 在DSH回复旁提供点读按钮，通过本机Omi引擎调用豆包合成并播放。 | [Q03](../../plugins/polinnizhong--dsh-omi-voice/INSIGHT.md#research-q03) 测试Key短文确认目的地及Stop后再试长文。 |
 | [DSH OpenCode Palette](#plugin-1335109271-root) | 把预置和自定义语义配色映射到 DSH，并持久保存主题。 | [Q03](../../plugins/featherhunter--dsh-opencode-palette/INSIGHT.md#research-q03) 在测试 profile 备份 custom-themes，用一款预置和一个合成自定义主题核对输入、代码、弹层与浅深模式。 |
 | [DSH Pocket](#plugin-1334962266-root) | 通过局域网代理、二维码和可选Cloudflare隧道，让手机同步访问电脑上的DSH界面。 | [Q04](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q04)、[Q05](../../plugins/shaobeichen--dsh-pocket/INSIGHT.md#research-q05)建议有常驻DSH Web的个人先在可信LAN保留密码试少量任务，核对同会话与主动关闭。 |
@@ -224,9 +224,9 @@
 | [dsh-peak-runner](#plugin-1417227361-root) | 按配置峰谷时段排队模型文本任务，提供执行、状态查询和取消工具。 | 自动节费/按时交付主诉求暂不推荐；可用模拟任务观察队列，但必须人工再触发并核实际模型/账单。 |
 | [dsh-perlica-ding](#plugin-1335704653-root) | 按DSH计划、执行回合收尾、待回应与错误事件播放四类本地音效，提供PCM音量缩放、设置保存和试听界面。 | 有条件试用，可信本机小PCM/低音量先核事件和设备；声音不是任务验收，远端和严格隔离提醒先观察。 |
 | [dsh-persona-dafeiyu](#plugin-1407576553-root) | 为 DSH 管理内置及自定义人设，支持导入导出并按全局、工作区或会话切换。 | 先备份库，给两个可复做会话设置不同风格，核对下一请求和显式不启用；清理前确认冷会话状态，出现串用即回手动前缀。 |
-| [dsh-pet](#plugin-1333652151-dsh-pet) | 在 DSH 页面或桌面显示动画宠物，联动会话工作状态，并提供宠物聊天、余额查询与语音等可选功能。 | 已有DSH的动画爱好者只开一只Web workStatus，关余额/whisper/语音/聊天扩展并核没有Helper；状态不符/额外调用就停回原列表，见 [Q05](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q05)。 |
 | [dsh-pet](#plugin-1383592161-root) | 在 DSH 网页界面显示响应会话活动的宠物，支持切换形象、摸头喂食、命名和状态气泡。 | 喜欢视觉陪伴的DSH网页用户可先只用内置2D，观察状态是否对应会话、互动是否合意、重启是否保留非关键设置，并测试主开关。 |
 | [dsh-pet-remielle](#plugin-1334868640-root) | 以 DSH 会话事件驱动桌宠气泡和提醒，提供会话跳转、可选桌面窗与余额显示。 | 先在无重要副作用的并发任务上只试网页提示，保留原生列表作为核对入口。 |
+| [dsh-pet（白饭）](#plugin-1333652151-dsh-pet) | 在 DSH 中显示随会话活动变化的宠物，支持通知、余额提示和宠物对话。 | [Q03](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q03) 先用一个无敏感内容的审批任务验证提醒。 |
 | [dsh-pilot](#plugin-1390951068-root) | 为 Windows 上的 DSH 提供桌面截图、输入控制和批量动作。 | [Q03](../../plugins/momasiku--dsh-pilot/INSIGHT.md#research-q03) 先用独立环境 dryRun。 |
 | [dsh-pinned-sessions](#plugin-1407379611-root) | 在 DSH 侧栏聚合跨工作区的置顶会话，支持组内搜索、会话状态显示与归档。 | [Q04](../../plugins/439436269-ctrl--dsh-pinned-sessions/INSIGHT.md#research-q04) 先用两个工作区里的测试会话检查查找与打开结果，再用可弃用会话核对归档和取消置顶。 |
 | [dsh-plugin-auto-answer](#plugin-1423966960-root) | 无人值守时为 DSH 用户问题设倒计时，超时由 Host 代选推荐项或默认项。 | 隔离低影响任务试用，配置 fallback:none/freeText:block/planReview:ignore，核 timed 工具窗口。 |
@@ -305,7 +305,7 @@
 | [dsh-voice](#plugin-1334554745-root) | 在 DSH 网页用麦克风或快捷键语音输入，支持本机 ASR 与浏览器识别并作为正常消息提交。 | 建议非敏感普通对话小范围试用，确认会话、真实引擎和停麦自动提交；误发、回退不透明或截断频繁时停止。 |
 | [dsh-voice-ai-girlfriend](#plugin-1335189481-root) | 全栈工具套件把DSH接到语音识别、回复朗读、数字人和可选QQ双向通信，完整播放与数据流需分层核验。 | [Q04](../../plugins/beiyege-01--dsh-voice-ai-girlfriend/INSIGHT.md#research-q04) 观察并先分层核纯语音、桥权限与完整朗读，不处理重要内容；漏读/异常外发停相关服务回文字，QQ/视频任务单独核状态。 |
 | [dsh-voice-input-web](#plugin-1335558973-root) | 为 DSH Web 输入栏增加浏览器 Web Speech 麦克风转写按钮，把识别最终文本写入草稿。 | 默认保持 autoSend 关闭，先用非敏感语音验证识别和草稿编辑；转写后人工检查再发送。 |
-| [dsh-wallpaper-engine](#plugin-1336114531-root) | 将本地 Wallpaper Engine 素材或上传媒体作为 DSH Web 背景，适配视频、Scene/Web 与外观设置。 | 隔离profile单张授权可信静态图，保存必须回读/重启核，再决定短视频/Scene；输入可读性、资源或状态不明就停动态退原生/静态，见 [Q06](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q06)。 |
+| [dsh-wallpaper-engine](#plugin-1336114531-root) | 在 DSH 对话界面显示本地场景、网页和视频壁纸，支持外观预设。 | [Q03](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q03) 从来源明确的小素材开始，对比原主题的可读性和输入响应。 |
 | [dsh-wallpaper-position](#plugin-1365163748-root) | 为 dream-skin 壁纸提供按图片、URL 或渐变分别记忆的水平和垂直像素位移设置。 | 已有 dream-skin 的用户可在备份 profile 后试用，以换图返回能恢复偏移且其他背景不移动为通过标准；发现误匹配、重载后偏移丢失或界面异常就停止并禁用。 |
 | [dsh-WallpaperAndCost](#plugin-1338425616-root) | 为 DSH 提供壁纸设置、余额与会话费用显示。 | [Q04](../../plugins/appliedyuu--dsh-wallpaperandcost/INSIGHT.md#research-q04) 用授权素材和测试会话核显示，费用与官方账单对照，不一致时停用估算决策。 |
 | [dsh-web-mobile](#plugin-1334674836-root) | 为 DSH Web 提供触屏布局与交互适配，增加会话删除入口和宿主 JSON 压缩。 | [Q03](../../plugins/mexiaosqwq--dsh-web-mobile/INSIGHT.md#research-q03) 先对照手机输入和切换，按 [Q02](../../plugins/mexiaosqwq--dsh-web-mobile/INSIGHT.md#research-q02) 核对入口保护后再决定是否在可丢弃会话上验证删除。 |
@@ -1675,15 +1675,15 @@
 
 ## [DSH Notify Me](../../plugins/chromoany--dsh-notify-me/INSIGHT.md)
 
-[![GitHub ★ 98](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=98&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chromoany/dsh-notify-me) [![npm 30d 14,997](https://img.shields.io/static/v1?label=npm+30d&message=14%2C997&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notify-me) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notify-me)
+[![GitHub ★ 127](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=127&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chromoany/dsh-notify-me) [![npm 30d 21,453](https://img.shields.io/static/v1?label=npm+30d&message=21%2C453&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notify-me) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-notify-me)
 
-> **用途**：用户离开 DSH 时错过审批和后台回复。
+> **用途**：适合保留人工审批、又需要暂时离开 DSH 页面的人，见 [Q01](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q01)。
 
-> **亮点**：[Q01](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q01) 覆盖页面在后台与关闭的提醒路径。
+> **亮点**：把多个会话的等待与完成引入系统提醒，可选宿主通道覆盖关页场景，见 [Q01](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q01) 与 [Q02](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q02)。
 
-> **思考**：[Q03](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q03) 依赖平台权限、心跳和网关配置。
+> **思考**：页面在线不等于某条提醒已送达，本地按钮反馈也不证明宿主批准。两条边界需要独立验收，见 [Q02](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q02) 与 [Q03](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q03)。
 
-> **建议**：[Q05](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q05) 可缩短发现等待和回复的时间。
+> **建议**：通知动作等宿主可关联结果后再标成功，检验能否减少本地反馈引起的误判，见 [Q05](../../plugins/chromoany--dsh-notify-me/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/chromoany--dsh-notify-me/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3783,22 +3783,6 @@
 
 [查看完整分析](../../plugins/huaizhuanghub--dsh-persona-dafeiyu/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1333652151-dsh-pet"></a>
-
-## [dsh-pet](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md)
-
-[![GitHub ★ 5,648](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C648&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 415,863](https://img.shields.io/static/v1?label=npm+30d&message=415%2C863&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet)
-
-> **用途**：已有DSH且偏好动画陪伴的个人用户，一只Web宠物观察脱敏会话状态；不作为唯一任务/余额验收，见 [Q01](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q01)。
-
-> **亮点**：把Host会话/goal轮次和工具在途规约成有来源状态并映到Web/Helper，shared handler保持业务一致；已含气泡会话跳转，见 [Q02](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q02)/[Q03](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q03)。
-
-> **思考**：单条优先级隐藏其他会话，poll失败静默保留旧图；success非业务验收，HTTP依Host鉴权、Helper可降级无sandbox，自动模型/余额/语音费用隐私与退出并非只看动画就不存在，见 [Q02](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q02)至 [Q04](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q04)。
-
-> **建议**：比较现有全局提示和宠物级传输新鲜度，依据成功响应而非叶子变化判断断线，误认不降或干扰上升则放弃；来源跳转已有不再提，见 [Q06](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q06)。
-
-[查看完整分析](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1383592161-root"></a>
 
 ## [dsh-pet](../../plugins/zhu1090093659--dsh-pet/INSIGHT.md)
@@ -3830,6 +3814,22 @@
 > **建议**：[Q05](../../plugins/gin-7--dsh-pet-remielle/INSIGHT.md#research-q05)提出未验证方向，将真实事件确认结束与长时间未收事件明确区分，后者显示来源时间和未知状态。用长静默、断线、重启任务对照误判、响应延迟与打断次数；无改善或新增噪声更高则否定，不计入已有贡献。
 
 [查看完整分析](../../plugins/gin-7--dsh-pet-remielle/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1333652151-dsh-pet"></a>
+
+## [dsh-pet（白饭）](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md)
+
+[![GitHub ★ 6,110](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C110&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 543,535](https://img.shields.io/static/v1?label=npm+30d&message=543%2C535&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet)
+
+> **用途**：面向将 DSH Web 长任务放到后台的人，用宠物状态和通知找到需要处理的会话。
+
+> **亮点**：[Q01](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q01) 的通知把离开窗口后的活动提示与会话导航连起来。[Q02](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q02) 将前缀路由、命令与浏览器浮层纳入同一宿主生命周期。
+
+> **思考**：[Q03](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q03) 的余额、自动碎碎念和手动闲聊各有条件。选择的模型不可用时，闲聊可回退当前模型。隐藏浮层无法作为停掉全部后台请求的验收判据。
+
+> **建议**：[Q04](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md#research-q04) 提议只开启宠物状态提示，在相同审批任务中对照原生提醒，观察能否更快回到正确会话且不增加误报和额外请求。
+
+[查看完整分析](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1390951068-root"></a>
 
@@ -5083,15 +5083,15 @@
 
 ## [dsh-wallpaper-engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md)
 
-[![GitHub ★ 5,300](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C300&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) [![npm 30d 124,435](https://img.shields.io/static/v1?label=npm+30d&message=124%2C435&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine) [![最新发布 2026-10-22](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-22&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine)
+[![GitHub ★ 6,484](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C484&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) [![npm 30d 149,325](https://img.shields.io/static/v1?label=npm+30d&message=149%2C325&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-wallpaper-engine)
 
-> **用途**：有聊天背景装饰需要的DSH用户，在隔离profile用可信授权静态素材起步，见 [Q01](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q01)/[Q06](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q06)。
+> **用途**：面向已有本地壁纸素材、希望在 DSH 对话中显示动态背景的 Web 用户。
 
-> **亮点**：将本地发现、映射媒体出站、上游引擎适配、失败fallback与设置接进DSH Web；不是发明壁纸格式/引擎或全部子行都独立验收，见 [Q01](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q01)-[Q02](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q02)。
+> **亮点**：[Q01](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q01) 把不同素材类型纳入同一个 DSH 背景流程。[Q02](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q02) 对子包分开检查解析与拆卸。
 
-> **思考**：动态视觉收益是否足抵资源/兼容/授权成本；写文件异常会被吞、HTTP200可能不耐久，媒体路径围栏不等整体安全，见 [Q03](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q03)-[Q06](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q06)。
+> **思考**：[Q03](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q03) 的 Web 素材保留脚本执行，设备开销和外部请求需要检查。预览正常也可能遇到实际实时画面失败。
 
-> **建议**：对设置保存提供实际提交/本地待重试可核状态，针对写盘失败后200误信；与人工回读/导出对照，无恢复收益或误告警过多即否定，见 [Q07](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q07)。
+> **建议**：[Q04](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md#research-q04) 用同一回放比较静态背景、视频与 Scene，如果常降级、妨碍输入或退出有残留，则不采用动态方式。
 
 [查看完整分析](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) · [返回表格](#category-index)
 
@@ -6443,4 +6443,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-12

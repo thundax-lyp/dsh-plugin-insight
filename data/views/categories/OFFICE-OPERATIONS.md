@@ -19,6 +19,7 @@
 | [BrowserSkill for DeepSeek Harness](#plugin-1276665883-packages-dsh-plugin-browserskill) | 在 DeepSeek Harness 中使用 bsk 工具浏览网页、操作页面并查看截图和会话状态。 | [Q05](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md#research-q05) 用单独测试 profile 和只读页面验收，明确指定浏览器与会话标识。 |
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
+| [DeepSeek Harness Intelligent UI](#plugin-1412721907-root) | 在 DSH 会话内生成可交互组件、更新视图和运行隔离小部件。 | 先用固定非敏感小表核对实际筛选和一次补丁，结果不符则恢复原表，见 [Q04](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q04)。 |
 | [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
 | [DSH Email](#plugin-1333512933-root) | 在 DSH 中浏览、搜索邮件并编辑回复草稿，支持确认发送与可选邮件任务。 | 试用只限虚构邮件的草稿预览与禁止外发的替身，关闭定时与邮件任务。 |
 | [DSH Files](#plugin-1333699356-root) | 在 DSH 内查找和引用已上传附件，通过宿主文件系统抽取常见办公文档的文字。 | [Q04](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q04) 在单用户测试 profile 用公开文字 PDF 验证检索、引用和按页抽取。 |
@@ -177,6 +178,22 @@
 > **建议**：[Q05](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q05) 保存和回读可在减少重述时维持状态准确。
 
 [查看完整分析](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1412721907-root"></a>
+
+## [DeepSeek Harness Intelligent UI](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md)
+
+[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dreamfarer-space/deepseek-harness-intelligent-ui) [![npm 30d 4,273](https://img.shields.io/static/v1?label=npm+30d&message=4%2C273&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-harness-intelligent-ui) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/deepseek-harness-intelligent-ui)
+
+> **用途**：适合在 DSH 反复比较结构化数据的用户，见 [Q01](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q01)。
+
+> **亮点**：把校验、会话内渲染和按 ID 更新接到原 DSH 对话，见 [Q01](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q02)。
+
+> **思考**：通过树校验只能确认结构，需核对数据内容。小部件的资源策略和受控动作也各有边界，见 [Q03](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q03)。
+
+> **建议**：让用户核对版本与来源，比较能否减少误把本地筛选当作数据更新，见 [Q05](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1326394141-root"></a>
 
@@ -918,4 +935,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-12

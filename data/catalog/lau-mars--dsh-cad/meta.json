@@ -1,0 +1,66 @@
+{
+    "repository": "LAU-MARS/dsh-cad",
+    "repository_id": 1340230123,
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 39,
+    "pushed_at": "2026-11-11T07:46:59Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ALAU-MARS%2Fdsh-cad%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9ADA:1A7683:9EC712:A9760C:6AF51CB8 and timestamp 2026-11-12 01:56:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ALAU-MARS%2Fdsh-cad%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9B56:1940C9:A66E59:B11CA5:6AF51CB9 and timestamp 2026-11-12 01:56:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALAU-MARS%2Fdsh-cad%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9BC8:41CAC:A2FA7F:ADA5E0:6AF51CBA and timestamp 2026-11-12 01:56:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALAU-MARS%2Fdsh-cad%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C2E:4D438:A18657:AC38F2:6AF51CBB and timestamp 2026-11-12 01:56:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALAU-MARS%2Fdsh-cad%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 9C8A:1A3B3E:AE69A1:B91A35:6AF51CBC and timestamp 2026-11-12 01:56:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T01:17:36.623Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-cad",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 7499,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/dsh-cad",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-31T07:58:31.132Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
+            "source_url": "https://registry.npmjs.org/dsh-cad",
+            "error": null,
+            "latest_version": "0.17.0",
+            "latest_published_at": "2026-10-29T10:02:23.023Z",
+            "latest_error": null
+        }
+    }
+}

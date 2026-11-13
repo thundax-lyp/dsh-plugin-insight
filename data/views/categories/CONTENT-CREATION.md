@@ -31,6 +31,7 @@
 | [DSH OpenPencil](#plugin-1332212466-root) | 把 OpenPencil 的 .op 文档预览、画布检查、编辑与受控草稿生成流程接入 DSH 对话。 | [Q03](../../plugins/zseven-w--dsh-openpencil/INSIGHT.md#research-q03) 用固定版本和独立副本试用，最后亲自看画布、保存稿与需求逐项对应。 |
 | [DSH Qwen Studio](#plugin-1422133477-root) | 把本地 MLX 或自托管图像服务接入 DSH 对话，记录生成任务并按 ID 取回状态与附件。 | [Q01](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q01) 已有推理设备并能隔离图库的创作者，可先提交一张无敏感输入的配图再按 ID 取回。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
+| [DSH Short Video Studio](#plugin-1345883186-root) | 在 DSH 会话中连接 ComfyUI，生成、整理和后处理短视频素材。 | 先在一次性工作区做一镜，核查文件、规格及后端状态。 |
 | [DSH to Figma](#plugin-1424114133-root) | 将本地Figma companion或官方MCP接入DSH，读取设计上下文并编辑原生画布与资源。 | 可丢弃Figma文件受限试用，先明确后端/file/page与能力，再做少量原生节点并核结构变量/截图。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 建议先观察。 |
@@ -389,6 +390,22 @@
 > **建议**：[Q05](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q05) 可减少外部预览切换。
 
 [查看完整分析](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1345883186-root"></a>
+
+## [DSH Short Video Studio](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md)
+
+[![GitHub ★ 41](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fengyungithub/dsh-short-video-studio) [![npm 30d 4,437](https://img.shields.io/static/v1?label=npm+30d&message=4%2C437&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-short-video-studio) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-short-video-studio)
+
+> **用途**：适合已维护 ComfyUI 并反复整理短镜头的创作者，见 [Q01](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q01)。
+
+> **亮点**：用能力与档位组织已安装工作流，并关联会话画布及结果文件，见 [Q01](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q01) 与 [Q02](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q02)。
+
+> **思考**：本地中断不能证明远端已停止。工具批准监听异常放行，HTTP 生成也有独立路径，见 [Q02](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q02) 与 [Q03](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q03)。
+
+> **建议**：让任务先绑定后端 ID，重开时核对状态，测试能否避免重派生成，见 [Q05](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1424114133-root"></a>
 
@@ -1258,4 +1275,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-12

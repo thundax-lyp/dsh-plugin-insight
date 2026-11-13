@@ -1,10 +1,10 @@
 {
     "repository": "kenryu42/cc-safety-net",
     "repository_id": 1122873619,
-    "captured_at": "2026-11-06T06:50:45.128Z",
-    "window_start": "2026-10-07T06:50:45.128Z",
-    "stars": 1920,
-    "pushed_at": "2026-11-06T06:53:39Z",
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 1999,
+    "pushed_at": "2026-11-12T00:53:43Z",
     "issues": {
         "open": null,
         "closed": null,
@@ -15,51 +15,51 @@
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 852E:3A0A85:2AD5DC:2E6EB8:6AED7AA4 and timestamp 2026-11-06 06:58:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F09E:2F8939:1C2A34C:5874608:6AF51C46 and timestamp 2026-11-12 01:54:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8594:98944:554B24:58E3FC:6AED7AA5 and timestamp 2026-11-06 06:58:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F108:186587:1B70AD9:561FC8F:6AF51C47 and timestamp 2026-11-12 01:54:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20created%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 85EA:98944:554BD2:58E4B6:6AED7AA5 and timestamp 2026-11-06 06:58:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F178:2E20B7:29FA8B2:83FB7EF:6AF51C48 and timestamp 2026-11-12 01:54:16 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8638:38317F:29552F:2CEC1C:6AED7AA6 and timestamp 2026-11-06 06:58:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F1FC:141346:1EB9FD4:6004A37:6AF51C49 and timestamp 2026-11-12 01:54:17 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         },
         {
             "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20updated%3A2026-10-07T06%3A50%3A45.128Z..2026-11-06T06%3A50%3A45.128Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 86EA:667F5:2BFEDE:2F9870:6AED7AA8 and timestamp 2026-11-06 06:58:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3Akenryu42%2Fcc-safety-net%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID F2A2:1F5A:7736B0:175B0DD:6AF51C4A and timestamp 2026-11-12 01:54:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-05T20:18:16.149Z",
+        "captured_at": "2026-11-11T17:47:29.947Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
-        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
-        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
         "latest_error": null
     },
     "npm": {
         "package_name": "cc-safety-net",
-        "captured_at": "2026-11-05T17:26:49.018Z",
-        "window_start": "2026-10-06",
-        "window_end": "2026-11-04",
-        "downloads_30d": 119120,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/cc-safety-net",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 153287,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/cc-safety-net",
         "error": null,
         "publication": {
             "first_published_at": "2026-01-03T13:04:57.694Z",
-            "captured_at": "2026-11-05T17:26:49.018Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
             "source_url": "https://registry.npmjs.org/cc-safety-net",
             "error": null,
-            "latest_version": "2.7.3",
-            "latest_published_at": "2026-11-04T04:34:32.926Z",
+            "latest_version": "2.7.11",
+            "latest_published_at": "2026-11-11T15:38:51.107Z",
             "latest_error": null
         }
     }

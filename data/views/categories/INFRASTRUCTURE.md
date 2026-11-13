@@ -57,7 +57,7 @@
 | [DSH Full Remote](#plugin-1334709708-root) | 以设备认证代理开放同一DSH宿主完整Web特权访问，并提供跨会话远程待答控制台。 | [Q05](../../plugins/juanwang-buaa--dsh-full-remote/INSIGHT.md#research-q05)可信个人设备/隔离Host受限试用；生产全权限长期暴露先观察，核撤销和不明提交后才扩大。 |
 | [DSH HoneyBee / DSHB](#plugin-1355618827-packages-dshb) | 在 DSH 中管理 SSH/Docker 节点并路由文件、命令与终端，提供工作区指令和多实例会话同步。 | [Q03](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q03) 保持观察。 |
 | [DSH Interconnect](#plugin-1333084899-root) | 通过持久 WebSocket 连接 DeepSeek Harness 实例，提供配对、会话发现和消息交接。 | [Q04](../../plugins/chinesezjc--dsh-interconnect/INSIGHT.md#research-q04) 用隔离双实例合成消息试用，超时先核对目标，不盲目重发。 |
-| [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览社区插件，并管理安装、更新和配置。 | [Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05) 在独立profile单包完成安装、更新、卸载和恢复，再与原生Discover/CLI比较；核来源、目录、实际激活和errors而非总ok。 |
+| [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | [Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 建议先在隔离 profile 验收一个非关键包。 |
 | [DSH Multi Subscription Hub](#plugin-1334025844-root) | 集中订阅线路、账号池和模型运行配置 | [Q04](../../plugins/aa728848--dsh-chatgpt-subscription/INSIGHT.md#research-q04) 只观察已允许线路，隔离账号及原profile快照。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集 DSH 插件候选，归并兼容性记录并发布可浏览目录与机器可读数据。 | [Q04](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q04) 先按固定提交读取少量候选，再回原仓核对版本和权限；数据日期或逐条证据不明时停止自动安装并人工查找。 |
 | [DSH Plugins Marketplace](#plugin-1333295863-root) | 在 DSH 设置页浏览第三方插件与 Skill 索引，识别安装形态并组织材料、确认、安装和版本状态。 | [Q03](../../plugins/bradegithub--dsh-plugins-marketplace/INSIGHT.md#research-q03)正式管理observe，先修并在丢弃profile验multi-skill只删所属项。 |
@@ -947,15 +947,15 @@
 
 ## [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md)
 
-[![GitHub ★ 10,983](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C983&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 907,321](https://img.shields.io/static/v1?label=npm+30d&message=907%2C321&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+[![GitHub ★ 12,007](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C007&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,164,845](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164%2C845&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
-> **用途**：[Q01](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q01) 面向重复维护多插件且能备份/修复profile的使用者；合格结果是目标插件与profile可加载，正在执行的任务不被变更破坏。
+> **用途**：经常维护 DSH profile 的使用者可以在市场界面选包、发起安装或更新，查看进度并回到宿主页面核对结果。
 
-> **亮点**：[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) 的精确目标重比、manifest/可加载入口/冲突后验，与[Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 实际Agent排空和有条件恢复构成可检查的插件维护组合。它比只信CLI退出码多给盘面和失败信息，但继承包管理器/Host能力，没有证明全事务恢复或实测节时。
+> **亮点**：[Q01](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) 显示，市场把搜索结果、操作进度、目标 profile 和宿主包管理接在一起。[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03) 进一步确认了官方桌面移除再装过程的中断日志。现有机制依赖宿主管理器与目录，具体贡献是把多处状态连到操作者的同一个管理任务。
 
-> **思考**：[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) 集合部分成功、可覆盖的活动Agent确认和取消残留，[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03) 未知兼容与缺gate放行，以及[Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 逐文件/部分恢复与重试上限，意味着一个成功标志不能证明整个profile已恢复且安全。集中操作是否值得，要看用户能否承担这些核对与救援成本。
+> **思考**：[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03) 与 [Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 指出，日志结清可对应旧版或目标版，集合操作还允许部分成功。恢复后应在实际 profile 核对版本、加载和业务状态，关键数据需要独立备份。 超时后包管理器可能仍在写入，此时继续提交可能增加恢复负担。
 
-> **建议**：[Q06](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q06) 候选是将批准目标、真实盘面/激活差异与可执行恢复组合成变更收据，在独立profile演练后审查迁移；以当前市场+备份作对照，若遗漏原环境故障、目标不可复现或人工恢复更多就推翻，尚未验证。
+> **建议**：[Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 提出的待验证假设是，分开显示排队、落盘与加载结果，能减少用户误以为失败而再次提交的次数。用同一隔离 profile 比较原生管理与市场路径，若误重试没有下降或额外维护耗时抵消节约，就放弃这一假设。
 
 [查看完整分析](../../plugins/dsh-market--dsh-market/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3587,4 +3587,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-12

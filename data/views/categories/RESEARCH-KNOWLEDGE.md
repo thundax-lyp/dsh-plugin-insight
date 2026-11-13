@@ -54,6 +54,7 @@
 | [DSH Data Quality](#plugin-1339628067-root) | 在 DSH 中确定性分析、清理、校验表格数据，提供 citation 核值服务与持久报告回读。 | 试用限定可信无链接副本的小文件分析与clean dryRun，人工核规则/分数，不提供outputPath。 |
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | [Q05](../../plugins/7starsseeker--dsh-fact-check/INSIGHT.md#research-q05) 建议能审查原文的研究者先选少量公开事实点并手工核引文；正文不可得或来源独立性不明时明确无法核实。 |
 | [DSH Failover Search](#plugin-1374007757-plugins-dsh-failover-search-plugin) | 在宿主搜索与取回接缝按账号和平台故障转移 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md#research-q04) 模拟服务起步，保存原搜索和取回配置作为退出。 |
+| [DSH Free Search](#plugin-1334384058-root) | 为 DSH 提供多引擎网页搜索、可配置回退与分层网页提取。 | 关闭用不到的提取层，在独立 profile 从公开文档、一个允许的引擎开始。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
 | [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
@@ -77,7 +78,6 @@
 | [dsh-chinese-traditional-wisdom-skill](#plugin-1335061439-root) | 将玄枢传统文化 Skill、本地 TypeScript 计算和结构化事实核验资源封装进 DSH。 | 先阅读Skill和RULES，把目标限定为文化学习或核验流程研究；优先用不含个人身份的公开fixture查一个已有verifier的工具。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
-| [dsh-free-search](#plugin-1334384058-root) | 为 DSH 提供多源搜索路由、分类回退、网页抓取与分层证据整理，可配置引擎与凭据。 | 隔离profile只一明确源非敏感查询，确认web.fetch=http且禁takeover/抓取/research；不能核接收方或成本就退原provider和手工检索，见 [Q06](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q06)。 |
 | [dsh-fund-research](#plugin-1339672104-root) | 采集中国公募基金公开数据，确定性计算指标并封存带数字回溯附录的版本化研究报告。 | 懂基金数据口径者可仅在副本工作区对一支固定离线样本试用，核对来源、日期/覆盖、关键指标和hash，停止于字段漂移、无法复算或状态异常。 |
 | [dsh-git-memory](#plugin-1339286962-root) | 为 DSH 提供本地 Git 长期记忆、有限检索与可恢复的记忆管理。 | [Q03](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q03) 在可丢弃仓库先试只读。 |
 | [dsh-hacker-news](#plugin-1211255316-plugins-hacker-news) | 为 DeepSeek Harness 提供 Hacker News 榜单、评论、搜索和用户信息工具。 | [Q04](../../plugins/heartleo--hn-cli--plugins-hacker-news/INSIGHT.md#research-q04) 仅用非敏感查询并检查截断，重要结论回原帖；网络或完整性不满足时停止。 |
@@ -848,6 +848,22 @@
 
 [查看完整分析](../../plugins/fnosp--fnos-dsh--plugins-dsh-failover-search-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334384058-root"></a>
+
+## [DSH Free Search](../../plugins/dddmuc--dsh-free-search/INSIGHT.md)
+
+[![GitHub ★ 1,069](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C069&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DDDMUC/dsh-free-search) [![npm 30d 110,276](https://img.shields.io/static/v1?label=npm+30d&message=110%2C276&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-free-search) [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-free-search)
+
+> **用途**：适合常用 DSH 查跨语言公开文档，且需要核对来源的开发者，见 [Q01](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q01)。
+
+> **亮点**：把引擎选择、失败分流和实际来源放进同一个 DSH 搜索接口，便于单源失败时继续定位文档，见 [Q01](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q01) 与 [Q02](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q02)。
+
+> **思考**：并发预算到期不能证明供应商停止计量。直连的地址校验也未自动应用到浏览器及外部提取，见 [Q02](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q02) 与 [Q03](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q03)。
+
+> **建议**：增加逐次尝试与终态轨迹，验证用户能否更快识别失败来源并避免无效重试，见 [Q05](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q05)。
+
+[查看完整分析](../../plugins/dddmuc--dsh-free-search/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1339669759-root"></a>
 
 ## [DSH Industry Research](../../plugins/perrylink--dsh-industry-research/INSIGHT.md)
@@ -1215,22 +1231,6 @@
 > **建议**：以仓库/包关联身份与显式分页/失败状态减少双计和假新鲜，反证及代价见[Q05](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q05)；真实路径写入仍需独立约束。
 
 [查看完整分析](../../plugins/863683348--dsh-feed/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1334384058-root"></a>
-
-## [dsh-free-search](../../plugins/dddmuc--dsh-free-search/INSIGHT.md)
-
-[![GitHub ★ 920](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=920&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DDDMUC/dsh-free-search) [![npm 30d 84,610](https://img.shields.io/static/v1?label=npm+30d&message=84%2C610&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-free-search) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-free-search)
-
-> **用途**：能核网页出处与接收方的DSH用户，隔离profile单明确来源非敏感查询，见 [Q01](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q01)/[Q06](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q06)。
-
-> **亮点**：把路由、失败分类/冷却、缓存、多源合并与body/snippet证据分层接进DSH，原索引/网页/云服务归上游，见 [Q02](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q02)-[Q03](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q03)。
-
-> **思考**：质量链可执行本机浏览器JS且no-sandbox；multi/研究预算不等所有在飞取消或现金硬cap，升级池参数在provider路径丢失；出处多非独立证据，见 [Q03](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q03)-[Q05](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q05)。
-
-> **建议**：共享真实外呼计数/取消上下文和待确认状态，与现deadline/race及固定单源比较；越界外呼/维护不降或误取消增加即否定，见 [Q07](../../plugins/dddmuc--dsh-free-search/INSIGHT.md#research-q07)。
-
-[查看完整分析](../../plugins/dddmuc--dsh-free-search/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339672104-root"></a>
 
@@ -2788,4 +2788,4 @@
 
 ## 更新时间
 
-2026-11-11
+2026-11-12

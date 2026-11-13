@@ -1,44 +1,65 @@
 {
     "repository": "DDDMUC/dsh-free-search",
     "repository_id": 1334384058,
-    "captured_at": "2026-11-06T06:50:45.128Z",
-    "window_start": "2026-10-07T06:50:45.128Z",
-    "stars": 920,
-    "pushed_at": "2026-11-05T10:46:07Z",
+    "captured_at": "2026-11-12T01:48:39.164Z",
+    "window_start": "2026-10-13T01:48:39.164Z",
+    "stars": 1069,
+    "pushed_at": "2026-11-11T13:02:24Z",
     "issues": {
-        "open": 6,
-        "closed": 68,
-        "created_30d": 31,
-        "closed_30d": 25,
-        "updated_30d": 31
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ADDDMUC%2Fdsh-free-search%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6BD8:141346:1EBF33F:6014C59:6AF51C54 and timestamp 2026-11-12 01:54:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ADDDMUC%2Fdsh-free-search%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6C38:590FF:2B6D204:884EB6A:6AF51C55 and timestamp 2026-11-12 01:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADDDMUC%2Fdsh-free-search%20is%3Aissue%20created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6C74:39E780:2ABFE52:8689EC8:6AF51C56 and timestamp 2026-11-12 01:54:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADDDMUC%2Fdsh-free-search%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6CBE:92F72:2C8318E:8BC3D25:6AF51C57 and timestamp 2026-11-12 01:54:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ADDDMUC%2Fdsh-free-search%20is%3Aissue%20updated%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6D08:6C706:143A982:3F64CA5:6AF51C58 and timestamp 2026-11-12 01:54:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-05T20:18:16.149Z",
+        "captured_at": "2026-11-11T17:47:29.947Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "8c8ed9c4c42472a9a84763db88e2f9ff9f9b7812",
-        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
-        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
+        "commit_sha": "a8cbab67eef7ecd342f726c8753eedae52b4a76f",
+        "blob_sha": "02aa9dc94320f57bb44f7f61909b2be832c4ef1c",
+        "errors_blob_sha": "fafbd22677e2d7abc8ce041be05fc26120fa5bce",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-free-search",
-        "captured_at": "2026-11-04T23:43:49.729Z",
-        "window_start": "2026-10-05",
-        "window_end": "2026-11-03",
-        "downloads_30d": 84610,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-free-search",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 110276,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-free-search",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-15T20:30:58.085Z",
-            "captured_at": "2026-11-04T23:43:49.729Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
             "source_url": "https://registry.npmjs.org/dsh-free-search",
             "error": null,
-            "latest_version": "0.9.31",
-            "latest_published_at": "2026-11-04T09:04:10.269Z",
+            "latest_version": "0.9.43",
+            "latest_published_at": "2026-11-11T13:04:40.134Z",
             "latest_error": null
         }
     }
