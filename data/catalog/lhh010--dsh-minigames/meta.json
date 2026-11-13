@@ -1,0 +1,36 @@
+{
+    "repository": "lhh010/dsh-minigames",
+    "repository_id": 1333130619,
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 37,
+    "pushed_at": "2026-11-12T17:35:54Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Alhh010%2Fdsh-minigames%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID B1CB:45B82:6B196C:711C56:6AF671E7 and timestamp 2026-11-13 02:11:52 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Alhh010%2Fdsh-minigames%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DDFC:69557:675D16:6D6113:6AF671EA and timestamp 2026-11-13 02:11:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1938d5c21ae7e2d3005d8c72f3f377a7e20bee3d",
+        "blob_sha": "bf9305ba5e910b8573bb211f43bae093dabf411d",
+        "errors_blob_sha": "d9a4c280ba6e66726956fb4bbcf566ae8615e632",
+        "latest_error": null
+    }
+}

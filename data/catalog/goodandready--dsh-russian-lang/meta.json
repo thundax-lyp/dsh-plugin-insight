@@ -1,57 +1,34 @@
 {
     "repository": "GooDAnDReaDY/dsh-russian-lang",
     "repository_id": 1343684581,
-    "captured_at": "2026-11-06T02:09:31.809Z",
-    "window_start": "2026-10-07T02:09:31.809Z",
-    "stars": 64,
-    "pushed_at": "2026-11-05T20:21:36Z",
+    "captured_at": "2026-11-13T02:05:03.217Z",
+    "window_start": "2026-10-14T02:05:03.217Z",
+    "stars": 73,
+    "pushed_at": "2026-11-10T11:33:08Z",
     "issues": {
-        "open": 0,
-        "closed": 23,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 1,
+        "closed": 24,
+        "created_30d": 19,
+        "closed_30d": 19,
+        "updated_30d": 20
     },
-    "errors": [
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AGooDAnDReaDY%2Fdsh-russian-lang%20is%3Aissue%20created%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2B68:1A2EF4:28EFE7:2C03E3:6AED3752 and timestamp 2026-11-06 02:11:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AGooDAnDReaDY%2Fdsh-russian-lang%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C10:3676C7:299EC2:2CB1E3:6AED3753 and timestamp 2026-11-06 02:11:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3AGooDAnDReaDY%2Fdsh-russian-lang%20is%3Aissue%20updated%3A2026-10-07T02%3A09%3A31.809Z..2026-11-06T02%3A09%3A31.809Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2C72:E36CF:28AC7C:2BC0D6:6AED3754 and timestamp 2026-11-06 02:11:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-06T01:49:24.950Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "509ba38450f28965edc94686c870ba8c8d4692c4",
-        "blob_sha": "556d8561231797c17eeecadccb1d0d198d69d0a4",
-        "errors_blob_sha": "64abda2f24289075970ca7e5ea7016d06a7d7bdb",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "@goodandready/dsh-russian-lang",
-        "captured_at": "2026-11-05T17:26:49.018Z",
-        "window_start": "2026-10-06",
-        "window_end": "2026-11-04",
-        "downloads_30d": 12751,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-06:2026-11-04/%40goodandready%2Fdsh-russian-lang",
+        "captured_at": "2026-11-12T19:58:57.468Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 15231,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/%40goodandready%2Fdsh-russian-lang",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-23T11:17:07.540Z",
-            "captured_at": "2026-11-05T17:26:49.018Z",
+            "captured_at": "2026-11-12T19:58:57.468Z",
             "source_url": "https://registry.npmjs.org/%40goodandready%2Fdsh-russian-lang",
             "error": null,
-            "latest_version": "0.4.21",
-            "latest_published_at": "2026-11-04T22:07:54.424Z",
+            "latest_version": "0.4.26",
+            "latest_published_at": "2026-11-10T11:35:32.024Z",
             "latest_error": null
         }
     }

@@ -55,6 +55,7 @@
 | [dsh-share](#plugin-1332051085-root) | 在 DSH Web 选择单轮或多轮问答，导出 PNG、Markdown 或 HTML，并支持分页图片打包。 | 先在独立 Web profile 用合成会话验证 Markdown 和 HTML，再试长图分页。 |
 | [dsh-sticker-pack](#plugin-1418769012-root) | 为DSH回复提供远端图册/概率选图、Web链接与微信文件副本；真正显示/发送及总等待需验。 | 观察，先修/验设置/预算/字段与可信图册Web显示，再决定是否值得试用；任何误图、慢回复、误改或停不住下载先查在途后退回简单方式，见[Q06](../../plugins/5v1a-afk--dsh-sticker-pack/INSIGHT.md#research-q06)。 |
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
+| [dsh-tavern](#plugin-1335599084-root) | 管理角色卡、世界书和预设，在 DSH 会话中组织角色扮演与故事续写。 | [Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 先用虚构材料比较原生预设。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-vision](#plugin-1333755444-root) | 原生视觉透传，文本主模型经云或OCR观察桥接图片。 | [Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 固定测试图对照两阶段结果再日用。 |
@@ -775,6 +776,22 @@
 
 [查看完整分析](../../plugins/439436269-ctrl--dsh-stl-preview/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335599084-root"></a>
+
+## [dsh-tavern](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md)
+
+[![GitHub ★ 37](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=37&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/chen731215-dev/dsh-tavern) [![npm 30d 10,619](https://img.shields.io/static/v1?label=npm+30d&message=10%2C619&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tavern) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-tavern)
+
+> **用途**：在 DSH 写连载故事的用户，需要跨会话保持角色设定和世界规则，并可核对历史。
+
+> **亮点**：[Q01](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q01) 提供按会话装配角色与世界书的入口，并支持关键词条件减少无关词条。[Q02](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q02) 的总结和关系记录可辅助续写，需另确认会话与外发范围。
+
+> **思考**：[Q02](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q02) 的自动总结跨异步使用可变会话状态，[Q03](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q03) 的主动编辑会重写宿主历史且备份失败后仍写入。真实项目采用前应分别验证。
+
+> **建议**：[Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 提出显示本轮词条、触发词和会话来源，与当前配置比较提示长度、错配和排障成本。
+
+[查看完整分析](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1204369117-packages-dsh-tongflow"></a>
 
 ## [dsh-tongflow](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md)
@@ -1275,4 +1292,4 @@
 
 ## 更新时间
 
-2026-11-12
+2026-11-13
