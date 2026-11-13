@@ -1,0 +1,45 @@
+{
+    "repository": "LittleBlackTong/dsh-plugin-memory",
+    "repository_id": 1338123290,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 35,
+    "pushed_at": "2026-11-11T16:18:39Z",
+    "issues": {
+        "open": 1,
+        "closed": 5,
+        "created_30d": 6,
+        "closed_30d": 5,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T02:28:19.525Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-memory",
+        "captured_at": "2026-11-13T01:52:09.761Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 40221,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-plugin-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-18T08:18:36.794Z",
+            "captured_at": "2026-11-13T01:52:09.761Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-memory",
+            "error": null,
+            "latest_version": "0.19.5",
+            "latest_published_at": "2026-11-11T16:00:56.100Z",
+            "latest_error": null
+        }
+    }
+}

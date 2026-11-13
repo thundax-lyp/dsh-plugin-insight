@@ -1,0 +1,66 @@
+{
+    "repository": "STARDUSTLC666/dsh-hyperframes",
+    "repository_id": 1334554606,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 34,
+    "pushed_at": "2026-11-04T13:10:42Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3ASTARDUSTLC666%2Fdsh-hyperframes%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD6A:27E296:A48D32:AEB87D:6AF6BC64 and timestamp 2026-11-13 07:29:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3ASTARDUSTLC666%2Fdsh-hyperframes%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DDCA:144713:A4C535:AEF20D:6AF6BC65 and timestamp 2026-11-13 07:29:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASTARDUSTLC666%2Fdsh-hyperframes%20is%3Aissue%20created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE90:3DE5D:A7F9C5:B22275:6AF6BC68 and timestamp 2026-11-13 07:29:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASTARDUSTLC666%2Fdsh-hyperframes%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF0E:28CAA0:A35BF8:AD84F7:6AF6BC6A and timestamp 2026-11-13 07:29:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ASTARDUSTLC666%2Fdsh-hyperframes%20is%3Aissue%20updated%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF82:1251DF:A1722D:AB99B0:6AF6BC6C and timestamp 2026-11-13 07:29:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-hyperframes",
+        "captured_at": "2026-11-13T01:52:09.761Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 12879,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-hyperframes",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T20:42:53.748Z",
+            "captured_at": "2026-11-13T01:52:09.761Z",
+            "source_url": "https://registry.npmjs.org/dsh-hyperframes",
+            "error": null,
+            "latest_version": "0.11.5",
+            "latest_published_at": "2026-11-04T13:13:43.317Z",
+            "latest_error": null
+        }
+    }
+}

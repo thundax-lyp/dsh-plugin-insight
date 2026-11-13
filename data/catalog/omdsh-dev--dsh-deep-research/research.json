@@ -1,0 +1,448 @@
+{
+    "schema_version": 4,
+    "id": "4e88e7b2db7c86f0dcd992add57890f1",
+    "identity": "github:1324772199:root",
+    "slug": "omdsh-dev--dsh-deep-research",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1324772199:root",
+            "repository_id": 1324772199,
+            "component_id": "root",
+            "repository": "omdsh-dev/dsh-deep-research",
+            "path": "",
+            "aliases": [],
+            "name": "dsh-deep-research",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "research-knowledge",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "b6f81110c39a30a30f629cbf98610581467117c23e96ab4d615d4851bffcff7c",
+                "code": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                "maintenance": "fa890135754f5f6ba5dff3e6a701b2a527ee7d8ab5b589344ebc3e8e28c062ee"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1324772199-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "891b3e37d0a05ee0dd11d748a75895803681f42c",
+                    "retrieved_at": "2026-11-13T07:41:30.556Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "2026-11-13-02-github-1324772199-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:41:30.556Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1324772199-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-deep-research",
+                            "commit": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                            "path": "README.md",
+                            "content_sha256": "5ecd44e17329f58aeb20bb7439aaca946d71194042b15c7c974da82228c03a32"
+                        }
+                    ],
+                    "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                    "captured_at": "2026-11-13T07:41:30.556Z",
+                    "summary": "基于 DeepSeek Harness 工作流编排子题研究、补证、综合报告和可选审阅。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-deep-research/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1324772199-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-deep-research",
+                            "commit": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                            "path": "package.json",
+                            "content_sha256": "fc971b62f49f121baf213cd8fe5e7f22ce02da683597dbc42f54a7d706c26a36"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-deep-research",
+                            "commit": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "659df15624a63b64d048f170b87943e7ed3fc52270e3897614a00bb7feeee6d0"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-deep-research",
+                            "commit": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                            "path": "lib/types/index.js",
+                            "content_sha256": "a27cc22882a3577d8e4d6e169b4599fb7d665af6b8f01abdd0dfbdf681406db2"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-deep-research",
+                            "commit": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                            "path": "README.md",
+                            "content_sha256": "5ecd44e17329f58aeb20bb7439aaca946d71194042b15c7c974da82228c03a32"
+                        }
+                    ],
+                    "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                    "captured_at": "2026-11-13T07:41:30.556Z",
+                    "summary": "核查 package.json、cordis.patch.yml、lib/types/index.js、README.md；deep_research 把固定脚本、父 Agent 与结构化任务参数提交给 DSH 工作流，按优先缺口安排后续批次。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-deep-research/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定包、真实 lib 工作流脚本和工具回执；未执行目标代码、安装、模型或网络取证。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要围绕明确决策问题搜集公开来源的研究人员，可用既有问题清单核对覆盖与引用。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "deep_research 把固定脚本、父 Agent 与结构化任务参数提交给 DSH 工作流，按优先缺口安排后续批次。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定包、真实 lib 工作流脚本和工具回执；未执行目标代码、安装、模型或网络取证。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定私有包 0.1.0 的默认入口为 lib/types/index.js，README 的源码入口说明与该提交的包声明不一致。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools、workflows 和调用 Agent | 是 | 注册及提交工作流 | 回到手动研究 |\n| 模型及来源访问能力 | 取证必需 | 支持各子题搜索与复核 | 用公开可达来源观察 |\n| 明确题单和单轮预算 | 本建议要求 | 限制漏题与成本 | 保留逐题验收 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主、模型和网络条件，费用未知 | 选择模型与工作流并准备题单 | 兼容未复现 |\n| 持续 | 多 Agent 调用和搜索，单位费用未知 | 复核来源和题目覆盖 | 总工作量与成功率未知 |\n| 失败恢复 | 重跑与补证开销未知 | 补回失败或未处理项 | 取消及部分结果待验 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 在隔离 profile 小范围观察，按 [Q02](#research-q02) 逐题核对覆盖。不能复核来源时保留人工研究。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多题调度 | 按并发和轮次处理 | 真实覆盖及吞吐 |\n| 缺口跟进 | 模型报出的高优先级缺口入队 | 是否识别关键缺口 |\n| 审阅 | 可附独立审查意见 | 纠错和漏判率 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 的静态脚本与结构化参数使调用边界较清楚；[Q02](#research-q02) 的回执没带未处理队列。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 的队列把研究、再派高优先级缺口和审阅组织到一个工具回执中。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 的轮次上限可能让待处理题退出队列且不出现在计数里；工具成功不能用作覆盖验收。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提议返回逐题覆盖及停止原因，以容量超限和来源失败样本验证能否减少漏判。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1324772199:root",
+                            "area": "code",
+                            "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:41:30.556Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:41:30.556Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                "reviewed_at": "2026-11-13T07:41:30.556Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1324772199:root",
+                        "area": "code",
+                        "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 18,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 的自适应补证相对固定多步提示形成实质新颖性和机制，代理与宿主能力为上游。队列可迁移，单回执简化部分操作；[Q02](#research-q02) 的残余队列不透明限制强度。",
+                    "basis": "interpretation",
+                    "score": 51,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 18,
+                        "delivery": 15,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 将规划、研究及补证派发合并，流程与可交付报告有实质变化。已有 DSH 的研究人员更易调度，触达小幅；节省手工编排可能增加模型调用，成本改动仍有限。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1324772199-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "需要为具体决策收集公开证据的 DSH 用户，可以先用少量有已知答案的题观察 deep_research 的回执。相比手动逐项分派，脚本会在轮次内自动追高优先级缺口并附审查意见。若无法逐题核对覆盖或引用，继续使用原有研究清单和人工验收。",
+                "criteria": {
+                    "scenario": {
+                        "score": 23,
+                        "rationale": "[Q01](#research-q01) lib/types/index.js 253–284 行把明确重复的多题分派和补证流程接入工具，超出一般潜在人群；没有需求直接样本，不到充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 的并行队列超过界面包装，[Q02](#research-q02) 的漏题边界限制结果价值，未到较充分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) lib/types/index.js 255–307、492–508 行直接支持核心机制与失败边界，超过入口；未实际运行宿主和真实研究。"
+                    },
+                    "cost": {
+                        "score": 5,
+                        "rationale": "[Q03](#research-q03) lib/types/index.js 361–374 行与包声明识别多模型、工作流和复核负担，有手工退路；目前预算行为、证据复查代价与终止未知，未到可控档。"
+                    }
+                },
+                "score": 54,
+                "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                "reviewed_at": "2026-11-13T07:41:30.556Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1324772199-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1324772199:root",
+                        "area": "code",
+                        "fingerprint": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1324772199:root",
+            "repository": "omdsh-dev/dsh-deep-research",
+            "path": "",
+            "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+            "fingerprints": {
+                "directory": "b6f81110c39a30a30f629cbf98610581467117c23e96ab4d615d4851bffcff7c",
+                "code": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+                "maintenance": "fa890135754f5f6ba5dff3e6a701b2a527ee7d8ab5b589344ebc3e8e28c062ee"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "7eebbb00667da459133017fa7a293046d1830f723c2432883162729794f7ad33"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-deep-research/meta.json",
+        "publication.summaries": {
+            "text": "基于 DeepSeek Harness 工作流编排子题研究、补证、综合报告和可选审阅。",
+            "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+            "source_url": "https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+            "items": {
+                "模型工具": "注册 deep_research，安排多轮公开研究、综合及可选审阅。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 研究编排 | 按题并行取证和追缺口 | 需 workflow 和模型；受轮次限制 |\n| 报告与审阅 | 生成报告和可选审阅意见 | 应独立核查题目与引用 |"
+        },
+        "publication.advice": {
+            "revision": "c0b329e02cd0195f810a7c3608cb58701a7fe0f1",
+            "text": "[Q03](#research-q03) 在隔离 profile 小范围观察，按 [Q02](#research-q02) 逐题核对覆盖。不能复核来源时保留人工研究。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-deep-research",
+        "reports": "# dsh-deep-research\n\n> 基于 DeepSeek Harness 工作流编排子题研究、补证、综合报告和可选审阅。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-deep-research](https://github.com/omdsh-dev/dsh-deep-research)\n- **版本号**：0.1.0（[固定提交 c0b329e02cd0195f810a7c3608cb58701a7fe0f1](https://github.com/omdsh-dev/dsh-deep-research/tree/c0b329e02cd0195f810a7c3608cb58701a7fe0f1)）\n- **版本日期**：2026-08-12（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持工具挂载和脚本编排。来源准确率、覆盖、宿主装载及成本待验。\n\n## 洞察短评\n\n- **用途**：需要围绕明确决策问题搜集公开来源的研究人员，可用既有问题清单核对覆盖与引用。\n- **亮点**：[Q01](#research-q01) 的队列把研究、再派高优先级缺口和审阅组织到一个工具回执中。\n- **思考**：[Q02](#research-q02) 的轮次上限可能让待处理题退出队列且不出现在计数里；工具成功不能用作覆盖验收。\n- **建议**：[Q03](#research-q03) 提议返回逐题覆盖及停止原因，以容量超限和来源失败样本验证能否减少漏判。\n\n采用建议：[Q03](#research-q03) 在隔离 profile 小范围观察，按 [Q02](#research-q02) 逐题核对覆盖。不能复核来源时保留人工研究。\n\n## 核心贡献\n\n[Q01](#research-q01) 的队列把研究、再派高优先级缺口和审阅组织到一个工具回执中。\n\n## 关键质疑\n\n[Q02](#research-q02) 的轮次上限可能让待处理题退出队列且不出现在计数里；工具成功不能用作覆盖验收。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提议返回逐题覆盖及停止原因，以容量超限和来源失败样本验证能否减少漏判。\n\n隔离 profile 比较少题与超过容量的已知题单，对照来源失败、停止状态、回执覆盖和禁用行为。\n\n## 场景与替代办法\n\n需要围绕明确决策问题搜集公开来源的研究人员，可用既有问题清单核对覆盖与引用。\n\n用会话搜索工具逐题研究或手动并行，再由研究者检查未处理问题和引用。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools、workflows 和调用 Agent | 是 | 注册及提交工作流 | 回到手动研究 |\n| 模型及来源访问能力 | 取证必需 | 支持各子题搜索与复核 | 用公开可达来源观察 |\n| 明确题单和单轮预算 | 本建议要求 | 限制漏题与成本 | 保留逐题验收 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户检查 profile 并固定公开问题 | 确认工具权限与题目总数 |\n| 观察 | 触发小范围研究 | 对比题单、报告和引用 |\n| 退出 | 未覆盖时停止依赖回执 | 回到手工逐题和现有搜索 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主、模型和网络条件，费用未知 | 选择模型与工作流并准备题单 | 兼容未复现 |\n| 持续 | 多 Agent 调用和搜索，单位费用未知 | 复核来源和题目覆盖 | 总工作量与成功率未知 |\n| 失败恢复 | 重跑与补证开销未知 | 补回失败或未处理项 | 取消及部分结果待验 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 多题调度 | 按并发和轮次处理 | 真实覆盖及吞吐 |\n| 缺口跟进 | 模型报出的高优先级缺口入队 | 是否识别关键缺口 |\n| 审阅 | 可附独立审查意见 | 纠错和漏判率 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：已有明确决策问题时，deep_research 能否让多子题研究、补证与审阅可控，怎样判断覆盖是否足够？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 一个研究问题如何进入 DSH 工作流并生成可读报告？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n研究人员可以提交主题和用途，或给出明确问题清单。工具要求有当前调用 Agent，校验 depth 后用固定脚本文本和结构化参数启动 ctx.workflows。脚本分批让 Agent 研究问题，收集报告的高优先级缺口并追加新题，再选择由综合 Agent 写报告，或保留按问题组织的证据中间结果。额外审阅会作为意见附到报告后。与逐一在对话中手派研究和反查缺口相比，预算内排队与重派机制由脚本执行；搜索、模型和工作流宿主都是外部能力。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:7-18](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/package.json#L7-L18)\n\n固定运行时默认导出为现有 lib/types/index.js。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n  \"main\": \"./lib/types/index.js\",\n  \"types\": \"./lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/types/index.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:31-44](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/package.json#L31-L44)\n\n工具与工作流依赖及 bundle 补丁声明。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n  \"license\": \"MIT\",\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-tools\": \"^0.0.1\",\n    \"@deepseek-ai/dsh-workflow\": \"^0.0.1\",\n    \"cordis\": \"^4.0.0-rc.7\"\n  },\n  \"devDependencies\": {\n    \"@types/node\": \"^22.20.0\",\n    \"typescript\": \"^6.0.3\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[cordis.patch.yml:6-8](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/cordis.patch.yml#L6-L8)\n\n按名称加载扩展包。\n\n```text\n- insert:\n    - id: dsh-deep-research\n      name: '@dsh-external/dsh-deep-research'\n```\n\n**依据 4 · 源码核查**：[lib/types/index.js:360-378](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L360-L378)\n\n实际注册 deep_research。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n/** Apply the plugin: register the `deep_research` tool on `ctx.tools`. */\nexport function apply(ctx, config = {}) {\n    const subagentProvider = config.subagentProvider ?? undefined;\n    const plannerModel = config.plannerModel ?? undefined;\n    const researcherModel = config.researcherModel ?? undefined;\n    const synthesizerModel = config.synthesizerModel ?? undefined;\n    const reviewerModel = config.reviewerModel ?? synthesizerModel;\n    // null/undefined both mean \"leave the engine default\" (old JS contract:\n    // positiveInt(..., undefined, ...) omitted the key — keep it omitted).\n    const maxTotalAgents = config.maxTotalAgents === undefined || config.maxTotalAgents === null\n        ? undefined\n        : positiveInt(config.maxTotalAgents, 0, 'maxTotalAgents');\n    const maxParallel = config.maxParallel === undefined\n        ? 4\n        : positiveInt(config.maxParallel, 4, 'maxParallel');\n    ctx.tools.register(defineTool({\n        name: 'deep_research',\n        description: '深度研究编排工具（Deep Research Orchestrator，基于 DSH 官方 workflow 引擎，按控制论与'\n            + '信息论设计的自适应流程）。当用户要求对复杂主题做深度研究/调研（需要多源信息搜集、'\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/types/index.js:431-460](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L431-L460)\n\n验证当前 Agent、深度并启动 workflows。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\n        async execute(args, exec) {\n            const parent = exec.agent;\n            if (!parent) {\n                throw new Error('deep_research requires a calling agent (exec.agent was undefined)');\n            }\n            const topic = String(args.topic).trim();\n            if (topic.length === 0)\n                throw new Error('deep_research: topic must not be empty');\n            const purpose = typeof args.purpose === 'string' && args.purpose.trim().length > 0\n                ? args.purpose.trim()\n                : undefined;\n            const depth = args.depth === undefined ? 2 : positiveInt(args.depth, 2, 'depth');\n            if (depth > 3) {\n                throw new Error('dsh-deep-research: depth must be 1, 2 or 3 (1=初步，2=深入，3=穷尽)');\n            }\n            const synthesize = args.synthesize !== false;\n            const review = args.review === true;\n            const questions = parseQuestionList(args.questions);\n            const models = {};\n            if (plannerModel !== undefined)\n                models.planner = plannerModel;\n            if (researcherModel !== undefined)\n                models.researcher = researcherModel;\n            if (synthesizerModel !== undefined)\n                models.synthesizer = synthesizerModel;\n            if (reviewerModel !== undefined)\n                models.reviewer = reviewerModel;\n            const run = ctx.workflows.start({\n                script: SCRIPT,\n                meta: {\n```\n\n</details>\n\n**依据 6 · 源码核查**：[lib/types/index.js:253-284](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L253-L284)\n\n批次、并行执行、收集缺口及队列更新。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\nconst rounds = []\nlet pending = subs.slice()\nlet round = 0\nwhile (pending.length > 0 && round < depth + 1) {\n  round += 1\n  phase('研究·第' + round + '轮')\n  const batch = pending.slice(0, maxParallel)\n  const found = await parallel(batch.map((q, i) => () => agent(researcherPrompt(q, round, round > 1), {\n    label: '研究' + (i + 1) + '·第' + round + '轮',\n    phase: '研究·第' + round + '轮',\n    schema: RESEARCHER_SCHEMA,\n    ...(M.researcher ? { model: M.researcher } : {}),\n  })))\n  batch.forEach((q, i) => {\n    if (found[i]) results[q.question] = found[i]\n  })\n  rounds.push(batch.map((q, i) => ({ q, f: found[i] })))\n\n  // 收敛评估：收集本轮所有 high-priority 缺口 → 下一轮动态补充。\n  const leads = []\n  const seen = new Set()\n  for (const item of batch) {\n    const f = results[item.question]\n    if (!f || !Array.isArray(f.gaps)) continue\n    for (const g of f.gaps) {\n      if (g.priority !== 'high') continue\n      if (seen.has(g.aspect) || leads.length >= maxParallel) continue\n      seen.add(g.aspect)\n      leads.push({ question: g.aspect, followUp: true })\n    }\n  }\n  pending = [...pending.slice(maxParallel), ...leads]\n```\n\n</details>\n\n**依据 7 · 源码核查**：[lib/types/index.js:290-311](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L290-L311)\n\n按实际完成批次形成中间结果。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nconst ordered = []\nconst seenQ = new Set()\nfor (const batch of rounds) {\n  for (const { q, f } of batch) {\n    if (seenQ.has(q.question)) continue\n    seenQ.add(q.question)\n    ordered.push({ q, f })\n  }\n}\nconst parts = []\nlet okCount = 0\nfor (const { q, f } of ordered) {\n  if (f) okCount += 1\n  parts.push(f ? renderFindings(q, f) : '## ' + q.question + '\\n\\n> 该子问题研究失败（子代理未返回结构化证据）')\n}\nconst totalRounds = rounds.length\nconst intermediate = '# ' + topic + ' — 深度研究中间结果（证据状态）\\n\\n> 子问题 ' + ordered.length\n  + ' 个，完成 ' + okCount + ' 个，研究轮次 ' + totalRounds + ' 轮。'\n  + (planText ? '\\n\\n' + planText : '') + '\\n\\n' + parts.join('\\n\\n---\\n\\n')\n\nlet report = intermediate\nif (synthesize) {\n```\n\n</details>\n\n**依据 8 · 源码核查**：[lib/types/index.js:477-495](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L477-L495)\n\n传父 Agent 与信号并等待工作流结果。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n                args: {\n                    topic,\n                    ...(purpose !== undefined ? { purpose } : {}),\n                    ...(questions.length > 0 ? { questions } : {}),\n                    depth,\n                    synthesize,\n                    review,\n                    maxParallel,\n                    ...(Object.keys(models).length > 0 ? { models } : {}),\n                },\n                ...(subagentProvider !== undefined ? { subagentProvider } : {}),\n                ...(maxTotalAgents !== undefined ? { maxTotalAgents } : {}),\n                parent,\n                signal: exec.signal,\n            });\n            const result = await run.result;\n            await run.dispose();\n            if (result.stopReason !== 'completed') {\n                throw new Error(`deep_research: workflow run ${result.stopReason}${result.error !== undefined ? ` (${result.error})` : ''}`);\n```\n\n</details>\n\n#### 缺口\n\n- 目标 profile 的 web_search/web_fetch 和模型权限\n  **影响**：影响真实取证和工具可用性\n  **进一步探讨**：在隔离 profile 使用公开主题核对各 Agent 的工具和可点击原件\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 为什么工作流 completed 仍可能漏掉原始问题？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n循环最多 depth+1 轮，每轮最多 maxParallel 项，默认并发 4。队列优先保留上一轮未处理项，再追加该轮模型标记为高优先级的缺口。若 depth=1 且初始问题数大于 8，剩余题在两轮后仍可能留在 pending。报告和失败计数从 rounds 中实际尝试的去重问题得到，不把残余 pending 纳入；工具只要求工作流 stopReason 为 completed 且有 report，最终 ok: true 只回报告和可选审查。审查调用可以抽查来源，意见仍独立输出，未自动纠正报告。这条实现依赖模型按优先级报缺口，固定代码没有测量信息增益。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/types/index.js:255-287](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L255-L287)\n\n固定轮次上限和待处理队列。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\nlet round = 0\nwhile (pending.length > 0 && round < depth + 1) {\n  round += 1\n  phase('研究·第' + round + '轮')\n  const batch = pending.slice(0, maxParallel)\n  const found = await parallel(batch.map((q, i) => () => agent(researcherPrompt(q, round, round > 1), {\n    label: '研究' + (i + 1) + '·第' + round + '轮',\n    phase: '研究·第' + round + '轮',\n    schema: RESEARCHER_SCHEMA,\n    ...(M.researcher ? { model: M.researcher } : {}),\n  })))\n  batch.forEach((q, i) => {\n    if (found[i]) results[q.question] = found[i]\n  })\n  rounds.push(batch.map((q, i) => ({ q, f: found[i] })))\n\n  // 收敛评估：收集本轮所有 high-priority 缺口 → 下一轮动态补充。\n  const leads = []\n  const seen = new Set()\n  for (const item of batch) {\n    const f = results[item.question]\n    if (!f || !Array.isArray(f.gaps)) continue\n    for (const g of f.gaps) {\n      if (g.priority !== 'high') continue\n      if (seen.has(g.aspect) || leads.length >= maxParallel) continue\n      seen.add(g.aspect)\n      leads.push({ question: g.aspect, followUp: true })\n    }\n  }\n  pending = [...pending.slice(maxParallel), ...leads]\n  // 队列语义：本轮未处理的子问题（超出 maxParallel 的部分）留在队首，\n  // 下一轮继续研究；high-priority 缺口作为补充问题排在它们之后。\n  // 边际信息增益收敛：本轮没有产出任何新的 high-priority 缺口 → 循环自然结束。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/types/index.js:290-307](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L290-L307)\n\n报告只计尝试过的题。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst ordered = []\nconst seenQ = new Set()\nfor (const batch of rounds) {\n  for (const { q, f } of batch) {\n    if (seenQ.has(q.question)) continue\n    seenQ.add(q.question)\n    ordered.push({ q, f })\n  }\n}\nconst parts = []\nlet okCount = 0\nfor (const { q, f } of ordered) {\n  if (f) okCount += 1\n  parts.push(f ? renderFindings(q, f) : '## ' + q.question + '\\n\\n> 该子问题研究失败（子代理未返回结构化证据）')\n}\nconst totalRounds = rounds.length\nconst intermediate = '# ' + topic + ' — 深度研究中间结果（证据状态）\\n\\n> 子问题 ' + ordered.length\n  + ' 个，完成 ' + okCount + ' 个，研究轮次 ' + totalRounds + ' 轮。'\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/types/index.js:329-358](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L329-L358)\n\n可选审阅及脚本计数。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nlet reviewText = null\nif (review) {\n  phase('审查')\n  reviewText = await agent(\n    '你是研究审阅代理。你的角色是信道纠错：对报告做对抗性审查，找出证据链中的噪声与错误。若你的工具集中有 web_fetch，可用它抽查可疑来源 URL 是否真实可达、内容是否支撑引用；没有则依据 web_search 可得信息评估来源可信度。\\n\\n'\n    + '审查维度：\\n'\n    + '1. 引用纠错：URL 无法访问或与结论无关？引用是否支撑对应观点？（幻觉来源 = 信道噪声，必须标出）\\n'\n    + '2. 覆盖度审计：对照规划阶段声明的信息维度，哪些维度证据不足或完全缺失？（Ashby 必要多样性：维度缺失 = 控制器多样性不足 = 盲区）\\n'\n    + '3. 信息矛盾：不同来源冲突处是否被标注并保留？\\n'\n    + '4. 时效性：关键数据是否过时？\\n'\n    + '5. 过度自信：是否有低置信结论被表述为确定事实？\\n'\n    + (planText ? '\\n规划阶段声明：\\n' + planText : '')\n    + '\\n\\n只输出审查意见（Markdown，中文），不要改写报告本身：\\n## 审查意见\\n### 可疑来源（如有）\\n### 覆盖盲区（如有）\\n### 信息矛盾\\n### 过度自信项\\n### 需要补充研究的最高优先级缺口（如有，供下一步定向研究）\\n### 总体评估与修正建议\\n\\n报告主题：' + topic + '\\n\\n以下是待审查报告：\\n\\n' + report,\n    {\n      label: '审查',\n      phase: '审查',\n      ...(M.reviewer ? { model: M.reviewer } : {}),\n    },\n  )\n  if (reviewText) reviewText = '## 对抗性审查意见\\n\\n' + reviewText\n}\n\nreturn {\n  report,\n  review: reviewText,\n  rounds: totalRounds,\n  subquestions: ordered.length,\n  completed: okCount,\n  failed: ordered.length - okCount,\n}\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/types/index.js:492-508](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L492-L508)\n\n工具成功门槛和输出丢弃计数。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n            const result = await run.result;\n            await run.dispose();\n            if (result.stopReason !== 'completed') {\n                throw new Error(`deep_research: workflow run ${result.stopReason}${result.error !== undefined ? ` (${result.error})` : ''}`);\n            }\n            const raw = result.value;\n            if (raw === null || typeof raw !== 'object') {\n                throw new Error('deep_research: workflow returned no report');\n            }\n            const record = raw;\n            if (typeof record.report !== 'string') {\n                throw new Error('deep_research: workflow returned no report');\n            }\n            return {\n                ok: true,\n                report: record.report,\n                ...(typeof record.review === 'string' ? { review: record.review } : {}),\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎么选预算和验收方式，什么改动可减少把部分结果当全覆盖？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n先确认固定包的默认 lib 入口可加载，兼容 profile 启用 tools、workflows、可用模型和公共网络取证能力。作者 README 声称源码入口，固定 package.json 实际指向现成 lib，应以目标包内容复查。试用只给少量公开、有已知答案的问题，设清楚并发和深度，对照原始题、来源可达性、引用支持和人工补证耗时。maxTotalAgents 为空会交回工作流默认，不能据此承诺预算；费用按所用模型和请求计，当前未测。可检验的改动是返回未处理、失败、待补证和已完成的题列表及停止原因。用超过容量和故意断开来源的对照检查用户能否更快识别缺题，同时保留人工逐题核查作为退路。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:32-43](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/README.md#L32-L43)\n\n作者声称源码入口，与固定包默认导出存在差异。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n````text\n## 开发与检查\n\n```bash\npnpm install        # 仅 typescript/@types/node（typecheck 用）\npnpm run typecheck  # tsc -b，类型从 sibling deepseek-harness checkout 解析\n```\n\n源码即运行时：包入口直接指向 `src/index.ts`，无构建步骤。profile 安装的副本位于\nnode_modules 下，由 dsh 源码启动器的 tsx hook 加载（Node 原生类型剥离拒绝\nnode_modules 内的文件）；源码 checkout 在 node_modules 外直跑时也可用 Node ≥22.18\n原生剥离。要求 erasable-only TS 语法（无 enum/命名空间等），\n`node --test`/`pnpm typecheck` 会挡住不可移植写法。\n````\n\n</details>\n\n**依据 2 · 源码核查**：[package.json:7-17](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/package.json#L7-L17)\n\n实际包入口与 Node 版本。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n  \"main\": \"./lib/types/index.js\",\n  \"types\": \"./lib/types/index.d.ts\",\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/types/index.js\"\n    },\n    \"./package.json\": \"./package.json\"\n  },\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/types/index.js:361-374](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L361-L374)\n\n子代理模型与预算配置。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\nexport function apply(ctx, config = {}) {\n    const subagentProvider = config.subagentProvider ?? undefined;\n    const plannerModel = config.plannerModel ?? undefined;\n    const researcherModel = config.researcherModel ?? undefined;\n    const synthesizerModel = config.synthesizerModel ?? undefined;\n    const reviewerModel = config.reviewerModel ?? synthesizerModel;\n    // null/undefined both mean \"leave the engine default\" (old JS contract:\n    // positiveInt(..., undefined, ...) omitted the key — keep it omitted).\n    const maxTotalAgents = config.maxTotalAgents === undefined || config.maxTotalAgents === null\n        ? undefined\n        : positiveInt(config.maxTotalAgents, 0, 'maxTotalAgents');\n    const maxParallel = config.maxParallel === undefined\n        ? 4\n        : positiveInt(config.maxParallel, 4, 'maxParallel');\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/types/index.js:477-490](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L477-L490)\n\n可选参数透传，宿主负责执行。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n                args: {\n                    topic,\n                    ...(purpose !== undefined ? { purpose } : {}),\n                    ...(questions.length > 0 ? { questions } : {}),\n                    depth,\n                    synthesize,\n                    review,\n                    maxParallel,\n                    ...(Object.keys(models).length > 0 ? { models } : {}),\n                },\n                ...(subagentProvider !== undefined ? { subagentProvider } : {}),\n                ...(maxTotalAgents !== undefined ? { maxTotalAgents } : {}),\n                parent,\n                signal: exec.signal,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[lib/types/index.js:350-358](https://github.com/omdsh-dev/dsh-deep-research/blob/c0b329e02cd0195f810a7c3608cb58701a7fe0f1/lib/types/index.js#L350-L358)\n\n脚本已有统计但无完整待处理列表。\n\n```text\n\nreturn {\n  report,\n  review: reviewText,\n  rounds: totalRounds,\n  subquestions: ordered.length,\n  completed: okCount,\n  failed: ordered.length - okCount,\n}\n```\n\n#### 缺口\n\n- 宿主是否支持实际版本及模型费用与终止行为\n  **影响**：限制当前采用和成本判断\n  **进一步探讨**：在隔离 profile 逐题核对任务清单及成本账单，禁用后恢复手工研究\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f32a36c7756f63fb58aac6de13393ede5f14a5e6c578ce41dad1680126cd46c0。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 1 | 532 | 437 | 85 | — |\n| .md | source | 1 | 123 | — | — | 1667 |\n| .ts | source | 1 | 559 | 442 | 90 | — |\n| .mjs | test | 1 | 605 | 504 | 68 | — |\n\n排除 1 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 研究编排 | 按题并行取证和追缺口 | 需 workflow 和模型；受轮次限制 |\n| 报告与审阅 | 生成报告和可选审阅意见 | 应独立核查题目与引用 |\n\n## 工程亮点\n\n[Q01](#research-q01) 的静态脚本与结构化参数使调用边界较清楚；[Q02](#research-q02) 的回执没带未处理队列。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、lib/types/index.js、README.md 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定包、真实 lib 工作流脚本和工具回执；未执行目标代码、安装、模型或网络取证。\n- 下一步：隔离 profile 比较少题与超过容量的已知题单，对照来源失败、停止状态、回执覆盖和禁用行为。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-deep-research/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-deep-research\",\n  \"revision\": \"c0b329e02cd0195f810a7c3608cb58701a7fe0f1\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"cordis.patch.yml\",\n    \"lib/types/index.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"已有明确决策问题时，deep_research 能否让多子题研究、补证与审阅可控，怎样判断覆盖是否足够？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"一个研究问题如何进入 DSH 工作流并生成可读报告？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"研究人员可以提交主题和用途，或给出明确问题清单。工具要求有当前调用 Agent，校验 depth 后用固定脚本文本和结构化参数启动 ctx.workflows。脚本分批让 Agent 研究问题，收集报告的高优先级缺口并追加新题，再选择由综合 Agent 写报告，或保留按问题组织的证据中间结果。额外审阅会作为意见附到报告后。与逐一在对话中手派研究和反查缺口相比，预算内排队与重派机制由脚本执行；搜索、模型和工作流宿主都是外部能力。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 7,\n            \"line_end\": 18,\n            \"observation\": \"固定运行时默认导出为现有 lib/types/index.js。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 31,\n            \"line_end\": 44,\n            \"observation\": \"工具与工作流依赖及 bundle 补丁声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"cordis.patch.yml\",\n            \"line_start\": 6,\n            \"line_end\": 8,\n            \"observation\": \"按名称加载扩展包。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 360,\n            \"line_end\": 378,\n            \"observation\": \"实际注册 deep_research。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 431,\n            \"line_end\": 460,\n            \"observation\": \"验证当前 Agent、深度并启动 workflows。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 253,\n            \"line_end\": 284,\n            \"observation\": \"批次、并行执行、收集缺口及队列更新。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 290,\n            \"line_end\": 311,\n            \"observation\": \"按实际完成批次形成中间结果。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 477,\n            \"line_end\": 495,\n            \"observation\": \"传父 Agent 与信号并等待工作流结果。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"目标 profile 的 web_search/web_fetch 和模型权限\",\n            \"impact\": \"影响真实取证和工具可用性\",\n            \"next_step\": \"在隔离 profile 使用公开主题核对各 Agent 的工具和可点击原件\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"为什么工作流 completed 仍可能漏掉原始问题？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"循环最多 depth+1 轮，每轮最多 maxParallel 项，默认并发 4。队列优先保留上一轮未处理项，再追加该轮模型标记为高优先级的缺口。若 depth=1 且初始问题数大于 8，剩余题在两轮后仍可能留在 pending。报告和失败计数从 rounds 中实际尝试的去重问题得到，不把残余 pending 纳入；工具只要求工作流 stopReason 为 completed 且有 report，最终 ok: true 只回报告和可选审查。审查调用可以抽查来源，意见仍独立输出，未自动纠正报告。这条实现依赖模型按优先级报缺口，固定代码没有测量信息增益。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 255,\n            \"line_end\": 287,\n            \"observation\": \"固定轮次上限和待处理队列。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 290,\n            \"line_end\": 307,\n            \"observation\": \"报告只计尝试过的题。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 329,\n            \"line_end\": 358,\n            \"observation\": \"可选审阅及脚本计数。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 492,\n            \"line_end\": 508,\n            \"observation\": \"工具成功门槛和输出丢弃计数。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"怎么选预算和验收方式，什么改动可减少把部分结果当全覆盖？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"先确认固定包的默认 lib 入口可加载，兼容 profile 启用 tools、workflows、可用模型和公共网络取证能力。作者 README 声称源码入口，固定 package.json 实际指向现成 lib，应以目标包内容复查。试用只给少量公开、有已知答案的问题，设清楚并发和深度，对照原始题、来源可达性、引用支持和人工补证耗时。maxTotalAgents 为空会交回工作流默认，不能据此承诺预算；费用按所用模型和请求计，当前未测。可检验的改动是返回未处理、失败、待补证和已完成的题列表及停止原因。用超过容量和故意断开来源的对照检查用户能否更快识别缺题，同时保留人工逐题核查作为退路。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 32,\n            \"line_end\": 43,\n            \"observation\": \"作者声称源码入口，与固定包默认导出存在差异。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 7,\n            \"line_end\": 17,\n            \"observation\": \"实际包入口与 Node 版本。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 361,\n            \"line_end\": 374,\n            \"observation\": \"子代理模型与预算配置。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 477,\n            \"line_end\": 490,\n            \"observation\": \"可选参数透传，宿主负责执行。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/types/index.js\",\n            \"line_start\": 350,\n            \"line_end\": 358,\n            \"observation\": \"脚本已有统计但无完整待处理列表。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主是否支持实际版本及模型费用与终止行为\",\n            \"impact\": \"限制当前采用和成本判断\",\n            \"next_step\": \"在隔离 profile 逐题核对任务清单及成本账单，禁用后恢复手工研究\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# @dsh-external/dsh-deep-research\\n\\n把 deep-research 流程做成 **DSH 扩展插件**（plugin，与 skill 体系分开），\\n基于 **DSH 官方 workflow 引擎**（`ctx.workflows` / `@deepseek-ai/dsh-workflow-workerthread`）\\n实现，按 **控制论 + 信息论** 设计——不是固定提示词流水线，而是**活的、自适应的研究闭环**。\\n\\n## 理论 → 机制\\n\\n\\n| 理论                                      | 插件里的落地                                                                                                                                    |\\n| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |\\n| 控制论：参考信号校准（闭环控制错误目标 = 白费）               | 规划代理先定义**答案空间**（`scope`：研究支撑什么判断/决策）与每个子问题的**验收标准**（`acceptance`），再开始研究                                                                   |\\n| Ashby 必要多样性定律（控制器多样性 &lt; 系统多样性 ⇒ 必有盲区） | 规划代理枚举主题的**信息维度**，每个子问题映射一个维度，并输出**覆盖度自检** `coverage_gaps`                                                                                |\\n| 信息论：信息 = 不确定性的减少                        | 研究子代理维护三态证据 `confirmed / uncertain / gaps`——条件熵的工程表达；报告保留置信度与矛盾，不掩盖不确定性                                                                   |\\n| 信息论：边际信息增益（EIG）递减 ⇒ 无限搜索是错的             | 每个研究子代理：预测（针对哪个高熵点、预期新增什么）→ 行动（web_search/web_fetch）→ 更新证据 → **边际增益验证**；**连续一轮零增益即停** + 轮次硬上限                                             |\\n| 控制论：自适应控制（流程是活的，不是固定脚本）                 | 研究阶段是**闭环再规划**：第 1 轮并行研究全部子问题；每轮结束收集 high-priority 缺口 → **自动派发下一轮补充研究**；规划声明的\\\"盲区\\\"会被**定向侦察验证**（假设被实验检验而非静态接受）；简单主题一轮收敛，复杂主题自动扩展，直到边际增益 ≈ 0 |\\n| 信息论：率失真（给定\\\"率\\\"最小化失真）                     | 综合子代理把证据**有损压缩**为最终报告：只保留对结论有区分度的信息，决策有用性最大化                                                                                              |\\n| 信息论：信道冗余/纠错（对抗幻觉=噪声）                    | 可选**对抗性审查**子代理 = 奇偶校验：引用抽查（URL 可达性/支撑性）、覆盖度审计、矛盾与过度自信标注                                                                                   |\\n\\n\\n## 结构\\n\\n```\\ndsh-deep-research/\\n├── package.json    # @dsh-external/dsh-deep-research（声明 dsh.bundle.patch）\\n├── cordis.patch.yml  # bundle 补丁：按包名插入插件行\\n├── src/index.ts    # cordis 插件：注册 deep_research 工具，提交官方 workflow 脚本（原生 TS，零构建）\\n├── tsconfig.json   # typecheck 配置（project references 解析到 sibling deepseek-harness 源码）\\n└── README.md\\n```\\n\\n## 开发与检查\\n\\n```bash\\npnpm install        # 仅 typescript/@types/node（typecheck 用）\\npnpm run typecheck  # tsc -b，类型从 sibling deepseek-harness checkout 解析\\n```\\n\\n源码即运行时：包入口直接指向 `src/index.ts`，无构建步骤。profile 安装的副本位于\\nnode_modules 下，由 dsh 源码启动器的 tsx hook 加载（Node 原生类型剥离拒绝\\nnode_modules 内的文件）；源码 checkout 在 node_modules 外直跑时也可用 Node ≥22.18\\n原生剥离。要求 erasable-only TS 语法（无 enum/命名空间等），\\n`node --test`/`pnpm typecheck` 会挡住不可移植写法。\\n\\n## 安装与使用方式\\n\\n包声明了 `dsh.bundle.patch`（cordis.patch.yml），通过 `dsh plugin` 装进**任意** profile\\n（把 `<profile>` 换成 `tui` / `headless` / `web` 或自建 profile）：\\n\\n```bash\\ndsh plugin --profile <profile> add git+https://github.com/dsh-external/dsh-deep-research.git\\ndsh --profile <profile>        # 重启生效：工具 deep_research 随 profile 注入\\n```\\n\\n> 若 pnpm 把 https URL 重写成 git+ssh（本机全局 git `insteadof` 配置所致），用上面的\\n> `git+https://` 形式；`dsh plugin` 会提示需要 `allowBuilds` 时按提示在\\n> `$DSH_HOME/profiles/<name>/pnpm-workspace.yaml` 加一行即可。\\n\\n工具由模型按工具描述自动触发（深度研究/调研/多源信息综合分析/研究报告/文献搜集），\\n对话中直接说人话即可：\\n\\n- 「深度调研一下 MCP 生态现状，重点对比几家主流实现，出一份带引用的报告」\\n- 「按这份问题清单做研究：1. ... 2. ...」（已有清单 → 跳过自动拆解，直接并行研究）\\n- 「调研一下 A/B 方案，purpose 是决定我们选哪个」（用途越明确，答案空间越准）\\n- 复杂主题会自动扩展轮次（自适应闭环），简单主题一轮收敛；想要更严谨传 `depth: 3`，\\n  要引用纠错和覆盖度审计传 `review: true`。\\n\\n**成本建议**：模型分层——规划/综合用强模型、研究用便宜模型（配置\\n`plannerModel`/`researcherModel`/`synthesizerModel`/`reviewerModel`），可显著降本。\\n\\n**依赖要求**：profile 的组合必须包含官方 workflow 引擎与内置 web 工具——`dsh` 官方\\nbase 组合自带，无需额外安装；peer 依赖（`@deepseek-ai/dsh-tools` 等）由组合提供，\\nprofile 的 `autoInstallPeers: false` 可避免向 registry 查找未发布的 `@deepseek-ai/*`。\\n\\n**更新 / 卸载**：\\n\\n```bash\\ndsh plugin --profile <profile> update\\ndsh plugin --profile <profile> remove @dsh-external/dsh-deep-research\\n# 或：从 profile 的 package.json 移除依赖后 dsh plugin --profile <profile> update\\n```\\n\\n## 工具参数\\n\\n\\n| 参数           | 必填  | 说明                                           |\\n| ------------ | --- | -------------------------------------------- |\\n| `topic`      | 是   | 研究主题                                         |\\n| `purpose`    | 否   | 研究用途（要支撑的判断/决策）——用于定义答案空间；缺省时规划代理声明假设用途      |\\n| `questions`  | 否   | 已有问题清单（每行一个）；提供则跳过自动拆解                       |\\n| `depth`      | 否   | 精度/容差：1=初步 2=深入（默认）3=穷尽——决定研究闭环轮次上限（depth+1） |\\n| `synthesize` | 否   | 综合子代理出最终报告（默认 true）；false 只返回三态证据            |\\n| `review`     | 否   | 对抗性审查（默认 false）：引用纠错 + 覆盖度审计 + 矛盾/过度自信标注     |\\n\\n\\n## 配置（可选）\\n\\n\\n| Key                                                                       | 默认           | 说明                                |\\n| ------------------------------------------------------------------------- | ------------ | --------------------------------- |\\n| `subagentProvider`                                                        | 引擎默认 `spawn` | 子代理 provider                      |\\n| `maxParallel`                                                             | `4`          | 每轮研究并发上限                          |\\n| `maxTotalAgents`                                                          | 引擎上限         | 整次运行子代理总数上限                       |\\n| `plannerModel` / `researcherModel` / `synthesizerModel` / `reviewerModel` | 继承父配置        | 模型分级（OpenAI 指南：规划/综合用强模型，执行用便宜模型） |\\n\\n\\n## 设计说明\\n\\n- **plugin ≠ skill**：不注册进 `ctx.skills`；触发靠工具描述（深度研究/调研/多源信息综合分析等）。\\n- **复用官方能力**：编排走官方 workflow 引擎（worker 隔离、并发/总数 caps、取消、进度事件、`wf-runs` 记录）；搜索/抓取走内置 `web_search`/`web_fetch`——插件零网络逻辑、零自研编排。\\n- **不碰 TUI**：无 tuiPrompt / overlay / system-prompt 注入，规避 prompt 槽位 disposed 类崩溃。\\n- **取消传播**：`exec.signal` 传入 workflow run，取消时子代理随之中止。\\n- **失败隔离**：单个子问题研究失败只在该节标注；规划失败则工具报错，主代理可调参重试。\\n- 技能模板（`.claude/skills/deep-research`）保留不动，两者独立。\\n\\n\\n## Profile 兼容性\\n\\n本插件运行时依赖 DSH 官方 workflow 引擎（`ctx.workflows`，peer：`@deepseek-ai/dsh-workflow`）。\\n请把它安装进**提供 workflows provider 的 Profile**（如 tui/headless 组合）；若 Profile 未声明\\n该 provider（如部分 Web Profile 组合），Loader 会保持 pending——此时请先在 DSH Hub 登记\\nworkflows provider 关系或改用提供该服务的组合。编译产物（`lib/types/index.js`）为官方\\n0810 生产入口，Node 原生可加载。\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@dsh-external/dsh-deep-research\\\",\\n  \\\"description\\\": \\\"Deep Research orchestrator extension for DeepSeek Harness: an adaptive cybernetics/information-theory deep_research tool on the official workflow engine, reusing built-in web_search/web_fetch.\\\",\\n  \\\"version\\\": \\\"0.1.0\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"./lib/types/index.js\\\",\\n  \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/types/index.js\\\"\\n    },\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"src\\\",\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"LICENSE\\\",\\n    \\\"README.md\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"test\\\": \\\"node --test\\\",\\n    \\\"typecheck\\\": \\\"tsc -b --pretty false\\\",\\n    \\\"build\\\": \\\"tsc -b --pretty false\\\"\\n  },\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.0.1\\\",\\n    \\\"@deepseek-ai/dsh-workflow\\\": \\\"^0.0.1\\\",\\n    \\\"cordis\\\": \\\"^4.0.0-rc.7\\\"\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^22.20.0\\\",\\n    \\\"typescript\\\": \\\"^6.0.3\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"cordis.patch.yml\",\n      \"content\": \"# dsh-deep-research profile bundle patch (declared by the `dsh.bundle.patch`\\n# manifest field): inserts the deep_research orchestrator row into any profile\\n# that lists @dsh-external/dsh-deep-research in its `dsh.profile.bundles`.\\n# The row loads the plugin by package name from the profile's node_modules.\\n\\n- insert:\\n    - id: dsh-deep-research\\n      name: '@dsh-external/dsh-deep-research'\\n\"\n    },\n    {\n      \"path\": \"lib/types/index.js\",\n      \"content\": \"/**\\n * dsh-deep-research — Deep Research orchestrator extension for DeepSeek Harness.\\n *\\n * A REAL plugin (not a skill): registers one model-facing tool, `deep_research`,\\n * that runs the user's deep-research workflow ON TOP OF DSH'S OFFICIAL WORKFLOW\\n * ENGINE (`ctx.workflows`, `@deepseek-ai/dsh-workflow-workerthread`) — no custom\\n * subagent plumbing, no TUI surface, no prompt injection.\\n *\\n * The pipeline is a LIVE ADAPTIVE LOOP designed from cybernetics + information\\n * theory — it is NOT a fixed four-stage prompt chain:\\n *\\n * ── 问题定义 (control theory: reference-signal calibration) ────────────────\\n *   The planner first defines the ANSWER SPACE (`scope`: what decision the\\n *   report supports) and per-question acceptance criteria, so the loop never\\n *   chases a mis-set reference.\\n *\\n * ── 多样性拆解 (Ashby's Law of Requisite Variety) ──────────────────────────\\n *   The planner enumerates the topic's information DIMENSIONS, maps each\\n *   sub-question to a dimension, and self-audits COVERAGE (`coverage_gaps`):\\n *   uncovered dimensions are declared as hypotheses to be tested, not hidden.\\n *\\n * ── 自适应研究循环 (adaptive control / perception–action cycle) ────────────\\n *   Research is an ITERATIVE CLOSED LOOP, not a one-shot fan-out:\\n *     round 1:  all planned sub-questions in parallel.\\n *     round n>1: dynamic re-planning — high-priority gaps reported by the\\n *                previous round become NEW sub-questions, and the planner's\\n *                declared blind spots get one reconnaissance attempt (a\\n *                planning assumption is verified experimentally, not trusted).\\n *   Convergence is information-theoretic: the loop stops when a round produces\\n *   no new high-priority gaps (marginal information gain ≈ 0) or the round cap\\n *   (depth + 1) is hit. Simple topics converge after one round; hard ones\\n *   automatically expand — the flow is alive, not a fixed script.\\n *   Each researcher keeps a three-state evidence model (confirmed / uncertain /\\n *   gaps = conditional entropy made explicit) and stops internally the moment\\n *   one round adds nothing.\\n *\\n * ── 综合 (rate–distortion) ─────────────────────────────────────────────────\\n *   The final report is lossy compression for a stated decision: it keeps only\\n *   information that distinguishes conclusions, and PRESERVES uncertainty\\n *   (confidence / 矛盾 / verified blind spots) instead of masking it.\\n *\\n * ── 审查 (channel redundancy / error correction, opt-in) ───────────────────\\n *   An adversarial reviewer acts as a parity check: citation spot-checks\\n *   (hallucinated sources = channel noise), coverage audit against the declared\\n *   dimensions, contradiction and over-confidence marking.\\n *\\n * Model tiering (OpenAI guide) via config: `plannerModel` / `researcherModel` /\\n * `synthesizerModel` / `reviewerModel` → `args.models`; omitted models inherit\\n * the parent route. The plugin never fetches the web: search/fetch stays on\\n * DSH's built-in `web_search` / `web_fetch`, which children inherit.\\n *\\n * Native TypeScript source: the package entry points at this file and no build\\n * step exists. In a dsh profile the package lives under node_modules, so it\\n * loads through the dsh source launcher's whole-process tsx hook (Node's\\n * native type stripping refuses files under node_modules); a checkout run\\n * outside node_modules can also load via Node >=22.18 native stripping.\\n * Syntax must stay erasable-only (no enums/namespaces/parameter properties).\\n *\\n * @module @dsh-external/dsh-deep-research\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nexport const name = 'dsh-deep-research';\\n/** Activate once the tool registry and the official workflow service are available. */\\nexport const inject = ['tools', 'workflows'];\\n/** Planner structured output: answer space + dimension coverage + questions. */\\nconst PLANNER_SCHEMA = {\\n    type: 'object',\\n    additionalProperties: false,\\n    properties: {\\n        scope: { type: 'string' },\\n        dimensions: {\\n            type: 'array',\\n            items: { type: 'string' },\\n        },\\n        questions: {\\n            type: 'array',\\n            items: {\\n                type: 'object',\\n                additionalProperties: false,\\n                properties: {\\n                    question: { type: 'string' },\\n                    dimension: { type: 'string' },\\n                    keywords: { type: 'string' },\\n                    acceptance: { type: 'string' },\\n                },\\n                required: ['question', 'dimension'],\\n            },\\n        },\\n        coverage_gaps: {\\n            type: 'array',\\n            items: { type: 'string' },\\n        },\\n    },\\n    required: ['scope', 'dimensions', 'questions', 'coverage_gaps'],\\n};\\n/** Researcher structured output: the three-state evidence model (entropy tracking). */\\nconst RESEARCHER_SCHEMA = {\\n    type: 'object',\\n    additionalProperties: false,\\n    properties: {\\n        confirmed: {\\n            type: 'array',\\n            items: {\\n                type: 'object',\\n                additionalProperties: false,\\n                properties: {\\n                    claim: { type: 'string' },\\n                    source: { type: 'string' },\\n                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },\\n                },\\n                required: ['claim', 'source'],\\n            },\\n        },\\n        uncertain: {\\n            type: 'array',\\n            items: {\\n                type: 'object',\\n                additionalProperties: false,\\n                properties: {\\n                    point: { type: 'string' },\\n                    reason: { type: 'string' },\\n                },\\n                required: ['point'],\\n            },\\n        },\\n        gaps: {\\n            type: 'array',\\n            items: {\\n                type: 'object',\\n                additionalProperties: false,\\n                properties: {\\n                    aspect: { type: 'string' },\\n                    priority: { type: 'string', enum: ['high', 'medium', 'low'] },\\n                },\\n                required: ['aspect'],\\n            },\\n        },\\n    },\\n    required: ['confirmed'],\\n};\\n/**\\n * The workflow script. STATIC TEXT — no template interpolation: all dynamic\\n * input rides `args` (topic, purpose, questions, depth, flags, models,\\n * maxParallel), and the body uses string concatenation only, so there is no\\n * `\\\\${` escaping and no injection surface. The EXECUTION is adaptive: the\\n * research phase re-plans itself round by round until information saturation.\\n * Runs in the official engine's worker thread.\\n */\\nconst SCRIPT = String.raw `const PLANNER_SCHEMA = ${JSON.stringify(PLANNER_SCHEMA)}\\nconst RESEARCHER_SCHEMA = ${JSON.stringify(RESEARCHER_SCHEMA)}\\nconst { topic, questions, depth, synthesize, review, models, purpose, maxParallel } = args\\nconst M = models ?? {}\\nconst LIMIT = depth >= 3 ? 4 : depth === 1 ? 2 : 3\\n\\nfunction confidenceLabel(c) {\\n  return c === 'high' ? '高' : c === 'medium' ? '中' : c === 'low' ? '低' : '中'\\n}\\n\\nfunction renderFindings(q, f) {\\n  const lines = ['## ' + q.question, '']\\n  if (f.confirmed && f.confirmed.length > 0) {\\n    lines.push('### 已确认事实（置信度）')\\n    for (const item of f.confirmed) {\\n      lines.push('- ' + item.claim + '（置信度：' + confidenceLabel(item.confidence) + '，来源：' + item.source + '）')\\n    }\\n  }\\n  if (f.uncertain && f.uncertain.length > 0) {\\n    lines.push('### 不确定项')\\n    for (const item of f.uncertain) {\\n      lines.push('- ' + item.point + (item.reason ? '（原因：' + item.reason + '）' : ''))\\n    }\\n  }\\n  if (f.gaps && f.gaps.length > 0) {\\n    lines.push('### 信息缺口（优先级）')\\n    for (const item of f.gaps) {\\n      lines.push('- ' + item.aspect + '（优先级：' + confidenceLabel(item.priority) + '）')\\n    }\\n  }\\n  if (!f.confirmed || f.confirmed.length === 0) lines.push('（该子问题未获得任何可确认的证据）')\\n  return lines.join('\\\\n')\\n}\\n\\nphase('规划')\\nlet subs = Array.isArray(questions) && questions.length > 0 ? questions : null\\nlet planText = ''\\nif (!subs) {\\n  const planned = await agent(\\n    '你是深度研究规划代理。研究的第一步是定义问题本身：先界定答案空间，再按信息维度拆解子问题。\\\\n\\\\n'\\n    + '研究主题：' + topic\\n    + (purpose ? '\\\\n研究用途（要支撑的决策/判断）：' + purpose : '')\\n    + '\\\\n\\\\n请按以下顺序工作：\\\\n'\\n    + '1. 【答案空间】用一句话界定 scope：这份研究要回答什么问题、支撑什么判断或决策；若用途未说明，明确写出你假设的用途。\\\\n'\\n    + '2. 【信息维度】枚举主题空间的信息维度（如：背景与现状、关键技术/机制、主要参与者与生态、数据与规模、趋势与未来、争议与风险、政策与监管、对比分析等，按主题取舍），这是后续覆盖度检查的基准。\\\\n'\\n    + '3. 【多样性拆解】每个维度至少对应一个子问题（必要多样性定律：子问题集合的多样性必须覆盖主题空间的全部维度，否则必然存在盲区）；每个子问题给出：所属维度、搜索关键词线索（中英文）、验收标准 acceptance（怎样算回答了该子问题）。\\\\n'\\n    + '4. 【覆盖度假设】列出 coverage_gaps：哪些维度你无法用子问题覆盖、或信息可能极难获取。这些会被后续研究轮实际验证——如果侦察发现信息其实可得，会自动补充研究；如果确实不可得，会作为已验证盲区写入报告。\\\\n\\\\n'\\n    + '只输出 JSON，不要输出任何其他文字。',\\n    {\\n      label: '规划',\\n      phase: '规划',\\n      schema: PLANNER_SCHEMA,\\n      ...(M.planner ? { model: M.planner } : {}),\\n    },\\n  )\\n  if (!planned || !Array.isArray(planned.questions) || planned.questions.length === 0) {\\n    throw new Error('规划子代理未返回有效子问题')\\n  }\\n  subs = planned.questions\\n  const dims = Array.isArray(planned.dimensions) ? planned.dimensions : []\\n  const gaps = Array.isArray(planned.coverage_gaps) ? planned.coverage_gaps : []\\n  planText = '研究答案空间：' + (planned.scope || '（未声明）')\\n    + '\\\\n覆盖维度：' + (dims.length > 0 ? dims.join('、') : '（未声明）')\\n    + (gaps.length > 0 ? '\\\\n规划假设的盲区（待验证）：' + gaps.join('、') : '')\\n  // 规划的盲区作为假设进入研究队列（超出 maxParallel 的部分留在队列里，\\n  // 由后续轮次处理，绝不静默丢弃）。\\n  subs = subs.concat(gaps.map((g) => ({ question: g, dimension: '盲区侦察', blind: true })))\\n}\\n\\nphase('研究')\\nconst researcherPrompt = (q, round, isFollowUp) => {\\n  const header = isFollowUp\\n    ? '这是第 ' + round + ' 轮补充研究，针对上一轮暴露的高优先级信息缺口：'\\n    : (q.blind\\n      ? '这是对规划阶段\\\"盲区假设\\\"的定向侦察：验证以下方面是否真的缺乏公开信息（若确实没有，明确写进 gaps，不要勉强编造）：'\\n      : '你的子问题：')\\n  return '你是深度研究子代理。你的任务不是\\\"尽可能多搜索\\\"，而是以最大信息增益为准则，'\\n    + '把对该子问题的条件不确定性降到可接受水平，然后立即停止。\\\\n\\\\n'\\n    + '研究主题：' + topic + '\\\\n' + header + q.question\\n    + (q.dimension && !q.blind ? '\\\\n所属维度：' + q.dimension : '')\\n    + (q.keywords ? '\\\\n搜索关键词线索：' + q.keywords : '')\\n    + (q.acceptance ? '\\\\n验收标准（怎样算回答完成）：' + q.acceptance : '')\\n    + '\\\\n\\\\n用内置的 web_search 工具搜索（若你的工具集中有 web_fetch，必要时可抓取具体页面；没有则只靠 web_search）。不要使用除 web_search / web_fetch 以外的工具。'\\n    + '\\\\n\\\\n感知-行动循环（每轮严格按此执行）：\\\\n'\\n    + '第 0 步：根据已有知识写出你对子问题的当前最佳答案（哪怕不完整）。\\\\n'\\n    + '第 1 步【预测】：列出当前最不确定的 1-3 个高熵点；为下一个查询选择预期信息增益（EIG）最高的一个，并写一句话：本轮查询针对哪个高熵点、预期新增什么信息、如果得到相反结果会如何改变答案。\\\\n'\\n    + '第 2 步【行动】：执行该查询（web_search，中英文关键词都试；若你的工具集中有 web_fetch，必要时可抓取关键页面；没有则只靠 web_search）。\\\\n'\\n    + '第 3 步【更新】：把新证据归入三态：confirmed（有可靠来源支撑的事实）/ uncertain（来源弱或相互矛盾的判断）/ gaps（仍未获得的信息，标注 high/medium/low 优先级）。\\\\n'\\n    + '第 4 步【边际增益验证】：回答——本轮搜索是否新增了 confirmed 条目？是否改变或推翻了你之前的任何结论？'\\n    + '\\\\n\\\\n停止准则（信息论意义，满足其一即停，不要再搜）：\\\\n'\\n    + '- 上一轮边际增益为零：没有新增 confirmed，也没有改变任何结论；\\\\n'\\n    + '- 高优先级缺口已全部清空；\\\\n'\\n    + '- 达到轮次硬上限：最多 ' + LIMIT + ' 轮搜索。\\\\n\\\\n'\\n    + '来源评估：权威性（政府/学术/行业机构优先）、时效性（优先近 3 年）、可靠性（有引用/数据支撑）。'\\n    + '可信度分级：A 政府/学术/国际组织；B 行业协会/企业白皮书；C 专业媒体；D 个人博客/自媒体。'\\n    + '只列你实际访问过的来源。宁可不确认，也不要编造——无法确认的点放进 uncertain 或 gaps。\\\\n\\\\n'\\n    + '输出 JSON（不要输出任何其他文字）：'\\n    + 'confirmed 数组（每条：claim 结论、source 来源URL、confidence high/medium/low）；'\\n    + 'uncertain 数组（point 不确定点、reason 原因）；'\\n    + 'gaps 数组（aspect 缺口方面、priority high/medium/low）。'\\n}\\n\\n// ── 自适应研究闭环 ──────────────────────────────────────────────────────────\\nconst results = {}\\nconst rounds = []\\nlet pending = subs.slice()\\nlet round = 0\\nwhile (pending.length > 0 && round < depth + 1) {\\n  round += 1\\n  phase('研究·第' + round + '轮')\\n  const batch = pending.slice(0, maxParallel)\\n  const found = await parallel(batch.map((q, i) => () => agent(researcherPrompt(q, round, round > 1), {\\n    label: '研究' + (i + 1) + '·第' + round + '轮',\\n    phase: '研究·第' + round + '轮',\\n    schema: RESEARCHER_SCHEMA,\\n    ...(M.researcher ? { model: M.researcher } : {}),\\n  })))\\n  batch.forEach((q, i) => {\\n    if (found[i]) results[q.question] = found[i]\\n  })\\n  rounds.push(batch.map((q, i) => ({ q, f: found[i] })))\\n\\n  // 收敛评估：收集本轮所有 high-priority 缺口 → 下一轮动态补充。\\n  const leads = []\\n  const seen = new Set()\\n  for (const item of batch) {\\n    const f = results[item.question]\\n    if (!f || !Array.isArray(f.gaps)) continue\\n    for (const g of f.gaps) {\\n      if (g.priority !== 'high') continue\\n      if (seen.has(g.aspect) || leads.length >= maxParallel) continue\\n      seen.add(g.aspect)\\n      leads.push({ question: g.aspect, followUp: true })\\n    }\\n  }\\n  pending = [...pending.slice(maxParallel), ...leads]\\n  // 队列语义：本轮未处理的子问题（超出 maxParallel 的部分）留在队首，\\n  // 下一轮继续研究；high-priority 缺口作为补充问题排在它们之后。\\n  // 边际信息增益收敛：本轮没有产出任何新的 high-priority 缺口 → 循环自然结束。\\n}\\n\\nconst ordered = []\\nconst seenQ = new Set()\\nfor (const batch of rounds) {\\n  for (const { q, f } of batch) {\\n    if (seenQ.has(q.question)) continue\\n    seenQ.add(q.question)\\n    ordered.push({ q, f })\\n  }\\n}\\nconst parts = []\\nlet okCount = 0\\nfor (const { q, f } of ordered) {\\n  if (f) okCount += 1\\n  parts.push(f ? renderFindings(q, f) : '## ' + q.question + '\\\\n\\\\n> 该子问题研究失败（子代理未返回结构化证据）')\\n}\\nconst totalRounds = rounds.length\\nconst intermediate = '# ' + topic + ' — 深度研究中间结果（证据状态）\\\\n\\\\n> 子问题 ' + ordered.length\\n  + ' 个，完成 ' + okCount + ' 个，研究轮次 ' + totalRounds + ' 轮。'\\n  + (planText ? '\\\\n\\\\n' + planText : '') + '\\\\n\\\\n' + parts.join('\\\\n\\\\n---\\\\n\\\\n')\\n\\nlet report = intermediate\\nif (synthesize) {\\n  phase('综合')\\n  const final = await agent(\\n    '你是顶级行业分析师。你的产出是一次\\\"有损压缩\\\"：在报告长度（率）约束下，只保留对最终结论有区分度的信息，最大化决策有用性（最小化失真）。\\\\n\\\\n'\\n    + '报告主题：' + topic\\n    + (purpose ? '\\\\n研究用途（要支撑的决策/判断）：' + purpose : '')\\n    + (planText ? '\\\\n' + planText : '')\\n    + '\\\\n\\\\n报告结构：\\\\n## 摘要（3-5 句核心结论，含整体置信度评估）\\\\n## 1. 背景\\\\n## 2. 核心发现（按维度组织，每条附置信度与来源引用）\\\\n## 3. 不确定性与矛盾（明确列出：哪些结论置信度低、哪些来源相互矛盾——不确定性本身就是重要信息，必须保留而非掩盖）\\\\n## 4. 信息缺口与已验证盲区（规划假设的盲区经研究验证后的真实状态）\\\\n## 5. 结论与建议（给出基于现有证据的最优判断，标注证据强度）\\\\n## 6. 参考资料'\\n    + '\\\\n\\\\n要求：所有关键信息行内引用来源 URL；区分事实（高置信）与推断（低置信）；矛盾信息要并列呈现；用表格/对比呈现适合的数据；避免泛泛而谈；中文输出，Markdown 格式；证据不足处明确说明，不要编造。\\\\n\\\\n以下是研究发现：\\\\n\\\\n' + intermediate,\\n    {\\n      label: '综合',\\n      phase: '综合',\\n      ...(M.synthesizer ? { model: M.synthesizer } : {}),\\n    },\\n  )\\n  if (final) report = final + '\\\\n\\\\n---\\\\n\\\\n## 附录：原始证据状态\\\\n\\\\n' + intermediate\\n}\\n\\nlet reviewText = null\\nif (review) {\\n  phase('审查')\\n  reviewText = await agent(\\n    '你是研究审阅代理。你的角色是信道纠错：对报告做对抗性审查，找出证据链中的噪声与错误。若你的工具集中有 web_fetch，可用它抽查可疑来源 URL 是否真实可达、内容是否支撑引用；没有则依据 web_search 可得信息评估来源可信度。\\\\n\\\\n'\\n    + '审查维度：\\\\n'\\n    + '1. 引用纠错：URL 无法访问或与结论无关？引用是否支撑对应观点？（幻觉来源 = 信道噪声，必须标出）\\\\n'\\n    + '2. 覆盖度审计：对照规划阶段声明的信息维度，哪些维度证据不足或完全缺失？（Ashby 必要多样性：维度缺失 = 控制器多样性不足 = 盲区）\\\\n'\\n    + '3. 信息矛盾：不同来源冲突处是否被标注并保留？\\\\n'\\n    + '4. 时效性：关键数据是否过时？\\\\n'\\n    + '5. 过度自信：是否有低置信结论被表述为确定事实？\\\\n'\\n    + (planText ? '\\\\n规划阶段声明：\\\\n' + planText : '')\\n    + '\\\\n\\\\n只输出审查意见（Markdown，中文），不要改写报告本身：\\\\n## 审查意见\\\\n### 可疑来源（如有）\\\\n### 覆盖盲区（如有）\\\\n### 信息矛盾\\\\n### 过度自信项\\\\n### 需要补充研究的最高优先级缺口（如有，供下一步定向研究）\\\\n### 总体评估与修正建议\\\\n\\\\n报告主题：' + topic + '\\\\n\\\\n以下是待审查报告：\\\\n\\\\n' + report,\\n    {\\n      label: '审查',\\n      phase: '审查',\\n      ...(M.reviewer ? { model: M.reviewer } : {}),\\n    },\\n  )\\n  if (reviewText) reviewText = '## 对抗性审查意见\\\\n\\\\n' + reviewText\\n}\\n\\nreturn {\\n  report,\\n  review: reviewText,\\n  rounds: totalRounds,\\n  subquestions: ordered.length,\\n  completed: okCount,\\n  failed: ordered.length - okCount,\\n}\\n`;\\n/** Apply the plugin: register the `deep_research` tool on `ctx.tools`. */\\nexport function apply(ctx, config = {}) {\\n    const subagentProvider = config.subagentProvider ?? undefined;\\n    const plannerModel = config.plannerModel ?? undefined;\\n    const researcherModel = config.researcherModel ?? undefined;\\n    const synthesizerModel = config.synthesizerModel ?? undefined;\\n    const reviewerModel = config.reviewerModel ?? synthesizerModel;\\n    // null/undefined both mean \\\"leave the engine default\\\" (old JS contract:\\n    // positiveInt(..., undefined, ...) omitted the key — keep it omitted).\\n    const maxTotalAgents = config.maxTotalAgents === undefined || config.maxTotalAgents === null\\n        ? undefined\\n        : positiveInt(config.maxTotalAgents, 0, 'maxTotalAgents');\\n    const maxParallel = config.maxParallel === undefined\\n        ? 4\\n        : positiveInt(config.maxParallel, 4, 'maxParallel');\\n    ctx.tools.register(defineTool({\\n        name: 'deep_research',\\n        description: '深度研究编排工具（Deep Research Orchestrator，基于 DSH 官方 workflow 引擎，按控制论与'\\n            + '信息论设计的自适应流程）。当用户要求对复杂主题做深度研究/调研（需要多源信息搜集、'\\n            + '交叉验证、撰写调研报告）时调用。流程是活的，不是固定脚本：规划子代理先定义答案空间、'\\n            + '按信息维度拆解子问题并声明盲区假设 → 研究阶段是自适应闭环——第一轮并行研究所有子问题，'\\n            + '每轮结束收集高优先级信息缺口，自动派发下一轮补充研究（规划盲区也会被定向侦察验证），'\\n            + '直到某一轮边际信息增益为零或达到轮次上限（简单主题一轮收敛，复杂主题自动扩展）→ '\\n            + '综合子代理按率失真原则压缩为最终报告（保留不确定性与已验证盲区）→ 可选对抗性审查'\\n            + '（引用纠错 + 覆盖度审计）。触发场景：深度研究、调研、多源信息综合分析、研究报告、'\\n            + '文献/资料搜集。若需求模糊，先向用户澄清（用途/范围）再调用；若你已有具体问题清单，'\\n            + '直接传 questions 可跳过自动拆解。',\\n        parameters: {\\n            topic: {\\n                type: 'string',\\n                required: true,\\n                description: '研究主题。',\\n            },\\n            purpose: {\\n                type: 'string',\\n                description: '可选：研究用途——这份研究要支撑什么判断/决策。用于定义答案空间；缺省时规划子代理会声明假设的用途。',\\n            },\\n            questions: {\\n                type: 'string',\\n                description: '可选：已有研究问题清单（每行一个，或 1. 2. 3. 编号）。提供后跳过自动拆解阶段。',\\n            },\\n            depth: {\\n                type: 'number',\\n                description: '研究精度（容差）：1=初步（研究闭环最多2轮），2=深入（默认，最多3轮），3=穷尽（最多4轮）。',\\n            },\\n            synthesize: {\\n                type: 'boolean',\\n                description: '是否让综合子代理撰写最终报告（默认 true）。false 时只返回各子问题的三态证据，由你撰写。',\\n            },\\n            review: {\\n                type: 'boolean',\\n                description: '是否让审阅子代理做对抗性审查（默认 false）：引用纠错、覆盖度审计、矛盾与过度自信标注，并给出需要补充研究的最高优先级缺口。',\\n            },\\n        },\\n        output: {\\n            schema: {\\n                type: 'object',\\n                additionalProperties: false,\\n                properties: {\\n                    ok: { type: 'boolean', required: true },\\n                    report: { type: 'string', required: true },\\n                    review: { type: 'string' },\\n                },\\n            },\\n            render: (_args, value) => [{\\n                    type: 'text',\\n                    text: value.ok\\n                        ? (value.review !== undefined ? `${value.report}\\\\n\\\\n${value.review}` : value.report)\\n                        : `deep_research 未能完成研究：${value.report}`,\\n                }],\\n        },\\n        async execute(args, exec) {\\n            const parent = exec.agent;\\n            if (!parent) {\\n                throw new Error('deep_research requires a calling agent (exec.agent was undefined)');\\n            }\\n            const topic = String(args.topic).trim();\\n            if (topic.length === 0)\\n                throw new Error('deep_research: topic must not be empty');\\n            const purpose = typeof args.purpose === 'string' && args.purpose.trim().length > 0\\n                ? args.purpose.trim()\\n                : undefined;\\n            const depth = args.depth === undefined ? 2 : positiveInt(args.depth, 2, 'depth');\\n            if (depth > 3) {\\n                throw new Error('dsh-deep-research: depth must be 1, 2 or 3 (1=初步，2=深入，3=穷尽)');\\n            }\\n            const synthesize = args.synthesize !== false;\\n            const review = args.review === true;\\n            const questions = parseQuestionList(args.questions);\\n            const models = {};\\n            if (plannerModel !== undefined)\\n                models.planner = plannerModel;\\n            if (researcherModel !== undefined)\\n                models.researcher = researcherModel;\\n            if (synthesizerModel !== undefined)\\n                models.synthesizer = synthesizerModel;\\n            if (reviewerModel !== undefined)\\n                models.reviewer = reviewerModel;\\n            const run = ctx.workflows.start({\\n                script: SCRIPT,\\n                meta: {\\n                    name: 'deep-research',\\n                    description: 'Adaptive deep research: answer-space definition, dimension coverage, EIG-driven research rounds, rate-distortion synthesis, optional error-correcting review.',\\n                    whenToUse: 'Deep research / investigation tasks needing multi-source evidence and a cited report.',\\n                    phases: [\\n                        { title: '规划', detail: 'Answer-space definition + dimension coverage decomposition' },\\n                        { title: '研究', detail: 'Adaptive research rounds over built-in web tools' },\\n                        // The engine matches phase() calls by exact title (workflow/types.ts); the\\n                        // script calls '研究·第N轮' with N up to depth+1 (depth contract: 1-3).\\n                        { title: '研究·第1轮', detail: 'Adaptive research round over built-in web tools' },\\n                        { title: '研究·第2轮', detail: 'Adaptive research round over built-in web tools' },\\n                        { title: '研究·第3轮', detail: 'Adaptive research round over built-in web tools' },\\n                        { title: '研究·第4轮', detail: 'Adaptive research round over built-in web tools' },\\n                        { title: '综合', detail: 'Rate-distortion report synthesis' },\\n                        { title: '审查', detail: 'Opt-in error-correcting adversarial review' },\\n                    ],\\n                },\\n                args: {\\n                    topic,\\n                    ...(purpose !== undefined ? { purpose } : {}),\\n                    ...(questions.length > 0 ? { questions } : {}),\\n                    depth,\\n                    synthesize,\\n                    review,\\n                    maxParallel,\\n                    ...(Object.keys(models).length > 0 ? { models } : {}),\\n                },\\n                ...(subagentProvider !== undefined ? { subagentProvider } : {}),\\n                ...(maxTotalAgents !== undefined ? { maxTotalAgents } : {}),\\n                parent,\\n                signal: exec.signal,\\n            });\\n            const result = await run.result;\\n            await run.dispose();\\n            if (result.stopReason !== 'completed') {\\n                throw new Error(`deep_research: workflow run ${result.stopReason}${result.error !== undefined ? ` (${result.error})` : ''}`);\\n            }\\n            const raw = result.value;\\n            if (raw === null || typeof raw !== 'object') {\\n                throw new Error('deep_research: workflow returned no report');\\n            }\\n            const record = raw;\\n            if (typeof record.report !== 'string') {\\n                throw new Error('deep_research: workflow returned no report');\\n            }\\n            return {\\n                ok: true,\\n                report: record.report,\\n                ...(typeof record.review === 'string' ? { review: record.review } : {}),\\n            };\\n        },\\n    }));\\n}\\n// ── helpers ─────────────────────────────────────────────────────────────────\\nfunction parseQuestionList(raw) {\\n    if (typeof raw !== 'string')\\n        return [];\\n    return raw\\n        .split('\\\\n')\\n        .map(line => line.replace(/^\\\\s*(?:\\\\d+[.、)])?\\\\s*/, '').trim())\\n        .filter(line => line.length > 0)\\n        .map(question => ({ question, keywords: undefined }));\\n}\\nfunction positiveInt(value, fallback, label) {\\n    if (value === undefined || value === null)\\n        return fallback;\\n    const n = Number(value);\\n    if (!Number.isInteger(n) || n < 1) {\\n        throw new Error(`dsh-deep-research: ${label} must be a positive integer`);\\n    }\\n    return n;\\n}\\n//# sourceMappingURL=index.js.map\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c0b329e02cd0195f810a7c3608cb58701a7fe0f1\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"f32a36c7756f63fb58aac6de13393ede5f14a5e6c578ce41dad1680126cd46c0\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 532,\n        \"code\": 437,\n        \"comments\": 85,\n        \"blank\": 10\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 123,\n        \"words\": 1667\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 559,\n        \"code\": 442,\n        \"comments\": 90,\n        \"blank\": 27\n      },\n      {\n        \"extension\": \".mjs\",\n        \"role\": \"test\",\n        \"files\": 1,\n        \"lines\": 605,\n        \"code\": 504,\n        \"comments\": 68,\n        \"blank\": 36\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 375,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"lib/types/index.js\",\n          \"line\": 375,\n          \"api\": \"defineTool\",\n          \"name\": \"deep_research\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 401,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 401,\n          \"api\": \"defineTool\",\n          \"name\": \"deep_research\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"deep_research\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "85ad3fd733bf1b4d65bcc3eac1316db7d8250729413f16e9a04bf2aba966e1cc"
+        }
+    },
+    "unavailable_artifacts": []
+}

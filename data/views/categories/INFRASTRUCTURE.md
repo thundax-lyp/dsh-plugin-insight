@@ -102,6 +102,7 @@
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-llm-workbuddy](#plugin-1333868738-root) | 为 DSH 提供 WorkBuddy API Key、账号登录和会话独立凭据选择。 | [Q03](../../plugins/axiaohungry--dsh-llm-workbuddy/INSIGHT.md#research-q03) 单号验收后测试双号并发。 |
 | [dsh-mcp-panel](#plugin-1333768172-root) | 为官方MCP桥提供配置、诊断、备份写入和宿主管道试调用。 | [Q03](../../plugins/perrylink--dsh-mcp-panel/INSIGHT.md#research-q03) 只读trial和副本写入分开验收。 |
+| [dsh-mcp-studio](#plugin-1389238192-root) | 在 DeepSeek Harness 管理 MCP 服务器和 Skills，并导入其他本地 Agent 的 MCP 配置。 | [Q03](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md#research-q03) 只用隔离合成配置观察。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
 | [dsh-model-auto-enricher](#plugin-1425159954-root) | 按名称规则批量补齐DSH模型配置，提供预览、自动写入、备份和停用入口。 | 不推荐默认自动；只读/复制profile研究不等真实渠道可靠采用。 |
 | [dsh-model-channel-manager](#plugin-1358316691-root) | 管理 DSH 模型渠道和轮询组，提供故障转移、模型测试、测速及健康统计界面。 | 在固定RC和受控额度下先用等价候选试用，验收首内容前切换、内容后失败只终止一次、用户取消及重启不重放测试。 |
@@ -119,6 +120,7 @@
 | [dsh-plugin-loopback-trust](#plugin-1394489199-root) | 在反代域名网页上将连接标为 host-owning，以恢复 DSH 设置的 Host 持久化。 | 仅受控反代部署且双层授权明确时试用；先查官方 trusted-host，验未授权浏览器被拒。 |
 | [dsh-plugin-mall](#plugin-1335098475-root) | 在DSH中搜索GitHub插件、查看兼容预检，并通过后台任务安装、更新或移除profile插件。 | 能备份profile并理解guard重启的维护者可在可丢弃环境小范围试用，先只读发现再评估已审查候选；报告/脚本不清或快照提前消失就停止后续安装。 |
 | [dsh-plugin-manager](#plugin-1334267268-root) | 在 DSH 设置中展示插件中文用途与备注，并提供启停、目录覆盖及配置备份导入导出。 | 建议观察，在副本先核对owner权限、全局影响和锁占用/中断恢复，确认后再定义小范围试用；关键配置保留独立备份。 |
+| [dsh-plugin-marketplace](#plugin-1334156126-root) | 在 DeepSeek Harness Web 浏览 GitHub 插件候选，并管理 profile 插件安装与更新。 | [Q03](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md#research-q03) 先隔离观察只读能力，按 [Q02](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md#research-q02) 回避未核实写路径；需装固定版本时沿用已审查 CLI。 |
 | [dsh-plugin-mobile-gateway](#plugin-1338398749-root) | 为 DSH 提供设备配对、移动会话同步和可选实验传输。 | [Q03](../../plugins/clarklevis1995--dsh-plugin-mobile-gateway/INSIGHT.md#research-q03) 先只在受控 LAN 检查。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 为DSH提供直连、系统及HTTP/SOCKS手工代理设置，切换Undici全局路由并可导出子进程环境。 | 可信单一管理者且允许失败回原出口可试用。 |
 | [DSH-Portable](#plugin-1333591877-root) | 提供便携DSH桌面运行环境、分离更新及数据维护工具。 | [Q03](../../plugins/wsl043--dsh-portable/INSIGHT.md#research-q03) 稳定线同平台副本演练后再搬日常数据。 |
@@ -1666,6 +1668,22 @@
 
 [查看完整分析](../../plugins/perrylink--dsh-mcp-panel/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1389238192-root"></a>
+
+## [dsh-mcp-studio](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/functy23/dsh-mcp-studio) [![npm 30d 2,226](https://img.shields.io/static/v1?label=npm+30d&message=2%2C226&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mcp-studio) [![最新发布 2026-10-03](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-03&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mcp-studio)
+
+> **用途**：维护多套本地 Agent 配置的开发者可扫描已有 MCP 并选择目标 profile。
+
+> **亮点**：[Q01](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md#research-q01) 的单包把上游面板与宿主桥接到 DSH，并可集中选择和导入本地配置。
+
+> **思考**：[Q02](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md#research-q02) 的连通性标签不能证明 MCP 握手，扫描包含配置字段，批量导入失败可能已有写入。
+
+> **建议**：[Q03](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md#research-q03) 提出屏蔽扫描中的秘密字段及导入前差异，验证能否减少错误写入和未授权读取。
+
+[查看完整分析](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1344713826-root"></a>
 
 ## [dsh-mcp-tunnel](../../plugins/988hj7tczd-oss--dsh-mcp-tunnel/INSIGHT.md)
@@ -1937,6 +1955,22 @@
 > **建议**：可研究预览diff、基线摘要、写后读回和宿主生效回执，配合导入恢复清单，以并发/锁占用/中断反例验证配置保留。当前未验证。详见[Q05](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/2768651338--dsh-plugin-manager/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334156126-root"></a>
+
+## [dsh-plugin-marketplace](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AwesomeHou/dsh-plugin-marketplace) [![npm 30d 10,880](https://img.shields.io/static/v1?label=npm+30d&message=10%2C880&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-marketplace) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-marketplace)
+
+> **用途**：维护 DSH Web 第三方插件的用户可以浏览 GitHub 话题结果和已装清单。
+
+> **亮点**：[Q01](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md#research-q01) 连接搜索、异步进度与配置管理，让用户在一个设置页观察发现和状态。
+
+> **思考**：[Q02](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md#research-q02) 找到 spec 进入 shell 的解释风险、同名 npm 来源替代和部分写入风险。
+
+> **建议**：[Q03](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md#research-q03) 提出用固定来源和 argv 展示完成用户核准，并记录逐包结果。
+
+[查看完整分析](../../plugins/awesomehou--dsh-plugin-marketplace/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1338398749-root"></a>
 

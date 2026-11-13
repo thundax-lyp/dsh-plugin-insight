@@ -1,0 +1,66 @@
+{
+    "repository": "naodeng/dsh-qa",
+    "repository_id": 1339045665,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 34,
+    "pushed_at": "2026-11-11T12:15:30Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Anaodeng%2Fdsh-qa%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DC14:2881B6:A63A7F:B0617E:6AF6BC5D and timestamp 2026-11-13 07:29:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Anaodeng%2Fdsh-qa%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DC76:3DE5D:A7F278:B21AB7:6AF6BC5F and timestamp 2026-11-13 07:29:35 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Anaodeng%2Fdsh-qa%20is%3Aissue%20created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DCBC:39AE6:A5BFC1:AFEC4B:6AF6BC61 and timestamp 2026-11-13 07:29:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Anaodeng%2Fdsh-qa%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD14:27E296:A48C0E:AEB73C:6AF6BC62 and timestamp 2026-11-13 07:29:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Anaodeng%2Fdsh-qa%20is%3Aissue%20updated%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD6E:E75AF:A3898B:ADB88B:6AF6BC64 and timestamp 2026-11-13 07:29:40 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T02:28:19.525Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-qa",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 2032,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-qa",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T03:42:03.708Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
+            "source_url": "https://registry.npmjs.org/dsh-qa",
+            "error": null,
+            "latest_version": "0.7.5",
+            "latest_published_at": "2026-11-11T12:25:47.366Z",
+            "latest_error": null
+        }
+    }
+}

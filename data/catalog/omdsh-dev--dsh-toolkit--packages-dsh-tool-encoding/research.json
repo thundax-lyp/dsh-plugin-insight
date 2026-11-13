@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "34e33e72af60e0646130ba6249a6d8e5",
+    "identity": "github:1327795364:packages-dsh-tool-encoding",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-encoding",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-encoding",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-encoding",
+            "aliases": [],
+            "name": "dsh-tool-encoding",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6865d8101865b08b343b7035413adc21fa196cc7c6803e7dce052d4abeb2a4f6",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:31:30.938Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/README.md",
+                            "content_sha256": "0f49c9baec533dcc6deac906d61c4aa969532b78cebfc4c3bd95ed11b3664dc3"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:31:30.938Z",
+                    "summary": "在 DeepSeek Harness 中对 UTF-8 文本编解码、计算摘要并生成 UUID。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/package.json",
+                            "content_sha256": "e79bd7b42074b0e4297d269e5d27838b5b08cc271e7b9adefb9a7f47c6fd7886"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/cordis.patch.yml",
+                            "content_sha256": "e93998788eae12f47fcf832366588ca796804107ac6f714c7f1cff4db380582b"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/lib/index.js",
+                            "content_sha256": "a6dcd5f044d7d308fa25034a955146d767432be8f5ae41d69e3ea39cdbebeeb6"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/lib/encoding.js",
+                            "content_sha256": "e9d63247063d3ce909d9dcfc6384d22066fce4c6e0949a83a3bec93022a6caa8"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-encoding/README.md",
+                            "content_sha256": "0f49c9baec533dcc6deac906d61c4aa969532b78cebfc4c3bd95ed11b3664dc3"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:31:30.938Z",
+                    "summary": "核查 packages/dsh-tool-encoding/package.json、packages/dsh-tool-encoding/cordis.patch.yml、packages/dsh-tool-encoding/lib/index.js、packages/dsh-tool-encoding/lib/encoding.js、packages/dsh-tool-encoding/README.md；profile 补丁挂载 Cordis 入口，tools 服务分发 action，Node 标准运行时执行转换，工具以 JSON 渲染文本回执。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定子包包声明、profile 补丁、注册和实际执行分支；未运行插件、测试、安装或宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要反复检查公开 API 样本或构造 URL 参数片段的开发者，可以直接请求会话工具并复核转换结果。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "profile 补丁挂载 Cordis 入口，tools 服务分发 action，Node 标准运行时执行转换，工具以 JSON 渲染文本回执。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定子包包声明、profile 补丁、注册和实际执行分支；未运行插件、测试、安装或宿主。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "私有 monorepo 子包声明版本 0.0.1 并带 lib 默认导出；作者安装说明指向独立仓库，发布字节及同版来源未核。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools、Cordis 和兼容 Node | 是 | 挂载并注册工具 | 回到本地转换 |\n| 可记录的 UTF-8 文本 | 是 | 限制数据形态和泄露风险 | 将操作留在会话外 |\n| 目标 profile 能解析该子包 | 是 | 执行固定版本 | 停在观察 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 包与宿主环境，金额未知 | 核对 profile 和记录范围 | 固定包安装待验 |\n| 持续 | 进程内转换及模型调用，金额未知 | 筛选公开样本并复核 | 单位任务耗时未知 |\n| 失败恢复 | 可能重复调用，金额未知 | 换本地工具校验字节及错误 | 实际退出回执待验 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 建议在隔离 profile 仅用公开样本复核 [Q02](#research-q02) 的往返和拒绝行为。机密、文件字节及要求保留 BOM 的文本交给本地工具。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 编解码 | 分支及严格校验直接可见 | 真实任务错误率 |\n| 哈希和 UUID | 运行时标准接口接线 | 宿主日志管理效果 |\n| 带 BOM 文本往返 | 解码使用默认 BOM 处理 | 目标环境结果需对照 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 在 Buffer 前检查标准编码的未用位和 padding，按 UTF-8 字节限制资源。解码参数对 BOM 的默认处理值得加入回归测试。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 将公开文本转换做成直接的会话工具，[Q02](#research-q02) 的严格 Base64 门槛补足宽容解码可能忽略的字符与未用位错误。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 的 UTF-8 解码器可能丢弃前导 BOM。[Q03](#research-q03) 的参数记录意味着把文本转成摘要也不会避免原文进入会话。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提出在工具契约中显式公布 BOM 策略，用多种编解码往返样本检查用户能否选到与数据一致的动作。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:30.938Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:31:30.938Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:31:30.938Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) 包装 Node 标准函数，新颖性为小幅适配。[Q02](#research-q02) 在宽容 Buffer 前加 padding 和未用位门槛，改变输入接受行为，属实质机制增量。独立分发器及统一错误边界可迁移到文本操作；工具去掉一层 shell 拼接，但字节输入和 BOM 仍限制适用范围。",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) 减少局部引号操作，使会话用户直接复核公开样本，工作流和触达为小幅，编码结果与本地同类工具相同，交付无增量。[Q03](#research-q03) 的小幅成本增量来自进程与人工拼接减少的机制，未实测。",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "反复在 DSH 会话处理公开 API 文本的开发者，可以用几组公开 Unicode 样本试用 encoding。相比在会话里构造 shell 命令，工具直接接收文本并明确拒绝多类非规范编码。涉及密钥、任意二进制或要求保留前导 BOM 时，改用原有本地工具。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 11–13 行与入口给出明确重复任务和 shell 基线，高于偶发便利；尚缺真实流程修正样本，未到较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) lib/encoding.js 48–69 行有可追溯校验增量，高于单纯包装；BOM 与文件字节边界限制覆盖。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 的实际回调及 [Q02](#research-q02) 的 lib/encoding.js 22–112 行覆盖机制和关键失败，超出只读入口；未做宿主测试。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) package.json 2–11 行和工具记录提示明确了装载及数据筛选负担，已有本地回退所以超过重要退出缺口档；包和日志行为未实证，未到较轻。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:31:30.938Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1327795364-packages-dsh-tool-encoding-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-encoding",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-encoding",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-encoding",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "6865d8101865b08b343b7035413adc21fa196cc7c6803e7dce052d4abeb2a4f6",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "9b14405c3548f25e73350d5b55b6eedaf34b75e694b4aaf971f09ef046715bf5"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/meta.json",
+        "publication.summaries": {
+            "text": "在 DeepSeek Harness 中对 UTF-8 文本编解码、计算摘要并生成 UUID。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "注册 encoding，执行 UTF-8 编解码、字符串摘要和 UUID 生成。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 文本编码转换 | 检查公开 API 字段 | UTF-8；URL 按 component |\n| 文本摘要 | 复核公开字符串 | 不接受文件字节，不传机密 |\n| UUID | 生成临时标识 | 依赖 Node 随机接口 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "[Q03](#research-q03) 建议在隔离 profile 仅用公开样本复核 [Q02](#research-q02) 的往返和拒绝行为。机密、文件字节及要求保留 BOM 的文本交给本地工具。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding",
+        "reports": "# dsh-tool-encoding\n\n> 在 DeepSeek Harness 中对 UTF-8 文本编解码、计算摘要并生成 UUID。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n工具接线、UTF-8 校验及转换分支已按固定源码核对。BOM 边界来自源码推断，兼容、会话记录和任务收益仍待验证。\n\n## 洞察短评\n\n- **用途**：需要反复检查公开 API 样本或构造 URL 参数片段的开发者，可以直接请求会话工具并复核转换结果。\n- **亮点**：[Q01](#research-q01) 将公开文本转换做成直接的会话工具，[Q02](#research-q02) 的严格 Base64 门槛补足宽容解码可能忽略的字符与未用位错误。\n- **思考**：[Q02](#research-q02) 的 UTF-8 解码器可能丢弃前导 BOM。[Q03](#research-q03) 的参数记录意味着把文本转成摘要也不会避免原文进入会话。\n- **建议**：[Q03](#research-q03) 提出在工具契约中显式公布 BOM 策略，用多种编解码往返样本检查用户能否选到与数据一致的动作。\n\n采用建议：[Q03](#research-q03) 建议在隔离 profile 仅用公开样本复核 [Q02](#research-q02) 的往返和拒绝行为。机密、文件字节及要求保留 BOM 的文本交给本地工具。\n\n## 核心贡献\n\n[Q01](#research-q01) 将公开文本转换做成直接的会话工具，[Q02](#research-q02) 的严格 Base64 门槛补足宽容解码可能忽略的字符与未用位错误。\n\n## 关键质疑\n\n[Q02](#research-q02) 的 UTF-8 解码器可能丢弃前导 BOM。[Q03](#research-q03) 的参数记录意味着把文本转成摘要也不会避免原文进入会话。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提出在工具契约中显式公布 BOM 策略，用多种编解码往返样本检查用户能否选到与数据一致的动作。\n\n在隔离 profile 对比普通 Unicode、前导 BOM、非法 UTF-8、非零填充位、残缺 padding 和不完整 URI；核对公开标记是否留在记录。\n\n## 场景与替代办法\n\n需要反复检查公开 API 样本或构造 URL 参数片段的开发者，可以直接请求会话工具并复核转换结果。\n\n本地 shell、Node 脚本或现有编码器均可完成转换。文件摘要宜直接读取字节，本地命令也便于把数据留在会话之外。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools、Cordis 和兼容 Node | 是 | 挂载并注册工具 | 回到本地转换 |\n| 可记录的 UTF-8 文本 | 是 | 限制数据形态和泄露风险 | 将操作留在会话外 |\n| 目标 profile 能解析该子包 | 是 | 执行固定版本 | 停在观察 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户确认隔离 profile 加载 | 清单出现 encoding |\n| 核对 | 用公开文本测试合法和非法输入 | 结果与独立对照一致 |\n| 退出 | 禁用插件并复查清单 | 仍可使用原本地工具 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 包与宿主环境，金额未知 | 核对 profile 和记录范围 | 固定包安装待验 |\n| 持续 | 进程内转换及模型调用，金额未知 | 筛选公开样本并复核 | 单位任务耗时未知 |\n| 失败恢复 | 可能重复调用，金额未知 | 换本地工具校验字节及错误 | 实际退出回执待验 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 编解码 | 分支及严格校验直接可见 | 真实任务错误率 |\n| 哈希和 UUID | 运行时标准接口接线 | 宿主日志管理效果 |\n| 带 BOM 文本往返 | 解码使用默认 BOM 处理 | 目标环境结果需对照 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：会话里的 UTF-8 编码、摘要与 UUID 操作在什么条件下可代替临时 shell，在哪些输入下会改变数据或产生泄露风险？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 工具如何处理公开样本，常规 shell 的哪一步被替换？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n维护 API 或分析样本时，调用方可直接传 action 和非敏感 UTF-8 字符串。包在 profile 注入 tools，注册 encoding；入口按 action 调用 executeAction，输出以 JSON.stringify 渲染为回执。文本编码由 Buffer 或 URI 函数完成，hash 对字符串按 UTF-8 计算摘要，UUID 使用 Node 随机接口。与在 JSON 参数里再构造 shell 引号相比，工具参数直接承载样本文本。常用转换与随机源来自标准运行时，增量是会话入口和一致的输入边界。全文件摘要仍宜直接在本地计算字节，不必把文件读进对话。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-encoding/package.json:21-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/package.json#L21-L38)\n\n声明 peer、补丁及默认入口。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-encoding/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/cordis.patch.yml#L1-L4)\n\n明确挂载条目及包名。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-encoding\n      name: '@deepseek-ai/dsh-tool-encoding'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-encoding/lib/index.js:9-29](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/index.js#L9-L29)\n\n宿主 tools 服务及支持动作。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport { executeAction } from './encoding.js';\nexport const name = '@deepseek-ai/dsh-tool-encoding';\nexport const inject = ['tools'];\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'encoding',\n        description: 'Encoding and hashing utilities (UTF-8 text only). ' +\n            'Actions: base64_encode, base64_decode, base64url_encode, base64url_decode, ' +\n            'url_encode (encodes one URL component, not a complete query string), ' +\n            'url_decode, hex_encode, hex_decode, hash (md5/sha1/sha256/sha512, ' +\n            'non-security use only), uuid. Inputs and outputs are strings. ' +\n            'Do not pass secrets or tokens (tool arguments are recorded in session logs).',\n        parameters: {\n            action: {\n                type: 'string',\n                required: true,\n                enum: [\n                    'base64_encode', 'base64_decode', 'base64url_encode', 'base64url_decode',\n                    'url_encode', 'url_decode', 'hex_encode', 'hex_decode', 'hash', 'uuid',\n                ],\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-encoding/lib/index.js:42-51](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/index.js#L42-L51)\n\nexecuteAction 和回执。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n        output: {\n            schema: { type: 'json' },\n            render: (_args, value) => [{ type: 'text', text: JSON.stringify(value) }],\n        },\n        execute: (args) => {\n            const { action, ...rest } = args;\n            return Promise.resolve(executeAction(action, rest));\n        },\n        timeoutMs: 1000,\n    }));\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:111-137](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L111-L137)\n\nURI component、hex、哈希和 UUID 的实际调用。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nfunction urlEncode(input) {\n    return encodeURIComponent(input);\n}\nfunction urlDecode(input) {\n    try {\n        return decodeURIComponent(input);\n    }\n    catch {\n        throw new Error('encoding: invalid percent-encoding');\n    }\n}\nfunction hexEncode(input) {\n    return Buffer.from(input, 'utf8').toString('hex');\n}\nfunction hexDecode(input) {\n    assertHex(input);\n    return decodeUtf8Strict(Buffer.from(input, 'hex'));\n}\nfunction digest(algorithm, input) {\n    if (!Object.hasOwn(ALGORITHMS, algorithm)) {\n        throw new Error(`encoding: unknown algorithm \"${algorithm}\"`);\n    }\n    return createHash(algorithm).update(input, 'utf8').digest('hex');\n}\nfunction newUuid() {\n    return randomUUID();\n}\n```\n\n</details>\n\n**依据 6 · 作者声明**：[packages/dsh-tool-encoding/README.md:11-13](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/README.md#L11-L13)\n\n作者以 shell 转义和跨平台命令作比较。\n\n```text\n## 动机\n\nAgent 处理编码/哈希是日常高频操作：查看 API 响应里的 base64 字段（JWT payload）、构造 query 参数、校验文件完整性（sha256）、生成 UUID。当前做法 `bash -c \"echo ... | base64\"` 的问题：进程开销、**引号转义地狱**（base64 串嵌进 bash 命令再嵌进 JSON 参数，双层转义错误率极高）、跨平台工具命名不一致（`md5` vs `md5sum` vs `shasum -a 256`）。\n```\n\n#### 缺口\n\n- 缺少同任务的转义错误率与耗时\n  **影响**：不能量化会话工具的实际优势\n  **进一步探讨**：用固定公开多语言样本比较一次合格回执和人工修正\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 严格解码能否保持所有合法 UTF-8 文本往返？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n标准 base64 拒绝空白、残缺 padding 和非零的未用位。base64url 先将替代字符转回标准字母表，无 padding 时补齐，有显式但残缺的 padding 时拒绝，再复用同一严格校验。解码所得字节进入 fatal UTF-8 解码器，避免把非法字节替换成 U+FFFD。这里没有设置 ignoreBOM: true。按 TextDecoder 的默认 BOM 处理推断，前导 U+FEFF 编为字节 EF BB BF 后，经 base64、base64url 或 hex 回读会丢掉起始标记。URL 解码走另一条路径，不应合并为同一种往返承诺。输入按 UTF-8 字节计量并拒绝孤立代理项，工具不应接收任意二进制。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:22-47](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L22-L47)\n\n检查 Unicode 与字节数；fatal 解码未显式保留 BOM。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\n/** 拒绝 well-formed Unicode 之外的孤立 surrogate（所有文本输入统一入口）。 */\nfunction validateUnicode(input) {\n    if (!input.isWellFormed())\n        throw new Error('encoding: invalid Unicode (lone surrogate)');\n}\n/** 输入字节上限（UTF-8 字节数，非 UTF-16 code unit 数）。 */\nfunction assertInputBytes(input) {\n    if (Buffer.byteLength(input, 'utf8') > MAX_INPUT_BYTES) {\n        throw new Error(`encoding: input exceeds ${MAX_INPUT_BYTES} bytes`);\n    }\n}\n/** 输出字节上限（编码膨胀防护）。 */\nfunction assertOutputBytes(output) {\n    if (Buffer.byteLength(output, 'utf8') > MAX_OUTPUT_BYTES) {\n        throw new Error(`encoding: output exceeds ${MAX_OUTPUT_BYTES} bytes`);\n    }\n}\n/** fatal UTF-8 解码：非法序列抛错；合法 U+FFFD（ef bf bd）不误伤。 */\nfunction decodeUtf8Strict(buffer) {\n    try {\n        return new TextDecoder('utf-8', { fatal: true }).decode(buffer);\n    }\n    catch {\n        throw new Error('encoding: invalid UTF-8 output');\n    }\n}\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:48-69](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L48-L69)\n\n标准 base64 补位和 canonical 检查。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\n/** 标准 base64 输入校验（无空白、`=` 仅末尾 ≤2、长度必须为 4 的倍数、canonical unused bits）。 */\nfunction assertBase64(input) {\n    if (!BASE64_RE.test(input))\n        throw new Error('encoding: invalid base64 input');\n    // 长度非 4 倍数一律拒绝（含模 4 余 1/2/3）：Node 的宽容解码会静默截断，必须自己拦\n    if (input.length % 4 !== 0)\n        throw new Error('encoding: invalid base64 input');\n    // RFC 4648 canonical（ENC-02）：最后量子的 unused bits 必须为 0\n    //   xx== → 第二字符低 4 bit 为 0；xxx= → 第三字符低 2 bit 为 0\n    // 否则多个编码映射到同一文本（如 'Zh==' 与 canonical 'Zg==' 都解出 'f'）\n    const dataLen = input.length - (input.endsWith('==') ? 2 : input.endsWith('=') ? 1 : 0);\n    if (dataLen % 4 === 2) {\n        const second = BASE64_ALPHABET.indexOf(input.charAt(dataLen - 1));\n        if (second === -1 || (second & 0b1111) !== 0)\n            throw new Error('encoding: non-canonical base64 input');\n    }\n    else if (dataLen % 4 === 3) {\n        const third = BASE64_ALPHABET.indexOf(input.charAt(dataLen - 1));\n        if (third === -1 || (third & 0b11) !== 0)\n            throw new Error('encoding: non-canonical base64 input');\n    }\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:76-112](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L76-L112)\n\n编码、base64url 兼容归一和 URL 分路。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nfunction b64Encode(input) {\n    return Buffer.from(input, 'utf8').toString('base64');\n}\nfunction b64Decode(input) {\n    assertBase64(input);\n    return decodeUtf8Strict(Buffer.from(input, 'base64'));\n}\nfunction b64UrlEncode(input) {\n    // Node 18.14+ 支持 'base64url'：无 padding、-/_ 字符集\n    return Buffer.from(input, 'utf8').toString('base64url');\n}\nfunction b64UrlDecode(input) {\n    // 宽容读入：+/ 与 -_ 双字符集、可选 padding → 归一为标准 base64\n    const normalized = input.replace(/-/g, '+').replace(/_/g, '/');\n    // RECHECK-ENC-01：显式 padding 必须完整（数据 + padding 为 4 的倍数），\n    // 残缺 padding（如 'Zg='）拒绝而非自动补全；无 padding 时按量子补齐\n    let padded;\n    const firstPadding = normalized.indexOf('=');\n    if (firstPadding !== -1) {\n        const data = normalized.slice(0, firstPadding);\n        const padding = normalized.slice(firstPadding);\n        if (!/^={1,2}$/.test(padding))\n            throw new Error('encoding: invalid base64 input');\n        padded = data + padding;\n        if (padded.length % 4 !== 0)\n            throw new Error('encoding: invalid base64 input');\n    }\n    else {\n        if (normalized.length % 4 === 1)\n            throw new Error('encoding: invalid base64 input');\n        padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, '=');\n    }\n    assertBase64(padded); // 含 canonical unused bits 校验\n    return decodeUtf8Strict(Buffer.from(padded, 'base64'));\n}\nfunction urlEncode(input) {\n    return encodeURIComponent(input);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:122-127](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L122-L127)\n\nhex 走同一严格 UTF-8 解码。\n\n```text\nfunction hexEncode(input) {\n    return Buffer.from(input, 'utf8').toString('hex');\n}\nfunction hexDecode(input) {\n    assertHex(input);\n    return decodeUtf8Strict(Buffer.from(input, 'hex'));\n```\n\n**依据 5 · 作者声明**：[packages/dsh-tool-encoding/README.md:65-80](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/README.md#L65-L80)\n\n作者给出前导 U+FEFF 的编码示例及文本范围。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## 支持的操作\n\n| action | 说明 | 示例 |\n|--------|------|------|\n| `base64_encode` / `base64_decode` | RFC 4648 标准 base64（严格校验） | `\"foobar\"` → `\"Zm9vYmFy\"` |\n| `base64url_encode` / `base64url_decode` | JWT 风格，输出无 padding，解码兼容 `+/` 与可选 padding | `\"\\uFEFF\"` → `\"77u_\"` |\n| `url_encode` / `url_decode` | **component 语义**（非完整 query）：空格 `%20` 非 `+`，`!'()*` 不转义，`decode(\"+\")` → `\"+\"` | `\"a b\"` → `\"a%20b\"` |\n| `hex_encode` / `hex_decode` | UTF-8 字节 hex；解码结果必须合法 UTF-8 | `\"AB\"` → `\"4142\"` |\n| `hash` | md5/sha1/sha256/sha512 hex 摘要；**仅非安全用途** | `sha256(\"\")` → `e3b0c442...` |\n| `uuid` | UUID v4 字符串（`crypto.randomUUID()`） | `\"550e8400-...\"` |\n\n语义契约：\n\n- **v1 是 UTF-8 文本工具**：所有输入输出为字符串；二进制内容用 hex 表示；解码结果必须合法 UTF-8\n- **所有 action 返回字符串**（含 `uuid`）\n- **不要对机密材料使用本工具**：tool 参数会记录进会话日志\n```\n\n</details>\n\n#### 缺口\n\n- 本轮未验证目标宿主的 BOM 往返回执\n  **影响**：不能把静态推断当作已复现实验\n  **进一步探讨**：在目标 Node 与 DSH 版本中对照前导及中间 U+FEFF、普通 Unicode、非法 UTF-8\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些数据适合进入会话，如何核实后再决定是否使用？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n只有已允许进入会话的公开文本适合试用。工具描述明确提示参数可被写入会话日志，hash 虽只输出摘要，输入字段仍含原文。文件校验应直接对文件字节计算，已存在的文件摘要命令是退路。作者报告 rc.1 consumer 验证，本轮尚未证实同提交的私有子包如何被目标 profile 加载。隔离 profile 用公开小样本比较输出、错误和会话记录，失败时关闭插件并回到本地命令。可验证的改进是把解码的 BOM 保留策略写入工具契约并随动作提示，仅当真实消费者能正确区分文本和字节转换且兼容既有输入时采用。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-encoding/lib/index.js:15-21](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/index.js#L15-L21)\n\n工具文本明确限定 UTF-8、提示会话记录。\n\n```text\n        name: 'encoding',\n        description: 'Encoding and hashing utilities (UTF-8 text only). ' +\n            'Actions: base64_encode, base64_decode, base64url_encode, base64url_decode, ' +\n            'url_encode (encodes one URL component, not a complete query string), ' +\n            'url_decode, hex_encode, hex_decode, hash (md5/sha1/sha256/sha512, ' +\n            'non-security use only), uuid. Inputs and outputs are strings. ' +\n            'Do not pass secrets or tokens (tool arguments are recorded in session logs).',\n```\n\n**依据 2 · 源码核查**：[packages/dsh-tool-encoding/lib/encoding.js:153-168](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/lib/encoding.js#L153-L168)\n\nUUID 拒绝额外参数，hash 接收字符串并校验。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n    switch (action) {\n        case 'uuid': {\n            // AUDIT-ENC-02：拒绝任意额外参数（含拼写错误字段），不只检查已知字段\n            if (Object.keys(actionParams).length > 0) {\n                throw new Error('encoding: uuid takes no parameters');\n            }\n            return newUuid();\n        }\n        case 'hash': {\n            if (typeof actionParams.algorithm !== 'string')\n                throw new Error('encoding: missing required parameter \"algorithm\"');\n            if (typeof actionParams.input !== 'string')\n                throw new Error('encoding: missing required parameter \"input\"');\n            validateUnicode(actionParams.input);\n            assertInputBytes(actionParams.input);\n            return digest(actionParams.algorithm, actionParams.input);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-encoding/package.json:2-11](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/package.json#L2-L11)\n\n私有子包与 Node 范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"name\": \"@deepseek-ai/dsh-tool-encoding\",\n  \"description\": \"DSH encoding tool plugin\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-tool-encoding/README.md:82-97](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-encoding/README.md#L82-L97)\n\n作者报告兼容及打包链，非本轮复现。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n\n\n## 版本适配\n\n- **适配 DSH 版本**: DSH 0.1.5-rc.1（npm）\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\n```\n\n</details>\n\n#### 缺口\n\n- 宿主实际日志内容、包来源与卸载回执未核\n  **影响**：决定是否能在目标 profile 采用，无法用文案证明保密\n  **进一步探讨**：用公开标记值核对真实会话记录，并确认卸载后工具清单\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-encoding；内容摘要：48a32d9514ee45e8be5f1d8bad56afda8865465e5f91f8689380e607c2b5656d。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 285 | 231 | 58 | — |\n| .md | source | 2 | 344 | — | — | 2569 |\n| .ts | source | 3 | 311 | 222 | 60 | — |\n| .ts | test | 2 | 298 | 242 | 13 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 文本编码转换 | 检查公开 API 字段 | UTF-8；URL 按 component |\n| 文本摘要 | 复核公开字符串 | 不接受文件字节，不传机密 |\n| UUID | 生成临时标识 | 依赖 Node 随机接口 |\n\n## 工程亮点\n\n[Q02](#research-q02) 在 Buffer 前检查标准编码的未用位和 padding，按 UTF-8 字节限制资源。解码参数对 BOM 的默认处理值得加入回归测试。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-encoding/package.json、packages/dsh-tool-encoding/cordis.patch.yml、packages/dsh-tool-encoding/lib/index.js、packages/dsh-tool-encoding/lib/encoding.js、packages/dsh-tool-encoding/README.md 及固定范围 inventory；组件：packages/dsh-tool-encoding。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定子包包声明、profile 补丁、注册和实际执行分支；未运行插件、测试、安装或宿主。\n- 下一步：在隔离 profile 对比普通 Unicode、前导 BOM、非法 UTF-8、非零填充位、残缺 padding 和不完整 URI；核对公开标记是否留在记录。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-encoding\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-encoding/README.md\",\n    \"packages/dsh-tool-encoding/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-encoding/cordis.patch.yml\",\n    \"packages/dsh-tool-encoding/lib/index.js\",\n    \"packages/dsh-tool-encoding/lib/encoding.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"会话里的 UTF-8 编码、摘要与 UUID 操作在什么条件下可代替临时 shell，在哪些输入下会改变数据或产生泄露风险？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"工具如何处理公开样本，常规 shell 的哪一步被替换？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"维护 API 或分析样本时，调用方可直接传 action 和非敏感 UTF-8 字符串。包在 profile 注入 tools，注册 encoding；入口按 action 调用 executeAction，输出以 JSON.stringify 渲染为回执。文本编码由 Buffer 或 URI 函数完成，hash 对字符串按 UTF-8 计算摘要，UUID 使用 Node 随机接口。与在 JSON 参数里再构造 shell 引号相比，工具参数直接承载样本文本。常用转换与随机源来自标准运行时，增量是会话入口和一致的输入边界。全文件摘要仍宜直接在本地计算字节，不必把文件读进对话。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 38,\n            \"observation\": \"声明 peer、补丁及默认入口。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"明确挂载条目及包名。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/index.js\",\n            \"line_start\": 9,\n            \"line_end\": 29,\n            \"observation\": \"宿主 tools 服务及支持动作。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/index.js\",\n            \"line_start\": 42,\n            \"line_end\": 51,\n            \"observation\": \"executeAction 和回执。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 111,\n            \"line_end\": 137,\n            \"observation\": \"URI component、hex、哈希和 UUID 的实际调用。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-encoding/README.md\",\n            \"line_start\": 11,\n            \"line_end\": 13,\n            \"observation\": \"作者以 shell 转义和跨平台命令作比较。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少同任务的转义错误率与耗时\",\n            \"impact\": \"不能量化会话工具的实际优势\",\n            \"next_step\": \"用固定公开多语言样本比较一次合格回执和人工修正\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"严格解码能否保持所有合法 UTF-8 文本往返？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"标准 base64 拒绝空白、残缺 padding 和非零的未用位。base64url 先将替代字符转回标准字母表，无 padding 时补齐，有显式但残缺的 padding 时拒绝，再复用同一严格校验。解码所得字节进入 fatal UTF-8 解码器，避免把非法字节替换成 U+FFFD。这里没有设置 ignoreBOM: true。按 TextDecoder 的默认 BOM 处理推断，前导 U+FEFF 编为字节 EF BB BF 后，经 base64、base64url 或 hex 回读会丢掉起始标记。URL 解码走另一条路径，不应合并为同一种往返承诺。输入按 UTF-8 字节计量并拒绝孤立代理项，工具不应接收任意二进制。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 22,\n            \"line_end\": 47,\n            \"observation\": \"检查 Unicode 与字节数；fatal 解码未显式保留 BOM。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 48,\n            \"line_end\": 69,\n            \"observation\": \"标准 base64 补位和 canonical 检查。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 76,\n            \"line_end\": 112,\n            \"observation\": \"编码、base64url 兼容归一和 URL 分路。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 122,\n            \"line_end\": 127,\n            \"observation\": \"hex 走同一严格 UTF-8 解码。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-encoding/README.md\",\n            \"line_start\": 65,\n            \"line_end\": 80,\n            \"observation\": \"作者给出前导 U+FEFF 的编码示例及文本范围。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"本轮未验证目标宿主的 BOM 往返回执\",\n            \"impact\": \"不能把静态推断当作已复现实验\",\n            \"next_step\": \"在目标 Node 与 DSH 版本中对照前导及中间 U+FEFF、普通 Unicode、非法 UTF-8\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"哪些数据适合进入会话，如何核实后再决定是否使用？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"只有已允许进入会话的公开文本适合试用。工具描述明确提示参数可被写入会话日志，hash 虽只输出摘要，输入字段仍含原文。文件校验应直接对文件字节计算，已存在的文件摘要命令是退路。作者报告 rc.1 consumer 验证，本轮尚未证实同提交的私有子包如何被目标 profile 加载。隔离 profile 用公开小样本比较输出、错误和会话记录，失败时关闭插件并回到本地命令。可验证的改进是把解码的 BOM 保留策略写入工具契约并随动作提示，仅当真实消费者能正确区分文本和字节转换且兼容既有输入时采用。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/index.js\",\n            \"line_start\": 15,\n            \"line_end\": 21,\n            \"observation\": \"工具文本明确限定 UTF-8、提示会话记录。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n            \"line_start\": 153,\n            \"line_end\": 168,\n            \"observation\": \"UUID 拒绝额外参数，hash 接收字符串并校验。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-encoding/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 11,\n            \"observation\": \"私有子包与 Node 范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-encoding/README.md\",\n            \"line_start\": 82,\n            \"line_end\": 97,\n            \"observation\": \"作者报告兼容及打包链，非本轮复现。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主实际日志内容、包来源与卸载回执未核\",\n            \"impact\": \"决定是否能在目标 profile 采用，无法用文案证明保密\",\n            \"next_step\": \"用公开标记值核对真实会话记录，并确认卸载后工具清单\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-encoding/README.md\",\n      \"content\": \"# dsh-tool-encoding\\n\\n[English](README.en.md)\\n\\nDSH 编码/哈希工具插件 —— UTF-8 文本的 base64/base64url/url/hex 编解码 + 哈希 + UUID。零依赖、零进程、纯函数。\\n\\n> 包名：`@deepseek-ai/dsh-tool-encoding`（独立 bundle，非 monorepo 集成形态）；`lib/` 产物由仓库内 `npm run build`（tsc）生成并随仓库提交。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\nAgent 处理编码/哈希是日常高频操作：查看 API 响应里的 base64 字段（JWT payload）、构造 query 参数、校验文件完整性（sha256）、生成 UUID。当前做法 `bash -c \\\"echo ... | base64\\\"` 的问题：进程开销、**引号转义地狱**（base64 串嵌进 bash 命令再嵌进 JSON 参数，双层转义错误率极高）、跨平台工具命名不一致（`md5` vs `md5sum` vs `shasum -a 256`）。\\n\\n## 安全模型\\n\\n无 `eval`、无 `new Function`。所有操作是 `Buffer`/`node:crypto`/`TextDecoder`/`encodeURIComponent` 的纯函数组合：\\n\\n- **UTF-8 完整性**：解码用 fatal 模式（`TextDecoder('utf-8', { fatal: true })`），非法字节抛 `encoding: invalid UTF-8 output`；合法 U+FFFD/控制字符不误伤（`00` NUL、`0a` 换行、`efbfbd` U+FFFD 均合法，`ff` 非法）\\n- **base64 严格校验**：无空白、`=` 仅末尾且 ≤2、长度必须为 4 的倍数、**RFC 4648 canonical unused bits**（`Zh==` 等非 canonical 编码拒绝，防多串映射同文本）\\n- **孤立 surrogate 统一拒绝**：所有文本输入过 `String.prototype.isWellFormed()`，避免静默替换与 URIError 行为不一致\\n- **字节上限**：输入 1 MB / 输出 4 MB（各 1,000,000 / 4,000,000 字节，`Buffer.byteLength`；输出上限为分配前预估 + 最终检查的保险丝）\\n- **哈希算法白名单**：`Object.hasOwn` 查表（md5/sha1/sha256/sha512）\\n- 错误统一 `encoding:` 前缀，不透传底层 `URIError`/`TypeError`\\n\\n## 架构\\n\\n```\\nDSH Agent\\n    │ ctx.tools.register()\\n    ▼\\nsrc/index.ts（Cordis 插件入口 + action 分发 + 独立校验）\\n    │\\n    ▼\\nsrc/encoding.ts\\n    ├── b64Encode/b64Decode — 标准 base64（严格校验）\\n    ├── b64UrlEncode/b64UrlDecode — base64url（canonical 无 padding，解码兼容）\\n    ├── urlEncode/urlDecode — component 语义（URIError 包装）\\n    ├── hexEncode/hexDecode — UTF-8 字节 hex（fatal 解码）\\n    ├── digest — 白名单哈希\\n    ├── newUuid — crypto.randomUUID()\\n    └── validateUnicode/assertInputBytes/decodeUtf8Strict — 校验器\\n```\\n\\n## 工具声明\\n\\n```ts\\nctx.tools.register(defineTool({\\n  name: 'encoding',\\n  parameters: {\\n    action: {\\n      type: 'string', required: true,\\n      enum: ['base64_encode','base64_decode','base64url_encode','base64url_decode',\\n             'url_encode','url_decode','hex_encode','hex_decode','hash','uuid'],\\n    },\\n    input:     { type: 'string', description: 'Input string for encode/decode/hash' },\\n    algorithm: { type: 'string', enum: ['md5','sha1','sha256','sha512'], description: 'For hash' },\\n  },\\n  output: { schema: { type: 'json' }, render: (_a, v) => [{ type: 'text', text: JSON.stringify(v) }] },\\n  execute: (args) => Promise.resolve(executeAction(args.action, args) as JsonValue),\\n  timeoutMs: 1000,\\n}))\\n```\\n\\n## 支持的操作\\n\\n| action | 说明 | 示例 |\\n|--------|------|------|\\n| `base64_encode` / `base64_decode` | RFC 4648 标准 base64（严格校验） | `\\\"foobar\\\"` → `\\\"Zm9vYmFy\\\"` |\\n| `base64url_encode` / `base64url_decode` | JWT 风格，输出无 padding，解码兼容 `+/` 与可选 padding | `\\\"\\\\uFEFF\\\"` → `\\\"77u_\\\"` |\\n| `url_encode` / `url_decode` | **component 语义**（非完整 query）：空格 `%20` 非 `+`，`!'()*` 不转义，`decode(\\\"+\\\")` → `\\\"+\\\"` | `\\\"a b\\\"` → `\\\"a%20b\\\"` |\\n| `hex_encode` / `hex_decode` | UTF-8 字节 hex；解码结果必须合法 UTF-8 | `\\\"AB\\\"` → `\\\"4142\\\"` |\\n| `hash` | md5/sha1/sha256/sha512 hex 摘要；**仅非安全用途** | `sha256(\\\"\\\")` → `e3b0c442...` |\\n| `uuid` | UUID v4 字符串（`crypto.randomUUID()`） | `\\\"550e8400-...\\\"` |\\n\\n语义契约：\\n\\n- **v1 是 UTF-8 文本工具**：所有输入输出为字符串；二进制内容用 hex 表示；解码结果必须合法 UTF-8\\n- **所有 action 返回字符串**（含 `uuid`）\\n- **不要对机密材料使用本工具**：tool 参数会记录进会话日志\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 版本适配\\n\\n- **适配 DSH 版本**: DSH 0.1.5-rc.1（npm）\\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\\n\\n## 安装\\n\\n插件源码仓库：`https://github.com/omdsh-dev/dsh-tool-encoding`（public）。\\n\\n### Profile Bundle（推荐）\\n\\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1，npm）：\\n\\n```sh\\n# 交互式（web）profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-encoding\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-encoding\\n```\\n\\n包内 `dsh.bundle.patch`（指向 `cordis.patch.yml`）会在安装后自动把插件加入 profile 的 layer stack；插件的 `cordis.patch.yml` 以 `- insert:` 插入 `tool-encoding` 条目。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。\\n\\n### npm pack tarball 安装\\n\\n```sh\\nnpm pack    # 生成 dsh-tool-encoding-*.tgz\\ndsh plugin --profile web add ./dsh-tool-encoding-*.tgz\\ndsh plugin --profile headless add ./dsh-tool-encoding-*.tgz\\n```\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-encoding\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 encoding 工具把 hello 做 base64 编码\\\"\\n```\\n\\n### 手动安装与旧版本兼容\\n\\n仅适用于不支持 Profile Bundle 的旧快照或插件开发调试环境：\\n\\n1. 放入 monorepo：`cp -r encoding ~/.dsh/source/master/packages/tools/encoding`（开发调试）\\n2. `apps/cli/package.json` 加 `\\\"@deepseek-ai/dsh-tool-encoding\\\": \\\"workspace:^\\\"`；`tsconfig.host.json` references 加 `{ \\\"path\\\": \\\"./packages/tools/encoding\\\" }`\\n3. `pnpm install && pnpm run build`\\n4. 在 profile 用户层 patch 插入插件（`~/.dsh/profiles/<name>/cordis.patch.yml`）：\\n\\n```yaml\\n- insert:\\n    - id: tool-encoding\\n      name: '@deepseek-ai/dsh-tool-encoding'\\n```\\n\\n5. 验证：`dsh --profile <name> --dump-config | grep tool-encoding`\\n\\n> 注意：patch 是 id-targeted 语义——裸 `- id:` 条目会报 `entry \\\"xxx\\\" not found`，必须用 `- insert:` 列表包裹。\\n## 已知限制\\n\\n1. 任意二进制（不可打印字节）编解码需 v2 的 `output: \\\"utf8\\\" | \\\"hex\\\"` 模式\\n2. hash 仅摘要，无 HMAC/加盐/密钥派生；MD5/SHA-1 仅兼容性/非安全完整性校验\\n3. URL 是 component 语义；表单编码（空格 → `+`）需独立 action（v2）\\n\\n## 测试\\n\\n```bash\\npnpm test\\n```\\n\\n功能/错误/攻击载荷共 41 个用例（RFC 4648/1321/6234 已知向量、UTF-8 边界区分、canonical padding 边界、surrogate 统一拒绝等）。完整清单见本地维护的设计文档。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-encoding/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-encoding\\\",\\n  \\\"description\\\": \\\"DSH encoding tool plugin\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-encoding/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-encoding\\n      name: '@deepseek-ai/dsh-tool-encoding'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-encoding/lib/index.js\",\n      \"content\": \"/**\\n * DSH 编码/哈希工具插件。\\n *\\n * 注册 `encoding` 工具：UTF-8 文本的 base64/base64url/url/hex 编解码 + 哈希 + UUID。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-encoding\\n *     name: '@deepseek-ai/dsh-tool-encoding'\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { executeAction } from './encoding.js';\\nexport const name = '@deepseek-ai/dsh-tool-encoding';\\nexport const inject = ['tools'];\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'encoding',\\n        description: 'Encoding and hashing utilities (UTF-8 text only). ' +\\n            'Actions: base64_encode, base64_decode, base64url_encode, base64url_decode, ' +\\n            'url_encode (encodes one URL component, not a complete query string), ' +\\n            'url_decode, hex_encode, hex_decode, hash (md5/sha1/sha256/sha512, ' +\\n            'non-security use only), uuid. Inputs and outputs are strings. ' +\\n            'Do not pass secrets or tokens (tool arguments are recorded in session logs).',\\n        parameters: {\\n            action: {\\n                type: 'string',\\n                required: true,\\n                enum: [\\n                    'base64_encode', 'base64_decode', 'base64url_encode', 'base64url_decode',\\n                    'url_encode', 'url_decode', 'hex_encode', 'hex_decode', 'hash', 'uuid',\\n                ],\\n                description: 'Operation to perform.',\\n            },\\n            input: {\\n                type: 'string',\\n                description: 'Input string for encode/decode/hash actions.',\\n            },\\n            algorithm: {\\n                type: 'string',\\n                enum: ['md5', 'sha1', 'sha256', 'sha512'],\\n                description: 'Hash algorithm (required for action=hash).',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'json' },\\n            render: (_args, value) => [{ type: 'text', text: JSON.stringify(value) }],\\n        },\\n        execute: (args) => {\\n            const { action, ...rest } = args;\\n            return Promise.resolve(executeAction(action, rest));\\n        },\\n        timeoutMs: 1000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-encoding/lib/encoding.js\",\n      \"content\": \"/**\\n * dsh-tool-encoding 核心实现 —— UTF-8 文本编解码 + 哈希 + UUID。\\n *\\n * 契约（v2，已冻结）：\\n * - v1 是 UTF-8 文本工具：所有输入输出为字符串；解码结果必须合法 UTF-8（fatal 解码）\\n * - 输入/输出上限按 UTF-8 字节数：MAX_INPUT_BYTES = 1 MB（1,000,000），MAX_OUTPUT_BYTES = 4 MB（4,000,000）\\n * - 孤立 surrogate 统一拒绝（String.prototype.isWellFormed）\\n * - base64：无空白、`=` 仅末尾且 ≤2、长度 4 的倍数、模 4 余 1 拒绝\\n * - base64url：输出 canonical 无 padding；解码兼容 `+/` 与可选 padding\\n * - url_encode 是 component 语义（encodeURIComponent）\\n * - 错误统一 \\\"encoding: \\\" 前缀\\n */\\nimport { createHash, randomUUID } from 'node:crypto';\\n// ── 常量 ──\\nconst MAX_INPUT_BYTES = 1_000_000; // 1 MB（1,000,000 UTF-8 字节）\\nconst MAX_OUTPUT_BYTES = 4_000_000; // 4 MB（url 编码最坏 ~3 倍膨胀；保险丝，输入上限内不触发）\\nconst ALGORITHMS = { md5: true, sha1: true, sha256: true, sha512: true };\\nconst BASE64_RE = /^[A-Za-z0-9+/]*={0,2}$/;\\nconst BASE64_ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';\\nconst HEX_RE = /^[0-9a-fA-F]*$/;\\n// ── 校验器 ──\\n/** 拒绝 well-formed Unicode 之外的孤立 surrogate（所有文本输入统一入口）。 */\\nfunction validateUnicode(input) {\\n    if (!input.isWellFormed())\\n        throw new Error('encoding: invalid Unicode (lone surrogate)');\\n}\\n/** 输入字节上限（UTF-8 字节数，非 UTF-16 code unit 数）。 */\\nfunction assertInputBytes(input) {\\n    if (Buffer.byteLength(input, 'utf8') > MAX_INPUT_BYTES) {\\n        throw new Error(`encoding: input exceeds ${MAX_INPUT_BYTES} bytes`);\\n    }\\n}\\n/** 输出字节上限（编码膨胀防护）。 */\\nfunction assertOutputBytes(output) {\\n    if (Buffer.byteLength(output, 'utf8') > MAX_OUTPUT_BYTES) {\\n        throw new Error(`encoding: output exceeds ${MAX_OUTPUT_BYTES} bytes`);\\n    }\\n}\\n/** fatal UTF-8 解码：非法序列抛错；合法 U+FFFD（ef bf bd）不误伤。 */\\nfunction decodeUtf8Strict(buffer) {\\n    try {\\n        return new TextDecoder('utf-8', { fatal: true }).decode(buffer);\\n    }\\n    catch {\\n        throw new Error('encoding: invalid UTF-8 output');\\n    }\\n}\\n/** 标准 base64 输入校验（无空白、`=` 仅末尾 ≤2、长度必须为 4 的倍数、canonical unused bits）。 */\\nfunction assertBase64(input) {\\n    if (!BASE64_RE.test(input))\\n        throw new Error('encoding: invalid base64 input');\\n    // 长度非 4 倍数一律拒绝（含模 4 余 1/2/3）：Node 的宽容解码会静默截断，必须自己拦\\n    if (input.length % 4 !== 0)\\n        throw new Error('encoding: invalid base64 input');\\n    // RFC 4648 canonical（ENC-02）：最后量子的 unused bits 必须为 0\\n    //   xx== → 第二字符低 4 bit 为 0；xxx= → 第三字符低 2 bit 为 0\\n    // 否则多个编码映射到同一文本（如 'Zh==' 与 canonical 'Zg==' 都解出 'f'）\\n    const dataLen = input.length - (input.endsWith('==') ? 2 : input.endsWith('=') ? 1 : 0);\\n    if (dataLen % 4 === 2) {\\n        const second = BASE64_ALPHABET.indexOf(input.charAt(dataLen - 1));\\n        if (second === -1 || (second & 0b1111) !== 0)\\n            throw new Error('encoding: non-canonical base64 input');\\n    }\\n    else if (dataLen % 4 === 3) {\\n        const third = BASE64_ALPHABET.indexOf(input.charAt(dataLen - 1));\\n        if (third === -1 || (third & 0b11) !== 0)\\n            throw new Error('encoding: non-canonical base64 input');\\n    }\\n}\\n/** hex 输入校验（偶数长度 + 全 hex 字符集）。 */\\nfunction assertHex(input) {\\n    if (input.length % 2 !== 0 || !HEX_RE.test(input))\\n        throw new Error('encoding: invalid hex input');\\n}\\n// ── 操作 ──\\nfunction b64Encode(input) {\\n    return Buffer.from(input, 'utf8').toString('base64');\\n}\\nfunction b64Decode(input) {\\n    assertBase64(input);\\n    return decodeUtf8Strict(Buffer.from(input, 'base64'));\\n}\\nfunction b64UrlEncode(input) {\\n    // Node 18.14+ 支持 'base64url'：无 padding、-/_ 字符集\\n    return Buffer.from(input, 'utf8').toString('base64url');\\n}\\nfunction b64UrlDecode(input) {\\n    // 宽容读入：+/ 与 -_ 双字符集、可选 padding → 归一为标准 base64\\n    const normalized = input.replace(/-/g, '+').replace(/_/g, '/');\\n    // RECHECK-ENC-01：显式 padding 必须完整（数据 + padding 为 4 的倍数），\\n    // 残缺 padding（如 'Zg='）拒绝而非自动补全；无 padding 时按量子补齐\\n    let padded;\\n    const firstPadding = normalized.indexOf('=');\\n    if (firstPadding !== -1) {\\n        const data = normalized.slice(0, firstPadding);\\n        const padding = normalized.slice(firstPadding);\\n        if (!/^={1,2}$/.test(padding))\\n            throw new Error('encoding: invalid base64 input');\\n        padded = data + padding;\\n        if (padded.length % 4 !== 0)\\n            throw new Error('encoding: invalid base64 input');\\n    }\\n    else {\\n        if (normalized.length % 4 === 1)\\n            throw new Error('encoding: invalid base64 input');\\n        padded = normalized.padEnd(Math.ceil(normalized.length / 4) * 4, '=');\\n    }\\n    assertBase64(padded); // 含 canonical unused bits 校验\\n    return decodeUtf8Strict(Buffer.from(padded, 'base64'));\\n}\\nfunction urlEncode(input) {\\n    return encodeURIComponent(input);\\n}\\nfunction urlDecode(input) {\\n    try {\\n        return decodeURIComponent(input);\\n    }\\n    catch {\\n        throw new Error('encoding: invalid percent-encoding');\\n    }\\n}\\nfunction hexEncode(input) {\\n    return Buffer.from(input, 'utf8').toString('hex');\\n}\\nfunction hexDecode(input) {\\n    assertHex(input);\\n    return decodeUtf8Strict(Buffer.from(input, 'hex'));\\n}\\nfunction digest(algorithm, input) {\\n    if (!Object.hasOwn(ALGORITHMS, algorithm)) {\\n        throw new Error(`encoding: unknown algorithm \\\"${algorithm}\\\"`);\\n    }\\n    return createHash(algorithm).update(input, 'utf8').digest('hex');\\n}\\nfunction newUuid() {\\n    return randomUUID();\\n}\\nfunction isPlainObject(value) {\\n    if (typeof value !== 'object' || value === null)\\n        return false;\\n    const proto = Object.getPrototypeOf(value);\\n    return proto === Object.prototype || proto === null;\\n}\\nexport function executeAction(action, params) {\\n    // AUDIT-ENC-03：纯函数入口自洽——action/params 类型错误统一 encoding: 前缀\\n    if (typeof action !== 'string') {\\n        throw new Error('encoding: action must be a string');\\n    }\\n    if (!isPlainObject(params)) {\\n        throw new Error('encoding: parameters must be an object');\\n    }\\n    const actionParams = params;\\n    switch (action) {\\n        case 'uuid': {\\n            // AUDIT-ENC-02：拒绝任意额外参数（含拼写错误字段），不只检查已知字段\\n            if (Object.keys(actionParams).length > 0) {\\n                throw new Error('encoding: uuid takes no parameters');\\n            }\\n            return newUuid();\\n        }\\n        case 'hash': {\\n            if (typeof actionParams.algorithm !== 'string')\\n                throw new Error('encoding: missing required parameter \\\"algorithm\\\"');\\n            if (typeof actionParams.input !== 'string')\\n                throw new Error('encoding: missing required parameter \\\"input\\\"');\\n            validateUnicode(actionParams.input);\\n            assertInputBytes(actionParams.input);\\n            return digest(actionParams.algorithm, actionParams.input);\\n        }\\n        case 'base64_encode':\\n        case 'base64url_encode':\\n        case 'url_encode':\\n        case 'hex_encode': {\\n            if (typeof actionParams.input !== 'string')\\n                throw new Error('encoding: missing required parameter \\\"input\\\"');\\n            validateUnicode(actionParams.input);\\n            assertInputBytes(actionParams.input);\\n            // ENC-04：分配前按精确最坏膨胀率预估输出（AUDIT-ENC-04 修正公式）\\n            const inputBytes = Buffer.byteLength(actionParams.input, 'utf8');\\n            const worstCase = action === 'hex_encode' ? inputBytes * 2\\n                : action === 'base64_encode' ? 4 * Math.ceil(inputBytes / 3)\\n                    : action === 'base64url_encode' ? 4 * Math.ceil(inputBytes / 3) - (inputBytes % 3 === 0 ? 0 : 4 - (inputBytes % 3))\\n                        : inputBytes * 3; // url_encode 最坏 ~3 倍\\n            if (worstCase > MAX_OUTPUT_BYTES)\\n                throw new Error('encoding: output would exceed limit');\\n            const output = action === 'base64_encode' ? b64Encode(actionParams.input)\\n                : action === 'base64url_encode' ? b64UrlEncode(actionParams.input)\\n                    : action === 'url_encode' ? urlEncode(actionParams.input)\\n                        : hexEncode(actionParams.input);\\n            assertOutputBytes(output);\\n            return output;\\n        }\\n        case 'base64_decode':\\n        case 'base64url_decode':\\n        case 'url_decode':\\n        case 'hex_decode': {\\n            if (typeof actionParams.input !== 'string')\\n                throw new Error('encoding: missing required parameter \\\"input\\\"');\\n            validateUnicode(actionParams.input);\\n            assertInputBytes(actionParams.input);\\n            // ENC-04：解码输出字节数 ≤ 输入字节数（base64/hex 输入为 ASCII），分配前预检\\n            if (Buffer.byteLength(actionParams.input, 'utf8') > MAX_OUTPUT_BYTES) {\\n                throw new Error('encoding: decoded output would exceed limit');\\n            }\\n            const output = action === 'base64_decode' ? b64Decode(actionParams.input)\\n                : action === 'base64url_decode' ? b64UrlDecode(actionParams.input)\\n                    : action === 'url_decode' ? urlDecode(actionParams.input)\\n                        : hexDecode(actionParams.input);\\n            assertOutputBytes(output);\\n            return output;\\n        }\\n        default:\\n            throw new Error(`encoding: unknown action \\\"${action}\\\"`);\\n    }\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-encoding\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"48a32d9514ee45e8be5f1d8bad56afda8865465e5f91f8689380e607c2b5656d\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 285,\n        \"code\": 231,\n        \"comments\": 58,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 344,\n        \"words\": 2569\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 311,\n        \"code\": 222,\n        \"comments\": 60,\n        \"blank\": 33\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 298,\n        \"code\": 242,\n        \"comments\": 13,\n        \"blank\": 48\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-encoding/lib/types/encoding.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-encoding/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-encoding/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-encoding/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-encoding/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"defineTool\",\n          \"name\": \"encoding\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-encoding/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-encoding/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"defineTool\",\n          \"name\": \"encoding\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"encoding\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "2863ffe6033fba95817bd448a18e5e7db014976cc34043abb0343c12d4b3cc66"
+        }
+    },
+    "unavailable_artifacts": []
+}

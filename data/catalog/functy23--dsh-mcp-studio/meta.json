@@ -1,0 +1,66 @@
+{
+    "repository": "functy23/dsh-mcp-studio",
+    "repository_id": 1389238192,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 34,
+    "pushed_at": "2026-10-06T03:34:41Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Afuncty23%2Fdsh-mcp-studio%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE22:2837C9:A89D5F:B2CC8F:6AF6BC67 and timestamp 2026-11-13 07:29:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Afuncty23%2Fdsh-mcp-studio%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE8C:3AEED8:A7EB1F:B216F5:6AF6BC68 and timestamp 2026-11-13 07:29:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afuncty23%2Fdsh-mcp-studio%20is%3Aissue%20created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DEF2:FD6CF:A1E5B3:AC136A:6AF6BC6A and timestamp 2026-11-13 07:29:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afuncty23%2Fdsh-mcp-studio%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DF80:26E733:A1DCF5:AC0BE6:6AF6BC6C and timestamp 2026-11-13 07:29:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Afuncty23%2Fdsh-mcp-studio%20is%3Aissue%20updated%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DFF4:589D3:A4C84D:AEF698:6AF6BC6D and timestamp 2026-11-13 07:29:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T11:55:57.992Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-mcp-studio",
+        "captured_at": "2026-11-13T01:52:09.761Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 2226,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-mcp-studio",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-26T13:48:54.707Z",
+            "captured_at": "2026-11-13T01:52:09.761Z",
+            "source_url": "https://registry.npmjs.org/dsh-mcp-studio",
+            "error": null,
+            "latest_version": "1.0.6",
+            "latest_published_at": "2026-10-03T09:39:23.934Z",
+            "latest_error": null
+        }
+    }
+}

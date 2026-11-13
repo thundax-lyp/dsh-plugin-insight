@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "24dece9668f215cd5d599aa9772f4485",
+    "identity": "github:1327795364:packages-dsh-tool-csv",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-csv",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-csv",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-csv",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-csv",
+            "aliases": [],
+            "name": "dsh-tool-csv",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "6180cbca0f59de40093bec702874b135b2d10d81e30569c52168056b648a004f",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:34:58.602Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/README.md",
+                            "content_sha256": "228b200ea09a63bc55a9cc29f2ec124523b3fd90fef88ae2bf2cedb4e7120d63"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:34:58.602Z",
+                    "summary": "在 DeepSeek Harness 中解析 CSV 文本、按列精确查找并输出统计。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/package.json",
+                            "content_sha256": "44fbb2cbe900ff59d290bf1b245c32eefc273efc639c642702d9f86a2f0425b9"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/cordis.patch.yml",
+                            "content_sha256": "ff7b67634c070fc9df6e8707d6b02536e119ed135171732b72e0707259d0acc1"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/lib/index.js",
+                            "content_sha256": "c9824bca9b2124c3884fc494de948eb3ec17aa2fd587f93531f70c4838bc904f"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/lib/parse.js",
+                            "content_sha256": "2598201eed07c520145b5fe6d499e1c239adacf9968b6bf5ef38bfda9ea3b90e"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/lib/query.js",
+                            "content_sha256": "9ee12a25dd79c0bfc3818cb080fc094b95cecc84dc1da099e1ae2743cb3c4023"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-csv/README.md",
+                            "content_sha256": "228b200ea09a63bc55a9cc29f2ec124523b3fd90fef88ae2bf2cedb4e7120d63"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:34:58.602Z",
+                    "summary": "核查 packages/dsh-tool-csv/package.json、packages/dsh-tool-csv/cordis.patch.yml、packages/dsh-tool-csv/lib/index.js、packages/dsh-tool-csv/lib/parse.js、packages/dsh-tool-csv/lib/query.js、packages/dsh-tool-csv/README.md；工具入口解析完整 CSV 文本，再按 action 返回 JSON 转换、精确查询或网格统计。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "核查固定子包注册、输入解析、查询与统计；未执行插件、安装、测试或真实宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "在会话临时查看小型公开 CSV 的开发者可核对字段、行数和指定列的匹配样本。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "工具入口解析完整 CSV 文本，再按 action 返回 JSON 转换、精确查询或网格统计。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "核查固定子包注册、输入解析、查询与统计；未执行插件、安装、测试或真实宿主。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定私有子包 0.0.1 带 lib；作者提供独立包安装线索，未验证固定版本分发。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 DSH tools | 是 | 注册 csv | 使用原 CSV 工具 |\n| 公开小样本与唯一表头 | 本建议要求 | 避免重名和会话数据问题 | 保留源列序号另行分析 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包，金额未知 | 核对包来源和 profile | 装载未验证 |\n| 持续 | 模型传参、全量解析，金额未知 | 对照样本并复查截断 | 单位任务耗时未知 |\n| 失败恢复 | 可能重跑或改用本地脚本 | 从原始文件复核列与行 | 实际退出待验 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 建议先跑 stats，再试有唯一表头的公开样本。出现 [Q02](#research-q02) 的重名或完整性要求时改用本地解析。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 字段解析 | 引号状态机与 BOM 处理 | 真实回执一致性 |\n| 精确匹配 | 支持列名或索引 | 重复列名时需检查 |\n| 网格统计 | 源码返回宽度及重名警告 | 用户能否及时发现异常 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 确认用无原型对象映射表头，但字段重复仍会覆盖。采用前须核对过滤列与转换列是否一致。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 的引号状态和列级匹配让会话直接复核带逗号、换行的字段。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 发现 query 取首个同名列，parse 却由后值覆盖；limit 也不限制预解析成本。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提议回执显示列索引及截断，使用重名表头对照可否复原源列。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:34:58.602Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:34:58.602Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:34:58.602Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 的引号状态机和精确匹配是既有技术，适配和机制属小幅。解析器可迁移，直接工具调用简化取样；[Q02](#research-q02) 的重名差异限定简化范围。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 支持小幅流程及会话触达改善，交付仍是样本或统计。免 shell 的局部投入可能减少，依据是执行路径，尚无可量化对照。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "需要临时核对公开 CSV 的用户，可以在隔离 profile 用已知表头的小样本试用 csv。相比按文本搜索，工具能按明确的列精确匹配并读懂引号字段。遇到重复列名、对账或需要完整导出时，回到保留列序号的 CSV 工具。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 9–25 行明确小表格、重复查询及对照，超过偶发便利；缺用户流程样本进入较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) lib/parse.js 71–106 行支持结构解析，超过文本入口包装；[Q02](#research-q02) 的重名行为限制较充分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) lib/query.js 44–60、153–176 行连到实际输入和输出，超出声明范围；未执行同版宿主。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) package.json 2–11 行和 README 82–96 行说明接入负担，原文件及脚本是退路；大回执与禁用尚未复现，未到较轻。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:34:58.602Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1327795364-packages-dsh-tool-csv-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-csv",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-csv",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-csv",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "6180cbca0f59de40093bec702874b135b2d10d81e30569c52168056b648a004f",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "cc6f5296df3c63be798289ac8d1e63d03a3df8fa32fbdcdc663dd646f4399aaf"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/meta.json",
+        "publication.summaries": {
+            "text": "在 DeepSeek Harness 中解析 CSV 文本、按列精确查找并输出统计。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "解析 CSV 字符串、按列精确匹配或返回表格统计。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| CSV 解析 | 转换小型表格 | 重复表头后值覆盖 |\n| 精确查询 | 筛选指定列 | 同名列取首个，保留表头 |\n| 结构统计 | 检查字段和空行 | 独立动作，转换回执不自动带警告 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "[Q03](#research-q03) 建议先跑 stats，再试有唯一表头的公开样本。出现 [Q02](#research-q02) 的重名或完整性要求时改用本地解析。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv",
+        "reports": "# dsh-tool-csv\n\n> 在 DeepSeek Harness 中解析 CSV 文本、按列精确查找并输出统计。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持文本解析、匹配与统计。重名列路径分歧可静态确认，宿主使用效果待验证。\n\n## 洞察短评\n\n- **用途**：在会话临时查看小型公开 CSV 的开发者可核对字段、行数和指定列的匹配样本。\n- **亮点**：[Q01](#research-q01) 的引号状态和列级匹配让会话直接复核带逗号、换行的字段。\n- **思考**：[Q02](#research-q02) 发现 query 取首个同名列，parse 却由后值覆盖；limit 也不限制预解析成本。\n- **建议**：[Q03](#research-q03) 提议回执显示列索引及截断，使用重名表头对照可否复原源列。\n\n采用建议：[Q03](#research-q03) 建议先跑 stats，再试有唯一表头的公开样本。出现 [Q02](#research-q02) 的重名或完整性要求时改用本地解析。\n\n## 核心贡献\n\n[Q01](#research-q01) 的引号状态和列级匹配让会话直接复核带逗号、换行的字段。\n\n## 关键质疑\n\n[Q02](#research-q02) 发现 query 取首个同名列，parse 却由后值覆盖；limit 也不限制预解析成本。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提议回执显示列索引及截断，使用重名表头对照可否复原源列。\n\n用重名表头、不规则宽度、全空字段行、引号内换行和明确 limit 的公开样本比较三个动作，并在禁用后检查工具清单。\n\n## 场景与替代办法\n\n在会话临时查看小型公开 CSV 的开发者可核对字段、行数和指定列的匹配样本。\n\ngrep 便于找文本，CSV 脚本或表格工具能够保留列位置及处理更大文件。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 DSH tools | 是 | 注册 csv | 使用原 CSV 工具 |\n| 公开小样本与唯一表头 | 本建议要求 | 避免重名和会话数据问题 | 保留源列序号另行分析 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 预检 | 用户准备样本并调用 stats | 检查重复列名与异常宽度 |\n| 匹配 | Agent 按列做精确查询 | 对照原行字段 |\n| 退出 | 用户禁用组件 | 回到 CSV 脚本 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包，金额未知 | 核对包来源和 profile | 装载未验证 |\n| 持续 | 模型传参、全量解析，金额未知 | 对照样本并复查截断 | 单位任务耗时未知 |\n| 失败恢复 | 可能重跑或改用本地脚本 | 从原始文件复核列与行 | 实际退出待验 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 字段解析 | 引号状态机与 BOM 处理 | 真实回执一致性 |\n| 精确匹配 | 支持列名或索引 | 重复列名时需检查 |\n| 网格统计 | 源码返回宽度及重名警告 | 用户能否及时发现异常 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：临时检查一份小型 CSV 时，何时可以直接使用会话工具，怎样识别会改变字段身份或完整性的情况？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · CSV 文本如何变成统计或匹配结果？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n维护者可以将小型公开表格文本传给 csv，回调先统一分隔符和 header 选项，再完整解析。双引号状态机保留引号内逗号与换行，处理重复引号，闭合后遇到非法字符时抛错；query 按列名或 1 起索引选择列，严格比较字符串，最终将匹配行和表头返回。与 grep 按文本找词相比，这条链区分列和字段值。成熟 CSV 库也能实现，插件的增量是同会话直接接入统计和过滤；没有文件或网络读取入口。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-csv/package.json:21-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/package.json#L21-L38)\n\n声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-csv/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/cordis.patch.yml#L1-L4)\n\n按固定包名插入 tool-csv。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-csv\n      name: '@deepseek-ai/dsh-tool-csv'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-csv/lib/index.js:49-56](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/index.js#L49-L56)\n\n注入 tools 并注册 csv。\n\n```text\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'csv',\n        description: 'Parse, query, and summarize CSV text. ' +\n            'Actions: parse (to JSON array), query (filter rows by exact column value), ' +\n            'stats (row/column counts), to_json (alias of parse). ' +\n            'RFC 4180, quoted fields with commas/newlines supported, BOM ignored. ' +\n            'Pure text processing: no file or network access.',\n```\n\n**依据 4 · 源码核查**：[packages/dsh-tool-csv/lib/index.js:90-97](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/index.js#L90-L97)\n\n注册回调进入本包实际执行逻辑并呈现回执。\n\n```text\n        output: {\n            schema: { type: 'string' },\n            render: (_args, value) => [{ type: 'text', text: value }],\n        },\n        execute: args => Promise.resolve(runAction(args)),\n        timeoutMs: 2000,\n    }));\n}\n```\n\n**依据 5 · 源码核查**：[packages/dsh-tool-csv/lib/index.js:12-45](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/index.js#L12-L45)\n\n默认 header 与实际分发、文本回执。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport { parseCsv, normalizeDelimiter } from './parse.js';\nimport { queryRows, statsGrid, toJsonRows, normalizeLimit } from './query.js';\nexport const name = '@deepseek-ai/dsh-tool-csv';\nexport const inject = ['tools'];\nfunction runAction(args) {\n    const action = args.action;\n    if (typeof args.csv !== 'string') {\n        throw new Error('csv: csv must be a string');\n    }\n    const delimiter = normalizeDelimiter(args.delimiter);\n    // header 默认 true；非布尔值回退默认\n    const header = typeof args.header === 'boolean' ? args.header : true;\n    const { rows, skippedBlank } = parseCsv(args.csv, { delimiter, header });\n    if (action === 'parse' || action === 'to_json') {\n        return JSON.stringify(toJsonRows(rows, header, delimiter, args.limit));\n    }\n    if (action === 'query') {\n        if (typeof args.column !== 'string' || args.column === '') {\n            throw new Error('csv: query requires a non-empty column');\n        }\n        if (typeof args.value !== 'string') {\n            throw new Error('csv: query requires a string value');\n        }\n        const result = queryRows(rows, {\n            column: args.column,\n            value: args.value,\n            header,\n            limit: normalizeLimit(args.limit),\n        });\n        return JSON.stringify(result.rows);\n    }\n    if (action === 'stats') {\n        return JSON.stringify(statsGrid(rows, header, skippedBlank));\n```\n\n</details>\n\n**依据 6 · 源码核查**：[packages/dsh-tool-csv/lib/parse.js:71-106](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/parse.js#L71-L106)\n\n引号状态和非法闭合后的异常。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    for (; i < len; i++) {\n        const ch = text[i];\n        if (inQuotes) {\n            if (ch === '\"') {\n                if (text[i + 1] === '\"') {\n                    field += '\"';\n                    i++;\n                } // \"\" 转义\n                else {\n                    inQuotes = false;\n                    afterQuote = true;\n                } // 闭合引号\n            }\n            else {\n                field += ch;\n            }\n        }\n        else if (afterQuote) {\n            // RFC 4180：闭合引号后只允许分隔符、行结束或 EOF\n            if (ch === delim) {\n                pushField();\n                afterQuote = false;\n            }\n            else if (ch === '\\n' || ch === '\\r') {\n                if (ch === '\\r' && text[i + 1] === '\\n')\n                    i++;\n                pushRow();\n                afterQuote = false;\n            }\n            else {\n                throw new Error(`csv: invalid character \"${ch}\" after closing quote at position ${i}`);\n            }\n        }\n        else if (ch === '\"' && field === '') {\n            inQuotes = true; // 仅字段开头是引号时进入引用态\n        }\n```\n\n</details>\n\n**依据 7 · 源码核查**：[packages/dsh-tool-csv/lib/query.js:74-97](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/query.js#L74-L97)\n\n严格匹配及表头回执。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nexport function queryRows(grid, options) {\n    const index = resolveColumn(grid, options.column, options.header);\n    const limit = normalizeLimit(options.limit);\n    const dataRows = options.header && grid.length > 0 ? grid.slice(1) : grid;\n    const matched = [];\n    for (const row of dataRows) {\n        const field = row[index];\n        if (field !== undefined && field === options.value) {\n            matched.push(row);\n            if (matched.length >= limit)\n                break;\n        }\n    }\n    const columns = [];\n    if (options.header && grid.length > 0) {\n        columns.push(...grid[0]);\n    }\n    else {\n        const width = gridWidth(grid);\n        for (let i = 1; i <= width; i++)\n            columns.push(String(i));\n    }\n    const rows = options.header && grid.length > 0 ? [grid[0], ...matched] : matched;\n    return { rows, columns };\n```\n\n</details>\n\n**依据 8 · 作者声明**：[packages/dsh-tool-csv/README.md:9-25](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/README.md#L9-L25)\n\n作者描述临时任务与限制。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n## 动机\n\nAgent 会话里表格形态的数据（导出文件、API 响应、报告片段）出现频率很高。现有路径是起 `bash` 进程让模型现写解析脚本：\n\n1. **每次调用都起进程**——Windows 上尤其昂贵\n2. **模型手写 CSV 解析器错误率高**——引号内逗号、`\"\"` 转义、BOM、跨行字段、CRLF 这些边界手写代码极易踩坑，且结果不可验证\n\n本插件提供确定性、零依赖、纯函数的 CSV 处理：一次函数调用，毫秒级返回结构化 JSON。\n\n与 `dsh-tool-json` 形成\"结构化数据处理\"对：JSON 管对象，CSV 管表格。\n\n## 安全模型\n\n- **零依赖**：不引入 csv 解析库，手写状态机（单遍扫描，O(n)）\n- **纯函数**：不读文件、不写文件、不联网、不 eval\n- **无注入面**：查询过滤只做字面精确匹配（`===`），不支持表达式求值\n- **预算**：输入上限 256,000 字节（超限直接报错，不截断）；`timeoutMs: 2000`；`limit` 默认 100 行防输出膨胀\n```\n\n</details>\n\n#### 缺口\n\n- 真实会话中引号样本的传参和回执\n  **影响**：影响能否可靠少用脚本\n  **进一步探讨**：使用同一公开多行字段样本对照 CSV 库\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 重复列名、空行与 limit 会改变什么？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n重复列名是首个应检查的反例。query 的 indexOf 选择第一个同名列，但有表头的 parse/to_json 逐键赋值，最后一个同名列覆盖先出现者；stats 报告后值覆盖，不能据此推断 query 也按后值过滤。若数据字段全空，即使表格写了多个分隔符，pushRow 也只计空行并丢弃行，行号无法直接对齐原文件。limit 在解析完成之后作用于返回行数，默认 100，提供较大正数时没有独立最高行数，query 在 header 模式可额外返回表头。256000 字节输入门槛限制提交规模，但不替代输出字节限制，特别是对象键在每行重复时。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-csv/lib/query.js:29-35](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/query.js#L29-L35)\n\n默认值与合法正数的处理。\n\n```text\n/** 规范化 limit：非法值（undefined/null/非有限/负数/0/小数）回退到默认 100。 */\nexport function normalizeLimit(limit) {\n    if (typeof limit !== 'number' || !Number.isFinite(limit) || limit < 1) {\n        return DEFAULT_LIMIT;\n    }\n    return Math.floor(limit);\n}\n```\n\n**依据 2 · 源码核查**：[packages/dsh-tool-csv/lib/query.js:44-60](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/query.js#L44-L60)\n\nquery 同名列取首个。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nfunction resolveColumn(grid, column, header) {\n    if (grid.length === 0) {\n        throw new Error('csv: empty CSV has no columns');\n    }\n    if (header) {\n        const headerRow = grid[0];\n        const byName = headerRow.indexOf(column);\n        if (byName !== -1)\n            return byName;\n        const byIndex = parseIndex(column);\n        if (byIndex !== null) {\n            if (byIndex > headerRow.length) {\n                throw new Error(`csv: column index ${byIndex} out of bounds (${headerRow.length} columns)`);\n            }\n            return byIndex - 1;\n        }\n        throw new Error(`csv: column \"${column}\" not found in header and not a valid 1-based index`);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-csv/lib/query.js:106-138](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/query.js#L106-L138)\n\nstats 重名及宽度警告。\n\n<details>\n<summary>查看原文（33行）</summary>\n\n```text\n    if (header) {\n        const headerRow = grid[0];\n        // 重复列名：后出现的列覆盖先出现的（与多数 CSV 库一致），并报告\n        const seen = new Set();\n        const duplicates = new Set();\n        for (const name of headerRow) {\n            if (seen.has(name))\n                duplicates.add(name);\n            seen.add(name);\n        }\n        if (duplicates.size > 0) {\n            warnings.push(`duplicate column names: ${[...duplicates].join(', ')} (later ones win)`);\n        }\n        let fewer = 0;\n        let more = 0;\n        for (const row of grid.slice(1)) {\n            if (row.length < headerRow.length)\n                fewer++;\n            else if (row.length > headerRow.length)\n                more++;\n        }\n        if (fewer > 0) {\n            warnings.push(`${fewer} data row(s) have fewer fields than the header (missing fields filled with null)`);\n        }\n        if (more > 0) {\n            warnings.push(`${more} data row(s) have more fields than the header (extra fields merged into the last column)`);\n        }\n        return {\n            rows: grid.length - 1,\n            columns: width,\n            columnNames: [...headerRow],\n            emptyRows,\n            warnings,\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-csv/lib/query.js:153-176](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/query.js#L153-L176)\n\nparse 同名键按行覆盖及字段归并。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\n/** 网格 → JSON 值（header=true 时对象数组；header=false 时数组数组）。 */\nexport function toJsonRows(grid, header, delimiter, limit) {\n    const cap = normalizeLimit(limit);\n    if (grid.length === 0)\n        return [];\n    if (!header) {\n        return grid.slice(0, cap).map(row => [...row]);\n    }\n    const headerRow = grid[0];\n    const out = [];\n    for (const row of grid.slice(1, cap + 1)) {\n        // 多余字段并入最后一个字段（用分隔符连接）\n        const effective = row.length > headerRow.length\n            ? [...row.slice(0, headerRow.length - 1), row.slice(headerRow.length - 1).join(delimiter)]\n            : row;\n        // null-prototype 对象：__proto__/constructor/prototype 等表头作为普通字段写入，\n        // 不会被原型 setter 吞掉（JSON.stringify 对 null-prototype 对象输出不变）\n        const obj = Object.create(null);\n        for (let i = 0; i < headerRow.length; i++) {\n            obj[headerRow[i]] = i < effective.length ? effective[i] : null;\n        }\n        out.push(obj);\n    }\n    return out;\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-csv/lib/parse.js:37-68](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/parse.js#L37-L68)\n\n字节限制和全空数据行统计。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n/** 解析 CSV 文本为字符串网格；跳过空行；BOM 剥离；输入字节上限检查；严格引号校验。 */\nexport function parseCsv(text, options) {\n    if (typeof text !== 'string') {\n        throw new Error('csv: csv must be a string');\n    }\n    if (Buffer.byteLength(text, 'utf8') > MAX_INPUT_BYTES) {\n        throw new Error(`csv: input exceeds ${MAX_INPUT_BYTES} bytes`);\n    }\n    const rows = [];\n    let row = [];\n    let field = '';\n    let inQuotes = false;\n    let afterQuote = false; // 闭合引号后只允许分隔符/行结束/EOF\n    let skippedBlank = 0;\n    let i = 0;\n    const len = text.length;\n    const delim = options.delimiter;\n    // BOM 剥离\n    if (text.charCodeAt(0) === 0xfeff)\n        i = 1;\n    const pushField = () => {\n        row.push(field);\n        field = '';\n    };\n    const pushRow = () => {\n        pushField();\n        if (row.some(f => f !== '')) {\n            rows.push(row);\n        }\n        else {\n            skippedBlank++;\n        }\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎样验证后再试用，如何减少预览被误当成可对账结果？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n先在隔离 profile 确认 Cordis/tools、同版 bundle 和工具清单，再输入小型公开 CSV，先看 stats 中的重名与不规则行，再验证 query。只需要预览时可用，涉及对账、重复字段或未截断导出时保留原文件并使用能保存列序号的脚本。模型传输原始文本和输出可能增加上下文，文件不应含未经允许的记录。可检验的改进是在回执报告列索引和是否截断；用同一重复表头、空行和 limit 对照，若仍无法从返回值定位源列，或者用户无需溯源却多承受大回执，改进收益有限。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[packages/dsh-tool-csv/README.md:34-48](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/README.md#L34-L48)\n\n作者的参数与动作范围。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n| `action` | string | ✅ | `parse` / `query` / `stats` / `to_json` |\n| `csv` | string | ✅ | CSV 文本（RFC 4180；引号字段可含逗号/换行；`\"\"` 转义；忽略 BOM） |\n| `column` | string | | 查询列：列名（有表头时）或 1-based 索引如 `\"2\"` |\n| `value` | string | | 查询精确匹配值（严格相等，非子串） |\n| `delimiter` | string | | 分隔符，默认 `\",\"`；单字符或 `\"tab\"` |\n| `header` | boolean | | 首行是否为表头，默认 `true`；`false` 时行解析为数组 |\n| `limit` | integer | | 返回行数上限（query/parse），默认 100 |\n\n## Actions\n\n| action | 功能 | 输出示例 |\n|---|---|---|\n| `parse` | 解析为 JSON 数组（有表头时每行一个对象） | `[{\"name\":\"Alice\",\"city\":\"NYC\"}]` |\n| `query` | 按列名/索引精确过滤行（结果含表头，可回读） | `[[\"name\",\"city\"],[\"Alice\",\"NYC\"]]` |\n| `stats` | 行数 / 列数 / 列名 / 空行数 / 警告（含重复列名、字段数不一致） | `{\"rows\":2,\"columns\":2,...}` |\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-tool-csv/README.md:82-96](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/README.md#L82-L96)\n\n作者记录兼容步骤。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：`@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n\n\n## 安装\n\n### Profile Bundle（推荐）\n\nDSH 0.1.5-rc.1（npm）起，本插件可作为独立 bundle 一键安装到任意 profile（仓库位于 https://github.com/omdsh-dev，public）：\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-csv/package.json:2-11](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/package.json#L2-L11)\n\n私有子包与 Node 范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"name\": \"@deepseek-ai/dsh-tool-csv\",\n  \"description\": \"DSH CSV data tool: parse/query/stats over RFC 4180 CSV text, zero-dependency state-machine parser\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-csv/lib/index.js:36-45](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-csv/lib/index.js#L36-L45)\n\nquery 仅序列化 rows，stats 独立动作。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n        const result = queryRows(rows, {\n            column: args.column,\n            value: args.value,\n            header,\n            limit: normalizeLimit(args.limit),\n        });\n        return JSON.stringify(result.rows);\n    }\n    if (action === 'stats') {\n        return JSON.stringify(statsGrid(rows, header, skippedBlank));\n```\n\n</details>\n\n#### 缺口\n\n- 未验证固定子包在目标 profile 的打包、装卸和回执预算\n  **影响**：影响使用成本和退出\n  **进一步探讨**：先试少量公开样本并核对禁用后的工具清单\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-csv；内容摘要：5e44c4cbc4f2181d356d354d95991bababb8028815eda2ec7d1524990d10d322。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 4 | 419 | 348 | 75 | — |\n| .md | source | 2 | 294 | — | — | 2432 |\n| .ts | source | 4 | 482 | 359 | 89 | — |\n| .ts | test | 3 | 336 | 274 | 7 | — |\n\n排除 4 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| CSV 解析 | 转换小型表格 | 重复表头后值覆盖 |\n| 精确查询 | 筛选指定列 | 同名列取首个，保留表头 |\n| 结构统计 | 检查字段和空行 | 独立动作，转换回执不自动带警告 |\n\n## 工程亮点\n\n[Q02](#research-q02) 确认用无原型对象映射表头，但字段重复仍会覆盖。采用前须核对过滤列与转换列是否一致。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-csv/package.json、packages/dsh-tool-csv/cordis.patch.yml、packages/dsh-tool-csv/lib/index.js、packages/dsh-tool-csv/lib/parse.js、packages/dsh-tool-csv/lib/query.js、packages/dsh-tool-csv/README.md 及固定范围 inventory；组件：packages/dsh-tool-csv。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：核查固定子包注册、输入解析、查询与统计；未执行插件、安装、测试或真实宿主。\n- 下一步：用重名表头、不规则宽度、全空字段行、引号内换行和明确 limit 的公开样本比较三个动作，并在禁用后检查工具清单。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-csv\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-csv/README.md\",\n    \"packages/dsh-tool-csv/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-csv/cordis.patch.yml\",\n    \"packages/dsh-tool-csv/lib/index.js\",\n    \"packages/dsh-tool-csv/lib/parse.js\",\n    \"packages/dsh-tool-csv/lib/query.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"临时检查一份小型 CSV 时，何时可以直接使用会话工具，怎样识别会改变字段身份或完整性的情况？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"CSV 文本如何变成统计或匹配结果？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"维护者可以将小型公开表格文本传给 csv，回调先统一分隔符和 header 选项，再完整解析。双引号状态机保留引号内逗号与换行，处理重复引号，闭合后遇到非法字符时抛错；query 按列名或 1 起索引选择列，严格比较字符串，最终将匹配行和表头返回。与 grep 按文本找词相比，这条链区分列和字段值。成熟 CSV 库也能实现，插件的增量是同会话直接接入统计和过滤；没有文件或网络读取入口。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 38,\n            \"observation\": \"声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"按固定包名插入 tool-csv。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/index.js\",\n            \"line_start\": 49,\n            \"line_end\": 56,\n            \"observation\": \"注入 tools 并注册 csv。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/index.js\",\n            \"line_start\": 90,\n            \"line_end\": 97,\n            \"observation\": \"注册回调进入本包实际执行逻辑并呈现回执。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/index.js\",\n            \"line_start\": 12,\n            \"line_end\": 45,\n            \"observation\": \"默认 header 与实际分发、文本回执。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/parse.js\",\n            \"line_start\": 71,\n            \"line_end\": 106,\n            \"observation\": \"引号状态和非法闭合后的异常。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/query.js\",\n            \"line_start\": 74,\n            \"line_end\": 97,\n            \"observation\": \"严格匹配及表头回执。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-csv/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 25,\n            \"observation\": \"作者描述临时任务与限制。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实会话中引号样本的传参和回执\",\n            \"impact\": \"影响能否可靠少用脚本\",\n            \"next_step\": \"使用同一公开多行字段样本对照 CSV 库\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"重复列名、空行与 limit 会改变什么？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"重复列名是首个应检查的反例。query 的 indexOf 选择第一个同名列，但有表头的 parse/to_json 逐键赋值，最后一个同名列覆盖先出现者；stats 报告后值覆盖，不能据此推断 query 也按后值过滤。若数据字段全空，即使表格写了多个分隔符，pushRow 也只计空行并丢弃行，行号无法直接对齐原文件。limit 在解析完成之后作用于返回行数，默认 100，提供较大正数时没有独立最高行数，query 在 header 模式可额外返回表头。256000 字节输入门槛限制提交规模，但不替代输出字节限制，特别是对象键在每行重复时。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/query.js\",\n            \"line_start\": 29,\n            \"line_end\": 35,\n            \"observation\": \"默认值与合法正数的处理。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/query.js\",\n            \"line_start\": 44,\n            \"line_end\": 60,\n            \"observation\": \"query 同名列取首个。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/query.js\",\n            \"line_start\": 106,\n            \"line_end\": 138,\n            \"observation\": \"stats 重名及宽度警告。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/query.js\",\n            \"line_start\": 153,\n            \"line_end\": 176,\n            \"observation\": \"parse 同名键按行覆盖及字段归并。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/parse.js\",\n            \"line_start\": 37,\n            \"line_end\": 68,\n            \"observation\": \"字节限制和全空数据行统计。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"怎样验证后再试用，如何减少预览被误当成可对账结果？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"先在隔离 profile 确认 Cordis/tools、同版 bundle 和工具清单，再输入小型公开 CSV，先看 stats 中的重名与不规则行，再验证 query。只需要预览时可用，涉及对账、重复字段或未截断导出时保留原文件并使用能保存列序号的脚本。模型传输原始文本和输出可能增加上下文，文件不应含未经允许的记录。可检验的改进是在回执报告列索引和是否截断；用同一重复表头、空行和 limit 对照，若仍无法从返回值定位源列，或者用户无需溯源却多承受大回执，改进收益有限。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-csv/README.md\",\n            \"line_start\": 34,\n            \"line_end\": 48,\n            \"observation\": \"作者的参数与动作范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-csv/README.md\",\n            \"line_start\": 82,\n            \"line_end\": 96,\n            \"observation\": \"作者记录兼容步骤。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 11,\n            \"observation\": \"私有子包与 Node 范围。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-csv/lib/index.js\",\n            \"line_start\": 36,\n            \"line_end\": 45,\n            \"observation\": \"query 仅序列化 rows，stats 独立动作。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验证固定子包在目标 profile 的打包、装卸和回执预算\",\n            \"impact\": \"影响使用成本和退出\",\n            \"next_step\": \"先试少量公开样本并核对禁用后的工具清单\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-csv/README.md\",\n      \"content\": \"# dsh-tool-csv\\n\\n[English](README.en.md)\\n\\nDSH CSV 数据工具插件 —— 解析、查询、过滤、统计和转换 CSV 文本。零依赖、纯函数、RFC 4180 状态机解析器。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\nAgent 会话里表格形态的数据（导出文件、API 响应、报告片段）出现频率很高。现有路径是起 `bash` 进程让模型现写解析脚本：\\n\\n1. **每次调用都起进程**——Windows 上尤其昂贵\\n2. **模型手写 CSV 解析器错误率高**——引号内逗号、`\\\"\\\"` 转义、BOM、跨行字段、CRLF 这些边界手写代码极易踩坑，且结果不可验证\\n\\n本插件提供确定性、零依赖、纯函数的 CSV 处理：一次函数调用，毫秒级返回结构化 JSON。\\n\\n与 `dsh-tool-json` 形成\\\"结构化数据处理\\\"对：JSON 管对象，CSV 管表格。\\n\\n## 安全模型\\n\\n- **零依赖**：不引入 csv 解析库，手写状态机（单遍扫描，O(n)）\\n- **纯函数**：不读文件、不写文件、不联网、不 eval\\n- **无注入面**：查询过滤只做字面精确匹配（`===`），不支持表达式求值\\n- **预算**：输入上限 256,000 字节（超限直接报错，不截断）；`timeoutMs: 2000`；`limit` 默认 100 行防输出膨胀\\n- 工具参数会记入会话日志，不要传入敏感数据\\n\\n## 工具声明\\n\\n注册 `csv` 工具（`@deepseek-ai/dsh-tool-csv`，row id `tool-csv`），统一输出 JSON 文本字符串。\\n\\n| 参数 | 类型 | 必填 | 说明 |\\n|---|---|---|---|\\n| `action` | string | ✅ | `parse` / `query` / `stats` / `to_json` |\\n| `csv` | string | ✅ | CSV 文本（RFC 4180；引号字段可含逗号/换行；`\\\"\\\"` 转义；忽略 BOM） |\\n| `column` | string | | 查询列：列名（有表头时）或 1-based 索引如 `\\\"2\\\"` |\\n| `value` | string | | 查询精确匹配值（严格相等，非子串） |\\n| `delimiter` | string | | 分隔符，默认 `\\\",\\\"`；单字符或 `\\\"tab\\\"` |\\n| `header` | boolean | | 首行是否为表头，默认 `true`；`false` 时行解析为数组 |\\n| `limit` | integer | | 返回行数上限（query/parse），默认 100 |\\n\\n## Actions\\n\\n| action | 功能 | 输出示例 |\\n|---|---|---|\\n| `parse` | 解析为 JSON 数组（有表头时每行一个对象） | `[{\\\"name\\\":\\\"Alice\\\",\\\"city\\\":\\\"NYC\\\"}]` |\\n| `query` | 按列名/索引精确过滤行（结果含表头，可回读） | `[[\\\"name\\\",\\\"city\\\"],[\\\"Alice\\\",\\\"NYC\\\"]]` |\\n| `stats` | 行数 / 列数 / 列名 / 空行数 / 警告（含重复列名、字段数不一致） | `{\\\"rows\\\":2,\\\"columns\\\":2,...}` |\\n| `to_json` | `parse` 的别名（模型友好） | 同 `parse` |\\n\\n## 示例\\n\\n```\\ncsv { action: \\\"parse\\\", csv: \\\"name,city\\\\nalice,nyc\\\\nbob,la\\\" }\\n  → [{\\\"name\\\":\\\"alice\\\",\\\"city\\\":\\\"nyc\\\"},{\\\"name\\\":\\\"bob\\\",\\\"city\\\":\\\"la\\\"}]\\n\\ncsv { action: \\\"query\\\", csv: \\\"name,city\\\\nalice,nyc\\\\nbob,la\\\", column: \\\"city\\\", value: \\\"la\\\" }\\n  → [[\\\"name\\\",\\\"city\\\"],[\\\"bob\\\",\\\"la\\\"]]\\n\\ncsv { action: \\\"stats\\\", csv: \\\"name,city\\\\nalice,nyc\\\" }\\n  → {\\\"rows\\\":1,\\\"columns\\\":2,\\\"columnNames\\\":[\\\"name\\\",\\\"city\\\"],\\\"emptyRows\\\":0,\\\"warnings\\\":[]}\\n```\\n\\n## 边界行为\\n\\n| 情况 | 处理 |\\n|---|---|\\n| 引号内逗号/换行/CRLF | 视为字段内容（跨行字段） |\\n| `\\\"\\\"` 转义 | 解码为单个 `\\\"` |\\n| **未闭合引号** | **报错**：`csv: unterminated quoted field`（严格模式，不静默容错） |\\n| **闭合引号后非法字符** | **报错**：`csv: invalid character \\\"x\\\" after closing quote`（RFC 4180：闭合后只允许分隔符/换行/EOF） |\\n| 首行 BOM | 剥离后再解析 |\\n| 空行 | 跳过（stats 报告空行数） |\\n| 字段数不一致 | 不报错：缺失补 `null`、多余并入最后一个字段（stats 记录警告） |\\n| 重复列名 | 后出现的列覆盖先出现的（stats 记录警告） |\\n| **`__proto__`/`constructor`/`prototype` 表头** | null-prototype 对象写入，**无损序列化**（`{\\\"__proto__\\\":\\\"value\\\"}`） |\\n| delimiter | 仅单 UTF-16 code unit 或 `\\\"tab\\\"`；拒绝 surrogate pair（如 `😀`）与控制字符（除 `\\\\t`） |\\n| 无表头 | `header: false`，行解析为数组，`column` 用 1-based 索引 |\\n| 超 256KB 输入 | 直接报错（不截断） |\\n| 十万行级输入 | 单遍聚合计算列宽（无 spread），不触发 RangeError |\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：`@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 安装\\n\\n### Profile Bundle（推荐）\\n\\nDSH 0.1.5-rc.1（npm）起，本插件可作为独立 bundle 一键安装到任意 profile（仓库位于 https://github.com/omdsh-dev，public）：\\n\\n```sh\\n# 交互式（web）profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-csv\\n```\\n\\n也可以先用 `npm pack` 打出 tarball 再安装：\\n\\n```sh\\ngit clone https://github.com/omdsh-dev/dsh-tool-csv\\ncd dsh-tool-csv\\nnpm install && npm pack\\ndsh plugin --profile web add ./deepseek-ai-dsh-tool-csv-*.tgz\\ndsh plugin --profile headless add ./deepseek-ai-dsh-tool-csv-*.tgz\\n```\\n\\n包内 `dsh.bundle.patch` 会在安装后自动把插件加入 profile 的 layer stack（row id：`tool-csv`）。插件缺失的 peer 依赖（`@deepseek-ai/cordis`、`@deepseek-ai/dsh-tools`、`@deepseek-ai/dsh-invariants`）由 profile 的 healed `profiles/node_modules` 回退安装提供。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。Windows 路径使用正斜杠（`C:/...`）。\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 csv 工具解析 'a,b\\n1,2'\\\"\\n```\\n\\n### 手动安装（源码贡献 / 旧 snapshot 场景）\\n\\n仅适用于源码贡献（在 monorepo 中开发调试本插件）或仍在使用旧 snapshot 的场景（本地 junction/symlink、手动编辑 profile 层）。\\n## 测试\\n\\n```bash\\nnode <monorepo>/node_modules/vitest/vitest.mjs run tests\\n```\\n\\n- `parse.spec.ts`：RFC 4180 边界（引号/转义/BOM/CRLF/空行/tab/大小上限/严格引号错误/delimiter 校验）\\n- `query.spec.ts`：列名/索引过滤、精确匹配、limit、错误路径、stats 警告、JSON 映射、危险表头、12.5 万行压力\\n- `register.spec.ts`：注册契约（AUDIT-CROSS-02 风格）\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-csv/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-csv\\\",\\n  \\\"description\\\": \\\"DSH CSV data tool: parse/query/stats over RFC 4180 CSV text, zero-dependency state-machine parser\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-csv/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-csv\\n      name: '@deepseek-ai/dsh-tool-csv'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-csv/lib/index.js\",\n      \"content\": \"/**\\n * DSH CSV 数据工具插件。\\n *\\n * 注册 `csv` 工具：解析、查询、统计 RFC 4180 CSV 文本。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-csv\\n *     name: '@deepseek-ai/dsh-tool-csv'\\n *\\n * 安全边界：零依赖、纯函数（不读文件/不联网/不 eval）；输入 256KB 上限；\\n * 查询只做字面精确匹配，无表达式求值面；timeoutMs 2000 兜底。\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { parseCsv, normalizeDelimiter } from './parse.js';\\nimport { queryRows, statsGrid, toJsonRows, normalizeLimit } from './query.js';\\nexport const name = '@deepseek-ai/dsh-tool-csv';\\nexport const inject = ['tools'];\\nfunction runAction(args) {\\n    const action = args.action;\\n    if (typeof args.csv !== 'string') {\\n        throw new Error('csv: csv must be a string');\\n    }\\n    const delimiter = normalizeDelimiter(args.delimiter);\\n    // header 默认 true；非布尔值回退默认\\n    const header = typeof args.header === 'boolean' ? args.header : true;\\n    const { rows, skippedBlank } = parseCsv(args.csv, { delimiter, header });\\n    if (action === 'parse' || action === 'to_json') {\\n        return JSON.stringify(toJsonRows(rows, header, delimiter, args.limit));\\n    }\\n    if (action === 'query') {\\n        if (typeof args.column !== 'string' || args.column === '') {\\n            throw new Error('csv: query requires a non-empty column');\\n        }\\n        if (typeof args.value !== 'string') {\\n            throw new Error('csv: query requires a string value');\\n        }\\n        const result = queryRows(rows, {\\n            column: args.column,\\n            value: args.value,\\n            header,\\n            limit: normalizeLimit(args.limit),\\n        });\\n        return JSON.stringify(result.rows);\\n    }\\n    if (action === 'stats') {\\n        return JSON.stringify(statsGrid(rows, header, skippedBlank));\\n    }\\n    throw new Error(`csv: unknown action \\\"${action}\\\"`);\\n}\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'csv',\\n        description: 'Parse, query, and summarize CSV text. ' +\\n            'Actions: parse (to JSON array), query (filter rows by exact column value), ' +\\n            'stats (row/column counts), to_json (alias of parse). ' +\\n            'RFC 4180, quoted fields with commas/newlines supported, BOM ignored. ' +\\n            'Pure text processing: no file or network access.',\\n        parameters: {\\n            action: {\\n                type: 'string',\\n                required: true,\\n                enum: ['parse', 'query', 'stats', 'to_json'],\\n                description: 'Operation to perform.',\\n            },\\n            csv: {\\n                type: 'string',\\n                required: true,\\n                description: 'CSV text. RFC 4180: quoted fields may contain commas, quotes (\\\"\\\" escaped), and newlines. A leading UTF-8 BOM is ignored.',\\n            },\\n            column: {\\n                type: 'string',\\n                description: 'Column name (when the first row is a header) or 1-based index like \\\"2\\\", for query.',\\n            },\\n            value: {\\n                type: 'string',\\n                description: 'Exact match value for query filtering (strict equality, not substring).',\\n            },\\n            delimiter: {\\n                type: 'string',\\n                description: 'Field delimiter, default \\\",\\\". Accepts a single character, or \\\"tab\\\" for \\\\\\\\t.',\\n            },\\n            header: {\\n                type: 'boolean',\\n                description: 'Treat the first row as a header. Default true. When false, rows parse as arrays and column means a 1-based index.',\\n            },\\n            limit: {\\n                type: 'integer',\\n                description: 'Maximum rows to return (query/parse), default 100. Prevents unbounded output.',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'string' },\\n            render: (_args, value) => [{ type: 'text', text: value }],\\n        },\\n        execute: args => Promise.resolve(runAction(args)),\\n        timeoutMs: 2000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-csv/lib/parse.js\",\n      \"content\": \"/**\\n * RFC 4180 CSV 状态机解析器 —— 零依赖，纯函数，单遍扫描 O(n)。\\n *\\n * 边界处理：\\n * - 引号只在字段开头生效（`\\\"` 前有内容则按字面量处理，与多数 CSV 库一致）\\n * - 引号内逗号/换行/CRLF 视为字段内容；`\\\"\\\"` 转义为单个 `\\\"`\\n * - CRLF 归一化：`\\\\r\\\\n` 记一行，单独 `\\\\r` 也记一行\\n * - 首行 UTF-8 BOM（U+FEFF）剥离\\n * - 全空字段的行（空行）跳过，不产生记录（与 pandas skip_blank_lines 语义一致），\\n *   计数通过 ParseResult.skippedBlank 返回（供 stats 动作报告空行数）\\n * - 输入超过 MAX_INPUT_BYTES 直接拒绝（不截断——截断会产生错误数据）\\n *\\n * 与设计文档的唯一偏差：parseCsv 返回 { rows, skippedBlank } 而非裸 string[][]，\\n * 以携带空行计数；rows 语义与文档完全一致。\\n */\\nexport const MAX_INPUT_BYTES = 256_000;\\n/** 校验分隔符：单 UTF-16 code unit 或 \\\"tab\\\"；拒绝 surrogate pair 与控制字符（除 \\\\t）。 */\\nexport function normalizeDelimiter(delimiter) {\\n    if (delimiter === undefined || delimiter === null)\\n        return ',';\\n    if (typeof delimiter !== 'string') {\\n        throw new Error('csv: delimiter must be a single character or \\\"tab\\\"');\\n    }\\n    if (delimiter === 'tab')\\n        return '\\\\t';\\n    // UTF-16 单元数：非 BMP 字符（如 😀）长度为 2，解析器按 code unit 比较无法匹配，\\n    // 必须拒绝；同时拒绝换行等控制字符（会改变行解析语义）。\\n    if (delimiter.length !== 1) {\\n        throw new Error('csv: delimiter must be a single character or \\\"tab\\\"');\\n    }\\n    const code = delimiter.charCodeAt(0);\\n    if (code < 0x20 && delimiter !== '\\\\t') {\\n        throw new Error('csv: delimiter must be a single character or \\\"tab\\\" (control characters are not allowed)');\\n    }\\n    return delimiter;\\n}\\n/** 解析 CSV 文本为字符串网格；跳过空行；BOM 剥离；输入字节上限检查；严格引号校验。 */\\nexport function parseCsv(text, options) {\\n    if (typeof text !== 'string') {\\n        throw new Error('csv: csv must be a string');\\n    }\\n    if (Buffer.byteLength(text, 'utf8') > MAX_INPUT_BYTES) {\\n        throw new Error(`csv: input exceeds ${MAX_INPUT_BYTES} bytes`);\\n    }\\n    const rows = [];\\n    let row = [];\\n    let field = '';\\n    let inQuotes = false;\\n    let afterQuote = false; // 闭合引号后只允许分隔符/行结束/EOF\\n    let skippedBlank = 0;\\n    let i = 0;\\n    const len = text.length;\\n    const delim = options.delimiter;\\n    // BOM 剥离\\n    if (text.charCodeAt(0) === 0xfeff)\\n        i = 1;\\n    const pushField = () => {\\n        row.push(field);\\n        field = '';\\n    };\\n    const pushRow = () => {\\n        pushField();\\n        if (row.some(f => f !== '')) {\\n            rows.push(row);\\n        }\\n        else {\\n            skippedBlank++;\\n        }\\n        row = [];\\n    };\\n    for (; i < len; i++) {\\n        const ch = text[i];\\n        if (inQuotes) {\\n            if (ch === '\\\"') {\\n                if (text[i + 1] === '\\\"') {\\n                    field += '\\\"';\\n                    i++;\\n                } // \\\"\\\" 转义\\n                else {\\n                    inQuotes = false;\\n                    afterQuote = true;\\n                } // 闭合引号\\n            }\\n            else {\\n                field += ch;\\n            }\\n        }\\n        else if (afterQuote) {\\n            // RFC 4180：闭合引号后只允许分隔符、行结束或 EOF\\n            if (ch === delim) {\\n                pushField();\\n                afterQuote = false;\\n            }\\n            else if (ch === '\\\\n' || ch === '\\\\r') {\\n                if (ch === '\\\\r' && text[i + 1] === '\\\\n')\\n                    i++;\\n                pushRow();\\n                afterQuote = false;\\n            }\\n            else {\\n                throw new Error(`csv: invalid character \\\"${ch}\\\" after closing quote at position ${i}`);\\n            }\\n        }\\n        else if (ch === '\\\"' && field === '') {\\n            inQuotes = true; // 仅字段开头是引号时进入引用态\\n        }\\n        else if (ch === delim) {\\n            pushField();\\n        }\\n        else if (ch === '\\\\n' || ch === '\\\\r') {\\n            // CRLF 归一：\\\\r 后跟 \\\\n 时只记一行\\n            if (ch === '\\\\r' && text[i + 1] === '\\\\n')\\n                i++;\\n            pushRow();\\n        }\\n        else {\\n            field += ch;\\n        }\\n    }\\n    // 无结尾换行时收尾（避免吞掉最后一行）\\n    if (inQuotes) {\\n        throw new Error('csv: unterminated quoted field (missing closing quote)');\\n    }\\n    if (field !== '' || row.length > 0)\\n        pushRow();\\n    return { rows, skippedBlank };\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-csv/lib/query.js\",\n      \"content\": \"/**\\n * CSV 查询 / 统计 / JSON 映射 —— 零依赖，纯函数。\\n *\\n * - queryRows：按列名或 1-based 索引精确匹配过滤（严格 ===，非子串）；\\n *   结果包含表头行（如果存在），保证可被 parse 回读。\\n * - statsGrid：行数 / 列数 / 列名 / 空行数 / 警告（字段数不一致、重复列名）。\\n * - toJsonRows：网格 → JSON（header=true 时每行一个对象：缺失字段补 null、\\n *   多余字段并入最后一个字段；header=false 时每行一个数组）。\\n */\\nconst DEFAULT_LIMIT = 100;\\n/** 单遍循环求最大列宽（不用 spread——十万行级 grid 会触发 RangeError）。 */\\nfunction gridWidth(grid) {\\n    let width = 0;\\n    for (const row of grid) {\\n        if (row.length > width)\\n            width = row.length;\\n    }\\n    return width;\\n}\\n/** 单遍循环求最小列宽。 */\\nfunction gridMinWidth(grid) {\\n    let min = Number.POSITIVE_INFINITY;\\n    for (const row of grid) {\\n        if (row.length < min)\\n            min = row.length;\\n    }\\n    return min;\\n}\\n/** 规范化 limit：非法值（undefined/null/非有限/负数/0/小数）回退到默认 100。 */\\nexport function normalizeLimit(limit) {\\n    if (typeof limit !== 'number' || !Number.isFinite(limit) || limit < 1) {\\n        return DEFAULT_LIMIT;\\n    }\\n    return Math.floor(limit);\\n}\\n/** 严格 1-based 正整数索引校验（\\\"01\\\"/\\\"1.5\\\"/\\\"0\\\"/\\\"-1\\\"/\\\"abc\\\" 全部拒绝）。 */\\nfunction parseIndex(column) {\\n    if (!/^[1-9]\\\\d*$/.test(column))\\n        return null;\\n    const n = Number(column);\\n    return Number.isSafeInteger(n) ? n : null;\\n}\\n/** 解析列引用 → 0-based 列下标；解析失败抛 csv: 错误。 */\\nfunction resolveColumn(grid, column, header) {\\n    if (grid.length === 0) {\\n        throw new Error('csv: empty CSV has no columns');\\n    }\\n    if (header) {\\n        const headerRow = grid[0];\\n        const byName = headerRow.indexOf(column);\\n        if (byName !== -1)\\n            return byName;\\n        const byIndex = parseIndex(column);\\n        if (byIndex !== null) {\\n            if (byIndex > headerRow.length) {\\n                throw new Error(`csv: column index ${byIndex} out of bounds (${headerRow.length} columns)`);\\n            }\\n            return byIndex - 1;\\n        }\\n        throw new Error(`csv: column \\\"${column}\\\" not found in header and not a valid 1-based index`);\\n    }\\n    // header=false：只接受 1-based 索引\\n    const byIndex = parseIndex(column);\\n    if (byIndex === null) {\\n        throw new Error(`csv: header=false requires a 1-based numeric column, got \\\"${column}\\\"`);\\n    }\\n    const width = gridWidth(grid);\\n    if (byIndex > width) {\\n        throw new Error(`csv: column index ${byIndex} out of bounds (${width} columns)`);\\n    }\\n    return byIndex - 1;\\n}\\n/** 按列精确匹配过滤；返回 [结果行, 列名数组]。 */\\nexport function queryRows(grid, options) {\\n    const index = resolveColumn(grid, options.column, options.header);\\n    const limit = normalizeLimit(options.limit);\\n    const dataRows = options.header && grid.length > 0 ? grid.slice(1) : grid;\\n    const matched = [];\\n    for (const row of dataRows) {\\n        const field = row[index];\\n        if (field !== undefined && field === options.value) {\\n            matched.push(row);\\n            if (matched.length >= limit)\\n                break;\\n        }\\n    }\\n    const columns = [];\\n    if (options.header && grid.length > 0) {\\n        columns.push(...grid[0]);\\n    }\\n    else {\\n        const width = gridWidth(grid);\\n        for (let i = 1; i <= width; i++)\\n            columns.push(String(i));\\n    }\\n    const rows = options.header && grid.length > 0 ? [grid[0], ...matched] : matched;\\n    return { rows, columns };\\n}\\n/** 统计：行数 / 列数 / 列名 / 空行数 / 聚合警告。 */\\nexport function statsGrid(grid, header, emptyRows) {\\n    const warnings = [];\\n    if (grid.length === 0) {\\n        return { rows: 0, columns: 0, columnNames: header ? [] : null, emptyRows, warnings };\\n    }\\n    const width = gridWidth(grid);\\n    if (header) {\\n        const headerRow = grid[0];\\n        // 重复列名：后出现的列覆盖先出现的（与多数 CSV 库一致），并报告\\n        const seen = new Set();\\n        const duplicates = new Set();\\n        for (const name of headerRow) {\\n            if (seen.has(name))\\n                duplicates.add(name);\\n            seen.add(name);\\n        }\\n        if (duplicates.size > 0) {\\n            warnings.push(`duplicate column names: ${[...duplicates].join(', ')} (later ones win)`);\\n        }\\n        let fewer = 0;\\n        let more = 0;\\n        for (const row of grid.slice(1)) {\\n            if (row.length < headerRow.length)\\n                fewer++;\\n            else if (row.length > headerRow.length)\\n                more++;\\n        }\\n        if (fewer > 0) {\\n            warnings.push(`${fewer} data row(s) have fewer fields than the header (missing fields filled with null)`);\\n        }\\n        if (more > 0) {\\n            warnings.push(`${more} data row(s) have more fields than the header (extra fields merged into the last column)`);\\n        }\\n        return {\\n            rows: grid.length - 1,\\n            columns: width,\\n            columnNames: [...headerRow],\\n            emptyRows,\\n            warnings,\\n        };\\n    }\\n    // header=false：字段数不一致行数\\n    const first = grid[0].length;\\n    let inconsistent = 0;\\n    for (const row of grid) {\\n        if (row.length !== first)\\n            inconsistent++;\\n    }\\n    if (inconsistent > 0) {\\n        warnings.push(`${inconsistent} row(s) have inconsistent field counts (min ${gridMinWidth(grid)}, max ${width})`);\\n    }\\n    return { rows: grid.length, columns: width, columnNames: null, emptyRows, warnings };\\n}\\n/** 网格 → JSON 值（header=true 时对象数组；header=false 时数组数组）。 */\\nexport function toJsonRows(grid, header, delimiter, limit) {\\n    const cap = normalizeLimit(limit);\\n    if (grid.length === 0)\\n        return [];\\n    if (!header) {\\n        return grid.slice(0, cap).map(row => [...row]);\\n    }\\n    const headerRow = grid[0];\\n    const out = [];\\n    for (const row of grid.slice(1, cap + 1)) {\\n        // 多余字段并入最后一个字段（用分隔符连接）\\n        const effective = row.length > headerRow.length\\n            ? [...row.slice(0, headerRow.length - 1), row.slice(headerRow.length - 1).join(delimiter)]\\n            : row;\\n        // null-prototype 对象：__proto__/constructor/prototype 等表头作为普通字段写入，\\n        // 不会被原型 setter 吞掉（JSON.stringify 对 null-prototype 对象输出不变）\\n        const obj = Object.create(null);\\n        for (let i = 0; i < headerRow.length; i++) {\\n            obj[headerRow[i]] = i < effective.length ? effective[i] : null;\\n        }\\n        out.push(obj);\\n    }\\n    return out;\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-csv\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"5e44c4cbc4f2181d356d354d95991bababb8028815eda2ec7d1524990d10d322\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 419,\n        \"code\": 348,\n        \"comments\": 75,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 294,\n        \"words\": 2432\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 4,\n        \"lines\": 482,\n        \"code\": 359,\n        \"comments\": 89,\n        \"blank\": 38\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 3,\n        \"lines\": 336,\n        \"code\": 274,\n        \"comments\": 7,\n        \"blank\": 56\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-csv/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-csv/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-csv/lib/types/parse.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-csv/lib/types/query.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-csv/lib/index.js\",\n          \"line\": 50,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-csv/lib/index.js\",\n          \"line\": 50,\n          \"api\": \"defineTool\",\n          \"name\": \"csv\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-csv/src/index.ts\",\n          \"line\": 70,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-csv/src/index.ts\",\n          \"line\": 70,\n          \"api\": \"defineTool\",\n          \"name\": \"csv\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"csv\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "9883ea6b3bab5cbf022f197b60bc4d2a57b73f34764887b48ff019260de0f63e"
+        }
+    },
+    "unavailable_artifacts": []
+}

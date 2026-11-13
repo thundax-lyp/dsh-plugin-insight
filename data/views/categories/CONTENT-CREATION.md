@@ -38,6 +38,7 @@
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
+| [dsh-hyperframes](#plugin-1334554606-root) | 在 DeepSeek Harness 中编辑 HTML 视频工程，管理素材并预览、导出 MP4。 | [Q03](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q03) 用公开短片试用。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | [Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中提供图片与视频生成、编辑、画布节点和本地片段拼接。 | [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04) 先保留观察结论，核对异步任务账本和可终止渲染，再考虑付费工作流。 |
@@ -58,6 +59,7 @@
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tavern](#plugin-1335599084-root) | 管理角色卡、世界书和预设，在 DSH 会话中组织角色扮演与故事续写。 | [Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 先用虚构材料比较原生预设。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
+| [dsh-tool-markdown](#plugin-1327795364-packages-dsh-tool-markdown) | 在 DeepSeek Harness 中转换 HTML 和 Markdown、整理表格并生成目录。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q03) 可对公开片段试用，按 [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q02) 独立检查链接和目录。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-vision](#plugin-1333755444-root) | 原生视觉透传，文本主模型经云或OCR观察桥接图片。 | [Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 固定测试图对照两阶段结果再日用。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 为 DSH 提供本地媒体探测、音轨与缩略图提取、PDF、转写、文档转换、OCR 和元数据工具。 | 优先只读小样本，配置独立根目录，空目标写入；条件不明时回本地工具。 |
@@ -506,6 +508,22 @@
 
 [查看完整分析](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334554606-root"></a>
+
+## [dsh-hyperframes](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/STARDUSTLC666/dsh-hyperframes) [![npm 30d 12,879](https://img.shields.io/static/v1?label=npm+30d&message=12%2C879&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hyperframes) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hyperframes)
+
+> **用途**：反复制作短标题卡或产品介绍的人，可从模板建立保留修订的可编辑工程。
+
+> **亮点**：[Q01](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q01) 的工作台将编辑工程、准备环境、任务回执和 MP4 记录集中在 DSH。
+
+> **思考**：[Q02](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q02) 的文件检查只到大小和 ftyp，出品仍需播放与修订复核。进程环境限制无法替代系统沙箱。
+
+> **建议**：[Q03](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q03) 提出下载前显式展示导出修订并增加可选媒体探测，检验能否减少错交旧成片。
+
+[查看完整分析](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1336998801-root"></a>
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
@@ -825,6 +843,22 @@
 > **建议**：未验证假设：共享 Host 激活状态可降低 UI 和工具状态不一致，需对照恢复与延迟场景。[Q05](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-markdown"></a>
+
+## [dsh-tool-markdown](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：撰写技术笔记的人可把公开页面片段转成可编辑的 Markdown、表格或目录草案。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q01) 确认四种常用文档动作直接在会话执行，输出可核对的文本。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q02) 的基址拼接、协议相对链接和围栏状态会改变链接或目录，发布前需要独立复核。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q03) 提出按标准解析基址并分开判定跨站策略，用固定链接样本验证是否减少错误。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1414936636-root"></a>
 

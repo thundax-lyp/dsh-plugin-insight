@@ -155,6 +155,7 @@
 | [dsh_workflow](#plugin-1332243516-root) | 在 DSH 中创建、保存和运行可复用的多 Agent 工作流，并保留运行证据。 | [Q03](../../plugins/omdsh-dev--dsh_workflow/INSIGHT.md#research-q03) 在只读任务对照一次重复运行和一次恢复，核对真实事件与结果。 |
 | [dsh-a11y-scan](#plugin-1344715270-root) | 在DSH中调用axe扫描本地HTML或确认URL，输出定位、修复线索、人工复核项和多格式报告。 | 可信无敏感页面可限范围试用作自动线索，先核实际网络/文件与规则覆盖，保留人工复核。 |
 | [DSH-action](#plugin-1333633428-root) | 在GitHub Actions运行DeepSeek Harness，处理评审、诊断、代码任务与自动化。 | 已有可信CI维护者先用controlled、只读、Session off、无外部扩展和独立runner，设置预算与网络策略。 |
+| [dsh-advisor](#plugin-1326938666-root) | 让独立模型评阅 DeepSeek Harness 会话，注入分级建议并为 Web 提供后续提示。 | [Q03](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md#research-q03) 隔离观察公开会话，按 [Q02](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md#research-q02) 确认数据和费用，无法核对时回到人工复核。 |
 | [dsh-agent-recycle-guard](#plugin-1414323673-root) | 将 Agent 常见直接删除改为系统回收，并对执行脚本做有限内容检查，异常时阻止命令。 | 建议有独立备份的维护者在可丢弃目录受控试用常见删除缓冲；不以此替代权限隔离，准备长期阻断、语义不一致或需要动态程序全覆盖时停止。 |
 | [dsh-agentdebugx](#plugin-1296792947-integrations-dsh-agentdebugx) | 连接 DSH 会话与 AgentDebugX，支持保存会话发现、当前或历史轨迹诊断和本地查看。 | 建议观察，先修明物理路径与取消契约，缩窄历史root，之后再考虑不敏感当前工作区轨迹；同模型自诊断不作为独立效果证明。 |
 | [dsh-agy-link](#plugin-1339101586-root) | 把 Google Antigravity CLI 的模型、流式输出和账号操作接入 DeepSeek Harness。 | [Q05](../../plugins/amlyczz--dsh-agy-link/INSIGHT.md#research-q05) 建议已有 agy 环境的开发者先观察隔离流程，具体核对 [Q03](../../plugins/amlyczz--dsh-agy-link/INSIGHT.md#research-q03) 的凭据写回与 [Q04](../../plugins/amlyczz--dsh-agy-link/INSIGHT.md#research-q04) 的路径范围。 |
@@ -255,6 +256,7 @@
 | [dsh-pr-description](#plugin-1344714177-root) | 读取分支差异生成 PR 标题和五段描述，可选确认、保存与调用 gh 创建 PR。 | 先显式给 base 和安全输出路径，生成本地草稿并核对动机、测试、breaking；只有明确要发 PR 时才启用 openPr。 |
 | [dsh-progress-viz (plugin)](#plugin-1334481905-plugin) | 把 DSH 语义会话事件即时投影成进度 JSON，供独立 Python 看板读取。 | 先把 JSON 当辅助状态并对照会话真相，修复/规避空闲恢复和估价问题后再作为运行监控依据。 |
 | [dsh-project-memory](#plugin-1339316901-root) | 为 DSH 项目保存文档、代码符号、经验与任务，并提供跨会话检索和提示。 | [Q04](../../plugins/00080000--dsh-project-memory/INSIGHT.md#research-q04) 先在单项目备份中按需查询，检查根和任务归属，再新进程读回；来源冲突或回读不符时停止自动注入，返回原文件与人工笔记。 |
+| [dsh-qa](#plugin-1339045665-root) | 在 DeepSeek Harness 管理本地 QA 项目、受控测试、执行证据和交付门禁。 | [Q03](../../plugins/naodeng--dsh-qa/INSIGHT.md#research-q03) 先在隔离本机观察两个合成任务，按 [Q02](../../plugins/naodeng--dsh-qa/INSIGHT.md#research-q02) 对照运行归属。 |
 | [dsh-qa-suite-n23](#plugin-1353726715-root) | 提供编辑后 TypeScript 诊断工具和本地多镜头代码审查命令。 | 先独立使用并复核 code_check 的项目根和时间，重要审查问题需要源码复现；跨项目或自动放行场景暂观察。 |
 | [dsh-reaper](#plugin-1423215373-root) | 扫描监听端点并给进程归属分级，预览后代终止计划，经confirm后结束进程并检查端口。 | 先观察，以只读诊断为限；身份/后代保护/取消与精确端点协议补齐后再评估受控试用。 |
 | [dsh-recall-plugin](#plugin-1334434866-root) | 将用户消息关联影子git快照，提供文件/会话回退、原生fork、归档与草稿回填。 | 独立备份的小型非敏感项目受限试用，先fixture核所有阶段与排除范围。 |
@@ -283,6 +285,10 @@
 | [dsh-thinking-effort](#plugin-1334875164-root) | 为 DSH 自定义 pi-ai 模型配置思考档位，并设置子 Agent 默认思考强度与兼容选项。 | 独立profile单模型核请求再核子Agent，失败或超预算还原字段；不为内建模型重复增加控制。 |
 | [dsh-tianshu-tui](#plugin-1332692519-root) | 为 DeepSeek Harness 提供流式消息、工具卡、会话操作和 LSP 诊断的交互式终端界面。 | [Q05](../../plugins/huiliyi37--dsh-tianshu-tui/INSIGHT.md#research-q05) 建议先在独立 profile、固定版本和可丢弃目录用普通逐卡审批做一处受控修改，确认指令已投递后再测取消、切会话与退出。 |
 | [dsh-token-billing](#plugin-1335139860-root) | 在DSH会话中显示实时token费用，结合路由价目与政策时间线，保存跨会话账本并提供统计、余额及CSV/JSON导出。 | 先观察。 |
+| [dsh-tool-csv](#plugin-1327795364-packages-dsh-tool-csv) | 在 DeepSeek Harness 中解析 CSV 文本、按列精确查找并输出统计。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md#research-q03) 建议先跑 stats，再试有唯一表头的公开样本。 |
+| [dsh-tool-diff](#plugin-1327795364-packages-dsh-tool-diff) | 在 DeepSeek Harness 中比较文本、JSON、CSV 和 Markdown，并生成和校验内存补丁。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md#research-q03) 限公开小样本试用，按 [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md#research-q02) 核对裁切和重复键，实际仓库修改用原有 Git 流程。 |
+| [dsh-tool-encoding](#plugin-1327795364-packages-dsh-tool-encoding) | 在 DeepSeek Harness 中对 UTF-8 文本编解码、计算摘要并生成 UUID。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q03) 建议在隔离 profile 仅用公开样本复核 [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q02) 的往返和拒绝行为。 |
+| [dsh-tool-json](#plugin-1327795364-packages-dsh-tool-json) | 在 DeepSeek Harness 中按路径查询 JSON 值，支持数组通配符和方括号访问。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md#research-q03) 用公开样本验证后限小型取值试用；对照 [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md#research-q02) 样本确认何时改用带来源 ID 的脚本。 |
 | [dsh-tool-todo-plus](#plugin-1402589370-root) | 增强 DSH 任务清单工具，提供优先级、完整清单输出和会话浮动任务面板。 | 先用可复做多步骤任务核对原工具与增强输出，手动打开浮窗；另以实际产物验收，覆盖或错显即回官方工具。 |
 | [dsh-trellis](#plugin-1335559646-root) | 为 DSH 提供任务阶段、步骤状态、会话提示与可选规划期工具过滤。 | [Q05](../../plugins/1264459640--dsh-trellis/INSIGHT.md#research-q05) 建议在隔离项目备份同名技能后试用非关键任务；人工独立验证批准、Git 状态和业务结果，异常时停止流程并恢复备份。 |
 | [dsh-TUI](#plugin-1333111893-root) | 为 DSH 提供交互式终端客户端，显示会话、工具状态、流式输出和上下文。 | [Q03](../../plugins/ccch1mneyyy--dsh-tui/INSIGHT.md#research-q03) 在隔离 DSH home 先试已知新会话，再检查恢复与退出。 |
@@ -347,6 +353,7 @@
 | [Kimi Plugin CC](#plugin-1211353708-root) | 把本机 Kimi Code CLI 接入 Claude Code、Codex 与 DSH，提供第二轮审查、修复及可追踪的任务控制。 | [Q04](../../plugins/linxule--kimi-plugin-cc/INSIGHT.md#research-q04) 仅在已有授权的 CLI 与受管钩子下试一份公开小 diff，钩子不匹配或发现不可复核就回原宿主手工查。 |
 | [KimiX](#plugin-1180401969-root) | 基于 Kimi CLI 的命令行代理与脚本工作流，提供文件、命令及模型工具。 | [Q04](../../plugins/sikao-engine--kimix/INSIGHT.md#research-q04) 建议熟悉代码与命令的开发者先在非敏感副本试小任务，并自行核对实际检查结果。 |
 | [Knit](#plugin-1371827207-root) | 为 DSH 提供按任务检索工作区文档与代码、展示命中理由和来源的侧栏及模型工具。 | [Q05](../../plugins/polinnizhong--dsh-knit/INSIGHT.md#research-q05) 只在可信合成目录做词法试用。 |
+| [lark-agent-bridge](#plugin-1339469423-root) | 把飞书消息桥接到本地 DeepSeek Harness 会话，并将代理回复流式返回原会话。 | [Q03](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md#research-q03) 在专用群和隔离 profile 观察只读链路，[Q02](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md#research-q02) 的群授权范围和副作用需验证后再评估写权限。 |
 | [leantoken](#plugin-1301161244-root) | 通过本地索引和 MCP 为开发 Agent 返回带 token 预算的仓库代码上下文。 | [Q03](../../plugins/morluto--leantoken/INSIGHT.md#research-q03) 以同模型同仓库做只读对照，先确认关键证据，再判断节省。 |
 | [Ledger Memory](#plugin-1412857520-root) | 为 DSH 项目保存活跃台账、经验卡与交接资料，自动注入记忆并提供压缩胶囊和会话文本指针回读。 | 可备份V3非关键项目先核拒写/授权/stage和压缩回读，定期人工比对真实工作区；缺口出现暂停自动依赖，见 [Q04](../../plugins/18477514055--dsh-ledger-memory/INSIGHT.md#research-q04)。 |
 | [LogicProbe](#plugin-1331586818-root) | 检查设计和代码主张，使用可执行模型分析状态、数据和结构，并比较验证报告。 | [Q04](../../plugins/amethystluna--logicprobe/INSIGHT.md#research-q04) 建议先在可核对源码的小状态机上试用，保存完整报告；映射无法确认或检查持续未决时回到既有审查和测试。 |
@@ -379,6 +386,7 @@
 | [Ouroboros](#plugin-1133901637-root) | 用访谈生成验收规格 Seed，再将机械检查和模型审阅投影为验收结果的 Python 工作流工具。 | [Q01](../../plugins/q00--ouroboros/INSIGHT.md#research-q01) 选择已有可执行测试的小改动，[Q04](../../plugins/q00--ouroboros/INSIGHT.md#research-q04) 在独立低权限副本先确认项目命令，再冻结经签认的 Seed。 |
 | [Perfect Web Clone](#plugin-1128708803-root) | 以Skill驱动宿主编码Agent，配套网页采集、分区和量化工具；root提供DSH shim，但分进程CLI活动工作区与综合门控是采用前必须核实的断点。 | 先观察。 |
 | [phi](#plugin-1321152436-root) | 提供终端编码、权限控制、子 Agent、扩展和按需 MCP 工具发现的独立 Go 客户端。 | [Q04](../../plugins/pulseaiclub--phi/INSIGHT.md#research-q04) 先在可信只读MCP任务中对照试用，保留真实权限配置；漏用工具、拒绝失配或总负担上升就回原客户端。 |
+| [PictureReader](#plugin-1335660277-root) | 为 DSH 提供截图分析、OCR、视觉路由、文档转图和本地图像编辑。 | 先观察无敏感图片，若数据出站无法确认则使用原生手工或本地 OCR。 |
 | [Pilot Harness](#plugin-1336793734-root) | 将 DSH 底座组合为 Electron 桌面客户端与独立界面插件，提供模型配置和工作区 Files 侧栏，真实文件操作需另核目标与并发边界。 | 复制workspace、独立资料目录先只读浏览和插入草稿路径；写操作/模型权限另核，界面目标或写结果不清先停，见 [Q05](../../plugins/op7418--pilot-harness/INSIGHT.md#research-q05)。 |
 | [Plan Lattice](#plugin-1334504487-root) | 在 DSH 历史替换后恢复原生任务依据，并可显式启用完整执行门禁。 | 先用作者公开稳定包/候选在相同 DSH 版本隔离试点，重点比较替换后权威保真和门禁对合法写入的影响；无需把 rc.8 或机制比例当生产收益，详见[Q03](../../plugins/1052326311--dsh-plan-lattice/INSIGHT.md#research-q03)。 |
 | [Plugin Manager](#plugin-1333152408-packages-plugins-plugin-manager) | 在 DSH Web 商店浏览目录、查看兼容信息并调用官方 CLI 安装和更新插件 | [Q04](../../plugins/whyihaveyou--dsh-suite--packages-plugins-plugin-manager/INSIGHT.md#research-q04) 建议观察，先读目录并手工固定spec在隔离profile安装。 |
@@ -2713,6 +2721,22 @@
 
 [查看完整分析](../../plugins/lixiaoyiao--dsh-action/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1326938666-root"></a>
+
+## [dsh-advisor](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-advisor) [![npm 30d 5,247](https://img.shields.io/static/v1?label=npm+30d&message=5%2C247&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-advisor) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-advisor)
+
+> **用途**：监督多轮 DSH 工作的开发者，可以观察评阅模型对公开会话的建议。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md#research-q01) 将独立评阅和按严重度回送接入会话，同时保留主代理审批流程。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md#research-q02) 的变化段进入配置模型，输出短不代表费用低，失败和积压也可让一些轮次没有建议。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md#research-q03) 建议尝试正文筛除和事件范围回执，比较召回、外发标记和干预频率。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-advisor/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1414323673-root"></a>
 
 ## [dsh-agent-recycle-guard](../../plugins/ahyi8--dsh-agent-recycle-guard/INSIGHT.md)
@@ -4313,6 +4337,22 @@
 
 [查看完整分析](../../plugins/00080000--dsh-project-memory/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1339045665-root"></a>
+
+## [dsh-qa](../../plugins/naodeng--dsh-qa/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/naodeng/dsh-qa) [![npm 30d 2,032](https://img.shields.io/static/v1?label=npm+30d&message=2%2C032&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-qa) [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-qa)
+
+> **用途**：个人 QA 或测试负责人可以在 DSH 项目旁管理需求、测试执行与交付证据。
+
+> **亮点**：[Q01](../../plugins/naodeng--dsh-qa/INSIGHT.md#research-q01) 的工作台把受控执行、证据保全和可解释门禁放到本机工作流。
+
+> **思考**：[Q02](../../plugins/naodeng--dsh-qa/INSIGHT.md#research-q02) 发现任务门禁取项目最后一条运行，任务来源相同仍不足以证明证据属于所选任务。
+
+> **建议**：[Q03](../../plugins/naodeng--dsh-qa/INSIGHT.md#research-q03) 提出贯通运行、证据和门禁的任务身份，并用交错运行验证归属。
+
+[查看完整分析](../../plugins/naodeng--dsh-qa/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1353726715-root"></a>
 
 ## [dsh-qa-suite-n23](../../plugins/all3ncn--dsh-qa-suite-n23/INSIGHT.md)
@@ -4760,6 +4800,70 @@
 > **建议**：可探索步骤revision与upsert/tombstone修订链、价版本和原币种收据，比较投影/总账差额、重放与体积；未实现。详见[Q06](../../plugins/2006spy--dsh-token-billing/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/2006spy--dsh-token-billing/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-csv"></a>
+
+## [dsh-tool-csv](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：在会话临时查看小型公开 CSV 的开发者可核对字段、行数和指定列的匹配样本。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md#research-q01) 的引号状态和列级匹配让会话直接复核带逗号、换行的字段。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md#research-q02) 发现 query 取首个同名列，parse 却由后值覆盖；limit 也不限制预解析成本。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md#research-q03) 提议回执显示列索引及截断，使用重名表头对照可否复原源列。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-csv/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-diff"></a>
+
+## [dsh-tool-diff](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：开发者可在会话中复核两份小型公开配置或样例数据的差异。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md#research-q01) 的路径级和键级回执让小型配置差异可在会话里复核，省去临时构造脚本。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md#research-q02) 的重复键和裁切可让返回只覆盖部分差异；截断的补丁明示不可应用。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md#research-q03) 提出逐载荷公布截断和剩余变化计数，用接近预算的样本检查误读。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-diff/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-encoding"></a>
+
+## [dsh-tool-encoding](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：需要反复检查公开 API 样本或构造 URL 参数片段的开发者，可以直接请求会话工具并复核转换结果。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q01) 将公开文本转换做成直接的会话工具，[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q02) 的严格 Base64 门槛补足宽容解码可能忽略的字符与未用位错误。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q02) 的 UTF-8 解码器可能丢弃前导 BOM。[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q03) 的参数记录意味着把文本转成摘要也不会避免原文进入会话。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md#research-q03) 提出在工具契约中显式公布 BOM 策略，用多种编解码往返样本检查用户能否选到与数据一致的动作。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-encoding/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-json"></a>
+
+## [dsh-tool-json](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：开发者可在会话里从公开 API 样本取明确的字段及保留 JSON 类型的值。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md#research-q01) 核实查询直接消耗结构化参数，减少每次为简单取值建立 shell 命令。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md#research-q02) 的投影可能跳过元素并改变位置对应；输出上限在序列化后检查。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md#research-q03) 提出可选的来源索引包装，以缺字段的对账样本检查可追溯性及输出代价。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1402589370-root"></a>
 
@@ -5785,6 +5889,22 @@
 
 [查看完整分析](../../plugins/polinnizhong--dsh-knit/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1339469423-root"></a>
+
+## [lark-agent-bridge](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bihangchi9-creator/lark-agent-bridge) [![npm 30d 811](https://img.shields.io/static/v1?label=npm+30d&message=811&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@bihangchi9/lark-agent-bridge) [![最新发布 2026-09-18](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-18&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@bihangchi9/lark-agent-bridge)
+
+> **用途**：需要从专用飞书群查看或询问本地 DSH 的用户可用群消息触发隔离会话。
+
+> **亮点**：[Q01](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md#research-q01) 的按群分流与会话适配把飞书消息、固定运行时及流式回复接成一条调用链。
+
+> **思考**：[Q02](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md#research-q02) 的群授权对整个群生效；超时 dispose 不确认之前的副作用已撤回。
+
+> **建议**：[Q03](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md#research-q03) 提出可回读的超时状态，检查群用户能否减少盲重试。
+
+[查看完整分析](../../plugins/bihangchi9-creator--lark-agent-bridge/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1301161244-root"></a>
 
 ## [leantoken](../../plugins/morluto--leantoken/INSIGHT.md)
@@ -6296,6 +6416,22 @@
 > **建议**：[Q04](../../plugins/pulseaiclub--phi/INSIGHT.md#research-q04) 提出按任务仅前载高频工具的混合策略，和当前零schema及全量前载比较；若没有降低完整负担或缓存失效增加错误，就否定该新增方案。
 
 [查看完整分析](../../plugins/pulseaiclub--phi/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335660277-root"></a>
+
+## [PictureReader](../../plugins/jing-hy--picturereader/INSIGHT.md)
+
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/jing-hy/picturereader) [![npm 30d 3,124](https://img.shields.io/static/v1?label=npm+30d&message=3%2C124&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/picturereader) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/picturereader)
+
+> **用途**：需要在文本模型的 DSH 会话中核对截图和文档的开发者。
+
+> **亮点**：为文本模型接入图片入口，并将 OCR、视觉桥接及文档转换放在同一会话。[Q01](../../plugins/jing-hy--picturereader/INSIGHT.md#research-q01) [Q02](../../plugins/jing-hy--picturereader/INSIGHT.md#research-q02)
+
+> **思考**：privacy 对 vision_analyze 的 VLM 有硬门槛，孪生流在转换抛错时仍会传原消息；临时文件和输出路径需验证。[Q01](../../plugins/jing-hy--picturereader/INSIGHT.md#research-q01) [Q03](../../plugins/jing-hy--picturereader/INSIGHT.md#research-q03)
+
+> **建议**：为文本模型在附件转换失败时停住原图转发并明确给出补救，可能减少异常出站。[Q04](../../plugins/jing-hy--picturereader/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/jing-hy--picturereader/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336793734-root"></a>
 

@@ -57,12 +57,14 @@
 | [DSH Free Search](#plugin-1334384058-root) | 为 DSH 提供多引擎网页搜索、可配置回退与分层网页提取。 | 关闭用不到的提取层，在独立 profile 从公开文档、一个允许的引擎开始。 |
 | [DSH Industry Research](#plugin-1339669759-root) | 提供产业链建图、公开动态追踪、公司卡片和带来源及缺口的行业研究报告。 | [Q05](../../plugins/perrylink--dsh-industry-research/INSIGHT.md#research-q05) 公开文本/非敏感副本先用unverified fallback，人工逐值核口径/来源；缺正文/冲突停并回手工。 |
 | [DSH Local Memory](#plugin-1390103795-root) | 保留Hindsight项目分库，提供跨库查询、项目记忆状态总览与Git历史播种入口。 | 已有稳定daemon且库名唯一的多项目用户可试用，先显式指定少数库并核对事实；强隔离或同名项目应暂缓跨库汇总。 |
+| [DSH Memory](#plugin-1353352537-root) | 为 DSH 提供 Global 与 Workspace Markdown 记忆，以及历史会话整理。 | 先用隔离、无敏感的测试会话；整理后分别核对全局、工作区及回执，异常即停用并回到手工笔记。 |
 | [DSH MSDS Chain](#plugin-1216014649-plugins-dsh) | 通过 MCP 桥将托管化学安全查询服务接入 DSH。 | [Q04](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md#research-q04) 仅作为待复核线索；任何化学处置先由合格人员核对最新原始 SDS 和现场条件。 |
 | [DSH Noema](#plugin-1334167430-root) | 将本地 Noema 记忆服务接入 DSH，支持检索与跨工具导入。 | [Q03](../../plugins/zseven-w--dsh-noema/INSIGHT.md#research-q03) 先隔离验证。 |
 | [DSH OpenContext](#plugin-1329484633-plugins-dsh-opencontext) | 将OpenContext记忆工具、自动捕获与有界证据召回接入DSH。 | [Q03](../../plugins/melandlabs--opencontext--plugins-dsh-opencontext/INSIGHT.md#research-q03) 单scope关闭捕获先核工具闭环。 |
 | [DSH Origin Plugin](#plugin-1335203486-root) | 通过 MCP 驱动 Windows 上的 Origin，从实验数据生成图、反读属性，并交付可继续编辑的工程。 | [Q04](../../plugins/fantasality--dsh-origin-plugin/INSIGHT.md#research-q04) 已有 Origin 环境时先试一份无敏感数据的 CSV 和独立工程。 |
 | [DSH Paper Reader](#plugin-1373309426-root) | 在 DSH 联动 PDF 文献库、分块检索与论文会话，提供可回查的页码跳转入口。 | [Q01](../../plugins/ggboya--dsh-paper-reader/INSIGHT.md#research-q01) 先用公开短 PDF 试查一处原句，核对文献、页码和文字。 |
 | [DSH PDF Reader](#plugin-1346064150-root) | 提供PDF内容扫描、单页文本与图像混合读取，以及区域渲染工具。 | 适合已经有Python环境且经常读图表论文的人在非关键材料上小范围试用。 |
+| [DSH Plugin Memory](#plugin-1338123290-root) | 用 Markdown 保存 DSH 跨会话记忆和角色设定，提供启动注入、回顾和整理。 | 仅以隔离低敏笔记观察，关闭不需要的自动记录与提交，验证模型收到的上下文。 |
 | [DSH Plugins 中文导航](#plugin-1335045464-root) | 提供带安装、起步建议与限制的插件发现目录 | [Q04](../../plugins/gityuanbao--dsh-plugins/INSIGHT.md#research-q04) 只作发现源，回源固定包版本并独立验收。 |
 | [DSH Research Report](#plugin-1339655720-root) | 以证据快照、claim 绑定、字节核验和 manifest 哈希生成版本化研究报告。 | [Q05](../../plugins/perrylink--dsh-research-report/INSIGHT.md#research-q05) 公开非敏感副本试字节回溯，外存seal并人工审所有段落/语义；不符停发布回手工对账。 |
 | [DSH Scholar](#plugin-1325458176-root) | 计算研究工作台，将项目对话、资料、受控实验、证据关系与 TeX 写作放在持久项目中。 | 保留浏览器token，在监督且隔离的本地环境用已知fixture试gate-only；先故意未批/缺metrics核拒绝与终态，异常备份Kernel和原数据回独立脚本。 |
@@ -78,6 +80,7 @@
 | [dsh-better-deepseek](#plugin-1334388245-root) | 为 Better DeepSeek 浏览器扩展提供 DeepSeek Harness 会话控制与事件桥接。 | [Q04](../../plugins/edgetype--dsh-better-deepseek/INSIGHT.md#research-q04) 真实任务保留原生界面，只有隔离验收能证实无交叉事件和控制后再评估。 |
 | [dsh-chinese-traditional-wisdom-skill](#plugin-1335061439-root) | 将玄枢传统文化 Skill、本地 TypeScript 计算和结构化事实核验资源封装进 DSH。 | 先阅读Skill和RULES，把目标限定为文化学习或核验流程研究；优先用不含个人身份的公开fixture查一个已有verifier的工具。 |
 | [dsh-codevault](#plugin-1359423472-root) | 把源码阅读认识按仓库/文件/符号合并为Markdown对象卡，以JSONL保存条目并可选关联本地vault。 | 单人单写者独立备份档案可试用，vaultDir先不配置；广泛vault读取前优先修边界。 |
+| [dsh-deep-research](#plugin-1324772199-root) | 基于 DeepSeek Harness 工作流编排子题研究、补证、综合报告和可选审阅。 | [Q03](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md#research-q03) 在隔离 profile 小范围观察，按 [Q02](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md#research-q02) 逐题核对覆盖。 |
 | [dsh-feed](#plugin-1336585522-root) | 聚合 GitHub dsh-plugin topic 与 npm keyword 的本地 JSON 索引，供工具、CLI、MCP 查询。 | 隔离工作区试同步，审阅来源与错漏；search 只做候选检索，详见[Q03](../../plugins/863683348--dsh-feed/INSIGHT.md#research-q03)。 |
 | [dsh-fund-research](#plugin-1339672104-root) | 采集中国公募基金公开数据，确定性计算指标并封存带数字回溯附录的版本化研究报告。 | 懂基金数据口径者可仅在副本工作区对一支固定离线样本试用，核对来源、日期/覆盖、关键指标和hash，停止于字段漂移、无法复算或状态异常。 |
 | [dsh-git-memory](#plugin-1339286962-root) | 为 DSH 提供本地 Git 长期记忆、有限检索与可恢复的记忆管理。 | [Q03](../../plugins/seriousz158--dsh-memory/INSIGHT.md#research-q03) 在可丢弃仓库先试只读。 |
@@ -898,6 +901,22 @@
 
 [查看完整分析](../../plugins/allenwes365--dsh-local-memory/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1353352537-root"></a>
+
+## [DSH Memory](../../plugins/hr98w--dsh-memory/INSIGHT.md)
+
+[![GitHub ★ 35](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/hr98w/dsh-memory) [![npm 30d 1,917](https://img.shields.io/static/v1?label=npm+30d&message=1%2C917&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hr98w/dsh-memory) [![最新发布 2026-11-01](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-01&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@hr98w/dsh-memory)
+
+> **用途**：反复在新会话解释同一项目背景、团队偏好及工作约定的 DSH 用户。
+
+> **亮点**：将工作区索引和 Global 偏好接到 Host 上下文，并把版本校验和会话整理提案接入同一记忆仓库。[Q01](../../plugins/hr98w--dsh-memory/INSIGHT.md#research-q01) [Q02](../../plugins/hr98w--dsh-memory/INSIGHT.md#research-q02)
+
+> **思考**：整理模型会收到投影证据和记忆内容。Global 与 Workspace 依次发布，后一处冲突可能保留前一处更新。[Q02](../../plugins/hr98w--dsh-memory/INSIGHT.md#research-q02) [Q03](../../plugins/hr98w--dsh-memory/INSIGHT.md#research-q03)
+
+> **建议**：在冲突回执中显示两处写入的独立状态与版本，可能减少误判及不必要重试。[Q04](../../plugins/hr98w--dsh-memory/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/hr98w--dsh-memory/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1216014649-plugins-dsh"></a>
 
 ## [DSH MSDS Chain](../../plugins/littleblakew--msds-chain-mcp--plugins-dsh/INSIGHT.md)
@@ -993,6 +1012,22 @@
 > **建议**：未验证假设是用PDF内容摘要、页码、完整bbox及DPI作为缓存键，并让每个问题共享总图像预算，能减少误用旧图与过量裁剪。它从当前缓存冲突及逐区域独立预算推导，不是本版已有能力。最小验证用同basename两PDF、同起点不同bbox及图表密集页，对比现版和新缓存策略，检查路径唯一性、读图正确率、总图像token和人工复核；若只有磁盘增量而无错误或总成本改善，否定其采用优势。 [Q08](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md#research-q08)
 
 [查看完整分析](../../plugins/angeloszou--dsh-pdf-reader/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1338123290-root"></a>
+
+## [DSH Plugin Memory](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md)
+
+[![GitHub ★ 35](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=35&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LittleBlackTong/dsh-plugin-memory) [![npm 30d 40,221](https://img.shields.io/static/v1?label=npm+30d&message=40%2C221&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-memory) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-memory)
+
+> **用途**：经常在不同 DSH 会话重复提供项目背景与个人工作约定的用户。
+
+> **亮点**：启动与近期上下文分开，使用字符预算、会话和活动条件控制注入。[Q01](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md#research-q01) [Q02](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md#research-q02)
+
+> **思考**：会话 off 默认会过期，持久化失败可能静默。自动 Git 提交会保存已写内容，停用不会撤回历史。[Q02](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md#research-q02) [Q03](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md#research-q03)
+
+> **建议**：将隐私禁用设为显式持久规则并回报落盘状态，可能减少恢复后的非预期注入。[Q03](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/littleblacktong--dsh-plugin-memory/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1335045464-root"></a>
 
@@ -1233,6 +1268,22 @@
 > **建议**：可探讨修订/tombstone日志与最小vault入口，固定source ref并加realpath/扫描预算；涉及迁移、擦除与日志增长取舍，未验证。详见[Q04](../../plugins/1014029855--dsh-codevault/INSIGHT.md#research-q04)。
 
 [查看完整分析](../../plugins/1014029855--dsh-codevault/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1324772199-root"></a>
+
+## [dsh-deep-research](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-deep-research)
+
+> **用途**：需要围绕明确决策问题搜集公开来源的研究人员，可用既有问题清单核对覆盖与引用。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md#research-q01) 的队列把研究、再派高优先级缺口和审阅组织到一个工具回执中。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md#research-q02) 的轮次上限可能让待处理题退出队列且不出现在计数里；工具成功不能用作覆盖验收。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md#research-q03) 提议返回逐题覆盖及停止原因，以容量超限和来源失败样本验证能否减少漏判。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-deep-research/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1336585522-root"></a>
 

@@ -1,0 +1,66 @@
+{
+    "repository": "yu-wenchao/dsh-free-models-hub",
+    "repository_id": 1346968220,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 36,
+    "pushed_at": "2026-08-28T06:25:40Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayu-wenchao%2Fdsh-free-models-hub%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC20:28489E:9E0786:A82B78:6AF6BC16 and timestamp 2026-11-13 07:28:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayu-wenchao%2Fdsh-free-models-hub%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CC7E:56532:A5BEA5:AFE835:6AF6BC18 and timestamp 2026-11-13 07:28:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayu-wenchao%2Fdsh-free-models-hub%20is%3Aissue%20created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD4C:2727D2:9FD27A:A9F9A0:6AF6BC1C and timestamp 2026-11-13 07:28:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayu-wenchao%2Fdsh-free-models-hub%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CD96:5D482:9F6AD8:A993B7:6AF6BC1D and timestamp 2026-11-13 07:28:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Ayu-wenchao%2Fdsh-free-models-hub%20is%3Aissue%20updated%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID CDEC:5D482:9F6BDB:A994CD:6AF6BC1F and timestamp 2026-11-13 07:28:31 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T02:28:19.525Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-free-models-hub",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 2621,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-free-models-hub",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-28T02:40:31.494Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
+            "source_url": "https://registry.npmjs.org/dsh-free-models-hub",
+            "error": null,
+            "latest_version": "0.3.1",
+            "latest_published_at": "2026-08-28T02:40:31.699Z",
+            "latest_error": null
+        }
+    }
+}

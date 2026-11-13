@@ -1,0 +1,45 @@
+{
+    "repository": "jing-hy/picturereader",
+    "repository_id": 1335660277,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 36,
+    "pushed_at": "2026-10-25T02:48:18Z",
+    "issues": {
+        "open": 0,
+        "closed": 3,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "picturereader",
+        "captured_at": "2026-11-11T06:33:06.567Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 3124,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/picturereader",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T07:02:17.709Z",
+            "captured_at": "2026-11-11T06:33:06.567Z",
+            "source_url": "https://registry.npmjs.org/picturereader",
+            "error": null,
+            "latest_version": "3.3.3",
+            "latest_published_at": "2026-09-11T11:48:28.849Z",
+            "latest_error": null
+        }
+    }
+}

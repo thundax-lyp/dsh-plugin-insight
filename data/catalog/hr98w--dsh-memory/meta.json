@@ -1,0 +1,45 @@
+{
+    "repository": "hr98w/dsh-memory",
+    "repository_id": 1353352537,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 35,
+    "pushed_at": "2026-11-01T09:53:35Z",
+    "issues": {
+        "open": 0,
+        "closed": 1,
+        "created_30d": 1,
+        "closed_30d": 1,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T11:55:57.992Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@hr98w/dsh-memory",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 1917,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/%40hr98w%2Fdsh-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-01T09:34:06.866Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
+            "source_url": "https://registry.npmjs.org/%40hr98w%2Fdsh-memory",
+            "error": null,
+            "latest_version": "0.1.5",
+            "latest_published_at": "2026-11-01T09:14:58.578Z",
+            "latest_error": null
+        }
+    }
+}

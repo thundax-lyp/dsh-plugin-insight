@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "e0308cef7a00036286c18253a06d8d59",
+    "identity": "github:1327795364:packages-dsh-tool-calculator",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-calculator",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-calculator",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-calculator",
+            "aliases": [],
+            "name": "dsh-tool-calculator",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f9f89d3aa094cfc450f865b5bc45344ffcb4b7e489976632e49f731145e4b453",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:31:02.413Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/README.md",
+                            "content_sha256": "6f2e00379f478359703d834914c563727804e17973a908ef2f0a6d80f7c8af28"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:31:02.413Z",
+                    "summary": "在 DeepSeek Harness 会话中求值常用数学表达式，支持初等函数和常量。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/package.json",
+                            "content_sha256": "cea9f69ba0af112b9266c9d8fca704a7b6acd1da8a11fd0df21197a13eff0517"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/cordis.patch.yml",
+                            "content_sha256": "5834fe61638c9233852a1082ea95791e44fc666c7d179f60433266b5261ad610"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/lib/index.js",
+                            "content_sha256": "0ce87ab34729a9295e019881267bbd4c81d39e670c1cfed01adbf24ac4b3f727"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/README.md",
+                            "content_sha256": "6f2e00379f478359703d834914c563727804e17973a908ef2f0a6d80f7c8af28"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-calculator/lib/evaluate.js",
+                            "content_sha256": "3f0bfded394d92c98c18e187a6508e71b1d303494f847e3f9eebf9c93feb03c8"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:31:02.413Z",
+                    "summary": "核查 packages/dsh-tool-calculator/package.json、packages/dsh-tool-calculator/cordis.patch.yml、packages/dsh-tool-calculator/lib/index.js、packages/dsh-tool-calculator/README.md、packages/dsh-tool-calculator/lib/evaluate.js；profile 补丁加载 Cordis 包，tools 服务注册 calculator，入口将字符串交给自带词法与递归下降求值器并呈现有限数值。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查固定子包的 README、包声明、补丁、默认入口和实际加载的求值器，未执行目标代码、测试、安装或宿主验收。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "需要在会话中反复核算小公式的开发者或分析人员，可要求 Agent 给出能用独立计算器复核的数值。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "profile 补丁加载 Cordis 包，tools 服务注册 calculator，入口将字符串交给自带词法与递归下降求值器并呈现有限数值。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查固定子包的 README、包声明、补丁、默认入口和实际加载的求值器，未执行目标代码、测试、安装或宿主验收。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "固定子包版本 0.0.1 且标记 private，提供 lib 默认导出和独立仓库安装说明；未核实发布字节。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 DSH tools | 是 | 加载插件及注册 calculator | 保留原工具 |\n| 同版本可装载包 | 是 | 让补丁解析到默认导出 | 在隔离 profile 停在装载验证 |\n| 可接受 JavaScript Number 精度 | 适用于本建议 | 避免把舍入结果当精确数 | 改用精确计算 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包准备，费用未知 | 核对 profile 与工具清单 | 固定包装载待验 |\n| 持续 | 进程内计算及模型调用，金额未知 | 对关键公式独立复算 | 单位合格任务耗时未知 |\n| 失败恢复 | 可能重复模型调用，金额未知 | 处理不支持语法或换精确计算 | 宿主错误回执和退出待验 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 建议在隔离 profile 试几条能独立核算的短表达式，并用 [Q02](#research-q02) 的反例确认边界；遇到舍入风险直接回到精确计算。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 会话内求值 | 工具回调直接调用解析器 | 实际节时和工具选择率 |\n| 不支持语法或非有限结果 | 解析和入口可以抛错 | 真实宿主如何呈现异常 |\n| 精确计算 | JavaScript Number 算术 | 超出表示精度时的用户影响 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 的 own-property 白名单、参数数目、表达式长度及最终有限数门槛便于审查。中间值未守卫，超时配置的宿主行为仍需核对。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 说明短公式如何留在会话工具回执中。对允许浮点近似的公式，白名单求值可以免去为一次计算构造 shell 脚本。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 表明门槛只验证最终数值，无法保证中间算式有定义或整数精确。涉及金额、科学计数法和大整数时应走已有计算器。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提出把非有限值检测前移到算术节点，并报告出错位置。用一组正常和嵌套除零公式验证是否减少静默接受，同时检查是否增加误拒。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:31:02.413Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:31:02.413Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:31:02.413Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) 的宿主接入和 [Q02](#research-q02) 的递归下降属于已知做法，给新颖性和机制各小幅档。纯表达式内核与注册解耦可搬到有工具接口的宿主，并能替代局部 shell 拼接，分别有实质迁移及流程简化；浮点边界和宿主协议限制更大范围。",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "[Q01](#research-q01) 的工作流与触达小幅改善，将原先在 shell 或计算器中的动作收进会话，结果仍是数值，交付无增量。少起进程提供小幅成本结构增量，依据是源码调用方式，实际费用和耗时见 [Q03](#research-q03)。",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "经常在 DSH 会话中核算短公式的用户，可以在隔离 profile 用几条可手算的表达式试用 calculator。相比为每次算式写 shell，插件在当前会话直接返回白名单求值结果。遇到精度要求、科学计数法或宿主挂载失败时，回到独立计算器或现有脚本。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 的 README 9–16 行和工具回执给出明确的重复任务及手工计算基线，超过偶发入口；没有会话样本说明重复摩擦达到较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) 的 lib/index.js 19–31 行给出无单独进程的工具结果，超过入口包装；[Q02](#research-q02) 的舍入与嵌套反例限制在较充分档以下。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 的 lib/evaluate.js 173–189 行与 [Q01](#research-q01) 的注册及渲染覆盖条件和错误边界，超出声明档；仅为源码检查，作者记录没有独立复现。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) 的 package.json 2–11、21–29 行说明一次性 profile 与 peer 负担；直接换回计算器提供退路，超过重要退出缺口档。准确包来源和宿主清除注册仍需核对，未到较轻档。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:31:02.413Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1327795364-packages-dsh-tool-calculator-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-calculator",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-calculator",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-calculator",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "f9f89d3aa094cfc450f865b5bc45344ffcb4b7e489976632e49f731145e4b453",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "8f0fba197f7ef32dc29dfb0d130d16c38444b6a10810b2de7b1c6c323ec26995"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator/meta.json",
+        "publication.summaries": {
+            "text": "在 DeepSeek Harness 会话中求值常用数学表达式，支持初等函数和常量。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "在宿主 tools 服务注册 calculator，接收表达式并呈现数值。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 表达式求值 | 会话中核算短公式 | 支持白名单函数；数值使用 Number |\n| 结果渲染 | 返回可读数值 | 异常展示取决于宿主工具框架 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "[Q03](#research-q03) 建议在隔离 profile 试几条能独立核算的短表达式，并用 [Q02](#research-q02) 的反例确认边界；遇到舍入风险直接回到精确计算。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator",
+        "reports": "# dsh-tool-calculator\n\n> 在 DeepSeek Harness 会话中求值常用数学表达式，支持初等函数和常量。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n固定源码支持注册、求值及最终有限数门槛。耗时收益、同版加载和宿主错误展示待验证。前移检查是待验证设计。\n\n## 洞察短评\n\n- **用途**：需要在会话中反复核算小公式的开发者或分析人员，可要求 Agent 给出能用独立计算器复核的数值。\n- **亮点**：[Q01](#research-q01) 说明短公式如何留在会话工具回执中。对允许浮点近似的公式，白名单求值可以免去为一次计算构造 shell 脚本。\n- **思考**：[Q02](#research-q02) 表明门槛只验证最终数值，无法保证中间算式有定义或整数精确。涉及金额、科学计数法和大整数时应走已有计算器。\n- **建议**：[Q03](#research-q03) 提出把非有限值检测前移到算术节点，并报告出错位置。用一组正常和嵌套除零公式验证是否减少静默接受，同时检查是否增加误拒。\n\n采用建议：[Q03](#research-q03) 建议在隔离 profile 试几条能独立核算的短表达式，并用 [Q02](#research-q02) 的反例确认边界；遇到舍入风险直接回到精确计算。\n\n## 核心贡献\n\n[Q01](#research-q01) 说明短公式如何留在会话工具回执中。对允许浮点近似的公式，白名单求值可以免去为一次计算构造 shell 脚本。\n\n## 关键质疑\n\n[Q02](#research-q02) 表明门槛只验证最终数值，无法保证中间算式有定义或整数精确。涉及金额、科学计数法和大整数时应走已有计算器。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提出把非有限值检测前移到算术节点，并报告出错位置。用一组正常和嵌套除零公式验证是否减少静默接受，同时检查是否增加误拒。\n\n在隔离 profile 比较正常整数、科学计数法、超过安全整数范围、直接除零、嵌套倒数和未启用插件时的结果。\n\n## 场景与替代办法\n\n需要在会话中反复核算小公式的开发者或分析人员，可要求 Agent 给出能用独立计算器复核的数值。\n\n直接使用会话 shell 或另开计算器都可完成算术。shell 容许进一步写脚本，独立计算器便于人工核对，二者都可作为回退。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 DSH tools | 是 | 加载插件及注册 calculator | 保留原工具 |\n| 同版本可装载包 | 是 | 让补丁解析到默认导出 | 在隔离 profile 停在装载验证 |\n| 可接受 JavaScript Number 精度 | 适用于本建议 | 避免把舍入结果当精确数 | 改用精确计算 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户核对隔离 profile 与包导出 | 确认 calculator 已出现 |\n| 执行 | Agent 提交可手算表达式 | 对照回执数值和错误 |\n| 退出 | 用户禁用插件并检查工具清单 | 回到独立计算器 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包准备，费用未知 | 核对 profile 与工具清单 | 固定包装载待验 |\n| 持续 | 进程内计算及模型调用，金额未知 | 对关键公式独立复算 | 单位合格任务耗时未知 |\n| 失败恢复 | 可能重复模型调用，金额未知 | 处理不支持语法或换精确计算 | 宿主错误回执和退出待验 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 会话内求值 | 工具回调直接调用解析器 | 实际节时和工具选择率 |\n| 不支持语法或非有限结果 | 解析和入口可以抛错 | 真实宿主如何呈现异常 |\n| 精确计算 | JavaScript Number 算术 | 超出表示精度时的用户影响 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：DSH 会话中的常规算术何时可以用 calculator 代替模型估算或临时 shell，什么结果仍需要独立核算？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 会话中的短表达式如何变为工具回执，较 shell 增加了什么？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n目标任务是让会话中的 Agent 对可重算的小公式给出一个数值，例如将批次数与单位耗时合成总量。profile 把该包插入后，Cordis 将 tools 服务注入入口，注册必填 expression 字符串。执行回调在宿主进程同步调用 evaluate，再包装 Promise，输出描述声明 number 并用 String 显示结果。相较让 Agent 写 shell 或人工另开计算器，短公式在工具调用中留有输入与数值，并能直接调用 sqrt 等白名单函数。局部简化来自已有宿主注册与自带解析器的组合。宿主在关闭插件后是否仍有可用 shell 取决于原 profile 权限。作者称运行开销较低，本次仅确认没有为这条链路另起进程。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-calculator/package.json:21-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/package.json#L21-L38)\n\n声明 Cordis/DSH peer、bundle 补丁及默认入口。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-calculator/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/cordis.patch.yml#L1-L4)\n\n插入 tool-calculator 及确切包名。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-calculator\n      name: '@deepseek-ai/dsh-tool-calculator'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-calculator/lib/index.js:9-32](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/index.js#L9-L32)\n\ntools 服务注册、数值渲染及真实求值调用。\n\n<details>\n<summary>查看原文（24行）</summary>\n\n```text\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport { evaluate } from './evaluate.js';\nexport const name = '@deepseek-ai/dsh-tool-calculator';\nexport const inject = ['tools'];\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'calculator',\n        description: 'Evaluate a mathematical expression safely. ' +\n            'Supports +, -, *, /, %, **, parentheses, and functions: ' +\n            'abs, ceil, floor, round, max, min, sqrt, pow, log, log2, log10, exp, sin, cos, tan, PI, E.',\n        parameters: {\n            expression: {\n                type: 'string',\n                required: true,\n                description: 'Mathematical expression, e.g. \"15 + 27 * sqrt(9)\"',\n            },\n        },\n        output: {\n            schema: { type: 'number' },\n            render: (_args, value) => [{ type: 'text', text: String(value) }],\n        },\n        execute: args => Promise.resolve(evaluate(args.expression)),\n        timeoutMs: 1000,\n    }));\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-tool-calculator/README.md:9-16](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/README.md#L9-L16)\n\n作者将目标场景与 shell 进程开销作对照。\n\n```text\n## 动机\n\nAgent 做算术不稳定是 LLM 的通病。DSH 内置的 `bash` 工具可以调用 `echo $((15 + 27 * 3))` 完成计算，但有两个问题：\n\n1. **每次算术都起一个 bash 进程**——Windows 上尤其昂贵（创建进程、加载 shell、执行、收集输出），高频调用时累积延迟显著\n2. **bash 算术语法有限**——不支持 `sqrt`、`sin`、`cos`、`log`、`pow` 等数学函数，agent 在这些场景下只能猜答案或写脚本\n\n本插件提供零依赖、零进程、纯函数的计算器——一次函数调用，毫秒级得出结果，覆盖常用初等数学函数。\n```\n\n#### 缺口\n\n- 缺少同条件会话与 shell 的任务回执样本\n  **影响**：不能量化节时或模型调用开销\n  **进一步探讨**：在同一 profile 比较正确结果、完整回执和总耗时\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 有限数值检查覆盖哪些错误，哪些公式仍会产生看似有效的错误答案？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n语法按加减、乘除模、一元正负、幂和原子分层，幂的右参数重新从一元层解析，因此右结合。标识符以 Object.hasOwn 查常量和函数，查不到直接报错，参数数目也检查。入口拒绝非字符串和超过 500 字符的表达式，分词拒绝科学计数法，最终 Number.isFinite 拒绝直接除零或无定义开方的非有限结果。这里只检查最终值，按代码推断，1/(1/0) 仍可得有限的 0。Number 运算也可能把超过安全整数范围的表达式舍入。把有限数回执当作高精度或每个中间步骤均有效会扩大使用边界。源码中的 1000 ms 是传给工具框架的配置，执行求值发生在 Promise.resolve 之前，无法由该函数自身的 Promise 中断。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-calculator/lib/evaluate.js:32-49](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/evaluate.js#L32-L49)\n\n限制长度常量与拒绝指数表示。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\nconst MAX_EXPRESSION_LENGTH = 500;\n/** 词法分析：将输入字符串拆分为 token 数组 */\nfunction tokenize(input) {\n    const tokens = [];\n    for (let i = 0; i < input.length;) {\n        const ch = input.charAt(i);\n        if (/\\s/.test(ch)) {\n            i++;\n            continue;\n        }\n        if (/[0-9]/.test(ch) || (ch === '.' && i + 1 < input.length && /[0-9]/.test(input.charAt(i + 1)))) {\n            const m = /^(?:\\d+(?:\\.\\d*)?|\\.\\d+)/.exec(input.slice(i));\n            if (!m)\n                throw new Error(`Invalid number at position ${i}`);\n            // CALC-06：数字后紧跟 e/E 是科学计数法形态（含 1e、1e+、1e-5），专门报错\n            if (/[eE]/.test(input.charAt(i + m[0].length))) {\n                throw new Error('Scientific notation is not supported');\n            }\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-calculator/lib/evaluate.js:82-117](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/evaluate.js#L82-L117)\n\n中间结果以 JavaScript 运算累加；指数递归进入一元表达式。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    // 加减（最低优先级）\n    const parseAdd = () => {\n        let left = parseMul();\n        while (peek() === '+' || peek() === '-') {\n            const op = take();\n            const right = parseMul();\n            left = op === '+' ? left + right : left - right;\n        }\n        return left;\n    };\n    // 乘除取模\n    const parseMul = () => {\n        let left = parseUnary();\n        while (peek() === '*' || peek() === '/' || peek() === '%') {\n            const op = take();\n            const right = parseUnary();\n            left = op === '*' ? left * right : op === '/' ? left / right : left % right;\n        }\n        return left;\n    };\n    // 一元正负\n    const parseUnary = () => {\n        if (peek() === '-' || peek() === '+') {\n            const op = take();\n            return op === '-' ? -parseUnary() : parseUnary();\n        }\n        return parsePower();\n    };\n    // 幂（右结合）\n    const parsePower = () => {\n        const base = parsePrimary();\n        if (peek() === '**') {\n            take();\n            return base ** parseUnary();\n        }\n        return base;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-calculator/lib/evaluate.js:132-166](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/evaluate.js#L132-L166)\n\n数字转成 Number、白名单 own-property 和参数个数守卫。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n        if (/^(?:\\d+(?:\\.\\d*)?|\\.\\d+)$/.test(t))\n            return Number(t);\n        if (/^[A-Za-z_]\\w*$/.test(t)) {\n            // CALC-01：own-property 白名单（Object.hasOwn 不落入原型链）\n            if (Object.hasOwn(CONSTANTS, t)) {\n                if (peek() === '(')\n                    throw new Error(`\"${t}\" is a constant, not a function`);\n                return CONSTANTS[t];\n            }\n            if (Object.hasOwn(FUNCTIONS, t)) {\n                if (take() !== '(')\n                    throw new Error(`Missing \"(\" after function \"${t}\"`);\n                const args = [];\n                if (peek() !== ')') {\n                    args.push(parseAdd());\n                    while (peek() === ',') {\n                        take();\n                        args.push(parseAdd());\n                    }\n                }\n                if (take() !== ')')\n                    throw new Error(`Missing \")\" after arguments of \"${t}\"`);\n                // CALC-02：参数个数契约校验\n                const spec = FUNCTIONS[t];\n                if (args.length < spec.minArgs || args.length > spec.maxArgs) {\n                    const expected = spec.minArgs === spec.maxArgs\n                        ? String(spec.minArgs)\n                        : `at least ${spec.minArgs}`;\n                    throw new Error(`Invalid argument count for \"${t}\": expected ${expected}, got ${args.length}`);\n                }\n                return spec.fn(...args);\n            }\n            throw new Error(`Unknown identifier \"${t}\"`);\n        }\n        throw new Error(`Unexpected token \"${t}\"`);\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-calculator/lib/evaluate.js:173-189](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/evaluate.js#L173-L189)\n\n入口只核对最终有限数。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n/**\n * 公开接口：求值表达式，返回有限数字；NaN/Infinity 或其他错误均抛错。\n * CALC-05：入口独立校验类型（不依赖上游 schema 校验）。\n */\nexport function evaluate(expression) {\n    if (typeof expression !== 'string') {\n        throw new Error('calculator: expression must be a string');\n    }\n    if (expression.length > MAX_EXPRESSION_LENGTH) {\n        throw new Error(`Expression too long (${expression.length} > ${MAX_EXPRESSION_LENGTH})`);\n    }\n    const result = parse(expression);\n    if (typeof result !== 'number' || !Number.isFinite(result)) {\n        throw new Error('Expression did not evaluate to a finite number');\n    }\n    return result;\n}\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-calculator/lib/index.js:26-32](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/index.js#L26-L32)\n\n输出显示和 timeoutMs 声明，求值在 Promise.resolve 取参时执行。\n\n```text\n        output: {\n            schema: { type: 'number' },\n            render: (_args, value) => [{ type: 'text', text: String(value) }],\n        },\n        execute: args => Promise.resolve(evaluate(args.expression)),\n        timeoutMs: 1000,\n    }));\n```\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 怎样用隔离 profile 试用，以及什么最小对照能推翻采用理由？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n先检查隔离 profile 的包解析与 tools 服务，再用一条独立可算的整数式确认输出。随后对比同一任务的原生 shell 或手工计算，记录从请求到可用数值的时间及重试数。私有子包且 README 提供独立仓库安装方式，固定仓库中的现成 lib 可以核对，实际获得同版 bundle 和装卸需另验。纯求值不写文件，但模型工具调用仍可能使用模型额度，首次还要配置 profile。若目标公式常出现科学计数法、金额分精度或大整数，应直接转用已有精确计算工具。一个值得验证的改进是对中间非有限值立即拒绝并注明位置；用直接除零、嵌套倒数和正常小数做回归，若合法公式被误拒或没有减少看似有效的错值，就不值得增加语义分支。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-calculator/package.json:2-11](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/package.json#L2-L11)\n\n子包 private、入口和 Node 范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"name\": \"@deepseek-ai/dsh-tool-calculator\",\n  \"description\": \"DSH calculator tool\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-calculator/package.json:21-29](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/package.json#L21-L29)\n\nCordis、invariants 和 tools 声明。\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/cordis\": \"^4.0.1\",\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n```\n\n**依据 3 · 作者声明**：[packages/dsh-tool-calculator/README.md:97-104](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/README.md#L97-L104)\n\n作者报告 rc.1 consumer 流程，当前研究未执行。\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：`@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n```\n\n**依据 4 · 作者声明**：[packages/dsh-tool-calculator/README.md:114-133](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/README.md#L114-L133)\n\n作者给出的安装路径指向独立仓库。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n````text\n## 安装\n\n### Profile Bundle（推荐）\n\nDSH 0.1.5-rc.1（npm）起，本插件可作为独立 bundle 一键安装到任意 profile（仓库位于 https://github.com/omdsh-dev，public）：\n\n```sh\n# 交互式（web）profile\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-calculator\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-calculator\n```\n\n也可以先用 `npm pack` 打出 tarball 再安装：\n\n```sh\ngit clone https://github.com/omdsh-dev/dsh-tool-calculator\ncd dsh-tool-calculator\nnpm install && npm pack\ndsh plugin --profile web add ./deepseek-ai-dsh-tool-calculator-*.tgz\n````\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-calculator/lib/evaluate.js:93-99](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-calculator/lib/evaluate.js#L93-L99)\n\n中间除法没有独立有限数检查。\n\n```text\n    const parseMul = () => {\n        let left = parseUnary();\n        while (peek() === '*' || peek() === '/' || peek() === '%') {\n            const op = take();\n            const right = parseUnary();\n            left = op === '*' ? left * right : op === '/' ? left / right : left % right;\n        }\n```\n\n#### 缺口\n\n- 宿主能否消费固定 monorepo 子包以及卸载后工具是否消失\n  **影响**：决定能否直接从该仓库版本小范围试用\n  **进一步探讨**：在兼容环境核对 bundle 插入、工具清单、成功及错误回执，然后禁用复查\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-calculator；内容摘要：744fd993d1c2110a687769bda07ee1a0412e06870b9c98968b61f2aa8e7dfea2。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 240 | 194 | 46 | — |\n| .md | source | 2 | 396 | — | — | 2692 |\n| .ts | source | 3 | 241 | 176 | 48 | — |\n| .ts | test | 2 | 174 | 134 | 7 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 表达式求值 | 会话中核算短公式 | 支持白名单函数；数值使用 Number |\n| 结果渲染 | 返回可读数值 | 异常展示取决于宿主工具框架 |\n\n## 工程亮点\n\n[Q02](#research-q02) 的 own-property 白名单、参数数目、表达式长度及最终有限数门槛便于审查。中间值未守卫，超时配置的宿主行为仍需核对。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-calculator/package.json、packages/dsh-tool-calculator/cordis.patch.yml、packages/dsh-tool-calculator/lib/index.js、packages/dsh-tool-calculator/README.md、packages/dsh-tool-calculator/lib/evaluate.js 及固定范围 inventory；组件：packages/dsh-tool-calculator。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查固定子包的 README、包声明、补丁、默认入口和实际加载的求值器，未执行目标代码、测试、安装或宿主验收。\n- 下一步：在隔离 profile 比较正常整数、科学计数法、超过安全整数范围、直接除零、嵌套倒数和未启用插件时的结果。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-calculator/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-calculator\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-calculator/README.md\",\n    \"packages/dsh-tool-calculator/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-calculator/cordis.patch.yml\",\n    \"packages/dsh-tool-calculator/lib/index.js\",\n    \"packages/dsh-tool-calculator/lib/evaluate.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"DSH 会话中的常规算术何时可以用 calculator 代替模型估算或临时 shell，什么结果仍需要独立核算？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"会话中的短表达式如何变为工具回执，较 shell 增加了什么？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"目标任务是让会话中的 Agent 对可重算的小公式给出一个数值，例如将批次数与单位耗时合成总量。profile 把该包插入后，Cordis 将 tools 服务注入入口，注册必填 expression 字符串。执行回调在宿主进程同步调用 evaluate，再包装 Promise，输出描述声明 number 并用 String 显示结果。相较让 Agent 写 shell 或人工另开计算器，短公式在工具调用中留有输入与数值，并能直接调用 sqrt 等白名单函数。局部简化来自已有宿主注册与自带解析器的组合。宿主在关闭插件后是否仍有可用 shell 取决于原 profile 权限。作者称运行开销较低，本次仅确认没有为这条链路另起进程。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 38,\n            \"observation\": \"声明 Cordis/DSH peer、bundle 补丁及默认入口。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"插入 tool-calculator 及确切包名。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/index.js\",\n            \"line_start\": 9,\n            \"line_end\": 32,\n            \"observation\": \"tools 服务注册、数值渲染及真实求值调用。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-calculator/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 16,\n            \"observation\": \"作者将目标场景与 shell 进程开销作对照。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"缺少同条件会话与 shell 的任务回执样本\",\n            \"impact\": \"不能量化节时或模型调用开销\",\n            \"next_step\": \"在同一 profile 比较正确结果、完整回执和总耗时\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"有限数值检查覆盖哪些错误，哪些公式仍会产生看似有效的错误答案？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"语法按加减、乘除模、一元正负、幂和原子分层，幂的右参数重新从一元层解析，因此右结合。标识符以 Object.hasOwn 查常量和函数，查不到直接报错，参数数目也检查。入口拒绝非字符串和超过 500 字符的表达式，分词拒绝科学计数法，最终 Number.isFinite 拒绝直接除零或无定义开方的非有限结果。这里只检查最终值，按代码推断，1/(1/0) 仍可得有限的 0。Number 运算也可能把超过安全整数范围的表达式舍入。把有限数回执当作高精度或每个中间步骤均有效会扩大使用边界。源码中的 1000 ms 是传给工具框架的配置，执行求值发生在 Promise.resolve 之前，无法由该函数自身的 Promise 中断。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n            \"line_start\": 32,\n            \"line_end\": 49,\n            \"observation\": \"限制长度常量与拒绝指数表示。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n            \"line_start\": 82,\n            \"line_end\": 117,\n            \"observation\": \"中间结果以 JavaScript 运算累加；指数递归进入一元表达式。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n            \"line_start\": 132,\n            \"line_end\": 166,\n            \"observation\": \"数字转成 Number、白名单 own-property 和参数个数守卫。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n            \"line_start\": 173,\n            \"line_end\": 189,\n            \"observation\": \"入口只核对最终有限数。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/index.js\",\n            \"line_start\": 26,\n            \"line_end\": 32,\n            \"observation\": \"输出显示和 timeoutMs 声明，求值在 Promise.resolve 取参时执行。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"怎样用隔离 profile 试用，以及什么最小对照能推翻采用理由？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"先检查隔离 profile 的包解析与 tools 服务，再用一条独立可算的整数式确认输出。随后对比同一任务的原生 shell 或手工计算，记录从请求到可用数值的时间及重试数。私有子包且 README 提供独立仓库安装方式，固定仓库中的现成 lib 可以核对，实际获得同版 bundle 和装卸需另验。纯求值不写文件，但模型工具调用仍可能使用模型额度，首次还要配置 profile。若目标公式常出现科学计数法、金额分精度或大整数，应直接转用已有精确计算工具。一个值得验证的改进是对中间非有限值立即拒绝并注明位置；用直接除零、嵌套倒数和正常小数做回归，若合法公式被误拒或没有减少看似有效的错值，就不值得增加语义分支。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 11,\n            \"observation\": \"子包 private、入口和 Node 范围。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 29,\n            \"observation\": \"Cordis、invariants 和 tools 声明。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-calculator/README.md\",\n            \"line_start\": 97,\n            \"line_end\": 104,\n            \"observation\": \"作者报告 rc.1 consumer 流程，当前研究未执行。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-calculator/README.md\",\n            \"line_start\": 114,\n            \"line_end\": 133,\n            \"observation\": \"作者给出的安装路径指向独立仓库。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n            \"line_start\": 93,\n            \"line_end\": 99,\n            \"observation\": \"中间除法没有独立有限数检查。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"宿主能否消费固定 monorepo 子包以及卸载后工具是否消失\",\n            \"impact\": \"决定能否直接从该仓库版本小范围试用\",\n            \"next_step\": \"在兼容环境核对 bundle 插入、工具清单、成功及错误回执，然后禁用复查\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-calculator/README.md\",\n      \"content\": \"# dsh-tool-calculator\\n\\n[English](README.en.md)\\n\\nDSH 计算器工具插件 —— 安全的数学表达式求值器。零依赖、零进程、纯函数。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\nAgent 做算术不稳定是 LLM 的通病。DSH 内置的 `bash` 工具可以调用 `echo $((15 + 27 * 3))` 完成计算，但有两个问题：\\n\\n1. **每次算术都起一个 bash 进程**——Windows 上尤其昂贵（创建进程、加载 shell、执行、收集输出），高频调用时累积延迟显著\\n2. **bash 算术语法有限**——不支持 `sqrt`、`sin`、`cos`、`log`、`pow` 等数学函数，agent 在这些场景下只能猜答案或写脚本\\n\\n本插件提供零依赖、零进程、纯函数的计算器——一次函数调用，毫秒级得出结果，覆盖常用初等数学函数。\\n\\n## 安全模型\\n\\n**无 `eval`、无 `new Function`。** 使用手写递归下降解析器（词法层 + 语法层），只求值白名单节点：\\n\\n- 词法层只识别数字字面量、白名单标识符、运算符；引号、分号、反引号、`{}` `[]` 直接报错\\n- 标识符按名查白名单表（15 个函数 + 2 个常量），查不到即抛 `Unknown identifier`\\n- 求值结果必须是有限数字，`NaN`/`Infinity`（除零、负数开方等）统一拒绝\\n\\n`new Function` + 正则白名单是**不安全的**——`constructor.constructor(...)` 可直达 `Function` 构造器执行任意代码，`process.exit(0)` 可直接杀死宿主进程（均已实测复现）。本实现不使用任何代码求值捷径。\\n\\n## 架构\\n\\n```\\n┌──────────────────────────────┐\\n│         DSH Agent             │\\n│  tool call: calculator { ... }│\\n└──────────┬───────────────────┘\\n           │ ctx.tools.register()\\n┌──────────▼───────────────────┐\\n│     src/index.ts             │\\n│     Cordis 插件入口           │\\n└──────────┬───────────────────┘\\n           │\\n┌──────────▼───────────────────┐\\n│     src/evaluate.ts          │\\n│     tokenize() → parse()     │\\n│     递归下降解析器            │\\n└──────────────────────────────┘\\n```\\n\\n- `src/index.ts`：Cordis 插件入口（`name`/`inject`/`apply`），注册 `calculator` 工具\\n- `src/evaluate.ts`：`evaluate(expression: unknown): number`——入口独立校验类型（非字符串抛 `calculator: expression must be a string`），返回有限数字，非法输入全部抛错\\n\\n## 工具声明\\n\\n```ts\\nimport type { Context } from '@deepseek-ai/cordis'\\nimport { defineTool } from '@deepseek-ai/dsh-tools'\\nimport { evaluate } from './evaluate.ts'\\n\\nexport const name = '@deepseek-ai/dsh-tool-calculator'\\nexport const inject = ['tools']\\n\\nexport function apply(ctx: Context): void {\\n  ctx.tools.register(defineTool({\\n    name: 'calculator',\\n    description:\\n      'Evaluate a mathematical expression safely. ' +\\n      'Supports +, -, *, /, %, **, parentheses, and functions: ' +\\n      'abs, ceil, floor, round, max, min, sqrt, pow, log, log2, log10, exp, sin, cos, tan, PI, E.',\\n    parameters: {\\n      expression: {\\n        type: 'string',\\n        required: true,\\n        description: 'Mathematical expression, e.g. \\\"15 + 27 * sqrt(9)\\\"',\\n      },\\n    },\\n    output: {\\n      schema: { type: 'number' },\\n      render: (_args, value) => [{ type: 'text', text: String(value) }],\\n    },\\n    execute: async (args) => evaluate(args.expression),\\n    timeoutMs: 1000,\\n  }))\\n}\\n```\\n\\n## 支持的操作\\n\\n| 类别 | 项目 |\\n|------|------|\\n| 算术 | `+` `-` `*` `/` `%` `**`（幂，右结合：`2 ** 3 ** 2` = 512） |\\n| 函数（单参） | `abs` `ceil` `floor` `round` `sqrt` `log` `log2` `log10` `exp` `sin` `cos` `tan` |\\n| 函数（多参） | `pow(x, y)` `max(a, b, ...)` `min(a, b, ...)` |\\n| 常量 | `PI` `E` |\\n| 分组 | `(` `)`，一元正负 `+5` `-5` |\\n\\n优先级：`**`（右结合）> 一元 `±` > `* / %` > `+ -`。\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：`@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 版本适配\\n\\n- **适配 DSH**: DSH 0.1.5-rc.1（npm）（迁移：profile/bundle 插件系统）\\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（DSH 0.1.5-rc.1（npm）的 patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\\n\\n## 安装\\n\\n### Profile Bundle（推荐）\\n\\nDSH 0.1.5-rc.1（npm）起，本插件可作为独立 bundle 一键安装到任意 profile（仓库位于 https://github.com/omdsh-dev，public）：\\n\\n```sh\\n# 交互式（web）profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-calculator\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-calculator\\n```\\n\\n也可以先用 `npm pack` 打出 tarball 再安装：\\n\\n```sh\\ngit clone https://github.com/omdsh-dev/dsh-tool-calculator\\ncd dsh-tool-calculator\\nnpm install && npm pack\\ndsh plugin --profile web add ./deepseek-ai-dsh-tool-calculator-*.tgz\\ndsh plugin --profile headless add ./deepseek-ai-dsh-tool-calculator-*.tgz\\n```\\n\\n包内 `dsh.bundle.patch`（指向 `cordis.patch.yml`）会在安装后自动把插件加入 profile 的 layer stack；插件的 `cordis.patch.yml` 以 `- insert:` 插入 `tool-calculator` 条目。插件缺失的 peer 依赖（`@deepseek-ai/cordis`、`@deepseek-ai/dsh-tools`、`@deepseek-ai/dsh-invariants`）由 profile 的 healed `profiles/node_modules` 回退安装提供。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。Windows 路径使用正斜杠（`C:/...`）。\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-calculator\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 calculator 工具计算 1+2*3\\\"\\n```\\n\\n### 手动安装（源码贡献 / 旧 snapshot 场景）\\n\\n适用于源码贡献（在 monorepo 中开发调试本插件）或仍在使用旧 snapshot 的场景：\\n\\n1. 放入 monorepo：`cp -r calculator ~/.dsh/source/master/packages/tools/calculator`（开发调试）\\n2. `apps/cli/package.json` 加 `\\\"@deepseek-ai/dsh-tool-calculator\\\": \\\"workspace:^\\\"`；`tsconfig.host.json` references 加 `{ \\\"path\\\": \\\"./packages/tools/calculator\\\" }`\\n3. `pnpm install && pnpm run build`\\n4. 在 profile 用户层 patch 插入插件（`~/.dsh/profiles/<name>/cordis.patch.yml`）：\\n\\n```yaml\\n- insert:\\n    - id: tool-calculator\\n      name: '@deepseek-ai/dsh-tool-calculator'\\n```\\n\\n5. 验证：`dsh --profile <name> --dump-config | grep tool-calculator`\\n\\n> DSH 0.1.5-rc.1（npm）注意：patch 是 id-targeted 语义——裸 `- id:` 条目会报 `entry \\\"xxx\\\" not found`，必须用 `- insert:` 列表包裹。\\n## 用法\\n\\n安装后，agent 自动获得 `calculator` 工具：\\n\\n```\\ncalculator { expression: \\\"15 + 27 * sqrt(9)\\\" }  →  96\\n```\\n\\n工具名满足 DeepSeek 函数名约束（≤64 字符，`[A-Za-z0-9_-]`）。注册后自动进入 Code Mode SDK（`await tools.calculator(...)`），canonical 返回值为数字。\\n\\n## 已知限制\\n\\n1. **分发链路**：`@deepseek-ai/dsh-tools` 已随 DSH 0.1.5-rc.1（npm）发布为私有 npm 包；插件经 `dsh plugin add github:omdsh-dev/...` 或 tarball 直接安装，无需放入 monorepo 走 workspace 解析\\n2. **三角函数使用弧度**：与 `Math.sin`/`Math.cos` 一致；需要角度时写 `sin(30 * PI / 180)`\\n3. **不支持大整数**：JS `number` 是 IEEE 754 double，安全整数范围 ±9e15，超出有精度损失\\n4. **不支持科学计数法**：`1e5` 会被词法层拒绝\\n\\n## 测试\\n\\n```bash\\npnpm test\\n```\\n\\n包含功能用例与攻击载荷用例（`constructor.constructor` 链、`process.exit(0)`、`globalThis`、引号注入、分号语句等）。完整用例清单见本地维护的设计文档。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-calculator/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-calculator\\\",\\n  \\\"description\\\": \\\"DSH calculator tool\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-calculator/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-calculator\\n      name: '@deepseek-ai/dsh-tool-calculator'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-calculator/lib/index.js\",\n      \"content\": \"/**\\n * DSH 计算器工具插件。\\n *\\n * 注册 `calculator` 工具：安全的数学表达式求值器。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-calculator\\n *     name: '@deepseek-ai/dsh-tool-calculator'\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { evaluate } from './evaluate.js';\\nexport const name = '@deepseek-ai/dsh-tool-calculator';\\nexport const inject = ['tools'];\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'calculator',\\n        description: 'Evaluate a mathematical expression safely. ' +\\n            'Supports +, -, *, /, %, **, parentheses, and functions: ' +\\n            'abs, ceil, floor, round, max, min, sqrt, pow, log, log2, log10, exp, sin, cos, tan, PI, E.',\\n        parameters: {\\n            expression: {\\n                type: 'string',\\n                required: true,\\n                description: 'Mathematical expression, e.g. \\\"15 + 27 * sqrt(9)\\\"',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'number' },\\n            render: (_args, value) => [{ type: 'text', text: String(value) }],\\n        },\\n        execute: args => Promise.resolve(evaluate(args.expression)),\\n        timeoutMs: 1000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-calculator/lib/evaluate.js\",\n      \"content\": \"/**\\n * 零依赖、无 eval / new Function 的数学表达式求值器。\\n *\\n * 安全模型：词法层只识别数字、白名单标识符、运算符；\\n * 语法层按优先级递归下降求值；标识符按名查白名单表，查不到即抛错。\\n * 任何形式的代码注入（constructor.constructor 链、process 全局、\\n * 引号注入、分号语句等）均被词法/语法层拒绝。\\n *\\n * 白名单边界（审查 CALC-01）：FUNCTIONS/CONSTANTS 用 Object.hasOwn 判断，\\n * 不落入 Object.prototype 继承属性（constructor/toString/__proto__ 等）。\\n */\\nconst FUNCTIONS = {\\n    abs: { fn: Math.abs, minArgs: 1, maxArgs: 1 },\\n    ceil: { fn: Math.ceil, minArgs: 1, maxArgs: 1 },\\n    floor: { fn: Math.floor, minArgs: 1, maxArgs: 1 },\\n    round: { fn: Math.round, minArgs: 1, maxArgs: 1 },\\n    sqrt: { fn: Math.sqrt, minArgs: 1, maxArgs: 1 },\\n    pow: { fn: Math.pow, minArgs: 2, maxArgs: 2 },\\n    log: { fn: Math.log, minArgs: 1, maxArgs: 1 },\\n    log2: { fn: Math.log2, minArgs: 1, maxArgs: 1 },\\n    log10: { fn: Math.log10, minArgs: 1, maxArgs: 1 },\\n    exp: { fn: Math.exp, minArgs: 1, maxArgs: 1 },\\n    sin: { fn: Math.sin, minArgs: 1, maxArgs: 1 },\\n    cos: { fn: Math.cos, minArgs: 1, maxArgs: 1 },\\n    tan: { fn: Math.tan, minArgs: 1, maxArgs: 1 },\\n    max: { fn: Math.max, minArgs: 1, maxArgs: Infinity },\\n    min: { fn: Math.min, minArgs: 1, maxArgs: Infinity },\\n};\\nconst CONSTANTS = {\\n    PI: Math.PI, E: Math.E,\\n};\\nconst MAX_EXPRESSION_LENGTH = 500;\\n/** 词法分析：将输入字符串拆分为 token 数组 */\\nfunction tokenize(input) {\\n    const tokens = [];\\n    for (let i = 0; i < input.length;) {\\n        const ch = input.charAt(i);\\n        if (/\\\\s/.test(ch)) {\\n            i++;\\n            continue;\\n        }\\n        if (/[0-9]/.test(ch) || (ch === '.' && i + 1 < input.length && /[0-9]/.test(input.charAt(i + 1)))) {\\n            const m = /^(?:\\\\d+(?:\\\\.\\\\d*)?|\\\\.\\\\d+)/.exec(input.slice(i));\\n            if (!m)\\n                throw new Error(`Invalid number at position ${i}`);\\n            // CALC-06：数字后紧跟 e/E 是科学计数法形态（含 1e、1e+、1e-5），专门报错\\n            if (/[eE]/.test(input.charAt(i + m[0].length))) {\\n                throw new Error('Scientific notation is not supported');\\n            }\\n            tokens.push(m[0]);\\n            i += m[0].length;\\n            continue;\\n        }\\n        if (/[A-Za-z_]/.test(ch)) {\\n            const m = /^[A-Za-z_]\\\\w*/.exec(input.slice(i));\\n            if (!m)\\n                throw new Error(`Invalid identifier at position ${i}`);\\n            tokens.push(m[0]);\\n            i += m[0].length;\\n            continue;\\n        }\\n        if (ch === '*' && input.charAt(i + 1) === '*') {\\n            tokens.push('**');\\n            i += 2;\\n            continue;\\n        }\\n        if ('+-*/%(),'.includes(ch)) {\\n            tokens.push(ch);\\n            i++;\\n            continue;\\n        }\\n        throw new Error(`Invalid character \\\"${ch}\\\" at position ${i}`);\\n    }\\n    return tokens;\\n}\\n/** 语法分析 + 求值（递归下降，按运算符优先级） */\\nfunction parse(input) {\\n    const tokens = tokenize(input);\\n    let pos = 0;\\n    const peek = () => tokens[pos];\\n    const take = () => tokens[pos++];\\n    // 加减（最低优先级）\\n    const parseAdd = () => {\\n        let left = parseMul();\\n        while (peek() === '+' || peek() === '-') {\\n            const op = take();\\n            const right = parseMul();\\n            left = op === '+' ? left + right : left - right;\\n        }\\n        return left;\\n    };\\n    // 乘除取模\\n    const parseMul = () => {\\n        let left = parseUnary();\\n        while (peek() === '*' || peek() === '/' || peek() === '%') {\\n            const op = take();\\n            const right = parseUnary();\\n            left = op === '*' ? left * right : op === '/' ? left / right : left % right;\\n        }\\n        return left;\\n    };\\n    // 一元正负\\n    const parseUnary = () => {\\n        if (peek() === '-' || peek() === '+') {\\n            const op = take();\\n            return op === '-' ? -parseUnary() : parseUnary();\\n        }\\n        return parsePower();\\n    };\\n    // 幂（右结合）\\n    const parsePower = () => {\\n        const base = parsePrimary();\\n        if (peek() === '**') {\\n            take();\\n            return base ** parseUnary();\\n        }\\n        return base;\\n    };\\n    // 原子：数字 / 常量 / 函数调用 / 括号\\n    const parsePrimary = () => {\\n        const t = take();\\n        if (t === undefined)\\n            throw new Error('Unexpected end of expression');\\n        if (t === '(') {\\n            const value = parseAdd();\\n            if (take() !== ')')\\n                throw new Error('Missing closing parenthesis');\\n            return value;\\n        }\\n        if (t === ')')\\n            throw new Error('Unexpected \\\")\\\"');\\n        if (/^(?:\\\\d+(?:\\\\.\\\\d*)?|\\\\.\\\\d+)$/.test(t))\\n            return Number(t);\\n        if (/^[A-Za-z_]\\\\w*$/.test(t)) {\\n            // CALC-01：own-property 白名单（Object.hasOwn 不落入原型链）\\n            if (Object.hasOwn(CONSTANTS, t)) {\\n                if (peek() === '(')\\n                    throw new Error(`\\\"${t}\\\" is a constant, not a function`);\\n                return CONSTANTS[t];\\n            }\\n            if (Object.hasOwn(FUNCTIONS, t)) {\\n                if (take() !== '(')\\n                    throw new Error(`Missing \\\"(\\\" after function \\\"${t}\\\"`);\\n                const args = [];\\n                if (peek() !== ')') {\\n                    args.push(parseAdd());\\n                    while (peek() === ',') {\\n                        take();\\n                        args.push(parseAdd());\\n                    }\\n                }\\n                if (take() !== ')')\\n                    throw new Error(`Missing \\\")\\\" after arguments of \\\"${t}\\\"`);\\n                // CALC-02：参数个数契约校验\\n                const spec = FUNCTIONS[t];\\n                if (args.length < spec.minArgs || args.length > spec.maxArgs) {\\n                    const expected = spec.minArgs === spec.maxArgs\\n                        ? String(spec.minArgs)\\n                        : `at least ${spec.minArgs}`;\\n                    throw new Error(`Invalid argument count for \\\"${t}\\\": expected ${expected}, got ${args.length}`);\\n                }\\n                return spec.fn(...args);\\n            }\\n            throw new Error(`Unknown identifier \\\"${t}\\\"`);\\n        }\\n        throw new Error(`Unexpected token \\\"${t}\\\"`);\\n    };\\n    const value = parseAdd();\\n    if (pos < tokens.length)\\n        throw new Error(`Unexpected token \\\"${tokens[pos]}\\\"`);\\n    return value;\\n}\\n/**\\n * 公开接口：求值表达式，返回有限数字；NaN/Infinity 或其他错误均抛错。\\n * CALC-05：入口独立校验类型（不依赖上游 schema 校验）。\\n */\\nexport function evaluate(expression) {\\n    if (typeof expression !== 'string') {\\n        throw new Error('calculator: expression must be a string');\\n    }\\n    if (expression.length > MAX_EXPRESSION_LENGTH) {\\n        throw new Error(`Expression too long (${expression.length} > ${MAX_EXPRESSION_LENGTH})`);\\n    }\\n    const result = parse(expression);\\n    if (typeof result !== 'number' || !Number.isFinite(result)) {\\n        throw new Error('Expression did not evaluate to a finite number');\\n    }\\n    return result;\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-calculator\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"744fd993d1c2110a687769bda07ee1a0412e06870b9c98968b61f2aa8e7dfea2\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 240,\n        \"code\": 194,\n        \"comments\": 46,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 396,\n        \"words\": 2692\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 241,\n        \"code\": 176,\n        \"comments\": 48,\n        \"blank\": 17\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 174,\n        \"code\": 134,\n        \"comments\": 7,\n        \"blank\": 34\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-calculator/lib/types/evaluate.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-calculator/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-calculator/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-calculator/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-calculator/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"defineTool\",\n          \"name\": \"calculator\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-calculator/src/index.ts\",\n          \"line\": 18,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-calculator/src/index.ts\",\n          \"line\": 18,\n          \"api\": \"defineTool\",\n          \"name\": \"calculator\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"calculator\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "a0c7f0493ff4bd9a4a6679dc1df40a2f5b83d6c91bbe2f4e728513866cdc30f3"
+        }
+    },
+    "unavailable_artifacts": []
+}
