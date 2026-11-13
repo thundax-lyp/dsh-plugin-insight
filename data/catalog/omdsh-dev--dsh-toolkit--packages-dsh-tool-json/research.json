@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "a17d77e0f52e4d92e44a4a2dabc109ba",
+    "identity": "github:1327795364:packages-dsh-tool-json",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-json",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-json",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-json",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-json",
+            "aliases": [],
+            "name": "dsh-tool-json",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "afce4e0dce74cd17bb9894ccdf01a64b483c47833dcff4b8bd30692d37f05af6",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-json-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:33:25.024Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-json-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/README.md",
+                            "content_sha256": "041f9e5132843c8ba6aea2cda9fd344dfe11cd1678402cbfd08b12e91165b1c7"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:33:25.024Z",
+                    "summary": "在 DeepSeek Harness 中按路径查询 JSON 值，支持数组通配符和方括号访问。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/package.json",
+                            "content_sha256": "ae48b030537fff0ba6ba1a3434a051577e8f4fca1a4bce762a443b9855b54cbc"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/cordis.patch.yml",
+                            "content_sha256": "cf369bf0d2f1ffd676241a98fa639d6cd5dcc1d6a63d8a6970f512fc0561f52a"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/lib/index.js",
+                            "content_sha256": "ac9008adf8e25326ae02a3cf9ad737df059df53e3df89b6e3776bfe4abdd3fef"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/README.md",
+                            "content_sha256": "041f9e5132843c8ba6aea2cda9fd344dfe11cd1678402cbfd08b12e91165b1c7"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-json/lib/query.js",
+                            "content_sha256": "5b2f43263cb6077b274f77faa1bfe3be0d2890a48de6ff2c1b220d61af9b7047"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:33:25.024Z",
+                    "summary": "核查 packages/dsh-tool-json/package.json、packages/dsh-tool-json/cordis.patch.yml、packages/dsh-tool-json/lib/index.js、packages/dsh-tool-json/README.md、packages/dsh-tool-json/lib/query.js；profile 插入子包，tools 回调解析路径并归一化输入，走属性、索引或通配符，最后序列化结果。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "检查固定子包 lib 注册、解析、校验与投影；未运行目标插件、测试或宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "开发者可在会话里从公开 API 样本取明确的字段及保留 JSON 类型的值。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "profile 插入子包，tools 回调解析路径并归一化输入，走属性、索引或通配符，最后序列化结果。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "检查固定子包 lib 注册、解析、校验与投影；未运行目标插件、测试或宿主。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "子包 0.0.1 标记 private，固定版本含 lib，作者指向独立仓库；未核注册表发布字节。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Cordis 与 DSH tools | 是 | 注册 json | 改用现有工具 |\n| 小型公开 JSON 与子集表达式 | 本建议必需 | 限制输入与预期 | 转用 jq |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 包与宿主开销未知 | 核对 profile 和样本格式 | 同版装载待验 |\n| 持续 | 全输入扫描及模型传参，金额未知 | 复核数组位置与类型 | 真实耗时未知 |\n| 失败恢复 | 重复调用金额未知 | 切换 jq 并保留源 ID | 卸载待验 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 用公开样本验证后限小型取值试用；对照 [Q02](#research-q02) 样本确认何时改用带来源 ID 的脚本。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 结构化取值 | 固定路径走自有属性与索引 | 实际耗时和重试率 |\n| 通配符 | 保留匹配 null，跳过无匹配元素 | 宿主如何显示错误 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 将缺字段、类型和越界分开，便于定位异常；全量校验和序列化门槛需在真实主线程压测。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 核实查询直接消耗结构化参数，减少每次为简单取值建立 shell 命令。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 的投影可能跳过元素并改变位置对应；输出上限在序列化后检查。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提出可选的来源索引包装，以缺字段的对账样本检查可追溯性及输出代价。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:33:25.024Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:33:25.024Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:33:25.024Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 的会话适配属于小幅新颖性。[Q02](#research-q02) 对投影错误分类提供机制增量，解析与归一化可迁移，直接取值减少 shell 步骤；语法范围与序列化成本限制强度。",
+                    "basis": "interpretation",
+                    "score": 42,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 的变化集中在工作流和会话可达性，结果仍是取字段，交付无变化；免去外部进程的局部成本增量仍待 [Q03](#research-q03) 对照。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "经常从公开 JSON 响应取字段的开发者，可以用含空值的小样本试用 json。相比让模型在原文中找同名字段，工具按结构路径给出可复核的值。需要保留源记录位置或运行复杂过滤时，回到 jq 或现有脚本。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 9–16 行给出明确的人群、重复任务和替代办法，超出偶发便利；没有需求强度样本进入较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) lib/query.js 118–143 行的路径执行超出文本包装；[Q02](#research-q02) 的投影丢位限制进一步提高。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) lib/query.js 145–176、293–306 行覆盖真实执行与反例，超过仅入口依据；无同版本宿主运行。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) package.json 2–11 行和 README 82–101 行揭示安装条件，脚本提供回退，优于重要退出缺口档；宿主和重试负担尚未量化。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:33:25.024Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1327795364-packages-dsh-tool-json-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-json",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-json",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-json",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "afce4e0dce74cd17bb9894ccdf01a64b483c47833dcff4b8bd30692d37f05af6",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "596d103983501e66ec5093eefb6a007267cb4e5aa107a96e0d24273e0f9d891c"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/meta.json",
+        "publication.summaries": {
+            "text": "在 DeepSeek Harness 中按路径查询 JSON 值，支持数组通配符和方括号访问。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "注册 json 工具，按路径提取 JSON 值及数组投影。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 路径查询 | 取 API 样本字段 | 支持属性和数组索引 |\n| 数组投影 | 提取对象字段 | 源位置可改变，多层结果嵌套 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "[Q03](#research-q03) 用公开样本验证后限小型取值试用；对照 [Q02](#research-q02) 样本确认何时改用带来源 ID 的脚本。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-json",
+        "reports": "# dsh-tool-json\n\n> 在 DeepSeek Harness 中按路径查询 JSON 值，支持数组通配符和方括号访问。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码确认挂载、路径及错误边界。真实回执和资源开销待验。来源索引是待验证设计。\n\n## 洞察短评\n\n- **用途**：开发者可在会话里从公开 API 样本取明确的字段及保留 JSON 类型的值。\n- **亮点**：[Q01](#research-q01) 核实查询直接消耗结构化参数，减少每次为简单取值建立 shell 命令。\n- **思考**：[Q02](#research-q02) 的投影可能跳过元素并改变位置对应；输出上限在序列化后检查。\n- **建议**：[Q03](#research-q03) 提出可选的来源索引包装，以缺字段的对账样本检查可追溯性及输出代价。\n\n采用建议：[Q03](#research-q03) 用公开样本验证后限小型取值试用；对照 [Q02](#research-q02) 样本确认何时改用带来源 ID 的脚本。\n\n## 核心贡献\n\n[Q01](#research-q01) 核实查询直接消耗结构化参数，减少每次为简单取值建立 shell 命令。\n\n## 关键质疑\n\n[Q02](#research-q02) 的投影可能跳过元素并改变位置对应；输出上限在序列化后检查。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提出可选的来源索引包装，以缺字段的对账样本检查可追溯性及输出代价。\n\n以含缺字段、null、混合类型及多级数组的公开样本比较路径结果、出错回执与 jq 输出，并核对禁用后工具。\n\n## 场景与替代办法\n\n开发者可在会话里从公开 API 样本取明确的字段及保留 JSON 类型的值。\n\ngrep 适合定位原文，jq 或脚本可以结构化处理、筛选及保留源 ID。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| Cordis 与 DSH tools | 是 | 注册 json | 改用现有工具 |\n| 小型公开 JSON 与子集表达式 | 本建议必需 | 限制输入与预期 | 转用 jq |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 加载 | 用户核对隔离 profile | json 出现在工具列表 |\n| 查询 | Agent 传样本和路径 | 与手工定位的值一致 |\n| 退出 | 用户禁用组件 | 继续使用 jq |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 包与宿主开销未知 | 核对 profile 和样本格式 | 同版装载待验 |\n| 持续 | 全输入扫描及模型传参，金额未知 | 复核数组位置与类型 | 真实耗时未知 |\n| 失败恢复 | 重复调用金额未知 | 切换 jq 并保留源 ID | 卸载待验 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 结构化取值 | 固定路径走自有属性与索引 | 实际耗时和重试率 |\n| 通配符 | 保留匹配 null，跳过无匹配元素 | 宿主如何显示错误 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：对小型 JSON 响应取字段时，插件的投影怎样改变原始形状，哪些任务仍需要 jq 或脚本？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 一个 API 样本如何变成指定路径的值？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n读取公开 API 样本的维护者可传入 JSON 值或一段 JSON 字符串，再以点号、方括号属性或索引指定字段。入口把两个参数直接交给 query，先解析路径，再把字符串 JSON.parse 并作全量兼容校验。点号与引号键用 Object.hasOwn 定位值；数字索引只访问数组并检查范围。结果回执按 JSON 序列化，能保留数字、布尔等类型。与 grep 对原文找同名字符串相比，这条链可确定结构位置；jq 也能实现精确查询并有更完整语法，插件主要减少重复启 shell 与双重转义。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-json/package.json:21-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/package.json#L21-L38)\n\n声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-json/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/cordis.patch.yml#L1-L4)\n\n按固定包名插入 tool-json。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-json\n      name: '@deepseek-ai/dsh-tool-json'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-json/lib/index.js:9-20](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/index.js#L9-L20)\n\n注入 tools 并注册 json。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport { query } from './query.js';\nexport const name = '@deepseek-ai/dsh-tool-json';\nexport const inject = ['tools'];\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'json',\n        description: 'Query JSON with a JMESPath-inspired path expression. ' +\n            'Supports dot-notation (foo.bar), bracket-indexing (items[0]), ' +\n            \"bracket-property (items['key'] or items[\\\"key\\\"]), and array \" +\n            'wildcard projection (items[*].name, arrays only; multi-level ' +\n            'wildcards return nested arrays). Returns the matched value as JSON.',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-json/lib/index.js:33-43](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/index.js#L33-L43)\n\n注册回调进入本包实际执行逻辑并呈现回执。\n\n<details>\n<summary>查看原文（11行）</summary>\n\n```text\n        output: {\n            schema: { type: 'json' },\n            render: (_args, value) => [{ type: 'text', text: JSON.stringify(value) }],\n        },\n        execute: (args) => {\n            const { input, query: queryStr } = args;\n            // query() 内置 normalizeInput：字符串/对象双形态 + 友好错误包装\n            return Promise.resolve(query(input, queryStr));\n        },\n        timeoutMs: 1000,\n    }));\n```\n\n</details>\n\n**依据 5 · 作者声明**：[packages/dsh-tool-json/README.md:9-16](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md#L9-L16)\n\n作者比较文本 grep 与结构化路径。\n\n```text\n## 为什么需要\n\nAgent 处理 JSON 是高频操作——API 返回值、配置文件、工具输出到处都是 JSON。当前做法是起 bash 进程跑 `node -e` 或 `jq`，每次都有进程开销和字符串序列化成本。\n\nDSH 内置 `grep` 可以做正则匹配，但无法理解 JSON 结构。对于 `{\"items\":[{\"id\":1}]}`：\n\n- `grep` 只能做字符串级搜索，容易误匹配值、key、或嵌套子对象中的同名 key\n- `json` 走结构化路径，只匹配指定路径，不混淆 key 和 value\n```\n\n**依据 6 · 源码核查**：[packages/dsh-tool-json/lib/query.js:118-143](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L118-L143)\n\n自有属性与数组索引分路。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nfunction executeQuery(steps, value) {\n    let current = value;\n    for (let i = 0; i < steps.length; i++) {\n        const step = steps[i];\n        if (current === null || current === undefined) {\n            throw new JsonQueryError('TYPE_MISMATCH', 'json: cannot access property on null/undefined');\n        }\n        if (typeof current !== 'object') {\n            throw new JsonQueryError('TYPE_MISMATCH', `json: cannot access property on ${typeof current}`);\n        }\n        if (step.kind === 'dot' || step.kind === 'bracket') {\n            if (!Object.hasOwn(current, step.key)) {\n                throw new JsonQueryError('MISSING_PROPERTY', `json: property \"${step.key}\" not found`);\n            }\n            current = current[step.key];\n            continue;\n        }\n        if (step.kind === 'index') {\n            if (!Array.isArray(current)) {\n                throw new JsonQueryError('TYPE_MISMATCH', 'json: index access on non-array');\n            }\n            if (step.index >= current.length) {\n                throw new JsonQueryError('INDEX_OUT_OF_BOUNDS', `json: index ${step.index} out of bounds (length ${current.length})`);\n            }\n            current = current[step.index];\n            continue;\n```\n\n</details>\n\n**依据 7 · 源码核查**：[packages/dsh-tool-json/lib/query.js:273-306](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L273-L306)\n\n输入归一化与输出门槛。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\nexport function normalizeInput(input) {\n    if (typeof input === 'string') {\n        // JSON-03：字符串输入字节上限（UTF-8 字节数）\n        if (Buffer.byteLength(input, 'utf8') > MAX_INPUT_BYTES) {\n            throw new JsonQueryError('INVALID_QUERY', `json: input exceeds ${MAX_INPUT_BYTES} bytes`);\n        }\n        try {\n            const parsed = JSON.parse(input);\n            assertJsonCompatible(parsed, 0, new WeakSet(), { bytes: 0 });\n            return parsed;\n        }\n        catch (error) {\n            if (error instanceof JsonQueryError)\n                throw error; // 深度/类型错误如实透传\n            throw new JsonQueryError('INVALID_QUERY', 'json: invalid JSON input');\n        }\n    }\n    assertJsonCompatible(input, 0, new WeakSet(), { bytes: 0 });\n    return input;\n}\n// ── 公开接口 ──\nconst MAX_OUTPUT_BYTES = 4_000_000; // 4 MB 输出保险丝（AUDIT-JSON-02）\nexport function query(jsonInput, queryStr) {\n    if (typeof queryStr !== 'string') {\n        throw new JsonQueryError('INVALID_QUERY', 'json: query must be a string');\n    }\n    const steps = parseQuery(queryStr);\n    const result = executeQuery(steps, normalizeInput(jsonInput));\n    // AUDIT-JSON-02：输入限制不等于输出限制（空查询返回整个输入、选中字段可接近输入上限）\n    const text = JSON.stringify(result);\n    if (Buffer.byteLength(text, 'utf8') > MAX_OUTPUT_BYTES) {\n        throw new JsonQueryError('INVALID_QUERY', `json: output exceeds ${MAX_OUTPUT_BYTES} bytes`);\n    }\n    return result;\n```\n\n</details>\n\n#### 缺口\n\n- 常用 profile 中 JSON 参数对象/字符串的传递形态\n  **影响**：影响作者宣称双形态是否对用户可见\n  **进一步探讨**：分别发送相同的小样本字符串与对象并核对工具回执\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 数组通配符会保留源位置吗，资源限制覆盖哪部分？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\n带后续路径的投影逐个访问元素，跳过非对象以及 MISSING_PROPERTY，合法匹配出的 null 会被 push。比如 items 中依次放有 name 的对象、空对象、name 为 null 的对象，items[*].name 只产生两个值，不能按新下标回填源数组。类型不匹配和索引越界会向上抛错，因而在多层数据中不是所有不合格行都被过滤。多级通配符由递归调用生成嵌套数组。每次数组投影检查长度 100000，整个输入按字节和深度校验，输出在 JSON.stringify 之后才检查字节上限，不能把该值当成序列化峰值内存上界。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-json/lib/query.js:145-176](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L145-L176)\n\n投影跳过条件、嵌套调用与无尾路径行为。\n\n<details>\n<summary>查看原文（32行）</summary>\n\n```text\n        // 前三个分支均 continue，此处必为 wildcard\n        if (!Array.isArray(current)) {\n            throw new JsonQueryError('TYPE_MISMATCH', 'json: wildcard projection on non-array');\n        }\n        const arr = current;\n        // RECHECK2-JSON-02：上限覆盖无尾路径（items[*] 直接返回数组同样受限）\n        if (arr.length > MAX_PROJECTION_ITEMS) {\n            throw new JsonQueryError('INVALID_QUERY', `json: wildcard projection exceeds ${MAX_PROJECTION_ITEMS} items`);\n        }\n        const remaining = steps.slice(i + 1);\n        if (remaining.length === 0) {\n            current = arr; // 无后续路径：返回全体元素（含标量）\n        }\n        else {\n            // JSON-01：循环 push 保留合法的 null 结果（不用 null 作失败哨兵）\n            // JSON-02：只跳过 MISSING_PROPERTY，类型/索引/内部错误重新抛出\n            const projected = [];\n            for (const item of arr) {\n                if (item === null || item === undefined || typeof item !== 'object')\n                    continue; // 非对象元素跳过\n                try {\n                    projected.push(executeQuery(remaining, item));\n                }\n                catch (error) {\n                    if (error instanceof JsonQueryError && error.code === 'MISSING_PROPERTY')\n                        continue;\n                    throw error;\n                }\n            }\n            current = projected;\n        }\n        return current; // 通配符是终态\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-json/lib/query.js:184-205](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L184-L205)\n\n输入字节累计与深度门槛。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nfunction addBytes(state, amount) {\n    state.bytes += amount;\n    if (state.bytes > MAX_INPUT_BYTES) {\n        throw new JsonQueryError('INVALID_QUERY', `json: input exceeds ${MAX_INPUT_BYTES} bytes`);\n    }\n}\n/**\n * JSON-08 + RECHECK2-JSON-01/03.1 + AUDIT-JSON-04：只接受 JSON-compatible 值\n * （null/boolean/number/string/array/plain object），遍历时累计 UTF-8 字节数\n * （key + string value + 结构开销 + 按实际表示的 number 长度），用递归路径\n * WeakSet 检测循环引用，并拒绝不可枚举属性与 accessor（own-property 全量检查）。\n */\nfunction assertJsonCompatible(value, depth, ancestors, state) {\n    if (depth > 100)\n        throw new JsonQueryError('INVALID_QUERY', 'json: input nesting too deep');\n    if (value === null) {\n        addBytes(state, 4);\n        return;\n    }\n    if (typeof value === 'string') {\n        addBytes(state, Buffer.byteLength(value, 'utf8') + 2); // 引号开销\n        return;\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-json/lib/query.js:293-306](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L293-L306)\n\n输出先序列化再按字节判断。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n// ── 公开接口 ──\nconst MAX_OUTPUT_BYTES = 4_000_000; // 4 MB 输出保险丝（AUDIT-JSON-02）\nexport function query(jsonInput, queryStr) {\n    if (typeof queryStr !== 'string') {\n        throw new JsonQueryError('INVALID_QUERY', 'json: query must be a string');\n    }\n    const steps = parseQuery(queryStr);\n    const result = executeQuery(steps, normalizeInput(jsonInput));\n    // AUDIT-JSON-02：输入限制不等于输出限制（空查询返回整个输入、选中字段可接近输入上限）\n    const text = JSON.stringify(result);\n    if (Buffer.byteLength(text, 'utf8') > MAX_OUTPUT_BYTES) {\n        throw new JsonQueryError('INVALID_QUERY', `json: output exceeds ${MAX_OUTPUT_BYTES} bytes`);\n    }\n    return result;\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-tool-json/README.md:63-80](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md#L63-L80)\n\n声明子集、嵌套投影与不支持过滤器。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n## 查询语法（JMESPath-inspired 子集）\n\n| 表达式 | 示例 | 说明 |\n|--------|------|------|\n| 点号访问 | `foo.bar` | 嵌套对象属性（标识符字符集 `[A-Za-z0-9_$` + BMP 非 ASCII]） |\n| 方括号索引 | `items[0]` | 数组索引（安全整数） |\n| 方括号属性 | `items['key']` / `items[\"key\"]` | 含特殊字符的属性名 |\n| 通配符投影 | `items[*].name` | **仅数组**；提取元素属性 |\n| 组合嵌套 | `a.b[0].c.d` | 以上全部自由组合 |\n\n**语义边界**（有意不兼容标准 JMESPath，已锁定）：\n\n- 多级通配符 `items[*].tags[*]` 返回**嵌套数组**（`[['a','b'],['c']]`），不做标准投影扁平化\n- 通配符仅作用于数组，不支持对象字段枚举；非对象元素按投影语义跳过；合法 `null` 结果**保留**\n- 引号属性支持 `\\\\` `\\'` `\\\"` 三种转义（任意引号包围形式下均可用）；非法转义报错\n- 投影内只跳过 `MISSING_PROPERTY`；类型/索引/内部错误如实抛出\n\n**不支持**（低频场景，bash + node 兜底）：过滤器 `[?downloads > 1000]`、管道 `|`、函数调用。\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何选对试用任务，怎样验证投影丢行的补救设计？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n适合把小 JSON 的已知字段提交给会话工具，业务关键的审计或批量对账仍应使用 jq 或保留源 ID 的脚本。安装需目标 profile 能解析子包与 Cordis/tools peers；作者所述 rc.1 验证和独立仓库渠道未在本轮复现。即使只选小字段，插件也扫描完整输入，因而应计入传递样本、模型额度、核对及失败改用脚本的投入。可验证的改进是提供保留索引的可选投影，比较能否由结果稳定找回源记录，同时核对嵌套通配符增加的输出大小。若任务只是取单一字段，索引包装的额外字节可能没有价值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-json/package.json:2-11](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/package.json#L2-L11)\n\nprivate 子包及 Node 范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"name\": \"@deepseek-ai/dsh-tool-json\",\n  \"description\": \"DSH JSON query tool\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-tool-json/README.md:18-29](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md#L18-L29)\n\n作者明确提示全量校验成本。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n## 安全模型\n\n手写递归下降解析器，无 `eval`/`new Function`；`Object.hasOwn` 防原型链污染（`constructor`/`__proto__` 读取不触发原型链）。资源上限（**对象与字符串两条输入路径统一执行**）：\n\n- 查询表达式长度 ≤ 200 字符、解析深度 ≤ 20 层、数组索引必须是安全整数\n- 字符串输入 ≤ 1,000,000 bytes（UTF-8）；输入嵌套深度 ≤ 100\n- 单次 wildcard 投影 ≤ 100,000 元素\n- 只接受 JSON-compatible 值（null/boolean/有限 number/string/array/plain object；拒绝 undefined/BigInt/函数/Date/非有限数）\n\n错误分类（`JsonQueryError`）：`MISSING_PROPERTY`（投影内跳过）、`TYPE_MISMATCH`/`INDEX_OUT_OF_BOUNDS`/`INVALID_QUERY`（如实抛错），统一 `json:` 前缀。\n\n> 成本模型（AUDIT-JSON-03）：输入在每次查询前执行**全量校验**（类型/深度/字节/循环/枚举性）——这是有意的安全成本，查询小字段也会完整扫描输入；`timeoutMs` 无法中断同步校验。\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-tool-json/README.md:82-101](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/README.md#L82-L101)\n\n作者兼容声称及独立仓库渠道。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n\n\n## 版本适配\n\n- **适配 DSH 版本**: DSH 0.1.5-rc.1（npm）\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\n\n## 安装\n\n插件源码仓库：`https://github.com/omdsh-dev/dsh-tool-json`（public）。\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-json/lib/query.js:159-171](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-json/lib/query.js#L159-L171)\n\n结果只 push 值，原始位置缺失。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n            // JSON-01：循环 push 保留合法的 null 结果（不用 null 作失败哨兵）\n            // JSON-02：只跳过 MISSING_PROPERTY，类型/索引/内部错误重新抛出\n            const projected = [];\n            for (const item of arr) {\n                if (item === null || item === undefined || typeof item !== 'object')\n                    continue; // 非对象元素跳过\n                try {\n                    projected.push(executeQuery(remaining, item));\n                }\n                catch (error) {\n                    if (error instanceof JsonQueryError && error.code === 'MISSING_PROPERTY')\n                        continue;\n                    throw error;\n```\n\n</details>\n\n#### 缺口\n\n- 未复现固定子包加载及错误展示\n  **影响**：限制试用范围和退出确认\n  **进一步探讨**：在隔离 profile 确认注册、错误分类回执、禁用后的工具列表\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-json；内容摘要：5f742fcf172be76b392470c4df622b12ed9d7f624c5cb6796d237a44cb46bc01。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 369 | 310 | 78 | — |\n| .md | source | 2 | 360 | — | — | 2643 |\n| .ts | source | 3 | 398 | 295 | 83 | — |\n| .ts | test | 2 | 368 | 277 | 20 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 路径查询 | 取 API 样本字段 | 支持属性和数组索引 |\n| 数组投影 | 提取对象字段 | 源位置可改变，多层结果嵌套 |\n\n## 工程亮点\n\n[Q02](#research-q02) 将缺字段、类型和越界分开，便于定位异常；全量校验和序列化门槛需在真实主线程压测。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-json/package.json、packages/dsh-tool-json/cordis.patch.yml、packages/dsh-tool-json/lib/index.js、packages/dsh-tool-json/README.md、packages/dsh-tool-json/lib/query.js 及固定范围 inventory；组件：packages/dsh-tool-json。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：检查固定子包 lib 注册、解析、校验与投影；未运行目标插件、测试或宿主。\n- 下一步：以含缺字段、null、混合类型及多级数组的公开样本比较路径结果、出错回执与 jq 输出，并核对禁用后工具。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-json/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-json\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-json/README.md\",\n    \"packages/dsh-tool-json/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-json/cordis.patch.yml\",\n    \"packages/dsh-tool-json/lib/index.js\",\n    \"packages/dsh-tool-json/lib/query.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"对小型 JSON 响应取字段时，插件的投影怎样改变原始形状，哪些任务仍需要 jq 或脚本？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"一个 API 样本如何变成指定路径的值？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"读取公开 API 样本的维护者可传入 JSON 值或一段 JSON 字符串，再以点号、方括号属性或索引指定字段。入口把两个参数直接交给 query，先解析路径，再把字符串 JSON.parse 并作全量兼容校验。点号与引号键用 Object.hasOwn 定位值；数字索引只访问数组并检查范围。结果回执按 JSON 序列化，能保留数字、布尔等类型。与 grep 对原文找同名字符串相比，这条链可确定结构位置；jq 也能实现精确查询并有更完整语法，插件主要减少重复启 shell 与双重转义。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 38,\n            \"observation\": \"声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"按固定包名插入 tool-json。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/index.js\",\n            \"line_start\": 9,\n            \"line_end\": 20,\n            \"observation\": \"注入 tools 并注册 json。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/index.js\",\n            \"line_start\": 33,\n            \"line_end\": 43,\n            \"observation\": \"注册回调进入本包实际执行逻辑并呈现回执。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-json/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 16,\n            \"observation\": \"作者比较文本 grep 与结构化路径。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 118,\n            \"line_end\": 143,\n            \"observation\": \"自有属性与数组索引分路。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 273,\n            \"line_end\": 306,\n            \"observation\": \"输入归一化与输出门槛。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"常用 profile 中 JSON 参数对象/字符串的传递形态\",\n            \"impact\": \"影响作者宣称双形态是否对用户可见\",\n            \"next_step\": \"分别发送相同的小样本字符串与对象并核对工具回执\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"数组通配符会保留源位置吗，资源限制覆盖哪部分？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"带后续路径的投影逐个访问元素，跳过非对象以及 MISSING_PROPERTY，合法匹配出的 null 会被 push。比如 items 中依次放有 name 的对象、空对象、name 为 null 的对象，items[*].name 只产生两个值，不能按新下标回填源数组。类型不匹配和索引越界会向上抛错，因而在多层数据中不是所有不合格行都被过滤。多级通配符由递归调用生成嵌套数组。每次数组投影检查长度 100000，整个输入按字节和深度校验，输出在 JSON.stringify 之后才检查字节上限，不能把该值当成序列化峰值内存上界。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 145,\n            \"line_end\": 176,\n            \"observation\": \"投影跳过条件、嵌套调用与无尾路径行为。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 184,\n            \"line_end\": 205,\n            \"observation\": \"输入字节累计与深度门槛。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 293,\n            \"line_end\": 306,\n            \"observation\": \"输出先序列化再按字节判断。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-json/README.md\",\n            \"line_start\": 63,\n            \"line_end\": 80,\n            \"observation\": \"声明子集、嵌套投影与不支持过滤器。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"如何选对试用任务，怎样验证投影丢行的补救设计？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"适合把小 JSON 的已知字段提交给会话工具，业务关键的审计或批量对账仍应使用 jq 或保留源 ID 的脚本。安装需目标 profile 能解析子包与 Cordis/tools peers；作者所述 rc.1 验证和独立仓库渠道未在本轮复现。即使只选小字段，插件也扫描完整输入，因而应计入传递样本、模型额度、核对及失败改用脚本的投入。可验证的改进是提供保留索引的可选投影，比较能否由结果稳定找回源记录，同时核对嵌套通配符增加的输出大小。若任务只是取单一字段，索引包装的额外字节可能没有价值。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 11,\n            \"observation\": \"private 子包及 Node 范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-json/README.md\",\n            \"line_start\": 18,\n            \"line_end\": 29,\n            \"observation\": \"作者明确提示全量校验成本。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-json/README.md\",\n            \"line_start\": 82,\n            \"line_end\": 101,\n            \"observation\": \"作者兼容声称及独立仓库渠道。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-json/lib/query.js\",\n            \"line_start\": 159,\n            \"line_end\": 171,\n            \"observation\": \"结果只 push 值，原始位置缺失。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未复现固定子包加载及错误展示\",\n            \"impact\": \"限制试用范围和退出确认\",\n            \"next_step\": \"在隔离 profile 确认注册、错误分类回执、禁用后的工具列表\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-json/README.md\",\n      \"content\": \"# dsh-tool-json\\n\\n[English](README.en.md)\\n\\nDSH JSON 查询工具插件 —— JMESPath-inspired 路径查询（自定义子集），零依赖递归下降解析器。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么需要\\n\\nAgent 处理 JSON 是高频操作——API 返回值、配置文件、工具输出到处都是 JSON。当前做法是起 bash 进程跑 `node -e` 或 `jq`，每次都有进程开销和字符串序列化成本。\\n\\nDSH 内置 `grep` 可以做正则匹配，但无法理解 JSON 结构。对于 `{\\\"items\\\":[{\\\"id\\\":1}]}`：\\n\\n- `grep` 只能做字符串级搜索，容易误匹配值、key、或嵌套子对象中的同名 key\\n- `json` 走结构化路径，只匹配指定路径，不混淆 key 和 value\\n\\n## 安全模型\\n\\n手写递归下降解析器，无 `eval`/`new Function`；`Object.hasOwn` 防原型链污染（`constructor`/`__proto__` 读取不触发原型链）。资源上限（**对象与字符串两条输入路径统一执行**）：\\n\\n- 查询表达式长度 ≤ 200 字符、解析深度 ≤ 20 层、数组索引必须是安全整数\\n- 字符串输入 ≤ 1,000,000 bytes（UTF-8）；输入嵌套深度 ≤ 100\\n- 单次 wildcard 投影 ≤ 100,000 元素\\n- 只接受 JSON-compatible 值（null/boolean/有限 number/string/array/plain object；拒绝 undefined/BigInt/函数/Date/非有限数）\\n\\n错误分类（`JsonQueryError`）：`MISSING_PROPERTY`（投影内跳过）、`TYPE_MISMATCH`/`INDEX_OUT_OF_BOUNDS`/`INVALID_QUERY`（如实抛错），统一 `json:` 前缀。\\n\\n> 成本模型（AUDIT-JSON-03）：输入在每次查询前执行**全量校验**（类型/深度/字节/循环/枚举性）——这是有意的安全成本，查询小字段也会完整扫描输入；`timeoutMs` 无法中断同步校验。\\n\\n## 架构\\n\\n```\\nDSH Agent\\n    │ ctx.tools.register()\\n    ▼\\nsrc/index.ts（Cordis 插件入口 + action 分发）\\n    │\\n    ▼\\nsrc/query.ts\\n    ├── parseQuery() — 递归下降解析器（strict 语法 + 转义 + 上限）\\n    ├── executeQuery() — 执行器（错误分类 + 投影上限）\\n    └── normalizeInput() — 双形态输入 + assertJsonCompatible 校验\\n```\\n\\n## 工具声明\\n\\n```ts\\nctx.tools.register(defineTool({\\n  name: 'json',\\n  parameters: {\\n    input: { type: 'json', required: true, description: 'JSON value or JSON string to query.' },\\n    query: { type: 'string', required: true, description: 'Path expression, e.g. \\\"data.items[0].name\\\".' },\\n  },\\n  output: { schema: { type: 'json' }, render: (_a, v) => [{ type: 'text', text: JSON.stringify(v) }] },\\n  execute: (args) => Promise.resolve(executeAction(args) as JsonValue),\\n  timeoutMs: 1000,\\n}))\\n```\\n\\n`input` 双形态：对象直传（模型直接生成参数，零转义）或字符串（bash/read 原文透传），`normalizeInput` 统一归一化与校验。\\n\\n## 查询语法（JMESPath-inspired 子集）\\n\\n| 表达式 | 示例 | 说明 |\\n|--------|------|------|\\n| 点号访问 | `foo.bar` | 嵌套对象属性（标识符字符集 `[A-Za-z0-9_$` + BMP 非 ASCII]） |\\n| 方括号索引 | `items[0]` | 数组索引（安全整数） |\\n| 方括号属性 | `items['key']` / `items[\\\"key\\\"]` | 含特殊字符的属性名 |\\n| 通配符投影 | `items[*].name` | **仅数组**；提取元素属性 |\\n| 组合嵌套 | `a.b[0].c.d` | 以上全部自由组合 |\\n\\n**语义边界**（有意不兼容标准 JMESPath，已锁定）：\\n\\n- 多级通配符 `items[*].tags[*]` 返回**嵌套数组**（`[['a','b'],['c']]`），不做标准投影扁平化\\n- 通配符仅作用于数组，不支持对象字段枚举；非对象元素按投影语义跳过；合法 `null` 结果**保留**\\n- 引号属性支持 `\\\\\\\\` `\\\\'` `\\\\\\\"` 三种转义（任意引号包围形式下均可用）；非法转义报错\\n- 投影内只跳过 `MISSING_PROPERTY`；类型/索引/内部错误如实抛出\\n\\n**不支持**（低频场景，bash + node 兜底）：过滤器 `[?downloads > 1000]`、管道 `|`、函数调用。\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 版本适配\\n\\n- **适配 DSH 版本**: DSH 0.1.5-rc.1（npm）\\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\\n\\n## 安装\\n\\n插件源码仓库：`https://github.com/omdsh-dev/dsh-tool-json`（public）。\\n\\n### Profile Bundle（推荐）\\n\\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1，npm）：\\n\\n```sh\\n# 交互式（web）profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-json\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-json\\n```\\n\\n包内 `dsh.bundle.patch`（指向 `cordis.patch.yml`）会在安装后自动把插件加入 profile 的 layer stack；插件的 `cordis.patch.yml` 以 `- insert:` 插入 `tool-json` 条目。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。\\n\\n### npm pack tarball 安装\\n\\n```sh\\nnpm pack    # 生成 dsh-tool-json-*.tgz\\ndsh plugin --profile web add ./dsh-tool-json-*.tgz\\ndsh plugin --profile headless add ./dsh-tool-json-*.tgz\\n```\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-json\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 json 工具查询 {\\\"a\\\":{\\\"b\\\":1}} 的 a.b\\\"\\n```\\n\\n### 手动安装与旧版本兼容\\n\\n仅适用于不支持 Profile Bundle 的旧快照或插件开发调试环境：\\n\\n1. 放入 monorepo：`cp -r json ~/.dsh/source/master/packages/tools/json`（开发调试）\\n2. `apps/cli/package.json` 加 `\\\"@deepseek-ai/dsh-tool-json\\\": \\\"workspace:^\\\"`；`tsconfig.host.json` references 加 `{ \\\"path\\\": \\\"./packages/tools/json\\\" }`\\n3. `pnpm install && pnpm run build`\\n4. 在 profile 用户层 patch 插入插件（`~/.dsh/profiles/<name>/cordis.patch.yml`）：\\n\\n```yaml\\n- insert:\\n    - id: tool-json\\n      name: '@deepseek-ai/dsh-tool-json'\\n```\\n\\n5. 验证：`dsh --profile <name> --dump-config | grep tool-json`\\n\\n> 注意：patch 是 id-targeted 语义——裸 `- id:` 条目会报 `entry \\\"xxx\\\" not found`，必须用 `- insert:` 列表包裹。\\n## 用法\\n\\n```\\njson { input: <JSON>, query: \\\"items[0].name\\\" }        → \\\"hello\\\"\\njson { input: <JSON>, query: \\\"items[*].name\\\" }         → [\\\"a\\\", \\\"b\\\"]（合法 null 保留）\\njson { input: <JSON>, query: \\\"items['complex-key']\\\" }  → \\\"ok\\\"\\n```\\n\\n## 已知限制\\n\\n1. 只读：不能修改 JSON 字段（原地修改用 `str_replace_editor`/`write`；v2 可考虑 `set` 模式）\\n2. 无过滤器表达式、无标准 JMESPath 投影扁平化（见语义边界）\\n3. 对象形态 input 依赖 DSH 参数管线保证 lossless JSON\\n\\n## 测试\\n\\n```bash\\npnpm test\\n```\\n\\n54 个用例（功能、错误、攻击载荷、对象/字符串双形态输入、资源上限与转义边界）。完整清单见本地维护的设计文档。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-json/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-json\\\",\\n  \\\"description\\\": \\\"DSH JSON query tool\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-json/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-json\\n      name: '@deepseek-ai/dsh-tool-json'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-json/lib/index.js\",\n      \"content\": \"/**\\n * DSH JSON 查询工具插件。\\n *\\n * 注册 `json` 工具：JMESPath 核心子集查询。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-json\\n *     name: '@deepseek-ai/dsh-tool-json'\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { query } from './query.js';\\nexport const name = '@deepseek-ai/dsh-tool-json';\\nexport const inject = ['tools'];\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'json',\\n        description: 'Query JSON with a JMESPath-inspired path expression. ' +\\n            'Supports dot-notation (foo.bar), bracket-indexing (items[0]), ' +\\n            \\\"bracket-property (items['key'] or items[\\\\\\\"key\\\\\\\"]), and array \\\" +\\n            'wildcard projection (items[*].name, arrays only; multi-level ' +\\n            'wildcards return nested arrays). Returns the matched value as JSON.',\\n        parameters: {\\n            input: {\\n                type: 'json',\\n                required: true,\\n                description: 'JSON value or JSON string to query.',\\n            },\\n            query: {\\n                type: 'string',\\n                required: true,\\n                description: 'Path expression, e.g. \\\"data.items[0].name\\\".',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'json' },\\n            render: (_args, value) => [{ type: 'text', text: JSON.stringify(value) }],\\n        },\\n        execute: (args) => {\\n            const { input, query: queryStr } = args;\\n            // query() 内置 normalizeInput：字符串/对象双形态 + 友好错误包装\\n            return Promise.resolve(query(input, queryStr));\\n        },\\n        timeoutMs: 1000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-json/lib/query.js\",\n      \"content\": \"/**\\n * JMESPath-inspired 路径查询解析器 + 执行器 —— 零依赖，纯函数。\\n *\\n * 语法：点号访问 (foo.bar) | 方括号索引 (items[0]) | 方括号属性\\n * (items['key'] | items[\\\"key\\\"]，支持 \\\\\\\\ \\\\' \\\\\\\" 转义) | 数组通配符投影 (items[*].name)\\n *\\n * 安全：无 eval/new Function；Object.hasOwn 防原型链；\\n * 深度上限 20 层；查询长度上限 200；输入 1 MB 字节（对象/字符串统一累计）；投影元素上限 100k（含无尾路径）。\\n *\\n * 错误分类（审查 JSON-02）：JsonQueryError.code =\\n *   MISSING_PROPERTY（投影时跳过）| TYPE_MISMATCH | INDEX_OUT_OF_BOUNDS | INVALID_QUERY\\n * 通配符投影只吞 MISSING_PROPERTY，其余错误重新抛出。\\n */\\nconst MAX_DEPTH = 20;\\nconst MAX_LENGTH = 200;\\nconst MAX_INPUT_BYTES = 1_000_000; // 1 MB（1,000,000 UTF-8 字节）\\nconst MAX_PROJECTION_ITEMS = 100_000; // 单次投影遍历上限（JSON-03）\\nexport class JsonQueryError extends Error {\\n    code;\\n    constructor(code, message) {\\n        super(message);\\n        this.name = 'JsonQueryError';\\n        this.code = code;\\n    }\\n}\\n// ── 解析器 ──\\nfunction parseQuery(input) {\\n    if (input.length > MAX_LENGTH)\\n        throw new JsonQueryError('INVALID_QUERY', `Query too long (${input.length} > ${MAX_LENGTH})`);\\n    if (input === '')\\n        return [];\\n    const steps = [];\\n    let pos = 0;\\n    const peek = () => input.charAt(pos);\\n    const take = () => input.charAt(pos++);\\n    const err = (msg) => { throw new JsonQueryError('INVALID_QUERY', `json: ${msg} at position ${pos}`); };\\n    while (pos < input.length) {\\n        if (steps.length >= MAX_DEPTH)\\n            err(`query depth exceeds ${MAX_DEPTH}`);\\n        if (peek() === '.') {\\n            take(); // '.'\\n            const start = pos;\\n            while (pos < input.length && /[A-Za-z0-9_$\\\\u0080-\\\\uFFFF]/.test(input.charAt(pos)))\\n                pos++;\\n            if (pos === start)\\n                err('expected property name after \\\".\\\"');\\n            steps.push({ kind: 'dot', key: input.slice(start, pos) });\\n            continue;\\n        }\\n        if (peek() === '[') {\\n            take(); // '['\\n            if (peek() === '*') {\\n                take();\\n                if (peek() !== ']')\\n                    err('expected \\\"]\\\" after \\\"*\\\"');\\n                take();\\n                steps.push({ kind: 'wildcard' });\\n                continue;\\n            }\\n            if (peek() === \\\"'\\\" || peek() === '\\\"') {\\n                // JSON-05：引号属性支持 \\\\\\\\ \\\\' \\\\\\\" 转义；其他转义拒绝\\n                const quote = take();\\n                let key = '';\\n                while (pos < input.length) {\\n                    const c = input.charAt(pos);\\n                    if (c === '\\\\\\\\') {\\n                        const next = input.charAt(pos + 1);\\n                        if (next === '\\\\\\\\' || next === \\\"'\\\" || next === '\\\"') {\\n                            key += next;\\n                            pos += 2;\\n                            continue;\\n                        }\\n                        err('invalid escape in quoted key');\\n                    }\\n                    if (c === quote)\\n                        break;\\n                    key += c;\\n                    pos++;\\n                }\\n                if (pos >= input.length)\\n                    err(`missing closing ${quote}`);\\n                take(); // closing quote\\n                if (peek() !== ']')\\n                    err('expected \\\"]\\\" after property key');\\n                take();\\n                steps.push({ kind: 'bracket', key });\\n                continue;\\n            }\\n            if (/[0-9]/.test(peek() ?? '')) {\\n                const start = pos;\\n                while (pos < input.length && /[0-9]/.test(input.charAt(pos)))\\n                    pos++;\\n                const raw = input.slice(start, pos);\\n                const idx = Number(raw);\\n                if (!Number.isSafeInteger(idx))\\n                    err('array index is too large');\\n                if (peek() !== ']')\\n                    err('expected \\\"]\\\" after index');\\n                take();\\n                steps.push({ kind: 'index', index: idx });\\n                continue;\\n            }\\n            err('expected \\\"*\\\", digit, or quote after \\\"[\\\"');\\n        }\\n        // 起始位置：裸标识符（无前导 \\\".\\\" 的点号访问）\\n        if (pos === 0 && /[A-Za-z_$\\\\u0080-\\\\uFFFF]/.test(peek() ?? '')) {\\n            const start = pos;\\n            while (pos < input.length && /[A-Za-z0-9_$\\\\u0080-\\\\uFFFF]/.test(input.charAt(pos)))\\n                pos++;\\n            steps.push({ kind: 'dot', key: input.slice(start, pos) });\\n            continue;\\n        }\\n        err(`unexpected character \\\"${peek()}\\\"`);\\n    }\\n    return steps;\\n}\\n// ── 执行器 ──\\nfunction executeQuery(steps, value) {\\n    let current = value;\\n    for (let i = 0; i < steps.length; i++) {\\n        const step = steps[i];\\n        if (current === null || current === undefined) {\\n            throw new JsonQueryError('TYPE_MISMATCH', 'json: cannot access property on null/undefined');\\n        }\\n        if (typeof current !== 'object') {\\n            throw new JsonQueryError('TYPE_MISMATCH', `json: cannot access property on ${typeof current}`);\\n        }\\n        if (step.kind === 'dot' || step.kind === 'bracket') {\\n            if (!Object.hasOwn(current, step.key)) {\\n                throw new JsonQueryError('MISSING_PROPERTY', `json: property \\\"${step.key}\\\" not found`);\\n            }\\n            current = current[step.key];\\n            continue;\\n        }\\n        if (step.kind === 'index') {\\n            if (!Array.isArray(current)) {\\n                throw new JsonQueryError('TYPE_MISMATCH', 'json: index access on non-array');\\n            }\\n            if (step.index >= current.length) {\\n                throw new JsonQueryError('INDEX_OUT_OF_BOUNDS', `json: index ${step.index} out of bounds (length ${current.length})`);\\n            }\\n            current = current[step.index];\\n            continue;\\n        }\\n        // 前三个分支均 continue，此处必为 wildcard\\n        if (!Array.isArray(current)) {\\n            throw new JsonQueryError('TYPE_MISMATCH', 'json: wildcard projection on non-array');\\n        }\\n        const arr = current;\\n        // RECHECK2-JSON-02：上限覆盖无尾路径（items[*] 直接返回数组同样受限）\\n        if (arr.length > MAX_PROJECTION_ITEMS) {\\n            throw new JsonQueryError('INVALID_QUERY', `json: wildcard projection exceeds ${MAX_PROJECTION_ITEMS} items`);\\n        }\\n        const remaining = steps.slice(i + 1);\\n        if (remaining.length === 0) {\\n            current = arr; // 无后续路径：返回全体元素（含标量）\\n        }\\n        else {\\n            // JSON-01：循环 push 保留合法的 null 结果（不用 null 作失败哨兵）\\n            // JSON-02：只跳过 MISSING_PROPERTY，类型/索引/内部错误重新抛出\\n            const projected = [];\\n            for (const item of arr) {\\n                if (item === null || item === undefined || typeof item !== 'object')\\n                    continue; // 非对象元素跳过\\n                try {\\n                    projected.push(executeQuery(remaining, item));\\n                }\\n                catch (error) {\\n                    if (error instanceof JsonQueryError && error.code === 'MISSING_PROPERTY')\\n                        continue;\\n                    throw error;\\n                }\\n            }\\n            current = projected;\\n        }\\n        return current; // 通配符是终态\\n    }\\n    return current;\\n}\\n/**\\n * 累计 UTF-8 字节并即时检查上限（AUDIT-JSON-01：所有标量和结构分支统一检查，\\n * 不再只在 string/key 分支触发——纯 number/boolean/null 数组也能被拦截）。\\n */\\nfunction addBytes(state, amount) {\\n    state.bytes += amount;\\n    if (state.bytes > MAX_INPUT_BYTES) {\\n        throw new JsonQueryError('INVALID_QUERY', `json: input exceeds ${MAX_INPUT_BYTES} bytes`);\\n    }\\n}\\n/**\\n * JSON-08 + RECHECK2-JSON-01/03.1 + AUDIT-JSON-04：只接受 JSON-compatible 值\\n * （null/boolean/number/string/array/plain object），遍历时累计 UTF-8 字节数\\n * （key + string value + 结构开销 + 按实际表示的 number 长度），用递归路径\\n * WeakSet 检测循环引用，并拒绝不可枚举属性与 accessor（own-property 全量检查）。\\n */\\nfunction assertJsonCompatible(value, depth, ancestors, state) {\\n    if (depth > 100)\\n        throw new JsonQueryError('INVALID_QUERY', 'json: input nesting too deep');\\n    if (value === null) {\\n        addBytes(state, 4);\\n        return;\\n    }\\n    if (typeof value === 'string') {\\n        addBytes(state, Buffer.byteLength(value, 'utf8') + 2); // 引号开销\\n        return;\\n    }\\n    if (typeof value === 'boolean') {\\n        addBytes(state, 5);\\n        return;\\n    }\\n    if (typeof value === 'number') {\\n        if (!Number.isFinite(value))\\n            throw new JsonQueryError('INVALID_QUERY', 'json: non-finite number in input');\\n        addBytes(state, String(value).length); // 按实际 JSON 表示长度（1e100 等长数字）\\n        return;\\n    }\\n    if (typeof value !== 'object') {\\n        // undefined / function / symbol / bigint\\n        throw new JsonQueryError('INVALID_QUERY', 'json: input must be JSON-compatible');\\n    }\\n    if (ancestors.has(value)) {\\n        throw new JsonQueryError('INVALID_QUERY', 'json: circular input');\\n    }\\n    ancestors.add(value);\\n    try {\\n        if (Array.isArray(value)) {\\n            addBytes(state, 2); // [ ]\\n            for (let i = 0; i < value.length; i++) {\\n                if (i > 0)\\n                    addBytes(state, 1); // 逗号\\n                assertJsonCompatible(value[i], depth + 1, ancestors, state);\\n            }\\n            return;\\n        }\\n        const proto = Object.getPrototypeOf(value);\\n        if (proto !== Object.prototype && proto !== null) {\\n            throw new JsonQueryError('INVALID_QUERY', 'json: input must be a plain JSON object');\\n        }\\n        // AUDIT-JSON-04：own-property 全量检查（含不可枚举与 accessor），\\n        // Object.keys 只查可枚举属性会让不可枚举 own 属性绕过校验\\n        const ownKeys = [\\n            ...Object.getOwnPropertyNames(value),\\n            ...Object.getOwnPropertySymbols(value),\\n        ];\\n        if (ownKeys.length > 0)\\n            addBytes(state, 2); // { }\\n        ownKeys.forEach((key, index) => {\\n            if (index > 0)\\n                addBytes(state, 1); // 逗号\\n            const descriptor = Object.getOwnPropertyDescriptor(value, key);\\n            if (descriptor === undefined)\\n                throw new JsonQueryError('INVALID_QUERY', 'json: input must be JSON-compatible');\\n            if (!descriptor.enumerable) {\\n                throw new JsonQueryError('INVALID_QUERY', 'json: non-enumerable property is not JSON-compatible');\\n            }\\n            if (typeof key === 'string') {\\n                addBytes(state, Buffer.byteLength(key, 'utf8') + 3); // key + 引号冒号\\n            }\\n            else {\\n                addBytes(state, 4); // symbol key 无 JSON 表示，拒绝\\n                throw new JsonQueryError('INVALID_QUERY', 'json: symbol property is not JSON-compatible');\\n            }\\n            if ('get' in descriptor || 'set' in descriptor) {\\n                throw new JsonQueryError('INVALID_QUERY', 'json: accessor property is not JSON-compatible');\\n            }\\n            assertJsonCompatible(descriptor.value, depth + 1, ancestors, state);\\n        });\\n    }\\n    finally {\\n        ancestors.delete(value); // 递归路径语义：共享非循环对象不误判\\n    }\\n}\\nexport function normalizeInput(input) {\\n    if (typeof input === 'string') {\\n        // JSON-03：字符串输入字节上限（UTF-8 字节数）\\n        if (Buffer.byteLength(input, 'utf8') > MAX_INPUT_BYTES) {\\n            throw new JsonQueryError('INVALID_QUERY', `json: input exceeds ${MAX_INPUT_BYTES} bytes`);\\n        }\\n        try {\\n            const parsed = JSON.parse(input);\\n            assertJsonCompatible(parsed, 0, new WeakSet(), { bytes: 0 });\\n            return parsed;\\n        }\\n        catch (error) {\\n            if (error instanceof JsonQueryError)\\n                throw error; // 深度/类型错误如实透传\\n            throw new JsonQueryError('INVALID_QUERY', 'json: invalid JSON input');\\n        }\\n    }\\n    assertJsonCompatible(input, 0, new WeakSet(), { bytes: 0 });\\n    return input;\\n}\\n// ── 公开接口 ──\\nconst MAX_OUTPUT_BYTES = 4_000_000; // 4 MB 输出保险丝（AUDIT-JSON-02）\\nexport function query(jsonInput, queryStr) {\\n    if (typeof queryStr !== 'string') {\\n        throw new JsonQueryError('INVALID_QUERY', 'json: query must be a string');\\n    }\\n    const steps = parseQuery(queryStr);\\n    const result = executeQuery(steps, normalizeInput(jsonInput));\\n    // AUDIT-JSON-02：输入限制不等于输出限制（空查询返回整个输入、选中字段可接近输入上限）\\n    const text = JSON.stringify(result);\\n    if (Buffer.byteLength(text, 'utf8') > MAX_OUTPUT_BYTES) {\\n        throw new JsonQueryError('INVALID_QUERY', `json: output exceeds ${MAX_OUTPUT_BYTES} bytes`);\\n    }\\n    return result;\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-json\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"5f742fcf172be76b392470c4df622b12ed9d7f624c5cb6796d237a44cb46bc01\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 369,\n        \"code\": 310,\n        \"comments\": 78,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 360,\n        \"words\": 2643\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 398,\n        \"code\": 295,\n        \"comments\": 83,\n        \"blank\": 39\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 368,\n        \"code\": 277,\n        \"comments\": 20,\n        \"blank\": 74\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-json/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-json/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-json/lib/types/query.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-json/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-json/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"defineTool\",\n          \"name\": \"json\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-json/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-json/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"defineTool\",\n          \"name\": \"json\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"json\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "7e382fcdce2f128e29c2f93c21265f1c4a400d04eab9c4bdc57d5df72b4265de"
+        }
+    },
+    "unavailable_artifacts": []
+}

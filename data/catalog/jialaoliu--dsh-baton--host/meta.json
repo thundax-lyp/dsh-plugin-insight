@@ -1,10 +1,10 @@
 {
     "repository": "JialaoLiu/dsh-baton",
     "repository_id": 1424249299,
-    "captured_at": "2026-11-05T13:09:40.123Z",
-    "window_start": "2026-10-06T13:09:40.123Z",
-    "stars": 176,
-    "pushed_at": "2026-11-03T12:09:45Z",
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 216,
+    "pushed_at": "2026-11-12T13:03:33Z",
     "issues": {
         "open": 0,
         "closed": 0,
@@ -14,31 +14,21 @@
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-05T11:33:05.584Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "43c8d4c7df1141c6397e4298dfdc997b00470be1",
-        "blob_sha": "10c43b58390fd04690d25ab86f64a5e6241c10d6",
-        "errors_blob_sha": "6e41fc7f891b4927f063c047de6c1426b2e27bc4",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-baton-host",
-        "captured_at": "2026-11-04T17:18:27.577Z",
-        "window_start": "2026-10-05",
-        "window_end": "2026-11-03",
-        "downloads_30d": 5184,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-05:2026-11-03/dsh-baton-host",
+        "captured_at": "2026-11-12T19:58:57.468Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 8357,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-baton-host",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-22T08:17:08.299Z",
-            "captured_at": "2026-11-04T17:18:27.577Z",
+            "captured_at": "2026-11-12T19:58:57.468Z",
             "source_url": "https://registry.npmjs.org/dsh-baton-host",
             "error": null,
-            "latest_version": "0.6.5",
-            "latest_published_at": "2026-11-03T01:46:34.914Z",
+            "latest_version": "0.6.13",
+            "latest_published_at": "2026-11-12T13:07:46.321Z",
             "latest_error": null
         }
     }

@@ -1,65 +1,49 @@
 {
     "repository": "LiPu-jpg/Openwrite",
     "repository_id": 1171186947,
-    "captured_at": "2026-11-01T09:18:30.076Z",
-    "window_start": "2026-10-02T09:18:30.076Z",
-    "stars": 906,
-    "pushed_at": "2026-10-28T09:44:00Z",
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 948,
+    "pushed_at": "2026-11-10T15:48:14Z",
     "issues": {
         "open": null,
-        "closed": null,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "closed": 84,
+        "created_30d": 54,
+        "closed_30d": 54,
+        "updated_30d": 55
     },
     "errors": [
         {
             "target": "open",
-            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D088:29322:16A155:192132:6AE70416 and timestamp 2026-11-01 09:19:18 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed",
-            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D0C6:10E342:15DBBF:18536F:6AE70417 and timestamp 2026-11-01 09:19:19 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20created%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D0F6:3A3B1A:14DA19:1759FD:6AE70418 and timestamp 2026-11-01 09:19:21 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D134:2A673:15CA3E:1847AA:6AE7041A and timestamp 2026-11-01 09:19:22 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20updated%3A2026-10-02T09%3A18%3A30.076Z..2026-11-01T09%3A18%3A30.076Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D160:2701A5:156D5B:17E6CB:6AE7041B and timestamp 2026-11-01 09:19:23 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "message": "GitHub request failed for search/issues?q=repo%3ALiPu-jpg%2FOpenwrite%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID C22C:274BD3:9CD649:A6FAB0:6AF6BBEC and timestamp 2026-11-13 07:27:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
         }
     ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-01T06:52:54.214Z",
+        "captured_at": "2026-11-12T20:34:20.698Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "e516f5be7e2f7ff8db48c971647e2f477431d394",
-        "blob_sha": "90647688e043f3e8cb48336310b10dfa141e2dc1",
-        "errors_blob_sha": "ac6cffe6189fff0ecceed3b66bd3d9efa3b397b7",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
         "latest_error": null
     },
     "npm": {
         "package_name": "dsh-openwrite",
-        "captured_at": "2026-10-31T12:39:32.524Z",
-        "window_start": "2026-10-01",
-        "window_end": "2026-10-30",
-        "downloads_30d": 8040,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-01:2026-10-30/dsh-openwrite",
+        "captured_at": "2026-11-12T00:47:34.365Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 9011,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-openwrite",
         "error": null,
         "publication": {
             "first_published_at": "2026-09-10T20:30:54.335Z",
-            "captured_at": "2026-10-31T12:39:32.524Z",
+            "captured_at": "2026-11-12T00:47:34.365Z",
             "source_url": "https://registry.npmjs.org/dsh-openwrite",
             "error": null,
-            "latest_version": "0.2.28",
-            "latest_published_at": "2026-10-27T05:52:24.848Z",
+            "latest_version": "0.2.38",
+            "latest_published_at": "2026-11-08T08:35:13.327Z",
             "latest_error": null
         }
     }

@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "307879b8f9438a6b087aa82ef01ca962",
+    "identity": "github:1327795364:packages-dsh-tool-markdown",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-markdown",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-markdown",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-markdown",
+            "aliases": [],
+            "name": "dsh-tool-markdown",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "content-creation",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "14915b1b7623befd3d9749a78503f1209412e73a4e3970173ab276bc8be211a8",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-13T07:36:26.557Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/README.md",
+                            "content_sha256": "a24a1b29b4254c4fe3b93f48dae6e8c8533de81a2ef4a2fe11cc23963b992f2b"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:36:26.557Z",
+                    "summary": "在 DeepSeek Harness 中转换 HTML 和 Markdown、整理表格并生成目录。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/package.json",
+                            "content_sha256": "94b687f11a4cfcb47a9936dc78a0a53d0720194af119cae031fa178a6f34dd00"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/cordis.patch.yml",
+                            "content_sha256": "ab9ae78f49a13cc62c13365c8db73277d668f20d34529b3f87a542e4052c1d7f"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/lib/index.js",
+                            "content_sha256": "4192eefd9cba62435397d5520f9f1695a6f4126d2650604499b3b5c7d1a96375"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/README.md",
+                            "content_sha256": "a24a1b29b4254c4fe3b93f48dae6e8c8533de81a2ef4a2fe11cc23963b992f2b"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/lib/md2html.js",
+                            "content_sha256": "4c8586ee067a8afd92e608b84d3ccd4e19b44a98e726e58748a65636d252b5f2"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-markdown/lib/toc.js",
+                            "content_sha256": "bcde6852c58115a64b4a57366df59084ad42446e3909a7cc1082be3527d443e3"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-13T07:36:26.557Z",
+                    "summary": "核查 packages/dsh-tool-markdown/package.json、packages/dsh-tool-markdown/cordis.patch.yml、packages/dsh-tool-markdown/lib/index.js、packages/dsh-tool-markdown/README.md、packages/dsh-tool-markdown/lib/md2html.js、packages/dsh-tool-markdown/lib/toc.js；宿主 tools 服务注册 markdown，回调按文本字节上限分派四种转换并返回字符串。",
+                    "artifact": "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "抽读固定子包的挂载、动作分发、链接输出和目录处理；未执行插件、测试或宿主。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "撰写技术笔记的人可把公开页面片段转成可编辑的 Markdown、表格或目录草案。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "宿主 tools 服务注册 markdown，回调按文本字节上限分派四种转换并返回字符串。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "抽读固定子包的挂载、动作分发、链接输出和目录处理；未执行插件、测试或宿主。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "私有子包 0.0.1 带 lib，作者记录独立 bundle 兼容性；未核实固定版本实际发布。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 tools | 是 | 挂载转换器 | 保留已有工具 |\n| 可记录的公开小样本 | 本建议要求 | 限制会话数据暴露 | 在本地转换 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包，费用未知 | 核对 profile 与数据范围 | 固定包加载待验 |\n| 持续 | 模型传参与进程内转换，金额未知 | 人工抽查链接与锚点 | 修订耗时待对照 |\n| 失败恢复 | 重新转换，金额未知 | 保留原片段转离线工具 | 宿主退出待核 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "[Q03](#research-q03) 可对公开片段试用，按 [Q02](#research-q02) 独立检查链接和目录。正式发布或含私密材料时沿用本地流程。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 文本转写 | 四种动作有具体实现 | 真实保真率与节时 |\n| 链接与目录 | 过滤部分协议并生成锚点 | 与目标渲染器是否一致 |",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "[Q02](#research-q02) 的 HTML 转义与协议过滤可独立审查，但简单 URL 拼接不具备标准基址语义，目录围栏无类型匹配。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "[Q01](#research-q01) 确认四种常用文档动作直接在会话执行，输出可核对的文本。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "[Q02](#research-q02) 的基址拼接、协议相对链接和围栏状态会改变链接或目录，发布前需要独立复核。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "[Q03](#research-q03) 提出按标准解析基址并分开判定跨站策略，用固定链接样本验证是否减少错误。",
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-13T07:36:26.557Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-13T07:36:26.557Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:36:26.557Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 10,
+                        "simplification": 8
+                    },
+                    "rationale": "[Q01](#research-q01) 的文档转换与 DSH 工具注册属于局部新颖性及常规解析机制。文本函数分离支持迁移，四项共用入口简化流程；[Q02](#research-q02) 的 URL 及围栏范围限制贡献。",
+                    "basis": "interpretation",
+                    "score": 35,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 8,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 减少会话到转换器的交接，使文档草案以表格和目录形式直接返回，给流程、交付和触达小幅档。人工复核仍需要，成本结构只有局部改进，未实测。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "经常把公开网页片段整理成技术笔记的人，可以在隔离 profile 用简短样本试用 markdown。相比让模型手工抄表格和目录，工具按固定转换规则返回文本。涉及私有源码、发布链接或复杂文档时，改用既有转换和验收流程。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) README 9–21 行给出重复文档任务和草案结果，超过偶发入口；缺采用频度和修订样本进入较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) lib/index.js 42–64 行确实分派文本函数，超过界面入口；[Q02](#research-q02) 的链接与目录反例限制较充分。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) lib/md2html.js 16–45 行、lib/toc.js 27–51 行直接支撑风险及回执范围，超过声明；未在目标 profile 执行。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) package.json 2–11 行和工具日志警示限定安装与数据投入，既有转换器可回退；复核链接和目录仍需人工，未到较轻。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-13T07:36:26.557Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-13-02-github-1327795364-packages-dsh-tool-markdown-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-markdown",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-markdown",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-markdown",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "14915b1b7623befd3d9749a78503f1209412e73a4e3970173ab276bc8be211a8",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-13T07:16:30Z",
+            "analysis_sha256": "dd6333e145ee831ccf83dbe937eb1144e91f17e9e631bc77f84760a9e81455e4"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/meta.json",
+        "publication.summaries": {
+            "text": "在 DeepSeek Harness 中转换 HTML 和 Markdown、整理表格并生成目录。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "在会话转换 HTML 与 Markdown、规范表格和生成目录。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| HTML/Markdown 转换 | 整理公开片段 | 链接需要复核 |\n| 表格规范化 | 生成可编辑的 GFM | 适合小型片段 |\n| 目录 | 给标题生成锚点 | 围栏及最终渲染需检查 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "[Q03](#research-q03) 可对公开片段试用，按 [Q02](#research-q02) 独立检查链接和目录。正式发布或含私密材料时沿用本地流程。"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown",
+        "reports": "# dsh-tool-markdown\n\n> 在 DeepSeek Harness 中转换 HTML 和 Markdown、整理表格并生成目录。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持转换分支与文本结果。链接反例来自固定源码推断，真实渲染及任务收益待验证。\n\n## 洞察短评\n\n- **用途**：撰写技术笔记的人可把公开页面片段转成可编辑的 Markdown、表格或目录草案。\n- **亮点**：[Q01](#research-q01) 确认四种常用文档动作直接在会话执行，输出可核对的文本。\n- **思考**：[Q02](#research-q02) 的基址拼接、协议相对链接和围栏状态会改变链接或目录，发布前需要独立复核。\n- **建议**：[Q03](#research-q03) 提出按标准解析基址并分开判定跨站策略，用固定链接样本验证是否减少错误。\n\n采用建议：[Q03](#research-q03) 可对公开片段试用，按 [Q02](#research-q02) 独立检查链接和目录。正式发布或含私密材料时沿用本地流程。\n\n## 核心贡献\n\n[Q01](#research-q01) 确认四种常用文档动作直接在会话执行，输出可核对的文本。\n\n## 关键质疑\n\n[Q02](#research-q02) 的基址拼接、协议相对链接和围栏状态会改变链接或目录，发布前需要独立复核。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n[Q03](#research-q03) 提出按标准解析基址并分开判定跨站策略，用固定链接样本验证是否减少错误。\n\n在隔离 profile 对照文件型与目录型基址、跨站链接、混合围栏及普通表格，并验证禁用后的工具列表。\n\n## 场景与替代办法\n\n撰写技术笔记的人可把公开页面片段转成可编辑的 Markdown、表格或目录草案。\n\n现有文档转换器可离线保留更完整的格式，人工复制适合少量内容和页面正文筛选。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| 兼容 Cordis 与 tools | 是 | 挂载转换器 | 保留已有工具 |\n| 可记录的公开小样本 | 本建议要求 | 限制会话数据暴露 | 在本地转换 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 准备 | 用户在隔离 profile 核对 markdown | 确认工具出现 |\n| 转换 | Agent 传入公开片段 | 返回可编辑结果 |\n| 验收 | 用户检查链接、表格及目录 | 偏差影响交付时换转换器 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 宿主和包，费用未知 | 核对 profile 与数据范围 | 固定包加载待验 |\n| 持续 | 模型传参与进程内转换，金额未知 | 人工抽查链接与锚点 | 修订耗时待对照 |\n| 失败恢复 | 重新转换，金额未知 | 保留原片段转离线工具 | 宿主退出待核 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 文本转写 | 四种动作有具体实现 | 真实保真率与节时 |\n| 链接与目录 | 过滤部分协议并生成锚点 | 与目标渲染器是否一致 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：将公开网页片段整理成团队 Markdown 笔记时，会话工具能保留哪些结构，哪些链接和目录要人工复核？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 从公开 HTML 片段如何得到可编辑文本？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n准备技术笔记的用户可把公开 HTML 片段交给 markdown。注册接收 html2md、md2html、table 与 toc 等动作。分发器先检查对应文本的字节大小，进入各自函数；工具以字符串返回结果，取到的是可编辑的片段而非已部署网页。作者说明 html2md 不做正文识别，网页的导航与页脚可能仍需手工删选。对同一片段反复转换时，确定规则减少让模型自行拼表和实体的变量；已有 Pandoc 等程序可做更丰富的格式转换，插件增量是会话直接使用有限文本函数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-markdown/package.json:21-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/package.json#L21-L38)\n\n声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-markdown/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/cordis.patch.yml#L1-L4)\n\n按固定包名插入 tool-markdown。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-markdown\n      name: '@deepseek-ai/dsh-tool-markdown'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-markdown/lib/index.js:66-77](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/index.js#L66-L77)\n\n注入 tools 并注册 markdown。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'markdown',\n        description: 'Markdown utilities over text (zero-dependency, pure functions). ' +\n            'Actions: html2md (HTML to GFM Markdown: main content, tables, links; ' +\n            'script/style/iframe content stripped), md2html (Markdown to whitelisted ' +\n            'safe HTML: only p/h1-h6/ul/ol/li/blockquote/pre/code/a/img/strong/em/br/hr/table; ' +\n            'all text is HTML-escaped, javascript:/data: links degrade to plain text), ' +\n            'table (normalize HTML <table> or pipe-delimited text to a GFM table), ' +\n            'toc (generate a nested TOC with anchors from Markdown headings). ' +\n            'Inputs over maxBytes (default 256000, ceiling 1000000) are rejected. ' +\n            'Do not pass HTML containing secrets (tool arguments are recorded in session logs).',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-markdown/lib/index.js:106-113](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/index.js#L106-L113)\n\n注册回调进入本包实际执行逻辑并呈现回执。\n\n```text\n        output: {\n            schema: { type: 'string' },\n            render: (_args, value) => [{ type: 'text', text: value }],\n        },\n        execute: args => Promise.resolve(runAction(args)),\n        timeoutMs: 2000,\n    }));\n}\n```\n\n**依据 5 · 源码核查**：[packages/dsh-tool-markdown/lib/index.js:21-64](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/index.js#L21-L64)\n\n输入门槛及四种动作的实际分发。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nconst DEFAULT_MAX_BYTES = 256_000;\nconst HARD_MAX_BYTES = 1_000_000;\nfunction normalizeMaxBytes(maxBytes) {\n    if (typeof maxBytes !== 'number' || !Number.isFinite(maxBytes) || maxBytes < 1) {\n        return DEFAULT_MAX_BYTES;\n    }\n    const n = Math.floor(maxBytes);\n    if (n > HARD_MAX_BYTES) {\n        throw new Error(`markdown: maxBytes cannot exceed ${HARD_MAX_BYTES}`);\n    }\n    return n;\n}\nfunction assertSize(input, maxBytes, label) {\n    if (typeof input !== 'string') {\n        throw new Error(`markdown: ${label} must be a string`);\n    }\n    const bytes = utf8ByteLength(input);\n    if (bytes > maxBytes) {\n        throw new Error(`markdown: ${label} exceeds ${maxBytes} bytes (got ${bytes})`);\n    }\n}\nfunction runAction(args) {\n    const maxBytes = normalizeMaxBytes(args.maxBytes);\n    const baseUrl = typeof args.baseUrl === 'string' && args.baseUrl !== '' ? args.baseUrl : undefined;\n    switch (args.action) {\n        case 'html2md': {\n            assertSize(args.html, maxBytes, 'html');\n            return html2md(args.html, { baseUrl });\n        }\n        case 'md2html': {\n            assertSize(args.markdown, maxBytes, 'markdown');\n            return md2html(args.markdown, { baseUrl });\n        }\n        case 'table': {\n            assertSize(args.text, maxBytes, 'text');\n            return normalizeTable(args.text, { baseUrl });\n        }\n        case 'toc': {\n            assertSize(args.markdown, maxBytes, 'markdown');\n            return toc(args.markdown);\n        }\n        default:\n            throw new Error(`markdown: unknown action \"${args.action}\"`);\n    }\n```\n\n</details>\n\n**依据 6 · 作者声明**：[packages/dsh-tool-markdown/README.md:9-21](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/README.md#L9-L21)\n\n作者说明文档任务和范围。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n## 动机\n\n模型最常见的文档场景：用户贴一段 HTML（网页源码、邮件、导出文件）、贴表格要求整理、或要求\"转成 markdown\"。没有工具时模型只能硬编码处理——HTML 实体会错、表格会乱、网页噪音（导航/脚本/广告）会混入。本插件提供确定性转换，与 `dsh-tool-csv` 互补：**csv 管结构化表格，markdown 管文档/网页**。\n\n## 安全模型\n\n- **零依赖**：手写递归下降 HTML 解析器（不引入 cheerio/jsdom——净增数十 MB 且是攻击面）\n- **零执行面**：不 eval、不 new Function、不加载远程资源、不解析 CSS 布局\n- **内容剥离**：script/style/iframe/object/noscript 内容整体剥离（安全 + 噪音）\n- **md2html 白名单**：只输出 `p h1-h6 ul ol li blockquote pre code a img strong em br hr table thead tbody tr th td`；文本一律 HTML 转义——markdown 内嵌 `<script>` 只会显示为文本\n- **链接 scheme 白名单**：`http/https/mailto`；`javascript:`/`data:` 链接降级为纯文本\n- **资源上限**：嵌套深度 64 层报错（防栈溢出）；输入 `maxBytes` 默认 256KB、硬顶 1MB（超限报错不截断）\n- 工具参数会记入会话日志，**不要传入含密钥/会话数据的 HTML**\n```\n\n</details>\n\n**依据 7 · 作者声明**：[packages/dsh-tool-markdown/README.md:38-43](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/README.md#L38-L43)\n\n正文识别、表格和目录的作者边界。\n\n```text\n| action | 功能 |\n|---|---|\n| `html2md` | HTML → GFM Markdown：块级/行内全映射、表格转 GFM（colspan 占位补齐）、实体解码、script/style 剥离、链接 scheme 过滤（**不做 readability 正文选择**，nav/header/footer 默认透传） |\n| `md2html` | Markdown → 白名单安全 HTML：全文本转义，无标签可逃逸 |\n| `table` | HTML `<table>` 或**含未转义 `\\|`** 的管道分隔文本 → GFM 表格（列补齐、`\\|` 转义、分隔行识别；无管道输入报错） |\n| `toc` | Markdown 标题 → 嵌套目录列表（简化 GitHub 风格锚点：重复标题自动 -1/-2 后缀、跳过代码围栏内伪标题） |\n```\n\n#### 缺口\n\n- 真实文档任务的表格保真率和修订时间\n  **影响**：不能判定实际节时\n  **进一步探讨**：以同批公开片段对比人工整理与已有转换器\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 链接白名单与目录生成何时会留下需要修订的结果？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用\n\n#### 完整回答\n\nHTML 输出路径会转义文本和属性，允许 http、https、mailto 和无协议的链接。提供 baseUrl 时，代码将基址末尾斜杠去掉后直接拼接。对基址 https://example.test/docs/a.html 和相对 b.html，静态推断输出路径落在 a.html/b.html，而浏览器按文档基址解析会落在 /docs/b.html。没有 baseUrl 时协议相对链接也被放行，方案白名单不等于同站限制。目录另用布尔值翻转围栏状态，正则不区分开启与关闭的围栏种类及长度，含嵌套示例时可能漏标题或收进伪标题。转换结果可做文稿草案，不能视为发布前链接或导航验收。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-markdown/lib/md2html.js:16-45](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/md2html.js#L16-L45)\n\nscheme 白名单、直接拼接与属性转义。\n\n<details>\n<summary>查看原文（30行）</summary>\n\n```text\nfunction normalizeUrl(raw) {\n    return raw.replace(/[\\u0000-\\u001f\\u007f]/g, '').trim();\n}\n/** scheme 白名单（大小写不敏感，审查 MD-02）；无 scheme 视为相对路径。 */\nfunction safeScheme(rawUrl) {\n    const url = normalizeUrl(rawUrl);\n    if (url === '')\n        return false;\n    const m = SCHEME_RE.exec(url);\n    if (!m)\n        return true; // 相对路径（无 scheme；协议相对 //host 属此类）\n    const scheme = m[1].toLowerCase();\n    return scheme === 'http' || scheme === 'https' || scheme === 'mailto';\n}\nfunction resolveUrl(href, baseUrl) {\n    const h = normalizeUrl(href);\n    if (baseUrl === undefined || h === '' || SCHEME_RE.test(h))\n        return h;\n    const base = baseUrl.replace(/\\/+$/, '');\n    if (h.startsWith('/'))\n        return base + h;\n    return `${base}/${h}`;\n}\nexport function escapeHtml(text) {\n    return text\n        .replace(/&/g, '&amp;')\n        .replace(/</g, '&lt;')\n        .replace(/>/g, '&gt;')\n        .replace(/\"/g, '&quot;')\n        .replace(/'/g, '&#39;');\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-markdown/lib/md2html.js:117-131](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/md2html.js#L117-L131)\n\n拼接结果进入 href。\n\n<details>\n<summary>查看原文（15行）</summary>\n\n```text\n        // 链接 [text](url)\n        if (c === '[') {\n            const close = input.indexOf('](', i + 1);\n            if (close !== -1) {\n                const closeEnd = scanUrlEnd(input, close + 2);\n                if (closeEnd !== -1) {\n                    const text = input.slice(i + 1, close);\n                    const url = resolveUrl(input.slice(close + 2, closeEnd).split(/\\s+/)[0] ?? '', options.baseUrl);\n                    i = closeEnd + 1;\n                    if (url !== '' && safeScheme(url)) {\n                        out += `<a href=\"${escapeHtml(url)}\">${escapeHtml(text)}</a>`;\n                    }\n                    else {\n                        out += escapeHtml(text);\n                    }\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-markdown/lib/toc.js:27-51](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/toc.js#L27-L51)\n\n围栏翻转及标题提取。\n\n<details>\n<summary>查看原文（25行）</summary>\n\n````text\nconst FENCE_RE = /^```|^~~~/;\n/** 从 Markdown 提取标题序列（跳过 fenced code 内的伪标题；重复锚点递增）。 */\nexport function extractHeadings(markdown) {\n    const entries = [];\n    const seen = new Map();\n    let inFence = false;\n    for (const line of markdown.replace(/\\r\\n/g, '\\n').split('\\n')) {\n        if (FENCE_RE.test(line.trimStart())) {\n            inFence = !inFence;\n            continue;\n        }\n        if (inFence)\n            continue;\n        // 尾部闭合井号仅在前有空白时剥离（`# C#` → 文本 \"C#\"）\n        const m = /^(#{1,6})\\s+(.*?)(?:\\s+#+)?\\s*$/.exec(line);\n        if (m) {\n            const text = m[2].trim();\n            if (text === '')\n                continue;\n            const base = slugify(text);\n            const count = seen.get(base) ?? 0;\n            seen.set(base, count + 1);\n            const anchor = count === 0 ? base : `${base}-${count}`;\n            entries.push({ level: m[1].length, text, anchor });\n        }\n````\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何试用并检验更准确的链接恢复是否值得？\n\n**研究主题**：依赖、兼容与流程、效果与总成本、新假设与验证、采用判断\n\n#### 完整回答\n\n兼容 Cordis/tools 且目标 profile 能解析 bundle 后，可用公开片段先转换成草案，逐个比对链接目的地、表格列和目录锚点。参数进入会话记录是作者警示，源 HTML 中的密钥、cookie 与个人材料不进入试用。若要发布或做大规模转换，保留原件并使用现成渲染器和链接检查。可验证的改动是按标准 URL 解析相对引用，并显式选择是否接受跨站目标；用同一组文件型基址与协议相对链接比较错误链接数量、可解释的拒绝和任务耗时。若结果与目标渲染器一致性没有提高，则维持现有人工检查。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-markdown/package.json:2-11](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/package.json#L2-L11)\n\n私有子包及 Node 范围。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n  \"name\": \"@deepseek-ai/dsh-tool-markdown\",\n  \"description\": \"DSH Markdown tool: HTML-to-Markdown conversion, whitelisted Markdown-to-HTML, GFM table normalization, TOC generation. Zero-dependency lightweight parsers.\",\n  \"version\": \"0.0.1\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"main\": \"lib/index.js\",\n  \"types\": \"lib/types/index.d.ts\",\n  \"license\": \"MIT\",\n  \"engines\": {\n    \"node\": \"^22.19.0 || >=24.0.0\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-markdown/lib/index.js:66-77](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/index.js#L66-L77)\n\n工具输入范围和参数记录提醒。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'markdown',\n        description: 'Markdown utilities over text (zero-dependency, pure functions). ' +\n            'Actions: html2md (HTML to GFM Markdown: main content, tables, links; ' +\n            'script/style/iframe content stripped), md2html (Markdown to whitelisted ' +\n            'safe HTML: only p/h1-h6/ul/ol/li/blockquote/pre/code/a/img/strong/em/br/hr/table; ' +\n            'all text is HTML-escaped, javascript:/data: links degrade to plain text), ' +\n            'table (normalize HTML <table> or pipe-delimited text to a GFM table), ' +\n            'toc (generate a nested TOC with anchors from Markdown headings). ' +\n            'Inputs over maxBytes (default 256000, ceiling 1000000) are rejected. ' +\n            'Do not pass HTML containing secrets (tool arguments are recorded in session logs).',\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-tool-markdown/README.md:76-92](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/README.md#L76-L92)\n\n作者兼容与安装声明。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n\n\n## 安装\n\n插件源码仓库：`https://github.com/omdsh-dev/dsh-tool-markdown`（public）。\n\n### Profile Bundle（推荐）\n\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1，npm）：\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-markdown/lib/md2html.js:24-37](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-markdown/lib/md2html.js#L24-L37)\n\n接受无协议链接，当前拼接规则。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n    const m = SCHEME_RE.exec(url);\n    if (!m)\n        return true; // 相对路径（无 scheme；协议相对 //host 属此类）\n    const scheme = m[1].toLowerCase();\n    return scheme === 'http' || scheme === 'https' || scheme === 'mailto';\n}\nfunction resolveUrl(href, baseUrl) {\n    const h = normalizeUrl(href);\n    if (baseUrl === undefined || h === '' || SCHEME_RE.test(h))\n        return h;\n    const base = baseUrl.replace(/\\/+$/, '');\n    if (h.startsWith('/'))\n        return base + h;\n    return `${base}/${h}`;\n```\n\n</details>\n\n#### 缺口\n\n- 固定子包的装载、真实宿主记录和退出尚待核对\n  **影响**：限制采用及数据范围\n  **进一步探讨**：用隔离 profile 核对工具、回执和禁用后清单\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-markdown；内容摘要：4ca023f12d3d1f389cc3ba9a92880db2cca1aca35538d19f28d4eb53a1a9c7df。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 8 | 1115 | 961 | 167 | — |\n| .md | source | 2 | 284 | — | — | 2354 |\n| .ts | source | 8 | 1126 | 873 | 174 | — |\n| .ts | test | 5 | 437 | 362 | 19 | — |\n\n排除 8 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| HTML/Markdown 转换 | 整理公开片段 | 链接需要复核 |\n| 表格规范化 | 生成可编辑的 GFM | 适合小型片段 |\n| 目录 | 给标题生成锚点 | 围栏及最终渲染需检查 |\n\n## 工程亮点\n\n[Q02](#research-q02) 的 HTML 转义与协议过滤可独立审查，但简单 URL 拼接不具备标准基址语义，目录围栏无类型匹配。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-markdown/package.json、packages/dsh-tool-markdown/cordis.patch.yml、packages/dsh-tool-markdown/lib/index.js、packages/dsh-tool-markdown/README.md、packages/dsh-tool-markdown/lib/md2html.js、packages/dsh-tool-markdown/lib/toc.js 及固定范围 inventory；组件：packages/dsh-tool-markdown。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：抽读固定子包的挂载、动作分发、链接输出和目录处理；未执行插件、测试或宿主。\n- 下一步：在隔离 profile 对照文件型与目录型基址、跨站链接、混合围栏及普通表格，并验证禁用后的工具列表。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-13-02/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-markdown\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-markdown/README.md\",\n    \"packages/dsh-tool-markdown/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-markdown/cordis.patch.yml\",\n    \"packages/dsh-tool-markdown/lib/index.js\",\n    \"packages/dsh-tool-markdown/lib/md2html.js\",\n    \"packages/dsh-tool-markdown/lib/toc.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"将公开网页片段整理成团队 Markdown 笔记时，会话工具能保留哪些结构，哪些链接和目录要人工复核？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"question\": \"从公开 HTML 片段如何得到可编辑文本？\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"answer\": \"准备技术笔记的用户可把公开 HTML 片段交给 markdown。注册接收 html2md、md2html、table 与 toc 等动作。分发器先检查对应文本的字节大小，进入各自函数；工具以字符串返回结果，取到的是可编辑的片段而非已部署网页。作者说明 html2md 不做正文识别，网页的导航与页脚可能仍需手工删选。对同一片段反复转换时，确定规则减少让模型自行拼表和实体的变量；已有 Pandoc 等程序可做更丰富的格式转换，插件增量是会话直接使用有限文本函数。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 38,\n            \"observation\": \"声明 Cordis、tools 与 invariants peer，bundle 指向补丁，默认导出指向 lib/index.js。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"按固定包名插入 tool-markdown。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/index.js\",\n            \"line_start\": 66,\n            \"line_end\": 77,\n            \"observation\": \"注入 tools 并注册 markdown。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/index.js\",\n            \"line_start\": 106,\n            \"line_end\": 113,\n            \"observation\": \"注册回调进入本包实际执行逻辑并呈现回执。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/index.js\",\n            \"line_start\": 21,\n            \"line_end\": 64,\n            \"observation\": \"输入门槛及四种动作的实际分发。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-markdown/README.md\",\n            \"line_start\": 9,\n            \"line_end\": 21,\n            \"observation\": \"作者说明文档任务和范围。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-markdown/README.md\",\n            \"line_start\": 38,\n            \"line_end\": 43,\n            \"observation\": \"正文识别、表格和目录的作者边界。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"真实文档任务的表格保真率和修订时间\",\n            \"impact\": \"不能判定实际节时\",\n            \"next_step\": \"以同批公开片段对比人工整理与已有转换器\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"question\": \"链接白名单与目录生成何时会留下需要修订的结果？\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\"\n        ],\n        \"answer\": \"HTML 输出路径会转义文本和属性，允许 http、https、mailto 和无协议的链接。提供 baseUrl 时，代码将基址末尾斜杠去掉后直接拼接。对基址 https://example.test/docs/a.html 和相对 b.html，静态推断输出路径落在 a.html/b.html，而浏览器按文档基址解析会落在 /docs/b.html。没有 baseUrl 时协议相对链接也被放行，方案白名单不等于同站限制。目录另用布尔值翻转围栏状态，正则不区分开启与关闭的围栏种类及长度，含嵌套示例时可能漏标题或收进伪标题。转换结果可做文稿草案，不能视为发布前链接或导航验收。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/md2html.js\",\n            \"line_start\": 16,\n            \"line_end\": 45,\n            \"observation\": \"scheme 白名单、直接拼接与属性转义。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/md2html.js\",\n            \"line_start\": 117,\n            \"line_end\": 131,\n            \"observation\": \"拼接结果进入 href。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/toc.js\",\n            \"line_start\": 27,\n            \"line_end\": 51,\n            \"observation\": \"围栏翻转及标题提取。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"question\": \"如何试用并检验更准确的链接恢复是否值得？\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\",\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"answer\": \"兼容 Cordis/tools 且目标 profile 能解析 bundle 后，可用公开片段先转换成草案，逐个比对链接目的地、表格列和目录锚点。参数进入会话记录是作者警示，源 HTML 中的密钥、cookie 与个人材料不进入试用。若要发布或做大规模转换，保留原件并使用现成渲染器和链接检查。可验证的改动是按标准 URL 解析相对引用，并显式选择是否接受跨站目标；用同一组文件型基址与协议相对链接比较错误链接数量、可解释的拒绝和任务耗时。若结果与目标渲染器一致性没有提高，则维持现有人工检查。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/package.json\",\n            \"line_start\": 2,\n            \"line_end\": 11,\n            \"observation\": \"私有子包及 Node 范围。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/index.js\",\n            \"line_start\": 66,\n            \"line_end\": 77,\n            \"observation\": \"工具输入范围和参数记录提醒。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-markdown/README.md\",\n            \"line_start\": 76,\n            \"line_end\": 92,\n            \"observation\": \"作者兼容与安装声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-markdown/lib/md2html.js\",\n            \"line_start\": 24,\n            \"line_end\": 37,\n            \"observation\": \"接受无协议链接，当前拼接规则。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"固定子包的装载、真实宿主记录和退出尚待核对\",\n            \"impact\": \"限制采用及数据范围\",\n            \"next_step\": \"用隔离 profile 核对工具、回执和禁用后清单\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-markdown/README.md\",\n      \"content\": \"# dsh-tool-markdown\\n\\n[English](README.en.md)\\n\\nDSH Markdown 工具插件 —— HTML↔Markdown 转换、GFM 表格规范化、目录生成。零依赖、纯函数、手写轻量解析器。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\n模型最常见的文档场景：用户贴一段 HTML（网页源码、邮件、导出文件）、贴表格要求整理、或要求\\\"转成 markdown\\\"。没有工具时模型只能硬编码处理——HTML 实体会错、表格会乱、网页噪音（导航/脚本/广告）会混入。本插件提供确定性转换，与 `dsh-tool-csv` 互补：**csv 管结构化表格，markdown 管文档/网页**。\\n\\n## 安全模型\\n\\n- **零依赖**：手写递归下降 HTML 解析器（不引入 cheerio/jsdom——净增数十 MB 且是攻击面）\\n- **零执行面**：不 eval、不 new Function、不加载远程资源、不解析 CSS 布局\\n- **内容剥离**：script/style/iframe/object/noscript 内容整体剥离（安全 + 噪音）\\n- **md2html 白名单**：只输出 `p h1-h6 ul ol li blockquote pre code a img strong em br hr table thead tbody tr th td`；文本一律 HTML 转义——markdown 内嵌 `<script>` 只会显示为文本\\n- **链接 scheme 白名单**：`http/https/mailto`；`javascript:`/`data:` 链接降级为纯文本\\n- **资源上限**：嵌套深度 64 层报错（防栈溢出）；输入 `maxBytes` 默认 256KB、硬顶 1MB（超限报错不截断）\\n- 工具参数会记入会话日志，**不要传入含密钥/会话数据的 HTML**\\n\\n## 工具声明\\n\\n注册 `markdown` 工具（`@deepseek-ai/dsh-tool-markdown`，row id `tool-markdown`），统一输出文本。\\n\\n| 参数 | 类型 | 必填 | 说明 |\\n|---|---|---|---|\\n| `action` | string | ✅ | `html2md` / `md2html` / `table` / `toc` |\\n| `html` | string | | html2md 输入（片段或完整文档） |\\n| `markdown` | string | | md2html/toc 输入 |\\n| `text` | string | | table 输入（HTML `<table>` 或管道分隔文本） |\\n| `baseUrl` | string | | 相对 href/src 解析基准（naive join） |\\n| `maxBytes` | integer | | 输入上限，默认 256000，硬顶 1000000 |\\n\\n## Actions\\n\\n| action | 功能 |\\n|---|---|\\n| `html2md` | HTML → GFM Markdown：块级/行内全映射、表格转 GFM（colspan 占位补齐）、实体解码、script/style 剥离、链接 scheme 过滤（**不做 readability 正文选择**，nav/header/footer 默认透传） |\\n| `md2html` | Markdown → 白名单安全 HTML：全文本转义，无标签可逃逸 |\\n| `table` | HTML `<table>` 或**含未转义 `\\\\|`** 的管道分隔文本 → GFM 表格（列补齐、`\\\\|` 转义、分隔行识别；无管道输入报错） |\\n| `toc` | Markdown 标题 → 嵌套目录列表（简化 GitHub 风格锚点：重复标题自动 -1/-2 后缀、跳过代码围栏内伪标题） |\\n\\n## 示例\\n\\n```\\nmarkdown { action: \\\"html2md\\\", html: \\\"<h1>标题</h1><p>你好 <b>世界</b></p>\\\" }\\n  → # 标题\\\\n\\\\n你好 **世界**\\n\\nmarkdown { action: \\\"md2html\\\", markdown: \\\"[x](javascript:alert(1))\\\" }\\n  → <p>x</p>          ← javascript: 链接降级为纯文本\\n\\nmarkdown { action: \\\"table\\\", text: \\\"a|b\\\\n1|2\\\" }\\n  → | a | b |\\\\n| --- | --- |\\\\n| 1 | 2 |\\n\\nmarkdown { action: \\\"toc\\\", markdown: \\\"# 标题一\\\\n## 小节\\\" }\\n  → - [标题一](#标题一)\\\\n  - [小节](#小节)\\n```\\n\\n## 边界行为\\n\\n| 情况 | 处理 |\\n|---|---|\\n| 未闭合标签 | EOF 自动闭合（与浏览器方向一致）；`<p>` 中遇块级自动关闭 |\\n| 大小写 | 标签/属性名归一为小写 |\\n| 注释/DOCTYPE/CDATA | 剥离 |\\n| 实体 | 命名 + 数字实体解码；未知实体按字面保留（`&amp;lt;` → `&lt;`，不二次解码） |\\n| 嵌套列表 | `li` 只被新 `li` 关闭——嵌套 `ul/ol` 合法（2 空格/层缩进） |\\n| 空白 | 行内折叠为单空格；`pre/code` 原样保留 |\\n| 表格 | 首行（thead `th` 或首行 `td`）为表头；`colspan=N` 补 N-1 个占位单元格 |\\n| 深度 > 64 层 | `markdown: HTML nesting exceeds 64 levels` |\\n| 输入超限 | `markdown: <label> exceeds N bytes`（不截断） |\\n| md2html 内嵌 HTML | 原样转义为文本，绝无白名单外标签输出 |\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1` 的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：`@deepseek-ai/cordis@^4.0.1` + `@deepseek-ai/dsh-tools@>=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants@>=0.0.1-rc.1 <0.2.0`（peer）；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 0.1.5-rc.1 consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 安装\\n\\n插件源码仓库：`https://github.com/omdsh-dev/dsh-tool-markdown`（public）。\\n\\n### Profile Bundle（推荐）\\n\\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1，npm）：\\n\\n```sh\\n# 交互式（web）profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-markdown\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-markdown\\n```\\n\\n包内 `dsh.bundle.patch` 会在安装后自动把插件加入 profile 的 layer stack（row id：`tool-markdown`）。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。\\n\\n### npm pack tarball 安装\\n\\n```sh\\nnpm pack    # 生成 dsh-tool-markdown-*.tgz\\ndsh plugin --profile web add ./dsh-tool-markdown-*.tgz\\ndsh plugin --profile headless add ./dsh-tool-markdown-*.tgz\\n```\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-markdown\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 markdown 工具把 <h1>标题</h1> 转成 Markdown\\\"\\n```\\n\\n### 手动安装与旧版本兼容\\n\\n仅适用于不支持 Profile Bundle 的旧快照或插件开发调试环境（本地 junction/symlink、手动编辑 profile 层）。\\n## 测试\\n\\n```bash\\nnode <monorepo>/node_modules/vitest/vitest.mjs run tests\\n```\\n\\n- `html.spec.ts`：解析器边界（嵌套/未闭合/大小写/自闭合/注释/script 剥离/实体/畸形属性/深度守卫）\\n- `html2md.spec.ts`：块级与行内映射全表、表格（colspan/表头/转义）、scheme 过滤、baseUrl\\n- `md2html.spec.ts`：白名单结构 + 安全（内嵌 script 转义、javascript: 降级、引号转义）\\n- `table.spec.ts`：HTML/管道输入、列补齐、`\\\\|` 转义；`toc.spec` 目录与 slugify\\n- `register.spec.ts`：注册契约（AUDIT-CROSS-02 风格）\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-markdown/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-markdown\\\",\\n  \\\"description\\\": \\\"DSH Markdown tool: HTML-to-Markdown conversion, whitelisted Markdown-to-HTML, GFM table normalization, TOC generation. Zero-dependency lightweight parsers.\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-markdown/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-markdown\\n      name: '@deepseek-ai/dsh-tool-markdown'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-markdown/lib/index.js\",\n      \"content\": \"/**\\n * DSH Markdown 工具插件。\\n *\\n * 注册 `markdown` 工具：HTML↔Markdown 转换、GFM 表格规范化、目录生成。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-markdown\\n *     name: '@deepseek-ai/dsh-tool-markdown'\\n *\\n * 安全边界：零依赖（手写解析器，无 cheerio/jsdom）；纯函数不联网；\\n * md2html 只输出白名单标签（文本一律 HTML 转义）；链接 scheme 白名单；\\n * script/style/iframe 内容剥离；嵌套深度 64 上限；maxBytes 输入预算。\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { utf8ByteLength } from './bytes.js';\\nimport { html2md } from './html2md.js';\\nimport { md2html } from './md2html.js';\\nimport { normalizeTable } from './table.js';\\nimport { toc } from './toc.js';\\nexport const name = '@deepseek-ai/dsh-tool-markdown';\\nexport const inject = ['tools'];\\nconst DEFAULT_MAX_BYTES = 256_000;\\nconst HARD_MAX_BYTES = 1_000_000;\\nfunction normalizeMaxBytes(maxBytes) {\\n    if (typeof maxBytes !== 'number' || !Number.isFinite(maxBytes) || maxBytes < 1) {\\n        return DEFAULT_MAX_BYTES;\\n    }\\n    const n = Math.floor(maxBytes);\\n    if (n > HARD_MAX_BYTES) {\\n        throw new Error(`markdown: maxBytes cannot exceed ${HARD_MAX_BYTES}`);\\n    }\\n    return n;\\n}\\nfunction assertSize(input, maxBytes, label) {\\n    if (typeof input !== 'string') {\\n        throw new Error(`markdown: ${label} must be a string`);\\n    }\\n    const bytes = utf8ByteLength(input);\\n    if (bytes > maxBytes) {\\n        throw new Error(`markdown: ${label} exceeds ${maxBytes} bytes (got ${bytes})`);\\n    }\\n}\\nfunction runAction(args) {\\n    const maxBytes = normalizeMaxBytes(args.maxBytes);\\n    const baseUrl = typeof args.baseUrl === 'string' && args.baseUrl !== '' ? args.baseUrl : undefined;\\n    switch (args.action) {\\n        case 'html2md': {\\n            assertSize(args.html, maxBytes, 'html');\\n            return html2md(args.html, { baseUrl });\\n        }\\n        case 'md2html': {\\n            assertSize(args.markdown, maxBytes, 'markdown');\\n            return md2html(args.markdown, { baseUrl });\\n        }\\n        case 'table': {\\n            assertSize(args.text, maxBytes, 'text');\\n            return normalizeTable(args.text, { baseUrl });\\n        }\\n        case 'toc': {\\n            assertSize(args.markdown, maxBytes, 'markdown');\\n            return toc(args.markdown);\\n        }\\n        default:\\n            throw new Error(`markdown: unknown action \\\"${args.action}\\\"`);\\n    }\\n}\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'markdown',\\n        description: 'Markdown utilities over text (zero-dependency, pure functions). ' +\\n            'Actions: html2md (HTML to GFM Markdown: main content, tables, links; ' +\\n            'script/style/iframe content stripped), md2html (Markdown to whitelisted ' +\\n            'safe HTML: only p/h1-h6/ul/ol/li/blockquote/pre/code/a/img/strong/em/br/hr/table; ' +\\n            'all text is HTML-escaped, javascript:/data: links degrade to plain text), ' +\\n            'table (normalize HTML <table> or pipe-delimited text to a GFM table), ' +\\n            'toc (generate a nested TOC with anchors from Markdown headings). ' +\\n            'Inputs over maxBytes (default 256000, ceiling 1000000) are rejected. ' +\\n            'Do not pass HTML containing secrets (tool arguments are recorded in session logs).',\\n        parameters: {\\n            action: {\\n                type: 'string',\\n                required: true,\\n                enum: ['html2md', 'md2html', 'table', 'toc'],\\n                description: 'Operation to perform.',\\n            },\\n            html: {\\n                type: 'string',\\n                description: 'HTML input for html2md (fragment or full document).',\\n            },\\n            markdown: {\\n                type: 'string',\\n                description: 'Markdown input for md2html/toc.',\\n            },\\n            text: {\\n                type: 'string',\\n                description: 'Table input for the table action: HTML <table> or pipe-delimited text.',\\n            },\\n            baseUrl: {\\n                type: 'string',\\n                description: 'Optional base URL: resolves relative href/src to absolute before conversion (naive join).',\\n            },\\n            maxBytes: {\\n                type: 'integer',\\n                description: 'Input size cap, default 256000. Hard ceiling 1000000.',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'string' },\\n            render: (_args, value) => [{ type: 'text', text: value }],\\n        },\\n        execute: args => Promise.resolve(runAction(args)),\\n        timeoutMs: 2000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-markdown/lib/md2html.js\",\n      \"content\": \"/**\\n * Markdown → 白名单 HTML —— 零依赖，纯函数。\\n *\\n * 只实现工具需要的 CommonMark 子集：标题/围栏代码/引用/列表/表格 +\\n * 行内 `code`、**bold**、*italic*、[text](url)、![alt](url)。\\n *\\n * 安全：\\n * - 文本内容一律 HTML 转义（& < > \\\" '）——markdown 内嵌的 <script> 等\\n *   原样显示为文本，不可能产出白名单外的标签；\\n * - 链接 scheme 白名单（http/https/mailto），javascript:/data: 降级纯文本；\\n * - 输出标签仅 p h1-h6 ul ol li blockquote pre code a img strong em br hr\\n *   table thead tbody tr th td。\\n */\\nconst SCHEME_RE = /^([a-zA-Z][a-zA-Z0-9+.-]*):/;\\n/** URL 规范化（审查 MD-01/MD-02）：去除 C0 控制字符与首尾空白后再判断。 */\\nfunction normalizeUrl(raw) {\\n    return raw.replace(/[\\\\u0000-\\\\u001f\\\\u007f]/g, '').trim();\\n}\\n/** scheme 白名单（大小写不敏感，审查 MD-02）；无 scheme 视为相对路径。 */\\nfunction safeScheme(rawUrl) {\\n    const url = normalizeUrl(rawUrl);\\n    if (url === '')\\n        return false;\\n    const m = SCHEME_RE.exec(url);\\n    if (!m)\\n        return true; // 相对路径（无 scheme；协议相对 //host 属此类）\\n    const scheme = m[1].toLowerCase();\\n    return scheme === 'http' || scheme === 'https' || scheme === 'mailto';\\n}\\nfunction resolveUrl(href, baseUrl) {\\n    const h = normalizeUrl(href);\\n    if (baseUrl === undefined || h === '' || SCHEME_RE.test(h))\\n        return h;\\n    const base = baseUrl.replace(/\\\\/+$/, '');\\n    if (h.startsWith('/'))\\n        return base + h;\\n    return `${base}/${h}`;\\n}\\nexport function escapeHtml(text) {\\n    return text\\n        .replace(/&/g, '&amp;')\\n        .replace(/</g, '&lt;')\\n        .replace(/>/g, '&gt;')\\n        .replace(/\\\"/g, '&quot;')\\n        .replace(/'/g, '&#39;');\\n}\\n/** 从 openIdx（'(' 后）扫描匹配的 ')'，支持 URL 内嵌套括号。 */\\nfunction scanUrlEnd(input, openIdx) {\\n    let depth = 0;\\n    let j = openIdx;\\n    while (j < input.length) {\\n        const ch = input[j];\\n        if (ch === '(')\\n            depth++;\\n        else if (ch === ')') {\\n            if (depth === 0)\\n                return j;\\n            depth--;\\n        }\\n        j++;\\n    }\\n    return -1;\\n}\\n/**\\n * 行内解析：转义文本 + 白名单行内标签。\\n * 顺序：`code` → **bold** → *italic* → ![alt](url) → [text](url)。\\n */\\nfunction renderInline(input, options, allowBold = true) {\\n    let out = '';\\n    let i = 0;\\n    while (i < input.length) {\\n        const c = input[i];\\n        // 行内代码\\n        if (c === '`') {\\n            const close = input.indexOf('`', i + 1);\\n            if (close !== -1) {\\n                out += `<code>${escapeHtml(input.slice(i + 1, close))}</code>`;\\n                i = close + 1;\\n                continue;\\n            }\\n        }\\n        // 粗体\\n        if (allowBold && c === '*' && input[i + 1] === '*') {\\n            const close = input.indexOf('**', i + 2);\\n            if (close !== -1) {\\n                out += `<strong>${renderInline(input.slice(i + 2, close), options, false)}</strong>`;\\n                i = close + 2;\\n                continue;\\n            }\\n        }\\n        // 斜体\\n        if (c === '*' && input[i + 1] !== '*') {\\n            const close = input.indexOf('*', i + 1);\\n            if (close !== -1) {\\n                out += `<em>${renderInline(input.slice(i + 1, close), options, false)}</em>`;\\n                i = close + 1;\\n                continue;\\n            }\\n        }\\n        // 图片 ![alt](url)\\n        if (c === '!' && input[i + 1] === '[') {\\n            const close = input.indexOf('](', i + 2);\\n            if (close !== -1) {\\n                const closeEnd = scanUrlEnd(input, close + 2);\\n                if (closeEnd !== -1) {\\n                    const alt = input.slice(i + 2, close);\\n                    const url = resolveUrl(input.slice(close + 2, closeEnd).split(/\\\\s+/)[0] ?? '', options.baseUrl);\\n                    i = closeEnd + 1;\\n                    if (url !== '' && safeScheme(url))\\n                        out += `<img src=\\\"${escapeHtml(url)}\\\" alt=\\\"${escapeHtml(alt)}\\\">`;\\n                    else\\n                        out += escapeHtml(alt);\\n                    continue;\\n                }\\n            }\\n        }\\n        // 链接 [text](url)\\n        if (c === '[') {\\n            const close = input.indexOf('](', i + 1);\\n            if (close !== -1) {\\n                const closeEnd = scanUrlEnd(input, close + 2);\\n                if (closeEnd !== -1) {\\n                    const text = input.slice(i + 1, close);\\n                    const url = resolveUrl(input.slice(close + 2, closeEnd).split(/\\\\s+/)[0] ?? '', options.baseUrl);\\n                    i = closeEnd + 1;\\n                    if (url !== '' && safeScheme(url)) {\\n                        out += `<a href=\\\"${escapeHtml(url)}\\\">${escapeHtml(text)}</a>`;\\n                    }\\n                    else {\\n                        out += escapeHtml(text);\\n                    }\\n                    continue;\\n                }\\n            }\\n        }\\n        out += escapeHtml(c);\\n        i++;\\n    }\\n    return out;\\n}\\n/** 分隔行检测：| --- | 或 | :--- | 等。 */\\nexport function isSeparatorRow(cells) {\\n    return cells.length > 0 && cells.every(c => /^:?-{3,}:?$/.test(c.trim()));\\n}\\n/** 管道行 → 单元格（支持 \\\\| 转义）。 */\\nexport function splitPipe(line) {\\n    let l = line.trim();\\n    if (l.startsWith('|'))\\n        l = l.slice(1);\\n    if (l.endsWith('|'))\\n        l = l.slice(0, -1);\\n    const cells = [];\\n    let cur = '';\\n    let i = 0;\\n    while (i < l.length) {\\n        const c = l[i];\\n        if (c === '\\\\\\\\' && l[i + 1] === '|') {\\n            cur += '|';\\n            i += 2;\\n            continue;\\n        }\\n        if (c === '|') {\\n            cells.push(cur.trim());\\n            cur = '';\\n            i++;\\n            continue;\\n        }\\n        cur += c;\\n        i++;\\n    }\\n    cells.push(cur.trim());\\n    return cells;\\n}\\nfunction renderTable(lines, options) {\\n    const rows = lines.map(splitPipe);\\n    // 找分隔行\\n    let sepIndex = -1;\\n    for (let i = 0; i < rows.length; i++) {\\n        if (isSeparatorRow(rows[i])) {\\n            sepIndex = i;\\n            break;\\n        }\\n    }\\n    const header = sepIndex === -1 ? rows[0] : rows[0];\\n    const body = sepIndex === -1 ? rows.slice(1) : [...rows.slice(1, sepIndex), ...rows.slice(sepIndex + 1)];\\n    const width = Math.max(header.length, ...body.map(r => r.length));\\n    const pad = (r) => {\\n        const out = [...r];\\n        while (out.length < width)\\n            out.push('');\\n        return out;\\n    };\\n    const tr = (cells, tag) => `<tr>${pad(cells).map(c => `<${tag}>${renderInline(c, options)}</${tag}>`).join('')}</tr>`;\\n    const thead = `<thead>${tr(header, 'th')}</thead>`;\\n    const tbody = body.length > 0 ? `<tbody>${body.map(r => tr(r, 'td')).join('')}</tbody>` : '';\\n    return `<table>${thead}${tbody}</table>`;\\n}\\n/** Markdown → 白名单 HTML。 */\\nexport function md2html(markdown, options = {}) {\\n    const lines = markdown.replace(/\\\\r\\\\n/g, '\\\\n').split('\\\\n');\\n    const out = [];\\n    let i = 0;\\n    while (i < lines.length) {\\n        const line = lines[i];\\n        const trimmed = line.trim();\\n        if (trimmed === '') {\\n            i++;\\n            continue;\\n        }\\n        // 围栏代码块\\n        const fence = /^```([a-zA-Z0-9_-]*)\\\\s*$/.exec(trimmed);\\n        if (fence) {\\n            const lang = fence[1];\\n            const body = [];\\n            i++;\\n            while (i < lines.length && !/^```\\\\s*$/.test(lines[i])) {\\n                body.push(lines[i]);\\n                i++;\\n            }\\n            i++; // 跳过闭合围栏（或 EOF）\\n            out.push(`<pre><code${lang ? ` class=\\\"language-${lang}\\\"` : ''}>${escapeHtml(body.join('\\\\n'))}</code></pre>`);\\n            continue;\\n        }\\n        // 标题\\n        const heading = /^(#{1,6})\\\\s+(.*)$/.exec(trimmed);\\n        if (heading) {\\n            const level = heading[1].length;\\n            out.push(`<h${level}>${renderInline(heading[2], options)}</h${level}>`);\\n            i++;\\n            continue;\\n        }\\n        // 表格：连续管道行（含分隔行）\\n        if (trimmed.startsWith('|')) {\\n            const tableLines = [];\\n            while (i < lines.length && lines[i].trim().startsWith('|')) {\\n                tableLines.push(lines[i]);\\n                i++;\\n            }\\n            out.push(renderTable(tableLines, options));\\n            continue;\\n        }\\n        // 引用\\n        if (trimmed.startsWith('>')) {\\n            const quote = [];\\n            while (i < lines.length && lines[i].trim().startsWith('>')) {\\n                quote.push(lines[i].trim().replace(/^>\\\\s?/, ''));\\n                i++;\\n            }\\n            out.push(`<blockquote>${quote.map(q => `<p>${renderInline(q, options)}</p>`).join('')}</blockquote>`);\\n            continue;\\n        }\\n        // 无序列表\\n        if (/^[-*]\\\\s+/.test(trimmed)) {\\n            const items = [];\\n            while (i < lines.length && /^[-*]\\\\s+/.test(lines[i].trim())) {\\n                items.push(lines[i].trim().replace(/^[-*]\\\\s+/, ''));\\n                i++;\\n            }\\n            out.push(`<ul>${items.map(it => `<li>${renderInline(it, options)}</li>`).join('')}</ul>`);\\n            continue;\\n        }\\n        // 有序列表\\n        if (/^\\\\d+\\\\.\\\\s+/.test(trimmed)) {\\n            const items = [];\\n            while (i < lines.length && /^\\\\d+\\\\.\\\\s+/.test(lines[i].trim())) {\\n                items.push(lines[i].trim().replace(/^\\\\d+\\\\.\\\\s+/, ''));\\n                i++;\\n            }\\n            out.push(`<ol>${items.map(it => `<li>${renderInline(it, options)}</li>`).join('')}</ol>`);\\n            continue;\\n        }\\n        // 普通段落：收集到空行\\n        const para = [];\\n        while (i < lines.length && lines[i].trim() !== '' && !/^(#{1,6}\\\\s|```|[-*]\\\\s|\\\\d+\\\\.\\\\s|>\\\\s|\\\\|)/.test(lines[i].trim())) {\\n            para.push(lines[i]);\\n            i++;\\n        }\\n        out.push(`<p>${renderInline(para.join(' '), options)}</p>`);\\n    }\\n    return out.join('\\\\n') + '\\\\n';\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-markdown/lib/toc.js\",\n      \"content\": \"/**\\n * Markdown 目录生成 —— 从标题行生成嵌套列表 + 锚点链接。零依赖，纯函数。\\n *\\n * 审查 MD-05 修复：\\n * - fenced code 状态机：围栏内 `# fake` 不进入目录；\\n * - 重复标题锚点自动递增（GitHub 风格 `-1/-2` 后缀）；\\n * - 尾部闭合井号只在前面有空白时才剥离（`# C#` 正确保留为文本 C#）；\\n * - slug 前剥离行内 Markdown 语法（`code`→code、[x](url)→x、**b**→b），\\n *   与 GitHub slug 方向一致（简化实现，CJK 保留）。\\n */\\n/** 剥离行内 Markdown 语法 → 可见文本（GitHub slug 方向；下划线保留）。 */\\nfunction toVisibleText(text) {\\n    return text\\n        .replace(/`([^`]*)`/g, '$1')\\n        .replace(/\\\\[([^\\\\]]*)\\\\]\\\\([^)]*\\\\)/g, '$1')\\n        .replace(/!?\\\\[([^\\\\]]*)\\\\]/g, '$1')\\n        .replace(/\\\\*{1,2}/g, '');\\n}\\n/** GitHub 风格锚点（简化）：小写 + 去标点 + 空白转 '-'（下划线保留）；CJK 保留。 */\\nexport function slugify(text) {\\n    return toVisibleText(text)\\n        .toLowerCase()\\n        .replace(/[^\\\\p{L}\\\\p{N} _-]/gu, '')\\n        .trim()\\n        .replace(/ +/g, '-');\\n}\\nconst FENCE_RE = /^```|^~~~/;\\n/** 从 Markdown 提取标题序列（跳过 fenced code 内的伪标题；重复锚点递增）。 */\\nexport function extractHeadings(markdown) {\\n    const entries = [];\\n    const seen = new Map();\\n    let inFence = false;\\n    for (const line of markdown.replace(/\\\\r\\\\n/g, '\\\\n').split('\\\\n')) {\\n        if (FENCE_RE.test(line.trimStart())) {\\n            inFence = !inFence;\\n            continue;\\n        }\\n        if (inFence)\\n            continue;\\n        // 尾部闭合井号仅在前有空白时剥离（`# C#` → 文本 \\\"C#\\\"）\\n        const m = /^(#{1,6})\\\\s+(.*?)(?:\\\\s+#+)?\\\\s*$/.exec(line);\\n        if (m) {\\n            const text = m[2].trim();\\n            if (text === '')\\n                continue;\\n            const base = slugify(text);\\n            const count = seen.get(base) ?? 0;\\n            seen.set(base, count + 1);\\n            const anchor = count === 0 ? base : `${base}-${count}`;\\n            entries.push({ level: m[1].length, text, anchor });\\n        }\\n    }\\n    return entries;\\n}\\n/** 标题序列 → 嵌套目录列表（2 空格/层缩进）。无标题返回空字符串。 */\\nexport function toc(markdown) {\\n    const entries = extractHeadings(markdown);\\n    const lines = [];\\n    for (const e of entries) {\\n        const indent = '  '.repeat(Math.max(0, e.level - 1));\\n        lines.push(`${indent}- [${e.text}](#${e.anchor})`);\\n    }\\n    return lines.join('\\\\n');\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-markdown\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"4ca023f12d3d1f389cc3ba9a92880db2cca1aca35538d19f28d4eb53a1a9c7df\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 8,\n        \"lines\": 1115,\n        \"code\": 961,\n        \"comments\": 167,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 284,\n        \"words\": 2354\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 8,\n        \"lines\": 1126,\n        \"code\": 873,\n        \"comments\": 174,\n        \"blank\": 92\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 5,\n        \"lines\": 437,\n        \"code\": 362,\n        \"comments\": 19,\n        \"blank\": 72\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/bytes.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/html.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/html2md.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/md2html.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/table.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-markdown/lib/types/toc.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-markdown/lib/index.js\",\n          \"line\": 67,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-markdown/lib/index.js\",\n          \"line\": 67,\n          \"api\": \"defineTool\",\n          \"name\": \"markdown\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-markdown/src/index.ts\",\n          \"line\": 85,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-markdown/src/index.ts\",\n          \"line\": 85,\n          \"api\": \"defineTool\",\n          \"name\": \"markdown\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"markdown\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "d7d5649d741fdf14fa12e0bba86edd79bf7a279f59bea174ffcccf8fb65424eb"
+        }
+    },
+    "unavailable_artifacts": []
+}

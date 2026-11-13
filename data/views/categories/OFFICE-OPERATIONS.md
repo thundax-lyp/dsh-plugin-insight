@@ -20,7 +20,6 @@
 | [chicheng-stats](#plugin-1335725068-root) | DSH Web 全局用量统计、历史会话回填和可配置侧栏面板，附 DeepSeek 平台余额提示。 | 先禁用平台 token 导入，仅测本地统计并对账；再评估同源 API 和浏览器凭据边界；详见[Q03](../../plugins/534119219--chicheng-stats/INSIGHT.md#research-q03)。 |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | [Q04](../../plugins/pengyue-polaron--deepseek-harness-genui/INSIGHT.md#research-q04) 先测无外部权限表单，再测撤权与回退。 |
 | [DeepSeek Harness Intelligent UI](#plugin-1412721907-root) | 在 DSH 会话内生成可交互组件、更新视图和运行隔离小部件。 | 先用固定非敏感小表核对实际筛选和一次补丁，结果不符则恢复原表，见 [Q04](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md#research-q04)。 |
-| [DSH Ego Browser](#plugin-1326394141-root) | 为 DSH 提供浏览器操作、会话空间和实时观察入口。 | [Q04](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q04) 从隔离只读操作开始，外部状态不明时人工核查。 |
 | [DSH Email](#plugin-1333512933-root) | 在 DSH 中浏览、搜索邮件并编辑回复草稿，支持确认发送与可选邮件任务。 | 试用只限虚构邮件的草稿预览与禁止外发的替身，关闭定时与邮件任务。 |
 | [DSH Files](#plugin-1333699356-root) | 在 DSH 内查找和引用已上传附件，通过宿主文件系统抽取常见办公文档的文字。 | [Q04](../../plugins/taxueseek--dsh-files/INSIGHT.md#research-q04) 在单用户测试 profile 用公开文字 PDF 验证检索、引用和按页抽取。 |
 | [DSH fnOS Integration](#plugin-1374007757-plugins-dsh-fnos-plugin) | 把NAS授权目录、文件打开和主题接入fnOS应用载体 | [Q04](../../plugins/fnosp--fnos-dsh--plugins-dsh-fnos-plugin/INSIGHT.md#research-q04) 只在单用户隔离测试目录观察，先审外层网关和直达宿主路径；依赖多用户隔离的部署应继续使用fnOS原生文件管理器，直至逐入口证明用户权限。 |
@@ -29,6 +28,7 @@
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-automation](#plugin-1333150357-root) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | [Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 单个只读周期任务先验收。 |
 | [dsh-better-sidebar-plugin-office](#plugin-1331821326-root) | 为 better-sidebar 注册 docx、xlsx 和 pptx 侧栏预览，失败时提供原件下载。 | 先确认better-sidebar=0.6.0，用非敏感代表文件逐格式比对关键内容。 |
+| [dsh-ego-browser](#plugin-1326394141-root) | 在 DeepSeek Harness 中驱动浏览器、观察网页并接收截图。 | [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 在本地测试页做非敏感试用，核视觉和目标标签，外部真实操作继续人工。 |
 | [dsh-feishu](#plugin-1333870105-root) | 将 DSH 会话接入飞书聊天，提供流式卡片、提问、审批及文件收发。 | [Q05](../../plugins/pgzxb--dsh-feishu/INSIGHT.md#research-q05) 保持观察，先在独立 profile 以无价值文件核对权限。 |
 | [dsh-feishu](#plugin-1418842530-root) | 以应用或用户身份把飞书主要办公 API 接入 DSH。 | 建议观察。 |
 | [dsh-feishu-bot](#plugin-1346023250-root) | 通过飞书WebSocket操作DSH项目与会话，支持扫码绑定、聊天审批和完成通知。 | 观察，受信owner/允许群与最低权限Profile，审批/广播分别明确，未知投递不重放任务。 |
@@ -196,22 +196,6 @@
 
 [查看完整分析](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1326394141-root"></a>
-
-## [DSH Ego Browser](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md)
-
-[![GitHub ★ 361](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=361&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Fisfzy/dsh-ego-browser) [![npm 30d 14,386](https://img.shields.io/static/v1?label=npm+30d&message=14%2C386&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser)
-
-> **用途**：面向需要 Agent 操作网页且愿意监督和核对外部结果的用户。
-
-> **亮点**：[Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01) 与 [Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 将浏览器动作及分类重试接入 DSH；是否避免重复仍需核查，页面和浏览器不属插件原创。
-
-> **思考**：[Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02) 空间 ID 截取可能碰撞；[Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 冷启动签名可触发回退，其确实无副作用未独立证明。
-
-> **建议**：[Q05](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q05) 以完整会话随机映射和结果未知状态试验隔离及重复提交，尚未验证。
-
-[查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1333512933-root"></a>
 
 ## [DSH Email](../../plugins/stardustlc666--dsh-email/INSIGHT.md)
@@ -339,6 +323,22 @@
 > **建议**：[Q04](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md#research-q04)提出未验证的文件特征级保真提示，按可靠解析识别不保留内容并引导原件核对。对照误判和查阅耗时，若不降低错误或误报过多则放弃，不是当前能力。
 
 [查看完整分析](../../plugins/huanlinoto--dsh-plugin-better-sidebar-plugin-office/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1326394141-root"></a>
+
+## [dsh-ego-browser](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md)
+
+[![GitHub ★ 493](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=493&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Fisfzy/dsh-ego-browser) [![npm 30d 31,344](https://img.shields.io/static/v1?label=npm+30d&message=31%2C344&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ego-browser)
+
+> **用途**：需要模型操作可视页面的用户，希望在 DSH 内观察 Canvas 或布局并确认动作结果。
+
+> **亮点**：[Q01](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q01) 同一工具可将截图接入宿主附件，并为 touch-first 页面提供同点触摸。浏览器能力仍由运行时提供。
+
+> **思考**：[Q02](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q02) 空间短名前缀存在碰撞条件，错误类型及回退只提供线索，仍需看真实页面与副作用。
+
+> **建议**：[Q03](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md#research-q03) 测试失败后显式提醒页面状态未知，是否能比已有 actionSent 减少误重试。
+
+[查看完整分析](../../plugins/fisfzy--dsh-ego-browser/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333870105-root"></a>
 

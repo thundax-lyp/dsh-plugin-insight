@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)
 
-源码版本：[5175b2b](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/5175b2b904d94ca0870e55fec818323f84dbdd91)
+源码版本：[6c56147](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/6c5614712972a5cbca52b13d4df9193d76e76b0d)
 
 <!-- BEGIN META -->
-[![GitHub ★ 1,498](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C498&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+[![GitHub ★ 2,017](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C017&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin) [![npm 30d 7,466](https://img.shields.io/static/v1?label=npm+30d&message=7%2C466&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender-plugin) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender-plugin)
 <!-- END META -->
 
-> **功能**：将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。
+> **功能**：将 Blender 场景操作、观察、验证与渲染作业接入 DeepSeek Harness。
 
-> **亮点**：[Q02](#research-q02) 将执行和观察接入宿主，[Q03](#research-q03) 明确未检查不能视作通过；底层 Blender 能力不属插件原创。
+> **亮点**：[Q01](#research-q01) 将宿主工具、长作业和观察路径衔接；[Q03](#research-q03) 将机器验收的跳过及失败显式区分。Blender 渲染本身来自上游。
 
-> **主要限制**：[Q02](#research-q02) 取消只停止等待，服务端可能继续；[Q03](#research-q03) gate 不覆盖全部视觉及业务验收。
+> **主要限制**：[Q02](#research-q02) 队列取消先改变状态，底层进程未必已停。[Q03](#research-q03) 不强制过门时，导出回执也不能作为验收记录。
 
 **本文目录**
 
@@ -26,11 +26,9 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 谁需要 Blender 接入，相对人工或脚本有何变化？](#detail-section-11)
-  - [Q02 · 代码执行与取消如何工作？](#detail-section-12)
-  - [Q03 · 验收 gate 能否证明完整交付？](#detail-section-13)
-  - [Q04 · 安装与有状态操作有哪些成本和退路？](#detail-section-14)
-  - [Q05 · 如何降低中断后未知结果？](#detail-section-15)
+  - [Q01 · DSH 的六工具接口如何连接 GUI 和长作业？](#detail-section-11)
+  - [Q02 · wait 与 cancel 分别能证明何种状态？](#detail-section-12)
+  - [Q03 · 如何确认场景和输出合格，并避免把降级视作通过？](#detail-section-13)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +38,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向能够人工验收场景的 3D 创作者。
+> **用途**：能独立审查 3D 场景的创作者，在 DSH 中希望跟踪一项 Blender 工作从执行到验收。
 
-人工 Blender 和独立脚本已能建模；集成减少往返但引入进程、场景和权限维护。
+直接使用 Blender GUI 或后台脚本，手工同步命令、截图、作业和验收记录。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +49,63 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| Python 执行 | 修改或检查场景 | 可有文件副作用 |
-| 观察 | 取帧或运行任务 | 真实 GUI 未测 |
-| gate | 汇总指定检查 | skipped/degraded 非 pass |
-| 任务与快照 | 查询和恢复 | 非所有副作用可撤销 |
+| --- | --- | --- |
+| GUI 操作 | 执行并观察活动场景 | 需要连通 addon |
+| 无头作业 | 提交和收取渲染结果 | 回执按 job ID，取消需验进程 |
+| 验收门 | 检出适用范围内的缺陷 | 按导出模式显式启用 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| DSH 与插件 | 必需 | 宿主工具 | 无法调用 |
-| Blender 和对应 addon | 对应模式必需 | 执行与观察 | 连接失败 |
-| 场景副本和验收能力 | 必需 | 限制损失并审查 | 停止操作 |
+| --- | --- | --- | --- |
+| 兼容 DSH、Node 和 Gateway | 必需 | 注册、路由及队列 | 检查诊断或回原生 |
+| Blender 与 GUI addon | GUI 需要 | 实时观察和操作 | 无头路径独立核验 |
+| 独立场景与输出副本 | 试用前提 | 限制副作用 | 停止写入 |
 
-#### 启动步骤
-
-| 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 用户备份场景并检查连接 | 隔离副本 |
-| 执行 | Agent 提交受控代码 | 核对目标与作用 |
-| 观察 | 用户检查帧和 gate | skipped 非通过 |
-| 恢复 | 查询 job 并核对文件 | 不盲重试 |
+| 步骤 | 谁操作 | 操作与结果 | 失败处理 |
+| --- | --- | --- | --- |
+| 准备 | 创作者 | 打开副本、核 Blender 版本 | 检查本机 Gateway |
+| 提交 | 创作者 | 保留 job ID，等终态并收取 | 超时查原 ID |
+| 验收 | 创作者 | 人工核文件、帧与门状态 | 回副本，不覆盖原始场景 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 安装 | Blender、addon 和进程 | 配置连接 | 未测 |
-| 持续 | 模型、渲染和存储 | 人工视觉验收 | 净收益未知 |
-| 失败 | 在途 job 与副本 | 查询、恢复、检查 | 取消不停止服务端 |
-| 退出 | 文件和进程 | 关闭通道并核对 | 全部副作用未证可撤销 |
+| --- | --- | --- | --- |
+| 首次 | Blender、addon 与运行时 | 准备并核连接 | 兼容未知 |
+| 持续 | 渲染、存储及模型 | 校验场景与输出 | 单位合格输出成本未知 |
+| 恢复 | 可能持续运行的进程 | 核对作业、文件与状态 | 取消回执不保证退出 |
+| 退出 | 副本与中间产物 | 清理测试输出 | 保持原场景 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 交互 | Python 执行及查看入口 | 真实建模质量 |
-| gate | skipped 不算 pass | 业务验收完整 |
-| 取消 | 停止等待 | 服务端已停止 |
+| --- | --- | --- |
+| 作业 | 提交、查询及收取接线 | 渲染可靠性 |
+| 验收 | 失败和降级的区分 | 场景业务完整性 |
+| 取消 | 队列和句柄处理 | 子进程及文件是否停写 |
 
-> **思考**：[Q02](#research-q02) 取消只停止等待，服务端可能继续；[Q03](#research-q03) gate 不覆盖全部视觉及业务验收。
+> **思考**：[Q02](#research-q02) 队列取消先改变状态，底层进程未必已停。[Q03](#research-q03) 不强制过门时，导出回执也不能作为验收记录。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q02](#research-q02) 将执行和观察接入宿主，[Q03](#research-q03) 明确未检查不能视作通过；底层 Blender 能力不属插件原创。
+> **亮点**：[Q01](#research-q01) 将宿主工具、长作业和观察路径衔接；[Q03](#research-q03) 将机器验收的跳过及失败显式区分。Blender 渲染本身来自上游。
 
-[Q02](#research-q02) signal 控制等待不保证服务端停止；[Q03](#research-q03) degraded 与 skipped 不当 pass。
+[Q01](#research-q01) 实际工具注册比入口注释可靠；[Q02](#research-q02) 持久队列状态与底层取消应分别验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 取消只停止等待，服务端可能继续；[Q03](#research-q03) gate 不覆盖全部视觉及业务验收。
+[Q02](#research-q02) 队列取消先改变状态，底层进程未必已停。[Q03](#research-q03) 不强制过门时，导出回执也不能作为验收记录。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。
+[Q03](#research-q03) 仅在独立场景试一次渲染并验证过门与结果。[Q02](#research-q02) 状态未知时先核原 ID 和运行进程。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +113,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码静态核查；未执行 Blender、宿主或任务。
+源码确认作业接线、队列取消与验收门边界。真实 Blender 渲染、平台兼容和取消副作用未测。
 
-- 已检查：作者 README、包清单、源码路径 package.json、README.md、SECURITY.md、src/index.ts、addon/dsh_blender_bridge.py、runtime/gate.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、runtime/core/queue/handler.ts、runtime/core/queue/manager.ts、runtime/py/core/gate_impl/plan.py、runtime/py/core/worker.py、runtime/py/export/deliver_impl/export.py、src/plugin.ts、src/tools/index.ts、src/tools/run/execute.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交静态检查代表性执行、取消、addon 与 gate，未运行宿主或 Blender。
-- 下一步：隔离场景测试取消、job 回收、缺失 gate 和视觉/几何验收。
+- 边界：核查六工具 Host 注册、代表性作业和取消、无头 Eevee 版本选择、过门与导出。未穷尽平台、Gateway 权限、算子及曲面，未运行目标代码。
+- 下一步：在可重复小场景对比 GUI、无头、引擎切换、已知缺陷和取消，单独核实际进程和输出。
 
 **分析版本**
 
 - **仓库**：[sixtysevenlf/dsh-blender-plugin](https://github.com/sixtysevenlf/dsh-blender-plugin)
-- **版本号**：2.6.2（[固定提交 5175b2b](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/5175b2b904d94ca0870e55fec818323f84dbdd91)）
-- **版本日期**：2026-10-31（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：3.1.0-alpha.1（[固定提交 6c56147](https://github.com/sixtysevenlf/dsh-blender-plugin/tree/6c5614712972a5cbca52b13d4df9193d76e76b0d)）
+- **版本日期**：2026-11-11（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +132,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 提议操作票据与状态核对，须对照已有 job、txn 和 gate 做故障实验。
+[Q03](#research-q03) 以进程实际退出和输出静止补足取消后的作业核对，对照当前回执后再判断增量。尚未验证。
 
-隔离场景测试取消、job 回收、缺失 gate 和视觉/几何验收。
+在可重复小场景对比 GUI、无头、引擎切换、已知缺陷和取消，单独核实际进程和输出。
 
 <a id="detail-section-9"></a>
 
@@ -153,455 +147,428 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 34 | 9991 | — | — | 154680 |
-| .md | example | 1 | 50 | — | — | 669 |
-| .js | source | 4 | 5260 | 3674 | 1584 | — |
-| .mjs | source | 22 | 7443 | 5886 | 1409 | — |
-| .ts | source | 2 | 3413 | 2233 | 1126 | — |
-| .mjs | test | 34 | 5013 | 3905 | 796 | — |
-| .md | test | 1 | 241 | — | — | 3377 |
+| .md | source | 62 | 13865 | — | — | 241039 |
+| .md | example | 2 | 58 | — | — | 739 |
+| .mjs | source | 36 | 8637 | 7421 | 784 | — |
+| .ts | source | 254 | 30971 | 27332 | 2359 | — |
+| .js | source | 1 | 745 | 548 | 163 | — |
+| .md | test | 3 | 529 | — | — | 21052 |
+| .mjs | test | 15 | 4592 | 4079 | 264 | — |
+| .ts | test | 133 | 20442 | 18275 | 610 | — |
 
 </details>
 
 **活跃度**
 
-Issue 活跃度数据暂未获取（查询日期：2026-11-01），可前往 [GitHub Issues](https://github.com/sixtysevenlf/dsh-blender-plugin/issues) 查看。
+[![Issue 未关闭 6](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=6&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 27](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=27&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z) [![近30天关闭 24](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=24&color=737b86&logo=github)](https://github.com/sixtysevenlf/dsh-blender-plugin/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z)
+
+
+
+统计日期：2026-11-13。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：核查 Blender 交互、取消及验收边界。
+**插件研究总目标**：创作者如何在 DSH 提交、检查和收取 Blender 结果，何时不能将取消或导出回执视为成果状态？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 谁需要 Blender 接入，相对人工或脚本有何变化？
+### Q01 · DSH 的六工具接口如何连接 GUI 和长作业？
 
-**研究主题**：场景与需求、贡献与相对优势
-
-#### 完整回答
-
-面向能判断三维成果的创作者，将 DSH 工具连接 Blender GUI、无头 worker、取帧和交付检查。人工操作和独立 bpy 脚本已能建模，插件增量是持续场景的调用、观察及结构化验收组织，不是 Blender 几何引擎原创。作者描述 doctor 与功能入口，但一次连通不证明视觉、拓扑或业务交付合格。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:1-12](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/package.json#L1-L12)
-
-插件身份与功能范围。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-{
-  "name": "@dsh-external/dsh-blender-plugin",
-  "version": "2.6.2",
-  "description": "DSH × Blender 直连插件（v2.6.2，GUI 优先，无头备用）：15 个模型工具让 AI 直接驱动 Blender——视口/自定义视角、持久内核 Python、时间窗/帧序列观察、内环参数搜索、无头进程与热会话（see/watch/reset/preload/warmup）、作业层、事务回滚、配方库，以及 34 family / 228 op 的契约层（catalog / 判定 / 验收 / 造型 / 装配 / 白模 / 导出）。v2.6.2 新增曲面算法包 surface_*（loft/sweep/patch → tessellate → validate → export，M0–M2/M4；M3 fit 与 M5 blend/offset 未实现）。P0–P2 能力：交互式无头（rt_do/rt_see session、plan session=auto）、参考图量具（img_digest/probe/measure/calib）、装配扫描/清单/合并/修复/门/导出（asm_*）、白模与 Seedance 参考包（blockout refsheet/turntable）、同机位 QC（visualreport_report）、无头轮廓拟合（shapesolve_solve）、缺陷注入评估（eval_run）、强制门（gate_/deliver_export require_gate）。默认先开 GUI；无头备用；装完必须重启 DSH；唯一验收判据 doctor kind=ok；blender-modeling skill 随包自动注册。详见 README 与 docs/操作教程.md。",
-  "private": false,
-  "keywords": [
-    "dsh",
-    "blender",
-    "ai-agent",
-    "tooling",
-    "bpy",
-    "cycles",
-```
-
-</details>
-
-**依据 2 · 源码核查**：[README.md:126-146](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/README.md#L126-L146)
-
-作者列出执行、查看与任务入口。
-
-<details>
-<summary>查看原文（21行）</summary>
-
-```text
-
-| Tool | What it gives you |
-|---|---|
-| blender_rt_see | A frame of the current GUI viewport or a custom camera angle. |
-| blender_rt_do | Runs Python in Blender with a persistent kernel; can return a frame with the result. |
-| blender_rt_watch | Samples a time window or frame range and reports whether the image changed. |
-| blender_rt_worker | A persistent headless session for interactive work when no GUI is available. |
-
-### Planning and operations
-
-| Tool | What it gives you |
-|---|---|
-| blender_rt_plan | The capability catalog and the execution surface for modeling, audit, assembly, delivery, and evaluation operations. Start here when you are unsure which operation to use. |
-| blender_viewport | Channel health, doctor, launch, and write-lease operations for coordinating multiple sessions. |
-
-### Automation and jobs
-
-| Tool | What it gives you |
-|---|---|
-| blender_rt_headless | Runs a standalone Blender background process for batch work, validation, or rendering. |
-| blender_rt_job | Starts long work in the background and collects the result by job id; a timeout does not lose the result. |
-```
-
-</details>
-
-**依据 3 · 源码核查**：[README.md:178-185](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/README.md#L178-L185)
-
-作者的 doctor 和无头处理说明。
-
-```text
-| Symptom | What to do |
-|---|---|
-| doctor does not return kind equal to ok | Check that Blender is running and the addon is connected. For the GUI route this is the only valid acceptance check. |
-| No GUI is available | Use the persistent worker fallback: start a worker, then run code and request a frame. |
-| Another session is writing to the same scene | Take the write lease with blender_viewport, or use separate headless workers for parallel work. |
-| An old MCP for Blender / blender_mcp addon is still enabled | Disable it (uninstalling is not required) and use the bundled DSH Blender Bridge addon; both compete for 127.0.0.1:9876. |
-| Images are generated but not attached | Update to the latest build; the Windows path fix is included. If it persists, open the returned path directly. |
-| Followed the steps and it still does not work | Check the bundled addon first: only addon/dsh_blender_bridge.py is supported, and it must be enabled and connected. |
-```
-
-#### 缺口
-
-- 未完成真实 3D 任务
-  **影响**：无法证明质量和净工时优于人工
-  **进一步探讨**：对照同一模型的几何、视觉、交付和时间。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 代码执行与取消如何工作？
-
-**研究主题**：功能与机制、工程质量与复用
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-插件将 blender_rt_do 标为 execute 并展示 Python，传输将宿主 signal 与内部超时合并；addon 对收到的代码使用 exec，属于实际代码执行而非只读工具。源码明确取消或超时只终止调用方等待，服务端任务可能继续；长任务应按 runId 查询，不可盲目重试或认为已经回滚。绑定本机网络也不能单独证明执行沙箱，需按场景权限和来源审查。
+用户在 DSH 让模型调用 Blender；相对手动在 Blender 执行脚本、截图和记录回执，增量在同一会话里组合执行与可检查结果。Host schema 不可用时走诊断；正常时注册生命周期和工具，实际是六项，旧名只有迁移提示。blender_run 先检查 Gateway，再提交参数，拿到作业回执；现场观察则属于独立的 see 工具。无头 worker 根据 bpy.app.version 选择 Eevee 标识，4.2 到 5.0 前用 NEXT，其余用旧拼法；这只说明选择逻辑，不能说明两版渲染质量相同或所有作业分支均走这一函数。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:42-50](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/src/index.ts#L42-L50)
+**依据 1 · 作者声明**：[README.md:5-5](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/README.md#L5-L5)
 
-通过异步上下文传递 signal。
-
-```text
-// v0.9.2（DSH 更新适配 R3）：把宿主的 exec（exec.signal = 用户打断 / per-tool 截止）
-// 放进 AsyncLocalStorage，传输层 withTimeout() 自动合并它 —— **15 个工具体一行不改**
-// 就能响应宿主取消；每个工具另补静态 timeoutMs（见 T），把"上游设默认截止"从
-// "Blender 还在跑、工具已被判超时"的静默错位，变成"先由本插件给出可读错误"。
-const EXEC_CTX = new AsyncLocalStorage<any>()
-/** 当前工具调用对应的宿主 exec.signal（没有则 undefined） */
-function execSignal(): AbortSignal | undefined {
-  const s = EXEC_CTX.getStore()
-  return s && s.signal instanceof AbortSignal ? s.signal : undefined
-```
-
-**依据 2 · 源码核查**：[src/index.ts:474-491](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/src/index.ts#L474-L491)
-
-取消仅停止等待和合并超时。
-
-<details>
-<summary>查看原文（18行）</summary>
+作者描述 GUI 与无头用途。
 
 ```text
-/** 宿主取消（exec.signal abort）时的统一措辞：只说"等待被取消"，不谎称任务失败 */
-const ABORT_HINT = '宿主取消了本次等待（exec.signal 已 abort：用户打断或 per-tool 截止）。'
-  + '服务端任务可能仍在跑 —— 长任务请用 blender_rt_job 并按 runId 回收；'
-  + '本插件的内部超时通常先于宿主截止触发，正常情况看到的是上面这类可读错误。'
-
-/**
- * v0.9.2：合并「本插件内部超时」与「宿主 exec.signal」。
- * 两条都只影响**等待**：服务端已开始的 Blender 侧任务照旧跑完（headless/job 既有语义
- * = 客户端断连 ≠ 任务失败，按 runId 回收）。
- */
-async function withTimeout(path: string, init: any, timeoutMs: number): Promise<Response> {
-  const ac = new AbortController()
-  const ext = execSignal()
-  let fired = false
-  const timer = setTimeout(() => { fired = true; ac.abort() }, timeoutMs)
-  const signal = ext ? AbortSignal.any([ext, ac.signal]) : ac.signal
-  try {
-    return await fetch(path, { ...(init || {}), signal })
+DSH × Blender connects DeepSeek Harness to Blender so an agent can build, inspect, validate, and export 3D scenes in a real Blender session. The normal workflow is GUI-first: start Blender, connect the addon, and let the agent look, change, and verify. When no GUI is available, background headless jobs (`blender_run(kind="headless")`) still execute scripts and return rendered frames.
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/plugin.ts:54-77](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/src/plugin.ts#L54-L77)
 
-**依据 3 · 源码核查**：[src/index.ts:1138-1142](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/src/index.ts#L1138-L1142)
-
-Python 执行工具展示。
-
-```text
-  blender_rt_do: {
-    kind: 'execute',
-    title: (a) => cardTitle('Blender 执行 Python', [a.code ? cardCodeHeadline(a.code) : cardBaseName(a.file), cardSession(a)]),
-    code: (a) => cardPython(a.code),
-  },
-```
-
-**依据 4 · 源码核查**：[addon/dsh_blender_bridge.py:2868-2890](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/addon/dsh_blender_bridge.py#L2868-L2890)
-
-Blender 侧执行代码。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-            }
-
-        except Exception as e:
-            return {"error": str(e)}
-
-    def execute_code(self, code):
-        """Execute arbitrary Blender Python code"""
-        # This is powerful but potentially dangerous - use with caution
-        try:
-            # Create a local namespace for execution
-            namespace = {"bpy": bpy}
-
-            # Capture stdout during execution, and return it as result
-            capture_buffer = io.StringIO()
-            with redirect_stdout(capture_buffer):
-                exec(code, namespace)
-
-            captured_output = capture_buffer.getvalue()
-            return {"executed": True, "result": captured_output}
-        except Exception as e:
-            # Give the caller the same detail we have: exception type, message,
-            # and a full traceback (with line numbers into the submitted code),
-            # instead of collapsing everything into one string. Callers that ran
-```
-
-</details>
-
-#### 缺口
-
-- 未运行 Blender、宿主或取消测试
-  **影响**：无法证明真实进程停止及现场状态
-  **进一步探讨**：在隔离副本模拟取消并通过任务状态核对副作用。
-
-<a id="research-q03"></a>
-
-<a id="detail-section-13"></a>
-
-### Q03 · 验收 gate 能否证明完整交付？
-
-**研究主题**：缺陷与关键质疑、工程质量与复用
-
-#### 完整回答
-
-gate 的聚合规则将任一 fail/error 判 fail；否则只要 degraded 或 skipped 则为 degraded，全部未检查也不算 pass，比把缺失检查当通过更明确。它只对配置的规则和可用证据作判断；规则不能覆盖需求、视觉质量和资产授权，pass 不是完整业务验收。作者将 doctor kind=ok 作为 GUI 连接验收，并不能推成整个 3D 成品合格。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[runtime/gate.py:236-259](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/runtime/gate.py#L236-L259)
-
-配置的检查与 skipped/degrade 条件。
+宿主依赖降级及生命周期装配。
 
 <details>
 <summary>查看原文（24行）</summary>
 
 ```text
-def _norm_spec(data):
-    if not isinstance(data, dict):
-        raise ValueError("spec 必须是对象（或 .py 里的 SPEC）")
-    gates = data.get("gates")
-    if not isinstance(gates, list) or not gates:
-        raise ValueError("spec.gates 必须是非空数组")
-    out = {"name": str(data.get("name") or "unnamed"), "units": str(data.get("units") or "mm"),
-           "tolerance_mm": data.get("tolerance_mm"), "gates": []}
-    for i, g in enumerate(gates):
-        if not isinstance(g, dict):
-            raise ValueError("gates[%d] 必须是对象" % i)
-        op = str(g.get("op") or "")
-        if op not in OP_MAP:
-            near = sorted(OP_MAP)
-            raise ValueError("gates[%d].op 不认识：%s（允许：%s）" % (i, op, ", ".join(near)))
-        out["gates"].append({"id": str(g.get("id") or ("g%d" % i)), "op": op,
-                             "args": g.get("args") or {}, "pass_if": str(g.get("pass_if") or ""),
-                             "note": g.get("note"),
-                             # v0.9.6（F2）：这些键"一个都没给"⇒ 该门 skipped（未配置/不适用），
-                             # 显式列进回执 skipped[]；v3 起 skipped 会把顶层压成 degraded。"组"= 候选键名的或关系。
-                             "skip_if_missing": _norm_skip_groups(g.get("skip_if_missing")),
-                             # v3（F8）：判据为真但证据不可信 ⇒ 降级；echo 把真实字段带进回执做证据。
-                             "degrade_if": str(g.get("degrade_if") or ""),
-                             "echo": _norm_str_list(g.get("echo"))})
+export function apply(ctx: HostContext, config: Config): void {
+  // v2.2.0：随包 skill 自动注册（可选能力；失败不影响工具面）。
+  // 放在 degraded 分支之前 —— 即使 schemastery 解析失败、工具降级，技能内容也仍然可用。
+  registerBundledSkill(ctx)
+
+  // v1.0.1（issue #10）：解析失败 ⇒ 降级但不消失（见 registerSchemaDiagnostic）。
+  if (!z) {
+    registerSchemaDiagnostic(ctx)
+    return
+  }
+
+  // 防御性读配置：schema 正常时宿主会补默认值，但降级/宿主差异都不该让这里再抛。
+  const cfgIn = asRecord(config)
+  const port =
+    Number.isFinite(Number(cfgIn.port)) && Number(cfgIn.port) > 0
+      ? Number(cfgIn.port)
+      : resolveHttpPort()
+  const autoStart = cfgIn.autoStart === undefined ? true : !!cfgIn.autoStart
+
+  // 注册顺序必须保持 v2.6.2：TUI → 看护/后端 effects → 15 个工具。
+  // Cordis 逆序释放 effects，先注册 TUI/生命周期、后注册工具，卸载时才会先释放工具再杀后端。
+  registerTuiSurface(ctx, port, cfgIn)
+  registerLifecycle(ctx, port, autoStart)
+  registerToolSurface(ctx, port)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[runtime/gate.py:480-493](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/runtime/gate.py#L480-L493)
+**依据 3 · 源码核查**：[src/tools/index.ts:11-23](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/src/tools/index.ts#L11-L23)
 
-聚合状态规则。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-def _aggregate(states):
-    """整包三态（v3 · F8 收紧）：任一 fail/error ⇒ fail；否则任一 **degraded 或 skipped** ⇒ degraded；否则 pass。
-
-    最小修（Lead 决议）：**任一门 skipped 或 degraded 都导致顶层 degraded，fail 优先** ——
-    旧口径 `pass + skipped = pass` 被否决（"没量过干涉"不许拿绿，也不许为"健康默认 preset"降标准）。
-    至少在有一门真 pass 且没有任何 fail/error/degraded/skipped 时才给 pass；
-    一门都没有（空包）也一律 degraded —— "什么都没查"不给通过结论。
-    """
-    if any(s in ("fail", "error") for s in states):
-        return "fail"
-    if any(s in ("degraded", "skipped") for s in states):
-        return "degraded"
-    if not any(s == "pass" for s in states):
-        return "degraded"
-```
-
-</details>
-
-**依据 3 · 源码核查**：[README.md:178-183](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/README.md#L178-L183)
-
-doctor 对连接的说明。
-
-```text
-| Symptom | What to do |
-|---|---|
-| doctor does not return kind equal to ok | Check that Blender is running and the addon is connected. For the GUI route this is the only valid acceptance check. |
-| No GUI is available | Use the persistent worker fallback: start a worker, then run code and request a frame. |
-| Another session is writing to the same scene | Take the write lease with blender_viewport, or use separate headless workers for parallel work. |
-| An old MCP for Blender / blender_mcp addon is still enabled | Disable it (uninstalling is not required) and use the bundled DSH Blender Bridge addon; both compete for 127.0.0.1:9876. |
-```
-
-#### 缺口
-
-- 未验证预设规则、场景与真实交付
-  **影响**：不能证明 pass 等于完整正确
-  **进一步探讨**：设计含缺失来源、错误拓扑和视觉瑕疵的样本并对照人工验收。
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 安装与有状态操作有哪些成本和退路？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断
-
-#### 完整回答
-
-需要兼容 DSH、Blender 和对应 addon，GUI 与持久无头模式有不同环境要求。Python 可以修改场景及本机文件；等待中断后仍可能执行，快照或 undo 不保证撤销所有外部作用。首次需备份场景并配置桥接，持续承担模型、渲染和人工审阅成本；异常先查询任务与核对文件，再决定恢复。退出可关闭通道并保留可回滚副本，但完整卸载及所有后台进程未验证。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[SECURITY.md:18-25](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/SECURITY.md#L18-L25)
-
-作者列出 Python、本地进程、网络及文件作用面。
-
-```text
-这个插件**按设计**就会执行代码并启动进程，不是只读的数据插件：
-
-| 面 | 说明 |
-|---|---|
-| Blender 侧 Python | `blender_rt_do` / `blender_rt_headless` / `blender_rt_worker` / `blender_rt_plan` 等会把调用方给的 Python 交给 Blender 的 `bpy` 执行；`K` 是跨调用保留的持久内核 |
-| 本地进程 | 会 spawn 后端 `node runtime/server.mjs`、无头 `blender -b`、以及 `runtime/ext/` 下的外部校验器（glTF-Validator / open3d）；必要时用 `SIGTERM`→`SIGKILL` 清残留后端 |
-| 本地网络 | 后端只监听 `127.0.0.1`（默认 9877）；与 Blender addon 走 `127.0.0.1:9876` 的 TCP。**没有**外呼遥测 |
-| 文件读写 | 默认工作目录 `~/.dsh-blender-rt`（可用 `DSH_BLENDER_*` 环境变量或包根 `dsh-blender.config.json` 覆盖）：渲染产物、日志、作业台账 |
-```
-
-**依据 2 · 源码核查**：[src/index.ts:474-482](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/src/index.ts#L474-L482)
-
-等待取消不保证服务端停止。
-
-```text
-/** 宿主取消（exec.signal abort）时的统一措辞：只说"等待被取消"，不谎称任务失败 */
-const ABORT_HINT = '宿主取消了本次等待（exec.signal 已 abort：用户打断或 per-tool 截止）。'
-  + '服务端任务可能仍在跑 —— 长任务请用 blender_rt_job 并按 runId 回收；'
-  + '本插件的内部超时通常先于宿主截止触发，正常情况看到的是上面这类可读错误。'
-
-/**
- * v0.9.2：合并「本插件内部超时」与「宿主 exec.signal」。
- * 两条都只影响**等待**：服务端已开始的 Blender 侧任务照旧跑完（headless/job 既有语义
- * = 客户端断连 ≠ 任务失败，按 runId 回收）。
-```
-
-**依据 3 · 源码核查**：[README.md:178-183](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/README.md#L178-L183)
-
-连接、worker 与写租约说明。
-
-```text
-| Symptom | What to do |
-|---|---|
-| doctor does not return kind equal to ok | Check that Blender is running and the addon is connected. For the GUI route this is the only valid acceptance check. |
-| No GUI is available | Use the persistent worker fallback: start a worker, then run code and request a frame. |
-| Another session is writing to the same scene | Take the write lease with blender_viewport, or use separate headless workers for parallel work. |
-| An old MCP for Blender / blender_mcp addon is still enabled | Disable it (uninstalling is not required) and use the bundled DSH Blender Bridge addon; both compete for 127.0.0.1:9876. |
-```
-
-#### 缺口
-
-- 未测性能、进程清理与恢复
-  **影响**：无法估计净成本或保证完全回滚
-  **进一步探讨**：隔离复制场景测试执行、作业回收和文件恢复。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 如何降低中断后未知结果？
-
-**研究主题**：新假设与验证、贡献与相对优势
-
-#### 完整回答
-
-项目已有任务 ID、写租约、文件快照和 gate，因此单独新增快照或状态查询不是新机制。未验证方案是在有副作用的模型修改前保存包含目标与场景版本的操作票据，并在超时后先比对场景与 job 状态再允许人工选择重试或恢复。外部资源仍无法由场景快照完整撤销；对照现有 job/txn 模拟超时、崩溃与并发编辑，测重复修改、误恢复、额外存储和人工时；无明显改善或误伤过大则否定。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/index.ts:474-482](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/src/index.ts#L474-L482)
-
-取消与 runId 指引。
-
-```text
-/** 宿主取消（exec.signal abort）时的统一措辞：只说"等待被取消"，不谎称任务失败 */
-const ABORT_HINT = '宿主取消了本次等待（exec.signal 已 abort：用户打断或 per-tool 截止）。'
-  + '服务端任务可能仍在跑 —— 长任务请用 blender_rt_job 并按 runId 回收；'
-  + '本插件的内部超时通常先于宿主截止触发，正常情况看到的是上面这类可读错误。'
-
-/**
- * v0.9.2：合并「本插件内部超时」与「宿主 exec.signal」。
- * 两条都只影响**等待**：服务端已开始的 Blender 侧任务照旧跑完（headless/job 既有语义
- * = 客户端断连 ≠ 任务失败，按 runId 回收）。
-```
-
-**依据 2 · 源码核查**：[README.md:141-153](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/README.md#L141-L153)
-
-已有 job 与事务入口。
+实际六工具与迁移提示。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
-### Automation and jobs
-
-| Tool | What it gives you |
-|---|---|
-| blender_rt_headless | Runs a standalone Blender background process for batch work, validation, or rendering. |
-| blender_rt_job | Starts long work in the background and collects the result by job id; a timeout does not lose the result. |
-| blender_rt_loop | Runs a parameter search loop inside Blender and returns the best candidates. |
-
-### Scene utilities
-
-| Tool | What it gives you |
-|---|---|
-| blender_rt_txn | File-level snapshots and object-level marks for rollback. |
+export function registerTools(ctx: HostContext, port: number): void {
+  // 会话 → 算子 → 执行 → 观察 → 作业 → 只读检查
+  registerSession(ctx, port)
+  registerOp(ctx, port)
+  registerPy(ctx, port)
+  registerSee(ctx, port)
+  registerRun(ctx, port)
+  registerInspect(ctx, port)
+  // 旧工具名不再注册；预执行 guard 把 UNKNOWN_TOOL 变成「改用哪个工具」的提示。
+  ctx.effect(
+    () => ctx.tools.guard((exec) => legacyToolHint(exec.name)),
+    'dsh-blender-plugin: legacy-tool-migration-hint',
+  )
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[runtime/gate.py:480-493](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/5175b2b904d94ca0870e55fec818323f84dbdd91/runtime/gate.py#L480-L493)
+**依据 4 · 源码核查**：[src/tools/run/execute.ts:149-172](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/src/tools/run/execute.ts#L149-L172)
 
-已有验收状态。
+提交前检查 Gateway、返回 job 回执。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（24行）</summary>
+
+```text
+export async function executeRun(port: number, args: Record<string, unknown>): Promise<unknown> {
+  const action = text(args.action).trim() || (present(args.kind) ? 'submit' : 'list')
+  if (action === 'help') return { text: runHelp() }
+  if (!ACTIONS.includes(action))
+    return toolError(
+      'invalid_params',
+      '未知 blender_run action：' + action,
+      '可用：' + ACTIONS.join(' | '),
+    )
+  if (!(await ensureBackend(port)))
+    return toolError(
+      'gateway_unreachable',
+      'Gateway 不可用（127.0.0.1:' + String(port) + '）',
+      BACKEND_HINT,
+    )
+  if (action === 'tune') return tune(port, args)
+
+  if (action === 'submit') {
+    const built = submitPayload(args)
+    if (typeof built === 'string')
+      return toolError('invalid_params', built, 'action=help 查看 render/headless 参数')
+    const body = await postQueue(port, built, 60000)
+    if (body.ok !== true) return failureOf(body, action)
+    return { text: formatSubmit(body.job as Record<string, unknown>) }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[runtime/py/core/worker.py:88-108](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/py/core/worker.py#L88-L108)
+
+工作进程按版本切换渲染标识。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+        info["fell_back_to_cpu"] = False
+        return info
+    if engine == "cycles":
+        info.update(_gpu_setup(gpu_mode))
+        try:
+            sc.render.engine = "CYCLES"
+            if info.get("configured"):
+                sc.cycles.device = "GPU"
+        except Exception as e:
+            info["engine_set_err"] = str(e)[:80]
+        info["after"] = {"engine": sc.render.engine}
+        return info
+    ee = getattr(sc, "eevee", None)
+    try:
+        sc.render.engine = "BLENDER_EEVEE_NEXT" if (4, 2, 0) <= bpy.app.version < (5, 0, 0) else "BLENDER_EEVEE"
+        if ee is not None:
+            if hasattr(ee, "use_raytracing"):
+                ee.use_raytracing = True
+            if hasattr(ee, "ray_tracing_method"):
+                try:
+                    ee.ray_tracing_method = "SCREEN"
+```
+
+</details>
+
+#### 缺口
+
+- 未运行两版本的无头和 GUI
+  **影响**：无法确认目标场景能渲染并获得文件
+  **进一步探讨**：用小场景在 Blender 4.2 及 5.x 分别提交和收取结果
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · wait 与 cancel 分别能证明何种状态？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+Gateway 的 JobSurface 按 submit、status、wait、collect、cancel 操作进入队列。wait 到时间返回当前快照和 waitTimedOut，作业并未因此取消。cancel 检查调用者授权，已终结时返回 alreadyFinished，否则先标为 canceled、清除 pid 和句柄，再调用 handle.cancel；异常被吞且没有在这一入口等待进程退出，仍持久化取消并 pump。队列 canceled 与渲染进程不再写文件是两个验收点。collect 有授权，status 和 wait 的本方法没有同样的授权检查；更外层的 Gateway 权限是否隔离状态查询仍待核实。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[runtime/core/queue/handler.ts:42-72](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/core/queue/handler.ts#L42-L72)
+
+各操作到实际队列实现。
+
+<details>
+<summary>查看原文（31行）</summary>
+
+```text
+  async handle(caller: CallerIdentity, payload: QueuePayload): Promise<Record<string, unknown>> {
+    const op = String(payload.op || 'list')
+    try {
+      if (op === 'submit') {
+        const params = { ...payload }
+        delete params.op
+        const job = this.queue.submit(caller, params)
+        return { ok: true, op, job }
+      }
+      if (op === 'status') {
+        const job = this.queue.status(String(payload.id || ''))
+        return job ? { ok: true, op, job } : { ok: false, op, code: 'queue_unknown_job' }
+      }
+      if (op === 'wait')
+        return {
+          ok: true,
+          op,
+          ...(await this.queue.wait(
+            caller,
+            String(payload.id || ''),
+            Number(payload.timeout_ms) || 120000,
+          )),
+        }
+      if (op === 'collect')
+        return {
+          ok: true,
+          op,
+          ...this.queue.collect(caller, String(payload.id || ''), Number(payload.tail) || 4000),
+        }
+      if (op === 'cancel')
+        return { ok: true, op, ...this.queue.cancel(caller, String(payload.id || '')) }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[runtime/core/queue/manager.ts:166-192](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/core/queue/manager.ts#L166-L192)
+
+查询快照与等待超时，不尝试停止。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  status(id: string): JobRecord | null {
+    const job = this.find(id)
+    return job ? this.snapshot(job) : null
+  }
+
+  async wait(
+    _caller: CallerIdentity,
+    id: string,
+    timeoutMs = WAIT_DEFAULT_MS,
+  ): Promise<Record<string, unknown>> {
+    const budget = Math.max(1000, Math.min(WAIT_MAX_MS, Number(timeoutMs) || WAIT_DEFAULT_MS))
+    const t0 = Date.now()
+    for (;;) {
+      const job = this.find(id)
+      if (!job)
+        throw new QueueError(
+          queueFailure(
+            'queue_unknown_job',
+            'No job has id ' + id,
+            'Call op=list and use an existing jobId.',
+          ),
+        )
+      if (terminalOf(job.state))
+        return { job: this.snapshot(job), waitedMs: Date.now() - t0, waitTimedOut: false }
+      if (Date.now() - t0 >= budget)
+        return { job: this.snapshot(job), waitedMs: Date.now() - t0, waitTimedOut: true }
+      await new Promise<void>((resolve) => setTimeout(resolve, 100))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[runtime/core/queue/manager.ts:196-243](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/core/queue/manager.ts#L196-L243)
+
+收取和取消授权；先转换状态后尝试取消句柄。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+  collect(caller: CallerIdentity, id: string, tail = 4000): Record<string, unknown> {
+    const job = this.find(id)
+    if (!job)
+      throw new QueueError(
+        queueFailure(
+          'queue_unknown_job',
+          'No job has id ' + id,
+          'Call op=list and use an existing jobId.',
+        ),
+      )
+    this.authorize(caller, job, 'collect')
+    const snap = this.snapshot(job)
+    return {
+      job: {
+        ...snap,
+        logs: { stdout: tailText(job.logs.stdout, tail), stderr: tailText(job.logs.stderr, tail) },
+      },
+    }
+  }
+
+  cancel(caller: CallerIdentity, id: string): Record<string, unknown> {
+    const job = this.find(id)
+    if (!job)
+      throw new QueueError(
+        queueFailure(
+          'queue_unknown_job',
+          'No job has id ' + id,
+          'Call op=list and use an existing jobId.',
+        ),
+      )
+    this.authorize(caller, job, 'cancel')
+    if (terminalOf(job.state))
+      return { job: this.snapshot(job), canceled: false, alreadyFinished: true }
+    const handle = this.handles.get(job.id)
+    this.transition(job, 'canceled', 'cancel requested by caller')
+    job.finishedAt = this.now()
+    job.pid = null
+    this.handles.delete(job.id)
+    if (handle) {
+      try {
+        handle.cancel()
+      } catch {
+        /* cancellation is idempotent */
+      }
+    }
+    this.persist()
+    this.pump()
+    return { job: this.snapshot(job), canceled: true, alreadyFinished: false }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/tools/run/execute.ts:197-223](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/src/tools/run/execute.ts#L197-L223)
+
+工具区分 wait、collect 和 cancel。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+  if (action === 'status') {
+    const body = await postQueue(port, { op: 'status', id }, 60000)
+    if (body.ok !== true) return failureOf(body, action)
+    return { text: formatJob(body.job as Record<string, unknown>).join(String.fromCharCode(10)) }
+  }
+  if (action === 'wait') {
+    const timeoutMs = Number(args.timeout_ms) || 120000
+    const budget = Math.min(600000, Math.max(1000, timeoutMs)) + 30000
+    const body = await postQueue(port, { op: 'wait', id, timeout_ms: timeoutMs }, budget)
+    if (body.ok !== true) return failureOf(body, action)
+    return {
+      text: formatWait(body.job as Record<string, unknown>, body.waitedMs, body.waitTimedOut),
+    }
+  }
+  if (action === 'collect') {
+    const body = await postQueue(
+      port,
+      { op: 'collect', id, tail: Number(args.tail) || 4000 },
+      60000,
+    )
+    if (body.ok !== true) return failureOf(body, action)
+    return { text: formatCollect(body.job as Record<string, unknown>) }
+  }
+  // cancel
+  const body = await postQueue(port, { op: 'cancel', id }, 60000)
+  if (body.ok !== true) return failureOf(body, action)
+  return { text: formatCancel(body) }
+```
+
+</details>
+
+#### 缺口
+
+- 未验证各作业种类的进程停止和 Gateway 外层访问
+  **影响**：影响故障后是否能安全重提交或共享同一宿主
+  **进一步探讨**：取消正在写输出的测试作业并独立观察进程、目录和两个会话的读取权限
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 如何确认场景和输出合格，并避免把降级视作通过？
+
+**研究主题**：采用判断、效果与总成本、新假设与验证
+
+#### 完整回答
+
+使用场景副本和独立输出目录，先确认 DSH、Gateway 和 addon 或无头 worker 正常。对一个包含已知几何缺陷的样例，人工核对帧、文件和适用的门规则。gate 聚合任一 fail/error 为 fail，存在 skipped/degraded 或没有 pass 都降级。普通 deliver_export 可以关闭强制过门，流程应明确 require_gate；未过门的产物不能仅凭文件存在算合格。维持直接用 Blender 及副本恢复作为退路。可试对 cancel 后增加进程已退出、文件不再变化的终止核验，比较当前 job 状态与双重收据能否避免错误重提；若当前监控已经等价或新增步骤不降低误判就不引入。
+
+#### 证据与依据
+
+**依据 1 · 作者声明**：[README.md:21-27](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/README.md#L21-L27)
+
+作者划分现场观察与长任务。
+
+```text
+- **Headless jobs with visual feedback.** If Blender has no GUI, the agent submits a background headless job (`blender_run(kind="headless")`) and collects scripts, logs, and rendered frames from it. Live step-by-step interaction needs a GUI session; the job path exists so long or fresh-scene work still gets done.
+- **Reference-image measurement.** Measure silhouettes, holes, symmetry, readable features, and scale from a reference image before modeling. If no scale is known, the tools return pixel units instead of inventing millimeters.
+- **Parametric surfaces.** Build reproducible surface meshes from sections (loft), a profile swept along a rail, or a four-sided patch; run continuity, curvature, self-intersection, and thickness checks; then export GLB. The same spec yields the same `spec_hash` and vertices instead of hand-sculpted geometry.
+- **Assembly audit and repair.** Validate an assembly manifest, classify clashes, hidden overlaps, contacts, gaps, floating parts, and contained parts, apply safe repairs, gate the result, and export GLB, FBX, or OBJ with a manifest and merge ledger.
+- **Blockout and video-reference packs.** Build low-poly blockouts from declarative parts, render orthographic and perspective reference views, and produce a turntable MP4 for video models such as Seedance.
+- **Visual acceptance and delivery gates.** Compare renders against references from the same camera, report defects with crops and measurements, run defect-injection evaluation, and block delivery when the gate is not pass.
+- **Automation and long jobs.** `blender_run` submits render or headless work and returns a job id immediately; parameter searches and batch validation run inside the GUI session through `blender_op`. Neither occupies the GUI for the whole run.
+```
+
+**依据 2 · 源码核查**：[runtime/py/core/gate_impl/plan.py:285-299](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/py/core/gate_impl/plan.py#L285-L299)
+
+门状态聚合优先失败，跳过或空包降级。
+
+<details>
+<summary>查看原文（15行）</summary>
 
 ```text
 def _aggregate(states):
-    """整包三态（v3 · F8 收紧）：任一 fail/error ⇒ fail；否则任一 **degraded 或 skipped** ⇒ degraded；否则 pass。
+    """整包三态（v3 收紧）：任一 fail/error ⇒ fail；否则任一 **degraded 或 skipped** ⇒ degraded；否则 pass。
 
     最小修（Lead 决议）：**任一门 skipped 或 degraded 都导致顶层 degraded，fail 优先** ——
     旧口径 `pass + skipped = pass` 被否决（"没量过干涉"不许拿绿，也不许为"健康默认 preset"降标准）。
@@ -614,14 +581,85 @@ def _aggregate(states):
         return "degraded"
     if not any(s == "pass" for s in states):
         return "degraded"
+    return "pass"
+```
+
+</details>
+
+**依据 3 · 源码核查**：[runtime/py/export/deliver_impl/export.py:35-62](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/py/export/deliver_impl/export.py#L35-L62)
+
+默认选择和强制门例外的实际分支。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
+def _dv_export_gate(require_gate, force_gate, gate_reason, gate_spec, gate_preset, gate_overrides, warn):
+    """交付强制门（默认 false 兼容旧流程）；返回 (gate_rec, err)。"""
+    # 交付强制门（默认 false 兼容旧流程；model_deliver / gate_deliver 会传 true）。
+    # 下一个 minor 计划默认开启；现在不通过时回执明确写 gate_warning，不静默。
+    if not require_gate:
+        warn.append("gate_warning：require_gate=false —— 本次导出前未强制过门；流程化交付请用 gate_deliver 或 require_gate=true")
+        return None, None
+    K = _dv_kernel()
+    gapi = getattr(K, "dsh_gate_api", None) if K is not None else None
+    if gapi is None:
+        return None, {"ok": False, "blocked": True, "error": "require_gate=true 但 K.dsh_gate_api 不存在",
+                      "hint": "headless 预热：preload=\"gate\"（或先跑 blender_op(op=\"gate_run\")）"}
+    if force_gate and not str(gate_reason or "").strip():
+        return None, {"ok": False, "blocked": True,
+                      "error": "force_gate=true 必须给 gate_reason（写进回执）"}
+    try:
+        gate_rec = gapi("run", {"spec": gate_spec, "preset": gate_preset,
+                                "overrides": gate_overrides})
+        if isinstance(gate_rec, str):
+            gate_rec = json.loads(gate_rec)
+    except Exception as e:
+        return None, {"ok": False, "blocked": True,
+                      "error": "gate_run 失败：%s: %s" % (type(e).__name__, str(e)[:220])}
+    _gv = (gate_rec or {}).get("verdict")
+    if _gv != "pass" and not force_gate:
+        return None, {"ok": False, "blocked": True, "verdict": _gv, "gate": gate_rec,
+                      "error": "安全门未通过（verdict=%s）：拒绝导出" % _gv,
+                      "hint": "看 gate.failed/degraded/skipped；允许降级交付用 gate_deliver(allow_degraded=true)，强导必须 force_gate=true+gate_reason"}
+```
+
+</details>
+
+**依据 4 · 源码核查**：[runtime/core/queue/manager.ts:226-243](https://github.com/sixtysevenlf/dsh-blender-plugin/blob/6c5614712972a5cbca52b13d4df9193d76e76b0d/runtime/core/queue/manager.ts#L226-L243)
+
+可对照当前取消语义。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+    this.authorize(caller, job, 'cancel')
+    if (terminalOf(job.state))
+      return { job: this.snapshot(job), canceled: false, alreadyFinished: true }
+    const handle = this.handles.get(job.id)
+    this.transition(job, 'canceled', 'cancel requested by caller')
+    job.finishedAt = this.now()
+    job.pid = null
+    this.handles.delete(job.id)
+    if (handle) {
+      try {
+        handle.cancel()
+      } catch {
+        /* cancellation is idempotent */
+      }
+    }
+    this.persist()
+    this.pump()
+    return { job: this.snapshot(job), canceled: true, alreadyFinished: false }
 ```
 
 </details>
 
 #### 缺口
 
-- 票据方案和故障实验未实现
-  **影响**：不能保证幂等或完整回滚
-  **进一步探讨**：隔离场景注入超时和并发编辑并核对所有外部文件。
+- 合格场景的渲染和人工复核耗时未知
+  **影响**：无法估算单位合格输出成本或节时
+  **进一步探讨**：对相同场景分别记录手工与宿主辅助的提交、复核、重试、退出及资源开销
 
 [返回分类](../../views/categories/CONTENT-CREATION.md) · [返回首页](../../../README.md)

@@ -1,0 +1,45 @@
+{
+    "repository": "bill9109/dsh-web-ui-notify",
+    "repository_id": 1323599380,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 34,
+    "pushed_at": "2026-10-17T14:54:59Z",
+    "issues": {
+        "open": 3,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-12T20:34:20.698Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-web-ui-notify",
+        "captured_at": "2026-11-13T07:23:12.079Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 1402,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-web-ui-notify",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-26T09:31:43.915Z",
+            "captured_at": "2026-11-13T07:23:12.079Z",
+            "source_url": "https://registry.npmjs.org/dsh-web-ui-notify",
+            "error": null,
+            "latest_version": "0.1.7",
+            "latest_published_at": "2026-10-17T14:56:15.333Z",
+            "latest_error": null
+        }
+    }
+}

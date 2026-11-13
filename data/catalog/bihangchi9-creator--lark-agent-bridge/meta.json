@@ -1,0 +1,66 @@
+{
+    "repository": "bihangchi9-creator/lark-agent-bridge",
+    "repository_id": 1339469423,
+    "captured_at": "2026-11-13T07:23:12.079Z",
+    "window_start": "2026-10-14T07:23:12.079Z",
+    "stars": 34,
+    "pushed_at": "2026-09-18T08:33:08Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Abihangchi9-creator%2Flark-agent-bridge%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DCD8:FD6CF:A1DECD:AC0BEB:6AF6BC61 and timestamp 2026-11-13 07:29:38 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Abihangchi9-creator%2Flark-agent-bridge%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD26:19B6E6:AB404B:B56D24:6AF6BC63 and timestamp 2026-11-13 07:29:39 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abihangchi9-creator%2Flark-agent-bridge%20is%3Aissue%20created%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DD7E:D57AB:A5E173:B00E02:6AF6BC64 and timestamp 2026-11-13 07:29:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abihangchi9-creator%2Flark-agent-bridge%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE0C:28FCC7:A83ED0:B26E53:6AF6BC67 and timestamp 2026-11-13 07:29:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Abihangchi9-creator%2Flark-agent-bridge%20is%3Aissue%20updated%3A2026-10-14T07%3A23%3A12.079Z..2026-11-13T07%3A23%3A12.079Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID DE8E:5D67A:A3FE26:AE2667:6AF6BC68 and timestamp 2026-11-13 07:29:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T02:28:19.525Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "27249509a856f88da0b5cac5f260309aa1019090",
+        "blob_sha": "2844b9d1153d2ba2d869c918690b459d4e0d60f5",
+        "errors_blob_sha": "3318b08a91343c2fea882039af89fb59c9ccf627",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@bihangchi9/lark-agent-bridge",
+        "captured_at": "2026-11-13T07:23:12.079Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 811,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/%40bihangchi9%2Flark-agent-bridge",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-17T07:33:15.265Z",
+            "captured_at": "2026-11-13T07:23:12.079Z",
+            "source_url": "https://registry.npmjs.org/%40bihangchi9%2Flark-agent-bridge",
+            "error": null,
+            "latest_version": "0.0.3",
+            "latest_published_at": "2026-09-18T08:29:14.177Z",
+            "latest_error": null
+        }
+    }
+}

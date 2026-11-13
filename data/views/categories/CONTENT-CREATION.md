@@ -24,7 +24,7 @@
 | [deepseek-ivideo](#plugin-1335095892-packages-deepseek-ivideo) | 在 DeepSeek Harness 对话中编辑、预览和导出视频。 | [Q04](../../plugins/devin-axis--deepseek-design--packages-deepseek-ivideo/INSIGHT.md#research-q04) 确认 peer 范围后在隔离工作区备份并试一段视频；审查成片再使用，失败时手动核对恢复。 |
 | [DirectorX视频生产插件](#plugin-1335058602-root) | 将DSH Agent接到分镜/生成提案、外部媒体模型、可重渲染时间线及技术质检与画布交付。 | [Q06](../../plugins/laplaceyoung--dsh-directorx/INSIGHT.md#research-q06)观察；可丢弃项目先mock+小额代表provider，人工查账/创作验收，企业无人值守需先补授权恢复实证。 |
 | [DrawAI](#plugin-1371788896-root) | 在 DSH 右侧栏编辑工作区画布，并用语义工具读写原生 .drawai 或兼容 .drawio 的插件。 | [Q01](../../plugins/fourzkw--dsh-drawai/INSIGHT.md#research-q01) 有独立原稿的维护者可在副本上先改一条流程标签，再从右侧栏核对节点和页面。 |
-| [DSH × Blender](#plugin-1368569221-root) | 将 DSH 工具接入 Blender 的持久交互、观察和验收工作流。 | [Q04](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q04) 使用隔离场景并核对运行状态，不明时停止重试。 |
+| [DSH × Blender](#plugin-1368569221-root) | 将 Blender 场景操作、观察、验证与渲染作业接入 DeepSeek Harness。 | [Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 仅在独立场景试一次渲染并验证过门与结果。 |
 | [DSH ComfyUI](#plugin-1340918386-root) | 从 DSH 调用本地或远程 ComfyUI，管理工作流参数和生成媒体。 | [Q04](../../plugins/fandc520--dsh-comfyui/INSIGHT.md#research-q04) 先同步试一次并检查真实队列。 |
 | [DSH ImageGen](#plugin-1335287012-root) | 在 DSH 使用多渠道生成和编辑图片，管理画布、历史与画廊。 | [Q04](../../plugins/dickpy--dsh-imagegen/INSIGHT.md#research-q04) 先只配一条测试渠道并保持同步关闭。 |
 | [DSH OpenMAIC](#plugin-1333147218-root) | 将完整课堂生成与会话内教学卡片接入 DSH | [Q04](../../plugins/thu-maic--dsh-openmaic/INSIGHT.md#research-q04) 先试无敏卡片，再用模拟服务验证课堂提交。 |
@@ -38,6 +38,7 @@
 | [dsh-brewreel](#plugin-1388372309-integrations-deepseek-harness) | 让 DSH 模型生成分镜 JSON，通过模板渲染竖版宣传片并检查交付。 | [Q03](../../plugins/finderchangchang--brewreel--integrations-deepseek-harness/INSIGHT.md#research-q03) 先核对兼容性并用无敏感样本验证。 |
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
+| [dsh-hyperframes](#plugin-1334554606-root) | 在 DeepSeek Harness 中编辑 HTML 视频工程，管理素材并预览、导出 MP4。 | [Q03](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q03) 用公开短片试用。 |
 | [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | [Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中提供图片与视频生成、编辑、画布节点和本地片段拼接。 | [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04) 先保留观察结论，核对异步任务账本和可终止渲染，再考虑付费工作流。 |
@@ -47,7 +48,6 @@
 | [dsh-mimotts](#plugin-1397477851-root) | 为 DSH 助手回复合成语音，提供内联播放器、语音历史和工作区 WAV 工具。 | [Q03](../../plugins/1497105876--dsh-mimotts/INSIGHT.md#research-q03) 先用可披露文本，核对音频、索引和失败再扩大使用。 |
 | [dsh-novel-forge 小说锻炉](#plugin-1366449702-root) | 为 DeepSeek Harness 提供中文长篇写作的细纲、设定账本、章节检查与版本管理。 | [Q04](../../plugins/huangziyuan-general--dsh-novel-forge/INSIGHT.md#research-q04) 从隔离项目的一章对照开始，能解释拒绝与版本结果后再考虑扩大。 |
 | [dsh-oil-creator](#plugin-1339110580-root) | 为 DSH Desktop 提供本地内容工作台，组织选题脚本、录屏工程、字幕封面、视觉审查与发布状态。 | [Q03](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q03)复制小库仅核心片库/脚本/自有会话trial，先预览不批量整理。 |
-| [dsh-Openwrite](#plugin-1171186947-root) | 在 DeepSeek Harness 中规划、写作、审稿和管理长篇小说。 | [Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 有备份能力的作者可先在隔离副本试用单章；模型目的地或恢复状态不清时停止，使用备份与手工编辑。 |
 | [dsh-pet 素材制作工程](#plugin-1333652151-root) | 将自动绿幕或手工抠像片段对齐并编码为桌宠动画，另提供 Safari 兼容素材派生。 | [Q04](../../plugins/pc2005-cloud--dsh-pet/INSIGHT.md#research-q04) 用隔离样片做第一段，保存旧产物并记录工具和人工成本。 |
 | [dsh-plugin-translation](#plugin-1336663562-root) | 为模型翻译提供切段、术语抽取、规则质检、语体指引与工作区翻译/术语记忆。 | 建议单用户明确cwd、有词表备份的辅助试用；不自动放行高风险翻译，高分语义错、覆盖或路径不明时停写库。 |
 | [dsh-postiz](#plugin-1157659618-plugins-dsh-postiz) | 连接 Postiz MCP，辅助 DSH 创建、排期和发布社媒内容。 | [Q04](../../plugins/gitroomhq--postiz-agent--plugins-dsh-postiz/INSIGHT.md#research-q04) 优先隔离账号和草稿，提交前核对目标、内容、时间及授权。 |
@@ -59,6 +59,7 @@
 | [dsh-stl-preview](#plugin-1427978231-root) | 在DSH侧栏查看STL网格，并显示尺寸、面积、体积及边拓扑检查。 | 建议观察旧包入口；已有用户只把小型STL当初筛，先确认新包入口与单位，最终打印验证交给切片器。 |
 | [dsh-tavern](#plugin-1335599084-root) | 管理角色卡、世界书和预设，在 DSH 会话中组织角色扮演与故事续写。 | [Q04](../../plugins/chen731215-dev--dsh-tavern/INSIGHT.md#research-q04) 先用虚构材料比较原生预设。 |
 | [dsh-tongflow](#plugin-1204369117-packages-dsh-tongflow) | 将 TongFlow Studio 的工具、技能和界面接入 DSH 会话。 | 从免费非敏感样例和首消息触发开始，付费前核对实际账单与确认。 |
+| [dsh-tool-markdown](#plugin-1327795364-packages-dsh-tool-markdown) | 在 DeepSeek Harness 中转换 HTML 和 Markdown、整理表格并生成目录。 | [Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q03) 可对公开片段试用，按 [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q02) 独立检查链接和目录。 |
 | [dsh-video-pipeline](#plugin-1414936636-root) | 以 DSH skill provider 提供 19 个视频制作、核验和多平台发布技能与脚本。 | 先只启用无外部发布的生成/核验技能，用测试素材逐环节验证；不要把真实 ARK_API_KEY 注入技能正文。 |
 | [dsh-vision](#plugin-1333755444-root) | 原生视觉透传，文本主模型经云或OCR观察桥接图片。 | [Q03](../../plugins/oil-oil--dsh-vision/INSIGHT.md#research-q03) 固定测试图对照两阶段结果再日用。 |
 | [dsh-wsl-media](#plugin-1381725238-root) | 为 DSH 提供本地媒体探测、音轨与缩略图提取、PDF、转写、文档转换、OCR 和元数据工具。 | 优先只读小样本，配置独立根目录，空目标写入；条件不明时回本地工具。 |
@@ -78,6 +79,7 @@
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenPencil](#plugin-1159938129-root) | 独立桌面与 Web 设计应用，支持通过 MCP 读写可编辑 .op 文档和导出代码。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 单写者在可销毁文件副本上试一个节点。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
+| [OpenWrite](#plugin-1171186947-root) | 为 DeepSeek Harness 提供长篇小说写作预设、创作工作台与 Core 桥接。 | [Q03](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q03) 有备份才试单章，先验证工作区与模型目的地，异常以原任务和文件对账。 |
 | [PicGo](#plugin-113965016-root) | 桌面图片上传与管理工具，支持多图床配置、剪贴板和外部工具接入，并返回可粘贴链接。 | 反复上传文档配图且已有可信图床的创作者可先用非敏感图片试用。 |
 | [PicGo-Core](#plugin-149085734-root) | 提供CLI、API和本地服务图片上传流程，支持多图床配置、剪贴板及插件扩展。 | 高频文档图片用户可在测试图床和小批次试用；先核对目标配置、权限与每项URL内容，发生部分失败先对账；若只偶发上传或不能处理远端重名，就继续图床网页。 |
 | [PPT Design Skill](#plugin-1294612352-root) | 为演示作者提供需求、视觉方向和主题锁定到 PPTX 生成、逐页 PNG 审阅返工及交付记录的方法，生成依赖外部 pptx-designer。 | 观察优先；熟悉Python/审稿者可隔离repo/venv先核安装schema/库/字体/render，再小样，缺环境/模板冲突/MUST不达停止正式交付，保旧版和源稿修后重渲染。 |
@@ -286,15 +288,15 @@
 
 ## [DSH × Blender](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md)
 
-[![GitHub ★ 1,498](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C498&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin)
+[![GitHub ★ 2,017](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C017&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sixtysevenlf/dsh-blender-plugin) [![npm 30d 7,466](https://img.shields.io/static/v1?label=npm+30d&message=7%2C466&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender-plugin) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-blender-plugin)
 
-> **用途**：面向能够人工验收场景的 3D 创作者。
+> **用途**：能独立审查 3D 场景的创作者，在 DSH 中希望跟踪一项 Blender 工作从执行到验收。
 
-> **亮点**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) 将执行和观察接入宿主，[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 明确未检查不能视作通过；底层 Blender 能力不属插件原创。
+> **亮点**：[Q01](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q01) 将宿主工具、长作业和观察路径衔接；[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 将机器验收的跳过及失败显式区分。Blender 渲染本身来自上游。
 
-> **思考**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) 取消只停止等待，服务端可能继续；[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) gate 不覆盖全部视觉及业务验收。
+> **思考**：[Q02](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q02) 队列取消先改变状态，底层进程未必已停。[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 不强制过门时，导出回执也不能作为验收记录。
 
-> **建议**：[Q05](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q05) 提议操作票据与状态核对，须对照已有 job、txn 和 gate 做故障实验。
+> **建议**：[Q03](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md#research-q03) 以进程实际退出和输出静止补足取消后的作业核对，对照当前回执后再判断增量。尚未验证。
 
 [查看完整分析](../../plugins/sixtysevenlf--dsh-blender-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -506,6 +508,22 @@
 
 [查看完整分析](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334554606-root"></a>
+
+## [dsh-hyperframes](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/STARDUSTLC666/dsh-hyperframes) [![npm 30d 12,879](https://img.shields.io/static/v1?label=npm+30d&message=12%2C879&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hyperframes) [![最新发布 2026-11-04](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-04&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-hyperframes)
+
+> **用途**：反复制作短标题卡或产品介绍的人，可从模板建立保留修订的可编辑工程。
+
+> **亮点**：[Q01](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q01) 的工作台将编辑工程、准备环境、任务回执和 MP4 记录集中在 DSH。
+
+> **思考**：[Q02](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q02) 的文件检查只到大小和 ftyp，出品仍需播放与修订复核。进程环境限制无法替代系统沙箱。
+
+> **建议**：[Q03](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q03) 提出下载前显式展示导出修订并增加可选媒体探测，检验能否减少错交旧成片。
+
+[查看完整分析](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1336998801-root"></a>
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
@@ -649,22 +667,6 @@
 > **建议**：[Q04](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md#research-q04)由附件与保存脱节推导三图digest+prepare receipt并在重生成后标stale，可能减少旧PASS沿用。四类复制素材对照陈旧通过、误阻断和复核投入；无改善或成本过高即否定，尚未实现不计贡献。
 
 [查看完整分析](../../plugins/oil-oil--dsh-oil-creator/INSIGHT.md) · [返回表格](#category-index)
-
-<a id="plugin-1171186947-root"></a>
-
-## [dsh-Openwrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
-
-[![GitHub ★ 906](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=906&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 8,040](https://img.shields.io/static/v1?label=npm+30d&message=8%2C040&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
-
-> **用途**：长篇作者需要组织设定、章节和审稿，并在受控作品中持续写作。
-
-> **亮点**：[Q01](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q01) 与 [Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 显示套件整合 DSH、工作区及小说 Core；原生能力和领域算法分别归其提供者。
-
-> **思考**：[Q04](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q04) 已有锁和检查点仍不能证明模型、正文和任务结算跨步骤一致；[Q05](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q05) 历史验收不可套用当前包。
-
-> **建议**：[Q06](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q06) 假设读取式一致性预览可帮助作者选择恢复动作；尚未排除现有 UI 等价能力或验证。
-
-[查看完整分析](../../plugins/lipu-jpg--openwrite/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333652151-root"></a>
 
@@ -841,6 +843,22 @@
 > **建议**：未验证假设：共享 Host 激活状态可降低 UI 和工具状态不一致，需对照恢复与延迟场景。[Q05](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md#research-q05)
 
 [查看完整分析](../../plugins/tong-io--tongflow--packages-dsh-tongflow/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-markdown"></a>
+
+## [dsh-tool-markdown](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：撰写技术笔记的人可把公开页面片段转成可编辑的 Markdown、表格或目录草案。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q01) 确认四种常用文档动作直接在会话执行，输出可核对的文本。
+
+> **思考**：[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q02) 的基址拼接、协议相对链接和围栏状态会改变链接或目录，发布前需要独立复核。
+
+> **建议**：[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md#research-q03) 提出按标准解析基址并分开判定跨站策略，用固定链接样本验证是否减少错误。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-markdown/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1414936636-root"></a>
 
@@ -1145,6 +1163,22 @@
 > **建议**：[Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 推导逐角色回合健康回执与推进门禁的未验证策略；同预算测无声失步、剧情可继续率和修复成本，频繁阻塞却不改善则推翻。
 
 [查看完整分析](../../plugins/zju-llms--openstory/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1171186947-root"></a>
+
+## [OpenWrite](../../plugins/lipu-jpg--openwrite/INSIGHT.md)
+
+[![GitHub ★ 948](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=948&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LiPu-jpg/Openwrite) [![npm 30d 9,011](https://img.shields.io/static/v1?label=npm+30d&message=9%2C011&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-openwrite)
+
+> **用途**：长篇作者希望在 DSH 管理稿件、资料和审稿任务，并能独立复核单章修订。
+
+> **亮点**：[Q01](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q01) 把作品、原会话和写作 Core 连入同一宿主，[Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 按固定产物管理本地运行环境。
+
+> **思考**：[Q02](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q02) 运行环境恢复与 [Q03](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q03) 的稿件、任务和模型状态需要分别核对。
+
+> **建议**：[Q03](../../plugins/lipu-jpg--openwrite/INSIGHT.md#research-q03) 测试只读恢复预览能否降低盲目重试，对照现有任务和版本页。
+
+[查看完整分析](../../plugins/lipu-jpg--openwrite/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-113965016-root"></a>
 
