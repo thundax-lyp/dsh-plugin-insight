@@ -1,27 +1,27 @@
 {
     "repository": "Ebony-Vinyl/dsh-our-free-model",
     "repository_id": 1385896447,
-    "captured_at": "2026-11-09T02:22:10.023Z",
-    "window_start": "2026-10-10T02:22:10.023Z",
-    "stars": 66122,
-    "pushed_at": "2026-11-08T06:37:57Z",
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 72723,
+    "pushed_at": "2026-11-13T07:47:23Z",
     "issues": {
-        "open": 123,
-        "closed": 364,
-        "created_30d": 370,
-        "closed_30d": 323,
+        "open": 146,
+        "closed": 368,
+        "created_30d": 291,
+        "closed_30d": 312,
         "updated_30d": 429
     },
     "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-08T19:58:39.041Z",
+        "captured_at": "2026-11-13T20:19:06.833Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
-        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
-        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
         "latest_error": null
     }
 }

@@ -1,0 +1,48 @@
+{
+    "repository": "oliblue-evan/dsh-roleplay-preset",
+    "repository_id": 1334706134,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 33,
+    "pushed_at": "2026-09-01T16:30:54Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoliblue-evan%2Fdsh-roleplay-preset%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7E90:107D7B:CD4BD6:DC811B:6AF8488D and timestamp 2026-11-14 11:39:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoliblue-evan%2Fdsh-roleplay-preset%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EA2:F4568:D1389E:E07191:6AF8488E and timestamp 2026-11-14 11:39:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoliblue-evan%2Fdsh-roleplay-preset%20is%3Aissue%20created%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EB0:102AC6:D4393C:E370BE:6AF8488F and timestamp 2026-11-14 11:39:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoliblue-evan%2Fdsh-roleplay-preset%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EBE:3409E8:CC2843:DB5A13:6AF84891 and timestamp 2026-11-14 11:40:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aoliblue-evan%2Fdsh-roleplay-preset%20is%3Aissue%20updated%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7ECA:5648E:CDF54D:DD25A1:6AF84892 and timestamp 2026-11-14 11:40:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T02:03:27.437Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    }
+}

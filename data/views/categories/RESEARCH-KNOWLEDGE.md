@@ -35,6 +35,7 @@
 | [BigA](#plugin-1250326123-root) | 将 A 股观察池与市场摘要 Skill 及其 Python 扫描脚本装入 DeepSeek Harness。 | [Q03](../../plugins/kobenfang--biga/INSIGHT.md#research-q03) 仅将离线合成样本用于核格式和口径，异常回人工资料核查。 |
 | [BioDSH](#plugin-1351845049-packages-dsh-biodsh) | 为生信分析组合技能选择、步数收敛、公共输出合同与重放检查的 DSH 预设包 | [Q05](../../plugins/sagirimo--biodsh--packages-dsh-biodsh/INSIGHT.md#research-q05) 建议观察，先由熟悉统计的用户在新鲜去敏金标合同上核打包资源、覆盖、重放及恢复。 |
 | [BioDSH](#plugin-1351845049-root) | 内嵌 DSH 与 Python 环境的桌面生信分析工具，组织项目、脚本和可复跑交付。 | [Q05](../../plugins/sagirimo--biodsh/INSIGHT.md#research-q05) 仅用合成数据比较固定脚本及参考输出。 |
+| [Capital Generation](#plugin-1335734923-root) | 为 DeepSeek Harness 提供投研 Agent 预设、数据整理、图表及定时简报。 | [Q04](../../plugins/v587d--capital-generation/INSIGHT.md#research-q04) 先观察固定公告信息能否逐项回到来源，遇到时点不符或缺原件就退回手工。 |
 | [causal-memory](#plugin-1312924592-root) | 本地记忆引擎存储事实与决策结果关系，并以 DSH 工具提供召回。 | [Q03](../../plugins/jingxuanc--causal-memory/INSIGHT.md#research-q03) 独立库小样本对照后再扩展。 |
 | [causal-memory DSH plugin](#plugin-1312924592-dsh-plugin) | 通过 stdio MCP 将 causal-memory 工具和服务接入 DSH。 | [Q03](../../plugins/jingxuanc--causal-memory--dsh-plugin/INSIGHT.md#research-q03) 用临时数据库。 |
 | [CiteCiter](#plugin-1337306269-packages-citeciter) | 在 DeepSeek Harness 中从来源对话或文档选段，在独立 Topic 中引用、追问和学习。 | [Q04](../../plugins/kirkchinese--citeciter--packages-citeciter/INSIGHT.md#research-q04) 用无敏感来源试读和定位，引用不符就回原文与手工摘录。 |
@@ -74,6 +75,7 @@
 | [DSH Web Search Pro](#plugin-1333320049-root) | 以按需动作和有出处的证据包组织多来源搜索 | [Q04](../../plugins/anweat--dsh-web-search-pro/INSIGHT.md#research-q04) 公开来源起步，对照规则和远程评分。 |
 | [DSH Web Tools](#plugin-1335219884-root) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 仅在隔离 Profile 测普通双源与单源。 |
 | [DSH 插件周榜面板](#plugin-1400385991-packages-dsh-weekly-panel) | 在 DSH 侧栏查看插件周榜、免费模型摘要与推荐，并复制安装命令。 | [Q04](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q04) 先只看摘要和来源，再决定是否复制命令。 |
+| [DSH 统计工具](#plugin-1327795364-packages-dsh-tool-stat) | 为 DSH 提供显式有限数值数组的描述统计、百分位、频数和 Pearson 或 Spearman 相关计算。 | 用明确口径的小数组试统计，核对实际参数和输出。 |
 | [dsh_kline](#plugin-1333960520-root) | 在 DSH 会话中查看 K 线、分析历史形态并把绘图应用到当前图。 | [Q04](../../plugins/ftshare-lab--dsh_kline/INSIGHT.md#research-q04) 先用固定历史样本，在隔离 profile 比较独立图表。 |
 | [dsh-anchored-monitor](#plugin-1337467566-root) | 对 DSH reasoning 流做词形波段监控，独立进程可自动中断并重置会话。 | 仅隔离 profile 显式关闭干预，先回放验证代理指标；真实使用前需默认只读、身份鉴权及人审。 |
 | [dsh-auto-memory](#plugin-1381430202-root) | 将项目和用户记忆写入本地文件并注入索引，可选结束时固化。 | [Q03](../../plugins/asktheway--dsh-auto-memory/INSIGHT.md#research-q03) 只在测试项目验收核心工具和提示，随后对照自动固化。 |
@@ -158,7 +160,7 @@
 | [Oh-My-DSH](#plugin-1333671427-root) | 提供 DSH 插件分类目录、元数据快照与检索站点。 | [Q03](../../plugins/like-study1--oh-my-dsh/INSIGHT.md#research-q03) 先在固定快照查找目标，再到候选固定源核对身份、入口及权限。 |
 | [OpenContext](#plugin-1329484633-root) | 面向Agent应用的记忆、检索和图修订基础设施，提供库facade及MCP/HTTP入口。 | [Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) 先loopback单用户只读及dryRun，再由host加授权。 |
 | [OpenQuantum](#plugin-1335086034-root) | 面向 DeepSeek Harness Desktop 与 Codex 的量子研究 Skills 和 Tools | [Q04](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q04) 仅隔离Home试支持域的重复复核任务，保留原SDK和结果包，先验失败/停止/回退。 |
-| [OpenViking Memory for DeepSeek Harness](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 提供 OpenViking 自动召回、会话采集、URI 工具保护和 MCP 接入。 | [Q04](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q04) 先在独立 profile 用公开事实核对普通召回、MCP 与项目权限。 |
+| [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 在 DeepSeek Harness 会话中接入 OpenViking 召回、消息捕获、Skill 和 MCP。 | [Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05) 建议先保留手动管理，在有授权的临时服务验证唯一标记、实际模型出口与停用后队列。 |
 | [PaperMachine](#plugin-1345235144-root) | 本地运行 Python/R 并以版本化产物和来源记录支持审阅的科研桌面客户端 | 建议有限试用，见 [Q05](../../plugins/superjj007--papermachine/INSIGHT.md#research-q05)：macOS上先以去敏且已有正确答案的小CSV验证执行轨迹、版本、人工编辑和备份恢复。 |
 | [PatentRadar](#plugin-1230059993-root) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 仅用公开、可回源案例验证一份线索表；不能支持具体特征时回到人工检索。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
@@ -173,7 +175,7 @@
 | [Tydora](#plugin-1274335260-root) | 本地 Markdown 编辑与知识库应用，组合所见即所得编辑、双链图谱、画布、思维导图和静态站点构建。 | [Q03](../../plugins/zuorn--tydora/INSIGHT.md#research-q03) 复制小库单writer试用并核格式diff；Agent先只读，公开导出只用已核样例。 |
 | [Vibe Mathematics](#plugin-1319853777-root) | 为 DSH 提供多代理数学研究预设，支持任务、表决和形式化检查。 | 先观察配置和证据链，只用已知题核对所有步骤。 |
 | [WeKnora](#plugin-1024118326-root) | 面向团队文档的知识服务，提供检索问答、Agent 推理和 Wiki 管理。 | [Q05](../../plugins/tencent--weknora/INSIGHT.md#research-q05) 先取十几条含正例、无依据和越权哨兵的手册问题，关闭网络检索，确认模型和资料的权限边界。 |
-| [WeKnora DSH 连接器](#plugin-1024118326-packages-dsh-weknora) | 让 DeepSeek Harness 在 WeKnora 知识库中检索片段、补读文档和请求综合问答。 | [Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05) 先用受限 retrieve 凭据和非敏感资料配置内部资源句柄，关闭 ask。 |
+| [WeKnora DSH](#plugin-1024118326-packages-dsh-weknora) | 为 DeepSeek Harness 提供 WeKnora 知识库检索、文档补读和问答工具。 | [Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05) 在隔离配置用受限凭据复核一条规则；越界、引用错误或与网页矛盾时停止并回原文。 |
 | [WeKnora 会话归档](#plugin-1412897932-root) | 将 DSH 会话摘要增量写入 WeKnora，并观察文档解析状态。 | [Q04](../../plugins/aaalenwow--dsh-weknora-archive/INSIGHT.md#research-q04) 测试先给已有库 ID 并关闭精炼。 |
 | [WSL Playwright 页面读取](#plugin-1381860363-root) | 在 DSH 中通过无头 Chromium 读取网页标题、状态或正文。 | [Q04](../../plugins/173787247--dsh-wsl-playwright/INSIGHT.md#research-q04) 先用隔离环境核对依赖、出站和正文，之后再决定是否纳入会话工具。 |
 | [乔木 RSS](#plugin-1396833540-root) | 把 RSS 订阅阅读、版本切换和带原文的伴读放进 DSH | [Q04](../../plugins/joeseesun--qiaomu-rss-dsh/INSIGHT.md#research-q04) 先用公开或虚构 RSS，保持实验室关闭。 |
@@ -548,6 +550,22 @@
 > **建议**：[Q05](../../plugins/sagirimo--biodsh/INSIGHT.md#research-q05) 将合同是否适用、重放是否一致与独立参考是否通过分别交付，可能减少把运行完毕当作科学验证的判断错误。
 
 [查看完整分析](../../plugins/sagirimo--biodsh/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335734923-root"></a>
+
+## [Capital Generation](../../plugins/v587d--capital-generation/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/v587d/capital-generation) [![npm 30d 8,947](https://img.shields.io/static/v1?label=npm+30d&message=8%2C947&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@v587d/capital-generation) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@v587d/capital-generation)
+
+> **用途**：反复整理公开公司材料的研究人员，可以用自动模式组织采集结果和图表，再逐条核对口径。
+
+> **亮点**：[Q01](../../plugins/v587d--capital-generation/INSIGHT.md#research-q01) 和 [Q02](../../plugins/v587d--capital-generation/INSIGHT.md#research-q02) 显示，预设把结构化数据引用和图表交付分到可追踪的角色流程，给核对跨来源材料留下定位。
+
+> **思考**：[Q01](../../plugins/v587d--capital-generation/INSIGHT.md#research-q01) 的数据能力与实际可用不同，[Q03](../../plugins/v587d--capital-generation/INSIGHT.md#research-q03) 的无人值守限制依赖宿主提供调用门禁。
+
+> **建议**：[Q04](../../plugins/v587d--capital-generation/INSIGHT.md#research-q04) 提出按每条结论留来源、采集时间和缺失状态的核验清单，以同一任务比较人工核对成本和错误发现率。
+
+[查看完整分析](../../plugins/v587d--capital-generation/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1312924592-root"></a>
 
@@ -1172,6 +1190,22 @@
 > **建议**：[Q05](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md#research-q05) 验证明确标记数据年龄是否有帮助。
 
 [查看完整分析](../../plugins/514006234--dsh-weekly-check--packages-dsh-weekly-panel/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1327795364-packages-dsh-tool-stat"></a>
+
+## [DSH 统计工具](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-toolkit)
+
+> **用途**：已有 DSH 的测试或数据分析人员，可用一小组已知样本核对延迟分布或成对相关。
+
+> **亮点**：把小样本的方差、分位数、频数和相关计算集中到一个 DSH 工具，并明确返回零方差、溢出和截断边界。[Q01](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md#research-q01) [Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md#research-q02)
+
+> **思考**：同步计算的长度上限不等于可以抢占执行，也不证明接近上限的数组在目标宿主可顺畅处理。[Q02](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md#research-q02)
+
+> **建议**：可随结果提供团队所选的分位算法与样本口径，使用同一批容易混淆的输入，验证是否减少复查错误。[Q03](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1333960520-root"></a>
 
@@ -2519,17 +2553,17 @@
 
 <a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
 
-## [OpenViking Memory for DeepSeek Harness](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
+## [OpenViking DSH Memory](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
 
-[![GitHub ★ 41,761](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41%2C761&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 43,810](https://img.shields.io/static/v1?label=npm+30d&message=43%2C810&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
+[![GitHub ★ 42,206](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=42%2C206&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 45,856](https://img.shields.io/static/v1?label=npm+30d&message=45%2C856&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
 
-> **用途**：已有 OpenViking 的 DSH 开发者，可让新会话自动查阅项目背景，减少重复粘贴和主动查询。
+> **用途**：经常重启会话的项目维护者可让 DSH 复用已保存的决策并查清来源。[Q01](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q01) 和 [Q02](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q02) 显示，插件把重复的记笔记、查找和搬运上下文部分转进 DSH 生命周期，保留消息来源、会话与工作区条件。存储及提取仍由服务负责。
+> **亮点**：[Q01](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q01) 将记忆操作绑定到 Agent 和会话事件，保留手动 MCP。[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03) 复用宿主模型流为低侵入的可选压缩路径，并保留失败回退。
 
-> **思考**：[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03) 显示关闭采集与停止已排队数据的外发是两个动作，常驻重放仍可能运行。当前连接配置和本地队列状态也需要核实，单次提交成功无法证明后台提取完成。
+> **思考**：[Q02](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q02) 的会话 peer 和启动客户端有不同作用域。[Q03](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q03) 与 [Q04](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q04) 说明摘要可发往宿主配置的模型，关闭新捕获后旧队列仍可能发送。
 
-> **建议**：[Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05) 提出按目标服务显示积压和提取状态，并将暂停与授权回放结合，验证能否减少误送和状态误判。
+> **建议**：[Q06](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q06) 建议让操作者同时核对待发记录状态和最近一次召回为何使用摘要、原文或空结果。分别用恢复和压缩失败的对照验证。
 
 [查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2759,17 +2793,17 @@
 
 <a id="plugin-1024118326-packages-dsh-weknora"></a>
 
-## [WeKnora DSH 连接器](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md)
+## [WeKnora DSH](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md)
 
-[![GitHub ★ 36,771](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36%2C771&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 8,667](https://img.shields.io/static/v1?label=npm+30d&message=8%2C667&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
+[![GitHub ★ 37,399](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=37%2C399&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/WeKnora) [![npm 30d 10,049](https://img.shields.io/static/v1?label=npm+30d&message=10%2C049&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora) [![最新发布 2026-08-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wxg-prc-cpg/dsh-weknora)
 
-> **用途**：已经维护 WeKnora 知识库、并在 DSH 中反复答内部资料问题的团队，需要少搬运片段，同时保留按文档定位的证据。[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01)
+> **用途**：已有 WeKnora 部署的开发者可在 DSH 内核对一条制度并补读来源文档。[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01)
 
-> **亮点**：[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01) 和 [Q02](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q02) 支持的贡献是把既有服务的搜索与补读接成可组合的宿主工具，保留文档标识、页与片段位置，让提问者能从短结果继续核对原文。嵌入、索引、重排及回答模型由服务端提供。
+> **亮点**：[Q01](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q01) 把段落、文档补读和服务器综合带进处理同一任务的 Agent，[Q02](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q02) 用分页和完整流保留判断依据。
 
-> **思考**：[Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03) 默认库可以被请求指定的范围覆盖，名称补充和元数据又可在请求失败后降级为空。若把默认库当授权白名单或把附加空结果当成资料不存在，就会误判覆盖范围。通过服务端受限凭据和正反例复核来约束试用。
+> **思考**：[Q03](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q03) 的默认库可以被调用覆盖，真实边界取决于凭据和服务；[Q04](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q04) 的服务器变化也会改变客户端拿到的材料。
 
-> **建议**：[Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05) 将标题查找或补读元数据的失败独立写入工具结果，并在该状态下提示使用直接文档标识或网页核对。对照真实无命中与附加接口故障，检验这一状态是否减少错误放弃，同时计入新增上下文和复核开销。
+> **建议**：[Q05](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md#research-q05) 提议显示可信的检索诊断、有效范围和输出裁剪，让模型决定该补读还是停止。
 
 [查看完整分析](../../plugins/tencent--weknora--packages-dsh-weknora/INSIGHT.md) · [返回表格](#category-index)
 
@@ -2873,4 +2907,4 @@
 
 ## 更新时间
 
-2026-11-13
+2026-11-14

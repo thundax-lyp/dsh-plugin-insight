@@ -1,0 +1,66 @@
+{
+    "repository": "cyanfish-x/dsh-live2d-pets",
+    "repository_id": 1334042515,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 33,
+    "pushed_at": "2026-09-24T07:34:26Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Acyanfish-x%2Fdsh-live2d-pets%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID ED5C:1C3246:D7AB5B:E6E203:6AF8488C and timestamp 2026-11-14 11:39:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Acyanfish-x%2Fdsh-live2d-pets%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7E9E:236E69:CD6574:DC9C21:6AF8488D and timestamp 2026-11-14 11:39:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acyanfish-x%2Fdsh-live2d-pets%20is%3Aissue%20created%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EB6:E1966:D30557:E239BA:6AF84890 and timestamp 2026-11-14 11:40:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acyanfish-x%2Fdsh-live2d-pets%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EBA:1D87FB:D50BDA:E4435B:6AF84891 and timestamp 2026-11-14 11:40:01 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Acyanfish-x%2Fdsh-live2d-pets%20is%3Aissue%20updated%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 7EE6:107D7B:CD4E5F:DC840A:6AF84892 and timestamp 2026-11-14 11:40:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T02:03:27.437Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-live2d-pets",
+        "captured_at": "2026-11-13T01:52:09.761Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 3448,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-live2d-pets",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T12:27:38.832Z",
+            "captured_at": "2026-11-13T01:52:09.761Z",
+            "source_url": "https://registry.npmjs.org/dsh-live2d-pets",
+            "error": null,
+            "latest_version": "0.3.0",
+            "latest_published_at": "2026-09-24T08:42:18.931Z",
+            "latest_error": null
+        }
+    }
+}

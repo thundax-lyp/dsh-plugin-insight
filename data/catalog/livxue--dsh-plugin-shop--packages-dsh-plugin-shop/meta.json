@@ -1,0 +1,45 @@
+{
+    "repository": "LivXue/dsh-plugin-shop",
+    "repository_id": 1345710688,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 664,
+    "pushed_at": "2026-11-14T07:25:22Z",
+    "issues": {
+        "open": 0,
+        "closed": 10,
+        "created_30d": 4,
+        "closed_30d": 7,
+        "updated_30d": 7
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T20:19:00.590Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-shop",
+        "captured_at": "2026-11-14T10:32:50.352Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 5635,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/dsh-plugin-shop",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-26T06:40:47.935Z",
+            "captured_at": "2026-11-14T10:32:50.352Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-shop",
+            "error": null,
+            "latest_version": "0.9.4",
+            "latest_published_at": "2026-11-13T09:01:09.884Z",
+            "latest_error": null
+        }
+    }
+}

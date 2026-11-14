@@ -1,0 +1,45 @@
+{
+    "repository": "BillCx330/dsh-plugin-notify-sounds",
+    "repository_id": 1405520053,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 36,
+    "pushed_at": "2026-11-07T02:34:52Z",
+    "issues": {
+        "open": 0,
+        "closed": 4,
+        "created_30d": 3,
+        "closed_30d": 4,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T11:36:54.757Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-plugin-notify-sounds",
+        "captured_at": "2026-11-14T10:32:50.352Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 5944,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/dsh-plugin-notify-sounds",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-10T15:18:40.589Z",
+            "captured_at": "2026-11-14T10:32:50.352Z",
+            "source_url": "https://registry.npmjs.org/dsh-plugin-notify-sounds",
+            "error": null,
+            "latest_version": "1.9.5",
+            "latest_published_at": "2026-11-07T02:44:41.997Z",
+            "latest_error": null
+        }
+    }
+}

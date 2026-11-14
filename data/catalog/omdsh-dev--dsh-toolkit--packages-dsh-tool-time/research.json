@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "a84376a2685f6dcd4fbf53fca6e795fe",
+    "identity": "github:1327795364:packages-dsh-tool-time",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-time",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-time",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-time",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-time",
+            "aliases": [],
+            "name": "DSH 时间工具",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "5c3e6655084cfd627b779edd917e38b52bd716b847f6c09a9679d136ffc90182",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-time-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-14T11:54:56.206Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-time-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/README.md",
+                            "content_sha256": "df336d1b83512bd5b58830e322f29e3a91b936c95a2575dd1bcfa0d8d9734993"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-14T11:54:56.206Z",
+                    "summary": "为 DSH 提供当前时间、IANA 时区转换、UTC 日历运算和固定时长差。",
+                    "artifact": "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-time/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/README.md",
+                            "content_sha256": "df336d1b83512bd5b58830e322f29e3a91b936c95a2575dd1bcfa0d8d9734993"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/package.json",
+                            "content_sha256": "68b3b835473e4e2fe6f4a9c75f58c6cdc4b422ae3aba1d901569e71be582765f"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/cordis.patch.yml",
+                            "content_sha256": "b72eaa07b8fffd56e236abd645861950020e194ec2ef70a275c8ab27bc206092"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/lib/index.js",
+                            "content_sha256": "6a02c2474328f777a72825bbc5cec3baee52a05e933659f0800c74811e6fb0a7"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-time/lib/time.js",
+                            "content_sha256": "008c8d499a058725cb5ff10f1583cad12c48edccf4f3d32d2e25b3e2792beadd"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-14T11:54:56.206Z",
+                    "summary": "核查 packages/dsh-tool-time/README.md、packages/dsh-tool-time/package.json、packages/dsh-tool-time/cordis.patch.yml、packages/dsh-tool-time/lib/index.js、packages/dsh-tool-time/lib/time.js；profile 加载固定子包，通过 tools 注册 now、convert、add 和 diff。解析拒绝不合约的日期时间，Intl 负责时区显示，日历运算采用 UTC。",
+                    "artifact": "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-time/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定子组件及其 Node 时间处理链路。未运行固定宿主、Intl 数据、环境时钟或模型工具。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "处理会议记录或 UTC 日志的 DSH 用户，可将明确时间戳转为接收者时区，并复查统一的时间格式。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "profile 加载固定子包，通过 tools 注册 now、convert、add 和 diff。解析拒绝不合约的日期时间，Intl 负责时区显示，日历运算采用 UTC。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定子组件及其 Node 时间处理链路。未运行固定宿主、Intl 数据、环境时钟或模型工具。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "私有子包的 DSH bundle；现有产物纳入仓库，作者描述过本地打包消费，npm 公开发布未核实。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 与 Cordis peers | 是 | 装配工具 | 无法确认加载 |\n| IANA 时区与有效 ISO | 转换需要 | 指定同一时间点的显示 | 未知时区、非法时间会拒绝 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 未量化 | 核对 peer、profile 和标准时间样例 | 不确定实际宿主组合 |\n| 持续 | 工具调用和时区转换耗用未测 | 核对源时间戳和动作 | 自然语言可能要先改成 ISO |\n| 失败恢复 | 未量化 | 使用已有日历或独立脚本复核 | 本地排程需另走日历语义 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先选择有时区的已知 UTC 时间点核对转换。当地重复排程仍用日历，避免直接把 UTC 加法作为次日本地时间。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 重用时区换算 | Intl 生成指定时区表示并返回原 ISO 口径 | 不同宿主时区数据库结果 |\n| 避免日期静默溢出 | 核心检查日历日与偏移范围 | 自然语言输入由模型改写的正确性 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "时间结果保留明确的时区来源。输入和结果范围都有限制，月末及固定时长使用不同的数据路径。[Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把时间转换、格式检查和固定时长计算纳入一次结构化工具调用，让 Agent 可用同一契约复核 UTC 记录。[Q01](#research-q01)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "timezone 只影响显示。夏令时前后加一个 UTC 日历日，不能当成次日同一当地时间的排程。[Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "可为本地日历加法单设可识别口径，并要求对夏令时重复或缺失时刻显式裁决。先用同一组切换点比较它与当前工具的误用次数。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:54:56.206Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-14T11:54:56.206Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-14T11:54:56.206Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 已有时间库实现时区与算术；结构化宿主接线属局部新用法。 [Q02](#research-q02) 一个入口区分 UTC 运算与结构化显示，但沿用 Date 和 Intl，机制小幅。输入契约有局部可迁移性，依赖 ICU；少用临时 shell 命令，简化为局部。",
+                    "basis": "interpretation",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) DSH 会话内复用同一个时间入口，工作流小幅。 [Q02](#research-q02) 同样的时间点仍可由日历工具交付，未新增交付类型。 [Q03](#research-q03) 无需掌握各系统 date 参数使已有 DSH 用户少做一步，触达和成本结构均小幅，节省未测。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "经常整理 UTC 日志和跨时区会议记录的 DSH 用户，可以先试用这个工具换算一个已知时间点。相比让模型自行推算时差，工具会返回同一瞬间的 ISO 值和指定时区的显示。若需求是保留夏令时切换后的当地会议时间，用户可回到现有日历安排周期。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) lib/index.js 的 convert 入口直接支持重复日志换算和明确可核对结果，超过偶发便利。缺用户频率和错误成本的材料，未到较充分。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) lib/time.js 22–79 将非法输入校验与时区转换放在宿主工具内，超过仅包装入口。日历方案和人为输入错误仍可限制收益，未到实质工作结果差异档。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) [Q02](#research-q02) 产物 226–278 覆盖实际动作与关键边界，超过只有入口材料。没有执行同版测试，达不到测试档。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) README 91–104 给出匹配宿主前提，超出本地语义时可用已有日历退出，退路清楚。首次接线和输入中的时区、偏移仍需人工核对，未到负担较轻档。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-14T11:54:56.206Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-14-01-github-1327795364-packages-dsh-tool-time-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-time",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-time",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-time",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "5c3e6655084cfd627b779edd917e38b52bd716b847f6c09a9679d136ffc90182",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-14T11:30:11Z",
+            "analysis_sha256": "46acc71ef729af862ebb2d9982cacdb18304e1ed29f0cc6b9212b005fbd3c259"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-time/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH 提供当前时间、IANA 时区转换、UTC 日历运算和固定时长差。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "time 提供 now、convert、add 和 diff 四种操作"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 当前时间 | 读取当前进程时钟 | 默认按 UTC 展示 |\n| 时区转换 | 显示明确时刻在预期时区的表达 | 需要可解析 ISO 与有效时区 |\n| 日期加减 | 推算 UTC 日历日期 | 月底裁剪，时区只影响显示 |\n| 时长差 | 求两个时间点的带符号毫秒差 | 不推导月和年 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "先选择有时区的已知 UTC 时间点核对转换。当地重复排程仍用日历，避免直接把 UTC 加法作为次日本地时间。[Q03](#research-q03)"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-time",
+        "reports": "# DSH 时间工具\n\n> 为 DSH 提供当前时间、IANA 时区转换、UTC 日历运算和固定时长差。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n核查固定子包分发、注册与日期语义。未执行工具或测试；实际宿主加载、时区数据和效率未验证。\n\n## 洞察短评\n\n- **用途**：处理会议记录或 UTC 日志的 DSH 用户，可将明确时间戳转为接收者时区，并复查统一的时间格式。\n- **亮点**：把时间转换、格式检查和固定时长计算纳入一次结构化工具调用，让 Agent 可用同一契约复核 UTC 记录。[Q01](#research-q01)\n- **思考**：timezone 只影响显示。夏令时前后加一个 UTC 日历日，不能当成次日同一当地时间的排程。[Q02](#research-q02)\n- **建议**：可为本地日历加法单设可识别口径，并要求对夏令时重复或缺失时刻显式裁决。先用同一组切换点比较它与当前工具的误用次数。[Q03](#research-q03)\n\n采用建议：先选择有时区的已知 UTC 时间点核对转换。当地重复排程仍用日历，避免直接把 UTC 加法作为次日本地时间。[Q03](#research-q03)\n\n## 核心贡献\n\n把时间转换、格式检查和固定时长计算纳入一次结构化工具调用，让 Agent 可用同一契约复核 UTC 记录。[Q01](#research-q01)\n\n## 关键质疑\n\ntimezone 只影响显示。夏令时前后加一个 UTC 日历日，不能当成次日同一当地时间的排程。[Q02](#research-q02)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n可为本地日历加法单设可识别口径，并要求对夏令时重复或缺失时刻显式裁决。先用同一组切换点比较它与当前工具的误用次数。[Q03](#research-q03)\n\n同一模型和宿主，用已知 UTC、无偏移时间、月底及夏令时切换各一例核对输出，并记录改写输入耗时。\n\n## 场景与替代办法\n\n处理会议记录或 UTC 日志的 DSH 用户，可将明确时间戳转为接收者时区，并复查统一的时间格式。\n\n已有终端或日历库即可计算。工具将结构化参数和结果直接交给 DSH，省去按操作系统改写同一命令。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 与 Cordis peers | 是 | 装配工具 | 无法确认加载 |\n| IANA 时区与有效 ISO | 转换需要 | 指定同一时间点的显示 | 未知时区、非法时间会拒绝 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 接入 | 用户在隔离 profile 安装固定子包 | 工具列表出现 time |\n| 核查 | 用已知时间点转换并比较 | 核对原 ISO 和显示 |\n| 退出 | 出现当地日历要求时切回已有日历 | 保持发起人定义的当地时间 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 未量化 | 核对 peer、profile 和标准时间样例 | 不确定实际宿主组合 |\n| 持续 | 工具调用和时区转换耗用未测 | 核对源时间戳和动作 | 自然语言可能要先改成 ISO |\n| 失败恢复 | 未量化 | 使用已有日历或独立脚本复核 | 本地排程需另走日历语义 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 重用时区换算 | Intl 生成指定时区表示并返回原 ISO 口径 | 不同宿主时区数据库结果 |\n| 避免日期静默溢出 | 核心检查日历日与偏移范围 | 自然语言输入由模型改写的正确性 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：需要核对跨时区时间点或日期偏移的 DSH 用户，能否用一个本地工具得到可复核结果？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 已有 DSH 的协作者把 UTC 时间戳转为接收者时区时，实际调用哪些步骤？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n先由 profile 补丁插入独立 tool-time 包，再由 lib 入口注入 tools 并登记 time。convert 要求 value 和 IANA 时区，执行路径先限制字符串长度、拒绝空时区，再按固定 ISO 形式解析时间点。纯日期按 UTC 零点解释，完整日期时间必须有偏移，非法日历日期和超范围偏移会提前失败。Intl 将同一瞬间转换成接收者当地显示，结果仍保留 ISO 和时区来源，因而可复查调用者交给模型的时间点。相比提示模型心算时差，或每次选择系统 date 参数，结构化工具更容易让团队复用同一契约。now 则读取当前进程的时钟，不适合重现历史参考时刻。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-time/package.json:21-39](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/package.json#L21-L39)\n\n宿主 peer、补丁和真正产物出口。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-time/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/cordis.patch.yml#L1-L4)\n\n独立工具的 profile 行。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-time\n      name: '@deepseek-ai/dsh-tool-time'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-time/lib/index.js:1-40](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/index.js#L1-L40)\n\n工具入口和结构化参数。\n\n<details>\n<summary>查看原文（40行）</summary>\n\n```text\n/**\n * DSH 时间工具插件。\n *\n * 注册 `time` 工具：严格 ISO 解析、IANA 时区转换、UTC 日历运算、固定时长差。\n * 接入方式：在 cordis.yml 追加：\n *   - id: tool-time\n *     name: '@deepseek-ai/dsh-tool-time'\n */\nimport { defineTool } from '@deepseek-ai/dsh-tools';\nimport { executeAction } from './time.js';\nexport const name = '@deepseek-ai/dsh-tool-time';\nexport const inject = ['tools'];\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'time',\n        description: 'Time utilities: current time (default UTC), IANA timezone conversion, ' +\n            'UTC calendar arithmetic (add/subtract with month-end clamping), and ' +\n            'fixed-duration difference between two strict ISO 8601 timestamps. ' +\n            'Actions: now, convert, add, diff.',\n        parameters: {\n            action: {\n                type: 'string',\n                required: true,\n                enum: ['now', 'convert', 'add', 'diff'],\n                description: 'Operation to perform.',\n            },\n            value: {\n                type: 'string',\n                description: 'Strict ISO 8601 timestamp (YYYY-MM-DD or YYYY-MM-DDTHH:mm:ssZ with optional .SSS and +/-HH:MM offset) for convert/add.',\n            },\n            timezone: {\n                type: 'string',\n                description: 'IANA timezone name, e.g. \"Asia/Shanghai\" (default: UTC; display only, arithmetic stays UTC).',\n            },\n            from: {\n                type: 'string',\n                description: 'Start timestamp for diff (strict ISO 8601).',\n            },\n            to: {\n                type: 'string',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-time/lib/time.js:22-79](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L22-L79)\n\nISO 解析、偏移合法性与 Intl 时区。\n\n<details>\n<summary>查看原文（58行）</summary>\n\n```text\n    const m = ISO_RE.exec(value);\n    if (!m)\n        throw new Error('time: invalid ISO timestamp');\n    const [, y, mo, d, h, mi, s, , tz] = m;\n    const year = Number(y);\n    const month = Number(mo);\n    const day = Number(d);\n    // 日历校验（Date 会把 2026-02-30 归一化，必须自己拦）：\n    // 月份 1-12 + 按目标年月查表的天数上限（闰年 2 月 29 自动正确）\n    if (month < 1 || month > 12)\n        throw new Error('time: invalid calendar date');\n    const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();\n    if (day < 1 || day > daysInMonth)\n        throw new Error('time: invalid calendar date');\n    if (tz === undefined) {\n        // 纯日期：按 UTC 零点解释\n        const date = new Date(Date.UTC(year, month - 1, day));\n        if (Number.isNaN(date.getTime()))\n            throw new Error('time: invalid calendar date');\n        return date;\n    }\n    // 完整日期时间：时/分/秒范围校验（防 Date 静默归一化 25:00 等）\n    const hour = Number(h);\n    const minute = Number(mi);\n    const second = Number(s ?? '0');\n    if (hour > 23 || minute > 59 || second > 59)\n        throw new Error('time: invalid ISO timestamp');\n    if (tz !== 'Z') {\n        // 数字偏移：±14:00 内、分钟 ≤59（ISO 8601 规范范围）\n        const om = /^([+-])(\\d{2}):(\\d{2})$/.exec(tz);\n        if (!om)\n            throw new Error('time: invalid ISO timestamp');\n        const oh = Number(om[2]);\n        const omin = Number(om[3]);\n        if (oh > 14 || (oh === 14 && omin > 0) || omin > 59)\n            throw new Error('time: invalid ISO timestamp');\n    }\n    const date = new Date(value); // 正则保证 ISO 形态；Date 原生解析偏移\n    if (Number.isNaN(date.getTime()) || !Number.isFinite(date.getTime())) {\n        throw new Error('time: invalid ISO timestamp');\n    }\n    return date;\n}\n// ── Intl 时区格式化（环境固定：en-CA + hourCycle h23） ──\n/** 目标时区的墙钟各字段（parts 字典）。非法时区抛 `time: unknown timezone`。 */\nfunction wallClockParts(date, timezone) {\n    let dtf;\n    try {\n        dtf = new Intl.DateTimeFormat('en-CA', {\n            timeZone: timezone,\n            year: 'numeric', month: '2-digit', day: '2-digit',\n            hour: '2-digit', minute: '2-digit', second: '2-digit',\n            hourCycle: 'h23',\n        });\n    }\n    catch {\n        throw new Error(`time: unknown timezone \"${timezone}\"`);\n    }\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-time/lib/time.js:226-251](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L226-L251)\n\n实际 now/convert 分派。\n\n<details>\n<summary>查看原文（26行）</summary>\n\n```text\nexport function executeAction(action, params, clock = () => Date.now()) {\n    switch (action) {\n        case 'now': {\n            const timezone = params.timezone;\n            if (timezone !== undefined) {\n                assertStringLength(timezone, 'timezone');\n                if (timezone === '')\n                    throw new Error('time: timezone must not be empty');\n            }\n            const timestamp = clock();\n            if (!Number.isFinite(timestamp))\n                throw new Error('time: clock returned invalid timestamp');\n            const date = new Date(timestamp);\n            if (!Number.isFinite(date.getTime()))\n                throw new Error('time: clock returned out-of-range timestamp');\n            const explicit = timezone !== undefined;\n            return buildResult(date, explicit ? timezone : 'UTC', explicit ? 'explicit' : 'default-utc');\n        }\n        case 'convert': {\n            assertStringLength(params.value, 'value');\n            assertStringLength(params.timezone, 'timezone');\n            if (params.timezone === '')\n                throw new Error('time: timezone must not be empty');\n            const date = parseStrictISO(params.value);\n            return buildResult(date, params.timezone, 'explicit');\n        }\n```\n\n</details>\n\n#### 缺口\n\n- 实际目标宿主还未加载该固定子包\n  **影响**：不能确定目标宿主能否注册和展示结构化时间\n  **进一步探讨**：在已匹配 peer 的隔离 profile 检查工具列表，再试已知 UTC 转换\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 增加一天或一个月是否保留夏令时切换后的当地墙钟时间？\n\n**研究主题**：缺陷与关键质疑、工程质量与复用、依赖、兼容与流程、功能与机制\n\n#### 完整回答\n\n不一定。add 的 days 用 UTC 日期字段递增，月份按 UTC 调整并将目标日压到月底，timezone 只用于格式化输出。在纽约春季跳时附近，UTC 同一时刻的本地显示可能比前一天晚一小时。因而用它算晚一天的 UTC 执行点和用它安排每周当地 09:00 是两个不同任务。diff 对两个时刻做带符号毫秒差，受安全整数和支持年份限制，只拆出固定时长，没有当地日历周期。若来源只给本地不带偏移的墙钟时间，数据提供者要先确定时区及冲突时采用哪一次本地时刻。这个约束来自动作实现，而 README 所谓跨 DST 的日历直觉只能按 UTC 口径理解。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-time/lib/time.js:128-172](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L128-L172)\n\n月末裁剪从 UTC 年月日计算，days 使用 UTC。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\n        formatted,\n    };\n}\n// ── 日历运算（UTC 基准） ──\n/** 月/年运算：先置 1 日 → 定位目标年月 → 按目标月最大天数钳制。 */\nfunction addMonthsClamped(date, months) {\n    const y = date.getUTCFullYear();\n    const m = date.getUTCMonth() + months;\n    const target = new Date(Date.UTC(y, m, 1)); // Date 自动滚年\n    const lastDay = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth() + 1, 0)).getUTCDate();\n    target.setUTCDate(Math.min(date.getUTCDate(), lastDay));\n    return target;\n}\nfunction addCalendar(date, amount, unit) {\n    const result = new Date(date);\n    switch (unit) {\n        case 'seconds':\n            result.setUTCSeconds(result.getUTCSeconds() + amount);\n            break;\n        case 'minutes':\n            result.setUTCMinutes(result.getUTCMinutes() + amount);\n            break;\n        case 'hours':\n            result.setUTCHours(result.getUTCHours() + amount);\n            break;\n        case 'days':\n            result.setUTCDate(result.getUTCDate() + amount);\n            break;\n        case 'weeks': {\n            const total = amount * 7;\n            if (!Number.isSafeInteger(total))\n                throw new Error('time: amount out of range for unit \"weeks\"');\n            result.setUTCDate(result.getUTCDate() + total);\n            break;\n        }\n        case 'months': {\n            // RECHECK-TIME-02：与 weeks/years 一致，前置拒绝超出 Date 支持范围的月份数\n            if (Math.abs(amount) > MAX_MONTH_AMOUNT) {\n                throw new Error('time: amount out of range for unit \"months\"');\n            }\n            const r = addMonthsClamped(result, amount);\n            if (!Number.isFinite(r.getTime()))\n                throw new Error('time: result outside supported range');\n            result.setTime(r.getTime());\n            break;\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-time/lib/time.js:184-218](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L184-L218)\n\n日期范围和固定时长分解。\n\n<details>\n<summary>查看原文（35行）</summary>\n\n```text\n    }\n    if (!Number.isFinite(result.getTime()))\n        throw new Error('time: result outside supported range');\n    // RECHECK3-TIME-01：结果年份必须留在工具的 1000–9999 契约内\n    // （否则 BCE/扩展年份会让 Intl era 年与 offset 计算产生错误输出）\n    assertSupportedResultYear(result);\n    return result;\n}\n// ── diff（固定时长，无月份/年份） ──\nfunction diffBetween(from, to) {\n    const ms = to.getTime() - from.getTime();\n    // AUDIT-TIME-02：duration 精度保护——差值必须有限且在安全整数内\n    if (!Number.isFinite(ms) || Math.abs(ms) > Number.MAX_SAFE_INTEGER) {\n        throw new Error('time: diff duration out of range');\n    }\n    const sign = ms > 0 ? 1 : ms < 0 ? -1 : 0;\n    const abs = Math.abs(ms);\n    const totalSeconds = Math.floor(abs / 1000);\n    const absolute = {\n        days: Math.floor(totalSeconds / 86_400),\n        hours: Math.floor((totalSeconds % 86_400) / 3_600),\n        minutes: Math.floor((totalSeconds % 3_600) / 60),\n        seconds: totalSeconds % 60,\n        milliseconds: abs % 1000,\n    };\n    return {\n        sign: sign,\n        milliseconds: ms,\n        seconds: sign * totalSeconds,\n        minutes: sign * Math.floor(abs / 60_000),\n        hours: sign * Math.floor(abs / 3_600_000),\n        days: sign * Math.floor(abs / 86_400_000),\n        weeks: sign * Math.floor(abs / 604_800_000),\n        absolute,\n    };\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-time/lib/time.js:252-278](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L252-L278)\n\ntimezone 仅用于结果展示，diff 单独解析起止。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\n        case 'add': {\n            assertStringLength(params.value, 'value');\n            const unit = params.unit;\n            if (typeof unit !== 'string' || !UNITS.includes(unit)) {\n                throw new Error(`time: unknown unit \"${String(unit)}\"`);\n            }\n            if (typeof params.amount !== 'number' || !Number.isSafeInteger(params.amount)) {\n                throw new Error('time: amount must be a safe integer');\n            }\n            const date = parseStrictISO(params.value);\n            if (params.timezone !== undefined) {\n                assertStringLength(params.timezone, 'timezone');\n                if (params.timezone === '')\n                    throw new Error('time: timezone must not be empty');\n            }\n            const timezone = params.timezone ?? 'UTC';\n            const result = addCalendar(date, params.amount, unit);\n            const source = params.timezone !== undefined ? 'explicit' : 'default-utc';\n            return buildResult(result, timezone, source);\n        }\n        case 'diff': {\n            assertStringLength(params.from, 'from');\n            assertStringLength(params.to, 'to');\n            // RECHECK5-TIME-01：diff 输入同样受结果年份契约约束（offset 换算后的 instant）\n            // ——与 convert 对相同输入的行为保持一致，避免跨 action 不一致\n            const fromDate = parseStrictISO(params.from);\n            const toDate = parseStrictISO(params.to);\n```\n\n</details>\n\n**依据 4 · 作者声明**：[packages/dsh-tool-time/README.md:80-89](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/README.md#L80-L89)\n\n作者明确时区只影响展示。\n\n<details>\n<summary>查看原文（10行）</summary>\n\n```text\n语义契约：\n\n- **`add` 始终基于 UTC 运算**（日历日语义，跨 DST 保持\"日历日\"直觉）；`timezone` 仅决定 `local`/`formatted` 展示\n- **月份/年份钳制**：`2026-01-31 + 1 month = 2026-02-28`；`2028-02-29 + 1 year = 2029-02-28`（先置 1 日 → 定位目标年月 → 按目标月最大天数钳制）\n- **`diff` 仅固定时长**：`sign` + 带符号总量 + `absolute` 余数分解（月/年无法从毫秒唯一推导，不提供）。字段语义（AUDIT-TIME-03）：\n  - `milliseconds` 是**精确带符号**总时长\n  - `seconds`/`minutes`/`hours`/`days`/`weeks` 是 `sign * floor(abs / unit)`（对绝对值截断后带符号）\n  - `absolute` 是 `abs` 的**非负余数分解**（如 -1500ms → `milliseconds: -1500, seconds: -1, absolute: {seconds: 1, milliseconds: 500}`）\n  - 差值超过安全整数范围抛 `time: diff duration out of range`\n- **默认 UTC**：省略 `timezone` 时结果与运行环境无关（`timezoneSource: \"default-utc\"`）\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 哪些用户值得试，怎样确认没有把 UTC 加法当作当地调度？\n\n**研究主题**：效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n已有 DSH、经常转换已有 UTC 时间点的人可选两个已知时间用于试用，其中一个跨夏令时。核对固定瞬间转出的当地时间，再检查月底和非法输入是否符合约定。出现“次日同一当地时间”这一需求时，应回到已有日历或带时区日历语义的排程库。首次成本来自 profile 安装、peer 和输入改写，持续成本来自工具调用及确认模型选择了 convert 还是 add。未测 Token、人工时间或金额。可探索在加法输出明确标记 UTC 或当地日历口径、并允许用户选择两者，遇到重复或不存在的本地时刻要求给出裁决。用同一组两个 DST 切点测试，比较错误和额外输入成本。若现有字段解释已足够避免错误，额外动作就无明显价值。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-time/lib/time.js:252-270](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/lib/time.js#L252-L270)\n\n当前未把 timezone 送入 UTC arithmetic。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\n        case 'add': {\n            assertStringLength(params.value, 'value');\n            const unit = params.unit;\n            if (typeof unit !== 'string' || !UNITS.includes(unit)) {\n                throw new Error(`time: unknown unit \"${String(unit)}\"`);\n            }\n            if (typeof params.amount !== 'number' || !Number.isSafeInteger(params.amount)) {\n                throw new Error('time: amount must be a safe integer');\n            }\n            const date = parseStrictISO(params.value);\n            if (params.timezone !== undefined) {\n                assertStringLength(params.timezone, 'timezone');\n                if (params.timezone === '')\n                    throw new Error('time: timezone must not be empty');\n            }\n            const timezone = params.timezone ?? 'UTC';\n            const result = addCalendar(date, params.amount, unit);\n            const source = params.timezone !== undefined ? 'explicit' : 'default-utc';\n            return buildResult(result, timezone, source);\n```\n\n</details>\n\n**依据 2 · 作者声明**：[packages/dsh-tool-time/README.md:91-104](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-time/README.md#L91-L104)\n\n作者陈述一次消费环境及分发条件，本次未复跑。\n\n<details>\n<summary>查看原文（14行）</summary>\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1`（npm 私有包）的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：peer 为 `@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 DSH 0.1.5-rc.1（npm）consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n\n\n## 版本适配\n\n- **适配 DSH**: DSH 0.1.5-rc.1（npm）（profile/bundle 插件系统）\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\n```\n\n</details>\n\n#### 缺口\n\n- 去年和当前宿主未做同条件实际任务比较\n  **影响**：未证明对正常 UTC 任务的准确率与节省时间\n  **进一步探讨**：在两个预选例子核对工具动作、输入和输出，再同已有日历结果比较\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-time；内容摘要：c426e1b9281b7a12ccadb334837509f93b7450ec7feac7d2c2f476e3304104fc。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 3 | 367 | 310 | 59 | — |\n| .md | source | 2 | 370 | — | — | 2960 |\n| .ts | source | 3 | 416 | 320 | 62 | — |\n| .ts | test | 2 | 398 | 328 | 5 | — |\n\n排除 3 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 当前时间 | 读取当前进程时钟 | 默认按 UTC 展示 |\n| 时区转换 | 显示明确时刻在预期时区的表达 | 需要可解析 ISO 与有效时区 |\n| 日期加减 | 推算 UTC 日历日期 | 月底裁剪，时区只影响显示 |\n| 时长差 | 求两个时间点的带符号毫秒差 | 不推导月和年 |\n\n## 工程亮点\n\n时间结果保留明确的时区来源。输入和结果范围都有限制，月末及固定时长使用不同的数据路径。[Q02](#research-q02)\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-time/README.md、packages/dsh-tool-time/package.json、packages/dsh-tool-time/cordis.patch.yml、packages/dsh-tool-time/lib/index.js、packages/dsh-tool-time/lib/time.js 及固定范围 inventory；组件：packages/dsh-tool-time。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定子组件及其 Node 时间处理链路。未运行固定宿主、Intl 数据、环境时钟或模型工具。\n- 下一步：同一模型和宿主，用已知 UTC、无偏移时间、月底及夏令时切换各一例核对输出，并记录改写输入耗时。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-time/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-time\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-time/README.md\",\n    \"packages/dsh-tool-time/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-time/cordis.patch.yml\",\n    \"packages/dsh-tool-time/lib/index.js\",\n    \"packages/dsh-tool-time/lib/time.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"需要核对跨时区时间点或日期偏移的 DSH 用户，能否用一个本地工具得到可复核结果？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"已有 DSH 的协作者把 UTC 时间戳转为接收者时区时，实际调用哪些步骤？\",\n        \"answer\": \"先由 profile 补丁插入独立 tool-time 包，再由 lib 入口注入 tools 并登记 time。convert 要求 value 和 IANA 时区，执行路径先限制字符串长度、拒绝空时区，再按固定 ISO 形式解析时间点。纯日期按 UTC 零点解释，完整日期时间必须有偏移，非法日历日期和超范围偏移会提前失败。Intl 将同一瞬间转换成接收者当地显示，结果仍保留 ISO 和时区来源，因而可复查调用者交给模型的时间点。相比提示模型心算时差，或每次选择系统 date 参数，结构化工具更容易让团队复用同一契约。now 则读取当前进程的时钟，不适合重现历史参考时刻。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 39,\n            \"observation\": \"宿主 peer、补丁和真正产物出口。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"独立工具的 profile 行。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 40,\n            \"observation\": \"工具入口和结构化参数。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 22,\n            \"line_end\": 79,\n            \"observation\": \"ISO 解析、偏移合法性与 Intl 时区。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 226,\n            \"line_end\": 251,\n            \"observation\": \"实际 now/convert 分派。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"实际目标宿主还未加载该固定子包\",\n            \"impact\": \"不能确定目标宿主能否注册和展示结构化时间\",\n            \"next_step\": \"在已匹配 peer 的隔离 profile 检查工具列表，再试已知 UTC 转换\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"limitations\",\n          \"engineering\",\n          \"dependencies\",\n          \"mechanism\"\n        ],\n        \"question\": \"增加一天或一个月是否保留夏令时切换后的当地墙钟时间？\",\n        \"answer\": \"不一定。add 的 days 用 UTC 日期字段递增，月份按 UTC 调整并将目标日压到月底，timezone 只用于格式化输出。在纽约春季跳时附近，UTC 同一时刻的本地显示可能比前一天晚一小时。因而用它算晚一天的 UTC 执行点和用它安排每周当地 09:00 是两个不同任务。diff 对两个时刻做带符号毫秒差，受安全整数和支持年份限制，只拆出固定时长，没有当地日历周期。若来源只给本地不带偏移的墙钟时间，数据提供者要先确定时区及冲突时采用哪一次本地时刻。这个约束来自动作实现，而 README 所谓跨 DST 的日历直觉只能按 UTC 口径理解。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 128,\n            \"line_end\": 172,\n            \"observation\": \"月末裁剪从 UTC 年月日计算，days 使用 UTC。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 184,\n            \"line_end\": 218,\n            \"observation\": \"日期范围和固定时长分解。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 252,\n            \"line_end\": 278,\n            \"observation\": \"timezone 仅用于结果展示，diff 单独解析起止。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-time/README.md\",\n            \"line_start\": 80,\n            \"line_end\": 89,\n            \"observation\": \"作者明确时区只影响展示。\"\n          }\n        ],\n        \"unknowns\": [],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"哪些用户值得试，怎样确认没有把 UTC 加法当作当地调度？\",\n        \"answer\": \"已有 DSH、经常转换已有 UTC 时间点的人可选两个已知时间用于试用，其中一个跨夏令时。核对固定瞬间转出的当地时间，再检查月底和非法输入是否符合约定。出现“次日同一当地时间”这一需求时，应回到已有日历或带时区日历语义的排程库。首次成本来自 profile 安装、peer 和输入改写，持续成本来自工具调用及确认模型选择了 convert 还是 add。未测 Token、人工时间或金额。可探索在加法输出明确标记 UTC 或当地日历口径、并允许用户选择两者，遇到重复或不存在的本地时刻要求给出裁决。用同一组两个 DST 切点测试，比较错误和额外输入成本。若现有字段解释已足够避免错误，额外动作就无明显价值。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-time/lib/time.js\",\n            \"line_start\": 252,\n            \"line_end\": 270,\n            \"observation\": \"当前未把 timezone 送入 UTC arithmetic。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-time/README.md\",\n            \"line_start\": 91,\n            \"line_end\": 104,\n            \"observation\": \"作者陈述一次消费环境及分发条件，本次未复跑。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"去年和当前宿主未做同条件实际任务比较\",\n            \"impact\": \"未证明对正常 UTC 任务的准确率与节省时间\",\n            \"next_step\": \"在两个预选例子核对工具动作、输入和输出，再同已有日历结果比较\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-time/README.md\",\n      \"content\": \"# dsh-tool-time\\n\\n[English](README.en.md)\\n\\nDSH 时间工具插件 —— 严格 ISO 解析、IANA 时区转换、UTC 日历运算、固定时长差。零依赖、零进程、纯函数。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\nAgent 处理时间信息是最高频需求之一——\\\"现在几点\\\"、\\\"3 天后是几号\\\"、\\\"把 UTC 转成北京时间\\\"。当前做法 `bash date` 的问题：每次起进程、跨平台语法不一致（macOS 与 GNU `date -d` 完全不同）、时区转换靠 `TZ=...` 手动拼。模型心算时区偏移和闰年/DST 边界是错误高发区。\\n\\n## 安全模型\\n\\n无 `eval`、无 `new Function`。输入只经过严格校验：\\n\\n- **严格 ISO 8601 子集**：仅接受 `YYYY-MM-DD`（UTC 零点）、`YYYY-MM-DDTHH:mm:ssZ`、`YYYY-MM-DDTHH:mm:ss±HH:MM`（±14:00 内，可选 `.SSS` 毫秒）；不带时区的日期时间、RFC 2822、自然语言日期一律拒绝；`2026-02-30` 等日历溢出由查表校验拒绝（不依赖 Date 的静默归一化）\\n- **时区名**：IANA 名交给 `Intl.DateTimeFormat` 校验，非法即抛 `time: unknown timezone`\\n- **数值**：`amount` 必须是安全整数；`unit` 枚举白名单；所有字符串 ≤200 字符\\n- **Intl 环境固定**：`'en-CA'` + `hourCycle: 'h23'`（避免午夜 `24:00` 与本地化数字）\\n\\n## 架构\\n\\n```\\nDSH Agent\\n    │ ctx.tools.register()\\n    ▼\\nsrc/index.ts（Cordis 插件入口 + action 分发 + 独立校验）\\n    │\\n    ▼\\nsrc/time.ts\\n    ├── parseStrictISO() — 严格 ISO 解析（正则 + 查表校验）\\n    ├── formatInTimezone() — Intl formatToParts 组装（时钟可注入）\\n    ├── addMonthsClamped() — 先置 1 日 → 目标年月 → 天数钳制\\n    └── diffBetween() — 固定时长（sign + absolute 分解）\\n```\\n\\n## 工具声明\\n\\n```ts\\nctx.tools.register(defineTool({\\n  name: 'time',\\n  parameters: {\\n    action: { type: 'string', required: true, enum: ['now', 'convert', 'add', 'diff'] },\\n    value:  { type: 'string', description: 'Strict ISO 8601 timestamp' },\\n    timezone: { type: 'string', description: 'IANA timezone (default UTC; display only)' },\\n    from:   { type: 'string', description: 'diff start' },\\n    to:     { type: 'string', description: 'diff end' },\\n    amount: { type: 'integer', description: 'Signed safe integer' },\\n    unit:   { type: 'string', enum: ['seconds','minutes','hours','days','weeks','months','years'] },\\n  },\\n  output: { schema: { type: 'json' }, render: (_a, v) => [{ type: 'text', text: JSON.stringify(v, null, 2) }] },\\n  execute: (args) => Promise.resolve(executeAction(args.action, args) as JsonValue),\\n  timeoutMs: 1000,\\n}))\\n```\\n\\n## 支持的操作\\n\\n| action | 参数 | 返回 |\\n|--------|------|------|\\n| `now` | `timezone?`（默认 UTC） | 当前时间结构化表示 |\\n| `convert` | `value` + `timezone`（必填） | 转换后的结构化时间 |\\n| `add` | `value` + `amount` + `unit`（`timezone?` 仅展示） | 加减后的结构化时间 |\\n| `diff` | `from` + `to` | 固定时长差（无月份/年份） |\\n\\n返回结构（canonical value）：\\n\\n```json\\n{\\n  \\\"iso\\\": \\\"2026-08-05T06:00:00.000Z\\\",\\n  \\\"unix\\\": 1785909600000,\\n  \\\"timezone\\\": \\\"Asia/Shanghai\\\",\\n  \\\"timezoneSource\\\": \\\"explicit\\\",\\n  \\\"local\\\": \\\"2026-08-05T14:00:00+08:00\\\",\\n  \\\"formatted\\\": \\\"2026-08-05 14:00:00 (Asia/Shanghai)\\\"\\n}\\n```\\n\\n语义契约：\\n\\n- **`add` 始终基于 UTC 运算**（日历日语义，跨 DST 保持\\\"日历日\\\"直觉）；`timezone` 仅决定 `local`/`formatted` 展示\\n- **月份/年份钳制**：`2026-01-31 + 1 month = 2026-02-28`；`2028-02-29 + 1 year = 2029-02-28`（先置 1 日 → 定位目标年月 → 按目标月最大天数钳制）\\n- **`diff` 仅固定时长**：`sign` + 带符号总量 + `absolute` 余数分解（月/年无法从毫秒唯一推导，不提供）。字段语义（AUDIT-TIME-03）：\\n  - `milliseconds` 是**精确带符号**总时长\\n  - `seconds`/`minutes`/`hours`/`days`/`weeks` 是 `sign * floor(abs / unit)`（对绝对值截断后带符号）\\n  - `absolute` 是 `abs` 的**非负余数分解**（如 -1500ms → `milliseconds: -1500, seconds: -1, absolute: {seconds: 1, milliseconds: 500}`）\\n  - 差值超过安全整数范围抛 `time: diff duration out of range`\\n- **默认 UTC**：省略 `timezone` 时结果与运行环境无关（`timezoneSource: \\\"default-utc\\\"`）\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1`（npm 私有包）的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：peer 为 `@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 DSH 0.1.5-rc.1（npm）consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 版本适配\\n\\n- **适配 DSH**: DSH 0.1.5-rc.1（npm）（profile/bundle 插件系统）\\n- **bundle 声明**: `package.json` 的 `dsh.bundle`（patch 指向 `cordis.patch.yml`）+ `exports` 导出\\n- **patch 格式**: `cordis.patch.yml` 使用 `- insert:` 列表（patch 是 id-targeted 语义，裸 `- id:` 条目会报 `entry not found`）\\n- **files**: 发布 tarball 含 `lib/`、`src/`、`cordis.patch.yml`\\n\\n## 安装\\n\\n### Profile Bundle（推荐）\\n\\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1（npm））。本仓库位于 [omdsh-dev](https://github.com/omdsh-dev) 组织，公开可访问：\\n\\n```sh\\n# 交互式（web）profile —— 从 GitHub 仓库安装\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-time\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-time\\n```\\n\\n或使用 `npm pack` 生成的 tarball 安装：\\n\\n```sh\\nnpm pack     # 生成 dsh-tool-time-<version>.tgz\\n# 交互式（web）profile\\ndsh plugin --profile web add ./dsh-tool-time-<version>.tgz\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add ./dsh-tool-time-<version>.tgz\\n```\\n\\n包内 `dsh.bundle.patch`（指向 `cordis.patch.yml`）会在安装后自动把插件加入 profile 的 layer stack；插件的 `cordis.patch.yml` 以 `- insert:` 插入 `tool-time` 条目。插件缺失的 peer 依赖（`@deepseek-ai/cordis`、`@deepseek-ai/dsh-tools`）由 profile 的 healed `profiles/node_modules` 回退安装提供。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。Windows 路径使用正斜杠（`C:/...`）。\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-time\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 time 工具获取当前 UTC 时间\\\"\\n```\\n\\n### 手动安装与旧版本兼容（monorepo 旧场景）\\n\\nmonorepo 方式仅适用于旧场景：不支持 Profile Bundle 的旧快照或插件开发调试环境：\\n\\n1. 放入 monorepo：`cp -r time ~/.dsh/source/master/packages/tools/time`（开发调试）\\n2. `apps/cli/package.json` 加 `\\\"@deepseek-ai/dsh-tool-time\\\": \\\"workspace:^\\\"`；`tsconfig.host.json` references 加 `{ \\\"path\\\": \\\"./packages/tools/time\\\" }`\\n3. `pnpm install && pnpm run build`\\n4. 在 profile 用户层 patch 插入插件（`~/.dsh/profiles/<name>/cordis.patch.yml`）：\\n\\n```yaml\\n- insert:\\n    - id: tool-time\\n      name: '@deepseek-ai/dsh-tool-time'\\n```\\n\\n5. 验证：`dsh --profile <name> --dump-config | grep tool-time`\\n\\n> 注意：patch 是 id-targeted 语义（DSH 0.1.5-rc.1（npm））——裸 `- id:` 条目会报 `entry \\\"xxx\\\" not found`，必须用 `- insert:` 列表包裹。\\n## 已知限制\\n\\n1. 分发链路：peer 依赖（如 `@deepseek-ai/dsh-tools`）为 npm 私有包，独立安装不依赖 monorepo workspace（monorepo 仅旧场景）\\n2. `add` 是 UTC 日历运算，非当地墙钟语义（当地墙钟需 v2）\\n3. 不支持自然语言日期（\\\"next week\\\"）与日历月/年差（v2）\\n4. 时区数据来自 Node 内置 ICU：\\\"跨平台一致\\\" = \\\"相同 Node/ICU 数据下一致\\\"\\n5. **输入年份范围为 1000–9999**（`0000`–`0999` 拒绝：JavaScript `Date.UTC` 对这些年份有 1900+ 映射的历史行为）\\n6. **精度契约**：`iso`/`unix` 保留毫秒；`local`/`formatted` 为秒精度展示字段\\n7. **offset 精度到分钟**：v1 只支持现代时区；历史时区（<1900）的秒级 offset 会被截断\\n\\n## 测试\\n\\n```bash\\npnpm test\\n```\\n\\n功能/错误/攻击载荷共 63 个用例（fake clock、时区已知向量、月末钳制、严格 ISO 边界、年份范围、offset 跨年、极端 amount、原型链时区名等）。完整清单见本地维护的设计文档。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-time/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-time\\\",\\n  \\\"description\\\": \\\"DSH time tool plugin\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-time/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-time\\n      name: '@deepseek-ai/dsh-tool-time'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-time/lib/index.js\",\n      \"content\": \"/**\\n * DSH 时间工具插件。\\n *\\n * 注册 `time` 工具：严格 ISO 解析、IANA 时区转换、UTC 日历运算、固定时长差。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-time\\n *     name: '@deepseek-ai/dsh-tool-time'\\n */\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { executeAction } from './time.js';\\nexport const name = '@deepseek-ai/dsh-tool-time';\\nexport const inject = ['tools'];\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'time',\\n        description: 'Time utilities: current time (default UTC), IANA timezone conversion, ' +\\n            'UTC calendar arithmetic (add/subtract with month-end clamping), and ' +\\n            'fixed-duration difference between two strict ISO 8601 timestamps. ' +\\n            'Actions: now, convert, add, diff.',\\n        parameters: {\\n            action: {\\n                type: 'string',\\n                required: true,\\n                enum: ['now', 'convert', 'add', 'diff'],\\n                description: 'Operation to perform.',\\n            },\\n            value: {\\n                type: 'string',\\n                description: 'Strict ISO 8601 timestamp (YYYY-MM-DD or YYYY-MM-DDTHH:mm:ssZ with optional .SSS and +/-HH:MM offset) for convert/add.',\\n            },\\n            timezone: {\\n                type: 'string',\\n                description: 'IANA timezone name, e.g. \\\"Asia/Shanghai\\\" (default: UTC; display only, arithmetic stays UTC).',\\n            },\\n            from: {\\n                type: 'string',\\n                description: 'Start timestamp for diff (strict ISO 8601).',\\n            },\\n            to: {\\n                type: 'string',\\n                description: 'End timestamp for diff (strict ISO 8601).',\\n            },\\n            amount: {\\n                type: 'integer',\\n                description: 'Signed safe-integer amount for add (e.g. 3 or -2).',\\n            },\\n            unit: {\\n                type: 'string',\\n                enum: ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years'],\\n                description: 'Unit for add.',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'json' },\\n            render: (_args, value) => [{ type: 'text', text: JSON.stringify(value, null, 2) }],\\n        },\\n        execute: (args) => {\\n            const { action, ...rest } = args;\\n            return Promise.resolve(executeAction(action, rest));\\n        },\\n        timeoutMs: 1000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-time/lib/time.js\",\n      \"content\": \"/**\\n * dsh-tool-time 核心实现 —— 严格 ISO 解析 + UTC 日历运算 + Intl 时区格式化。\\n *\\n * 契约（v2，已冻结）：\\n * - 输入：严格 ISO 8601 子集（YYYY-MM-DD | YYYY-MM-DDTHH:mm:ssZ | ±HH:MM 偏移，\\n *   可选 .SSS 毫秒）；不带时区的日期时间拒绝；日历溢出拒绝\\n * - add：始终 UTC 运算；月/年先置 1 日→定位目标年月→按目标月最大天数钳制\\n * - diff：仅固定时长（sign + 带符号总量 + absolute 余数分解），无月份/年份\\n * - 时区：默认 UTC；timezoneSource: \\\"explicit\\\" | \\\"default-utc\\\"\\n * - 错误统一 \\\"time: \\\" 前缀\\n */\\n// ── 常量 ──\\nconst MAX_STRING_LENGTH = 200;\\n/** Date 支持 ±275760 年 ≈ 3,309,120 个月；months 前置业务上限（RECHECK-TIME-02）。 */\\nconst MAX_MONTH_AMOUNT = 3_000_000;\\nconst UNITS = ['seconds', 'minutes', 'hours', 'days', 'weeks', 'months', 'years'];\\n/** 严格 ISO 子集（不含时区的日期时间在此被拒绝） */\\nconst ISO_RE = /^([1-9]\\\\d{3})-(\\\\d{2})-(\\\\d{2})(?:T(\\\\d{2}):(\\\\d{2}):(\\\\d{2})(?:\\\\.(\\\\d{1,3}))?(Z|[+-]\\\\d{2}:\\\\d{2}))?$/;\\n// ── 严格 ISO 解析 ──\\n/** 校验并解析严格 ISO 字符串。失败抛 `time: ...` 错误。 */\\nfunction parseStrictISO(value) {\\n    const m = ISO_RE.exec(value);\\n    if (!m)\\n        throw new Error('time: invalid ISO timestamp');\\n    const [, y, mo, d, h, mi, s, , tz] = m;\\n    const year = Number(y);\\n    const month = Number(mo);\\n    const day = Number(d);\\n    // 日历校验（Date 会把 2026-02-30 归一化，必须自己拦）：\\n    // 月份 1-12 + 按目标年月查表的天数上限（闰年 2 月 29 自动正确）\\n    if (month < 1 || month > 12)\\n        throw new Error('time: invalid calendar date');\\n    const daysInMonth = new Date(Date.UTC(year, month, 0)).getUTCDate();\\n    if (day < 1 || day > daysInMonth)\\n        throw new Error('time: invalid calendar date');\\n    if (tz === undefined) {\\n        // 纯日期：按 UTC 零点解释\\n        const date = new Date(Date.UTC(year, month - 1, day));\\n        if (Number.isNaN(date.getTime()))\\n            throw new Error('time: invalid calendar date');\\n        return date;\\n    }\\n    // 完整日期时间：时/分/秒范围校验（防 Date 静默归一化 25:00 等）\\n    const hour = Number(h);\\n    const minute = Number(mi);\\n    const second = Number(s ?? '0');\\n    if (hour > 23 || minute > 59 || second > 59)\\n        throw new Error('time: invalid ISO timestamp');\\n    if (tz !== 'Z') {\\n        // 数字偏移：±14:00 内、分钟 ≤59（ISO 8601 规范范围）\\n        const om = /^([+-])(\\\\d{2}):(\\\\d{2})$/.exec(tz);\\n        if (!om)\\n            throw new Error('time: invalid ISO timestamp');\\n        const oh = Number(om[2]);\\n        const omin = Number(om[3]);\\n        if (oh > 14 || (oh === 14 && omin > 0) || omin > 59)\\n            throw new Error('time: invalid ISO timestamp');\\n    }\\n    const date = new Date(value); // 正则保证 ISO 形态；Date 原生解析偏移\\n    if (Number.isNaN(date.getTime()) || !Number.isFinite(date.getTime())) {\\n        throw new Error('time: invalid ISO timestamp');\\n    }\\n    return date;\\n}\\n// ── Intl 时区格式化（环境固定：en-CA + hourCycle h23） ──\\n/** 目标时区的墙钟各字段（parts 字典）。非法时区抛 `time: unknown timezone`。 */\\nfunction wallClockParts(date, timezone) {\\n    let dtf;\\n    try {\\n        dtf = new Intl.DateTimeFormat('en-CA', {\\n            timeZone: timezone,\\n            year: 'numeric', month: '2-digit', day: '2-digit',\\n            hour: '2-digit', minute: '2-digit', second: '2-digit',\\n            hourCycle: 'h23',\\n        });\\n    }\\n    catch {\\n        throw new Error(`time: unknown timezone \\\"${timezone}\\\"`);\\n    }\\n    const parts = {};\\n    for (const part of dtf.formatToParts(date)) {\\n        if (part.type !== 'literal')\\n            parts[part.type] = part.value;\\n    }\\n    return parts;\\n}\\n/** 目标时区相对 UTC 的偏移毫秒（东八区 = +28800000）。 */\\nfunction offsetMs(date, timezone) {\\n    const p = wallClockParts(date, timezone);\\n    const asUTC = Date.UTC(Number(p.year), Number(p.month) - 1, Number(p.day), Number(p.hour), Number(p.minute), Number(p.second));\\n    return asUTC + date.getUTCMilliseconds() - date.getTime();\\n}\\nfunction formatOffset(ms) {\\n    const sign = ms < 0 ? '-' : '+';\\n    const abs = Math.abs(ms);\\n    const h = String(Math.floor(abs / 3_600_000)).padStart(2, '0');\\n    const m = String(Math.floor((abs % 3_600_000) / 60_000)).padStart(2, '0');\\n    return `${sign}${h}:${m}`;\\n}\\nfunction formatInTimezone(date, timezone) {\\n    const p = wallClockParts(date, timezone);\\n    // AUDIT-TIME-01：目标时区的当地年份也必须留在 1000–9999\\n    // （UTC instant 在范围内但当地可跨年前/后一年；且 p.year 传给 Date.UTC 会触发 0-99 年映射）\\n    const localYear = Number(p.year);\\n    if (localYear < 1000 || localYear > 9999) {\\n        throw new Error('time: result outside supported year range 1000-9999');\\n    }\\n    const local = `${p.year}-${p.month}-${p.day}T${p.hour}:${p.minute}:${p.second}${formatOffset(offsetMs(date, timezone))}`;\\n    const formatted = `${p.year}-${p.month}-${p.day} ${p.hour}:${p.minute}:${p.second} (${timezone})`;\\n    return { local, formatted };\\n}\\n/** RECHECK4-TIME-01/02：结果年份必须留在工具契约 1000–9999（覆盖 now/convert/add 全部输出路径）。 */\\nfunction assertSupportedResultYear(date) {\\n    const year = date.getUTCFullYear();\\n    if (year < 1000 || year > 9999) {\\n        throw new Error('time: result outside supported year range 1000-9999');\\n    }\\n}\\nfunction buildResult(date, timezone, source) {\\n    assertSupportedResultYear(date);\\n    const { local, formatted } = formatInTimezone(date, timezone);\\n    return {\\n        iso: date.toISOString(),\\n        unix: date.getTime(),\\n        timezone,\\n        timezoneSource: source,\\n        local,\\n        formatted,\\n    };\\n}\\n// ── 日历运算（UTC 基准） ──\\n/** 月/年运算：先置 1 日 → 定位目标年月 → 按目标月最大天数钳制。 */\\nfunction addMonthsClamped(date, months) {\\n    const y = date.getUTCFullYear();\\n    const m = date.getUTCMonth() + months;\\n    const target = new Date(Date.UTC(y, m, 1)); // Date 自动滚年\\n    const lastDay = new Date(Date.UTC(target.getUTCFullYear(), target.getUTCMonth() + 1, 0)).getUTCDate();\\n    target.setUTCDate(Math.min(date.getUTCDate(), lastDay));\\n    return target;\\n}\\nfunction addCalendar(date, amount, unit) {\\n    const result = new Date(date);\\n    switch (unit) {\\n        case 'seconds':\\n            result.setUTCSeconds(result.getUTCSeconds() + amount);\\n            break;\\n        case 'minutes':\\n            result.setUTCMinutes(result.getUTCMinutes() + amount);\\n            break;\\n        case 'hours':\\n            result.setUTCHours(result.getUTCHours() + amount);\\n            break;\\n        case 'days':\\n            result.setUTCDate(result.getUTCDate() + amount);\\n            break;\\n        case 'weeks': {\\n            const total = amount * 7;\\n            if (!Number.isSafeInteger(total))\\n                throw new Error('time: amount out of range for unit \\\"weeks\\\"');\\n            result.setUTCDate(result.getUTCDate() + total);\\n            break;\\n        }\\n        case 'months': {\\n            // RECHECK-TIME-02：与 weeks/years 一致，前置拒绝超出 Date 支持范围的月份数\\n            if (Math.abs(amount) > MAX_MONTH_AMOUNT) {\\n                throw new Error('time: amount out of range for unit \\\"months\\\"');\\n            }\\n            const r = addMonthsClamped(result, amount);\\n            if (!Number.isFinite(r.getTime()))\\n                throw new Error('time: result outside supported range');\\n            result.setTime(r.getTime());\\n            break;\\n        }\\n        case 'years': {\\n            const total = amount * 12;\\n            if (!Number.isSafeInteger(total))\\n                throw new Error('time: amount out of range for unit \\\"years\\\"');\\n            const r = addMonthsClamped(result, total);\\n            if (!Number.isFinite(r.getTime()))\\n                throw new Error('time: result outside supported range');\\n            result.setTime(r.getTime());\\n            break;\\n        }\\n    }\\n    if (!Number.isFinite(result.getTime()))\\n        throw new Error('time: result outside supported range');\\n    // RECHECK3-TIME-01：结果年份必须留在工具的 1000–9999 契约内\\n    // （否则 BCE/扩展年份会让 Intl era 年与 offset 计算产生错误输出）\\n    assertSupportedResultYear(result);\\n    return result;\\n}\\n// ── diff（固定时长，无月份/年份） ──\\nfunction diffBetween(from, to) {\\n    const ms = to.getTime() - from.getTime();\\n    // AUDIT-TIME-02：duration 精度保护——差值必须有限且在安全整数内\\n    if (!Number.isFinite(ms) || Math.abs(ms) > Number.MAX_SAFE_INTEGER) {\\n        throw new Error('time: diff duration out of range');\\n    }\\n    const sign = ms > 0 ? 1 : ms < 0 ? -1 : 0;\\n    const abs = Math.abs(ms);\\n    const totalSeconds = Math.floor(abs / 1000);\\n    const absolute = {\\n        days: Math.floor(totalSeconds / 86_400),\\n        hours: Math.floor((totalSeconds % 86_400) / 3_600),\\n        minutes: Math.floor((totalSeconds % 3_600) / 60),\\n        seconds: totalSeconds % 60,\\n        milliseconds: abs % 1000,\\n    };\\n    return {\\n        sign: sign,\\n        milliseconds: ms,\\n        seconds: sign * totalSeconds,\\n        minutes: sign * Math.floor(abs / 60_000),\\n        hours: sign * Math.floor(abs / 3_600_000),\\n        days: sign * Math.floor(abs / 86_400_000),\\n        weeks: sign * Math.floor(abs / 604_800_000),\\n        absolute,\\n    };\\n}\\nfunction assertStringLength(value, name) {\\n    if (typeof value !== 'string')\\n        throw new Error(`time: missing required parameter \\\"${name}\\\"`);\\n    if (value.length > MAX_STRING_LENGTH)\\n        throw new Error(`time: parameter \\\"${name}\\\" too long`);\\n}\\nexport function executeAction(action, params, clock = () => Date.now()) {\\n    switch (action) {\\n        case 'now': {\\n            const timezone = params.timezone;\\n            if (timezone !== undefined) {\\n                assertStringLength(timezone, 'timezone');\\n                if (timezone === '')\\n                    throw new Error('time: timezone must not be empty');\\n            }\\n            const timestamp = clock();\\n            if (!Number.isFinite(timestamp))\\n                throw new Error('time: clock returned invalid timestamp');\\n            const date = new Date(timestamp);\\n            if (!Number.isFinite(date.getTime()))\\n                throw new Error('time: clock returned out-of-range timestamp');\\n            const explicit = timezone !== undefined;\\n            return buildResult(date, explicit ? timezone : 'UTC', explicit ? 'explicit' : 'default-utc');\\n        }\\n        case 'convert': {\\n            assertStringLength(params.value, 'value');\\n            assertStringLength(params.timezone, 'timezone');\\n            if (params.timezone === '')\\n                throw new Error('time: timezone must not be empty');\\n            const date = parseStrictISO(params.value);\\n            return buildResult(date, params.timezone, 'explicit');\\n        }\\n        case 'add': {\\n            assertStringLength(params.value, 'value');\\n            const unit = params.unit;\\n            if (typeof unit !== 'string' || !UNITS.includes(unit)) {\\n                throw new Error(`time: unknown unit \\\"${String(unit)}\\\"`);\\n            }\\n            if (typeof params.amount !== 'number' || !Number.isSafeInteger(params.amount)) {\\n                throw new Error('time: amount must be a safe integer');\\n            }\\n            const date = parseStrictISO(params.value);\\n            if (params.timezone !== undefined) {\\n                assertStringLength(params.timezone, 'timezone');\\n                if (params.timezone === '')\\n                    throw new Error('time: timezone must not be empty');\\n            }\\n            const timezone = params.timezone ?? 'UTC';\\n            const result = addCalendar(date, params.amount, unit);\\n            const source = params.timezone !== undefined ? 'explicit' : 'default-utc';\\n            return buildResult(result, timezone, source);\\n        }\\n        case 'diff': {\\n            assertStringLength(params.from, 'from');\\n            assertStringLength(params.to, 'to');\\n            // RECHECK5-TIME-01：diff 输入同样受结果年份契约约束（offset 换算后的 instant）\\n            // ——与 convert 对相同输入的行为保持一致，避免跨 action 不一致\\n            const fromDate = parseStrictISO(params.from);\\n            const toDate = parseStrictISO(params.to);\\n            assertSupportedResultYear(fromDate);\\n            assertSupportedResultYear(toDate);\\n            return diffBetween(fromDate, toDate);\\n        }\\n        default:\\n            throw new Error(`time: unknown action \\\"${action}\\\"`);\\n    }\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-time\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"c426e1b9281b7a12ccadb334837509f93b7450ec7feac7d2c2f476e3304104fc\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 367,\n        \"code\": 310,\n        \"comments\": 59,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 370,\n        \"words\": 2960\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 3,\n        \"lines\": 416,\n        \"code\": 320,\n        \"comments\": 62,\n        \"blank\": 36\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 2,\n        \"lines\": 398,\n        \"code\": 328,\n        \"comments\": 5,\n        \"blank\": 68\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-time/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-time/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-time/lib/types/time.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-time/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-time/lib/index.js\",\n          \"line\": 14,\n          \"api\": \"defineTool\",\n          \"name\": \"time\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-time/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-time/src/index.ts\",\n          \"line\": 19,\n          \"api\": \"defineTool\",\n          \"name\": \"time\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"time\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "1cb8c466108530abebaf4f300f3e6075635c1b1ae30b7de07e3e796156b71b5e"
+        }
+    },
+    "unavailable_artifacts": []
+}

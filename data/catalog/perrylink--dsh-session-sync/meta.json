@@ -1,0 +1,54 @@
+{
+    "repository": "PerryLink/dsh-session-sync",
+    "repository_id": 1336134478,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 34,
+    "pushed_at": "2026-11-13T16:16:59Z",
+    "issues": {
+        "open": 0,
+        "closed": 7,
+        "created_30d": 4,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-session-sync%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B38:24ADA2:D0B1B1:DFE34B:6AF8487E and timestamp 2026-11-14 11:39:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-session-sync%20is%3Aissue%20updated%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B78:18F3F8:CEC903:DDFE79:6AF84880 and timestamp 2026-11-14 11:39:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T11:08:36.467Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-session-sync",
+        "captured_at": "2026-11-12T11:22:59.052Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 4807,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/dsh-session-sync",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T16:36:20.327Z",
+            "captured_at": "2026-11-12T11:22:59.052Z",
+            "source_url": "https://registry.npmjs.org/dsh-session-sync",
+            "error": null,
+            "latest_version": "0.2.32",
+            "latest_published_at": "2026-11-05T05:33:49.560Z",
+            "latest_error": null
+        }
+    }
+}
