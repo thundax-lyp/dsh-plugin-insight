@@ -1,0 +1,66 @@
+{
+    "repository": "anweat/dsh-browser",
+    "repository_id": 1333702274,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 33,
+    "pushed_at": "2026-11-09T16:22:57Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanweat%2Fdsh-browser%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B2E:1C6D8A:D02DE5:DF6531:6AF8487D and timestamp 2026-11-14 11:39:41 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanweat%2Fdsh-browser%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B52:562C3:D6B2AB:E5E67A:6AF8487E and timestamp 2026-11-14 11:39:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanweat%2Fdsh-browser%20is%3Aissue%20created%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B88:22D60F:CB1388:DA42B5:6AF84880 and timestamp 2026-11-14 11:39:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanweat%2Fdsh-browser%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B98:176D28:D68E5B:E5C412:6AF84882 and timestamp 2026-11-14 11:39:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aanweat%2Fdsh-browser%20is%3Aissue%20updated%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8BB6:31EF2B:CC302D:DB6111:6AF84883 and timestamp 2026-11-14 11:39:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T02:03:27.437Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@anweat/dsh-browser",
+        "captured_at": "2026-11-11T17:12:43.057Z",
+        "window_start": "2026-10-12",
+        "window_end": "2026-11-10",
+        "downloads_30d": 5874,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-12:2026-11-10/%40anweat%2Fdsh-browser",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T02:40:49.210Z",
+            "captured_at": "2026-11-11T17:12:43.057Z",
+            "source_url": "https://registry.npmjs.org/%40anweat%2Fdsh-browser",
+            "error": null,
+            "latest_version": "0.2.3",
+            "latest_published_at": "2026-11-09T16:27:53.004Z",
+            "latest_error": null
+        }
+    }
+}

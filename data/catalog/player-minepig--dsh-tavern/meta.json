@@ -1,0 +1,54 @@
+{
+    "repository": "Player-MINEPIG/dsh-tavern",
+    "repository_id": 1334088310,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 33,
+    "pushed_at": "2026-11-08T06:37:21Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 5,
+        "closed_30d": 4,
+        "updated_30d": 5
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APlayer-MINEPIG%2Fdsh-tavern%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D8DA:3225F5:D0C845:DFFF2F:6AF84897 and timestamp 2026-11-14 11:40:08 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APlayer-MINEPIG%2Fdsh-tavern%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D8E6:103AB8:D28E22:E1C57A:6AF84899 and timestamp 2026-11-14 11:40:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T02:03:27.437Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "pmp-dsh-tavern",
+        "captured_at": "2026-11-13T19:46:36.370Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 2313,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/pmp-dsh-tavern",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-10T14:57:18.023Z",
+            "captured_at": "2026-11-13T19:46:36.370Z",
+            "source_url": "https://registry.npmjs.org/pmp-dsh-tavern",
+            "error": null,
+            "latest_version": "3.0.5",
+            "latest_published_at": "2026-10-24T04:36:42.525Z",
+            "latest_error": null
+        }
+    }
+}

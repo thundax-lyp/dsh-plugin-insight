@@ -32,6 +32,7 @@
 | [DSH Qwen Studio](#plugin-1422133477-root) | 把本地 MLX 或自托管图像服务接入 DSH 对话，记录生成任务并按 ID 取回状态与附件。 | [Q01](../../plugins/kingcharleslzy-ai--dsh-qwen-studio/INSIGHT.md#research-q01) 已有推理设备并能隔离图库的创作者，可先提交一张无敏感输入的配图再按 ID 取回。 |
 | [DSH Raw HTML](#plugin-1341430062-root) | 以宿主前端补丁呈现 HTML 卡片并注入视觉设计规范 | [Q04](../../plugins/plolpl789--dsh-raw-html/INSIGHT.md#research-q04) 静态卡起步，在测试 bundle 验证关闭和恢复。 |
 | [DSH Short Video Studio](#plugin-1345883186-root) | 在 DSH 会话中连接 ComfyUI，生成、整理和后处理短视频素材。 | 先在一次性工作区做一镜，核查文件、规格及后端状态。 |
+| [DSH Tavern](#plugin-1334088310-root) | 为 DeepSeek Harness 提供 SillyTavern 资源、角色周目与对话前端。 | [Q05](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q05) 用可信的无敏感卡在隔离工作区核对成功首轮和权限，遇到悬空周目、未预期调用或重试失配就回原生视图。 |
 | [DSH to Figma](#plugin-1424114133-root) | 将本地Figma companion或官方MCP接入DSH，读取设计上下文并编辑原生画布与资源。 | 可丢弃Figma文件受限试用，先明确后端/file/page与能力，再做少量原生节点并核结构变量/截图。 |
 | [dsh-blend-preview](#plugin-1427791087-root) | 在DSH侧栏预览Blender文件，展示静态三维几何和场景信息。 | 此旧包建议观察；已有环境仅在隔离范围用已知尺寸静态场景对照验证，先确认改名后的入口，纹理动画交由Blender验收。 |
 | [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 建议先观察。 |
@@ -91,6 +92,7 @@
 | [催更姬](#plugin-1389035449-root) | 在 DSH 中编辑小说正文、规划情节并管理人物世界设定，支持按需查阅、版本历史与作品数据管理。 | 已有DSH且愿意维护人物和规划资料的长篇作者，可在新建副本库先试修订一章：核对维护ready、作品ID和revision，用唯一patch保存后回读正文及历史，再检查关联资料。 |
 | [大肥鱼的小说工坊](#plugin-1337043852-root) | 用阶段门禁、设定注入和版本归档管理连载小说 | [Q04](../../plugins/akira399--dsh-novel-writer/INSIGHT.md#research-q04) 先用虚构三章验证门禁、预算与导出。 |
 | [无限画布（Infinite Canvas）](#plugin-1412882758-root) | 在 DSH 中用节点画布组织短剧剧本、分镜、图像与视频生成，并衔接后期交付。 | 保留观察。 |
+| [角色扮演模式](#plugin-1334706134-root) | 为 DeepSeek 调校的角色扮演 Agent 预设，提供分步引导、演出格式和工作目录文件记忆。 | 建议先观察当前声明格式的迁移。 |
 
 <a id="plugin-1352959121-root"></a>
 
@@ -411,6 +413,22 @@
 > **建议**：让任务先绑定后端 ID，重开时核对状态，测试能否避免重派生成，见 [Q05](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/fengyungithub--dsh-short-video-studio/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334088310-root"></a>
+
+## [DSH Tavern](../../plugins/player-minepig--dsh-tavern/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Player-MINEPIG/dsh-tavern) [![npm 30d 2,313](https://img.shields.io/static/v1?label=npm+30d&message=2%2C313&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/pmp-dsh-tavern) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/pmp-dsh-tavern)
+
+> **用途**：已有角色卡的 DSH 用户能在选定工作区管理开场和角色对话。[Q01](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q01)
+
+> **亮点**：[Q03](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q03) 将未发出的开场草稿与真实会话历史分开，使用本地 claim 和原生请求标识确认首次发送。
+
+> **思考**：[Q04](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q04) 的导入上下文可被模型看到，工具保护只是宿主策略；[Q02](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q02) 的导入回执也可能包含未解决的恢复。
+
+> **建议**：[Q05](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q05) 可以让用户直接看到归档、首轮接纳和发布的各自证据，再验证是否减少误重发。
+
+[查看完整分析](../../plugins/player-minepig--dsh-tavern/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1424114133-root"></a>
 
@@ -1356,8 +1374,24 @@
 
 [查看完整分析](../../plugins/ninkch--dsh-infinite_canvas/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334706134-root"></a>
+
+## [角色扮演模式](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/oliblue-evan/dsh-roleplay-preset)
+
+> **用途**：角色扮演用户可用此预设源码参考 DSH 的开场引导和文件记忆设计。仓库的安装说明依赖已移除的旧文件系统入口。
+
+> **亮点**：同一个预设将新手引导、已有角色卡直入和后续 Markdown 存档整合进 DSH 会话入口，省去每次重贴引导模板和目录约定。[Q01](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md#research-q01) [Q02](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md#research-q02)
+
+> **思考**：现有安装步骤针对旧宿主，当前宿主读不到该配置。即使迁移，存档仍由模型完成，文件写不成或索引落后时可能无法续写。[Q01](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md#research-q01) [Q02](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md#research-q02)
+
+> **建议**：可在章节写入后核对索引与正文是否一致，并让用户看到校验回执。需验证这会减少续写遗漏，且人工复查开销仍可接受。[Q04](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/oliblue-evan--dsh-roleplay-preset/INSIGHT.md) · [返回表格](#category-index)
+
 [全部分类](INDEX.md) · [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-13
+2026-11-14

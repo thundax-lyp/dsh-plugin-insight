@@ -1,0 +1,54 @@
+{
+    "repository": "v587d/capital-generation",
+    "repository_id": 1335734923,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 34,
+    "pushed_at": "2026-11-14T10:38:46Z",
+    "issues": {
+        "open": 1,
+        "closed": 13,
+        "created_30d": 8,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Av587d%2Fcapital-generation%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B36:FE387:D311F7:E2474A:6AF8487D and timestamp 2026-11-14 11:39:42 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Av587d%2Fcapital-generation%20is%3Aissue%20updated%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 8B62:1A4F53:D7E245:E71BE2:6AF8487F and timestamp 2026-11-14 11:39:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-14T02:03:27.437Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@v587d/capital-generation",
+        "captured_at": "2026-11-14T01:28:07.895Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 8947,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/%40v587d%2Fcapital-generation",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-06T12:24:14.847Z",
+            "captured_at": "2026-11-14T01:28:07.895Z",
+            "source_url": "https://registry.npmjs.org/%40v587d%2Fcapital-generation",
+            "error": null,
+            "latest_version": "2.23.0",
+            "latest_published_at": "2026-11-13T08:30:55.739Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "zkforge/dsh-claude-desktop-theme",
+    "repository_id": 1399742055,
+    "captured_at": "2026-11-14T11:35:36.890Z",
+    "window_start": "2026-10-15T11:35:36.890Z",
+    "stars": 38,
+    "pushed_at": "2026-11-13T04:13:48Z",
+    "issues": {
+        "open": 1,
+        "closed": 6,
+        "created_30d": 7,
+        "closed_30d": 6,
+        "updated_30d": 7
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-13T11:36:54.757Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
+        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
+        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-claude-desktop-theme",
+        "captured_at": "2026-11-14T01:28:07.895Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 6355,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/dsh-claude-desktop-theme",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-10-04T10:05:20.580Z",
+            "captured_at": "2026-11-14T01:28:07.895Z",
+            "source_url": "https://registry.npmjs.org/dsh-claude-desktop-theme",
+            "error": null,
+            "latest_version": "0.10.5",
+            "latest_published_at": "2026-11-13T04:16:39.997Z",
+            "latest_error": null
+        }
+    }
+}

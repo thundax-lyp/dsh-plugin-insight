@@ -12,7 +12,14 @@
 
 | 插件 | 主要用途 | 最&#8288;新&#8288;版&#8288;本 | 发&#8288;布&#8288;日&#8288;期 |
 | --- | --- | --- | --- |
+| [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 在 DeepSeek Harness 会话中接入 OpenViking 召回、消息捕获、Skill 和 MCP。 | 0.5.36 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) |
+| [DSH Browser CDP](#plugin-1382064515-root) | 在 DeepSeek Harness 中接入结构化浏览器工具和可交互的页面观察窗。 | 1.9.51 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/dsh-browser-cdp) |
+| [DSH Plugin Shop](#plugin-1345710688-packages-dsh-plugin-shop) | 在 DeepSeek Harness 中浏览插件目录、安装候选并管理已安装插件。 | 0.9.4 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/dsh-plugin-shop) |
+| [Capital Generation](#plugin-1335734923-root) | 为 DeepSeek Harness 提供投研 Agent 预设、数据整理、图表及定时简报。 | 2.23.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/@v587d/capital-generation) |
+| [DSH Claude Desktop Theme](#plugin-1399742055-root) | 为 DeepSeek Harness Desktop 提供主题、界面布局和会话辅助功能。 | 0.10.5 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/dsh-claude-desktop-theme) |
+| [Windows MCP 桌面集成](#plugin-1413849053-root) | 通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。 | 0.2.10 | [2026&#8288;-&#8288;11&#8288;-&#8288;13](https://www.npmjs.com/package/dsh-windows-mcp) |
 | [DSH 抖音助手](#plugin-1418874781-root) | 在专用 Edge 中浏览和采样抖音视频，按设置进行自主观看、许可好友互动和兴趣记录。 | 1.4.7 | [2026&#8288;-&#8288;11&#8288;-&#8288;12](https://www.npmjs.com/package/dsh-douyin-browser-local) |
+| [DSH Voice Mode](#plugin-1342970553-plugin-dsh-voice-mode) | 为 DeepSeek Harness 提供语音转写、可编辑草稿、按句朗读和打断。 | 0.7.37 | [2026&#8288;-&#8288;11&#8288;-&#8288;12](https://www.npmjs.com/package/dsh-voice-mode) |
 | [dsh-baton-host](#plugin-1424249299-host) | 把 Claude Code 或 Codex 的任务交给可见的 DSH 会话，并将结果交回原客户端。 | 0.6.13 | [2026&#8288;-&#8288;11&#8288;-&#8288;12](https://www.npmjs.com/package/dsh-baton-host) |
 | [dsh-deja](#plugin-1300173275-extensions-dsh) | 在 DSH 中搜索本机编码助手历史，并可为当前会话召回相关上下文。 | 0.24.2 | [2026&#8288;-&#8288;11&#8288;-&#8288;12](https://www.npmjs.com/package/dsh-deja) |
 | [dsh-xiaomi-tts](#plugin-1340497731-root) | 在 DSH 中用浏览器语音或合成提供商朗读回复，支持音频下载和可选语音设备。 | 5.3.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;12](https://www.npmjs.com/package/dsh-xiaomi-tts) |
@@ -34,6 +41,7 @@
 | [Windows 电脑操控](#plugin-1336280167-root) | 在 DSH 中读取和操作 Windows 桌面与浏览器，支持界面树、截图、文字识别、输入和窗口管理。 | 0.5.7 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-computer-use-win) |
 | [DoYourWeb](#plugin-1417162408-root) | 在 DSH 对话引用浏览器标签、添加页面标注，并通过连接器或桌面驱动操作应用。 | 0.2.3 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-doyourweb) |
 | [dsh-mcp-connector](#plugin-1340838178-root) | 在 DeepSeek Harness 中管理 MCP 连接、授权和工具发现，支持 OAuth、API Key 与 HTTP／stdio。 | 0.2.101 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-mcp-connector) |
+| [dsh-ops](#plugin-1409893258-root) | 给 DeepSeek Harness 增加 Native 文件工具、PTC 文件批处理与可选 Bash 能力。 | 0.5.4 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-ops) |
 | [DSH Codex UI](#plugin-1334346564-root) | 为 DSH 增加输入召回和预测、侧栏分区、主题及移动界面增强。 | 2.0.22 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/@michengai/dsh-codex-ui) |
 | [dsh-qq-link](#plugin-1426614895-root) | 经 OneBot 11 HTTP 将 QQ 私聊或群聊与 DeepSeek Harness 会话双向连通。 | 1.5.6 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-qq-link) |
 | [dsh-agy-link](#plugin-1339101586-root) | 把 Google Antigravity CLI 的模型、流式输出和账号操作接入 DeepSeek Harness。 | 0.6.18 | [2026&#8288;-&#8288;11&#8288;-&#8288;11](https://www.npmjs.com/package/dsh-agy-link) |
@@ -58,6 +66,7 @@
 | [DSH Mobile](#plugin-1334817483-root) | 通过设备配对让 Android 或手机浏览器访问电脑上的 DeepSeek Harness 会话和工作区。 | 0.8.6 | [2026&#8288;-&#8288;11&#8288;-&#8288;10](https://www.npmjs.com/package/dsh-mobile) |
 | [DSH Git Bash Shell](#plugin-1343674616-root) | 为 Windows DSH 会话提供 Git Bash、MSYS 路径转换、原生程序调用及可选预设。 | 0.53.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;10](https://www.npmjs.com/package/dsh-gitbash-shell) |
 | [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | 1.73.17 | [2026&#8288;-&#8288;11&#8288;-&#8288;10](https://www.npmjs.com/package/dshmarket) |
+| [DSH Browser](#plugin-1333702274-root) | 为 DeepSeek Harness 提供浏览器运行时、网页观察和交互工具。 | 0.2.3 | [2026&#8288;-&#8288;11&#8288;-&#8288;10](https://www.npmjs.com/package/@anweat/dsh-browser) |
 | [军械库（DSH Armory）](#plugin-1413052822-root) | 为 DSH 提供 MCP、Skill、专家和插件的集中管理，并查看工具使用和发送清单。 | 2.5.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-armory) |
 | [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中提供图片与视频生成、编辑、画布节点和本地片段拼接。 | 1.27.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/@q253595422/dsh-imagegen-video) |
 | [dsh-whale-galgame](#plugin-1335381999-root) | 为 DSH Web 和 Desktop 提供多角色互动界面、近期活动感知与可选桌宠。 | 0.7.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-whale-galgame) |
@@ -74,6 +83,7 @@
 | [dsh-context](#plugin-1333961389-root) | 为 DSH 会话展示上下文组成、历史趋势和用量，提供 Context 标签及 /context 入口。 | 0.83.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-context) |
 | [DSH ESP32 Agent（Handsy）](#plugin-1414685342-integrations-dsh) | 将 ESP32 Agent 的 iPhone 截图、触控和操作指引接入 DSH。 | 0.1.3 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-esp32agent) |
 | [DSH Skill Hub](#plugin-1334303719-root) | 在 DSH 中浏览、筛查、安装、更新和恢复本地 Skill。 | 0.3.32 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-skill-hub) |
+| [Archify DSH](#plugin-1211139949-integrations-deepseek-harness) | 通过 DeepSeek Harness 文件系统 Skill 提供器加载随包分发的 Archify 图表技能。 | 1.1.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/@tt-a1i/archify-dsh) |
 | [dsh-claude-style](#plugin-1377512288-root) | 为 DeepSeek Harness 网页界面提供 Claude Code Desktop 风格主题与交互。 | 0.20.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-claude-style) |
 | [DSH 皮肤市场](#plugin-1335912966-root) | 在 DSH 设置中浏览和管理皮肤，提供安装、启停、更新及故障诊断入口。 | 0.1.81 | [2026&#8288;-&#8288;11&#8288;-&#8288;09](https://www.npmjs.com/package/dsh-skin-market) |
 | [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | 0.11.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-image-gen) |
@@ -89,7 +99,6 @@
 | [OpenWrite](#plugin-1171186947-root) | 为 DeepSeek Harness 提供长篇小说写作预设、创作工作台与 Core 桥接。 | 0.2.38 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-openwrite) |
 | [DSH Git Panel](#plugin-1385903666-root) | 在 DeepSeek Harness 对话工作区展示 Git 分支、历史和差异，并提供暂存、提交和变更管理。 | 1.13.2 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/@xbzbing/dsh-git-panel) |
 | [AgentCompare](#plugin-1442340074-root) | 在 DSH 主对话内生成并比较 2–4 版回答、文件或网页，选择后审查采用。 | 1.3.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-agent-compare) |
-| [dsh-windows-mcp](#plugin-1413849053-root) | 把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。 | 0.2.4 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-windows-mcp) |
 | [Billion Context](#plugin-1324949198-root) | 面向长会话的上下文压缩工具，可按范围生成摘要、检索并回读内容。 | 0.1.213 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/billion-context) |
 | [DSH Connect WorkBuddy](#plugin-1349641014-root) | 把 WorkBuddy 国内和国际账号接入 DSH 的模型供应商插件，提供目录和可选账号池。 | 5.20.32 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-connect-workbuddy) |
 | [DSH Chat Manager](#plugin-1335110228-root) | 在 DSH 中搜索已归档聊天，并对未加载的当前格式本机会话提供确认删除。 | 2.0.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;08](https://www.npmjs.com/package/dsh-chat-manager) |
@@ -114,6 +123,7 @@
 | [dsh-plugin-rea](#plugin-1415732178-root) | 通过本地供给脚本准备 REA 运行环境，并将 REA MCP 工具接入 DeepSeek Harness。 | 2.0.16 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/dsh-plugin-rea) |
 | [dsh-engram · 记忆宫殿](#plugin-1353296006-root) | 为 DSH 提供本地 SQLite 分库、跨会话记忆搜索、引用核对、画像注入和管理面板。 | 0.13.9 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/@kenz1117/dsh-engram) |
 | [DSH Toolbox UI](#plugin-1335954169-root) | 为 DSH Web 提供 MCP、技能与工具加载管理面板，可按全局或项目查看和调整配置。 | 1.10.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/dsh-toolbox-ui) |
+| [DSH 提示音](#plugin-1405520053-root) | 为 DeepSeek Harness 的审批、提问和任务完成播放提示音，并提供系统通知与静音设置。 | 1.9.5 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/dsh-plugin-notify-sounds) |
 | [DSH Vision Toolkit](#plugin-1333100071-root) | 为 DSH 文本模型提供图像问答、OCR、定位、截图差异和视觉产物。 | 0.1.49 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/@anionex/dsh-vision-toolkit) |
 | [DSH WorkBuddy Bridge](#plugin-1387190592-root) | 将已登录的 WorkBuddy 桌面模型接入 DSH，并展示模型能力检测和积分。 | 0.5.7 | [2026&#8288;-&#8288;11&#8288;-&#8288;07](https://www.npmjs.com/package/dsh-workbuddy-bridge) |
 | [dsh-mnemon](#plugin-1329424520-root) | 为 DSH 提供可组合的分层记忆、按回合固定的视图及受控读写。 | 0.5.42 | [2026&#8288;-&#8288;11&#8288;-&#8288;06](https://www.npmjs.com/package/dsh-mnemon) |
@@ -137,12 +147,12 @@
 | [dsh-boot-suite](#plugin-1424119342-root) | 为 DSH 提供可配置的启动动画、声音、转场和聊天背景，支持导入图片及视频。 | 2.16.11 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-boot-suite) |
 | [DSH Agent Studio](#plugin-1376053947-root) | 在 DeepSeek Harness 中配置 Agent 的提示词、工具、技能、子代理和模型，并提供按角色委派。 | 0.2.1 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-agent-studio) |
 | [灵枢（Lingshu）](#plugin-1334211162-root) | 把 DSH 会话接入 Markdown 认知图，支持长期记忆、检索与反思。 | 0.9.23 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/@furongjun1999/dsh-memory) |
-| [OpenViking Memory for DeepSeek Harness](#plugin-1128123594-examples-dsh-memory-plugin) | 为 DeepSeek Harness 提供 OpenViking 自动召回、会话采集、URI 工具保护和 MCP 接入。 | 0.5.33 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) |
 | [BrowserSkill for DeepSeek Harness](#plugin-1276665883-packages-dsh-plugin-browserskill) | 在 DeepSeek Harness 中使用 bsk 工具浏览网页、操作页面并查看截图和会话状态。 | 0.4.2 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/@wxg-prc-cpg/browser-skill-dsh-plugin) |
 | [dsh-model](#plugin-1410395082-root) | 为 DSH 与兼容客户端统一接入模型来源、免费额度池、自动签到和组合回退。 | 0.29.0 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-model) |
 | [DSH × Blender](#plugin-1368569221-root) | 将 Blender 场景操作、观察、验证与渲染作业接入 DeepSeek Harness。 | 3.0.6 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-blender-plugin) |
 | [dsh-plugin-marketplace](#plugin-1334156126-root) | 在 DeepSeek Harness Web 浏览 GitHub 插件候选，并管理 profile 插件安装与更新。 | 0.5.8 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-plugin-marketplace) |
 | [Bottom Info Bar](#plugin-1334682582-root) | 在 DSH 输入框下显示当前模型、提供商余额或额度、价格及本地会话花费。 | 1.21.12 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-bottom-info-bar) |
+| [DSH Session Sync](#plugin-1336134478-root) | 通过 Git 镜像在设备之间同步 DeepSeek Harness 会话。 | 0.2.32 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-session-sync) |
 | [@hyzyn/dsh-profile](#plugin-1335046216-packages-profile) | 在 DSH Web 中查看、创建、复制、重命名和删除 profile，并生成带端口的启动命令。 | 0.2.15 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/@hyzyn/dsh-profile) |
 | [DSH LSP Actions](#plugin-1333526401-root) | 在 DSH 中调用语言服务器诊断、补全、格式化和符号重命名等操作。 | 0.5.19 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/dsh-lsp-actions) |
 | [@hyzyn/dsh-rss](#plugin-1335046216-packages-rss) | 聚合 RSS 与 Atom 订阅生成本地日报，可选 AI 摘要，并向 DSH 会话注入有限条目。 | 0.4.16 | [2026&#8288;-&#8288;11&#8288;-&#8288;05](https://www.npmjs.com/package/@hyzyn/dsh-rss) |
@@ -321,7 +331,6 @@
 | [DSH GenUI](#plugin-1333128726-root) | 在 DSH 对话中按组件规格生成交互界面，并把选择或提交作为后续会话动作。 | 0.15.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/@changfenhuang/dsh-genui) |
 | [DSH 红队模式](#plugin-1364387461-packages-redteam-bundle) | 为经授权的安全演练提供角色预设、范围检查、事实库和报告工具。 | 0.15.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/dsh-redteam-mode) |
 | [DSH Chat Import](#plugin-1333200468-root) | 把其他 AI 编码助手的会话历史导入 DeepSeek Harness 并继续对话。 | 0.26.3 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/dsh-chat-import) |
-| [dsh-ops](#plugin-1409893258-root) | 为 DSH 提供 Native 与 PTC 文件工具、按需加载和可配置的原版工具替换。 | 0.4.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/dsh-ops) |
 | [dsh-plugin-bridge](#plugin-1336849011-root) | 在 DSH 预览并确认会话交接，将上下文或已批准计划移到新会话。 | 0.5.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/dsh-plugin-bridge) |
 | [dsh-llm-workbuddy](#plugin-1333868738-root) | 为 DSH 提供 WorkBuddy API Key、账号登录和会话独立凭据选择。 | 1.3.27 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/@axiaohungry/dsh-llm-workbuddy) |
 | [DSH Fact Check](#plugin-1380181057-root) | 将公开事实拆点核查，组织多来源检索、原文交叉验证与可选判断。 | 1.5.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;28](https://www.npmjs.com/package/dsh-fact-check) |
@@ -372,6 +381,7 @@
 | [EduWork OIDC](#plugin-1369398336-packages-dsh-oidc) | 为 DSH 提供机构身份登录与授权模型接入。 | 0.3.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/@eduwork/dsh-oidc) |
 | [DSH Voice Scribe](#plugin-1345815125-root) | 通过快捷键或麦克风按钮把录音转写成 DSH 输入框草稿，支持热词和可选润色。 | 0.5.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/dsh-voice-scribe) |
 | [dsh-blender](#plugin-1334049596-root) | 在 DSH 中调用本地 Blender 建模、检查场景、渲染、导出模型并回读验证。 | 0.2.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/dsh-blender) |
+| [DSH Tavern](#plugin-1334088310-root) | 为 DeepSeek Harness 提供 SillyTavern 资源、角色周目与对话前端。 | 3.0.5 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/pmp-dsh-tavern) |
 | [Brooks Lint](#plugin-1192608669-root) | 基于工程书籍整理代码质量评审技能，提供风险诊断、分数与多种审查模式。 | 1.9.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/brooks-lint) |
 | [ClearAI](#plugin-1367299537-root) | 为 DSH 提供以问题、证据、独立评估和领域本体组织研究的 Agent 预设。 | 0.5.7 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/clearai-dsh) |
 | [DeepSeek Harness GenUI](#plugin-1334554248-root) | 以可保存任务状态和受控桥接的生成应用承接多轮任务 | 0.15.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;24](https://www.npmjs.com/package/dsh-plugin-genui) |
@@ -473,10 +483,114 @@
 | [Local Shell MCP for DSH](#plugin-1249040497-root) | 将 Local Shell MCP 服务的执行工具和会话工作区接入 DeepSeek Harness。 | 5.1.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;17](https://www.npmjs.com/package/local-shell-mcp-dsh) |
 | [dsh-ui-auth](#plugin-1343420855-root) | 为 DSH Web 提供账户登录、用户管理、TOTP/Passkey、会话授权及按用户模型配置。 | 0.7.1 | [2026&#8288;-&#8288;10&#8288;-&#8288;16](https://www.npmjs.com/package/dsh-ui-auth) |
 | [@zzerx/dsh-plugin-daily-log](#plugin-1363429979-plugin-daily-log) | 汇总Git和本地Agent活动，按需下钻并由会话模型按模板撰写工作报告。 | 0.4.3 | [2026&#8288;-&#8288;10&#8288;-&#8288;16](https://www.npmjs.com/package/@zzerx/dsh-plugin-daily-log) |
-| [agent-clinic](#plugin-1417442557-root) | 只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。 | 0.2.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;15](https://www.npmjs.com/package/agent-clinic) |
-| [dsh-wrapup-guard](#plugin-841979943-root) | 用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。 | 0.1.0 | [2026&#8288;-&#8288;10&#8288;-&#8288;15](https://www.npmjs.com/package/dsh-wrapup-guard) |
-| [dsh-j-space](#plugin-1344270011-root) | 将 J-Space Cognition Suite 接入 DSH 原生 Agent Preset 并保留证据控制器 | 1.2.4 | [2026&#8288;-&#8288;10&#8288;-&#8288;15](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) |
-| [dsh-mermaid](#plugin-1334569498-root) | 在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。 | 0.4.2 | [2026&#8288;-&#8288;10&#8288;-&#8288;15](https://www.npmjs.com/package/dsh-mermaid) |
+
+<a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
+
+## [OpenViking DSH Memory](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
+
+[![GitHub ★ 42,206](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=42%2C206&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 45,856](https://img.shields.io/static/v1?label=npm+30d&message=45%2C856&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
+
+**主要用途**：在 DeepSeek Harness 会话中接入 OpenViking 召回、消息捕获、Skill 和 MCP。
+
+**最新发布**：[0.5.36 · 2026-11-13（北京时间）](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)。
+
+**源码版本**：[d462af04](https://github.com/volcengine/OpenViking/commit/d462af04e651335261d4972cb546788a788b2a47)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05) 建议先保留手动管理，在有授权的临时服务验证唯一标记、实际模型出口与停用后队列。发现数据归属不清时不扩大范围。
+
+[查看完整分析 →](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1382064515-root"></a>
+
+## [DSH Browser CDP](../../plugins/drscrewdriver--dsh-browser-cdp/INSIGHT.md)
+
+[![GitHub ★ 43](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=43&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/drscrewdriver/dsh-browser-cdp) [![npm 30d 30,270](https://img.shields.io/static/v1?label=npm+30d&message=30%2C270&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-browser-cdp) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-browser-cdp)
+
+**主要用途**：在 DeepSeek Harness 中接入结构化浏览器工具和可交互的页面观察窗。
+
+**最新发布**：[1.9.51 · 2026-11-13（北京时间）](https://www.npmjs.com/package/dsh-browser-cdp)。
+
+**源码版本**：[0f93d7bf](https://github.com/drscrewdriver/dsh-browser-cdp/commit/0f93d7bfa9ec760a4a0045993a3bda7e8de2f808)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/drscrewdriver--dsh-browser-cdp/INSIGHT.md#research-q04) 先观察空白测试空间的公开页面，目标或状态不能确认时断开连接并退回手工操作。
+
+[查看完整分析 →](../../plugins/drscrewdriver--dsh-browser-cdp/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1345710688-packages-dsh-plugin-shop"></a>
+
+## [DSH Plugin Shop](../../plugins/livxue--dsh-plugin-shop--packages-dsh-plugin-shop/INSIGHT.md)
+
+[![GitHub ★ 664](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=664&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/LivXue/dsh-plugin-shop) [![npm 30d 5,635](https://img.shields.io/static/v1?label=npm+30d&message=5%2C635&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-shop) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-shop)
+
+**主要用途**：在 DeepSeek Harness 中浏览插件目录、安装候选并管理已安装插件。
+
+**最新发布**：[0.9.4 · 2026-11-13（北京时间）](https://www.npmjs.com/package/dsh-plugin-shop)。
+
+**源码版本**：[6dabe49a](https://github.com/LivXue/dsh-plugin-shop/commit/6dabe49a72e70ea61f91f9a1b164a28d9ab12d50)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/livxue--dsh-plugin-shop--packages-dsh-plugin-shop/INSIGHT.md#research-q04) 先浏览并核对身份，只有来源、版本与可退出条件均可查时才在隔离 profile 验证安装。
+
+[查看完整分析 →](../../plugins/livxue--dsh-plugin-shop--packages-dsh-plugin-shop/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1335734923-root"></a>
+
+## [Capital Generation](../../plugins/v587d--capital-generation/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/v587d/capital-generation) [![npm 30d 8,947](https://img.shields.io/static/v1?label=npm+30d&message=8%2C947&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@v587d/capital-generation) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@v587d/capital-generation)
+
+**主要用途**：为 DeepSeek Harness 提供投研 Agent 预设、数据整理、图表及定时简报。
+
+**最新发布**：[2.23.0 · 2026-11-13（北京时间）](https://www.npmjs.com/package/@v587d/capital-generation)。
+
+**源码版本**：[a12175c5](https://github.com/v587d/capital-generation/commit/a12175c5ef728cfa5f97e6221f9f7a312c439781)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/v587d--capital-generation/INSIGHT.md#research-q04) 先观察固定公告信息能否逐项回到来源，遇到时点不符或缺原件就退回手工。
+
+[查看完整分析 →](../../plugins/v587d--capital-generation/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1399742055-root"></a>
+
+## [DSH Claude Desktop Theme](../../plugins/zkforge--dsh-claude-desktop-theme/INSIGHT.md)
+
+[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zkforge/dsh-claude-desktop-theme) [![npm 30d 6,355](https://img.shields.io/static/v1?label=npm+30d&message=6%2C355&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-claude-desktop-theme) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-claude-desktop-theme)
+
+**主要用途**：为 DeepSeek Harness Desktop 提供主题、界面布局和会话辅助功能。
+
+**最新发布**：[0.10.5 · 2026-11-13（北京时间）](https://www.npmjs.com/package/dsh-claude-desktop-theme)。
+
+**源码版本**：[3351167e](https://github.com/zkforge/dsh-claude-desktop-theme/commit/3351167efaaec44e21342af0436ba602d52fa17e)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/zkforge--dsh-claude-desktop-theme/INSIGHT.md#research-q04) 在样例窗口试配主题。出现控制缺失就回到原生界面，关键会话勿用来测试上下文操作。
+
+[查看完整分析 →](../../plugins/zkforge--dsh-claude-desktop-theme/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1413849053-root"></a>
+
+## [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
+
+[![GitHub ★ 978](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=978&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 752,551](https://img.shields.io/static/v1?label=npm+30d&message=752%2C551&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+
+**主要用途**：通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。
+
+**最新发布**：[0.2.10 · 2026-11-13（北京时间）](https://www.npmjs.com/package/dsh-windows-mcp)。
+
+**源码版本**：[9347426f](https://github.com/helloHub1212/dsh-windows-mcp/commit/9347426f35a897b5904223abb19ae9e4f30a78a6)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保留观察。只在可复位桌面验证公开窗口，并检查停用桥后不会继续调用。
+
+[查看完整分析 →](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
+
+[返回表格](#column-index)
 
 <a id="plugin-1418874781-root"></a>
 
@@ -493,6 +607,24 @@
 **使用条件**：暂以观察为主。若具备隔离账号，可先在空许可名单、关闭评论的条件下小额验证观看。出现换片不稳、身份异常或未决收据时停止互动并回到人工。见 [Q05](../../plugins/lockybee--dsh-douyin-agent/INSIGHT.md#research-q05)。
 
 [查看完整分析 →](../../plugins/lockybee--dsh-douyin-agent/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1342970553-plugin-dsh-voice-mode"></a>
+
+## [DSH Voice Mode](../../plugins/qishuilalala--dsh-voice-mode--plugin-dsh-voice-mode/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/qishuilalala/dsh-voice-mode) [![npm 30d 11,672](https://img.shields.io/static/v1?label=npm+30d&message=11%2C672&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-voice-mode) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-voice-mode)
+
+**主要用途**：为 DeepSeek Harness 提供语音转写、可编辑草稿、按句朗读和打断。
+
+**最新发布**：[0.7.37 · 2026-11-12（北京时间）](https://www.npmjs.com/package/dsh-voice-mode)。
+
+**源码版本**：[a00fd6ad](https://github.com/qishuilalala/dsh-voice-mode/commit/a00fd6ad15507ba889bbf6e90d834c5a30643be5)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/qishuilalala--dsh-voice-mode--plugin-dsh-voice-mode/INSIGHT.md#research-q05) 用无敏感口令验证一次真实草稿和回复。若出现重复发送、未退出采音或打断失效，停用语音并回到键盘。
+
+[查看完整分析 →](../../plugins/qishuilalala--dsh-voice-mode--plugin-dsh-voice-mode/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -871,6 +1003,24 @@
 **使用条件**：[Q05](../../plugins/duhu2000--dsh-mcp-connector/INSIGHT.md#research-q05) 用隔离项目验收一个已有权限的只读查询。核对准确工具名、工作区及服务回执，异常时停用连接并回到原生配置。
 
 [查看完整分析 →](../../plugins/duhu2000--dsh-mcp-connector/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1409893258-root"></a>
+
+## [dsh-ops](../../plugins/t-auto--dsh-ops/INSIGHT.md)
+
+[![GitHub ★ 5,782](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C782&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 229,747](https://img.shields.io/static/v1?label=npm+30d&message=229%2C747&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
+
+**主要用途**：给 DeepSeek Harness 增加 Native 文件工具、PTC 文件批处理与可选 Bash 能力。
+
+**最新发布**：[0.5.4 · 2026-11-11（北京时间）](https://www.npmjs.com/package/dsh-ops)。
+
+**源码版本**：[58f6e281](https://github.com/T-Auto/dsh-ops/commit/58f6e2817618fae52476e8c7f1920aaeb4421c7a)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q05) 建议隔离试用，从只读清单和可复位改动开始；不能解释回执或缺少预期结果时退回官方工具。
+
+[查看完整分析 →](../../plugins/t-auto--dsh-ops/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -1306,6 +1456,24 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1333702274-root"></a>
+
+## [DSH Browser](../../plugins/anweat--dsh-browser/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/anweat/dsh-browser) [![npm 30d 5,874](https://img.shields.io/static/v1?label=npm+30d&message=5%2C874&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anweat/dsh-browser) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anweat/dsh-browser)
+
+**主要用途**：为 DeepSeek Harness 提供浏览器运行时、网页观察和交互工具。
+
+**最新发布**：[0.2.3 · 2026-11-10（北京时间）](https://www.npmjs.com/package/@anweat/dsh-browser)。
+
+**源码版本**：[4ac0883b](https://github.com/anweat/dsh-browser/commit/4ac0883bc4bb64dfe6bccd0792daf016627b1cb6)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/anweat--dsh-browser/INSIGHT.md#research-q04) 先检查无敏感数据的隔离页面。出现跨域状态异常或不知道提交是否成功时停手，读回明确的状态后决定继续或退出。
+
+[查看完整分析 →](../../plugins/anweat--dsh-browser/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1413052822-root"></a>
 
 ## [军械库（DSH Armory）](../../plugins/2026heshao--dsh-armory/INSIGHT.md)
@@ -1594,6 +1762,24 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1211139949-integrations-deepseek-harness"></a>
+
+## [Archify DSH](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md)
+
+[![GitHub ★ 96,236](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=96%2C236&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tt-a1i/archify) [![npm 30d 51,582](https://img.shields.io/static/v1?label=npm+30d&message=51%2C582&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@tt-a1i/archify-dsh)
+
+**主要用途**：通过 DeepSeek Harness 文件系统 Skill 提供器加载随包分发的 Archify 图表技能。
+
+**最新发布**：[1.1.0 · 2026-11-09（北京时间）](https://www.npmjs.com/package/@tt-a1i/archify-dsh)。
+
+**源码版本**：[e3784882](https://github.com/tt-a1i/archify/commit/e37848822238e3a61b12739185cdadd49843a620)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md#research-q05) 在隔离 profile 先记录原有 Skill，再按精确版本试装，核对生效来源，画一条熟悉的请求链并回读文件。遇到来源不符、技能消失或文件不可交接时撤下测试包并复查原工作流。
+
+[查看完整分析 →](../../plugins/tt-a1i--archify--integrations-deepseek-harness/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1377512288-root"></a>
 
 ## [dsh-claude-style](../../plugins/nwflower--dsh-claude-style/INSIGHT.md)
@@ -1861,24 +2047,6 @@
 **使用条件**：只在无敏感数据的普通非 Git 目录试两版会生成文件的任务。先核对同一验收规则与模型成本，再导出到新目录并检查被跳过条目；出现越界写、必要文件缺失或检查不可解释时停用。[Q04](../../plugins/lijiaqi-ai-product-manager--dsh-agent-compare/INSIGHT.md#research-q04)
 
 [查看完整分析 →](../../plugins/lijiaqi-ai-product-manager--dsh-agent-compare/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1413849053-root"></a>
-
-## [dsh-windows-mcp](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
-
-[![GitHub ★ 224](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=224&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 716,731](https://img.shields.io/static/v1?label=npm+30d&message=716%2C731&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
-
-**主要用途**：把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。
-
-**最新发布**：[0.2.4 · 2026-11-08（北京时间）](https://www.npmjs.com/package/dsh-windows-mcp)。
-
-**源码版本**：[dc1308fa](https://github.com/helloHub1212/dsh-windows-mcp/commit/dc1308fa2cd14f3040764f37f2bd2099f74a9720)（与该发布版本的对应关系未核实）。
-
-**使用条件**：[Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保持观察，先在无业务数据的 Windows VM 验收鉴权、tools.guard、双 Agent 及关闭后派发。不能确认则停用桥接、核对在途效果并回到人工截图。
-
-[查看完整分析 →](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2314,6 +2482,24 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1405520053-root"></a>
+
+## [DSH 提示音](../../plugins/billcx330--dsh-plugin-notify-sounds/INSIGHT.md)
+
+[![GitHub ★ 36](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=36&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/BillCx330/dsh-plugin-notify-sounds) [![npm 30d 5,944](https://img.shields.io/static/v1?label=npm+30d&message=5%2C944&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-notify-sounds) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-notify-sounds)
+
+**主要用途**：为 DeepSeek Harness 的审批、提问和任务完成播放提示音，并提供系统通知与静音设置。
+
+**最新发布**：[1.9.5 · 2026-11-07（北京时间）](https://www.npmjs.com/package/dsh-plugin-notify-sounds)。
+
+**源码版本**：[bb258df3](https://github.com/BillCx330/dsh-plugin-notify-sounds/commit/bb258df3ddd25a02ddf9ba8ca4c04623436866a5)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q04](../../plugins/billcx330--dsh-plugin-notify-sounds/INSIGHT.md#research-q04) 用小任务检查提醒准确和点击返回。出现重复或无法唤窗时保留原会话入口。
+
+[查看完整分析 →](../../plugins/billcx330--dsh-plugin-notify-sounds/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1333100071-root"></a>
 
 ## [DSH Vision Toolkit](../../plugins/anionex--dsh-vision-toolkit/INSIGHT.md)
@@ -2728,24 +2914,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1128123594-examples-dsh-memory-plugin"></a>
-
-## [OpenViking Memory for DeepSeek Harness](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
-
-[![GitHub ★ 41,761](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=41%2C761&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) [![npm 30d 43,810](https://img.shields.io/static/v1?label=npm+30d&message=43%2C810&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
-
-**主要用途**：为 DeepSeek Harness 提供 OpenViking 自动召回、会话采集、URI 工具保护和 MCP 接入。
-
-**最新发布**：[0.5.33 · 2026-11-05（北京时间）](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)。
-
-**源码版本**：[4bd28b57](https://github.com/volcengine/OpenViking/commit/4bd28b5783d4fd4126ae15beebf5f19730c47219)（与该发布版本的对应关系未核实）。
-
-**使用条件**：[Q04](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q04) 先在独立 profile 用公开事实核对普通召回、MCP 与项目权限。观察一次断网后的恢复，再关闭采集检查本地和远端状态。若出现误召回或未解释的补送，停相关进程并回到人工笔记。
-
-[查看完整分析 →](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1276665883-packages-dsh-plugin-browserskill"></a>
 
 ## [BrowserSkill for DeepSeek Harness](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md)
@@ -2833,6 +3001,24 @@
 **使用条件**：试用：一个已有账户在专用profile先关自动安装，核来源/单位/时间和警告；只观察原本需要的非关键调用，不新增付费请求。读数误导或持久未知难解释就停用回官方账户页与原生usage，见 [Q06](../../plugins/songoao25--dsh-bottom-info-bar/INSIGHT.md#research-q06)。
 
 [查看完整分析 →](../../plugins/songoao25--dsh-bottom-info-bar/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1336134478-root"></a>
+
+## [DSH Session Sync](../../plugins/perrylink--dsh-session-sync/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PerryLink/dsh-session-sync) [![npm 30d 4,807](https://img.shields.io/static/v1?label=npm+30d&message=4%2C807&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-sync) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-session-sync)
+
+**主要用途**：通过 Git 镜像在设备之间同步 DeepSeek Harness 会话。
+
+**最新发布**：[0.2.32 · 2026-11-05（北京时间）](https://www.npmjs.com/package/dsh-session-sync)。
+
+**源码版本**：[0920f12c](https://github.com/PerryLink/dsh-session-sync/commit/0920f12c6b4ccd752fc1c4d91abccbc0f04cacdd)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/perrylink--dsh-session-sync/INSIGHT.md#research-q05) 先在隔离设备使用无敏感样本，比对两端历史与 Git 树。出现明文或最后事件缺失时停止同步。
+
+[查看完整分析 →](../../plugins/perrylink--dsh-session-sync/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -6040,24 +6226,6 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1409893258-root"></a>
-
-## [dsh-ops](../../plugins/t-auto--dsh-ops/INSIGHT.md)
-
-[![GitHub ★ 5,591](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C591&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 125,600](https://img.shields.io/static/v1?label=npm+30d&message=125%2C600&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
-
-**主要用途**：为 DSH 提供 Native 与 PTC 文件工具、按需加载和可配置的原版工具替换。
-
-**最新发布**：[0.4.4 · 2026-10-28（北京时间）](https://www.npmjs.com/package/dsh-ops)。
-
-**源码版本**：[5057124d](https://github.com/T-Auto/dsh-ops/commit/5057124dd7922d3d275b54f9f195fa5881dff0c9)（与该发布版本的对应关系未核实）。
-
-**使用条件**：按 [Q05](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q05) 取得匹配的可信发行物后，只在可恢复副本做一次带标准答案的只读搜索。核对分页和每处命中。遗漏结果、找不到预期工具或状态不明时暂停，回原工具和磁盘核对。
-
-[查看完整分析 →](../../plugins/t-auto--dsh-ops/INSIGHT.md)
-
-[返回表格](#column-index)
-
 <a id="plugin-1336849011-root"></a>
 
 ## [dsh-plugin-bridge](../../plugins/totoro-qaq--dsh-plugin-bridge/INSIGHT.md)
@@ -6955,6 +7123,24 @@
 **使用条件**：建议先观察。已有DSH/Blender用户应先核对目标版本导入对象和启动对象的区分，在未证实验证针对实际目标资产前，不依赖passed承接正式交付或唯一模型；保留源.blend和便携模型，使用Blender GUI或已审查脚本独立检查。后续任何小范围实验仍只用副本、可信代码和新输出名；超时先核对产物，不盲目重放。[Q05](../../plugins/cheshirejcat--blender/INSIGHT.md#research-q05)
 
 [查看完整分析 →](../../plugins/cheshirejcat--blender/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1334088310-root"></a>
+
+## [DSH Tavern](../../plugins/player-minepig--dsh-tavern/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Player-MINEPIG/dsh-tavern) [![npm 30d 2,313](https://img.shields.io/static/v1?label=npm+30d&message=2%2C313&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/pmp-dsh-tavern) [![最新发布 2026-10-24](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-24&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/pmp-dsh-tavern)
+
+**主要用途**：为 DeepSeek Harness 提供 SillyTavern 资源、角色周目与对话前端。
+
+**最新发布**：[3.0.5 · 2026-10-24（北京时间）](https://www.npmjs.com/package/pmp-dsh-tavern)。
+
+**源码版本**：[02de8e27](https://github.com/Player-MINEPIG/dsh-tavern/commit/02de8e274e57464b3c37d2cb92f78f1d233900bb)（与该发布版本的对应关系未核实）。
+
+**使用条件**：[Q05](../../plugins/player-minepig--dsh-tavern/INSIGHT.md#research-q05) 用可信的无敏感卡在隔离工作区核对成功首轮和权限，遇到悬空周目、未预期调用或重试失配就回原生视图。
+
+[查看完整分析 →](../../plugins/player-minepig--dsh-tavern/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -8776,80 +8962,8 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1417442557-root"></a>
-
-## [agent-clinic](../../plugins/1687210989--agent-clinic/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/1687210989/agent-clinic) [![npm 30d 95](https://img.shields.io/static/v1?label=npm+30d&message=95&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/agent-clinic) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/agent-clinic)
-
-**主要用途**：只读扫描本地DSH会话，生成带证据定位的使用问题诊断、配置处方与插件候选，并提供面板和CLI。
-
-**最新发布**：[0.2.0 · 2026-10-15（北京时间）](https://www.npmjs.com/package/agent-clinic)。
-
-**源码版本**：[e88d6ec6](https://github.com/1687210989/agent-clinic/commit/e88d6ec63d7a67277bf3c6c86f38a43ee97527c4)（与该发布版本的对应关系未核实）。
-
-**使用条件**：先观察。愿意继续评估的维护者可从离线小范围会话逐条复核开始，先澄清E1真实判据和配置来源；未核对鉴权前不依赖web面板，任何处方均需回滚与任务对照。详见[Q09](../../plugins/1687210989--agent-clinic/INSIGHT.md#research-q09)。
-
-[查看完整分析 →](../../plugins/1687210989--agent-clinic/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-841979943-root"></a>
-
-## [dsh-wrapup-guard](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md)
-
-[![GitHub ★ 1](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/566001/dsh-wrapup-guard) [![npm 30d 74](https://img.shields.io/static/v1?label=npm+30d&message=74&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-wrapup-guard)
-
-**主要用途**：用 wrapup_check 记录收尾检查轮次并在三轮空问题报告后提示完成。
-
-**最新发布**：[0.1.0 · 2026-10-15（北京时间）](https://www.npmjs.com/package/dsh-wrapup-guard)。
-
-**源码版本**：[99734eba](https://github.com/566001/dsh-wrapup-guard/commit/99734eba9a8d8cd4c3d3701c0de4eaf7586d9ff2)（与该发布版本的对应关系未核实）。
-
-**使用条件**：仅建议隔离项目观察试用。若要用于正式交付，须先证明同轮检查可追溯、失败不会空报放行，并明确多会话显示隔离。详见[Q03](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md#research-q03)、[Q04](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md#research-q04)。
-
-[查看完整分析 →](../../plugins/566001--dsh-wrapup-guard/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1344270011-root"></a>
-
-## [dsh-j-space](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md)
-
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AnonyJcy/dsh-j-space) [![npm 30d 2,043](https://img.shields.io/static/v1?label=npm+30d&message=2%2C043&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)
-
-**主要用途**：将 J-Space Cognition Suite 接入 DSH 原生 Agent Preset 并保留证据控制器
-
-**最新发布**：[1.2.4 · 2026-10-15（北京时间）](https://www.npmjs.com/package/@anonyjcy/dsh-j-space)。
-
-**源码版本**：[d2bb1b8f](https://github.com/AnonyJcy/dsh-j-space/commit/d2bb1b8fb708bc01a0bc5d883164d857e5fde653)（与该发布版本的对应关系未核实）。
-
-**使用条件**：兼容环境的复杂任务先单agent受控试用，明确合作协议与宿主强制门禁区别；简单任务用原生记录，重读/复核负担不能换来质量时停止扩展。[Q05](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md#research-q05)
-
-[查看完整分析 →](../../plugins/anonyjcy--dsh-j-space/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1334569498-root"></a>
-
-## [dsh-mermaid](../../plugins/aks1st--dsh-mermaid/INSIGHT.md)
-
-[![GitHub ★ 9](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=9&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/AKS1st/dsh-mermaid) [![npm 30d 4,196](https://img.shields.io/static/v1?label=npm+30d&message=4%2C196&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mermaid) [![最新发布 2026-10-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mermaid)
-
-**主要用途**：在DSH Web会话中把Mermaid代码围栏显示为SVG图，支持主题跟随、放大和错误查看。
-
-**最新发布**：[0.4.2 · 2026-10-15（北京时间）](https://www.npmjs.com/package/dsh-mermaid)。
-
-**源码版本**：[2708cdf2](https://github.com/AKS1st/dsh-mermaid/commit/2708cdf2e2eb1c0cd15448c3d3d680b8fba58d48)（与该发布版本的对应关系未核实）。
-
-**使用条件**：适合经常看Mermaid图的人先用小图试用，保留strict和合理限制，报错先复制后决定是否发AI；卡顿、异常交互或草稿覆盖就停相关路径。详见[Q06](../../plugins/aks1st--dsh-mermaid/INSIGHT.md#research-q06)。
-
-[查看完整分析 →](../../plugins/aks1st--dsh-mermaid/INSIGHT.md)
-
-[返回表格](#column-index)
-
 [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-13
+2026-11-14

@@ -1,10 +1,10 @@
 {
     "schema_version": 4,
-    "snapshot_digest": "0201964d5a770bbc6672e07ab86bb6a455abb017247c47efe88fab6987df3bf5",
-    "index_sha256": "7e72d0b6c9fd0d097348e54565db24af51bee5fa8e543c9e8a79ad926b8f44ca",
+    "snapshot_digest": "590cb3e002a4ee5e1bf8154be2868fe8266dcfe2303b494f55cb142385f09204",
+    "index_sha256": "cc068f517e59dbe591d68ea4d0db6bd230d5110683f06bdf3b7ce88c7be24404",
     "head": {
         "schema_version": 1,
-        "checked_at": "2026-11-13T07:16:30Z",
+        "checked_at": "2026-11-14T11:30:11Z",
         "catalog": {
             "schema_version": 1,
             "plugins": [],
@@ -12,7 +12,7 @@
         },
         "publication": {
             "schema_version": 1,
-            "scope": "本轮所选 50，完成 41，受阻 9；已知同版本受阻跳过 41；频繁更新窗口内跳过 134；当前发布 1335",
+            "scope": "本轮所选 40，完成 24，受阻 16；已知同版本受阻跳过 39；频繁更新窗口内跳过 121；当前发布 1352",
             "catalog": "data/catalog/PLUGINS.json",
             "catalog_page": "data/views/categories/INDEX.md",
             "metadata": {},
@@ -20,14 +20,14 @@
             "capabilities": {},
             "advice": {},
             "records": [],
-            "checked_at": "2026-11-13T07:16:30Z"
+            "checked_at": "2026-11-14T11:30:11Z"
         },
         "registry": {},
         "discovery": {
             "sources": [
                 {
                     "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
-                    "revision": "891b3e37d0a05ee0dd11d748a75895803681f42c",
+                    "revision": "08ede76f00522d0da607dc4e8b0ee8b3c55c8ef4",
                     "complete": false
                 },
                 {
@@ -48,8 +48,8 @@
             "首次迁移只知道当前研究档案，不拥有历史完整来源成员清单；未入档对象的历史变化为 unknown。"
         ],
         "transaction": {
-            "id": "2026-11-13-02",
-            "work_digest": "f0207c88afb2050d469d50f58dadc2f78404b4a51a76c520978da2e4b8af8939"
+            "id": "2026-11-14-01",
+            "work_digest": "6c4a7622fed6af84dd85a41666525c75b858feea26503f3bbcb11dd3355494b5"
         },
         "research_blocks": {
             "github:1335034901:root": {
@@ -797,51 +797,43 @@
             },
             "github:1323129961:packages-plugin-console": {
                 "plugin_id": "github:1323129961:packages-plugin-console",
-                "revision": "cbe3654f479bcd7941d5203e828dcaf9e37fd7f8",
-                "reason_code": "dsh_plugin_admission_undetermined",
-                "reason": "固定提交根树没有 packages 子树，packages/plugin/console 的 git ls-tree 和 tracked file 列表均为空。本轮绑定的是该子组件，无法确认其包声明、宿主挂载及实际入口。仓库当前根组件有明确的市场索引身份，不能作为缺失子组件的源码替代。",
+                "revision": "7f4a9b6d682e4d1bddaee228120a70e75fe2ba22",
+                "reason_code": "not_dsh_plugin",
+                "reason": "固定提交已移除待查的 packages/plugin/console。当前整个仓库保留市场索引生成，不存在该组件的包和宿主挂载。",
                 "details": {
-                    "plugin_id": "github:1323129961:packages-plugin-console",
-                    "revision": "cbe3654f479bcd7941d5203e828dcaf9e37fd7f8",
-                    "reason_code": "dsh_plugin_admission_undetermined",
-                    "reason": "固定提交根树没有 packages 子树，packages/plugin/console 的 git ls-tree 和 tracked file 列表均为空。本轮绑定的是该子组件，无法确认其包声明、宿主挂载及实际入口。仓库当前根组件有明确的市场索引身份，不能作为缺失子组件的源码替代。",
-                    "admission": {
-                        "id": "github:1323129961:packages-plugin-console",
-                        "repository": "vlln/plugin-registry",
-                        "path": "packages/plugin/console",
-                        "revision": "cbe3654f479bcd7941d5203e828dcaf9e37fd7f8",
-                        "decision": "undetermined",
-                        "reason": "固定提交根树没有 packages 子树，packages/plugin/console 的 git ls-tree 和 tracked file 列表均为空。本轮绑定的是该子组件，无法确认其包声明、宿主挂载及实际入口。仓库当前根组件有明确的市场索引身份，不能作为缺失子组件的源码替代。",
-                        "evidence": [
-                            {
-                                "path": "packages/plugin/console",
-                                "observation": "固定 git ls-tree HEAD packages/plugin/console 和 git ls-files packages/plugin/console 均无输出；工作树也没有该目录，MATERIALS inventory 为 0。"
-                            },
-                            {
-                                "path": "package.json",
-                                "line_start": 1,
-                                "line_end": 12,
-                                "observation": "现存根包是私有市场索引工程，build 生成索引，dsh-plugin-market-index 仅作为开发依赖。"
-                            },
-                            {
-                                "path": "README.md",
-                                "line_start": 8,
-                                "line_end": 35,
-                                "observation": "根仓库提供 index.json 供 DSH Discover 引用，各插件以独立仓库和包安装。此材料无该固定子组件的挂载入口。"
-                            }
-                        ],
-                        "next_step": "回查目录来源该条目的固定仓库、组件路径和版本，若确有迁移则取得新位置及稳定组件绑定依据；用包含该子组件实际包清单和 DSH 挂载的固定源码复核。"
-                    },
-                    "directory_evidence": {
-                        "repository": "awesome-dsh-plugin/awesome-dsh-plugin",
-                        "revision": "891b3e37d0a05ee0dd11d748a75895803681f42c",
-                        "path": "data/plugins/vlln__plugin-registry--packages-plugin-console.yml",
-                        "observed_url": "https://github.com/vlln/plugin-registry/tree/main/packages/plugin/console",
-                        "finding": "目录仍指向所选缺失路径；目标固定提交无该路径，也未发现可确认的迁移入口。"
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "固定提交已移除待查的 packages/plugin/console。当前整个仓库保留市场索引生成，不存在该组件的包和宿主挂载。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1323129961:packages-plugin-console",
+                            "repository": "vlln/plugin-registry",
+                            "path": "packages/plugin/console",
+                            "revision": "7f4a9b6d682e4d1bddaee228120a70e75fe2ba22",
+                            "decision": "not_dsh_plugin",
+                            "reason": "固定提交已移除待查的 packages/plugin/console。当前整个仓库保留市场索引生成，不存在该组件的包和宿主挂载。",
+                            "evidence": [
+                                {
+                                    "path": "README.md",
+                                    "observation": "作者明确原 thin console 已被宿主内置 Plugins 页面接替。",
+                                    "line_start": 67,
+                                    "line_end": 71
+                                },
+                                {
+                                    "path": "package.json",
+                                    "observation": "当前根包为私有市场索引及生成脚本。",
+                                    "line_start": 1,
+                                    "line_end": 17
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "git ls-tree -r -d HEAD 未发现 packages 或 console 子树；Git 固定根仅有 plugins、scripts、icons、.github 及索引和文档。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T02:33:44.972Z",
-                "run_id": "2026-11-13-01"
+                "blocked_at": "2026-11-14T11:52:01.542Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1334657392:root": {
                 "plugin_id": "github:1334657392:root",
@@ -913,61 +905,37 @@
             },
             "github:1331636953:packages-dsh-git-graph": {
                 "plugin_id": "github:1331636953:packages-dsh-git-graph",
-                "revision": "33b795dec1618fdb699adcd83de5702646311d0d",
+                "revision": "0af7b234f79e386634fbbfc7e99fd2ebd3ec0d7b",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定提交中所选 Git 图谱子包已退役并从 Git 树删除。聚合包保留旧子路径用于解析历史 profile，但配置将其登记为静默空操作，固定版本无可追到的原组件挂载和能力。作者提到历史 npm 分发仍保留，本判定仅绑定当前固定源码。",
+                "reason": "固定源码中该组件已经退役并整体删除，聚合包保留兼容旧 profile 导入的静默空壳。此前独立包属于历史发行。",
                 "details": {
-                    "plugin_id": "github:1331636953:packages-dsh-git-graph",
-                    "revision": "33b795dec1618fdb699adcd83de5702646311d0d",
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定提交中所选 Git 图谱子包已退役并从 Git 树删除。聚合包保留旧子路径用于解析历史 profile，但配置将其登记为静默空操作，固定版本无可追到的原组件挂载和能力。作者提到历史 npm 分发仍保留，本判定仅绑定当前固定源码。",
-                    "admission": {
-                        "id": "github:1331636953:packages-dsh-git-graph",
-                        "repository": "zhu1090093659/dsh-web",
-                        "path": "packages/dsh-git-graph",
-                        "revision": "33b795dec1618fdb699adcd83de5702646311d0d",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定提交中所选 Git 图谱子包已退役并从 Git 树删除。聚合包保留旧子路径用于解析历史 profile，但配置将其登记为静默空操作，固定版本无可追到的原组件挂载和能力。作者提到历史 npm 分发仍保留，本判定仅绑定当前固定源码。",
-                        "evidence": [
-                            {
-                                "path": "packages/dsh-git-graph",
-                                "observation": "固定提交 git ls-tree HEAD -- packages/dsh-git-graph 与 git ls-files packages/dsh-git-graph 均无条目，机械 inventory 同样记录该组件 0 个文件。"
-                            },
-                            {
-                                "path": "packages/dsh-web-all/aggregate.yml",
-                                "line_start": 34,
-                                "line_end": 35,
-                                "observation": "聚合配置注明删除包目录，停止挂载和依赖。"
-                            },
-                            {
-                                "path": "packages/dsh-web-all/aggregate.yml",
-                                "line_start": 227,
-                                "line_end": 231,
-                                "observation": "git-graph 作为 tombstone 留存，让旧 profile 子路径可解析并静默空操作。"
-                            },
-                            {
-                                "path": "packages/dsh-web-all/aggregate.yml",
-                                "line_start": 259,
-                                "line_end": 262,
-                                "observation": "retiredPlugins 明确登记 git-graph 和原包名。"
-                            },
-                            {
-                                "path": "packages/dsh-web-all/package.json",
-                                "line_start": 15,
-                                "line_end": 19,
-                                "observation": "git-graph 子路径导出只指向共用 shell.js。"
-                            },
-                            {
-                                "path": ".agents/notes/implemented/simplification/2026-11-03-git-graph-package-retired.zh.md",
-                                "line_start": 13,
-                                "line_end": 27,
-                                "observation": "作者记录原包删除、旧行兼容和分别迁往官方变更视图及实验性 worktree 插件的安排。"
-                            }
-                        ]
+                    "reason": "固定源码中该组件已经退役并整体删除，聚合包保留兼容旧 profile 导入的静默空壳。此前独立包属于历史发行。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1331636953:packages-dsh-git-graph",
+                            "repository": "zhu1090093659/dsh-web",
+                            "path": "packages/dsh-git-graph",
+                            "revision": "0af7b234f79e386634fbbfc7e99fd2ebd3ec0d7b",
+                            "decision": "not_dsh_plugin",
+                            "reason": "固定源码中该组件已经退役并整体删除，聚合包保留兼容旧 profile 导入的静默空壳。此前独立包属于历史发行。",
+                            "evidence": [
+                                {
+                                    "path": "packages/dsh-git-graph",
+                                    "observation": "固定 Git 树 git ls-tree -r 0af7b234f79e386634fbbfc7e99fd2ebd3ec0d7b -- packages/dsh-git-graph 为空；与旧固定版本 68a78d05a6c8c27305671cfc42c30cbbec8014f5 比较为该路径下文件删除。"
+                                },
+                                {
+                                    "path": ".agents/notes/implemented/simplification/2026-11-03-git-graph-package-retired.zh.md",
+                                    "line_start": 15,
+                                    "line_end": 27,
+                                    "observation": "上游说明下架源码、旧子路径空壳、旧发布包保留，变更和隔离交由不同官方组件。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T02:17:08.206Z",
-                "run_id": "2026-11-13-01"
+                "blocked_at": "2026-11-14T11:52:01.543Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1330041615:root": {
                 "plugin_id": "github:1330041615:root",
@@ -1293,150 +1261,177 @@
             },
             "github:1333065091:root": {
                 "plugin_id": "github:1333065091:root",
-                "revision": "e8f7b93a344964de3dca1ace9e72b6e4d6de87cb",
+                "revision": "39163dd30f703a79079e2d2446545cff3c453738",
                 "reason_code": "not_dsh_plugin",
-                "reason": "选中根组件是 DSH 宿主本身的 monorepo。根清单为私有开发工作区，dsh 脚本指向宿主 CLI，实际 profile 基础 bundle 和能力插件归各子包声明。",
+                "reason": "根组件是官方 Host 的开发工作区，负责启动并组合插件。未发现将工作区根包作为插件加载的 profile 补丁。",
                 "details": {
-                    "plugin_id": "github:1333065091:root",
-                    "revision": "e8f7b93a344964de3dca1ace9e72b6e4d6de87cb",
                     "reason_code": "not_dsh_plugin",
-                    "reason": "选中根组件是 DSH 宿主本身的 monorepo。根清单为私有开发工作区，dsh 脚本指向宿主 CLI，实际 profile 基础 bundle 和能力插件归各子包声明。",
-                    "admission": {
-                        "id": "github:1333065091:root",
-                        "repository": "deepseek-ai/deepseek-harness",
-                        "path": "",
-                        "revision": "e8f7b93a344964de3dca1ace9e72b6e4d6de87cb",
-                        "decision": "not_dsh_plugin",
-                        "reason": "选中根组件是 DSH 宿主本身的 monorepo。根清单为私有开发工作区，dsh 脚本指向宿主 CLI，实际 profile 基础 bundle 和能力插件归各子包声明。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "line_start": 1,
-                                "line_end": 10,
-                                "observation": "根清单是 private 的 @deepseek-ai/dsh-root；全清单不存在顶层 dsh 对象。"
-                            },
-                            {
-                                "path": "package.json",
-                                "line_start": 205,
-                                "line_end": 216,
-                                "observation": "scripts.dsh 指向 apps/cli/src/bin.ts，用于启动宿主 CLI。"
-                            },
-                            {
-                                "path": "apps/cli/src/bin.ts",
-                                "line_start": 21,
-                                "line_end": 43,
-                                "observation": "CLI 分派 profile 模式并调用 runProfile 加载应用配置，是宿主入口。"
-                            },
-                            {
-                                "path": "packages/bundle/base/package.json",
-                                "line_start": 25,
-                                "line_end": 42,
-                                "observation": "基础组合层由独立 @deepseek-ai/dsh-base 子包声明及打包 cordis.patch.yml，清单第 34–38 行拥有 dsh.bundle.patch。"
-                            },
-                            {
-                                "path": "packages/bundle/base/cordis.patch.yml",
-                                "line_start": 15,
-                                "line_end": 44,
-                                "observation": "子包补丁实际组合插件管理、重载、LLM 和会话能力。核查范围包含固定 Git 树 414 份 package.json 的路径及 dsh 键定位，区分根脚本、CLI bin、测试 fixture 与实际子包。"
-                            }
-                        ]
-                    },
-                    "next_step": "如需研究挂载能力，按目录所列实际插件子组件的独立身份核查。"
+                    "reason": "根组件是官方 Host 的开发工作区，负责启动并组合插件。未发现将工作区根包作为插件加载的 profile 补丁。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1333065091:root",
+                            "repository": "deepseek-ai/deepseek-harness",
+                            "path": "",
+                            "revision": "39163dd30f703a79079e2d2446545cff3c453738",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件是官方 Host 的开发工作区，负责启动并组合插件。未发现将工作区根包作为插件加载的 profile 补丁。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 21,
+                                    "observation": "根包 @deepseek-ai/dsh-root 是私有工作区。"
+                                },
+                                {
+                                    "path": "package.json",
+                                    "line_start": 207,
+                                    "line_end": 219,
+                                    "observation": "dsh 属性位于 scripts 对象，是启动 CLI 的命令；需与插件清单的 dsh.bundle.patch 区分。"
+                                },
+                                {
+                                    "path": "apps/cli/package.json",
+                                    "line_start": 1,
+                                    "line_end": 16,
+                                    "observation": "真正发布的 @deepseek-ai/dsh 命令位于 apps/cli，声明承担 profile 启动和插件管理。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 19,
+                                    "line_end": 39,
+                                    "observation": "npm 和源码用法均是启动 Host Web UI。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "对照固定 Git 文件树的根清单、安装说明及 DSH/Cordis 配置路径，未找到将仓库根加载进 DSH 的条目。"
+                                }
+                            ]
+                        }
+                    }
                 },
-                "blocked_at": "2026-11-12T01:55:36.819Z",
-                "run_id": "2026-11-12-01"
+                "blocked_at": "2026-11-14T11:44:19.915Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1223170290:root": {
                 "plugin_id": "github:1223170290:root",
-                "revision": "e427ad965595382fa3ba25ce172b1d7f732458d0",
+                "revision": "59e4f2ae85de7e7318a5e6bdcf3a34584c4b7582",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定根组件是 OpenDesign 设计应用和 daemon。应用通过命令行启动 DSH，真正由 DSH 挂载的 startup 与 runtime 在独立子组件 packages/dsh-runtime。",
+                "reason": "仓库根是 OpenDesign 客户端工程。客户端调用用户的 DSH，DSH 挂载的是 packages/dsh-runtime 子包，所选根组件没有自身挂载。",
                 "details": {
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定根组件是 OpenDesign 设计应用和 daemon。应用通过命令行启动 DSH，真正由 DSH 挂载的 startup 与 runtime 在独立子组件 packages/dsh-runtime。",
+                    "reason": "仓库根是 OpenDesign 客户端工程。客户端调用用户的 DSH，DSH 挂载的是 packages/dsh-runtime 子包，所选根组件没有自身挂载。",
                     "details": {
-                        "id": "github:1223170290:root",
-                        "repository": "nexu-io/open-design",
-                        "path": "",
-                        "revision": "e427ad965595382fa3ba25ce172b1d7f732458d0",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定根组件是 OpenDesign 设计应用和 daemon。应用通过命令行启动 DSH，真正由 DSH 挂载的 startup 与 runtime 在独立子组件 packages/dsh-runtime。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "line_start": 2,
-                                "line_end": 18,
-                                "observation": "根包是 private 设计产品，od 命令入口指向自己的 daemon。根清单无 DSH 挂载声明。"
-                            },
-                            {
-                                "path": "apps/daemon/src/runtimes/defs/deepseek-harness.ts",
-                                "line_start": 84,
-                                "line_end": 102,
-                                "observation": "产品侧选择 open-design profile 调用 probe、models 与 stdio，以 JSONL 消费 DSH 输出。"
-                            },
-                            {
-                                "path": "packages/dsh-runtime/package.json",
-                                "line_start": 22,
-                                "line_end": 37,
-                                "observation": "独立子包提供补丁导出及 dsh.bundle.patch；检索固定树 package.json 仅此处声明 dsh。"
-                            },
-                            {
-                                "path": "packages/dsh-runtime/cordis.patch.yml",
-                                "line_start": 14,
-                                "line_end": 20,
-                                "observation": "固定补丁挂载 @open-design/dsh-runtime/startup 与 @open-design/dsh-runtime，并注入 openDesignStartup。"
-                            },
-                            {
-                                "path": "packages/dsh-runtime/src/index.ts",
-                                "line_start": 451,
-                                "line_end": 466,
-                                "observation": "子组件 apply 消费 startup 与 appExit，进入 probe、models 或实际 serve。"
-                            }
-                        ]
+                        "admission": {
+                            "id": "github:1223170290:root",
+                            "repository": "nexu-io/open-design",
+                            "path": "",
+                            "revision": "59e4f2ae85de7e7318a5e6bdcf3a34584c4b7582",
+                            "decision": "not_dsh_plugin",
+                            "reason": "仓库根是 OpenDesign 客户端工程。客户端调用用户的 DSH，DSH 挂载的是 packages/dsh-runtime 子包，所选根组件没有自身挂载。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 35,
+                                    "observation": "根为私有工作区，od 入口指向自己的 daemon，工作区脚本处理客户端构建、运维与开发。全根清单未声明 dsh.bundle.patch。"
+                                },
+                                {
+                                    "path": "apps/daemon/src/runtimes/defs/deepseek-harness.ts",
+                                    "line_start": 84,
+                                    "line_end": 100,
+                                    "observation": "客户端以 open-design profile 调用用户安装的 dsh，发起探测、模型枚举与 stdio 运行。"
+                                },
+                                {
+                                    "path": "packages/dsh-runtime/README.md",
+                                    "line_start": 1,
+                                    "line_end": 20,
+                                    "observation": "安装到 open-design profile 的是 @open-design/dsh-runtime 的独立压缩包。客户端需要用户事先安装 DSH。"
+                                },
+                                {
+                                    "path": "packages/dsh-runtime/package.json",
+                                    "line_start": 22,
+                                    "line_end": 38,
+                                    "observation": "包导出和 dsh.bundle.patch 位于 packages/dsh-runtime 独立清单。"
+                                },
+                                {
+                                    "path": "packages/dsh-runtime/cordis.patch.yml",
+                                    "line_start": 14,
+                                    "line_end": 20,
+                                    "observation": "补丁加载子包的 startup 与 runtime，向后者注入 openDesignStartup。"
+                                },
+                                {
+                                    "path": "packages/dsh-runtime/src/index.ts",
+                                    "line_start": 29,
+                                    "line_end": 37,
+                                    "observation": "模型、代理、会话及持久化服务注入位于子包运行模块。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树下 package.json 的 dsh 字段及 Cordis 配置路径，仅 packages/dsh-runtime/package.json 声明 DSH 字段，配置文件见 packages/dsh-runtime/cordis.patch.yml。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T07:34:51.470Z",
-                "run_id": "2026-11-13-02"
+                "blocked_at": "2026-11-14T11:40:16.530Z",
+                "run_id": "2026-11-14-01"
             },
             "github:249995750:root": {
                 "plugin_id": "github:249995750:root",
-                "revision": "4c226961902687766c5598a4a2be52eaf9660952",
+                "revision": "e09a4a8a8a78f8499f929733b65ff5bbb613ef31",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定根清单是 Reactive Resume 简历应用的私有工作区，DSH 挂载及可分发导出位于单独的 packages/dsh-plugin 组件。",
+                "reason": "根组件提供简历制作 Web 应用。DSH 挂载的是 packages/dsh-plugin 目录内的独立发布包。",
                 "details": {
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定根清单是 Reactive Resume 简历应用的私有工作区，DSH 挂载及可分发导出位于单独的 packages/dsh-plugin 组件。",
+                    "reason": "根组件提供简历制作 Web 应用。DSH 挂载的是 packages/dsh-plugin 目录内的独立发布包。",
                     "details": {
-                        "id": "github:249995750:root",
-                        "repository": "reactive-resume/reactive-resume",
-                        "path": "",
-                        "revision": "4c226961902687766c5598a4a2be52eaf9660952",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定根清单是 Reactive Resume 简历应用的私有工作区，DSH 挂载及可分发导出位于单独的 packages/dsh-plugin 组件。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "line_start": 2,
-                                "line_end": 26,
-                                "observation": "根清单定义应用工作区或应用可执行入口，完整清单没有 dsh.bundle.patch 或宿主入口。"
-                            },
-                            {
-                                "path": "packages/dsh-plugin/package.json",
-                                "line_start": 2,
-                                "line_end": 38,
-                                "observation": "DSH 子组件以独立包名、相对目录和 JS 导出分发。"
-                            },
-                            {
-                                "path": "packages/dsh-plugin/cordis.patch.yml",
-                                "line_start": 13,
-                                "line_end": 17,
-                                "observation": "固定版本的补丁挂载独立子包，挂载名与子包名称对应。"
-                            }
-                        ]
+                        "admission": {
+                            "id": "github:249995750:root",
+                            "repository": "reactive-resume/reactive-resume",
+                            "path": "",
+                            "revision": "e09a4a8a8a78f8499f929733b65ff5bbb613ef31",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件提供简历制作 Web 应用。DSH 挂载的是 packages/dsh-plugin 目录内的独立发布包。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 19,
+                                    "observation": "根清单明确是私有的简历编辑应用。"
+                                },
+                                {
+                                    "path": "packages/dsh-plugin/package.json",
+                                    "line_start": 1,
+                                    "line_end": 19,
+                                    "observation": "独立发布包名称是 dsh-plugin-reactive-resume，仓库目录声明为 packages/dsh-plugin。"
+                                },
+                                {
+                                    "path": "packages/dsh-plugin/package.json",
+                                    "line_start": 68,
+                                    "line_end": 72,
+                                    "observation": "独立发布包声明 Cordis 补丁。"
+                                },
+                                {
+                                    "path": "packages/dsh-plugin/cordis.patch.yml",
+                                    "line_start": 11,
+                                    "line_end": 17,
+                                    "observation": "补丁载入子包模块，配置来自 RXRESUME_API_KEY。"
+                                },
+                                {
+                                    "path": "packages/dsh-plugin/src/index.ts",
+                                    "line_start": 20,
+                                    "line_end": 31,
+                                    "observation": "被挂载的模块和 systemPrompt 服务注入定义在子包源码。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 3616 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 packages/dsh-plugin/package.json，配置匹配 packages/dsh-plugin/cordis.patch.yml。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T07:27:28.591Z",
-                "run_id": "2026-11-13-02"
+                "blocked_at": "2026-11-14T11:42:16.423Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1216785679:root": {
                 "plugin_id": "github:1216785679:root",
@@ -1498,184 +1493,217 @@
             },
             "github:1333321333:root": {
                 "plugin_id": "github:1333321333:root",
-                "revision": "233b76c65d2a83a777a96419d798cb5582acb8f7",
+                "revision": "b3c0442392e705b9418b4a08dc4ebf9ad2714364",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定选择是桌面产品的根工作区；其运行时确实由 DSH 插件组合，但可挂载的包与构建导出分别位于下级组件。",
+                "reason": "根组件是聚合桌面产品的 Yarn 工作区。桌面外壳确实通过 DSH 组合，但挂载的模块分属其工作区包，根组件本身没有独立挂载。",
                 "details": {
-                    "plugin_id": "github:1333321333:root",
-                    "revision": "233b76c65d2a83a777a96419d798cb5582acb8f7",
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定选择是桌面产品的根工作区；其运行时确实由 DSH 插件组合，但可挂载的包与构建导出分别位于下级组件。",
-                    "admission": {
-                        "id": "github:1333321333:root",
-                        "repository": "anywhere-labs/dsh-desktop",
-                        "path": "",
-                        "revision": "233b76c65d2a83a777a96419d798cb5582acb8f7",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定选择是桌面产品的根工作区；其运行时确实由 DSH 插件组合，但可挂载的包与构建导出分别位于下级组件。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "line_start": 1,
-                                "line_end": 16,
-                                "observation": "根包是 private 产品工作区，列出桌面和市场子包。"
-                            },
-                            {
-                                "path": ".",
-                                "observation": "检查固定 Git 根清单及递归补丁路径：根无 dsh.bundle.patch、exports、main 或 bin，无根 cordis.patch.yml；补丁位于 dsh-community-market、dsh-desktop-next、dsh-plugin-desktop-beta 和 dsh-plugin-desktop。"
-                            },
-                            {
-                                "path": "README.en.md",
-                                "line_start": 30,
-                                "line_end": 33,
-                                "observation": "作者定位为集成上游 Host 和 Web UI 的桌面应用。"
-                            },
-                            {
-                                "path": "dsh-plugin-desktop/package.json",
-                                "line_start": 10,
-                                "line_end": 37,
-                                "observation": "明确子目录身份、Electron/CLI 入口及插件导出。"
-                            },
-                            {
-                                "path": "dsh-desktop-next/package.json",
-                                "line_start": 320,
-                                "line_end": 325,
-                                "observation": "另一桌面子包独立声明自己的补丁。"
-                            }
-                        ]
-                    },
-                    "next_step": "只对有直接 DSH 挂载证据且进入固定队列的独立组件重新核查。"
+                    "reason": "根组件是聚合桌面产品的 Yarn 工作区。桌面外壳确实通过 DSH 组合，但挂载的模块分属其工作区包，根组件本身没有独立挂载。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1333321333:root",
+                            "repository": "anywhere-labs/dsh-desktop",
+                            "path": "",
+                            "revision": "b3c0442392e705b9418b4a08dc4ebf9ad2714364",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件是聚合桌面产品的 Yarn 工作区。桌面外壳确实通过 DSH 组合，但挂载的模块分属其工作区包，根组件本身没有独立挂载。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 16,
+                                    "observation": "私有产品工作区收录桌面稳定、beta、next、fabric 和市场代码。"
+                                },
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1502,
+                                    "line_end": 1520,
+                                    "observation": "根级开发、启动、构建及分发命令委派到各工作区。"
+                                },
+                                {
+                                    "path": "README.en.md",
+                                    "line_start": 141,
+                                    "line_end": 150,
+                                    "observation": "作者所称项目自身是插件，具体指桌面外壳使用相同的 DSH 组合机制。"
+                                },
+                                {
+                                    "path": "dsh-plugin-desktop/package.json",
+                                    "line_start": 10,
+                                    "line_end": 20,
+                                    "observation": "稳定桌面包的组件路径是 dsh-plugin-desktop，独立声明产物入口和命令。"
+                                },
+                                {
+                                    "path": "dsh-plugin-desktop/package.json",
+                                    "line_start": 113,
+                                    "line_end": 127,
+                                    "observation": "桌面稳定包声明客户端服务注入与 bundle 补丁。"
+                                },
+                                {
+                                    "path": "dsh-plugin-desktop/cordis.patch.yml",
+                                    "line_start": 8,
+                                    "line_end": 25,
+                                    "observation": "补丁挂载桌面 shell、终端、诊断、通知、配置和更新模块，specifier 指向桌面子包。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 7199 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 dsh-community-market/package.json、dsh-desktop-next/package.json、dsh-plugin-desktop-beta/package.json、dsh-plugin-desktop/package.json，配置匹配 dsh-community-market/cordis.patch.yml、dsh-desktop-next/cordis.patch.yml、dsh-desktop-next/host.cordis.patch.yml、dsh-plugin-desktop-beta/cordis.patch.yml、dsh-plugin-desktop-beta/host.cordis.patch.yml、dsh-plugin-desktop/cordis.patch.yml。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
+                    }
                 },
-                "blocked_at": "2026-11-12T02:01:38.634Z",
-                "run_id": "2026-11-12-01"
+                "blocked_at": "2026-11-14T11:42:16.440Z",
+                "run_id": "2026-11-14-01"
             },
             "github:995029641:root": {
                 "plugin_id": "github:995029641:root",
-                "revision": "002d8c1ac031871fc14220e964f4dbb35b60428f",
+                "revision": "3a1479883b55b7f786ef0bf3141478e4dfb9444f",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定仓库根提供 claude-flow CLI。名称包含 deepseek-harness 的子目录使用 .claude-plugin 清单和 Claude Code function hook，调用 DeepSeek 模型 API，没有 DSH Cordis 挂载。",
+                "reason": "仓库根是 Claude Code 的 Ruflo 编排工具，名称中含 DeepSeek Harness 的扩展在 Ruflo 内调用 DeepSeek API。固定源码给出 Claude Code 挂载路径，未给出 DSH 挂载。",
                 "details": {
-                    "plugin_id": "github:995029641:root",
-                    "revision": "002d8c1ac031871fc14220e964f4dbb35b60428f",
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定仓库根提供 claude-flow CLI。名称包含 deepseek-harness 的子目录使用 .claude-plugin 清单和 Claude Code function hook，调用 DeepSeek 模型 API，没有 DSH Cordis 挂载。",
-                    "admission": {
-                        "id": "github:995029641:root",
-                        "repository": "ruvnet/ruflo",
-                        "path": "",
-                        "revision": "002d8c1ac031871fc14220e964f4dbb35b60428f",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定仓库根提供 claude-flow CLI。名称包含 deepseek-harness 的子目录使用 .claude-plugin 清单和 Claude Code function hook，调用 DeepSeek 模型 API，没有 DSH Cordis 挂载。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "line_start": 1,
-                                "line_end": 16,
-                                "observation": "根 npm 包名 claude-flow，bin 入口 bin/cli.js，完整根清单无 dsh.bundle.patch。"
-                            },
-                            {
-                                "path": "plugins/ruflo-deepseek-harness/.claude-plugin/plugin.json",
-                                "line_start": 1,
-                                "line_end": 11,
-                                "observation": "名称相近的组件是 Claude 插件清单，描述 Ruflo swarm 的 DeepSeek 工作流。"
-                            },
-                            {
-                                "path": "plugins/ruflo-deepseek-harness/README.md",
-                                "line_start": 1,
-                                "line_end": 14,
-                                "observation": "作者说明 function-hook 依赖 Claude Code，Bash guard 保护发往 DeepSeek API 的提示，安装验证命令也是 Claude 插件。"
-                            },
-                            {
-                                "path": "plugins/ruflo-deepseek-harness/hooks/hooks.json",
-                                "line_start": 1,
-                                "line_end": 4,
-                                "observation": "hook 清单指向本地 register.ts，而非 DSH Cordis 层。"
-                            },
-                            {
-                                "path": ".",
-                                "observation": "固定提交的完整 Git 跟踪文件列表无 Cordis 或 patch.yml 路径，grep 未找到 DSH bundle 声明或 @deepseek-ai/dsh、@deepseek-ai/cordis 接线。名称近似结果集中在 Claude 子插件。"
-                            }
-                        ]
+                    "reason": "仓库根是 Claude Code 的 Ruflo 编排工具，名称中含 DeepSeek Harness 的扩展在 Ruflo 内调用 DeepSeek API。固定源码给出 Claude Code 挂载路径，未给出 DSH 挂载。",
+                    "details": {
+                        "admission": {
+                            "id": "github:995029641:root",
+                            "repository": "ruvnet/ruflo",
+                            "path": "",
+                            "revision": "3a1479883b55b7f786ef0bf3141478e4dfb9444f",
+                            "decision": "not_dsh_plugin",
+                            "reason": "仓库根是 Claude Code 的 Ruflo 编排工具，名称中含 DeepSeek Harness 的扩展在 Ruflo 内调用 DeepSeek API。固定源码给出 Claude Code 挂载路径，未给出 DSH 挂载。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 15,
+                                    "observation": "根包提供 claude-flow 命令与 Claude Code 编排。"
+                                },
+                                {
+                                    "path": "plugins/ruflo-deepseek-harness/.claude-plugin/plugin.json",
+                                    "line_start": 1,
+                                    "line_end": 11,
+                                    "observation": "带 DeepSeek Harness 名称的子组件采用 Claude 的插件清单。"
+                                },
+                                {
+                                    "path": "plugins/ruflo-deepseek-harness/README.md",
+                                    "line_start": 3,
+                                    "line_end": 14,
+                                    "observation": "守卫依赖 Claude Code 的函数钩子，提供 Claude 插件测试入口。"
+                                },
+                                {
+                                    "path": "plugins/ruflo-deepseek-harness/scripts/_deepseek.mjs",
+                                    "line_start": 3,
+                                    "line_end": 18,
+                                    "observation": "子组件直接使用 Chat Completions HTTP API。"
+                                },
+                                {
+                                    "path": "plugins/ruflo-deepseek-harness/scripts/_deepseek.mjs",
+                                    "line_start": 75,
+                                    "line_end": 87,
+                                    "observation": "实现调用 fetch 向 DeepSeek API URL 发起请求。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 8699 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 0 份，配置匹配 0 份。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T02:28:24.076Z",
-                "run_id": "2026-11-13-01"
+                "blocked_at": "2026-11-14T11:42:16.441Z",
+                "run_id": "2026-11-14-01"
             },
             "github:113965016:root": {
                 "plugin_id": "github:113965016:root",
-                "revision": "4671a6d79c291679765290e7c8b63e90a1c2a027",
+                "revision": "dfdb991188fae25abe9d35fd97885086d0b5e173",
                 "reason_code": "not_dsh_plugin",
-                "reason": "该根组件是 Electron 图床上传桌面应用。DeepSeek Harness 接入由 README 链接的 PicGo/dsh-plugin 独立仓库提供，固定组件没有宿主挂载。",
+                "reason": "根组件是 Electron 图床客户端及上传服务。其文档明确要求在 DSH 单独安装外部仓库 PicGo/dsh-plugin。",
                 "details": {
                     "reason_code": "not_dsh_plugin",
-                    "reason": "该根组件是 Electron 图床上传桌面应用。DeepSeek Harness 接入由 README 链接的 PicGo/dsh-plugin 独立仓库提供，固定组件没有宿主挂载。",
+                    "reason": "根组件是 Electron 图床客户端及上传服务。其文档明确要求在 DSH 单独安装外部仓库 PicGo/dsh-plugin。",
                     "details": {
-                        "id": "github:113965016:root",
-                        "repository": "Molunerfinn/PicGo",
-                        "path": "",
-                        "revision": "4671a6d79c291679765290e7c8b63e90a1c2a027",
-                        "decision": "not_dsh_plugin",
-                        "reason": "该根组件是 Electron 图床上传桌面应用。DeepSeek Harness 接入由 README 链接的 PicGo/dsh-plugin 独立仓库提供，固定组件没有宿主挂载。",
-                        "evidence": [
-                            {
-                                "path": "package.json",
-                                "observation": "根包名为 picgo，主入口为 dist_electron/main/index.js，构建及打包脚本使用 Electron Vite 与 Electron Builder。",
-                                "line_start": 2,
-                                "line_end": 16
-                            },
-                            {
-                                "path": "README.md",
-                                "observation": "作者将 DeepSeek Harness 插件直接链接到 PicGo/dsh-plugin。",
-                                "line_start": 196,
-                                "line_end": 196
-                            },
-                            {
-                                "path": ".",
-                                "observation": "固定提交完整跟踪树的唯一 package.json 位于根。根清单无 dsh 字段，源码与路径检索没有发现 DSH patch 或 profile 挂载。"
-                            }
-                        ]
+                        "admission": {
+                            "id": "github:113965016:root",
+                            "repository": "Molunerfinn/PicGo",
+                            "path": "",
+                            "revision": "dfdb991188fae25abe9d35fd97885086d0b5e173",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件是 Electron 图床客户端及上传服务。其文档明确要求在 DSH 单独安装外部仓库 PicGo/dsh-plugin。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 16,
+                                    "observation": "私有 Electron 客户端包的主入口和构建配置都面向桌面端。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 113,
+                                    "line_end": 122,
+                                    "observation": "PicGo 技能和 DSH 插件分别发布，其中 DSH 插件的安装对象是外部 @picgo/dsh-plugin。"
+                                },
+                                {
+                                    "path": "src/main/server/index.ts",
+                                    "line_start": 51,
+                                    "line_end": 65,
+                                    "observation": "PicGo 自身启动配置地址上的上传服务，供其他接入方调用。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 494 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 0 份，配置匹配 0 份。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T07:25:46.434Z",
-                "run_id": "2026-11-13-02"
+                "blocked_at": "2026-11-14T11:42:16.441Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1085086903:root": {
                 "plugin_id": "github:1085086903:root",
-                "revision": "d336d55df425376647d848faac0849926eab5fbb",
+                "revision": "489ac7e921a81cf82cc9273674a0fa2429b861eb",
                 "reason_code": "not_dsh_plugin",
-                "reason": "固定根组件提供 EverOS 的 Python CLI 与记忆框架。DeepSeek Harness 集成指向 EverMind-AI/plugins 的 dsh 子目录，根组件未提供宿主挂载。",
+                "reason": "EverOS 根组件提供独立运行的 Python 记忆框架。仓库的 DSH 接入指向 EverMind-AI/plugins/dsh 外部组件。",
                 "details": {
                     "reason_code": "not_dsh_plugin",
-                    "reason": "固定根组件提供 EverOS 的 Python CLI 与记忆框架。DeepSeek Harness 集成指向 EverMind-AI/plugins 的 dsh 子目录，根组件未提供宿主挂载。",
+                    "reason": "EverOS 根组件提供独立运行的 Python 记忆框架。仓库的 DSH 接入指向 EverMind-AI/plugins/dsh 外部组件。",
                     "details": {
-                        "id": "github:1085086903:root",
-                        "repository": "EverMind-AI/EverOS",
-                        "path": "",
-                        "revision": "d336d55df425376647d848faac0849926eab5fbb",
-                        "decision": "not_dsh_plugin",
-                        "reason": "固定根组件提供 EverOS 的 Python CLI 与记忆框架。DeepSeek Harness 集成指向 EverMind-AI/plugins 的 dsh 子目录，根组件未提供宿主挂载。",
-                        "evidence": [
-                            {
-                                "path": "pyproject.toml",
-                                "observation": "everos CLI 由 everos.entrypoints.cli.launcher:main 提供。",
-                                "line_start": 171,
-                                "line_end": 172
-                            },
-                            {
-                                "path": "README.md",
-                                "observation": "集成表将 DeepSeek Harness 插件指向 EverMind-AI/plugins/tree/main/dsh，另列 OpenClaw、Hermes 与 Dify。",
-                                "line_start": 750,
-                                "line_end": 766
-                            },
-                            {
-                                "path": ".",
-                                "observation": "固定提交完整跟踪树无根 package.json 及 .patch 文件，五份子清单在 Netlify relay、Claude Code 插件及 game-of-throne demo 内。"
-                            }
-                        ]
+                        "admission": {
+                            "id": "github:1085086903:root",
+                            "repository": "EverMind-AI/EverOS",
+                            "path": "",
+                            "revision": "489ac7e921a81cf82cc9273674a0fa2429b861eb",
+                            "decision": "not_dsh_plugin",
+                            "reason": "EverOS 根组件提供独立运行的 Python 记忆框架。仓库的 DSH 接入指向 EverMind-AI/plugins/dsh 外部组件。",
+                            "evidence": [
+                                {
+                                    "path": "pyproject.toml",
+                                    "line_start": 1,
+                                    "line_end": 11,
+                                    "observation": "根是自带 Python 版本要求的 everos 记忆框架。"
+                                },
+                                {
+                                    "path": "pyproject.toml",
+                                    "line_start": 171,
+                                    "line_end": 172,
+                                    "observation": "根项目入口是 EverOS 独立 CLI。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 754,
+                                    "line_end": 766,
+                                    "observation": "DSH 与其他宿主的安装入口指往另一个仓库的对应插件。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "对照固定 Git 文件树的根清单、安装说明及 DSH/Cordis 配置路径，未找到将仓库根加载进 DSH 的条目。"
+                                }
+                            ]
+                        }
                     }
                 },
-                "blocked_at": "2026-11-13T07:25:46.454Z",
-                "run_id": "2026-11-13-02"
+                "blocked_at": "2026-11-14T11:44:19.916Z",
+                "run_id": "2026-11-14-01"
             },
             "github:1014729376:root": {
                 "plugin_id": "github:1014729376:root",
@@ -2353,6 +2381,372 @@
                 },
                 "blocked_at": "2026-11-13T07:33:36.374Z",
                 "run_id": "2026-11-13-02"
+            },
+            "github:1211139949:root": {
+                "plugin_id": "github:1211139949:root",
+                "revision": "e37848822238e3a61b12739185cdadd49843a620",
+                "reason_code": "not_dsh_plugin",
+                "reason": "仓库根是 Archify 工程及独立架构图工作流。DSH 加载的是另一个固定组件 integrations/deepseek-harness，根组件没有自身挂载。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "仓库根是 Archify 工程及独立架构图工作流。DSH 加载的是另一个固定组件 integrations/deepseek-harness，根组件没有自身挂载。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1211139949:root",
+                            "repository": "tt-a1i/archify",
+                            "path": "",
+                            "revision": "e37848822238e3a61b12739185cdadd49843a620",
+                            "decision": "not_dsh_plugin",
+                            "reason": "仓库根是 Archify 工程及独立架构图工作流。DSH 加载的是另一个固定组件 integrations/deepseek-harness，根组件没有自身挂载。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 29,
+                                    "observation": "根清单是私有的 archify-repository，声明开发与验证脚本，未声明 DSH 补丁或 profile。"
+                                },
+                                {
+                                    "path": "archify/package.json",
+                                    "line_start": 1,
+                                    "line_end": 13,
+                                    "observation": "核心包提供独立调用的 archify 命令和 JSON IR 渲染器。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 226,
+                                    "line_end": 238,
+                                    "observation": "分别列出通用技能分发和 DSH 可选安装，DSH 指令安装 @tt-a1i/archify-dsh。"
+                                },
+                                {
+                                    "path": "integrations/deepseek-harness/package.json",
+                                    "line_start": 30,
+                                    "line_end": 44,
+                                    "observation": "DSH 清单声明独立组件目录和 dsh.bundle.patch。"
+                                },
+                                {
+                                    "path": "integrations/deepseek-harness/cordis.patch.yml",
+                                    "line_start": 1,
+                                    "line_end": 10,
+                                    "observation": "补丁接入 DSH 文件系统技能提供器，解析的是 @tt-a1i/archify-dsh/package.json。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树下 package.json 的 dsh 字段及 Cordis 配置路径，仅 integrations/deepseek-harness/package.json 声明 DSH 字段，配置文件见 integrations/deepseek-harness/cordis.patch.yml。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:40:16.530Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:1128123594:root": {
+                "plugin_id": "github:1128123594:root",
+                "revision": "d462af04e651335261d4972cb546788a788b2a47",
+                "reason_code": "not_dsh_plugin",
+                "reason": "根组件提供 OpenViking 上下文数据库和命令行。examples/dsh-memory-plugin 是单列组件，DSH 只加载其独立包。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "根组件提供 OpenViking 上下文数据库和命令行。examples/dsh-memory-plugin 是单列组件，DSH 只加载其独立包。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1128123594:root",
+                            "repository": "volcengine/OpenViking",
+                            "path": "",
+                            "revision": "d462af04e651335261d4972cb546788a788b2a47",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件提供 OpenViking 上下文数据库和命令行。examples/dsh-memory-plugin 是单列组件，DSH 只加载其独立包。",
+                            "evidence": [
+                                {
+                                    "path": "pyproject.toml",
+                                    "line_start": 11,
+                                    "line_end": 19,
+                                    "observation": "根 Python 项目名为 openviking，提供上下文数据库。"
+                                },
+                                {
+                                    "path": "pyproject.toml",
+                                    "line_start": 241,
+                                    "line_end": 246,
+                                    "observation": "根项目分别声明 OpenViking 命令行与服务器入口。"
+                                },
+                                {
+                                    "path": "examples/dsh-memory-plugin/package.json",
+                                    "line_start": 1,
+                                    "line_end": 11,
+                                    "observation": "供宿主加载的是单独命名的 @openviking/dsh-memory-plugin，入口为 index.mjs。"
+                                },
+                                {
+                                    "path": "examples/dsh-memory-plugin/package.json",
+                                    "line_start": 32,
+                                    "line_end": 38,
+                                    "observation": "DSH bundle 的补丁声明位于示例子包。"
+                                },
+                                {
+                                    "path": "examples/dsh-memory-plugin/cordis.patch.yml",
+                                    "line_start": 1,
+                                    "line_end": 3,
+                                    "observation": "补丁行挂载示例子包自身。"
+                                },
+                                {
+                                    "path": "examples/dsh-memory-plugin/index.mjs",
+                                    "line_start": 9,
+                                    "line_end": 12,
+                                    "observation": "子包入口注入 agents、sessions 和 tools。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 7365 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 examples/dsh-memory-plugin/package.json，配置匹配 examples/dsh-memory-plugin/cordis.patch.yml。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:42:16.424Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:1024118326:root": {
+                "plugin_id": "github:1024118326:root",
+                "revision": "cbdcebabf48c5ee2d6868b370326aa8341703f62",
+                "reason_code": "not_dsh_plugin",
+                "reason": "根组件是独立运行的 WeKnora 后端。packages/dsh-weknora 提供独立发布的 DSH 安装清单和工具注册。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "根组件是独立运行的 WeKnora 后端。packages/dsh-weknora 提供独立发布的 DSH 安装清单和工具注册。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1024118326:root",
+                            "repository": "Tencent/WeKnora",
+                            "path": "",
+                            "revision": "cbdcebabf48c5ee2d6868b370326aa8341703f62",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件是独立运行的 WeKnora 后端。packages/dsh-weknora 提供独立发布的 DSH 安装清单和工具注册。",
+                            "evidence": [
+                                {
+                                    "path": "go.mod",
+                                    "line_start": 1,
+                                    "line_end": 5,
+                                    "observation": "根仓库是 WeKnora Go 模块。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 349,
+                                    "line_end": 357,
+                                    "observation": "文档区分完整 API 的 CLI、内置 MCP 服务及单独发布的 DSH 插件。"
+                                },
+                                {
+                                    "path": "packages/dsh-weknora/package.json",
+                                    "line_start": 21,
+                                    "line_end": 26,
+                                    "observation": "DSH 插件的仓库子组件路径为 packages/dsh-weknora。"
+                                },
+                                {
+                                    "path": "packages/dsh-weknora/package.json",
+                                    "line_start": 56,
+                                    "line_end": 59,
+                                    "observation": "子包声明 dsh.bundle.patch。"
+                                },
+                                {
+                                    "path": "packages/dsh-weknora/cordis.patch.yml",
+                                    "line_start": 4,
+                                    "line_end": 14,
+                                    "observation": "补丁挂载子包，向其传入独立服务的 API 地址、凭据与知识库范围。"
+                                },
+                                {
+                                    "path": "packages/dsh-weknora/src/index.ts",
+                                    "line_start": 12,
+                                    "line_end": 28,
+                                    "observation": "子包入口注入宿主 tools 服务。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 6249 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 packages/dsh-weknora/package.json，配置匹配 packages/dsh-weknora/cordis.patch.yml。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:42:16.440Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:306829688:root": {
+                "plugin_id": "github:306829688:root",
+                "revision": "2d79f24347b38e9286ffc5eac0ba451d7dae2841",
+                "reason_code": "not_dsh_plugin",
+                "reason": "根工作区构建独立 NocoBase 应用和业务平台。固定源码展示的是通用 Agent Skill 分发、独立应用 CLI 和本平台插件，没有 DSH 侧挂载。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "根工作区构建独立 NocoBase 应用和业务平台。固定源码展示的是通用 Agent Skill 分发、独立应用 CLI 和本平台插件，没有 DSH 侧挂载。",
+                    "details": {
+                        "admission": {
+                            "id": "github:306829688:root",
+                            "repository": "nocobase/nocobase",
+                            "path": "",
+                            "revision": "2d79f24347b38e9286ffc5eac0ba451d7dae2841",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根工作区构建独立 NocoBase 应用和业务平台。固定源码展示的是通用 Agent Skill 分发、独立应用 CLI 和本平台插件，没有 DSH 侧挂载。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 1,
+                                    "line_end": 19,
+                                    "observation": "根是私有 NocoBase 开发工作区，构建以 pnpm 递归调用自身包。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 42,
+                                    "line_end": 58,
+                                    "observation": "Agent 快速开始安装的是外部 nocobase/skills-v3 的通用建应用技能。"
+                                },
+                                {
+                                    "path": "README.md",
+                                    "line_start": 60,
+                                    "line_end": 86,
+                                    "observation": "独立应用由 NocoBase CLI 配置 SQLite 并启动，Studio 文档列出其代理集成。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "核查固定 Git 树的 11744 个路径，并扫描 package.json 的 dsh 属性与 DSH/Cordis 配置文件名。清单匹配 0 份，配置匹配 0 份。根目录自身无挂载清单或明确 profile 入口。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:42:16.442Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:1276665883:packages-dsh-plugin-browserskill": {
+                "plugin_id": "github:1276665883:packages-dsh-plugin-browserskill",
+                "revision": "cfe1f84e6d176264515dc37b98eb4f131419da63",
+                "reason_code": "not_dsh_plugin",
+                "reason": "固定版本已整体删除 DSH 专用插件，当前接入为通用 BrowserSkill Skill、CLI 或 MCP。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "固定版本已整体删除 DSH 专用插件，当前接入为通用 BrowserSkill Skill、CLI 或 MCP。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1276665883:packages-dsh-plugin-browserskill",
+                            "repository": "Tencent/BrowserSkill",
+                            "path": "packages/dsh-plugin-browserskill",
+                            "revision": "cfe1f84e6d176264515dc37b98eb4f131419da63",
+                            "decision": "not_dsh_plugin",
+                            "reason": "固定版本已整体删除 DSH 专用插件，当前接入为通用 BrowserSkill Skill、CLI 或 MCP。",
+                            "evidence": [
+                                {
+                                    "path": "packages/dsh-plugin-browserskill",
+                                    "observation": "固定 Git 树 git ls-tree -r cfe1f84e6d176264515dc37b98eb4f131419da63 -- packages/dsh-plugin-browserskill 为空；与原研究 9084a36e138ee0c2c0d78fa9b4e64bff9d397c65 对照包含 package.json、patch、工具和客户端的删除。"
+                                },
+                                {
+                                    "path": "CHANGELOG.zh-CN.md",
+                                    "line_start": 36,
+                                    "line_end": 40,
+                                    "observation": "作者记录插件和流水线整体删除，回归迁到 CLI/MCP。"
+                                },
+                                {
+                                    "path": "README.zh-CN.md",
+                                    "line_start": 64,
+                                    "line_end": 66,
+                                    "observation": "当前 DSH 接入为标准 Skill 安装和通用 CLI/MCP。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:52:01.543Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:1336625383:root": {
+                "plugin_id": "github:1336625383:root",
+                "revision": "b30b3655a009228dda0ea9299b80da3e04af8306",
+                "reason_code": "not_dsh_plugin",
+                "reason": "根组件构建可启动 DSH 引擎的原生 Android 应用；工程不提供从宿主加载自身的挂载入口。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "根组件构建可启动 DSH 引擎的原生 Android 应用；工程不提供从宿主加载自身的挂载入口。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1336625383:root",
+                            "repository": "Thanksgiver233/dsh-mobile",
+                            "path": "",
+                            "revision": "b30b3655a009228dda0ea9299b80da3e04af8306",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根组件构建可启动 DSH 引擎的原生 Android 应用；工程不提供从宿主加载自身的挂载入口。",
+                            "evidence": [
+                                {
+                                    "path": "README.md",
+                                    "line_start": 11,
+                                    "line_end": 18,
+                                    "observation": "Android 应用自带 Node.js 和 dsh CLI，并面向本地或云端 DSH 提供 UI。"
+                                },
+                                {
+                                    "path": "app/build.gradle.kts",
+                                    "line_start": 1,
+                                    "line_end": 20,
+                                    "observation": "Gradle 工程构建 Android APK，插件为 Android/Kotlin/Compose/Hilt 构建插件。"
+                                },
+                                {
+                                    "path": ".",
+                                    "observation": "对照固定 Git 文件树的根清单、安装说明及 DSH/Cordis 配置路径，未找到将仓库根加载进 DSH 的条目。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:44:19.916Z",
+                "run_id": "2026-11-14-01"
+            },
+            "github:1338069202:root": {
+                "plugin_id": "github:1338069202:root",
+                "revision": "04bc832ee8ffcff56dc551dc12845da4a4f2550d",
+                "reason_code": "not_dsh_plugin",
+                "reason": "根仓安装清单能插入 Cordis 空入口，但固定源码明确该入口仅用于市场识别；真正能力由独立 CLI 启动 Fastify 和各用户 DSH 进程。",
+                "details": {
+                    "reason_code": "not_dsh_plugin",
+                    "reason": "根仓安装清单能插入 Cordis 空入口，但固定源码明确该入口仅用于市场识别；真正能力由独立 CLI 启动 Fastify 和各用户 DSH 进程。",
+                    "details": {
+                        "admission": {
+                            "id": "github:1338069202:root",
+                            "repository": "pointer-a/dsh-server-login",
+                            "path": "",
+                            "revision": "04bc832ee8ffcff56dc551dc12845da4a4f2550d",
+                            "decision": "not_dsh_plugin",
+                            "reason": "根仓安装清单能插入 Cordis 空入口，但固定源码明确该入口仅用于市场识别；真正能力由独立 CLI 启动 Fastify 和各用户 DSH 进程。",
+                            "evidence": [
+                                {
+                                    "path": "package.json",
+                                    "line_start": 6,
+                                    "line_end": 13,
+                                    "observation": "根声明库入口和不同的独立命令入口。"
+                                },
+                                {
+                                    "path": "package.json",
+                                    "line_start": 38,
+                                    "line_end": 44,
+                                    "observation": "声明名义上的 DSH bundle 路径。"
+                                },
+                                {
+                                    "path": "cordis.patch.yml",
+                                    "line_start": 1,
+                                    "line_end": 3,
+                                    "observation": "补丁的唯一条目指回根包。"
+                                },
+                                {
+                                    "path": "src/index.ts",
+                                    "line_start": 1,
+                                    "line_end": 26,
+                                    "observation": "作为市场识别 shim，apply 完全空白，保留参数不实现，无任何依赖或扩展注册。"
+                                },
+                                {
+                                    "path": "src/cli.ts",
+                                    "line_start": 12,
+                                    "line_end": 43,
+                                    "observation": "独立 CLI 引入自身服务、用户文件系统及监督进程，使用外部 dsh 子进程。"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "blocked_at": "2026-11-14T11:54:01.926Z",
+                "run_id": "2026-11-14-01"
             }
         },
         "retained_documents": {}
@@ -2621,6 +3015,11 @@
             "github:1327795364:packages-dsh-tool-encoding",
             "github:1327795364:packages-dsh-tool-json",
             "github:1327795364:packages-dsh-tool-markdown",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1327795364:root",
             "github:1327854826:root",
             "github:1327922805:integrations-deepseek-harness",
             "github:1328601495:root",
@@ -2764,6 +3163,7 @@
             "github:1333689922:root",
             "github:1333699356:root",
             "github:1333700083:root",
+            "github:1333702274:root",
             "github:1333708305:root",
             "github:1333713967:root",
             "github:1333716755:plugins-harness-memory",
@@ -2817,10 +3217,12 @@
             "github:1334023305:root",
             "github:1334025844:root",
             "github:1334028660:root",
+            "github:1334042515:root",
             "github:1334049596:root",
             "github:1334063554:root",
             "github:1334075920:root",
             "github:1334076307:root",
+            "github:1334088310:root",
             "github:1334089233:root",
             "github:1334096871:root",
             "github:1334109809:root",
@@ -2896,6 +3298,7 @@
             "github:1334682582:plugin",
             "github:1334682582:root",
             "github:1334692596:root",
+            "github:1334706134:root",
             "github:1334709708:root",
             "github:1334714311:root",
             "github:1334737435:root",
@@ -3011,6 +3414,7 @@
             "github:1335704653:root",
             "github:1335718387:root",
             "github:1335725068:root",
+            "github:1335734923:root",
             "github:1335735813:root",
             "github:1335758624:root",
             "github:1335766616:root",
@@ -3046,6 +3450,7 @@
             "github:1336092482:root",
             "github:1336106328:root",
             "github:1336114531:root",
+            "github:1336134478:root",
             "github:1336185734:root",
             "github:1336201295:root",
             "github:1336223158:root",
@@ -3115,6 +3520,7 @@
             "github:1338300924:root",
             "github:1338367781:root",
             "github:1338398749:root",
+            "github:1338409555:root",
             "github:1338425616:root",
             "github:1338463750:root",
             "github:1338526178:packages-bundle-rollback",
@@ -3199,6 +3605,7 @@
             "github:1342915339:root",
             "github:1342924739:root",
             "github:1342948215:root",
+            "github:1342970553:plugin-dsh-voice-mode",
             "github:1343002927:root",
             "github:1343420855:root",
             "github:1343622602:root",
@@ -3241,6 +3648,7 @@
             "github:1345235144:root",
             "github:1345591046:root",
             "github:1345649791:root",
+            "github:1345710688:packages-dsh-plugin-shop",
             "github:1345815125:root",
             "github:1345883186:root",
             "github:1346017360:root",
@@ -3446,6 +3854,7 @@
             "github:1381860995:root",
             "github:1381861315:root",
             "github:1381989584:root",
+            "github:1382064515:root",
             "github:1382292535:root",
             "github:1383592161:root",
             "github:1384810201:root",
@@ -3501,6 +3910,7 @@
             "github:1399279897:root",
             "github:1399694663:root",
             "github:1399720547:root",
+            "github:1399742055:root",
             "github:1400104434:root",
             "github:1400109121:root",
             "github:1400385991:packages-dsh-weekly-panel",
@@ -3526,6 +3936,7 @@
             "github:1404377390:root",
             "github:1404700411:root",
             "github:1404720276:root",
+            "github:1405520053:root",
             "github:1405845793:root",
             "github:1406156934:dsh-task-monitor",
             "github:1406500233:root",
@@ -5030,7 +5441,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "publication.metadata": [
             "github:1339316901:root",
@@ -6367,7 +6795,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "publication.summaries": [
             "github:1339316901:root",
@@ -7704,7 +8149,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "publication.capabilities": [
             "github:1339316901:root",
@@ -9041,7 +9503,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "publication.advice": [
             "github:1339316901:root",
@@ -10378,7 +10857,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "registry": [
             "github:1339316901:root",
@@ -11715,7 +12211,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "reports": [
             "github:1339316901:root",
@@ -13052,7 +13565,24 @@
             "github:1334682582:plugin",
             "github:1389238192:root",
             "github:1351219783:root",
-            "github:1353352537:root"
+            "github:1353352537:root",
+            "github:1327795364:root",
+            "github:1334706134:root",
+            "github:1405520053:root",
+            "github:1399742055:root",
+            "github:1327795364:packages-dsh-tool-time",
+            "github:1345710688:packages-dsh-plugin-shop",
+            "github:1327795364:packages-dsh-tool-regex",
+            "github:1336134478:root",
+            "github:1382064515:root",
+            "github:1327795364:packages-dsh-tool-stat",
+            "github:1327795364:packages-dsh-tool-schema",
+            "github:1333702274:root",
+            "github:1335734923:root",
+            "github:1334042515:root",
+            "github:1342970553:plugin-dsh-voice-mode",
+            "github:1338409555:root",
+            "github:1334088310:root"
         ],
         "retained_documents": []
     },
@@ -14391,7 +14921,24 @@
         "github:1334682582:plugin",
         "github:1389238192:root",
         "github:1351219783:root",
-        "github:1353352537:root"
+        "github:1353352537:root",
+        "github:1327795364:root",
+        "github:1334706134:root",
+        "github:1405520053:root",
+        "github:1399742055:root",
+        "github:1327795364:packages-dsh-tool-time",
+        "github:1345710688:packages-dsh-plugin-shop",
+        "github:1327795364:packages-dsh-tool-regex",
+        "github:1336134478:root",
+        "github:1382064515:root",
+        "github:1327795364:packages-dsh-tool-stat",
+        "github:1327795364:packages-dsh-tool-schema",
+        "github:1333702274:root",
+        "github:1335734923:root",
+        "github:1334042515:root",
+        "github:1342970553:plugin-dsh-voice-mode",
+        "github:1338409555:root",
+        "github:1334088310:root"
     ],
     "artifact_order": [
         "data/runs/2026-10-22-02/snapshots/02muller25--dsh-api-balance/REVIEWED-SOURCE.json",
@@ -15474,17 +16021,11 @@
         "data/runs/2026-11-06-04/lhuans--dsh-genui/REVIEWED-SOURCE.json",
         "data/runs/2026-11-06-04/amlyczz--dsh-lark-link/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/tt-a1i--archify/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/ebony-vinyl--dsh-our-free-model/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/tencent--weknora/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/volcengine--openviking/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/tt-a1i--archify--integrations-deepseek-harness/NPM-RELEASE-EVIDENCE.json",
-        "data/runs/2026-11-09-01/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/nocobase--nocobase/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/tencent--browserskill--packages-dsh-plugin-browserskill/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/zhu1090093659--dsh-web/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/t-auto--dsh-ops/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/tencent--browserskill/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/yaoapp--yao/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/small-tailqwq--dsh-deep-whale--maid-atelier/REVIEWED-SOURCE.json",
@@ -15504,7 +16045,6 @@
         "data/runs/2026-11-09-01/c1overzz--dsh-bili-scroll/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/liustack--modlens/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/shanliuling--dsh-image-gen/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-09-01/hellohub1212--dsh-windows-mcp/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/flizzywine--dsh-tavern--tavern-plugin-packages-dsh-tavern/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/fourzkw--dsh-drawai/REVIEWED-SOURCE.json",
         "data/runs/2026-11-09-01/webkubor--dsh-bloom-theme/REVIEWED-SOURCE.json",
@@ -15740,6 +16280,33 @@
         "data/runs/2026-11-13-02/functy23--dsh-mcp-studio/REVIEWED-SOURCE.json",
         "data/runs/2026-11-13-02/kannakuron--dsh-better-workspace/REVIEWED-SOURCE.json",
         "data/runs/2026-11-13-02/hr98w--dsh-memory/REVIEWED-SOURCE.json",
-        "data/runs/2026-11-13-02/xiajiajun516--dsh-config-manager/REVIEWED-SOURCE.json"
+        "data/runs/2026-11-13-02/xiajiajun516--dsh-config-manager/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/tt-a1i--archify--integrations-deepseek-harness/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/hellohub1212--dsh-windows-mcp/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/volcengine--openviking--examples-dsh-memory-plugin/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/t-auto--dsh-ops/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/oliblue-evan--dsh-roleplay-preset/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/oliblue-evan--dsh-roleplay-preset/HOST-LEGACY-DISCOVERY.ts",
+        "data/runs/2026-11-14-01/oliblue-evan--dsh-roleplay-preset/HOST-LEGACY-ENTRY.ts",
+        "data/runs/2026-11-14-01/oliblue-evan--dsh-roleplay-preset/HOST-CURRENT-COMPOSITIONS.md",
+        "data/runs/2026-11-14-01/billcx330--dsh-plugin-notify-sounds/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/zkforge--dsh-claude-desktop-theme/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-time/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/tencent--weknora--packages-dsh-weknora/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/livxue--dsh-plugin-shop--packages-dsh-plugin-shop/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/perrylink--dsh-session-sync/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/drscrewdriver--dsh-browser-cdp/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-stat/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-schema/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/anweat--dsh-browser/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/v587d--capital-generation/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/cyanfish-x--dsh-live2d-pets/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/qishuilalala--dsh-voice-mode--plugin-dsh-voice-mode/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/zhu1090093659--dsh-web/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/lizhennet--dsh-antigravity/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/player-minepig--dsh-tavern/REVIEWED-SOURCE.json",
+        "data/runs/2026-11-14-01/ebony-vinyl--dsh-our-free-model/redacted/REVIEWED-SOURCE.json"
     ]
 }

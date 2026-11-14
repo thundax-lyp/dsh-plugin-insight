@@ -48,7 +48,6 @@
 | [dsh-team-cost](#plugin-1364961230-root) | 从 DSH 会话事件记团队 token/成本，提供成员预算、告警和报表。 | 隔离 profile 先固定成员路径、模型价和真实账单对照，测试崩溃/事件 replay/相邻路径，再考虑 alert；不要以此版结算或启用强制拦截。 |
 | [dsh-univer-office](#plugin-1335241492-root) | 在 DeepSeek Harness 中创建、编辑和审阅电子表格、文档与演示文稿，并导出受支持的办公文件。 | [Q03](../../plugins/dream-num--dsh-univer-office/INSIGHT.md#research-q03) 用合成小表验证草稿、批准和 Excel 重开，保留原件。 |
 | [dsh-whale-catch](#plugin-1425215508-root) | 在 DSH 侧栏收集会话产物，提供预览、差异、交付台账、体检、归档和还原。 | 先用含旧mtime复制件的固定目录核对漏收，仅复制归档；还原放在可丢弃目录并逐项确认，异常退回人工打包。 |
-| [dsh-windows-mcp](#plugin-1413849053-root) | 把 Windows-MCP 接到 DSH 内置 MCP 桥接，并提供桌面开关、诊断和依赖管理。 | [Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保持观察，先在无业务数据的 Windows VM 验收鉴权、tools.guard、双 Agent 及关闭后派发。 |
 | [dsh-wsl-im](#plugin-1370460115-root) | 把多个即时通信平台的消息、附件和回复桥接到 WSL 中的 DSH Agent。 | [Q03](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q03) 先隔离验证本机 mock；真实 bot 仅在 [Q02](../../plugins/173787247--dsh-wsl-im/INSIGHT.md#research-q02) 的白名单与实际最小权限均可确认后再评估。 |
 | [dsh-wsl-mail](#plugin-1381860693-root) | 在 DSH 中查看邮件信封与未读概况，并通过 notmuch 搜索。 | [Q03](../../plugins/173787247--dsh-wsl-mail/INSIGHT.md#research-q03) 只用合成信封验证，明确 notmuch 未读计数和 Himalaya 样本的区别。 |
 | [EduWork DSH Mail](#plugin-1369398336-packages-dsh-mail) | 为 DSH 提供邮件读取、附件保存与受控 SMTP 发送工具。 | [Q04](../../plugins/ecnu--eduwork--packages-dsh-mail/INSIGHT.md#research-q04) 隔离账户先验证权限并由用户核对；外发需明确授权，异常先查询。 |
@@ -64,6 +63,7 @@
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [WeLink DSH 插件](#plugin-1184366339-plugins-dsh-welink) | 在 DSH 中按需查看授权 WeLink 会话的日期，并在获准时读取或搜索有限消息。 | 先用虚构聊天与假后端，区分日期与正文许可；无法验证后端拒绝或结果去向时保留手工复制。 |
+| [Windows MCP 桌面集成](#plugin-1413849053-root) | 通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。 | [Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保留观察。 |
 | [公文全流程处理专家](#plugin-1306637593-root) | 在 DSH 中调用公文检查、修复与修订工具 | [Q04](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q04) 用虚构文档验证原件、取消与渲染。 |
 | [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
@@ -644,22 +644,6 @@
 
 [查看完整分析](../../plugins/rosynb666--dsh-whale-catch/INSIGHT.md) · [返回表格](#category-index)
 
-<a id="plugin-1413849053-root"></a>
-
-## [dsh-windows-mcp](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
-
-[![GitHub ★ 224](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=224&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 716,731](https://img.shields.io/static/v1?label=npm+30d&message=716%2C731&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
-
-> **用途**：在 Windows 隔离测试桌面中重复读取原生应用界面的 DSH 用户，需要可核对的画面、明确的工具暴露和可验证的停用结果。[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01)
-
-> **亮点**：[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01) [Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 根插件把依赖选择、工具诊断和宿主调用开关接入 DSH，减少手写配置。实际屏幕和输入工具由 Windows-MCP 经宿主 MCP 桥接提供。
-
-> **思考**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) Computer Use 是宿主共享状态。派发拒绝依赖 tools.guard，浏览器鉴权不可观测时插件层会继续处理修改。关闭无法据此证明已派发动作撤销，揭示也无法约束为只读。
-
-> **建议**：[Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 默认拒绝不可观测的鉴权，并在隔离环境引入限时观察许可，可能减少误开放桌面控制。用两个会话和长调用区分后续拒绝及在途效果。
-
-[查看完整分析](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) · [返回表格](#category-index)
-
 <a id="plugin-1370460115-root"></a>
 
 ## [dsh-wsl-im](../../plugins/173787247--dsh-wsl-im/INSIGHT.md)
@@ -900,6 +884,22 @@
 
 [查看完整分析](../../plugins/runzhliu--welink--plugins-dsh-welink/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1413849053-root"></a>
+
+## [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
+
+[![GitHub ★ 978](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=978&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 752,551](https://img.shields.io/static/v1?label=npm+30d&message=752%2C551&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+
+> **用途**：需要检查没有专用 API 的 Windows 应用界面的 DSH 使用者，可用公开样例核对截图、窗口标题和状态。
+
+> **亮点**：[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01) 和 [Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 显示，宿主助手可在会话里逐步取得桌面工具，同时由插件维护桥和依赖。新版释放旧工具限制并把 pre-step 决策交回宿主，修正了重新启用后无法揭示和会话可能中断的路径。
+
+> **思考**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 显示，截图、窗口识别与输入效果分别受 DPI、UIA 和宿主条件影响。[Q04](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q04) 的重装保护依赖可见进程扫描，失败时仍可能开始安装。
+
+> **建议**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 提出在诊断与窗口识别冲突时，保持只观察并让操作员确认同一目标，再允许交互。用实际窗口变化、错误落点与额外步骤比较这项待验证设计。
+
+[查看完整分析](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1306637593-root"></a>
 
 ## [公文全流程处理专家](../../plugins/linhut--gongwen-skill/INSIGHT.md)
@@ -952,4 +952,4 @@
 
 ## 更新时间
 
-2026-11-13
+2026-11-14

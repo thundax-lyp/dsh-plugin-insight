@@ -1,0 +1,446 @@
+{
+    "schema_version": 4,
+    "id": "594da0766fcfd55478bd4ee11e37530a",
+    "identity": "github:1327795364:packages-dsh-tool-regex",
+    "slug": "omdsh-dev--dsh-toolkit--packages-dsh-tool-regex",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1327795364:packages-dsh-tool-regex",
+            "repository_id": 1327795364,
+            "component_id": "packages-dsh-tool-regex",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-regex",
+            "aliases": [],
+            "name": "DSH 正则工具",
+            "entry_type": "plugin",
+            "technical_category": "tools-integration",
+            "business_category": "software-delivery",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "7ad2481b11e68748ad0d807c9921f68cf5f5c0375b6506cdd5a688446f488774",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-directory-0",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-14T11:57:00.499Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/README.md",
+                            "content_sha256": "6051fef80804cfd5bdc803ba33716a1dcd8988dae09a083a507fab398e129583"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-14T11:57:00.499Z",
+                    "summary": "在 DSH 中测试 JavaScript 正则、提取捕获组、替换文本和静态解释模式。",
+                    "artifact": "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/package.json",
+                            "content_sha256": "0b9813b49f6414734e7cc9750ae9d0a6f7191b0f7d6ab240bf10832de1a3e722"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/cordis.patch.yml",
+                            "content_sha256": "fb99f03f353edc75ee13478803318cba81ed7d0840a0973a41ea00862c5c3991"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/lib/index.js",
+                            "content_sha256": "3fa875571e196ab8f11bf2eb0b3948b2dfbba08daeca336aefa20b4402a2e149"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/lib/engine.js",
+                            "content_sha256": "487c8a185ecbfe1025f2780c36414b1a93e1760584d09563b7073e8ec0e9d4c3"
+                        },
+                        {
+                            "repository_url": "https://github.com/omdsh-dev/dsh-toolkit",
+                            "commit": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                            "path": "packages/dsh-tool-regex/README.md",
+                            "content_sha256": "6051fef80804cfd5bdc803ba33716a1dcd8988dae09a083a507fab398e129583"
+                        }
+                    ],
+                    "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                    "captured_at": "2026-11-14T11:57:00.499Z",
+                    "summary": "核查 packages/dsh-tool-regex/package.json、packages/dsh-tool-regex/cordis.patch.yml、packages/dsh-tool-regex/lib/index.js、packages/dsh-tool-regex/lib/engine.js、packages/dsh-tool-regex/README.md；Cordis 补丁加载子包后注册 regex。执行动作走 Node worker，解释静态处理，结果可回看捕获组和命中位置。",
+                    "artifact": "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定子包产物和交接路径。未运行 Node worker、目标宿主、模型任务或测试。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "已有 DSH 的开发者可以检查一段短日志中的重复匹配或字段提取规则。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "Cordis 补丁加载子包后注册 regex。执行动作走 Node worker，解释静态处理，结果可回看捕获组和命中位置。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定子包产物和交接路径。未运行 Node worker、目标宿主、模型任务或测试。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "子包清单为 private，作者给出 Git 安装及本地 tarball 条件。",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 与 Cordis peers | 是 | 挂载工具 | 宿主加载未知 |\n| Node worker | 执行动作需要 | 隔离匹配计算 | 启动或执行失败会报错 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 未量化 | 确认 peer 与 profile | 历史消费路径为作者声明 |\n| 持续 | 每个执行动作启动 worker | 核对返回匹配范围 | 并发与耗时未验证 |\n| 恢复 | 未量化 | 切回受控脚本并分片检查 | 仍需保留原文本 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先用匿名正常与超上限的短文本核对实际结果；有全量计数需求时使用现成脚本。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 正则执行 | 返回匹配与组，限制输入与 worker 预算 | 实际模型是否准确传参 |\n| 解释 | 静态扫描，不执行匹配 | 与独立解释工具对照覆盖 |",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "执行和解释分开，worker 的 message、error、exit 和预算都有处理。匹配数组没有完整性指示。[Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "interpretation",
+                    "text": "把对短文本的匹配与捕获组检查带入 DSH，给执行动作单设可终止 worker，保留静态模式解释。[Q01](#research-q01) [Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "supported",
+                    "text": "达到匹配上限时 find 仍返回一般数组。单次 worker 预算也不能作为多个并发请求的总资源上限。[Q02](#research-q02)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "engineering",
+                    "basis": "unverified",
+                    "text": "为 find 增加剩余匹配提示，在刚好达到上限和超过上限的样例上比较能否减少模型的完整性误判。[Q03](#research-q03)",
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                            "area": "code",
+                            "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-14T11:57:00.499Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-14T11:57:00.499Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-14T11:57:00.499Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 15,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 使用现成 RegExp，静态解释与 DSH 集成属局部创新。[Q02](#research-q02) 对阻塞型匹配使用可终止 worker，比同步调用实质改变失败处理。该方案在能创建 worker 的 Node 宿主可局部迁移。一入口兼顾解释与执行属小幅简化。",
+                    "basis": "interpretation",
+                    "score": 33,
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "rationale": "[Q01](#research-q01) 省掉为短输入另写脚本的一步，交付仍是已有脚本可给的匹配和替换结果。[Q03](#research-q03) 已有 DSH 用户少写临时命令，触达小幅。逐次启动 worker 转移资源成本，节省未测，成本结构仅局部变化。",
+                    "basis": "interpretation",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "在 DSH 里经常检查短日志的开发者，可以用这个工具验证一次带捕获组的匹配。相比让模型直接猜测或临时写脚本，工具能返回实际命中的文字与位置。若结果触及匹配上限或出现超时，开发者可改用已有批处理脚本完成全量核对。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) lib/index.js 66–102 直接支持重复短日志任务，超过偶发便利；没有实测用户频次和错误后果，未到较充分档。"
+                    },
+                    "advantage": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) worker 定时终止和捕获组结构超过简单入口包装，lib/index.js 20–64 直接可查；局部数组与已有脚本可替代限制更高档。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q01](#research-q01) [Q02](#research-q02) lib/index.js 20–117 和 lib/engine.js 97–140 覆盖执行、超时和结果边界，超过只有说明；未实际测试，不能升档。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q03](#research-q03) README 79–86 有 peer 和 tarball 路径且原脚本便于回退，超过退路不清档。worker 并发和复查完整性仍有负担，未到较轻档。"
+                    }
+                },
+                "score": 51,
+                "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "reviewed_at": "2026-11-14T11:57:00.499Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-14-01-github-1327795364-packages-dsh-tool-regex-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1327795364:packages-dsh-tool-regex",
+                        "area": "code",
+                        "fingerprint": "c3319d9d3e78a18191e1381461b69e84bc547575"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1327795364:packages-dsh-tool-regex",
+            "repository": "omdsh-dev/dsh-toolkit",
+            "path": "packages/dsh-tool-regex",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "fingerprints": {
+                "directory": "7ad2481b11e68748ad0d807c9921f68cf5f5c0375b6506cdd5a688446f488774",
+                "code": "c3319d9d3e78a18191e1381461b69e84bc547575",
+                "maintenance": "3ae551a78c77c641e0ea4533be6aa05bc96f60b0a41a2d5159ecb76a83d5f6ce"
+            },
+            "source_urls": [
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-14T11:30:11Z",
+            "analysis_sha256": "70374f12b55b50bcea9072af5d692bd75e9de5338c24dbe3a3445fa2c26c7c3d"
+        },
+        "publication.metadata": "data/catalog/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex/meta.json",
+        "publication.summaries": {
+            "text": "在 DSH 中测试 JavaScript 正则、提取捕获组、替换文本和静态解释模式。",
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "source_url": "https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "items": {
+                "模型工具": "regex 提供 test、find、replace、explain 操作"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 匹配与提取 | 核对索引和捕获组 | 找全时不能只用有限结果 |\n| 替换 | 生成替换后的文本 | 执行时间、输入和最终输出有界 |\n| 静态解释 | 理解模式结构 | 不能代替执行验证 |"
+        },
+        "publication.advice": {
+            "revision": "c3319d9d3e78a18191e1381461b69e84bc547575",
+            "text": "先用匿名正常与超上限的短文本核对实际结果；有全量计数需求时使用现成脚本。[Q03](#research-q03)"
+        },
+        "registry": "data/plugins/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex",
+        "reports": "# DSH 正则工具\n\n> 在 DSH 中测试 JavaScript 正则、提取捕获组、替换文本和静态解释模式。\n\n## 研究范围\n\n- **仓库**：[omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)\n- **版本号**：0.0.1（[固定提交 c3319d9d3e78a18191e1381461b69e84bc547575](https://github.com/omdsh-dev/dsh-toolkit/tree/c3319d9d3e78a18191e1381461b69e84bc547575)）\n- **版本日期**：2026-09-10（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n已核查固定产物的注册、执行与失败分支，未测试宿主兼容、并发负担或任务收益。\n\n## 洞察短评\n\n- **用途**：已有 DSH 的开发者可以检查一段短日志中的重复匹配或字段提取规则。\n- **亮点**：把对短文本的匹配与捕获组检查带入 DSH，给执行动作单设可终止 worker，保留静态模式解释。[Q01](#research-q01) [Q02](#research-q02)\n- **思考**：达到匹配上限时 find 仍返回一般数组。单次 worker 预算也不能作为多个并发请求的总资源上限。[Q02](#research-q02)\n- **建议**：为 find 增加剩余匹配提示，在刚好达到上限和超过上限的样例上比较能否减少模型的完整性误判。[Q03](#research-q03)\n\n采用建议：先用匿名正常与超上限的短文本核对实际结果；有全量计数需求时使用现成脚本。[Q03](#research-q03)\n\n## 核心贡献\n\n把对短文本的匹配与捕获组检查带入 DSH，给执行动作单设可终止 worker，保留静态模式解释。[Q01](#research-q01) [Q02](#research-q02)\n\n## 关键质疑\n\n达到匹配上限时 find 仍返回一般数组。单次 worker 预算也不能作为多个并发请求的总资源上限。[Q02](#research-q02)\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n为 find 增加剩余匹配提示，在刚好达到上限和超过上限的样例上比较能否减少模型的完整性误判。[Q03](#research-q03)\n\n同一隔离 profile 对照普通匹配、空匹配、超过 cap 的输入和高回溯输入。比较与固定脚本输出及实际诊断成本。\n\n## 场景与替代办法\n\n已有 DSH 的开发者可以检查一段短日志中的重复匹配或字段提取规则。\n\ngrep 适合现有文件，Node 或 Python 脚本适合整批处理和完整计数；模型直接推断无法给出实际匹配过程。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH tools 与 Cordis peers | 是 | 挂载工具 | 宿主加载未知 |\n| Node worker | 执行动作需要 | 隔离匹配计算 | 启动或执行失败会报错 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 接入 | 用户在隔离 profile 安装固定包 | 列表出现 regex |\n| 核验 | 使用已知短日志提取捕获组 | 索引和组与人工预期相符 |\n| 回退 | 结果触及上限或超时时用脚本 | 检查完整清单 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 首次 | 未量化 | 确认 peer 与 profile | 历史消费路径为作者声明 |\n| 持续 | 每个执行动作启动 worker | 核对返回匹配范围 | 并发与耗时未验证 |\n| 恢复 | 未量化 | 切回受控脚本并分片检查 | 仍需保留原文本 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 正则执行 | 返回匹配与组，限制输入与 worker 预算 | 实际模型是否准确传参 |\n| 解释 | 静态扫描，不执行匹配 | 与独立解释工具对照覆盖 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：DSH 正则工具怎样给短日志提取字段并限制高回溯输入？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · Agent 从短日志提取字段时，哪些输出来自实际运算？\n\n**研究主题**：场景与需求、功能与机制、贡献与相对优势\n\n#### 完整回答\n\n根工具不覆盖整个仓库，只在该子包的 profile 补丁激活后以 tools 注册 regex。test、find、replace 走 worker 和 JavaScript RegExp；find 返回索引、完整匹配和捕获组，可核对模型是否找错。find 会自动添加 g，空匹配时显式推进游标，Unicode 模式处理代理对。explain 走静态解释，不执行模式或替代匹配正确性检验。grep 适合搜索文件，Node 脚本也能给等价计算；这里的增量是把测试、短文本提取和替换纳入 DSH 一次可重放的调用，并可直接核对输入和结果。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-regex/package.json:21-37](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/package.json#L21-L37)\n\n宿主 peer 和子包补丁、模块出口。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-invariants\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/dsh-tools\": \">=0.0.1-rc.1 <0.2.0\",\n    \"@deepseek-ai/cordis\": \"^4.0.1\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    }\n  },\n  \"exports\": {\n    \".\": {\n      \"types\": \"./lib/types/index.d.ts\",\n      \"default\": \"./lib/index.js\"\n    },\n    \"./cordis.patch.yml\": \"./cordis.patch.yml\",\n    \"./package.json\": \"./package.json\"\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-regex/cordis.patch.yml:1-4](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/cordis.patch.yml#L1-L4)\n\n挂载子包模块。\n\n```text\n# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\n- insert:\n    - id: tool-regex\n      name: '@deepseek-ai/dsh-tool-regex'\n```\n\n**依据 3 · 源码核查**：[packages/dsh-tool-regex/lib/index.js:66-102](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/index.js#L66-L102)\n\n注册动作和输入契约。\n\n<details>\n<summary>查看原文（37行）</summary>\n\n```text\nexport function apply(ctx) {\n    ctx.tools.register(defineTool({\n        name: 'regex',\n        description: 'Regular expression utilities over text (JavaScript syntax; pattern without surrounding slashes). ' +\n            'Actions: test (does input match), find (all matches with index, numbered captures, and named groups; ' +\n            'the g flag is added automatically), replace (global safe replacement with $1/$<name>/$$ references), ' +\n            'explain (static human-readable breakdown of the pattern; never executes it). ' +\n            'test/find/replace run in an isolated worker with a hard 1000ms budget (timeout returns an error); ' +\n            'inputs over 64KB, patterns over 16KB, replacements over 16KB, or outputs over 1MB are rejected. ' +\n            'Do not use unanchored nested quantifiers (e.g. (a+)+) on large untrusted input: ReDoS risk.',\n        parameters: {\n            action: {\n                type: 'string',\n                required: true,\n                enum: ['test', 'find', 'replace', 'explain'],\n                description: 'Operation to perform.',\n            },\n            pattern: {\n                type: 'string',\n                required: true,\n                description: 'Regular expression pattern (JavaScript syntax; do not include surrounding slashes).',\n            },\n            input: {\n                type: 'string',\n                description: 'Text to match against (required for test/find/replace).',\n            },\n            flags: {\n                type: 'string',\n                description: 'Flag characters, e.g. \"gi\". Supported: g i m s u y d v. Must be unique and valid; unknown flags error out.',\n            },\n            replacement: {\n                type: 'string',\n                description: 'Replacement text for replace; supports $1, $2, $<name> references and $$ for a literal dollar sign.',\n            },\n            limit: {\n                type: 'integer',\n                description: 'Maximum matches to report (find), default 50, capped at 1000. Prevents unbounded output.',\n```\n\n</details>\n\n**依据 4 · 源码核查**：[packages/dsh-tool-regex/lib/index.js:105-117](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/index.js#L105-L117)\n\n执行链区分 explain 与 worker。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n        output: {\n            schema: { type: 'string' },\n            render: (_args, value) => [{ type: 'text', text: value }],\n        },\n        execute: (args) => {\n            const action = args.action;\n            // explain 是线性静态扫描（pattern ≤16KB），无需 worker；其余动作进 worker 硬预算\n            if (action === 'explain') {\n                return Promise.resolve(executeAction(args));\n            }\n            return executeInWorker(args);\n        },\n        timeoutMs: 1000,\n```\n\n</details>\n\n**依据 5 · 源码核查**：[packages/dsh-tool-regex/lib/engine.js:92-118](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/engine.js#L92-L118)\n\nfind 捕获组与空匹配推进。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n```text\nexport function testMatch(re, input) {\n    re.lastIndex = 0;\n    return { matched: re.test(input) };\n}\n/** find：收集所有匹配 + 捕获组，受 limit 约束（钳制到 MAX_MATCHES）。 */\nexport function findAll(re, input, limit) {\n    const cap = normalizeLimit(limit);\n    const unicode = re.unicode || re.unicodeSets;\n    const out = [];\n    re.lastIndex = 0;\n    let m;\n    while ((m = re.exec(input)) !== null) {\n        out.push({\n            index: m.index,\n            match: m[0],\n            captures: m.slice(1),\n            groups: m.groups ? { ...m.groups } : null,\n        });\n        if (out.length >= cap)\n            break;\n        if (m[0].length === 0) {\n            // 空匹配推进：u/v 下按 code point 边界推进，避免重复命中/死循环\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\n        }\n    }\n    return out;\n}\n```\n\n</details>\n\n#### 缺口\n\n- 未验证某个宿主版本的实际注册\n  **影响**：不能把可调用结构写成该版本已装好\n  **进一步探讨**：在隔离 profile 核对工具列表和已知捕获组\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 遇到高回溯输入或大量匹配，工具何时停止，能否把返回当成完整清单？\n\n**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑、功能与机制\n\n#### 完整回答\n\n执行链在 worker 建立后启动计时器，1 秒设为硬预算；计时器触发终止请求并拒绝，message/error/exit 也分别收口。它避免把匹配放到宿主主线程，但每次调用仍创建 worker，链路未给同一时刻的 worker 总数设配额。输入按字节设限，模式和替换内容也有限制。find 最多返回调用 limit 内的匹配，默认 50、至多 1000，直接返回匹配数组，达到上限时没有单独的截断标志。replace 先完整遍历计数，再用字符串替换，并在得到结果后检查输出字节。已提交产物的 replace 路径不按 1000 次中止，因此不能把 find 条数上限套到替换。替换后的字符串需要先在 worker 形成，输出上限并非预先内存上限。因此仅凭 find 返回了 50 条不能判断没有更多结果；需要完整清单时先分片或用独立脚本计数。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-regex/lib/index.js:20-64](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/index.js#L20-L64)\n\n每次创建 worker，计时终止并处理消息与退出。\n\n<details>\n<summary>查看原文（45行）</summary>\n\n```text\nexport const name = '@deepseek-ai/dsh-tool-regex';\nexport const inject = ['tools'];\n/** worker 内正则执行的硬预算（毫秒）；到期 terminate 并报错。 */\nconst WORKER_BUDGET_MS = 1000;\n/** 在可终止的 worker 内执行 test/find/replace；超预算硬中断。 */\nfunction executeInWorker(args) {\n    return new Promise((resolve, reject) => {\n        // 源码态（vitest）引用 ./worker.ts（Node 原生 type-stripping 加载）；\n        // 构建态（lib）引用 ./worker.js\n        const workerUrl = new URL(import.meta.url.endsWith('.ts') ? './worker.ts' : './worker.js', import.meta.url);\n        const worker = new Worker(workerUrl);\n        let settled = false;\n        const timer = setTimeout(() => {\n            if (settled)\n                return;\n            settled = true;\n            void worker.terminate();\n            reject(new Error(`regex: execution timed out (${WORKER_BUDGET_MS}ms)`));\n        }, WORKER_BUDGET_MS);\n        const settle = (fn) => {\n            if (settled)\n                return;\n            settled = true;\n            clearTimeout(timer);\n            void worker.terminate();\n            fn();\n        };\n        worker.once('message', (msg) => {\n            settle(() => {\n                if (msg.ok)\n                    resolve(msg.value ?? '');\n                else\n                    reject(new Error(msg.error ?? 'regex: worker failed'));\n            });\n        });\n        worker.once('error', (err) => {\n            const message = err instanceof Error ? err.message : String(err);\n            settle(() => reject(new Error(`regex: worker error: ${message}`)));\n        });\n        worker.once('exit', (code) => {\n            // 仅在未收到响应时可达（正常路径已由 message 处理 settle）；视为失败\n            settle(() => reject(new Error(`regex: worker exited with code ${code} before responding`)));\n        });\n        worker.postMessage({ id: 1, args });\n    });\n```\n\n</details>\n\n**依据 2 · 源码核查**：[packages/dsh-tool-regex/lib/engine.js:20-38](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/engine.js#L20-L38)\n\n明确字节和匹配数限制。\n\n<details>\n<summary>查看原文（19行）</summary>\n\n```text\nexport const MAX_INPUT_BYTES = 64_000;\nexport const MAX_PATTERN_BYTES = 16_384;\nexport const MAX_REPLACEMENT_BYTES = 16_384;\nexport const MAX_OUTPUT_BYTES = 1_000_000;\nexport const MAX_MATCHES = 1_000;\nexport const MAX_EXPLAIN_NODES = 4_096;\nconst VALID_FLAGS = 'dgimsuyv';\nconst DEFAULT_LIMIT = 50;\n/** 规范化 limit：非法值回退默认 50；超过 MAX_MATCHES 钳制到 MAX_MATCHES。 */\nexport function normalizeLimit(limit) {\n    if (typeof limit !== 'number' || !Number.isFinite(limit) || limit < 1) {\n        return DEFAULT_LIMIT;\n    }\n    return Math.min(Math.floor(limit), MAX_MATCHES);\n}\n/** 字节守卫：超上限报错（不截断）。 */\nfunction assertBytes(value, max, label) {\n    if (Buffer.byteLength(value, 'utf8') > max) {\n        throw new Error(`regex: ${label} exceeds ${max} bytes`);\n```\n\n</details>\n\n**依据 3 · 源码核查**：[packages/dsh-tool-regex/lib/engine.js:97-140](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/engine.js#L97-L140)\n\nfind 的数组上限，以及 replace 完整遍历后检查输出。\n\n<details>\n<summary>查看原文（44行）</summary>\n\n```text\nexport function findAll(re, input, limit) {\n    const cap = normalizeLimit(limit);\n    const unicode = re.unicode || re.unicodeSets;\n    const out = [];\n    re.lastIndex = 0;\n    let m;\n    while ((m = re.exec(input)) !== null) {\n        out.push({\n            index: m.index,\n            match: m[0],\n            captures: m.slice(1),\n            groups: m.groups ? { ...m.groups } : null,\n        });\n        if (out.length >= cap)\n            break;\n        if (m[0].length === 0) {\n            // 空匹配推进：u/v 下按 code point 边界推进，避免重复命中/死循环\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\n        }\n    }\n    return out;\n}\n/** replace：全局替换（编译时已强制 'g'），返回结果文本与替换次数。 */\nexport function replaceAll(re, input, replacement) {\n    if (typeof replacement !== 'string') {\n        throw new Error('regex: replacement must be a string');\n    }\n    assertBytes(replacement, MAX_REPLACEMENT_BYTES, 'replacement');\n    const unicode = re.unicode || re.unicodeSets;\n    // 计数 pass：与 replace 相同的遍历语义（含空匹配推进规则）\n    let replaced = 0;\n    re.lastIndex = 0;\n    let m;\n    while ((m = re.exec(input)) !== null) {\n        replaced++;\n        if (m[0].length === 0) {\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\n        }\n    }\n    // 执行 pass：字符串替换路径（JS 原生 $-语义，回调路径不会二次展开）\n    re.lastIndex = 0;\n    const result = input.replace(re, replacement);\n    assertBytes(result, MAX_OUTPUT_BYTES, 'result');\n    return { result, replaced };\n```\n\n</details>\n\n#### 缺口\n\n- 大量并发请求的宿主负担及计时误差未运行验证\n  **影响**：不能把单次预算等同全局 CPU 或内存限额\n  **进一步探讨**：在隔离宿主测同时调用、计时失败和后续请求是否仍可处理\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 如何低成本确认短文本任务合格，什么变化值得另验？\n\n**研究主题**：效果与总成本、采用判断、新假设与验证\n\n#### 完整回答\n\n已有 DSH 且常从短测试日志抽取字段的人，可先用有已知捕获组的匿名文本，确认结果、部分匹配和无匹配均符合预期，再检查接近上限的返回。首次需查 peer、选择 profile 与工具冲突，后续有工具调用、worker 启动与人工核对边界的负担，时间和现金未量化。超时或需要完整计数时可退回带批处理限制的脚本。可探索返回 hasMore 与匹配预算原因，先在 cap 和 cap+1 两个输入验证是否能减少模型将局部列表写成全量结果；若分页脚本更快或标记导致额外扫描显著拖慢，则无优势。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[packages/dsh-tool-regex/lib/engine.js:28-33](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/engine.js#L28-L33)\n\n当前限额默认和钳制。\n\n```text\n/** 规范化 limit：非法值回退默认 50；超过 MAX_MATCHES 钳制到 MAX_MATCHES。 */\nexport function normalizeLimit(limit) {\n    if (typeof limit !== 'number' || !Number.isFinite(limit) || limit < 1) {\n        return DEFAULT_LIMIT;\n    }\n    return Math.min(Math.floor(limit), MAX_MATCHES);\n```\n\n**依据 2 · 源码核查**：[packages/dsh-tool-regex/lib/engine.js:97-118](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/lib/engine.js#L97-L118)\n\n返回值没有单独完整性标志。\n\n<details>\n<summary>查看原文（22行）</summary>\n\n```text\nexport function findAll(re, input, limit) {\n    const cap = normalizeLimit(limit);\n    const unicode = re.unicode || re.unicodeSets;\n    const out = [];\n    re.lastIndex = 0;\n    let m;\n    while ((m = re.exec(input)) !== null) {\n        out.push({\n            index: m.index,\n            match: m[0],\n            captures: m.slice(1),\n            groups: m.groups ? { ...m.groups } : null,\n        });\n        if (out.length >= cap)\n            break;\n        if (m[0].length === 0) {\n            // 空匹配推进：u/v 下按 code point 边界推进，避免重复命中/死循环\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\n        }\n    }\n    return out;\n}\n```\n\n</details>\n\n**依据 3 · 作者声明**：[packages/dsh-tool-regex/README.md:79-86](https://github.com/omdsh-dev/dsh-toolkit/blob/c3319d9d3e78a18191e1381461b69e84bc547575/packages/dsh-tool-regex/README.md#L79-L86)\n\n作者历史兼容与 tarball 陈述。\n\n```text\n## DSH 0.1.5-rc.1 兼容（已验证）\n\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1`（npm 私有包）的隔离 consumer 中完成全链路验证：\n\n- **类型/运行时**：peer 为 `@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`；不再依赖 unscoped `cordis`\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\n- **消费验证**：tarball 装入 DSH 0.1.5-rc.1（npm）consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\n```\n\n#### 缺口\n\n- 同样短日志的人工操作时间和端到端正确性未知\n  **影响**：不能推算较 shell 工具节时\n  **进一步探讨**：比较同一输入的工具路径与固定脚本，记录漏报、错误和人工耗时\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：packages/dsh-tool-regex；内容摘要：3fd0b343797a8644d5bc58dcb48bd2672eeb4621dff1f035074ea8f328ef747a。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 5 | 620 | 515 | 106 | — |\n| .md | source | 2 | 286 | — | — | 2771 |\n| .ts | source | 5 | 676 | 511 | 114 | — |\n| .ts | test | 3 | 467 | 386 | 13 | — |\n\n排除 5 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 匹配与提取 | 核对索引和捕获组 | 找全时不能只用有限结果 |\n| 替换 | 生成替换后的文本 | 执行时间、输入和最终输出有界 |\n| 静态解释 | 理解模式结构 | 不能代替执行验证 |\n\n## 工程亮点\n\n执行和解释分开，worker 的 message、error、exit 和预算都有处理。匹配数组没有完整性指示。[Q02](#research-q02)\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 packages/dsh-tool-regex/package.json、packages/dsh-tool-regex/cordis.patch.yml、packages/dsh-tool-regex/lib/index.js、packages/dsh-tool-regex/lib/engine.js、packages/dsh-tool-regex/README.md 及固定范围 inventory；组件：packages/dsh-tool-regex。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定子包产物和交接路径。未运行 Node worker、目标宿主、模型任务或测试。\n- 下一步：同一隔离 profile 对照普通匹配、空匹配、超过 cap 的输入和高回溯输入。比较与固定脚本输出及实际诊断成本。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-14-01/omdsh-dev--dsh-toolkit--packages-dsh-tool-regex/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"omdsh-dev/dsh-toolkit\",\n  \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n  \"component\": \"packages/dsh-tool-regex\",\n  \"inspected_paths\": [\n    \"packages/dsh-tool-regex/README.md\",\n    \"packages/dsh-tool-regex/package.json\",\n    \"README.md\",\n    \"package.json\",\n    \"packages/dsh-tool-regex/cordis.patch.yml\",\n    \"packages/dsh-tool-regex/lib/index.js\",\n    \"packages/dsh-tool-regex/lib/engine.js\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"DSH 正则工具怎样给短日志提取字段并限制高回溯输入？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"mechanism\",\n          \"contribution\"\n        ],\n        \"question\": \"Agent 从短日志提取字段时，哪些输出来自实际运算？\",\n        \"answer\": \"根工具不覆盖整个仓库，只在该子包的 profile 补丁激活后以 tools 注册 regex。test、find、replace 走 worker 和 JavaScript RegExp；find 返回索引、完整匹配和捕获组，可核对模型是否找错。find 会自动添加 g，空匹配时显式推进游标，Unicode 模式处理代理对。explain 走静态解释，不执行模式或替代匹配正确性检验。grep 适合搜索文件，Node 脚本也能给等价计算；这里的增量是把测试、短文本提取和替换纳入 DSH 一次可重放的调用，并可直接核对输入和结果。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/package.json\",\n            \"line_start\": 21,\n            \"line_end\": 37,\n            \"observation\": \"宿主 peer 和子包补丁、模块出口。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 4,\n            \"observation\": \"挂载子包模块。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/index.js\",\n            \"line_start\": 66,\n            \"line_end\": 102,\n            \"observation\": \"注册动作和输入契约。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/index.js\",\n            \"line_start\": 105,\n            \"line_end\": 117,\n            \"observation\": \"执行链区分 explain 与 worker。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/engine.js\",\n            \"line_start\": 92,\n            \"line_end\": 118,\n            \"observation\": \"find 捕获组与空匹配推进。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"未验证某个宿主版本的实际注册\",\n            \"impact\": \"不能把可调用结构写成该版本已装好\",\n            \"next_step\": \"在隔离 profile 核对工具列表和已知捕获组\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"dependencies\",\n          \"engineering\",\n          \"limitations\",\n          \"mechanism\"\n        ],\n        \"question\": \"遇到高回溯输入或大量匹配，工具何时停止，能否把返回当成完整清单？\",\n        \"answer\": \"执行链在 worker 建立后启动计时器，1 秒设为硬预算；计时器触发终止请求并拒绝，message/error/exit 也分别收口。它避免把匹配放到宿主主线程，但每次调用仍创建 worker，链路未给同一时刻的 worker 总数设配额。输入按字节设限，模式和替换内容也有限制。find 最多返回调用 limit 内的匹配，默认 50、至多 1000，直接返回匹配数组，达到上限时没有单独的截断标志。replace 先完整遍历计数，再用字符串替换，并在得到结果后检查输出字节。已提交产物的 replace 路径不按 1000 次中止，因此不能把 find 条数上限套到替换。替换后的字符串需要先在 worker 形成，输出上限并非预先内存上限。因此仅凭 find 返回了 50 条不能判断没有更多结果；需要完整清单时先分片或用独立脚本计数。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/index.js\",\n            \"line_start\": 20,\n            \"line_end\": 64,\n            \"observation\": \"每次创建 worker，计时终止并处理消息与退出。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/engine.js\",\n            \"line_start\": 20,\n            \"line_end\": 38,\n            \"observation\": \"明确字节和匹配数限制。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/engine.js\",\n            \"line_start\": 97,\n            \"line_end\": 140,\n            \"observation\": \"find 的数组上限，以及 replace 完整遍历后检查输出。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"大量并发请求的宿主负担及计时误差未运行验证\",\n            \"impact\": \"不能把单次预算等同全局 CPU 或内存限额\",\n            \"next_step\": \"在隔离宿主测同时调用、计时失败和后续请求是否仍可处理\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"cost\",\n          \"adoption\",\n          \"hypothesis\"\n        ],\n        \"question\": \"如何低成本确认短文本任务合格，什么变化值得另验？\",\n        \"answer\": \"已有 DSH 且常从短测试日志抽取字段的人，可先用有已知捕获组的匿名文本，确认结果、部分匹配和无匹配均符合预期，再检查接近上限的返回。首次需查 peer、选择 profile 与工具冲突，后续有工具调用、worker 启动与人工核对边界的负担，时间和现金未量化。超时或需要完整计数时可退回带批处理限制的脚本。可探索返回 hasMore 与匹配预算原因，先在 cap 和 cap+1 两个输入验证是否能减少模型将局部列表写成全量结果；若分页脚本更快或标记导致额外扫描显著拖慢，则无优势。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/engine.js\",\n            \"line_start\": 28,\n            \"line_end\": 33,\n            \"observation\": \"当前限额默认和钳制。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"packages/dsh-tool-regex/lib/engine.js\",\n            \"line_start\": 97,\n            \"line_end\": 118,\n            \"observation\": \"返回值没有单独完整性标志。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"packages/dsh-tool-regex/README.md\",\n            \"line_start\": 79,\n            \"line_end\": 86,\n            \"observation\": \"作者历史兼容与 tarball 陈述。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"同样短日志的人工操作时间和端到端正确性未知\",\n            \"impact\": \"不能推算较 shell 工具节时\",\n            \"next_step\": \"比较同一输入的工具路径与固定脚本，记录漏报、错误和人工耗时\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"packages/dsh-tool-regex/README.md\",\n      \"content\": \"# dsh-tool-regex\\n\\n[English](README.en.md)\\n\\nDSH 正则工具插件 —— 测试匹配、提取捕获组、安全替换、**静态解释正则含义（不执行任何代码）**。零依赖、纯函数。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 动机\\n\\n模型经常需要验证用户给的 pattern、从日志/文本中提取字段、做文本替换。\\\"心算\\\"正则结果错误率极高，且无法给用户展示可验证的过程。现有替代是起 `bash` 进程跑 `node -e` 或 python——进程开销 + 模型现写脚本的正确性风险。内置 `grep` 只能做**文件域**搜索，无法对任意文本测试/提取/替换/解释。\\n\\n本插件提供确定性正则工具，其中 `explain` 是差异化能力：静态解析 pattern 结构并给出人读解释，**不执行匹配**，天然免疫 ReDoS。\\n\\n## 安全模型（ReDoS 多层防线）\\n\\nJS 正则的灾难性回溯是真实威胁（如 `(a+)+$` 配合超长输入）。防线：\\n\\n1. **worker 硬超时**：test/find/replace 在**可终止的 worker 线程**内同步执行，1,000ms 预算到期 `worker.terminate()` 并返回 `regex: execution timed out`——灾难性回溯不再能阻塞宿主进程（工具管道的 `timeoutMs` 对同步阻塞体是协作式，仅靠它不够；worker 内会再次执行全部上限校验）\\n2. **输入长度上限**：64,000 字节（UTF-8）——超限在入口直接拒绝，不进入回溯\\n3. **资源上限**：pattern ≤ 16KB、replacement ≤ 16KB、输出 ≤ 1MB、匹配数 ≤ 1,000（limit 钳制）\\n4. **explain 零执行**：只做静态 tokenizer，不构造 `RegExp` 实例，任何 pattern 都即时返回\\n\\n> ⚠️ 工具描述与 README 均明确警告模型：**不要对不可信的大输入使用无锚点的嵌套量词 pattern**（如 `(a+)+`、`(.*)*`）。\\n\\n其余边界：无效 pattern 捕获 `SyntaxError` 报错（含位置信息）；无效/重复 flag 逐字符校验；`replace` 使用 `String.replace` **字符串替换路径**（JS 原生 `$`-语义，无 `new Function`、无 eval）。\\n\\n## 工具声明\\n\\n注册 `regex` 工具（`@deepseek-ai/dsh-tool-regex`，row id `tool-regex`），统一输出 JSON 文本字符串。\\n\\n| 参数 | 类型 | 必填 | 说明 |\\n|---|---|---|---|\\n| `action` | string | ✅ | `test` / `find` / `replace` / `explain` |\\n| `pattern` | string | ✅ | 正则（JavaScript 语法，**不含**外围 `/`）；≤ 16KB |\\n| `input` | string | | 待匹配文本（test/find/replace 必需）；≤ 64KB |\\n| `flags` | string | | 如 `\\\"gi\\\"`；支持 `g i m s u y d v`，需唯一且合法 |\\n| `replacement` | string | | replace 的替换文本，支持 `$1`/`$2`/`$<name>`/`$$`；≤ 16KB |\\n| `limit` | integer | | find 最大报告匹配数，默认 50，**上限 1,000** |\\n\\n## Actions\\n\\n| action | 功能 | 输出示例 |\\n|---|---|---|\\n| `test` | 判断是否匹配（整串语义由模型自行用 `^...$` 表达） | `{\\\"matched\\\":true}` |\\n| `find` | 全部匹配：index / 完整匹配 / **编号捕获组 `captures`** / 命名组 `groups`（**无 `g` 自动补 `g`**） | `[{\\\"index\\\":0,\\\"match\\\":\\\"a@b\\\",\\\"captures\\\":[\\\"a\\\",\\\"b\\\"],\\\"groups\\\":{\\\"name\\\":\\\"a\\\"}}]` |\\n| `replace` | 全局安全替换（`$1`/`$<name>`/`$$`），返回结果与替换次数 | `{\\\"result\\\":\\\"world hello\\\",\\\"replaced\\\":1}` |\\n| `explain` | 静态解析 pattern → 人读节点序列（不执行匹配；节点数 ≤ 4,096） | `[{\\\"kind\\\":\\\"escape\\\",\\\"text\\\":\\\"\\\\\\\\d\\\",\\\"meaning\\\":\\\"A digit [0-9]\\\"}]` |\\n\\n## 示例\\n\\n```\\nregex { action: \\\"find\\\", pattern: \\\"(\\\\\\\\w+)@(\\\\\\\\w+)\\\", input: \\\"a@b x c@d\\\" }\\n  → [{\\\"index\\\":0,\\\"match\\\":\\\"a@b\\\",\\\"captures\\\":[\\\"a\\\",\\\"b\\\"],\\\"groups\\\":null},{\\\"index\\\":6,\\\"match\\\":\\\"c@d\\\",\\\"captures\\\":[\\\"c\\\",\\\"d\\\"],\\\"groups\\\":null}]\\n\\nregex { action: \\\"replace\\\", pattern: \\\"(\\\\\\\\w+) (\\\\\\\\w+)\\\", input: \\\"hello world\\\", replacement: \\\"$2 $1\\\" }\\n  → {\\\"result\\\":\\\"world hello\\\",\\\"replaced\\\":1}\\n\\nregex { action: \\\"explain\\\", pattern: \\\"\\\\\\\\d{4}-\\\\\\\\d{2}\\\" }\\n  → [{\\\"kind\\\":\\\"escape\\\",\\\"text\\\":\\\"\\\\\\\\d\\\",\\\"meaning\\\":\\\"A digit [0-9]\\\"},{\\\"kind\\\":\\\"quantifier\\\",\\\"text\\\":\\\"{4}\\\",...},...]\\n```\\n\\n## 边界行为\\n\\n| 情况 | 处理 |\\n|---|---|\\n| 无效 pattern | `regex: invalid pattern: <SyntaxError 信息（含位置）>`，不崩溃 |\\n| 无效 flag / 重复 flag | `regex: invalid flag \\\"q\\\"` / `regex: duplicate flag \\\"g\\\"` |\\n| 空 pattern | 合法（匹配空串）；`u`/`v` 下空匹配按 code point 推进（surrogate pair 不会重复命中） |\\n| ReDoS（病理 pattern） | worker 硬超时：`regex: execution timed out (1000ms)`，宿主不阻塞 |\\n| 命名组 / 编号组 | find 输出 `groups: {name: value}` 与 `captures: [...]`；replace 支持 `$<name>`/`$n` |\\n| 零匹配 | find 返回 `[]`；replace 返回原文本 + `replaced: 0` |\\n| 输入超 64KB / pattern 超 16KB / replacement 超 16KB | 入口拒绝（不截断） |\\n| 输出超 1MB（替换放大如 `$`` / `$'`） | `regex: result/output exceeds 1000000 bytes`，拒绝而非截断 |\\n| find limit | 默认 50，钳制到 1,000（防输出膨胀） |\\n| explain 节点超 4,096 | `regex: explain: pattern too complex` |\\n| `$` 引用 | 走 JS 原生字符串替换路径：`$$`→`$`、`$n`→组（未参与→空串）、`$<name>`→命名组、未知引用字面保留（`$0`/`$<foo>` 与 V8 一致） |\\n\\n## DSH 0.1.5-rc.1 兼容（已验证）\\n\\n本插件已迁移到 DSH 0.1.5-rc.1 依赖线，并在 `local harness 0.1.5-rc.1`（npm 私有包）的隔离 consumer 中完成全链路验证：\\n\\n- **类型/运行时**：peer 为 `@deepseek-ai/cordis: ^4.0.1` + `@deepseek-ai/dsh-tools: >=0.0.1-rc.1 <0.2.0` + `@deepseek-ai/dsh-invariants: >=0.0.1-rc.1 <0.2.0`；不再依赖 unscoped `cordis`\\n- **独立构建**：`npm install`（devDependencies 自包含 typescript/vitest/@types/node）→ `npm run typecheck` → `npm test` → `npm run build` → `npm pack`\\n- **消费验证**：tarball 装入 DSH 0.1.5-rc.1（npm）consumer → `dsh --profile compat --dump-config` 出现本插件 row → 工具真实注册与执行通过\\n- **启动方式**：`npx -p @deepseek-ai/dsh@next dsh web`（lib 生产模式；勿 `install -g` 全局安装）\\n\\n\\n## 安装\\n\\n### Profile Bundle（推荐）\\n\\n将本插件作为独立 bundle 安装到 profile（DSH 0.1.5-rc.1（npm））。本仓库位于 [omdsh-dev](https://github.com/omdsh-dev) 组织，公开可访问：\\n\\n```sh\\n# 交互式（web）profile —— 从 GitHub 仓库安装\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-regex\\n# 一次性任务（headless）profile —— dsh run 默认使用 headless\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-regex\\n```\\n\\n或使用 `npm pack` 生成的 tarball 安装：\\n\\n```sh\\nnpm pack     # 生成 dsh-tool-regex-<version>.tgz\\n# 交互式（web）profile\\ndsh plugin --profile web add ./dsh-tool-regex-<version>.tgz\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add ./dsh-tool-regex-<version>.tgz\\n```\\n\\n包内 `dsh.bundle.patch` 会在安装后自动把插件加入 profile 的 layer stack（row id：`tool-regex`）。插件缺失的 peer 依赖（`@deepseek-ai/cordis`、`@deepseek-ai/dsh-tools`）由 profile 的 healed `profiles/node_modules` 回退安装提供。\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless profile。Windows 路径使用正斜杠（`C:/...`）。\\n\\n### 验证安装\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-regex\\n```\\n\\n### 运行验证\\n\\n```sh\\ndsh run \\\"使用 regex 工具测试 d+ 是否匹配 abc123\\\"\\n```\\n\\n### 手动安装与旧版本兼容（monorepo 旧场景）\\n\\nmonorepo 方式仅适用于旧场景：不支持 Profile Bundle 的旧快照或插件开发调试环境（本地 junction/symlink、手动编辑 profile 层）。\\n## 测试\\n\\n```bash\\nnode <monorepo>/node_modules/vitest/vitest.mjs run tests\\n```\\n\\n- `engine.spec.ts`：test/find/replace 全分支 + flags/pattern 错误 + 64KB 上限 + **ReDoS worker 用例**（病理 pattern 在 3s 预算内被取消，不挂死测试进程）\\n- `explain.spec.ts`：字面量/字符类/分组/量词/转义/锚点/交替 + 未闭合报错\\n- `register.spec.ts`：注册契约（AUDIT-CROSS-02 风格）\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-regex/package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-tool-regex\\\",\\n  \\\"description\\\": \\\"DSH regex tool: test/find/replace over text plus static pattern explanation, zero-dependency with ReDoS guards\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"typecheck\\\": \\\"tsc -p tsconfig.json --noEmit\\\",\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"test\\\": \\\"vitest run tests\\\",\\n    \\\"check\\\": \\\"npm run typecheck && npm test && npm run build\\\",\\n    \\\"prepack\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.0-rc.8\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.0-rc.8\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# 🧰 dsh-toolkit\\n\\n[English](README.en.md)\\n\\nDSH 零依赖工具包 collection —— time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema 十个确定性工具，**统一入口一键安装**。\\n\\n[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)\\n\\n## 为什么\\n\\nDSH 生态仓库持续增长，单插件在 hub 中容易被淹没；collection 分类是辨识度最高的形态。本仓库把 10 个工具插件 **vendored 冻结**为 pack artifact 快照（各子仓库独立演进，当前源位于 [omdsh-dev](https://github.com/omdsh-dev) 组织下），统一工程、统一测试、统一维护。\\n\\n**定位（官方 Profile Bundle 生态方向）**：本仓库是 **collection 与安装辅助仓库**——每个子包都是可独立安装/启用/禁用/卸载的 bundle（`dsh plugin --profile <p> add <子包>`）；collection 提供目录、清单与批量安装脚本。meta 包 `@deepseek-ai/dsh-toolkit` 保留为**可选**的原子挂载模型（见下文两种运行模型）。\\n\\n**分发边界**：根 meta 包保持 `private: true`，用于 Git/collection 分发，不代表会发布到 npm registry。根目录已提交由当前 `src` 构建出的 `lib/index.js` 与 `lib/types/index.d.ts`，因此从 Git 安装时不依赖消费端 lifecycle；`prepack` 仍会在生成 pack artifact 前执行完整构建。\\n\\n## 工具一览\\n\\n| 工具 | 能力 | 用例数 |\\n|---|---|---|\\n| `time` | ISO 8601 / 时区 / 日历运算 / 时长差 | 65 |\\n| `encoding` | base64 / url / hex / hash / UUID | 46 |\\n| `json` | JMESPath 子集查询 | 66 |\\n| `calculator` | 安全数学表达式求值（无 eval） | 31 |\\n| `csv` | RFC 4180 解析 / 查询 / 统计（严格引号） | 50 |\\n| `regex` | 测试 / 提取 / 替换 / 静态解释（worker 硬超时） | 63 |\\n| `markdown` | HTML↔Markdown / GFM 表格 / 目录生成（白名单安全） | 71 |\\n| `diff` | 文本/JSON/CSV/Markdown 结构化比较与 unified diff（只读） | 124 |\\n| `stat` | 描述统计 / 百分位数 / 频数分布 / 相关性（零依赖确定性） | 82 |\\n| `schema` | JSON Schema 验证 / 路径 / 解释 / 安全 default（零网络零动态） | 125 |\\n| **合计** | | **723** |\\n\\n## 架构\\n\\n```\\ndsh-toolkit/\\n├── src/index.ts          # meta 包：相对路径动态导入 10 个子包 apply()，聚合注册\\n├── packages/dsh-tool-*   # vendored 子包（pack artifact 快照，name 保持 @deepseek-ai/dsh-tool-*）\\n├── scripts/\\n│   ├── link-deps.sh      # 构建期 junction（cordis → vendor/cordis，dsh-tools → packages/core/tools）\\n│   ├── build-all.sh      # 一键构建 10 子包 + meta 包（tsc）\\n│   ├── test-all.sh       # 一键跑 10 子包 vitest（合计用例数）\\n│   ├── install.sh        # meta / 逐包两种挂载模式（含 dry-run）\\n│   ├── install-web.sh    # 独立 bundle 批量安装 → web profile\\n│   ├── install-headless.sh # 独立 bundle 批量安装 → headless profile\\n│   └── install-all.sh    # web + headless 都装\\n├── catalog.json          # collection 清单（hub collection 分类识别依据）\\n└── tsconfig.base.json    # 共享编译配置（固化踩坑经验）\\n```\\n\\n> 与实施文档方案 A 的工程化适配：子包为私有 Git/collection 包，peer 名解析在 profile 内不可行，\\n> 故 meta 包采用**相对路径动态导入**（零解析魔法、打包自足）；子包 runtime 依赖\\n> （`@deepseek-ai/dsh-tools`）在 npm 独立模式（默认）下不依赖 DSH monorepo，monorepo 模式经子包构建期 junction 解析。\\n\\n## 安装\\n\\n仓库位于 [omdsh-dev/dsh-toolkit](https://github.com/omdsh-dev/dsh-toolkit)（public）。\\n\\n### 独立 bundle 模型（推荐）\\n\\n每个子包独立安装、启用、禁用、卸载：\\n\\n```sh\\n# 安装单个工具到 web profile\\ndsh plugin --profile web add github:omdsh-dev/dsh-tool-csv\\n# 一次性任务（headless）profile\\ndsh plugin --profile headless add github:omdsh-dev/dsh-tool-diff\\n```\\n\\n批量安装（collection 辅助脚本，幂等——重复执行不会重复添加）：\\n\\n```sh\\n./scripts/install-web.sh       # 全部 10 工具 → web profile\\n./scripts/install-headless.sh  # 全部 10 工具 → headless profile（dsh run 使用面）\\n./scripts/install-all.sh       # 两个 profile 都装\\n```\\n\\n验证与运行：\\n\\n```sh\\ndsh --profile web --dump-config | grep tool-csv     # 行存在即安装成功\\ndsh run \\\"使用 csv 工具解析 'a,b\\\\n1,2'\\\"               # headless 端到端\\n```\\n\\n> ⚠️ web 与 headless 是**不同 profile**：web 安装不会自动覆盖 headless；`dsh run` 默认使用 headless。\\n> Windows 路径使用正斜杠（`C:/...`）。\\n\\n### npm pack tarball 安装\\n\\n本地构建后用 tarball 路径安装（不依赖 GitHub）：\\n\\n```sh\\n# tarball 方式（web 为例；headless 同）\\nnpm pack\\ndsh plugin --profile web add <npm pack 产物 tarball 路径>\\n```\\n\\n### meta bundle 模型（可选）\\n\\n需要一次原子挂载全部工具时，挂载根 meta 包：\\n\\n```sh\\ndsh plugin --profile web add github:omdsh-dev/dsh-toolkit\\ndsh --profile web --dump-config | grep tool-kit\\n```\\n\\n> ⚠️ 若 profile 已单独挂载过同名插件（tool-time/.../tool-diff/tool-stat/tool-schema），挂 meta 包会注册重名报错——\\n> 此时先移除旧插件，或用独立 bundle 模型。meta apply 具备原子性（任一子插件失败时\\n> 逆序回滚已注册工具，不残留部分状态）。\\n\\n### 手动安装与旧版本兼容\\n\\n旧场景（monorepo 集成、不支持 Profile Bundle 的旧快照或插件开发调试环境——本地 junction/symlink、手动编辑 profile 层）。\\n\\n## 构建与测试\\n\\n**npm 独立模式（默认，推荐）**：无需 DSH monorepo；`npm install`（devDependencies 自包含）后即可：\\n\\n```bash\\nnpm run build:all           # 10 子包 + meta 包 tsc + 产物完整性验证（无 .ts 残留导入、10+1 个 lib/index.js）\\nbash scripts/test-all.sh    # 10 子包 vitest 全量（723 用例）；任一失败整体非零退出\\nnpm pack                    # prepack 自包含（build:all），tarball 含 lib + 10 个子包\\n```\\n\\n**monorepo 模式（可选：源码贡献/旧 snapshot）**：显式提供 DSH monorepo 根：\\n\\n```bash\\nexport DSH_MONOREPO=<DSH 0.1.5-rc.1（npm）安装路径>   # 或作为第一个参数\\nbash scripts/build-all.sh   # link-deps + 10 子包 + meta 包 tsc + 产物完整性验证\\nbash scripts/test-all.sh\\n```\\n\\n> `prepack` 已指向 `build:all`（完整构建 10 子包 + meta），保证 pack artifact 含全部运行入口；根 Git 入口由当前 `src` 预构建并提交。\\n> 本仓库只在本地验证构建、测试与 pack artifact；不要将这些结果解读为 npm registry 发布或未实际执行的 consumer/profile 验证。\\n\\n\\n## 同步 vendored（子仓库有更新时）\\n\\n把 `packages/<name>` 与源仓库重新同步（src/tests/package.json/tsconfig/cordis.patch.yml/LICENSE/README.md），并在 README 标注子包版本。\\n\\n## 新增工具\\n\\n见 [docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)：复制模板子包 → 实现 → 测试 → build-all 验证 → 更新 catalog.json。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"@deepseek-ai/dsh-toolkit\\\",\\n  \\\"description\\\": \\\"DSH zero-dependency toolkit collection: time / encoding / json / calculator / csv / regex / markdown / diff / stat / schema in one entry point\\\",\\n  \\\"version\\\": \\\"0.0.1\\\",\\n  \\\"private\\\": true,\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"types\\\": \\\"lib/types/index.d.ts\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\"^22.19.0 || >=24.0.0\\\"\\n  },\\n  \\\"packageManager\\\": \\\"npm@11.16.0\\\",\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc -p tsconfig.json\\\",\\n    \\\"build:all\\\": \\\"bash scripts/build-all.sh\\\",\\n    \\\"test:all\\\": \\\"bash scripts/test-all.sh\\\",\\n    \\\"test:root\\\": \\\"vitest run tests\\\",\\n    \\\"test:release\\\": \\\"node scripts/release-check.mjs\\\",\\n    \\\"link-deps\\\": \\\"bash scripts/link-deps.sh\\\",\\n    \\\"prepack\\\": \\\"npm run build:all\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\">=0.0.1-rc.1 <0.2.0\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\">=0.0.1-rc.1 <0.2.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  },\\n  \\\"exports\\\": {\\n    \\\".\\\": {\\n      \\\"types\\\": \\\"./lib/types/index.d.ts\\\",\\n      \\\"default\\\": \\\"./lib/index.js\\\"\\n    },\\n    \\\"./cordis.patch.yml\\\": \\\"./cordis.patch.yml\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"src\\\",\\n    \\\"packages\\\",\\n    \\\"scripts\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\",\\n    \\\"@deepseek-ai/dsh-invariants\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-tools\\\": \\\"^0.1.1-rc.2\\\",\\n    \\\"@types/node\\\": \\\"^26.2.0\\\",\\n    \\\"typescript\\\": \\\"^7.0.2\\\",\\n    \\\"vitest\\\": \\\"^4.1.10\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-regex/cordis.patch.yml\",\n      \"content\": \"# dsh bundle patch: inserts this plugin into a profile's layer stack (0806+).\\n- insert:\\n    - id: tool-regex\\n      name: '@deepseek-ai/dsh-tool-regex'\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-regex/lib/index.js\",\n      \"content\": \"/**\\n * DSH 正则工具插件。\\n *\\n * 注册 `regex` 工具：测试匹配、提取捕获组、安全替换、静态解释正则（不执行代码）。\\n * 接入方式：在 cordis.yml 追加：\\n *   - id: tool-regex\\n *     name: '@deepseek-ai/dsh-tool-regex'\\n *\\n * 安全边界（ReDoS 多层防线）：\\n * - test/find/replace 在**可终止的 worker 线程**内同步执行，WORKER_BUDGET_MS\\n *   到期 worker.terminate() 并返回 `regex: execution timed out`——灾难性回溯\\n *   不再能阻塞宿主进程（工具管道的 timeoutMs 对同步阻塞体是协作式，仅靠它不够）。\\n * - 输入 64KB / pattern 16KB / replacement 16KB / 输出 1MB / 匹配数 1000 上限\\n *   （worker 内再次校验）。\\n * - explain 只做静态 tokenizer，不构造 RegExp，天然免疫 ReDoS，保持同步执行。\\n */\\nimport { Worker } from 'node:worker_threads';\\nimport { defineTool } from '@deepseek-ai/dsh-tools';\\nimport { executeAction } from './engine.js';\\nexport const name = '@deepseek-ai/dsh-tool-regex';\\nexport const inject = ['tools'];\\n/** worker 内正则执行的硬预算（毫秒）；到期 terminate 并报错。 */\\nconst WORKER_BUDGET_MS = 1000;\\n/** 在可终止的 worker 内执行 test/find/replace；超预算硬中断。 */\\nfunction executeInWorker(args) {\\n    return new Promise((resolve, reject) => {\\n        // 源码态（vitest）引用 ./worker.ts（Node 原生 type-stripping 加载）；\\n        // 构建态（lib）引用 ./worker.js\\n        const workerUrl = new URL(import.meta.url.endsWith('.ts') ? './worker.ts' : './worker.js', import.meta.url);\\n        const worker = new Worker(workerUrl);\\n        let settled = false;\\n        const timer = setTimeout(() => {\\n            if (settled)\\n                return;\\n            settled = true;\\n            void worker.terminate();\\n            reject(new Error(`regex: execution timed out (${WORKER_BUDGET_MS}ms)`));\\n        }, WORKER_BUDGET_MS);\\n        const settle = (fn) => {\\n            if (settled)\\n                return;\\n            settled = true;\\n            clearTimeout(timer);\\n            void worker.terminate();\\n            fn();\\n        };\\n        worker.once('message', (msg) => {\\n            settle(() => {\\n                if (msg.ok)\\n                    resolve(msg.value ?? '');\\n                else\\n                    reject(new Error(msg.error ?? 'regex: worker failed'));\\n            });\\n        });\\n        worker.once('error', (err) => {\\n            const message = err instanceof Error ? err.message : String(err);\\n            settle(() => reject(new Error(`regex: worker error: ${message}`)));\\n        });\\n        worker.once('exit', (code) => {\\n            // 仅在未收到响应时可达（正常路径已由 message 处理 settle）；视为失败\\n            settle(() => reject(new Error(`regex: worker exited with code ${code} before responding`)));\\n        });\\n        worker.postMessage({ id: 1, args });\\n    });\\n}\\nexport function apply(ctx) {\\n    ctx.tools.register(defineTool({\\n        name: 'regex',\\n        description: 'Regular expression utilities over text (JavaScript syntax; pattern without surrounding slashes). ' +\\n            'Actions: test (does input match), find (all matches with index, numbered captures, and named groups; ' +\\n            'the g flag is added automatically), replace (global safe replacement with $1/$<name>/$$ references), ' +\\n            'explain (static human-readable breakdown of the pattern; never executes it). ' +\\n            'test/find/replace run in an isolated worker with a hard 1000ms budget (timeout returns an error); ' +\\n            'inputs over 64KB, patterns over 16KB, replacements over 16KB, or outputs over 1MB are rejected. ' +\\n            'Do not use unanchored nested quantifiers (e.g. (a+)+) on large untrusted input: ReDoS risk.',\\n        parameters: {\\n            action: {\\n                type: 'string',\\n                required: true,\\n                enum: ['test', 'find', 'replace', 'explain'],\\n                description: 'Operation to perform.',\\n            },\\n            pattern: {\\n                type: 'string',\\n                required: true,\\n                description: 'Regular expression pattern (JavaScript syntax; do not include surrounding slashes).',\\n            },\\n            input: {\\n                type: 'string',\\n                description: 'Text to match against (required for test/find/replace).',\\n            },\\n            flags: {\\n                type: 'string',\\n                description: 'Flag characters, e.g. \\\"gi\\\". Supported: g i m s u y d v. Must be unique and valid; unknown flags error out.',\\n            },\\n            replacement: {\\n                type: 'string',\\n                description: 'Replacement text for replace; supports $1, $2, $<name> references and $$ for a literal dollar sign.',\\n            },\\n            limit: {\\n                type: 'integer',\\n                description: 'Maximum matches to report (find), default 50, capped at 1000. Prevents unbounded output.',\\n            },\\n        },\\n        output: {\\n            schema: { type: 'string' },\\n            render: (_args, value) => [{ type: 'text', text: value }],\\n        },\\n        execute: (args) => {\\n            const action = args.action;\\n            // explain 是线性静态扫描（pattern ≤16KB），无需 worker；其余动作进 worker 硬预算\\n            if (action === 'explain') {\\n                return Promise.resolve(executeAction(args));\\n            }\\n            return executeInWorker(args);\\n        },\\n        timeoutMs: 1000,\\n    }));\\n}\\n\"\n    },\n    {\n      \"path\": \"packages/dsh-tool-regex/lib/engine.js\",\n      \"content\": \"/**\\n * 正则执行引擎 —— test / find / replace + action 分发。零依赖，纯函数。\\n *\\n * 安全设计（ReDoS + 资源上限，多层防线）：\\n * 1. 输入长度上限 MAX_INPUT_BYTES = 64,000 字节；pattern 上限 MAX_PATTERN_BYTES；\\n *    replacement 上限 MAX_REPLACEMENT_BYTES；统一输出上限 MAX_OUTPUT_BYTES。\\n * 2. 匹配数上限 MAX_MATCHES（find/replace 的 limit 被钳制到该值）。\\n * 3. 硬超时：index.ts 把 test/find/replace 派发到可终止的 worker 线程，\\n *    WORKER_BUDGET_MS 到期调用 worker.terminate()——同步 V8 回溯不再能阻塞宿主。\\n *    worker 内通过 executeAction 再次执行全部上限校验。\\n * 4. explain 只做静态 tokenizer（线性扫描），不构造 RegExp，天然免疫 ReDoS。\\n *\\n * flags 校验：逐字符校验（g i m s u y d v），重复 flag 报错；find/replace 自动补 'g'。\\n *\\n * replace 实现：String.prototype.replace 的字符串替换路径（JS 原生 $-语义），\\n * 独立 exec 循环计数替换次数；空匹配推进实现 ECMAScript AdvanceStringIndex\\n * （u/v 标志下按 surrogate pair 推进，否则按 1 个 UTF-16 code unit）。\\n */\\nimport { explainPattern } from './explain.js';\\nexport const MAX_INPUT_BYTES = 64_000;\\nexport const MAX_PATTERN_BYTES = 16_384;\\nexport const MAX_REPLACEMENT_BYTES = 16_384;\\nexport const MAX_OUTPUT_BYTES = 1_000_000;\\nexport const MAX_MATCHES = 1_000;\\nexport const MAX_EXPLAIN_NODES = 4_096;\\nconst VALID_FLAGS = 'dgimsuyv';\\nconst DEFAULT_LIMIT = 50;\\n/** 规范化 limit：非法值回退默认 50；超过 MAX_MATCHES 钳制到 MAX_MATCHES。 */\\nexport function normalizeLimit(limit) {\\n    if (typeof limit !== 'number' || !Number.isFinite(limit) || limit < 1) {\\n        return DEFAULT_LIMIT;\\n    }\\n    return Math.min(Math.floor(limit), MAX_MATCHES);\\n}\\n/** 字节守卫：超上限报错（不截断）。 */\\nfunction assertBytes(value, max, label) {\\n    if (Buffer.byteLength(value, 'utf8') > max) {\\n        throw new Error(`regex: ${label} exceeds ${max} bytes`);\\n    }\\n}\\n/** 编译 pattern + flags；flags 逐字符校验，重复/非法 flag 报错；pattern 有字节上限。 */\\nexport function compilePattern(pattern, flags, options) {\\n    if (typeof pattern !== 'string') {\\n        throw new Error('regex: pattern must be a string');\\n    }\\n    assertBytes(pattern, MAX_PATTERN_BYTES, 'pattern');\\n    const flagStr = flags === undefined || flags === null ? '' : String(flags);\\n    const seen = new Set();\\n    for (const ch of flagStr) {\\n        if (seen.has(ch))\\n            throw new Error(`regex: duplicate flag \\\"${ch}\\\"`);\\n        if (!VALID_FLAGS.includes(ch))\\n            throw new Error(`regex: invalid flag \\\"${ch}\\\"`);\\n        seen.add(ch);\\n    }\\n    const forceGlobal = options?.forceGlobal === true;\\n    const effective = forceGlobal && !flagStr.includes('g') ? flagStr + 'g' : flagStr;\\n    try {\\n        return new RegExp(pattern, effective);\\n    }\\n    catch (error) {\\n        // SyntaxError message 通常含 \\\"at position N\\\"\\n        throw new Error(`regex: invalid pattern: ${String(error.message)}`);\\n    }\\n}\\n/** 输入大小守卫：超 MAX_INPUT_BYTES 直接拒绝（不截断）。 */\\nexport function assertInputSize(input) {\\n    if (typeof input !== 'string') {\\n        throw new Error('regex: input must be a string');\\n    }\\n    assertBytes(input, MAX_INPUT_BYTES, 'input');\\n}\\n/**\\n * ECMAScript AdvanceStringIndex：空匹配的 lastIndex 推进。\\n * u/v（Unicode）模式下，当前位置若处于高代理项且后跟低代理项，按 2 个\\n * UTF-16 code unit 推进，否则 1；非 Unicode 模式恒为 1。\\n */\\nfunction advanceStringIndex(input, index, unicode) {\\n    if (!unicode)\\n        return index + 1;\\n    if (index + 1 < input.length) {\\n        const first = input.charCodeAt(index);\\n        if (first >= 0xd800 && first <= 0xdbff) {\\n            const second = input.charCodeAt(index + 1);\\n            if (second >= 0xdc00 && second <= 0xdfff)\\n                return index + 2;\\n        }\\n    }\\n    return index + 1;\\n}\\n/** test：判断是否匹配（整串 ^...$ 语义由模型自行用锚点表达）。 */\\nexport function testMatch(re, input) {\\n    re.lastIndex = 0;\\n    return { matched: re.test(input) };\\n}\\n/** find：收集所有匹配 + 捕获组，受 limit 约束（钳制到 MAX_MATCHES）。 */\\nexport function findAll(re, input, limit) {\\n    const cap = normalizeLimit(limit);\\n    const unicode = re.unicode || re.unicodeSets;\\n    const out = [];\\n    re.lastIndex = 0;\\n    let m;\\n    while ((m = re.exec(input)) !== null) {\\n        out.push({\\n            index: m.index,\\n            match: m[0],\\n            captures: m.slice(1),\\n            groups: m.groups ? { ...m.groups } : null,\\n        });\\n        if (out.length >= cap)\\n            break;\\n        if (m[0].length === 0) {\\n            // 空匹配推进：u/v 下按 code point 边界推进，避免重复命中/死循环\\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\\n        }\\n    }\\n    return out;\\n}\\n/** replace：全局替换（编译时已强制 'g'），返回结果文本与替换次数。 */\\nexport function replaceAll(re, input, replacement) {\\n    if (typeof replacement !== 'string') {\\n        throw new Error('regex: replacement must be a string');\\n    }\\n    assertBytes(replacement, MAX_REPLACEMENT_BYTES, 'replacement');\\n    const unicode = re.unicode || re.unicodeSets;\\n    // 计数 pass：与 replace 相同的遍历语义（含空匹配推进规则）\\n    let replaced = 0;\\n    re.lastIndex = 0;\\n    let m;\\n    while ((m = re.exec(input)) !== null) {\\n        replaced++;\\n        if (m[0].length === 0) {\\n            re.lastIndex = advanceStringIndex(input, re.lastIndex, unicode);\\n        }\\n    }\\n    // 执行 pass：字符串替换路径（JS 原生 $-语义，回调路径不会二次展开）\\n    re.lastIndex = 0;\\n    const result = input.replace(re, replacement);\\n    assertBytes(result, MAX_OUTPUT_BYTES, 'result');\\n    return { result, replaced };\\n}\\n/** 按 action 分发执行（worker 与主线程共用；worker 内再次执行全部上限校验）。 */\\nexport function executeAction(args) {\\n    const flags = typeof args.flags === 'string' && args.flags !== '' ? args.flags : undefined;\\n    const limit = normalizeLimit(args.limit);\\n    let value;\\n    switch (args.action) {\\n        case 'test': {\\n            assertInputSize(args.input);\\n            const re = compilePattern(args.pattern, flags);\\n            value = testMatch(re, args.input);\\n            break;\\n        }\\n        case 'find': {\\n            assertInputSize(args.input);\\n            // 无 g 自动补 g：否则只能拿到第一个匹配，语义意外（文档明确说明）\\n            const re = compilePattern(args.pattern, flags, { forceGlobal: true });\\n            value = findAll(re, args.input, limit);\\n            break;\\n        }\\n        case 'replace': {\\n            assertInputSize(args.input);\\n            const re = compilePattern(args.pattern, flags, { forceGlobal: true });\\n            value = replaceAll(re, args.input, args.replacement);\\n            break;\\n        }\\n        case 'explain': {\\n            // 静态解析：不构造 RegExp、不执行匹配\\n            value = explainPattern(args.pattern);\\n            break;\\n        }\\n        default:\\n            throw new Error(`regex: unknown action \\\"${args.action}\\\"`);\\n    }\\n    const text = JSON.stringify(value);\\n    assertBytes(text, MAX_OUTPUT_BYTES, 'output');\\n    return text;\\n}\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"c3319d9d3e78a18191e1381461b69e84bc547575\",\n    \"component\": \"packages/dsh-tool-regex\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"3fd0b343797a8644d5bc58dcb48bd2672eeb4621dff1f035074ea8f328ef747a\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 620,\n        \"code\": 515,\n        \"comments\": 106,\n        \"blank\": 0\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 286,\n        \"words\": 2771\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 5,\n        \"lines\": 676,\n        \"code\": 511,\n        \"comments\": 114,\n        \"blank\": 52\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"test\",\n        \"files\": 3,\n        \"lines\": 467,\n        \"code\": 386,\n        \"comments\": 13,\n        \"blank\": 70\n      }\n    ],\n    \"excluded\": [\n      {\n        \"path\": \"packages/dsh-tool-regex/lib/types/engine.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-regex/lib/types/explain.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-regex/lib/types/index.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-regex/lib/types/invariant.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      },\n      {\n        \"path\": \"packages/dsh-tool-regex/lib/types/worker.d.ts\",\n        \"reason\": \"generated/dependency/vendor/declaration heuristic; review exclusions\"\n      }\n    ],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [\n        {\n          \"path\": \"packages/dsh-tool-regex/lib/index.js\",\n          \"line\": 67,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/lib/index.js\",\n          \"line\": 67,\n          \"api\": \"defineTool\",\n          \"name\": \"regex\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/src/index.ts\",\n          \"line\": 75,\n          \"api\": \"ctx.tools.register\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/src/index.ts\",\n          \"line\": 75,\n          \"api\": \"defineTool\",\n          \"name\": \"regex\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"packages/dsh-tool-regex/lib/worker.js\",\n          \"line\": 13,\n          \"api\": \"parentPort.on\",\n          \"name\": \"message\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/src/worker.ts\",\n          \"line\": 27,\n          \"api\": \"parentPort!.on\",\n          \"name\": \"message\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [\n        {\n          \"path\": \"packages/dsh-tool-regex/lib/index.js\",\n          \"line\": 32,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/src/index.ts\",\n          \"line\": 43,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"source\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/tests/engine.spec.ts\",\n          \"line\": 273,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        },\n        {\n          \"path\": \"packages/dsh-tool-regex/tests/engine.spec.ts\",\n          \"line\": 306,\n          \"api\": \"setTimeout\",\n          \"name\": null,\n          \"aliases\": [],\n          \"status\": \"dynamic_unresolved\",\n          \"role\": \"test\"\n        }\n      ],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [\n          \"regex\"\n        ],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"message\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 2,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "b1761a45a863791a561f69c40a5f2bcff2c2a134ec716d4f4b3dc1846aa38c9c"
+        }
+    },
+    "unavailable_artifacts": []
+}
