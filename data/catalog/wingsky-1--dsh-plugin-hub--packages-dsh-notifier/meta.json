@@ -1,0 +1,66 @@
+{
+    "repository": "wingsky-1/dsh-plugin-hub",
+    "repository_id": 1336044501,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-11-06T03:09:56Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Awingsky-1%2Fdsh-plugin-hub%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6658:31A595:3AE6:3FEA:6AFA671D and timestamp 2026-11-16 02:14:54 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Awingsky-1%2Fdsh-plugin-hub%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6660:33568A:22224E3:250924B:6AFA671E and timestamp 2026-11-16 02:14:55 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awingsky-1%2Fdsh-plugin-hub%20is%3Aissue%20created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6662:3571BA:3B57:409D:6AFA6720 and timestamp 2026-11-16 02:14:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awingsky-1%2Fdsh-plugin-hub%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6664:4CE2E:390A:3E23:6AFA6721 and timestamp 2026-11-16 02:14:57 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Awingsky-1%2Fdsh-plugin-hub%20is%3Aissue%20updated%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6672:B17CA:3CFF:41F4:6AFA6722 and timestamp 2026-11-16 02:14:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T17:00:20.787Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@wingsky-1/dsh-notifier",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 2770,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/%40wingsky-1%2Fdsh-notifier",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T17:03:51.600Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/%40wingsky-1%2Fdsh-notifier",
+            "error": null,
+            "latest_version": "0.2.11",
+            "latest_published_at": "2026-11-06T03:14:41.346Z",
+            "latest_error": null
+        }
+    }
+}

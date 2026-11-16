@@ -1,0 +1,54 @@
+{
+    "repository": "Y1X1n/dsh-prompt-optimizer",
+    "repository_id": 1338639264,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 33,
+    "pushed_at": "2026-11-11T03:57:26Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3AY1X1n%2Fdsh-prompt-optimizer%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D0F8:ED321:229BB21:2582B25:6AFA66AF and timestamp 2026-11-16 02:13:03 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3AY1X1n%2Fdsh-prompt-optimizer%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID D102:20CB90:7246:7C21:6AFA66B0 and timestamp 2026-11-16 02:13:04 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T17:00:20.787Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@y1x1n/dsh-prompt-optimizer",
+        "captured_at": "2026-11-14T01:28:07.895Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 2408,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/%40y1x1n%2Fdsh-prompt-optimizer",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-02T10:49:44.779Z",
+            "captured_at": "2026-11-14T01:28:07.895Z",
+            "source_url": "https://registry.npmjs.org/%40y1x1n%2Fdsh-prompt-optimizer",
+            "error": null,
+            "latest_version": "0.6.4",
+            "latest_published_at": "2026-11-11T03:58:56.907Z",
+            "latest_error": null
+        }
+    }
+}

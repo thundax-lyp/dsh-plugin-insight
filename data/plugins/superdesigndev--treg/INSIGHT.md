@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[6dabc01](https://github.com/superdesigndev/treg/tree/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad)
+源码版本：[6ffe8df](https://github.com/superdesigndev/treg/tree/6ffe8df7126479631a4c649467aa307505e28a1b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 7,597](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C597&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
+[![GitHub ★ 8,034](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C034&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
 <!-- END META -->
 
 > **功能**：面向团队的工具目录和凭据代理，支持 CLI、HTTP 及 DSH Skill 和 MCP 接入。
@@ -122,16 +122,16 @@
 
 代理授权、凭据注入和有条件的幂等重放已有源码支持。对账后重试能否降低重复仍是待验证假设。供应商实际行为、部署策略和账单尚未取得。
 
-- 已检查：作者 README、包清单、源码路径 README.md、package.json、dsh/index.js、dsh/cordis.patch.yml、src/treg/infra/upstream/relay.py、src/treg/routers/call.py、src/treg/application/call/service.py、src/treg/application/call/authorize.py、src/treg/application/call/idempotency.py、src/treg/application/call/intake.py、pyproject.toml、src/treg/application/call/reserve.py 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、dsh/index.js、docs/DSH-PLUGIN.md、dsh/skills/treg/SKILL.md、src/treg/application/call/admission.py、src/treg/application/call/service.py、src/treg/application/call/route.py、src/treg/application/call/idempotency.py、dsh/cordis.patch.yml、src/treg/routers/call.py、src/treg/infra/upstream/relay.py、src/treg/application/call/intake.py、pyproject.toml 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定根组件研究，以 HTTP 工具代理、代表性授权和幂等为重点。只确认 DSH Skill 和托管 MCP 配置入口，未测部署和供应商，也未审计全部路由、密钥与日志。
-- 下一步：按 [Q05](#research-q05) 用同一计数上游对照直接重试和对账后重试，同时模拟同成员的单工具授权收紧，再比较新请求和重放结果。
+- 边界：固定根组件研究，以 HTTP 工具代理、代表性授权和幂等为重点。只确认 DSH Skill 和托管 MCP 配置入口，未测部署和供应商，也未审计全部路由、密钥与日志。 本轮当前版本复核：6dabc01a..6ffe8df7（固定提交 6ffe8df7126479631a4c649467aa307505e28a1b）；比较目标组件差异并补充其影响。
+- 下一步：按 [Q05](#research-q05) 用同一计数上游对照直接重试和对账后重试，同时模拟同成员的单工具授权收紧，再比较新请求和重放结果。 当前源码固定于 6ffe8df7126479631a4c649467aa307505e28a1b；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[superdesigndev/treg](https://github.com/superdesigndev/treg)
-- **版本号**：0.30.0（[固定提交 6dabc01](https://github.com/superdesigndev/treg/tree/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad)）
-- **版本日期**：2026-11-08（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.31.0（[固定提交 6ffe8df](https://github.com/superdesigndev/treg/tree/6ffe8df7126479631a4c649467aa307505e28a1b)）
+- **版本日期**：2026-11-15（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -141,7 +141,7 @@
 
 [Q05](#research-q05) 将原调用号、已见费用和未知结果接到客户端验收步骤，有记录才决定是否复用键或重新执行。用同一负载比较重复转发、误判、费用和人工核对时间。
 
-按 [Q05](#research-q05) 用同一计数上游对照直接重试和对账后重试，同时模拟同成员的单工具授权收紧，再比较新请求和重放结果。
+按 [Q05](#research-q05) 用同一计数上游对照直接重试和对账后重试，同时模拟同成员的单工具授权收紧，再比较新请求和重放结果。 当前源码固定于 6ffe8df7126479631a4c649467aa307505e28a1b；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -154,14 +154,14 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 144 | 27019 | — | — | 263455 |
-| .js | source | 76 | 8444 | 7097 | 1400 | — |
+| .md | source | 147 | 28031 | — | — | 278668 |
+| .js | source | 76 | 8555 | 7189 | 1415 | — |
 | .mjs | example | 1 | 342 | 289 | 21 | — |
 | .md | example | 9 | 367 | — | — | 2798 |
 | .ts | example | 2 | 344 | 304 | 13 | — |
 | .js | example | 7 | 1072 | 852 | 172 | — |
-| .ts | test | 32 | 2971 | 2649 | 145 | — |
-| .ts | source | 19 | 1266 | 972 | 194 | — |
+| .ts | test | 34 | 3204 | 2857 | 151 | — |
+| .ts | source | 19 | 1267 | 972 | 195 | — |
 | .mjs | source | 1 | 15 | 13 | 2 | — |
 | .md | test | 1 | 90 | — | — | 2000 |
 
@@ -169,11 +169,7 @@
 
 **活跃度**
 
-[![Issue 未关闭 39](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=39&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 32](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=32&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/superdesigndev/treg/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
-
-
-
-统计日期：2026-11-09。
+Issue 活跃度数据暂未获取（查询日期：2026-11-16），可前往 [GitHub Issues](https://github.com/superdesigndev/treg/issues) 查看。
 
 <a id="detail-section-10"></a>
 
@@ -195,7 +191,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:24-44](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/README.md#L24-L44)
+**依据 1 · 作者声明**：[README.md:24-44](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/README.md#L24-L44)
 
 作者区分外部目录、团队自有工具和工作流配方。
 
@@ -228,7 +224,7 @@ The vocabulary for the second half:
 
 </details>
 
-**依据 2 · 作者声明**：[README.md:104-119](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/README.md#L104-L119)
+**依据 2 · 作者声明**：[README.md:104-119](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/README.md#L104-L119)
 
 作者列出的工作流为配方与另行安装项。
 
@@ -249,14 +245,14 @@ Ready-made recipes your agent runs end to end, every call through treg:
 | [`make-ugc`](skills/make-ugc/SKILL.md) | Make AI UGC videos: trending hooks, a presenter, talking-head clips, captions ([treg.to/ugc](https://treg.to/ugc)) |
 | [`jev-memory`](skills/jev-memory/SKILL.md) | Give Claude Code a memory: a Claude Code mod where Jev judges each prompt after the turn and keeps your lasting preferences, installed ready-made or built from one prompt ([the mod](examples/claude-code-mods/jev-memory)) |
 
-`install.sh` installs only `treg` and lists the others; name the ones you want with
+`install.sh` installs only `treg` and names the others in one line; your agent offers them after
+sign-in and the first call. Name the ones you want with
 `sh -s -- --skills lead-signals,recruit` (or `--skills all`; the opt-in `jev-memory` and `rea-growth` are never in that set). In Claude Code each one is
-also its own plugin in treg's marketplace: `/plugin install recruit@treg`, or pick them from `/plugin`. To add
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[package.json:2-15](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/package.json#L2-L15)
+**依据 3 · 源码核查**：[package.json:2-15](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/package.json#L2-L15)
 
 npm 根清单只发布 DSH 入口与技能等文件。
 
@@ -265,7 +261,7 @@ npm 根清单只发布 DSH 入口与技能等文件。
 
 ```text
   "name": "treg-dsh",
-  "version": "0.30.0",
+  "version": "0.31.0",
   "type": "module",
   "description": "OpenRouter for tools - 4,000+ agent-friendly tools, pay for the usage, not subscription",
   "main": "dsh/index.js",
@@ -282,7 +278,7 @@ npm 根清单只发布 DSH 入口与技能等文件。
 
 </details>
 
-**依据 4 · 源码核查**：[dsh/index.js:104-116](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/dsh/index.js#L104-L116)
+**依据 4 · 源码核查**：[dsh/index.js:104-116](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/dsh/index.js#L104-L116)
 
 apply 的实际能力是注册 skill provider。
 
@@ -307,9 +303,9 @@ export function apply(ctx) {
 
 </details>
 
-**依据 5 · 源码核查**：[dsh/cordis.patch.yml:19-34](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/dsh/cordis.patch.yml#L19-L34)
+**依据 5 · 源码核查**：[dsh/cordis.patch.yml:19-34](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/dsh/cordis.patch.yml#L19-L34)
 
-独立 MCP 客户端行由 token 决定启用并指向托管服务。
+npm 根包和随包 Skill 独立于托管服务。只有 TREG_TOKEN 非空才装配内置 MCP 客户端。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -335,46 +331,6 @@ export function apply(ctx) {
 
 </details>
 
-**依据 6 · 源码核查**：[src/treg/infra/upstream/relay.py:230-257](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/infra/upstream/relay.py#L230-L257)
-
-服务端实际解密或读取配置并执行凭据注入。
-
-<details>
-<summary>查看原文（28行）</summary>
-
-```text
-    # Apply every binding (a request may need several credentials at once).
-    for binding in tool.bindings:
-        # A PLATFORM binding injects one of treg's own credentials (Google Ads' developer token),
-        # read from settings rather than an org secret. Keeping it out of the org's secret store
-        # matters: it's treg's credential, not the tenant's, so it must not be readable by them or
-        # extractable through a local run.
-        setting = binding.get("platform_setting")
-        if setting:
-            value = get_settings().platform_credential(setting, binding.get("account"))
-            if not value:
-                raise GatewayFailed(
-                    "injection_failed", status_code=502,
-                    detail=f"this server has no {setting} configured")
-            try:
-                injectors.inject(headers, params, binding, value, json_body=json_body)
-            except ValueError as exc:
-                raise GatewayFailed(
-                    "injection_failed", status_code=502,
-                    detail=f"credential injection failed: {exc}") from exc
-            continue
-        secret = secrets[binding["secret_id"]]
-        raw = crypto.decrypt(secret.value)
-        try:
-            injectors.inject(headers, params, binding, raw, json_body=json_body)
-        except ValueError as exc:
-            raise GatewayFailed(
-                "injection_failed", status_code=502,
-                detail=f"credential injection failed: {exc}") from exc
-```
-
-</details>
-
 #### 缺口
 
 - 没有真实团队的切换和核对记录。
@@ -393,17 +349,33 @@ export function apply(ctx) {
 
 代表性 HTTP 调用进入 `/call/{rest:path}` 并要求成员身份。适配层保留原始路径、查询和请求头，带调用者快照进入组织流控和应用调用。对于新调用，应用先尝试解析团队工具，符合特定未找到条件才查目录或 Hub，之后按工具和已解析上游检查访问、策略和调用额度。适用的计费路线先做费用预留，准备凭据和上游请求后走 relay。relay 从原始头中过滤自身控制字段和逐跳字段，解密 binding 所需的凭据或读取平台配置，注入指定的头、查询或 JSON 字段；缺少平台凭据或注入参数不合法会拒绝。启用代理目标检查时还校验解析地址，再发起上游流式请求。响应并非所有路径都原样立即流出，需结算或验证所有权的代表分支要读响应，可能附带费用或调用标识。这里证明一次代理的接线，未穷尽目录替代、跨供应商路由、重定向、权限与日志路径。
 
+团队凭据读取在费用预留之前，绑定缺失或属于其他团队时返回 409；平台注入失败仍有独立 502 路径。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/treg/routers/call.py:296-306](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/routers/call.py#L296-L306)
+**依据 1 · 作者声明**：[docs/DSH-PLUGIN.md:1-8](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/docs/DSH-PLUGIN.md#L1-L8)
 
-HTTP 路由实际要求成员并进入公共调用面。
-
-<details>
-<summary>查看原文（11行）</summary>
+项目文档关于本题的作者主张；不能单独证明实现与效果。
 
 ```text
-@app.api_route(
+# The DeepSeek Harness bundle
+
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is a coding agent built
+on "everything is a plugin". The treg bundle ships the connector and the CLI path in one
+zero-config install.
+
+## Install
+
+```
+
+**依据 2 · 源码核查**：[src/treg/routers/call.py:309-332](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/routers/call.py#L309-L332)
+
+HTTP 调用路由签名要求成员调用者。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
     "/call/{rest:path}",
     methods=["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"],
 )
@@ -414,78 +386,38 @@ async def call_tool(
 ):
     prefix = "/catalog/call/" if getattr(request.state, "catalog_only", False) else "/call/"
     return await run_call_surface(rest, request, caller, prefix=prefix, finish=_relay_answer)
-```
 
-</details>
 
-**依据 2 · 源码核查**：[src/treg/routers/call.py:351-372](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/routers/call.py#L351-L372)
-
-原始请求和可信调用者快照被传入调用服务。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    enter_call(request, caller)
-    # Faithful-relay: use the RAW request path, not Starlette's decoded path param. Decoding is
-    # lossy — an encoded slash (`%2f`) in `rest` would become a real `/` and change the upstream
-    # route (npm's scoped publish `PUT /@scope%2fname` 404s as `/@scope/name`). httpx preserves
-    # valid percent-escapes, so the original bytes travel through to the upstream one-to-one.
-    raw_path = request.scope.get("raw_path")
-    if raw_path:
-        _, sep, raw_rest = raw_path.decode("ascii", "replace").partition(prefix)
-        if sep:
-            rest = raw_rest
-    call_input = CallInput(
-        method=request.method,
-        raw_rest=rest,
-        raw_headers=tuple(request.headers.raw) if headers is None else tuple(headers),
-        query_items=tuple(request.query_params.multi_items()),
-        raw_query=request.url.query or "",
-        body=_HttpRequestBody(request),
-        caller=CallerSnapshot.capture(caller),
-        client_ip=_client_ip(request),
-        catalog_only=bool(getattr(request.state, "catalog_only", False)),
-    )
-    return await run_call_input(request, caller, call_input, finish=finish, rest=rest)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/treg/routers/call.py:406-419](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/routers/call.py#L406-L419)
-
-根请求先经组织准入，再执行应用调用并管理流。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
+async def _relay_answer(request: Request, context, upstream: UpstreamResponse, rest: str) -> Response:
+    """`/call/`'s ending: the provider's answer, streamed unchanged, with the optional invitation."""
+    _attach_async_descriptor(upstream, context, rest)
+    response = _http_upstream_response(upstream)
     try:
-        # Caller is trusted; every root HTTP/MCP call enters here, routing children do not.
-        snapshot = await org_flow_control.check(caller.org_id, context.call_ref)
-        slot = await org_concurrency.acquire(
-            caller.org_id, limit=snapshot.max_in_flight if snapshot else None,
-            version=snapshot.version if snapshot else 0,
-            rate_limit=snapshot.rate_limit if snapshot else None)
-        upstream = await execute_call(context, request.app.state.http)
-        if slot is not None:
-            upstream.close = org_concurrency.cleanup_once(upstream.close)
-        response = await finish(request, context, upstream, rest)
-        if slot is not None and isinstance(response, StreamingResponse):
-            response = _LeasedStreamingResponse(response, slot, upstream.close)
-            streaming = True  # The ASGI response now owns cleanup and slot release.
+        # Optional invitation, decided before the body streams (application/call/invite.py).
+        kind = await invitation(context, response.status_code,
+                                replayed=bool(response.headers.get("X-Treg-Idempotent-Replay")))
+        if kind is not None:
+            response.headers["X-Treg-Hint"] = kind
+            if kind == "review":
+                response.headers["X-Treg-Review"] = "requested"  # read by CLI <= 0.18
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/treg/application/call/service.py:808-826](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L808-L826)
+**依据 3 · 源码核查**：[src/treg/application/call/service.py:885-909](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L885-L909)
 
-团队工具优先，限定情况下才选择其他来源。
+团队工具优先，只有 404 才可回落目录和 Hub。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
+    if request.context.input.catalog_only:
+        # This reviewed surface accepts only a catalog id. A same-named team tool cannot shadow it.
+        ep = _catalog_endpoint_for(rest)
+        if ep is None:
+            raise ResolutionFailed("target_not_found", status_code=404, detail=(
+                f"unknown catalog endpoint {rest!r} — use catalog_search for a valid endpoint id"))
     else:
         try:
             target = await _await_before_reserve(
@@ -509,74 +441,47 @@ async def call_tool(
 
 </details>
 
-**依据 5 · 源码核查**：[src/treg/application/call/service.py:1015-1030](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1015-L1030)
+**依据 4 · 源码核查**：[src/treg/application/call/service.py:1332-1354](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L1332-L1354)
 
-授权发生在已解析目标的新请求上。
+团队绑定找不到或租户不符时返回 409，供应商暂停时返回 503，均在费用预留前。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
+    # Load every secret the bindings need BEFORE the money gate (api does the DB work; proxy stays
+    # I/O-free): whether this call is METERED can depend on the credential itself — a registry X
+    # connect rides treg's pay-per-use app, so the org's "own" oauth secret is exactly what makes
+    # the call billable. Nothing is reserved yet, so a load failure here leaves no hold behind.
+    secrets: dict[int, Secret] = {}
     try:
-        await _await_before_reserve(
-            authorize_call(
-                caller=caller,
-                tool=tool,
-                upstream_url=upstream_url,
-                method=request.method,
-                client_ip=request.client_ip,
-            ),
-            request,
-            call_ref,
-        )
+        # A platform binding carries no secret_id — its value comes from settings at relay time.
+        for sid in {b["secret_id"] for b in tool.bindings if b.get("secret_id") is not None}:
+            secret = await _await_before_reserve(db.get(Secret, sid), request, call_ref)
+            if secret is None or secret.org_id != caller.org_id:
+                raise CallFailure(
+                    "credential_missing", status_code=409, detail="a bound secret is missing")
+            secrets[sid] = secret
     except CallFailure as exc:
-        # The router audits this refusal; the root request log names it the same way.
-        request.context.refused_by = _refusal_kind(exc.status_code)
+        _audit(exc.status_code, refused_by=_refusal_kind(exc.status_code), failure=exc)  # the attempt is a record too
         raise
+    # A connection of a paused provider (TREG_PAUSED_PROVIDERS) is kept but not used: its own tool
+    # and a URL passthrough to its hosts resolve to the tool bound to it. Refused here, before the
+    # money gate and before a token refresh or the relay could reach the provider.
+    paused = next((s.provider for s in secrets.values() if oauth_providers.is_paused(s.provider)), None)
+    if paused is not None:
+        _audit(503, refused_by="paused", answered=False)
+        raise provider_paused(paused)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/treg/application/call/authorize.py:18-39](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/authorize.py#L18-L39)
+**依据 5 · 源码核查**：[src/treg/application/call/service.py:1469-1489](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L1469-L1489)
 
-按工具、实际目标策略和成员额度拒绝。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    async with session_maker() as db:
-        # Per-member tool + project ACL (NULL access = all; admins exempt).
-        try:
-            access_policy._require_tool_use(caller, tool)
-        except access_policy.AccessPolicyError as exc:
-            raise AuthorizationFailed(
-                "tool_access_denied", status_code=403, detail=exc.detail) from exc
-        # Policy deny is evaluated on the RESOLVED upstream, so it sees the real host/path/method
-        # whichever shape the caller used. The relay never follows redirects, so a blocked host
-        # cannot be reached through a 3xx bounce.
-        try:
-            for url in [upstream_url, *oauth_providers.legacy_aliases(upstream_url)]:
-                await access_policy.enforce_deny(caller, url, method, db, tool.project_id)
-        except access_policy.AccessPolicyError as exc:
-            raise AuthorizationFailed(
-                "policy_denied", status_code=403, detail=exc.detail) from exc
-        try:  # per-user daily cap (skips sandbox + unmetered members)
-            await usage_policy.enforce_daily_cap(
-                caller, db, sandbox=demo_sandbox.is_sandbox(caller.org))
-        except usage_policy.UsagePolicyError as exc:
-            raise AuthorizationFailed(
-                "daily_cap_reached", status_code=429, detail=exc.detail) from exc
-```
-
-</details>
-
-**依据 7 · 源码核查**：[src/treg/application/call/service.py:1345-1375](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1345-L1375)
-
-适用的计费路径在 relay 前做费用保留，余额或限额拒绝向上传递。
+计费路线先预留余额，拒绝分支位于转发之前。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
     # Metered — treg's own money is about to be spent (tier 4's platform key, or a registry OAuth
@@ -600,46 +505,13 @@ async def call_tool(
             # A call refused for MONEY (402 empty balance / 429 daily cap) must appear in the activity
             # feed, charged 0. Keep the detail: every 429 maps to `cap`, which covers a member call cap, a
             # tag call or spend cap, the platform ceiling, a trial allowance and a demo-IP limit, and only
-            # `exc.detail` says which. This runs inside `mk.metered` and before relay, so no provider
-            # content reaches it. A tag-cap detail carries the tag's `val`, the caller's own identifier,
-            # bounded by the same redaction and retention as the request bodies.
-            _audit(exc.status_code, charged_micro=0,
-                   refused_by="balance" if exc.status_code == 402 else "cap",
-                   error_response=(
-                       _ERROR_MASKING_FAILED if refusal_secrets is None else
-                       _redact_snippet(f"treg: {exc.detail}", refusal_secrets,
-                                       _ERROR_RESPONSE_MAX)))
-            raise
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[src/treg/infra/upstream/relay.py:181-191](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/infra/upstream/relay.py#L181-L191)
+**依据 6 · 源码核查**：[src/treg/infra/upstream/relay.py:230-257](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/infra/upstream/relay.py#L230-L257)
 
-构建上游头时去除中转控制字段和本服务 cookie。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-) -> UpstreamResponse:
-    # Headers: preserve everything (incl. duplicates / cookies) except hop-by-hop + our token.
-    # `.raw` is the original (bytes, bytes) pairs; httpx.Headers is a multidict, so binding
-    # injection (headers[name]=v) overwrites only its target and leaves the rest untouched.
-    # RFC 7230 §6.1: also drop any header NAMED in the caller's own Connection header.
-    req_drop = _connection_named(_header_value(request.raw_headers, "connection"))
-    headers = httpx.Headers(
-        [(k, v) for k, v in request.raw_headers
-         if not _is_dropped_request_header(k.decode("latin-1").lower(), req_drop)]
-    )
-    _scrub_treg_cookies(headers)  # keep caller cookies, drop treg's own session cookie
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/treg/infra/upstream/relay.py:230-257](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/infra/upstream/relay.py#L230-L257)
-
-多绑定的凭据获取、解密、注入与失败分支。
+平台密钥缺失及注入参数不合法为 502，团队凭据解密后按绑定注入。
 
 <details>
 <summary>查看原文（28行）</summary>
@@ -677,9 +549,9 @@ async def call_tool(
 
 </details>
 
-**依据 10 · 源码核查**：[src/treg/infra/upstream/relay.py:281-296](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/infra/upstream/relay.py#L281-L296)
+**依据 7 · 源码核查**：[src/treg/infra/upstream/relay.py:281-296](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/infra/upstream/relay.py#L281-L296)
 
-地址检查按配置启用，随后实际发送流式请求。
+地址检查取决于部署开关，然后才由客户端实际发送。
 
 <details>
 <summary>查看原文（16行）</summary>
@@ -705,17 +577,14 @@ async def call_tool(
 
 </details>
 
-**依据 11 · 源码核查**：[src/treg/application/call/service.py:1546-1568](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1546-L1568)
+**依据 8 · 源码核查**：[src/treg/application/call/service.py:1675-1698](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L1675-L1698)
 
-调用 relay 及有条件的响应读取。
+转发主链和结算证据读取采用不同应答路径。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-                upstream_started = _now_ms()
-                reached = relay_module.ON_SEND.set(_reached_provider(request.context))
-                try:
                     response = await relay(
                         upstream_request,
                         upstream_url, tool, secrets, upstream_client,
@@ -736,6 +605,10 @@ async def call_tool(
                     and not streaming_free_result):
                 # Settlement reads the body; owned free polls also need it to learn result ownership.
                 # A failure while draining remains an upstream failure on either path. An endpoint
+                # that inlines media declares `spooled_response`: its 2xx goes to disk and `body`
+                # is only the usage evidence from here on.
+                read_started = _now_ms()
+                response, body, spooled_bytes = await _read_evidence(mk, response)
 ```
 
 </details>
@@ -760,51 +633,34 @@ async def call_tool(
 
 另一个限制是重放先经过标签预算，然后在新请求的目标解析及逐工具授权前直接返回。本次查到的是这段代码的顺序。若同一 membership 和 pin 缓存后收紧单工具授权，是否仍能得到旧响应，应在目标部署专门验证。不能把这段观察等同于跨租户越权。遇到 410 或超时，先用原始调用号核对结果及费用，再决定是否产生新请求。
 
+状态码不能代替账单：路由的 502 分支仍把累计 spent 放入 charged_micro，诊断时要核对原调用和各上游记录。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/treg/application/call/idempotency.py:27-49](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L27-L49)
+**依据 1 · 作者声明**：[docs/DSH-PLUGIN.md:1-8](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/docs/DSH-PLUGIN.md#L1-L8)
 
-窗口、续租时限及无键不查。
-
-<details>
-<summary>查看原文（23行）</summary>
+项目文档关于本题的作者主张；不能单独证明实现与效果。
 
 ```text
-IDEMPOTENCY_WINDOW_S = 24 * 3600   # retries happen in seconds; a day is generous and easy to reason about
-IDEMPOTENCY_HEADER = "idempotency-key"
-IDEMPOTENCY_SWEEP_BATCH = 100  # expired labels one claim reclaims; the rest go with later calls
-# A pending claim is a LEASE owned by one call (`call_ref`). The owner renews it every
-# IDEMPOTENCY_LEASE_RENEW_S while it runs (`_hold_claim_lease`), so `created_at` older than
-# IDEMPOTENCY_STALE_PENDING_S means the owner stopped: its process died, or the bookkeeping that
-# marks the claim done or releases it failed (a pool timeout). Such a claim is closed with a stored
-# terminal answer rather than answering 409 for the whole window; see `_resolve_stale_claim`.
-IDEMPOTENCY_LEASE_RENEW_S = 5 * 60
-IDEMPOTENCY_STALE_PENDING_S = 3 * IDEMPOTENCY_LEASE_RENEW_S
-_POOL_RETRY_PAUSE_S = 0.5  # the settle retry's pause (settle.py); one retry, fresh session
+# The DeepSeek Harness bundle
 
-_IDEM_MAX_KEY = 200
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is a coding agent built
+on "everything is a plugin". The treg bundle ships the connector and the CLI path in one
+zero-config install.
 
+## Install
 
-def _idempotency_key(raw_header: str | None) -> str:
-    """The caller's label for this request, or "" when they sent none.
-
-    Only ever the client's. A server-invented key — hashing the URL and body, say — would silently
-    collapse two calls a caller genuinely MEANT to make twice, and "do this again" is a legitimate
-    thing to ask of an API. No header means today's behaviour exactly: no lookup, no storage.
-    """
-    return (raw_header or "").strip()[:_IDEM_MAX_KEY]
 ```
 
-</details>
+**依据 2 · 源码核查**：[src/treg/application/call/intake.py:143-176](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/intake.py#L143-L176)
 
-**依据 2 · 源码核查**：[src/treg/application/call/intake.py:143-174](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/intake.py#L143-L174)
-
-先检查标签预算，再按标签和 pin 处理重放或抢占。
+标签预算先于重放，键绑定标签和 pin，匹配指纹后原子抢占。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
+) -> IntakeResult:
     """Run the pre-resolve gates in their frozen order using bounded transactions."""
     # Blocked status and the per-tag call count, BEFORE the replay below: a blocked user must neither
     # take an idempotency lock nor be handed an answer this team cached before they were blocked.
@@ -825,46 +681,39 @@ def _idempotency_key(raw_header: str | None) -> str:
     fingerprint = _request_fingerprint(method, rest, body, raw_query)
     async with session_maker() as db:
         replay = await _replay_idempotent(key, fingerprint, caller, db)
-        if replay is not None:
-            return IntakeResult(key, fingerprint, replay, None)
-        # Claim it now, before anything reaches a provider. Two retries can arrive together and both
-        # miss the lookup above; the unique constraint is what makes the loser wait instead of making
-        # a second upstream call. A check-then-act in Python would leave exactly the window this
-        # feature exists to close — the same reasoning as the conditional UPDATE in ledger.reserve.
-        if not await _claim_idempotent(key, fingerprint, rest, caller, db, call_ref=call_ref):
-            raise IdempotencyFailed(
-                "idempotency_in_progress", status_code=409,
-                detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
-                        "is already in progress — retry shortly"))
-    return IntakeResult(key, fingerprint, None, (caller.membership.id, key, call_ref))
+        if replay is None:
+            # Claim it now, before anything reaches a provider. Two retries can arrive together and both
+            # miss the lookup above; the unique constraint is what makes the loser wait instead of making
+            # a second upstream call. A check-then-act in Python would leave exactly the window this
+            # feature exists to close — the same reasoning as the conditional UPDATE in ledger.reserve.
+            if not await _claim_idempotent(key, fingerprint, rest, caller, db, call_ref=call_ref):
+                raise IdempotencyFailed(
+                    "idempotency_in_progress", status_code=409,
+                    detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
+                            "is already in progress — retry shortly"))
+    if replay is not None:
+        # Outside the session on purpose: a trimmed row's bytes may come from object storage.
+        return IntakeResult(key, fingerprint, await resolve_archived_replay(replay, key), None)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:100-108](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L100-L108)
+**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:113-159](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/idempotency.py#L113-L159)
 
-指纹绑定方法、路径、查询和正文。
-
-```text
-    h = hashlib.sha256()
-    h.update(method.upper().encode())
-    h.update(b"\0")
-    h.update(rest.encode())
-    h.update(b"\0")
-    h.update((query or "").encode())
-    h.update(b"\0")
-    h.update(body or b"")
-    return h.hexdigest()
-```
-
-**依据 4 · 源码核查**：[src/treg/application/call/idempotency.py:119-154](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L119-L154)
-
-按会员与键查记录，处理过期、422、409 以及已保存答复。
+按会员与键定位，检验有效期和指纹，产生冲突或重放结果。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
+async def _replay_idempotent(key: str, fingerprint: str, caller: Caller,
+                             db: AsyncSession) -> IdempotentReplay | None:
+    """The stored answer for this caller's label, or None if there is nothing to replay.
+
+    Returns a real response, so the provider is never reached and no money moves. That is the whole
+    point: merely skipping the second CHARGE would still make the second upstream call, which means
+    still paying the provider and simply absorbing the double cost ourselves.
+    """
     row = (await db.execute(select(IdempotentCall).where(
         IdempotentCall.membership_id == caller.membership.id,
         IdempotentCall.key == key))).scalar_one_or_none()
@@ -892,28 +741,30 @@ def _idempotency_key(raw_header: str | None) -> str:
             "idempotency_in_progress", status_code=409,
             detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
                     "is still in progress — retry shortly"))
+    # A trimmed row names its archive entry instead of carrying bytes. Not read here: this runs
+    # inside the request's session, and the read can go to object storage.
+    trimmed = row.response_body is None and bool(row.archive_content_hash)
     return IdempotentReplay(
         body=row.response_body or b"",
+        archive=(row.archive_key_hash or "", row.archive_content_hash or "") if trimmed else None,
         status_code=row.response_status,
         media_type=row.response_media_type or "application/json",
         charged_micro=row.charged_micro,
         # The ORIGINAL call's id: a retry must resolve to the row that actually holds the
         # money, not to a fresh reference for work that never happened.
         call_ref=row.call_ref or "",
-    )
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/treg/application/call/idempotency.py:200-243](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L200-L243)
+**依据 4 · 源码核查**：[src/treg/application/call/idempotency.py:207-244](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/idempotency.py#L207-L244)
 
-过期租约先对账，结果丢失或未知写持久 410。
+过期 pending 会核对未完成占用和账单，对终态保存 410 与原调用归属。
 
 <details>
-<summary>查看原文（44行）</summary>
+<summary>查看原文（38行）</summary>
 
 ```text
-async def _resolve_stale_claim(row: IdempotentCall, caller: Caller, db: AsyncSession):
     """Close an abandoned lease with a stored terminal answer; never run the key again.
 
     An open hold or a pending async task means the owner or its worker is not done: 409 (None
@@ -952,23 +803,31 @@ async def _resolve_stale_claim(row: IdempotentCall, caller: Caller, db: AsyncSes
     ).execution_options(synchronize_session=False))).rowcount == 1
     await db.commit()
     if not won:
-        return None
-    logging.getLogger("treg.idempotency").warning(
-        "idempotency claim %s: owner %s abandoned it; stored 410 %s", label, owner, detail["error"])
-    return IdempotentReplay(body=body, status_code=410, media_type="application/json",
-                            charged_micro=charged, call_ref=owner)
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[src/treg/application/call/service.py:760-778](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L760-L778)
+**依据 5 · 源码核查**：[src/treg/application/call/service.py:830-861](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L830-L861)
 
-重放短路并区分新扣费、原费用和调用号。
+命中即时短路，重放费用为零，原调用号及费用字段按状态返回。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
+        intake = await prepare_call_intake(
+            meta=meta,
+            idempotency_header=request.headers.get(IDEMPOTENCY_HEADER),
+            method=request.method,
+            rest=rest,
+            raw_query=request.raw_query or "",
+            read_body=request.body,
+            caller=caller,
+            enforce_tag_budgets=_enforce_tag_budgets,
+            call_ref=call_ref,
+        )
+    except CallFailure:
+        raise
     idem_key = intake.idempotency_key
     if intake.replay is not None:
         replayed = intake.replay
@@ -992,108 +851,65 @@ async def _resolve_stale_claim(row: IdempotentCall, caller: Caller, db: AsyncSes
 
 </details>
 
-**依据 7 · 源码核查**：[src/treg/application/call/service.py:1999-2006](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1999-L2006)
+**依据 6 · 源码核查**：[src/treg/application/call/service.py:885-909](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L885-L909)
 
-自有凭据不走普通计费正文保留，禁止保留场景另有回执。
-
-```text
-    if idem_key:
-        # An own-key call is not charged by treg, but a provider that forbids retaining responses
-        # may still bill its owner. Keep a body-free receipt so the same key cannot repeat it.
-        try:
-            await _store_idempotent(idem_key, caller, status_code=response.status, body=b"",
-                                    media_type="", charged_micro=0, metered=False,
-                                    call_ref=call_ref,
-                                    response_retention_forbidden=_retention_forbidden())
-```
-
-**依据 8 · 源码核查**：[src/treg/application/call/idempotency.py:374-405](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L374-L405)
-
-普通响应释放、特例保留、超限回执及 owner 约束。
+未命中才解析新目标。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-    """Remember a metered success or an explicitly terminal, partially charged routed failure.
-
-    Metered calls keep their answer. A team calling on its OWN key is billed by the provider, not
-    by us, so its ordinary response is not kept. When retention is forbidden, every successful
-    call keeps a 410 receipt instead of a response body, including an own-key call. Ordinary
-    failures are not retained, because no charge landed and the caller should be free to retry.
-    A routed waterfall may already have settled paid children before its terminal failure;
-    `terminal=True` retains that exact failure so a retry cannot repeat those charges.
-
-    Anything else drops the claim, which frees the label immediately rather than making the caller
-    wait out the window before they can try again.
-
-    Never raises: the caller already has their answer, and a bookkeeping failure must not turn a
-    served call into a 500. Its own session, because the request's may be mid-rollback. Fenced on
-    `call_ref`: a claim another call took over is left alone.
-    """
-    keep = (metered or response_retention_forbidden) and (200 <= status_code < 300 or terminal)
-    owned = (*_owned(caller.membership.id, key, call_ref), IdempotentCall.status == "pending")
-    if keep and response_retention_forbidden:
-        body, status_code, media_type = _not_retained_note(call_ref, charged_micro)
-    elif keep and len(body) > get_settings().archive_max_body_bytes:
-        body, status_code, media_type = _too_large_note(key, call_ref, charged_micro, len(body))
-
-    async def _write() -> None:
-        async with session_maker() as db:
-            if not keep:
-                await db.execute(delete(IdempotentCall).where(*owned))
-            else:
-                await db.execute(update(IdempotentCall).where(*owned).values(
-                    status="done", response_status=status_code, response_body=body,
-                    response_media_type=media_type or "application/json",
-                    charged_micro=charged_micro))
+    if request.context.input.catalog_only:
+        # This reviewed surface accepts only a catalog id. A same-named team tool cannot shadow it.
+        ep = _catalog_endpoint_for(rest)
+        if ep is None:
+            raise ResolutionFailed("target_not_found", status_code=404, detail=(
+                f"unknown catalog endpoint {rest!r} — use catalog_search for a valid endpoint id"))
+    else:
+        try:
+            target = await _await_before_reserve(
+                resolve_call_target(rest, caller, _resolve_call), request, call_ref)
+            request.context.target = target
+            tool, upstream_url = target.tool, target.upstream
+            request.context.tool_name = tool.name
+        except CallFailure as exc:
+            # Not a tool → maybe a marketplace endpoint id (`treg call tikhub.tiktok.video.comments`).
+            # Only the 404 falls through, so an org tool with the same name always wins.
+            ep = _catalog_endpoint_for(rest) if exc.status_code == 404 else None
+            if ep is None:
+                # Third and last: a hub tool (`<team-slug>.<name>`), only when nothing above
+                # claimed the id — an own tool or a catalog id always wins.
+                hub_row = (await hub_app.tool_for(db, rest, caller_org_id=caller.org_id,
+                                                  caller_slug=caller.org.slug, caller_email=caller.email)
+                                   if request.context.input.child_of is None else None) if exc.status_code == 404 else None
+                if hub_row is None:
+                    raise
 ```
 
 </details>
 
-**依据 9 · 源码核查**：[src/treg/application/call/service.py:1399-1407](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1399-L1407)
+**依据 7 · 源码核查**：[src/treg/application/call/route.py:1544-1557](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/route.py#L1544-L1557)
 
-只有平台凭据分支改写发往供应商的幂等键。
-
-```text
-            platform_tier = mk is not None and mk.tier == "platform"
-            raw_headers = tuple(request.headers.raw)
-            if platform_tier:
-                raw_headers = scope_shared_idempotency_key(
-                    raw_headers, caller.org_id, pinned_tags=caller.membership.pinned_tags)
-                raw_headers = identify_as_treg(raw_headers)
-                raw_headers = tag_shared_client(
-                    raw_headers, catalog_store.load().client_headers.get(mk.provider),
-                    mk.provider, caller.org_id)
-```
-
-**依据 10 · 源码核查**：[src/treg/infra/upstream/relay.py:128-146](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/infra/upstream/relay.py#L128-L146)
-
-转发键的分区由组织与 pin 参与。
+路由 502 的返回细节可以包含已产生的费用值。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-def scope_shared_idempotency_key(
-    raw_headers: tuple[tuple[bytes, bytes], ...], org_id: int,
-    *, pinned_tags: dict | None = None,
-) -> tuple[tuple[bytes, bytes], ...]:
-    """Rewrite 4 of the faithfulness contract: partition the caller's idempotency label by org and enforced pin.
-
-    Only for calls on treg's shared provider key. The value is an opaque, fixed-length digest of
-    (org, pin, label): distinct pins do not share a provider dedupe entry. With no pin, the
-    existing (org, label) digest is preserved. The same scope retrying the
-    same label still hits the provider's own dedupe should treg's replay window miss it.
-    """
-    scope = f"{org_id}\x1f".encode()
-    if pinned_tags:
-        scope += b"pins:" + json.dumps(pinned_tags, sort_keys=True, separators=(",", ":")).encode() + b"\x1f"
-    return tuple(
-        (k, hashlib.sha256(scope + v).hexdigest().encode())
-        if k.lower() == _IDEMPOTENCY_HEADER else (k, v)
-        for k, v in raw_headers
-    )
+            # nothing (`rows: 0` on a people search that found no one).
+            _summarize(parent, hit=False, tried_count=len(tried), output=body_out["output"])
+            _audit_parent(parent, ep, 200, spent, audit_client)
+            headers = {"X-Treg-Providers-Tried": ",".join(t.provider for t in tried), "X-Treg-Route-Outcome": "miss",
+                       **({"X-Treg-Route-Incomplete": "true"} if incomplete else {}),
+                       **({"X-Treg-Route-Capped": "true"} if cost_capped else {})}
+            return _json(body_out, 200, headers), spent
+        _summarize(parent, tried_count=len(tried))
+        _audit_parent(parent, ep, 502, 0, audit_client)   # a failed routed call charges nothing
+        raise GatewayFailed("route_failed", status_code=502, detail={
+            "error": "route_failed", "endpoint_id": ep["id"], "tried": [t.view() for t in tried], "charged_micro": spent,
+            "dropped": plan.dropped,
+            "message": f"every candidate for {ep['id']} failed; nothing useful was charged" if spent == 0 else
+                       f"every candidate for {ep['id']} failed"})
 ```
 
 </details>
@@ -1120,60 +936,19 @@ def scope_shared_idempotency_key(
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[pyproject.toml:1-7](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/pyproject.toml#L1-L7)
+**依据 1 · 作者声明**：[README.md:402-404](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/README.md#L402-L404)
 
-Python 包和运行时版本。
-
-```text
-[project]
-name = "tools-registry"
-version = "0.30.0"
-description = "A remote registry that turns team skills into shareable, callable tools via a credential-injecting proxy."
-readme = "README.md"
-license = { file = "LICENSE" }
-requires-python = ">=3.12,<3.14"  # keep in sync with PYREQ in src/treg/web/install.sh
-```
-
-**依据 2 · 源码核查**：[pyproject.toml:25-49](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/pyproject.toml#L25-L49)
-
-CLI 与服务依赖分开。
-
-<details>
-<summary>查看原文（25行）</summary>
+作者要求保存数据库和密钥以便恢复。
 
 ```text
-# Base install = just the CLI. Light + pure-Python, so `pip install tools-registry` (and Homebrew) are
-# fast. Everything needed to RUN a registry server lives in the `[server]` extra below.
-dependencies = [
-    "httpx>=0.27,<1",
-    "posthog>=7.47.3",
-    "questionary>=2.0",
-    "toon-format==1.2.0",
-]
 
-[project.optional-dependencies]
-# The registry SERVER — host your own. The FastAPI app, the DB drivers, and encryption. Not needed to
-# USE the CLI against a hosted registry, only to RUN one. Install with: pip install "tools-registry[server]"
-server = [
-    "alembic>=1.16.5",
-    "fastapi>=0.115",
-    "uvicorn[standard]>=0.32",
-    "sqlmodel>=0.0.22,<0.0.45",
-    "sqlalchemy[asyncio]>=2.0.42",
-    "aiosqlite>=0.20",
-    "asyncpg>=0.30",
-    "cryptography>=43",
-    "pydantic-settings>=2.5",
-    "pyyaml>=6",   # the endpoint catalog's data files (src/treg/catalog/*.yaml) — server-side only
-    "stripe>=12",  # balance top-ups (src/treg/infra/stripe.py) — the payment rail, server-side only
-    "mcp>=2",      # the MCP front door (src/treg/mcp.py) — server-side only; pulls httpx2 ALONGSIDE
+> **⚠️ Back these up before moving or redeploying:** the Fernet key (`TREG_SECRET_KEY`) and the
+> database (Postgres in prod; `treg.db` for a local sqlite run). Lose the Fernet key and every
 ```
 
-</details>
+**依据 2 · 源码核查**：[dsh/cordis.patch.yml:26-34](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/dsh/cordis.patch.yml#L26-L34)
 
-**依据 3 · 源码核查**：[dsh/cordis.patch.yml:26-34](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/dsh/cordis.patch.yml#L26-L34)
-
-固定 MCP 配置使用托管端点与 token。
+DSH 默认连接固定托管端点且需令牌。
 
 ```text
     - id: treg-mcp
@@ -1187,67 +962,49 @@ server = [
           Authorization: !!js '`Bearer ${process.env.TREG_TOKEN}`'
 ```
 
-**依据 4 · 作者声明**：[README.md:402-404](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/README.md#L402-L404)
+**依据 3 · 源码核查**：[pyproject.toml:1-7](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/pyproject.toml#L1-L7)
 
-作者要求保存数据库和密钥以便恢复。
+版本约束和 Python 项目身份。
 
 ```text
-> **⚠️ Back these up before moving or redeploying:** the Fernet key (`TREG_SECRET_KEY`) and the
-> database (Postgres in prod; `treg.db` for a local sqlite run). Lose the Fernet key and every
-> stored secret becomes unrecoverable.
+[project]
+name = "tools-registry"
+version = "0.31.0"
+description = "A remote registry that turns team skills into shareable, callable tools via a credential-injecting proxy."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.12,<3.14"  # keep in sync with PYREQ in src/treg/web/install.sh
 ```
 
-**依据 5 · 源码核查**：[src/treg/application/call/reserve.py:299-315](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/reserve.py#L299-L315)
+**依据 4 · 源码核查**：[src/treg/application/call/service.py:1469-1489](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L1469-L1489)
 
-代表计费路线以预留估算比较调用费用上限。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-    if (allow_holdless and mk.holdless_eligible and not meta.tags
-            and caller.org_id in get_settings().holdless_free_org_ids):
-        await _holdless_reserve(mk, caller)
-        return
-    mk.holdless = False
-    charged = ledger.with_margin(mk.estimate_micro)
-    mk.payer_org_id = caller.org_id
-    mk.reserved_micro = max(0, charged)
-    mk.reserved_at = time.monotonic()
-    if mk.max_cost_micro is not None and charged > mk.max_cost_micro:
-        raise ReservationFailed("route_max_cost", status_code=402, detail={
-            "error": "route_max_cost", "endpoint_id": mk.endpoint_id, "provider": mk.provider,
-            "max_cost_micro": mk.max_cost_micro, "estimated_cost_micro": charged,
-            "message": (f"{mk.endpoint_id} would reserve ~${ledger.usd(charged):g} and "
-                        f"the remaining X-Treg-Route-Max-Cost is ${mk.max_cost_micro / 1_000_000:g}; "
-                        "nothing was charged for this attempt. Ask for fewer rows/targets or raise the ceiling."),
-        })
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/treg/application/call/service.py:1959-1972](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L1959-L1972)
-
-结算路径可标出费用、调用号及 HTTP 成功但上游规则失败。
+仅被判定计费的分支预留余额。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
-                raise
-        # Tell the caller what the call actually cost (llms.txt and skill.md tell an agent to report
-        # it). Set only on a METERED call: a team's own key is never charged, and a `0` there would
-        # read as "free" rather than "not applicable".
-        _set_response_header(response, "X-Treg-Cost-Micro", str(charged))
-        _set_response_header(response, "X-Treg-Call-Id", call_ref)
-        if served_via:
-            _set_response_header(response, "X-Treg-Served-Via", served_via)
-        elif (200 <= response.status < 300 and spooled_bytes is None and not deferred
-                and (upstream_failed := catalog_results.fails_expect(mk.endpoint_id, body))):
-            # The provider answered 2xx but its own success rule says the request failed (a
-            # DataForSEO task status other than 20000). The body is relayed untouched and the
-            # charge is what the provider reported; this header is how the caller learns it.
-            _set_response_header(response, "X-Treg-Upstream-Failed", upstream_failed)
+    # Metered — treg's own money is about to be spent (tier 4's platform key, or a registry OAuth
+    # connect on a pay-per-use app), so take the money FIRST. Dispatch admission below releases
+    # this hold if a later local check or endpoint quota refuses the call.
+    if mk is not None and mk.metered:
+        # Rendered BEFORE the reserve while `tool` is live. The application closes its reservation
+        # session before returning a 402, so refusal evidence cannot rely on a later ORM load.
+        refusal_secrets = _safe_secret_renderings(tool, secrets)
+        request.context.finalization = FinalizationState.PENDING
+        try:
+            # Secret reads above opened the dependency session. Release its pool slot before the
+            # application opens the short transaction that owns the reservation.
+            await db.commit()
+            await _platform_reserve(mk, caller, meta=meta, call_ref=call_ref, allow_holdless=True)
+            request.context.finalization = FinalizationState.OPEN
+        except asyncio.CancelledError:
+            await _finish_cancelled_call(request, mk, call_ref)
+            raise
+        except CallFailure as exc:
+            # A call refused for MONEY (402 empty balance / 429 daily cap) must appear in the activity
+            # feed, charged 0. Keep the detail: every 429 maps to `cap`, which covers a member call cap, a
+            # tag call or spend cap, the platform ceiling, a trial allowance and a demo-IP limit, and only
 ```
 
 </details>
@@ -1274,9 +1031,24 @@ server = [
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/treg/application/call/service.py:760-778](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/service.py#L760-L778)
+**依据 1 · 作者声明**：[docs/DSH-PLUGIN.md:1-8](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/docs/DSH-PLUGIN.md#L1-L8)
 
-已回放保留原调用号和费用区分。
+项目文档关于本题的作者主张；不能单独证明实现与效果。
+
+```text
+# The DeepSeek Harness bundle
+
+[DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (`dsh`) is a coding agent built
+on "everything is a plugin". The treg bundle ships the connector and the CLI path in one
+zero-config install.
+
+## Install
+
+```
+
+**依据 2 · 源码核查**：[src/treg/application/call/service.py:843-861](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/service.py#L843-L861)
+
+重放同时记录新费用和原调用的证据，未知费用可不返回。
 
 <details>
 <summary>查看原文（19行）</summary>
@@ -1305,52 +1077,15 @@ server = [
 
 </details>
 
-**依据 2 · 源码核查**：[src/treg/application/call/idempotency.py:218-243](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L218-L243)
+**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:125-147](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/idempotency.py#L125-L147)
 
-结果不明或响应丢失有不同终态与原号。
+可利用 422 和 409 分别检验正文冲突和并发。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
-    label, owner, charged = _idem_display(row.key), row.call_ref, max(0, money["charged"])
-    if charged:
-        detail = {"error": "idempotency_response_lost", "call_id": owner, "charged_micro": charged,
-                  "message": (f"the call with Idempotency-Key {label!r} completed and was charged, but "
-                              f"its response was not retained. GET /calls/{owner}/result may still "
-                              "have it; send a new key to call again.")}
-    else:
-        detail = {"error": "idempotency_outcome_unknown", "call_id": owner,
-                  "message": (f"the call with Idempotency-Key {label!r} stopped before its outcome was "
-                              f"recorded and may have reached the provider. GET /calls/{owner} shows "
-                              "what it cost; send a new key to call again.")}
-    body = json.dumps({"detail": detail}, separators=(",", ":")).encode()
-    won = (await db.execute(update(IdempotentCall).where(
-        IdempotentCall.id == row.id, IdempotentCall.status == "pending",
-        IdempotentCall.call_ref == owner, IdempotentCall.created_at == row.created_at,
-    ).values(status="done", response_status=410, response_body=body,
-             response_media_type="application/json", charged_micro=charged,
-    # A lost swap must not paint the loaded row as done: the caller re-reads it as a 409.
-    ).execution_options(synchronize_session=False))).rowcount == 1
-    await db.commit()
-    if not won:
         return None
-    logging.getLogger("treg.idempotency").warning(
-        "idempotency claim %s: owner %s abandoned it; stored 410 %s", label, owner, detail["error"])
-    return IdempotentReplay(body=body, status_code=410, media_type="application/json",
-                            charged_micro=charged, call_ref=owner)
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/treg/application/call/idempotency.py:124-145](https://github.com/superdesigndev/treg/blob/6dabc01ad4938d894f5b3f0c9d8bf99dc68343ad/src/treg/application/call/idempotency.py#L124-L145)
-
-覆盖 TTL、请求冲突和进行中场景。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
     if row.expires_at < datetime.now(timezone.utc).replace(tzinfo=None):
         # Past its window: the label is free again, and the call proceeds normally.
         await db.delete(row)
@@ -1373,6 +1108,56 @@ server = [
             "idempotency_in_progress", status_code=409,
             detail=(f"a call with Idempotency-Key {_idem_display(key)!r} "
                     "is still in progress — retry shortly"))
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/treg/application/call/idempotency.py:207-244](https://github.com/superdesigndev/treg/blob/6ffe8df7126479631a4c649467aa307505e28a1b/src/treg/application/call/idempotency.py#L207-L244)
+
+可用保留的调用号核对 410 的不同终态。
+
+<details>
+<summary>查看原文（38行）</summary>
+
+```text
+    """Close an abandoned lease with a stored terminal answer; never run the key again.
+
+    An open hold or a pending async task means the owner or its worker is not done: 409 (None
+    here). Otherwise the answer is a stored 410, so every later retry gets the same reply:
+    `idempotency_response_lost` with the charge when the owner's money shows one (the answer was
+    paid for but not kept), else `idempotency_outcome_unknown`. The claim is never handed to a new
+    call: a lease that stopped renewing does not prove its owner stopped, and a second run under
+    the same key is exactly the double charge this table exists to prevent. A new key calls again.
+
+    The write is a compare-and-swap on the lease as read (owner AND `created_at`): a renewal or
+    another retry in between wins, and this one answers 409 on the fresh state.
+    """
+    started = row.expires_at - timedelta(seconds=IDEMPOTENCY_WINDOW_S)
+    lifetime_end = row.created_at + timedelta(seconds=IDEMPOTENCY_LEASE_RENEW_S + 60)
+    money = await _money_of(db, caller.org_id, row.call_ref, started, lifetime_end)
+    if money["in_flight"]:
+        return None
+    label, owner, charged = _idem_display(row.key), row.call_ref, max(0, money["charged"])
+    if charged:
+        detail = {"error": "idempotency_response_lost", "call_id": owner, "charged_micro": charged,
+                  "message": (f"the call with Idempotency-Key {label!r} completed and was charged, but "
+                              f"its response was not retained. GET /calls/{owner}/result may still "
+                              "have it; send a new key to call again.")}
+    else:
+        detail = {"error": "idempotency_outcome_unknown", "call_id": owner,
+                  "message": (f"the call with Idempotency-Key {label!r} stopped before its outcome was "
+                              f"recorded and may have reached the provider. GET /calls/{owner} shows "
+                              "what it cost; send a new key to call again.")}
+    body = json.dumps({"detail": detail}, separators=(",", ":")).encode()
+    won = (await db.execute(update(IdempotentCall).where(
+        IdempotentCall.id == row.id, IdempotentCall.status == "pending",
+        IdempotentCall.call_ref == owner, IdempotentCall.created_at == row.created_at,
+    ).values(status="done", response_status=410, response_body=body,
+             response_media_type="application/json", charged_micro=charged,
+    # A lost swap must not paint the loaded row as done: the caller re-reads it as a 409.
+    ).execution_options(synchronize_session=False))).rowcount == 1
+    await db.commit()
+    if not won:
 ```
 
 </details>

@@ -1,0 +1,66 @@
+{
+    "repository": "dingyi222666/dsh-session-notification",
+    "repository_id": 1332326314,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-11-11T01:31:33Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingyi222666%2Fdsh-session-notification%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 472A:3E1605:07DB:08F5:6AFA66D7 and timestamp 2026-11-16 02:13:43 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingyi222666%2Fdsh-session-notification%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 473E:323516:2258A1B:253EE5B:6AFA66D8 and timestamp 2026-11-16 02:13:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingyi222666%2Fdsh-session-notification%20is%3Aissue%20created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4766:3636E1:0CCD:0E26:6AFA66D9 and timestamp 2026-11-16 02:13:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingyi222666%2Fdsh-session-notification%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4784:1C195A:22731FE:255A187:6AFA66D9 and timestamp 2026-11-16 02:13:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Adingyi222666%2Fdsh-session-notification%20is%3Aissue%20updated%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 479E:35C191:DC53:ECA7:6AFA66DA and timestamp 2026-11-16 02:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T07:15:51.534Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@dingyi222666/dsh-session-notification",
+        "captured_at": "2026-11-12T19:58:57.468Z",
+        "window_start": "2026-10-13",
+        "window_end": "2026-11-11",
+        "downloads_30d": 3134,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/%40dingyi222666%2Fdsh-session-notification",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T13:42:12.032Z",
+            "captured_at": "2026-11-12T19:58:57.468Z",
+            "source_url": "https://registry.npmjs.org/%40dingyi222666%2Fdsh-session-notification",
+            "error": null,
+            "latest_version": "0.2.8",
+            "latest_published_at": "2026-11-11T01:34:56.709Z",
+            "latest_error": null
+        }
+    }
+}

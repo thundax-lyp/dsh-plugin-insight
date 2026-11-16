@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[47ea189](https://github.com/liguobao/ds-harness-remote/tree/47ea1890e75a58c3b336a13f42ed12829c9268da)
+源码版本：[50e6570](https://github.com/liguobao/ds-harness-remote/tree/50e6570299e8a022e191d6d37f968d5833b170ee)
 
 <!-- BEGIN META -->
-[![GitHub ★ 2,527](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C527&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liguobao/ds-harness-remote) [![npm 30d 41,072](https://img.shields.io/static/v1?label=npm+30d&message=41%2C072&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote)
+[![GitHub ★ 2,916](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C916&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liguobao/ds-harness-remote) [![npm 30d 65,181](https://img.shields.io/static/v1?label=npm+30d&message=65%2C181&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote) [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote)
 <!-- END META -->
 
 > **功能**：让受信设备从 Web、桌面或移动端接入原 DSH 宿主的会话、工作区和终端。
 
 > **亮点**：[Q01](#research-q01) 把跨设备连接和原宿主业务接在同一入口，[Q02](#research-q02) 终端按 Host 已绑定的设备归属授权。
 
-> **主要限制**：[Q02](#research-q02) 设备和连接校验仍允许授权输入沿 Host 权限运行，[Q03](#research-q03) Linux 托管模式可能以 root 执行。
+> **主要限制**：回环 Web 和 Noise 设备信任都不会降低 Host 有权执行的动作。固定版本默认可能允许远程终端和工具，受管安装以 root 运行，断线也可能发生在动作已执行之后。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 **本文目录**
 
@@ -87,7 +87,7 @@
 | 终端隔离 | Host 开关、owner 和 attachment | 全部业务副作用 |
 | 撤销 | 设备身份撤销及连接清理 | 已执行命令的最终状态 |
 
-> **思考**：[Q02](#research-q02) 设备和连接校验仍允许授权输入沿 Host 权限运行，[Q03](#research-q03) Linux 托管模式可能以 root 执行。
+> **思考**：回环 Web 和 Noise 设备信任都不会降低 Host 有权执行的动作。固定版本默认可能允许远程终端和工具，受管安装以 root 运行，断线也可能发生在动作已执行之后。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-4"></a>
 
@@ -101,13 +101,13 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 设备和连接校验仍允许授权输入沿 Host 权限运行，[Q03](#research-q03) Linux 托管模式可能以 root 执行。
+回环 Web 和 Noise 设备信任都不会降低 Host 有权执行的动作。固定版本默认可能允许远程终端和工具，受管安装以 root 运行，断线也可能发生在动作已执行之后。[Q02](#research-q02) [Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 从低权限只读工作区核对一条原会话，断线或身份不明时回主机查实际状态。
+在非 root 的独立 Host 和隔离工作区核对权限，先在 Host 本地显式关闭远程终端与远程工具，再用受信客户端读取一份可核对的测试会话。无法确认开关生效、主机权限过大或远端结果不明时，撤销测试设备并在原电脑核对，不重试未知动作。[Q03](#research-q03) [Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -117,16 +117,16 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 固定源码已核查设备认证、远程终端和托管身份。未验证实际线路、双设备、宿主执行或断线恢复。
 
-- 已检查：作者 README、包清单、源码路径 packages/plugin/src/client-secure-transport.ts、packages/plugin/src/connection-controller.ts、packages/plugin/src/rpc-router.ts、packages/plugin/src/service.ts、packages/plugin/src/terminal-policy.ts、packages/plugin/src/harness-remote-bridge.ts、packages/plugin/src/remote-terminal-controller.ts、scripts/install.sh 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、apps/android/README.md、apps/android/src/screens/bot/assets/README.md、package.json、apps/android/index.ts、packages/plugin/package.json、packages/plugin/src/client-secure-transport.ts、packages/plugin/src/connection-controller.ts、packages/plugin/src/rpc-router.ts、packages/plugin/src/service.ts、packages/plugin/src/harness-remote-bridge.ts、packages/plugin/src/terminal-policy.ts、scripts/install.sh、packages/plugin/src/config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定源码核查指定客户端加密、Host 连接、Harness 终端和 Linux 脚本。未执行网络、客户端、宿主或命令，未审计全部 ACP、转发、文件及服务端能力。
-- 下一步：用两个隔离设备测试归属、撤销和断线，并从 Host 独立核对实际输入与权限。
+- 边界：固定源码核查指定客户端加密、Host 连接、Harness 终端和 Linux 脚本。未执行网络、客户端、宿主或命令，未审计全部 ACP、转发、文件及服务端能力。 本轮当前版本复核：47ea1890..50e65702（固定提交 50e6570299e8a022e191d6d37f968d5833b170ee）；比较目标组件差异并补充其影响。
+- 下一步：用两个隔离设备测试归属、撤销和断线，并从 Host 独立核对实际输入与权限。 当前源码固定于 50e6570299e8a022e191d6d37f968d5833b170ee；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[liguobao/ds-harness-remote](https://github.com/liguobao/ds-harness-remote)
-- **版本号**：0.6.4（[固定提交 47ea189](https://github.com/liguobao/ds-harness-remote/tree/47ea1890e75a58c3b336a13f42ed12829c9268da)）
-- **版本日期**：2026-11-11（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.6.5（[固定提交 50e6570](https://github.com/liguobao/ds-harness-remote/tree/50e6570299e8a022e191d6d37f968d5833b170ee)）
+- **版本日期**：2026-11-15（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -136,7 +136,7 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 [Q04](#research-q04) 用 Host 可回读的请求阶段明确结果未知，可能减少断线时重复操作。
 
-用两个隔离设备测试归属、撤销和断线，并从 Host 独立核对实际输入与权限。
+用两个隔离设备测试归属、撤销和断线，并从 Host 独立核对实际输入与权限。 当前源码固定于 50e6570299e8a022e191d6d37f968d5833b170ee；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -149,12 +149,12 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 58 | 14642 | — | — | 180527 |
-| .tsx | source | 75 | 31062 | 29083 | 725 | — |
-| .ts | source | 299 | 77992 | 69568 | 3639 | — |
-| .js | source | 6 | 998 | 901 | 50 | — |
-| .mjs | source | 17 | 1101 | 918 | 93 | — |
-| .ts | test | 168 | 48322 | 44375 | 1198 | — |
+| .md | source | 52 | 9832 | — | — | 152563 |
+| .tsx | source | 80 | 34186 | 32007 | 817 | — |
+| .ts | source | 332 | 90025 | 80553 | 4268 | — |
+| .js | source | 6 | 1017 | 920 | 50 | — |
+| .mjs | source | 17 | 1104 | 919 | 95 | — |
+| .ts | test | 205 | 54807 | 50320 | 1333 | — |
 | .ts | example | 2 | 665 | 613 | 14 | — |
 | .md | example | 2 | 61 | — | — | 355 |
 | .mjs | test | 1 | 86 | 83 | 0 | — |
@@ -164,11 +164,11 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 **活跃度**
 
-[![Issue 未关闭 35](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=35&color=737b86&logo=github)](https://github.com/liguobao/ds-harness-remote/issues?q=is%3Aissue+is%3Aopen)
+[![Issue 未关闭 36](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=36&color=737b86&logo=github)](https://github.com/liguobao/ds-harness-remote/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 145](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=145&color=737b86&logo=github)](https://github.com/liguobao/ds-harness-remote/issues?q=is%3Aissue+created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z) [![近30天关闭 117](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=117&color=737b86&logo=github)](https://github.com/liguobao/ds-harness-remote/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z)
 
-暂未获取：近30天新建、近30天关闭。
 
-统计日期：2026-11-11。
+
+统计日期：2026-11-16。
 
 <a id="detail-section-10"></a>
 
@@ -190,7 +190,7 @@ Host 按设备和认领对象保护终端，业务路由限在途请求。执行
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:28-49](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/README.md#L28-L49)
+**依据 1 · 作者声明**：[README.md:28-49](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/README.md#L28-L49)
 
 作者说明原宿主和跨设备入口，并声明多种线路。
 
@@ -206,7 +206,7 @@ Harness keeps running on your work computer, with the same workspaces, tools, an
 
 The DeepSeek Harness desktop edition is supported. Install the latest release:
 
-`ds-harness-remote@0.6.4`
+`ds-harness-remote@0.6.5`
 
 ## Features
 
@@ -224,12 +224,12 @@ The DeepSeek Harness desktop edition is supported. Install the latest release:
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin/src/client-secure-transport.ts:31-49](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/client-secure-transport.ts#L31-L49)
+**依据 2 · 源码核查**：[packages/plugin/src/client-secure-transport.ts:31-54](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/client-secure-transport.ts#L31-L54)
 
-客户端核对设备身份并建立 Noise 会话。
+连接先比对两端设备 ID，再用受信公开密钥建立 Noise IK；握手失败关闭传输。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
     await this.inner.connect()
@@ -251,55 +251,24 @@ The DeepSeek Harness desktop edition is supported. Install the latest release:
       await waitForResponder(this.inner, noise, lifetime.signal)
       this.inner.markSecureReady?.()
     } catch (error) {
+      noise.destroy()
+      if (this.lifetime === lifetime) {
+        this.noise = undefined
+        await this.inner.close()
+      }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin/src/client-secure-transport.ts:59-83](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/client-secure-transport.ts#L59-L83)
+**依据 3 · 源码核查**：[packages/plugin/src/connection-controller.ts:61-95](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/connection-controller.ts#L61-L95)
 
-业务消息以会话密钥加解密，拒绝异常帧。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  async send(data: Uint8Array): Promise<void> {
-    if (data.byteLength > MAX_SECURE_MESSAGE_BYTES) throw new Error('Secure message exceeds the reassembly limit.')
-    const noise = this.requireNoise()
-    try {
-      await this.sends.run(data.byteLength, async () => {
-        if (this.closed || this.noise !== noise) throw new Error('Secure transport replaced')
-        for (const plaintext of this.outgoing.encode(data)) await this.inner.send(noise.encrypt(plaintext))
-      })
-    } catch (error) {
-      await this.close().catch(() => undefined)
-      throw error
-    }
-  }
-
-  onMessage(handler: (data: Uint8Array) => void): () => void {
-    this.unsubscribeInner?.()
-    this.unsubscribeInner = this.inner.onMessage(data => {
-      const noise = this.noise
-      if (noise === undefined || !noise.complete || this.closed) return
-      try {
-        const message = this.incoming.decode(noise.decrypt(data))
-        if (message !== undefined) handler(message)
-      } catch {
-        this.closeError = Object.assign(new Error('The authenticated Remote channel rejected a frame.'), { code: 'SECURE_CHANNEL_FAILED' })
-        void this.close()
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/connection-controller.ts:61-92](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/connection-controller.ts#L61-L92)
-
-Host 拒绝缺认证上下文或未受信设备并绑定连接身份。
+宿主验证安全上下文与本地信任，将核实的 peer 绑定给路由。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
+  private async acceptOne(channel: AuthenticatedPeerChannel): Promise<void> {
     if (channel.security?.protocol !== 'Noise_IK_25519_ChaChaPoly_SHA256'
       || channel.security.connectionId === ''
       || channel.security.membershipId === '') {
@@ -331,14 +300,16 @@ Host 拒绝缺认证上下文或未受信设备并绑定连接身份。
     await Promise.all(replaced.map(connection => this.disconnect(connection, 'CONNECTION_REPLACED')))
 
     const router = this.createRouter(
-      { connectionId, peerDeviceId: channel.peerDeviceId, transportMode: () => channel.mode },
+      { connectionId, peerDeviceId: channel.peerDeviceId, peerIdentityKey: channel.peerIdentityKey, transportMode: () => channel.mode },
+      message => this.sendTo(connectionId, channel, message),
+    )
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin/src/rpc-router.ts:102-127](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/rpc-router.ts#L102-L127)
+**依据 4 · 源码核查**：[packages/plugin/src/rpc-router.ts:131-156](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/rpc-router.ts#L131-L156)
 
-路由核验请求、方法和在途请求。
+校验请求、方法与并发上限，再调业务并用原请求 ID 应答。
 
 <details>
 <summary>查看原文（26行）</summary>
@@ -392,18 +363,22 @@ Host 拒绝缺认证上下文或未受信设备并绑定连接身份。
 
 Host 给每个 Harness peer 创建 TerminalPolicy，设备来自连接上下文，owner map 在 Host 内共享。终端操作先看开关、会话和终端标识。创建会认领终端，其他设备不能接管；写入及尺寸操作还需同一 attachment。清理比较 claim 对象，旧响应不应释放后来的新认领，列表也按 owner 过滤。桥接在分发前调用策略，撤销受信设备时断开对应连接。加密及设备隔离解决的是谁能连接和操纵该终端，Host 进程实际授予的系统权限依然能执行写文件或命令。断线或撤销只保证走连接清理入口，已经传给终端的输入可能已生效。
 
+Host 还会拒绝远程改写远程插件自己的 settings 命名空间，因此试用前要在 Host 侧关掉终端，而不能依靠远程浏览器里的界面初始值。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin/src/service.ts:103-116](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/service.ts#L103-L116)
+**依据 1 · 源码核查**：[packages/plugin/src/service.ts:146-162](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/service.ts#L146-L162)
 
-peer 构建将设备上下文带入终端策略。
+每个已核实连接以设备身份和共享终端 owner map 建立独立策略。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
     this.connections = new ConnectionController(this.identities, (context, send) => {
       const peerGateway = this.localGateway?.createPeer?.() ?? this.localGateway
+      const uploadDispatcher = this.pluginRoutes?.(peerGateway?.peer)
+      const uploadBridge = uploadDispatcher === undefined ? undefined : new PluginRouteBridge(uploadDispatcher, this.logger)
       const harnessRemote = peerGateway?.supportsCarrier === true
         ? new HarnessRemoteBridge(
             peerGateway,
@@ -416,18 +391,26 @@ peer 构建将设备上下文带入终端策略。
               () => this.terminalEnabled,
               this.codexWorkspaceState,
               this.terminalSpawner,
+            ),
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin/src/harness-remote-bridge.ts:311-332](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/harness-remote-bridge.ts#L311-L332)
+**依据 2 · 源码核查**：[packages/plugin/src/harness-remote-bridge.ts:313-337](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/harness-remote-bridge.ts#L313-L337)
 
-终端调用在分发前做策略校验。
+远程配置保护和终端校验发生在业务分发前。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
+  async call(input: unknown): Promise<TypertRpcResult> {
+    const params = callSchema.parse(input) as HarnessRemoteCallParams
+    if ((params.endpoint === 'remoteUploads/upload' || params.endpoint === 'remoteImages/upload') && this.uploadAttachment !== undefined) {
+      const payload = z.object({ args: z.unknown() }).strict().parse(params.payload)
+      return { ok: true, value: await this.uploadAttachment(payload.args) }
+    }
+    this.assertAllowed(params.endpoint)
     if (TERMINAL_STREAMS.has(params.endpoint)) throw new RpcError('METHOD_NOT_ALLOWED', 'Use a stream for this terminal endpoint.')
     if (['settings/update', 'settings/replace', 'settings/mutate'].includes(params.endpoint)) {
       const args = requestArgs(params.payload)
@@ -446,20 +429,16 @@ peer 构建将设备上下文带入终端策略。
         if (reservation !== undefined) {
           this.terminal.result(params.endpoint, params.payload, { ok: false, error: { code: error instanceof RpcError ? error.code : 'FAILED', message: '', details: {} } }, reservation)
         }
-        throw error
-      }
-    }
-    if (codexResult !== undefined) return reservation === undefined ? codexResult : this.terminal.result(params.endpoint, params.payload, codexResult, reservation)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/plugin/src/terminal-policy.ts:28-56](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/terminal-policy.ts#L28-L56)
+**依据 3 · 源码核查**：[packages/plugin/src/terminal-policy.ts:28-77](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/terminal-policy.ts#L28-L77)
 
-检查终端开关、owner 与 attachment。
+终端开关、认领和附件、旧响应保护与结果过滤。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（50行）</summary>
 
 ```text
   check(endpoint: string, payload: unknown): { key?: string; created?: boolean; claim?: object } {
@@ -491,18 +470,8 @@ peer 构建将设备上下文带入终端策略。
       if (this.attachments.get(key)?.id !== id.parse(args.attachmentId)) this.deny()
     }
     return { key, claim: this.claims.get(key) }
-```
+  }
 
-</details>
-
-**依据 4 · 源码核查**：[packages/plugin/src/terminal-policy.ts:59-72](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/terminal-policy.ts#L59-L72)
-
-旧 claim 保护及列表过滤。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
   result(endpoint: string, payload: unknown, result: TypertRpcResult, reservation: { key?: string; created?: boolean; claim?: object }): TypertRpcResult {
     const releases = (!result.ok && reservation.created && result.error.code !== 'TERMINAL_CLEANUP_FAILED') || (result.ok && endpoint === 'terminal/close')
     // Cleanup can finish before an older RPC response. Its response must not
@@ -517,40 +486,18 @@ peer 构建将设备上下文带入终端策略。
       const session = args.sessionId ?? args.agentId
       return { ok: true, value: result.value.filter(value => typeof value?.id === 'string'
         && this.owners.get(`${session}/${value.id}`) === this.deviceId) }
+    }
+    return result
+  }
+
+  private deny(): never { throw new RpcError('PERMISSION_DENIED', 'This terminal or input attachment belongs to another connection or device.') }
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/plugin/src/remote-terminal-controller.ts:250-264](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/remote-terminal-controller.ts#L250-L264)
+**依据 4 · 源码核查**：[packages/plugin/src/service.ts:462-465](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/service.ts#L462-L465)
 
-校验后向运行终端写输入或调整尺寸。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-      if (endpoint !== 'terminal/write' && endpoint !== 'terminal/resize') throw new RpcError('METHOD_NOT_FOUND', 'The terminal method does not exist.')
-      if (identifier(args.attachmentId) !== terminal.controllerId || !terminal.controller
-        || !this.subscriptions.has(terminal.controller) || terminal.state !== 'running') throw new RpcError('PERMISSION_DENIED', 'This attachment does not own terminal input.')
-      terminal.invalidate()
-      if (endpoint === 'terminal/write') {
-        if (typeof args.data !== 'string' || Buffer.byteLength(args.data) > MAX_INPUT_BYTES) throw new RpcError('INVALID_MESSAGE', 'Terminal input is invalid or too large.')
-        await terminal.process!.write(args.data)
-      } else {
-        const cols = dimension(args.cols, MAX_COLS), rows = dimension(args.rows, MAX_ROWS)
-        await terminal.process!.resize(cols, rows)
-        terminal.screen.resize(cols, rows); terminal.cols = cols; terminal.rows = rows
-        terminal.emit({ type: 'state', info: terminal.info() })
-      }
-    })
-    return { ok: true }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/plugin/src/service.ts:406-409](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/service.ts#L406-L409)
-
-撤销设备会撤销其活动连接。
+撤销设备信任后撤销它的连接。
 
 ```text
   async revokePeer(deviceId: string): Promise<boolean> {
@@ -577,9 +524,11 @@ peer 构建将设备上下文带入终端策略。
 
 远端访问要在线 Host、受信设备、可达网络，以及用户选择的协调与传输配置。Linux 一键脚本要求 root，托管自启动路径只接受 root 用户并生成 User=root 的 unit，虽让 DSH Web 绑定回环，远端工具和终端仍沿该进程权限执行。独立低权限启动若能完成只读查会话，可用于缩小试用范围；本轮没有执行安装。首次投入包括配对、主机权限审阅及网络准备，持续投入包括在线电脑、流量或中继、模型及设备管理。断线时还要花时间区分本地显示、线路故障与远端已执行，当前没有每次合格远程操作的总成本。
 
+固定版本在未覆盖配置时默认启用远程工具和终端，终端环境变量只有明确非 true 才能在缺省配置中关闭；试用先在 Host 本地关闭这两项并核对生效状态。回环只约束 Web 监听，不降低受管进程权限。
+
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:40-49](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/README.md#L40-L49)
+**依据 1 · 作者声明**：[README.md:40-49](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/README.md#L40-L49)
 
 作者说明远程功能及 Host 侧入口。
 
@@ -601,9 +550,9 @@ peer 构建将设备上下文带入终端策略。
 
 </details>
 
-**依据 2 · 源码核查**：[scripts/install.sh:24-40](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/scripts/install.sh#L24-L40)
+**依据 2 · 源码核查**：[scripts/install.sh:24-40](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/scripts/install.sh#L24-L40)
 
-Linux root 和托管模式要求。
+脚本的 Linux 安装与受管 service 要求 root。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -630,9 +579,9 @@ if [[ "$os" = Linux ]]; then
 
 </details>
 
-**依据 3 · 源码核查**：[scripts/install.sh:211-219](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/scripts/install.sh#L211-L219)
+**依据 3 · 源码核查**：[scripts/install.sh:211-219](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/scripts/install.sh#L211-L219)
 
-实际 unit 的运行身份和回环绑定。
+受管服务执行身份是 root，Web 监听在 127.0.0.1。
 
 ```text
   const env = {HOME:process.env.HOME, DSH_HOME:home, PATH:process.env.PATH, DSH_REMOTE_SERVER:config.serverUrl, DSH_REMOTE_DEVICE_NAME:config.deviceName};
@@ -645,6 +594,29 @@ if [[ "$os" = Linux ]]; then
   const workingDirectory = home.replace(/%/g, '%%');
   const contents = [marker,'[Unit]','Description=DeepSeek Harness Remote Host','After=network-online.target','Wants=network-online.target','[Service]','Type=simple','User=root',`WorkingDirectory=${workingDirectory}`,...Object.entries(env).map(([key,value])=>`Environment=${quote(key+'='+value)}`),`ExecStart=${[command,'--profile',profile,'--no-open','--host','127.0.0.1'].map(x=>quote(x,true)).join(' ')}`,'Restart=on-failure','RestartSec=5','StandardOutput=null','StandardError=null','[Install]','WantedBy=multi-user.target',''].join('\n');
 ```
+
+**依据 4 · 源码核查**：[packages/plugin/src/config.ts:216-226](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/config.ts#L216-L226)
+
+未显式配置时 hostControl、terminal、remoteTools 均可能启用，其中 terminal 的环境缺省实际为 true。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+    enabled: parsed.enabled ?? true,
+    role: parsed.role ?? 'host',
+    ...(serverUrl === undefined ? {} : { serverUrl }),
+    httpServerAllowlist,
+    deviceName: parsed.deviceName ?? env.DSH_REMOTE_DEVICE_NAME ?? hostname(),
+    hostControl: { enabled: parsed.hostControl?.enabled ?? true },
+    terminal: { enabled: parsed.terminal?.enabled ?? (env.DSH_REMOTE_TERMINAL_ENABLED === undefined || env.DSH_REMOTE_TERMINAL_ENABLED === 'true') },
+    remoteTools: { enabled: parsed.remoteTools?.enabled ?? true },
+    sidebar: { entry: parsed.sidebar?.entry === 'compact' ? 'compact' : 'standard' },
+    loopback: { ports: [...new Set(parsed.loopback?.ports ?? [])] },
+    forceRelay: parsed.forceRelay ?? false,
+```
+
+</details>
 
 #### 缺口
 
@@ -666,14 +638,23 @@ if [[ "$os" = Linux ]]; then
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/plugin/src/rpc-router.ts:111-129](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/rpc-router.ts#L111-L129)
+**依据 1 · 源码核查**：[packages/plugin/src/rpc-router.ts:131-171](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/rpc-router.ts#L131-L171)
 
-请求和返回有 ID，业务动作在生成应答前已执行。
+调用动作先执行再生成应答，断线时不能按本端结果假定幂等。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
+  async handle(message: RemoteMessage): Promise<RemoteMessage> {
+    if (message.type !== 'rpc.request') {
+      return createRpcError(message.id, 'INVALID_MESSAGE', 'Only RPC requests are accepted on the Host business channel.')
+    }
+    const parsedPayload = wireRequestSchema.safeParse(message.payload)
+    if (!parsedPayload.success) return createRpcError(message.id, 'INVALID_MESSAGE', 'The RPC request payload is invalid.')
+    if (!apiMethods.has(parsedPayload.data.method)) {
+      return createRpcError(message.id, 'METHOD_NOT_FOUND', 'The requested method does not exist.')
+    }
     const request = message as RemoteMessage<RpcRequestPayload>
     if (this.active >= this.maxPending) {
       return createRpcError(request.id, 'RATE_LIMITED', 'Too many Host requests are already pending.', undefined, true)
@@ -693,40 +674,26 @@ if [[ "$os" = Linux ]]; then
       return createRpcResponse(request.id, result)
     } catch (error: unknown) {
       const response = errorResponse(request.id, error)
+      const failedEndpoint = !request.payload.method.startsWith('workspace.upload.')
+        && typeof (request.payload.params as Record<string, unknown> | undefined)?.endpoint === 'string'
+        ? String((request.payload.params as Record<string, unknown>).endpoint)
+        : undefined
+      const reason = workspaceFileFailureReason(error)
+      this.logger?.warn('host rpc failed', {
+        method: request.payload.method,
+        ...(failedEndpoint ? { endpoint: failedEndpoint } : {}),
+        durationMs: Math.round(performance.now() - startedAt),
+        code: response.payload.code,
+        retryable: response.payload.retryable,
+        ...(reason === undefined ? {} : { reason }),
+      })
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/plugin/src/remote-terminal-controller.ts:250-264](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/remote-terminal-controller.ts#L250-L264)
+**依据 2 · 源码核查**：[packages/plugin/src/service.ts:462-465](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/service.ts#L462-L465)
 
-终端写入与返回 ok 是两步。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-      if (endpoint !== 'terminal/write' && endpoint !== 'terminal/resize') throw new RpcError('METHOD_NOT_FOUND', 'The terminal method does not exist.')
-      if (identifier(args.attachmentId) !== terminal.controllerId || !terminal.controller
-        || !this.subscriptions.has(terminal.controller) || terminal.state !== 'running') throw new RpcError('PERMISSION_DENIED', 'This attachment does not own terminal input.')
-      terminal.invalidate()
-      if (endpoint === 'terminal/write') {
-        if (typeof args.data !== 'string' || Buffer.byteLength(args.data) > MAX_INPUT_BYTES) throw new RpcError('INVALID_MESSAGE', 'Terminal input is invalid or too large.')
-        await terminal.process!.write(args.data)
-      } else {
-        const cols = dimension(args.cols, MAX_COLS), rows = dimension(args.rows, MAX_ROWS)
-        await terminal.process!.resize(cols, rows)
-        terminal.screen.resize(cols, rows); terminal.cols = cols; terminal.rows = rows
-        terminal.emit({ type: 'state', info: terminal.info() })
-      }
-    })
-    return { ok: true }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/plugin/src/service.ts:406-409](https://github.com/liguobao/ds-harness-remote/blob/47ea1890e75a58c3b336a13f42ed12829c9268da/packages/plugin/src/service.ts#L406-L409)
-
-退出可由 Host 撤销设备。
+撤销设备和关闭连接是明确的退出入口。
 
 ```text
   async revokePeer(deviceId: string): Promise<boolean> {
@@ -734,6 +701,29 @@ if [[ "$os" = Linux ]]; then
     if (revoked) await this.connections.revoke(deviceId)
     return revoked
 ```
+
+**依据 3 · 源码核查**：[packages/plugin/src/config.ts:216-226](https://github.com/liguobao/ds-harness-remote/blob/50e6570299e8a022e191d6d37f968d5833b170ee/packages/plugin/src/config.ts#L216-L226)
+
+需先主动覆盖默认开启的高权限功能。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+    enabled: parsed.enabled ?? true,
+    role: parsed.role ?? 'host',
+    ...(serverUrl === undefined ? {} : { serverUrl }),
+    httpServerAllowlist,
+    deviceName: parsed.deviceName ?? env.DSH_REMOTE_DEVICE_NAME ?? hostname(),
+    hostControl: { enabled: parsed.hostControl?.enabled ?? true },
+    terminal: { enabled: parsed.terminal?.enabled ?? (env.DSH_REMOTE_TERMINAL_ENABLED === undefined || env.DSH_REMOTE_TERMINAL_ENABLED === 'true') },
+    remoteTools: { enabled: parsed.remoteTools?.enabled ?? true },
+    sidebar: { entry: parsed.sidebar?.entry === 'compact' ? 'compact' : 'standard' },
+    loopback: { ports: [...new Set(parsed.loopback?.ports ?? [])] },
+    forceRelay: parsed.forceRelay ?? false,
+```
+
+</details>
 
 #### 缺口
 

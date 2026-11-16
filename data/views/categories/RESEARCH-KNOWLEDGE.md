@@ -152,7 +152,7 @@
 | [MindMemOS](#plugin-1278033467-root) | 提供长期记忆服务、检索与写入接口，并通过CLI和Agent插件共享跨会话记忆。 | 有记忆服务运维能力且有跨任务复用需求的团队可用非敏感双用户样本试用；先核对身份、最终写回和错误恢复；若混用范围与纠错无法确认，继续明确的项目笔记或手动记忆。 |
 | [MinerU文档解析桥](#plugin-1328601495-root) | 把本地文档上传到外部MinerU服务，通过DSH模型工具查询异步任务并返回Markdown/结果路径。 | [Q03](../../plugins/huanlinoto--dsh-plugin-mineru/INSIGHT.md#research-q03)观察；可信服务和可丢弃小样前提下人工核验，不敏感批量无人值守。 |
 | [Mnemon](#plugin-1162230313-root) | 为 Agent 提供由宿主模型监督的本地持久记忆、图关联、意图检索与生命周期管理 CLI。 | [Q04](../../plugins/mnemon-dev--mnemon/INSIGHT.md#research-q04) 先在非敏感副本库试用 Memory CLI，明确指定库并保留笔记备份。 |
-| [ModLens](#plugin-1163808211-root) | 给 DSH 文本模型接入视觉工具，将截图或图表转换成结构化证据。 | [Q05](../../plugins/liustack--modlens/INSIGHT.md#research-q05) 只在隔离且允许单一批准端点的环境用虚构截图。 |
+| [ModLens](#plugin-1163808211-root) | 给 DSH 文本模型接入视觉工具，将截图或图表转换成结构化证据。 | 只建议在端点、数据保留和费用已确认后，以虚构/非敏感图片、单一路线和费用上限做小规模试用；逐项复核 OCR 与不确定项。 |
 | [ModSearch](#plugin-1163808542-root) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | 先用公开查询核对目标引擎、输出和引用，再检查代理与管理权限。 |
 | [Molio DSH 知识库插件](#plugin-1259108597-packages-dsh-plugin-molio) | 让 DSH 通过只读工具列出、搜索和读取 Molio 本地知识库。 | [Q04](../../plugins/zhuzhaoyun--molio--packages-dsh-plugin-molio/INSIGHT.md#research-q04)本机小库固定id，先搜索再核原文，异常回界面/CLI。 |
 | [Multisim MCP for DSH](#plugin-1327922805-integrations-deepseek-harness) | 将 Multisim MCP 的电路诊断和实验工具接入 DeepSeek Harness。 | 先用已知理论的 RC 测例核工具、模型、输出与真实量测，未知时回到人工，见 [Q04](../../plugins/yxy050208--multisim-mcp--integrations-deepseek-harness/INSIGHT.md#research-q04)。 |
@@ -2427,15 +2427,15 @@
 
 ## [ModLens](../../plugins/liustack--modlens/INSIGHT.md)
 
-[![GitHub ★ 4,846](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C846&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liustack/modlens) [![npm 30d 257,562](https://img.shields.io/static/v1?label=npm+30d&message=257%2C562&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modlens) [![最新发布 2026-10-23](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-23&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modlens)
+[![GitHub ★ 4,978](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C978&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/liustack/modlens) [![npm 30d 319,051](https://img.shields.io/static/v1?label=npm+30d&message=319%2C051&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modlens) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@liustack/modlens)
 
-> **用途**：用文本模型处理截图、图表和图片中字段的 DSH 用户，可保留现有会话，以外部视觉工具取结构化转录。验收时需要回对原图并确认实际接收端。[Q01](../../plugins/liustack--modlens/INSIGHT.md#research-q01)
+> **用途**：ModLens 将截图转为文本模型可消费的摘要、布局、OCR 和不确定项，适用于在 DSH 文本会话中引用图像证据的用户。相较手工转录，增量是同一对话内读取并给出结构结果；新测试明确这些输出字段，但不是模型准确率证据。
 
-> **亮点**：[Q01](../../plugins/liustack--modlens/INSIGHT.md#research-q01) [Q02](../../plugins/liustack--modlens/INSIGHT.md#research-q02) 把截图的视觉解析与文本对话模型分开，增加可供人工核对的转录和不确定项。统一宿主插件、CLI 与多个提供商通路。
+> **亮点**：为 DSH 文本会话接入图像读取，输出摘要、布局/OCR 字段和不确定项，使图像证据可被文本模型引用；新增价值是结构化接线与字段呈现，而不是已证实的识别准确率、专业视觉能力或节省工时。[Q01](../../plugins/liustack--modlens/INSIGHT.md#research-q01) [Q02](../../plugins/liustack--modlens/INSIGHT.md#research-q02)
 
-> **思考**：[Q03](../../plugins/liustack--modlens/INSIGHT.md#research-q03) 默认 DSH 工具未传固定提供商参数。图片可能经过配置回退，远程 URL 的检查依抓取方。插件内附件引用索引未用调用会话键，实际会话隔离需实测。
+> **思考**：输入图像可能被发送到配置的外部视觉服务，OCR/图像文本也可能携带提示注入；安全守卫和模拟 CLI 测试不能证明真实 provider 的数据保留、出站范围或抗注入能力。关键字段误读还会把不可靠视觉结果包装成结构化证据。[Q03](../../plugins/liustack--modlens/INSIGHT.md#research-q03)
 
-> **建议**：[Q05](../../plugins/liustack--modlens/INSIGHT.md#research-q05) 在发送前列出数据形态和允许端点，结束时回传实际成功路由和尝试记录，可能减少目的地误判及额度争议。
+> **建议**：待验证假设：对常见截图/图表任务，摘要、OCR 与不确定项输出可降低人工转录时间，同时保持关键字段可核对。用固定虚构图像集和批准的单一 provider，对比人工转录与 ModLens，记录字段准确率、漏读、复核时间、延迟和费用；任何关键字段误读率或总成本不优于人工即推翻。[Q04](../../plugins/liustack--modlens/INSIGHT.md#research-q04)
 
 [查看完整分析](../../plugins/liustack--modlens/INSIGHT.md) · [返回表格](#category-index)
 

@@ -1,44 +1,34 @@
 {
     "repository": "c1overzz/dsh-bili-scroll",
     "repository_id": 1418639621,
-    "captured_at": "2026-11-09T02:22:10.023Z",
-    "window_start": "2026-10-10T02:22:10.023Z",
-    "stars": 1333,
-    "pushed_at": "2026-11-08T20:55:06Z",
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 1416,
+    "pushed_at": "2026-11-12T16:21:04Z",
     "issues": {
-        "open": 99,
-        "closed": 27,
-        "created_30d": 126,
-        "closed_30d": 27,
-        "updated_30d": 126
+        "open": 101,
+        "closed": 32,
+        "created_30d": 127,
+        "closed_30d": 32,
+        "updated_30d": 128
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-09T01:14:05.488Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
-        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
-        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-bili-scroll",
-        "captured_at": "2026-11-08T00:41:42.970Z",
-        "window_start": "2026-10-09",
-        "window_end": "2026-11-07",
-        "downloads_30d": 63615,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-bili-scroll",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 78127,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-bili-scroll",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-14T08:52:32.119Z",
-            "captured_at": "2026-11-08T00:41:42.970Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
             "source_url": "https://registry.npmjs.org/dsh-bili-scroll",
             "error": null,
-            "latest_version": "2.5.0",
-            "latest_published_at": "2026-11-03T19:32:36.251Z",
+            "latest_version": "2.5.2",
+            "latest_published_at": "2026-11-12T16:20:23.366Z",
             "latest_error": null
         }
     }
