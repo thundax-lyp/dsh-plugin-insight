@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[d326a64](https://github.com/MemTensor/MemOS/tree/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin)
+源码版本：[3a16e5f](https://github.com/MemTensor/MemOS/tree/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12,316](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C316&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS) [![npm 30d 10,300](https://img.shields.io/static/v1?label=npm+30d&message=10%2C300&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
+[![GitHub ★ 12,402](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C402&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/MemTensor/MemOS) [![npm 30d 11,176](https://img.shields.io/static/v1?label=npm+30d&message=11%2C176&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin) [![最新发布 2026-10-29](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-29&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@memtensor/memos-local-plugin)
 <!-- END META -->
 
 > **功能**：为 DSH 等宿主提供本地记忆、按轮召回和后台捕获的多宿主插件。
@@ -121,16 +121,16 @@
 
 首步召回、异步捕获和宿主辅助模型接线有固定源码依据。效果、隔离以及写入收据的收益未验证。
 
-- 已检查：作者 README、包清单、源码路径 apps/memos-local-plugin/README.md、apps/memos-local-plugin/package.json、apps/memos-local-plugin/adapters/deepseek-harness/cordis.patch.yml、apps/memos-local-plugin/adapters/deepseek-harness/index.ts、apps/memos-local-plugin/core/config/defaults.ts、apps/memos-local-plugin/adapters/deepseek-harness/README.md、apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts、apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts、apps/memos-local-plugin/core/pipeline/memory-core.ts、apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts、apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts 及固定范围 inventory；组件：apps/memos-local-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 apps/memos-local-plugin/adapters/deepseek-harness/index.ts、apps/memos-local-plugin/core/config/defaults.ts、apps/memos-local-plugin/adapters/deepseek-harness/README.md、apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts、apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts、apps/memos-local-plugin/core/pipeline/memory-core.ts、apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts、apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts、apps/memos-local-plugin/README.md、apps/memos-local-plugin/package.json 及固定范围 inventory；组件：apps/memos-local-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：统计覆盖子包指定的 Markdown、JS/TS 文件。抽读 DSH 适配、共享核心相关入口和配置，未审全部召回算法与存储策略，不涵盖 MemOS 根服务、其他宿主适配或真实安装。未运行插件、测试、模型和网络。
-- 下一步：用同一项目、模型和纠正做手工与插件对照，检查实际命中与数据出口，再用 [Q06](#research-q06) 验证拟议收据是否降低旧记忆误引。
+- 边界：统计覆盖子包指定的 Markdown、JS/TS 文件。抽读 DSH 适配、共享核心相关入口和配置，未审全部召回算法与存储策略，不涵盖 MemOS 根服务、其他宿主适配或真实安装。未运行插件、测试、模型和网络。 本轮当前版本复核：d326a641..3a16e5fe（固定提交 3a16e5fe3048a209f722806f4123fa2e533588fd）；比较目标组件差异并补充其影响。
+- 下一步：用同一项目、模型和纠正做手工与插件对照，检查实际命中与数据出口，再用 [Q06](#research-q06) 验证拟议收据是否降低旧记忆误引。 当前源码固定于 3a16e5fe3048a209f722806f4123fa2e533588fd；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[MemTensor/MemOS](https://github.com/MemTensor/MemOS)
-- **版本号**：2.0.16-beta.1（[固定提交 d326a64](https://github.com/MemTensor/MemOS/tree/d326a6419467c2205041b58533b0ebfdf4f38173)）
-- **版本日期**：2026-11-04（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：2.0.16-beta.1（[固定提交 3a16e5f](https://github.com/MemTensor/MemOS/tree/3a16e5fe3048a209f722806f4123fa2e533588fd)）
+- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,7 +140,7 @@
 
 [Q06](#research-q06) 提出让关键纠正的写入结果可见，在预算内提示可能陈旧的召回。需与不等写入的现状比较误引和延时。
 
-用同一项目、模型和纠正做手工与插件对照，检查实际命中与数据出口，再用 [Q06](#research-q06) 验证拟议收据是否降低旧记忆误引。
+用同一项目、模型和纠正做手工与插件对照，检查实际命中与数据出口，再用 [Q06](#research-q06) 验证拟议收据是否降低旧记忆误引。 当前源码固定于 3a16e5fe3048a209f722806f4123fa2e533588fd；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -167,11 +167,11 @@
 
 **活跃度**
 
-[![Issue 未关闭 56](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=56&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 31](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=31&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 38](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=38&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
+[![Issue 未关闭 47](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=47&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 22](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=22&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z) [![近30天关闭 35](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=35&color=737b86&logo=github)](https://github.com/MemTensor/MemOS/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z)
 
 
 
-统计日期：2026-11-09。
+统计日期：2026-11-16。
 
 <a id="detail-section-10"></a>
 
@@ -193,83 +193,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[apps/memos-local-plugin/README.md:67-89](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/README.md#L67-L89)
-
-作者说明共享核心与完整设计目标。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-> Reflect2Evolve memory plugin for AI agents.
-> One algorithm core, with adapters for OpenClaw, Hermes Agent, and DeepSeek
-> Harness.
-
-## What it is
-
-A local-first, file-backed memory system that gives an agent four cooperating
-layers of memory and a feedback-driven self-evolution loop:
-
-- **L1 trace** — step-level grounded records (action + observation + reflection + value).
-- **L2 policy** — sub-task strategies induced across many traces.
-- **L3 world model** — compressed environmental cognition derived from L2 + L1.
-- **Skill** — callable, crystallized capabilities the agent can invoke directly.
-
-The plugin learns continuously from two feedback channels:
-
-- **Step-level** — model ↔ environment (tool result, observation deltas).
-- **Task-level** — human ↔ model (explicit ratings + implicit signals).
-
-Reflection-weighted reward is back-propagated along each trace, and high-value
-patterns crystallize into reusable Skills. At inference time, a three-tier
-retriever (Skill → trace/episode → world model) injects the right context at
-the right time.
-```
-
-</details>
-
-**依据 2 · 源码核查**：[apps/memos-local-plugin/package.json:16-20](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/package.json#L16-L20)
-
-包 manifest 声明真实 DSH patch。
-
-```text
-  "dsh": {
-    "bundle": {
-      "patch": "./adapters/deepseek-harness/cordis.patch.yml"
-    }
-  },
-```
-
-**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/cordis.patch.yml:1-17](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/cordis.patch.yml#L1-L17)
-
-默认行打开召回、捕获与工具。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-- insert:
-    - id: memos-local-memory
-      name: '@memtensor/memos-local-plugin/dist/adapters/deepseek-harness/index.js'
-      config:
-        enabled: true
-        profileId: default
-        home: ''
-        recallEnabled: true
-        captureEnabled: true
-        toolsEnabled: true
-        hostLlmEnabled: true
-        viewerEnabled: true
-        viewerPort: 18801
-        recallTimeoutMs: 3000
-        contextMaxChars: 6000
-        toolResultMaxChars: 1200
-        failOnStartupError: false
-```
-
-</details>
-
-**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:409-442](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L409-L442)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:409-442](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L409-L442)
 
 固定 DSH 生命周期与工具接线。
 
@@ -315,7 +239,7 @@ the right time.
 
 </details>
 
-**依据 5 · 源码核查**：[apps/memos-local-plugin/core/config/defaults.ts:103-110](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/core/config/defaults.ts#L103-L110)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/core/config/defaults.ts:103-110](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/core/config/defaults.ts#L103-L110)
 
 轻量记忆默认开启。
 
@@ -330,7 +254,7 @@ the right time.
       embedTraces: true,
 ```
 
-**依据 6 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:375-394](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L375-L394)
+**依据 3 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:375-394](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L375-L394)
 
 作者分开默认摘要与完整演化。
 
@@ -382,7 +306,7 @@ lightweight mode keeps its local startup cleanup because that path does not run
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:97-110](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L97-L110)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:97-110](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L97-L110)
 
 前台预算钳制和对历史内容的提示。
 
@@ -408,7 +332,7 @@ export function deepSeekHarnessMemoryGuidance(toolsEnabled: boolean): string {
 
 </details>
 
-**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:47-51](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L47-L51)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:47-51](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L47-L51)
 
 召回消息创建时标记来源。
 
@@ -420,7 +344,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
   });
 ```
 
-**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:409-414](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L409-L414)
+**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:409-414](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L409-L414)
 
 真实接线将 pre-step 交给 Bridge。
 
@@ -433,7 +357,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
     }));
 ```
 
-**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:194-223](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L194-L223)
+**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:194-223](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L194-L223)
 
 下游决定、首步、直接用户文本与去重。
 
@@ -475,7 +399,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
 
 </details>
 
-**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:225-258](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L225-L258)
+**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:225-258](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L225-L258)
 
 向核心传递截止，并设置外层守卫。
 
@@ -521,7 +445,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
 
 </details>
 
-**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts:17-42](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts#L17-L42)
+**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts:17-42](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/deadline.ts#L17-L42)
 
 超时和 abort 参与竞速，仍处理迟到的拒绝。
 
@@ -559,7 +483,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
 
 </details>
 
-**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:260-284](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L260-L284)
+**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:260-284](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L260-L284)
 
 附加消息或失败回到原决策。
 
@@ -596,7 +520,7 @@ export function createDeepSeekHarnessRecallMessage(text: string): ReturnType<typ
 
 </details>
 
-**依据 8 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:855-862](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L855-L862)
+**依据 8 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:855-862](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L855-L862)
 
 仅收集直接用户来源。
 
@@ -611,7 +535,7 @@ function userTextFromMessages(messages: readonly DshUserMessageLike[]): string {
 }
 ```
 
-**依据 9 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:917-928](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L917-L928)
+**依据 9 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:917-928](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L917-L928)
 
 截长与上下文标记。
 
@@ -655,7 +579,7 @@ function renderRecallContext(raw: string, maxChars: number): string {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:355-377](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L355-L377)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:355-377](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L355-L377)
 
 回合结束去重并后台排队。
 
@@ -690,7 +614,7 @@ function renderRecallContext(raw: string, maxChars: number): string {
 
 </details>
 
-**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:505-516](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L505-L516)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:505-516](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L505-L516)
 
 按 sessionId 串行，失败记警告。
 
@@ -714,7 +638,7 @@ function renderRecallContext(raw: string, maxChars: number): string {
 
 </details>
 
-**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:551-576](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L551-L576)
+**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:551-576](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L551-L576)
 
 路由失败时还能使用惰性 episode。
 
@@ -752,7 +676,7 @@ function renderRecallContext(raw: string, maxChars: number): string {
 
 </details>
 
-**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:578-603](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L578-L603)
+**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:578-603](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L578-L603)
 
 调用核心捕获及 finally 清回合。
 
@@ -790,7 +714,7 @@ function renderRecallContext(raw: string, maxChars: number): string {
 
 </details>
 
-**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:393-424](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L393-L424)
+**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:393-424](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L393-L424)
 
 closeSession 等本会话队列。
 
@@ -834,7 +758,7 @@ closeSession 等本会话队列。
 
 </details>
 
-**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:435-459](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L435-L459)
+**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:435-459](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L435-L459)
 
 插件销毁等待队列和核心关停。
 
@@ -871,7 +795,7 @@ closeSession 等本会话队列。
 
 </details>
 
-**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:423-431](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L423-L431)
+**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:423-431](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L423-L431)
 
 DSH 销毁会话事件不等待这项工作。
 
@@ -887,7 +811,7 @@ DSH 销毁会话事件不等待这项工作。
       });
 ```
 
-**依据 8 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:69-85](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L69-L85)
+**依据 8 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:69-85](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L69-L85)
 
 作者描述下一轮不等及关闭边界。
 
@@ -936,42 +860,7 @@ a bounded, best-effort drain before shutting down the core.
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/memos-local-plugin/package.json:1-4](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/package.json#L1-L4)
-
-固定子包版本和多宿主定位。
-
-```text
-{
-  "name": "@memtensor/memos-local-plugin",
-  "version": "2.0.16-beta.1",
-  "description": "Reflect2Evolve memory plugin: layered L1/L2/L3 memory, reflection-weighted value backprop, cross-task policy induction, skill crystallization, and three-tier retrieval for OpenClaw, Hermes Agent, and DeepSeek Harness.",
-```
-
-**依据 2 · 源码核查**：[apps/memos-local-plugin/package.json:96-107](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/package.json#L96-L107)
-
-Node 与原生 SQLite 的版本依赖。
-
-<details>
-<summary>查看原文（12行）</summary>
-
-```text
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "dependencies": {
-    "@huggingface/transformers": "4.2.0",
-    "@preact/signals": "^2.9.0",
-    "@sinclair/typebox": "^0.34.48",
-    "better-sqlite3": "13.0.3",
-    "preact": "^10.29.1",
-    "tsx": "^4.21.0",
-    "uuid": "^10.0.0",
-    "yaml": "^2.6.0"
-```
-
-</details>
-
-**依据 3 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:225-235](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/core/pipeline/memory-core.ts#L225-L235)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:225-235](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/core/pipeline/memory-core.ts#L225-L235)
 
 实际宿主 Node 版本早期拒绝。
 
@@ -994,7 +883,7 @@ export async function bootstrapMemoryCoreFull(
 
 </details>
 
-**依据 4 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:257-262](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/core/pipeline/memory-core.ts#L257-L262)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:257-262](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/core/pipeline/memory-core.ts#L257-L262)
 
 存储打开和迁移入口。
 
@@ -1007,7 +896,7 @@ export async function bootstrapMemoryCoreFull(
     runMigrations(db);
 ```
 
-**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:44-45](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L44-L45)
+**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:44-45](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L44-L45)
 
 宿主服务注入声明。
 
@@ -1016,7 +905,7 @@ export const name = DEEPSEEK_HARNESS_PLUGIN;
 export const inject = ["systemPrompt", "tools", "llm"];
 ```
 
-**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:113-135](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L113-L135)
+**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:113-135](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L113-L135)
 
 默认 home 与 host LLM fallback 条件。
 
@@ -1051,7 +940,7 @@ export function configureDeepSeekHarnessHostLlm(
 
 </details>
 
-**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts:4-16](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts#L4-L16)
+**依据 5 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts:4-16](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/namespace.ts#L4-L16)
 
 命名空间用 profile、工作区、会话，不用预设作权限。
 
@@ -1076,7 +965,7 @@ export function deepSeekHarnessNamespace(
 
 </details>
 
-**依据 8 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts:80-105](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts#L80-L105)
+**依据 6 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts:80-105](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts#L80-L105)
 
 路由快照保存在 AsyncLocalStorage。
 
@@ -1114,7 +1003,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 9 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts:133-165](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts#L133-L165)
+**依据 7 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts:133-165](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/host-llm.ts#L133-L165)
 
 真实辅助请求经宿主注册后的流执行。
 
@@ -1159,7 +1048,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 10 · 源码核查**：[apps/memos-local-plugin/core/config/defaults.ts:35-45](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/core/config/defaults.ts#L35-L45)
+**依据 8 · 源码核查**：[apps/memos-local-plugin/core/config/defaults.ts:35-45](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/core/config/defaults.ts#L35-L45)
 
 本地 embedding 默认配置未强制 offline。
 
@@ -1182,7 +1071,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 11 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:275-314](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L275-L314)
+**依据 9 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:275-314](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L275-L314)
 
 核心接线未提供 telemetry 实例，Viewer 限制 loopback。
 
@@ -1234,7 +1123,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 12 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:554-561](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/core/pipeline/memory-core.ts#L554-L561)
+**依据 10 · 源码核查**：[apps/memos-local-plugin/core/pipeline/memory-core.ts:554-561](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/core/pipeline/memory-core.ts#L554-L561)
 
 未传入遥测时核心收到 null。
 
@@ -1249,7 +1138,7 @@ export class DeepSeekHarnessLlmRouteContext {
         db.close();
 ```
 
-**依据 13 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:582-597](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L582-L597)
+**依据 11 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:582-597](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L582-L597)
 
 作者区别模型、可选远端和宿主遥测。
 
@@ -1297,7 +1186,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:452-469](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L452-L469)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:452-469](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L452-L469)
 
 启动失败清理和是否继续宿主的分支。
 
@@ -1327,7 +1216,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:472-484](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L472-L484)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/index.ts:472-484](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/index.ts#L472-L484)
 
 实际禁用路径注销挂钩、关闭 Viewer、等待 Bridge。
 
@@ -1352,32 +1241,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/cordis.patch.yml:5-17](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/cordis.patch.yml#L5-L17)
-
-召回、捕获、工具和 Viewer 为可配置项。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-        enabled: true
-        profileId: default
-        home: ''
-        recallEnabled: true
-        captureEnabled: true
-        toolsEnabled: true
-        hostLlmEnabled: true
-        viewerEnabled: true
-        viewerPort: 18801
-        recallTimeoutMs: 3000
-        contextMaxChars: 6000
-        toolResultMaxChars: 1200
-        failOnStartupError: false
-```
-
-</details>
-
-**依据 4 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:393-424](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L393-L424)
+**依据 3 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:393-424](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L393-L424)
 
 等待本会话后台工作不等于删除已有记录。
 
@@ -1421,7 +1285,7 @@ export class DeepSeekHarnessLlmRouteContext {
 
 </details>
 
-**依据 5 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:369-375](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L369-L375)
+**依据 4 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:369-375](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L369-L375)
 
 作者说明辅助请求计入实际 provider 用量。
 
@@ -1455,7 +1319,7 @@ Those auxiliary requests consume the selected provider's normal quota and can
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:214-226](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L214-L226)
+**依据 1 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:214-226](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L214-L226)
 
 现有机制是单轮去重与截止。
 
@@ -1480,7 +1344,7 @@ Those auxiliary requests consume the selected provider's normal quota and can
 
 </details>
 
-**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:505-516](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L505-L516)
+**依据 2 · 源码核查**：[apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts:505-516](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/bridge.ts#L505-L516)
 
 已有会话队列没有前台可见的提交收据。
 
@@ -1504,7 +1368,7 @@ Those auxiliary requests consume the selected provider's normal quota and can
 
 </details>
 
-**依据 3 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:69-85](https://github.com/MemTensor/MemOS/blob/d326a6419467c2205041b58533b0ebfdf4f38173/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L69-L85)
+**依据 3 · 作者声明**：[apps/memos-local-plugin/adapters/deepseek-harness/README.md:69-85](https://github.com/MemTensor/MemOS/blob/3a16e5fe3048a209f722806f4123fa2e533588fd/apps/memos-local-plugin/adapters/deepseek-harness/README.md#L69-L85)
 
 下一轮读当前已提交状态，构成假设基线。
 

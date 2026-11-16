@@ -39,8 +39,8 @@
 > 查看最近发布的版本，了解用途和使用条件。
 
 - [Hatoba Agent 插件](data/plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md) · 让 DeepSeek Harness 等代理使用 Hatoba 保存的 SSH 主机执行命令和复制文件。 · [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hatoba-agent-plugin)
-- [OpenViking DSH Memory](data/plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · 在 DeepSeek Harness 会话中接入 OpenViking 召回、消息捕获、Skill 和 MCP。 · [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@openviking/dsh-memory-plugin)
-- [DSH Browser CDP](data/plugins/drscrewdriver--dsh-browser-cdp/INSIGHT.md) · 在 DeepSeek Harness 中接入结构化浏览器工具和可交互的页面观察窗。 · [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-browser-cdp)
+- [DS Harness Remote](data/plugins/liguobao--ds-harness-remote/INSIGHT.md) · 让受信设备从 Web、桌面或移动端接入原 DSH 宿主的会话、工作区和终端。 · [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote)
+- [Maid Atelier](data/plugins/small-tailqwq--dsh-deep-whale--maid-atelier/INSIGHT.md) · 为 DSH Web GUI 提供深海女仆主题、随对话区变化的装饰与宽表格展开。 · [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@smalltailqwq/dsh-client-ui-skin-maid-atelier)
 
 ## [下载热门](data/views/columns/HOT.md)
 

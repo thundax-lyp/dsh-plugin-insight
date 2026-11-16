@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[71190b6](https://github.com/loopx-project/loopx/tree/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin)
+源码版本：[f38fae0](https://github.com/loopx-project/loopx/tree/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,562](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C562&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/loopx-project/loopx)
+[![GitHub ★ 6,586](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C586&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/loopx-project/loopx)
 <!-- END META -->
 
 > **功能**：将 LoopX 初始化、同会话续轮和 GoalBar 接到 DeepSeek Harness。
 
 > **亮点**：[Q02](#research-q02) 将 Goal、Agent、轮次和宿主当前会话绑定到同一预约。[Q03](#research-q03) 提供分离的目标暂停和待处理队列撤销路径。业务状态与执行责任仍分属 LoopX 与 DSH。
 
-> **主要限制**：[Q03](#research-q03) 显示暂停后已认领预约可能保留，GoalBar 的 paused 不能说明当前执行或外部副作用停止。
+> **主要限制**：排队消息还要通过下游竞争、确定配额回执和绑定复核，缺项或不兼容 CLI 都能影响一次合格的续轮。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -91,7 +91,7 @@
 | 暂停与回读 | 未来队列与已认领预约处理不同 | 用户如何理解 UI 停状态 |
 | 工作投入 | 可减少手工搬运任务 | 合格任务净节时和成本 |
 
-> **思考**：[Q03](#research-q03) 显示暂停后已认领预约可能保留，GoalBar 的 paused 不能说明当前执行或外部副作用停止。
+> **思考**：排队消息还要通过下游竞争、确定配额回执和绑定复核，缺项或不兼容 CLI 都能影响一次合格的续轮。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
@@ -105,7 +105,7 @@
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 显示暂停后已认领预约可能保留，GoalBar 的 paused 不能说明当前执行或外部副作用停止。
+排队消息还要通过下游竞争、确定配额回执和绑定复核，缺项或不兼容 CLI 都能影响一次合格的续轮。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
@@ -121,16 +121,16 @@
 
 typed 激活、当前轮次准入、状态回读和暂停分支有静态证据。实际交付收益、跨系统竞态与拟议提示仍待验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-loopx-plugin/README.md、packages/dsh-loopx-plugin/cordis.patch.yml、packages/dsh-loopx-plugin/src/index.ts、packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts、packages/dsh-loopx-plugin/src/driver.ts、packages/dsh-loopx-plugin/src/goalbar/service.ts、packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx、packages/dsh-loopx-plugin/package.json、packages/dsh-loopx-plugin/src/cli.ts、packages/dsh-loopx-plugin/src/init-command.ts、packages/dsh-loopx-plugin/src/observer.ts 及固定范围 inventory；组件：packages/dsh-loopx-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-loopx-plugin/README.md、packages/dsh-loopx-plugin/src/index.ts、packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts、packages/dsh-loopx-plugin/src/driver.ts、packages/dsh-loopx-plugin/src/goalbar/service.ts、packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx、packages/dsh-loopx-plugin/src/cli.ts、packages/dsh-loopx-plugin/src/init-command.ts、packages/dsh-loopx-plugin/src/observer.ts 及固定范围 inventory；组件：packages/dsh-loopx-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：仅统计子包指定 Markdown 和 JS/TS。读实际启动、Driver 及 GoalBar 代表路径、安装和诊断接线。未执行宿主、LoopX、Python 或测试，未审全量 LoopX 业务引擎和传输鉴权。
-- 下一步：在固定 DSH 和 LoopX 版本中用隔离小任务比较手工和自动交接，分别检查竞争消息、暂停和错误结果。拟议提示按 [Q06](#research-q06) 的盲测验证。
+- 边界：仅统计子包指定 Markdown 和 JS/TS。读实际启动、Driver 及 GoalBar 代表路径、安装和诊断接线。未执行宿主、LoopX、Python 或测试，未审全量 LoopX 业务引擎和传输鉴权。 本轮当前版本复核：71190b6b..f38fae05（固定提交 f38fae05bb9a1c2cc54a2641359224cc253d32ac）；比较目标组件差异并补充其影响。
+- 下一步：在固定 DSH 和 LoopX 版本中用隔离小任务比较手工和自动交接，分别检查竞争消息、暂停和错误结果。拟议提示按 [Q06](#research-q06) 的盲测验证。 当前源码固定于 f38fae05bb9a1c2cc54a2641359224cc253d32ac；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[loopx-project/loopx](https://github.com/loopx-project/loopx)
-- **版本号**：0.1.1-beta.6（[固定提交 71190b6](https://github.com/loopx-project/loopx/tree/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021)）
-- **版本日期**：2026-11-09（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.1-beta.6（[固定提交 f38fae0](https://github.com/loopx-project/loopx/tree/f38fae05bb9a1c2cc54a2641359224cc253d32ac)）
+- **版本日期**：2026-11-16（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -140,7 +140,7 @@ typed 激活、当前轮次准入、状态回读和暂停分支有静态证据�
 
 [Q06](#research-q06) 提出把新轮停止、当前轮保留和效果未知分开显示，以误判率和恢复耗时比较是否值得。
 
-在固定 DSH 和 LoopX 版本中用隔离小任务比较手工和自动交接，分别检查竞争消息、暂停和错误结果。拟议提示按 [Q06](#research-q06) 的盲测验证。
+在固定 DSH 和 LoopX 版本中用隔离小任务比较手工和自动交接，分别检查竞争消息、暂停和错误结果。拟议提示按 [Q06](#research-q06) 的盲测验证。 当前源码固定于 f38fae05bb9a1c2cc54a2641359224cc253d32ac；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -153,22 +153,22 @@ typed 激活、当前轮次准入、状态回读和暂停分支有静态证据�
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .ts | source | 22 | 7705 | 7004 | 189 | — |
-| .md | source | 2 | 818 | — | — | 6366 |
+| .ts | source | 22 | 7987 | 7263 | 201 | — |
+| .md | source | 2 | 835 | — | — | 6532 |
 | .mjs | source | 11 | 2843 | 2654 | 75 | — |
 | .tsx | source | 3 | 373 | 312 | 34 | — |
-| .ts | test | 13 | 6953 | 6447 | 30 | — |
+| .ts | test | 13 | 7849 | 7286 | 35 | — |
 | .tsx | test | 2 | 1207 | 1112 | 7 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 128](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=128&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 130](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=130&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 108](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=108&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
+[![Issue 未关闭 138](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=138&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 89](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=89&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z) [![近30天关闭 63](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=63&color=737b86&logo=github)](https://github.com/loopx-project/loopx/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z)
 
 
 
-统计日期：2026-11-09。
+统计日期：2026-11-16。
 
 <a id="detail-section-10"></a>
 
@@ -190,7 +190,7 @@ typed 激活、当前轮次准入、状态回读和暂停分支有静态证据�
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-loopx-plugin/README.md:3-22](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/README.md#L3-L22)
+**依据 1 · 作者声明**：[packages/dsh-loopx-plugin/README.md:3-22](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/README.md#L3-L22)
 
 作者陈述初始化、续轮、GoalBar 和工作区面板的用途。
 
@@ -222,7 +222,7 @@ cooperating surfaces (three Loader rows and one Client panel):
 
 </details>
 
-**依据 2 · 作者声明**：[packages/dsh-loopx-plugin/README.md:24-38](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/README.md#L24-L38)
+**依据 2 · 作者声明**：[packages/dsh-loopx-plugin/README.md:24-38](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/README.md#L24-L38)
 
 安装、激活与 LoopX 权威边界。
 
@@ -249,35 +249,7 @@ activation, and durable thread-binding data. The GoalBar protocol and its
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/cordis.patch.yml:1-16](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/cordis.patch.yml#L1-L16)
-
-各 Loader 行分别挂载。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-# LoopX owns Goal, Todo, quota, and thread-binding authority.
-- insert:
-    # The package-root Host row is also the discovery anchor for dsh.client.
-    - id: loopx-goalbar
-      name: dsh-loopx-plugin
-
-    - id: loopx-init-command
-      name: dsh-loopx-plugin/init-command
-
-    - id: loopx-driver
-      name: dsh-loopx-plugin/driver
-
-    # Loaded as its own default-off Cordis row. It has no Driver or Agent
-    # injection and registers only session publication hooks when fully pinned.
-    - id: loopx-shadow-observer
-      name: dsh-loopx-plugin/observer
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/index.ts:10-27](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/index.ts#L10-L27)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/index.ts:10-27](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/index.ts#L10-L27)
 
 包根启动一套 GoalBar 服务并注册共享传输。
 
@@ -307,7 +279,7 @@ export function apply(ctx: Context): void {
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts:134-153](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts#L134-L153)
+**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts:134-153](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/connection-rpc.ts#L134-L153)
 
 旧 RPC 导出与实际启动采用的 POST shared API 分开。
 
@@ -357,9 +329,11 @@ export function registerGoalBarConnectionTransport(
 
 Driver 的会话事件处理只接受当前 Agent 的同一 Session 对象。激活来自宿主 typed skill-invocation 的 loopx instructions 消息，或工具名 skill、参数指定 loopx 且 callId 匹配成功结果的模型调用，普通文本提到 LoopX 不触发。实际评估还要求 Agent 活着且 idle、无竞争、无在途预约和待输入。随后用当前会话查唯一绑定，以同一 turnInstanceId 核对 Goal、LoopX Agent、should-run 与 heartbeat 回执。不允许运行时等待调度，模糊或无绑定不排队。通过后保留完整消息与预约身份并 followup 到原 Agent。pre-step 拒绝过期预约、竞争消息或权威不再匹配，并在后续处理返回后重查。这个分阶段设计减少错会话，不代表跨宿主事务恰好一次。
 
+CLI 达到 2.3.0 时，额度门支持原始决策或分页导航凭据，旧 CLI 则以 LOOPX_CONTEXT_DELIVERY=off 要求原始格式。初次判断先读字段索引，再选共同必需字段、当前可用的调度及记忆提示和心跳凭据；排队后重查只取共同字段及心跳凭据。分页限制单页字节，逐页核对 schema、偏移、总长、游标目录与选项；内联模式还校验选取字段和摘要。缺项、重复、字节摘要或绑定 Goal 不符会拒绝，不能把残缺回执当作放行；分页读取失败不在额度命令的传输重试内。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:216-237](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L216-L237)
+**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:216-237](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L216-L237)
 
 人类 typed 调用与模型 skill 调用形状。
 
@@ -367,9 +341,40 @@ Driver 的会话事件处理只接受当前 Agent 的同一 Session 对象。激
 <summary>查看原文（22行）</summary>
 
 ```text
+
+function exactRecord(
+  value: unknown,
+  expectedKeys: readonly string[],
+): Record<string, unknown> | undefined {
+  const candidate = record(value)
+  if (candidate === undefined) return undefined
+  const keys = Reflect.ownKeys(candidate)
+  if (keys.some(key => typeof key !== 'string') || keys.length !== expectedKeys.length) {
+    return undefined
+  }
+  const allowed = new Set(expectedKeys)
+  return keys.every(key => typeof key === 'string' && allowed.has(key))
+    ? candidate
+    : undefined
+}
+
+function eventCallId(value: unknown): string | undefined {
+  return typeof value === 'string' && value.length > 0 ? value : undefined
+}
+
 function exactUserActivation(event: SessionEvent): boolean {
-  if (event.type !== 'user/message') return false
-  const data = record(event.data)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:240-280](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L240-L280)
+
+模型调用需匹配无错的 tool-result 才激活。
+
+<details>
+<summary>查看原文（41行）</summary>
+
+```text
   const source = record(data?.source)
   return source?.kind === 'skill-invocation'
     && source.name === 'loopx'
@@ -389,18 +394,8 @@ function exactModelActivationCall(event: SessionEvent): string | undefined {
     return undefined
   }
   return record(parsed)?.name === 'loopx' ? callId : undefined
-```
+}
 
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:240-280](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L240-L280)
-
-模型调用需匹配无错的 tool-result 才激活。
-
-<details>
-<summary>查看原文（41行）</summary>
-
-```text
 function foldActivationEvent(
   projection: ActivationProjection,
   event: SessionEvent,
@@ -421,32 +416,11 @@ function foldActivationEvent(
     }
     return
   }
-  if (event.type !== 'tool/result') return
-  const data = record(event.data)
-  const message = record(data?.message)
-  const source = record(message?.source)
-  const callId = eventCallId(source?.callId)
-  if (callId === undefined) return
-  const matched = projection.pendingModelCalls.delete(callId)
-  const content = message?.content
-  const block = Array.isArray(content) && content.length === 1
-    ? record(content[0])
-    : undefined
-  const successful = source?.kind === 'tool'
-    && message?.role === 'user'
-    && block?.type === 'tool-result'
-    && block.toolCallId === callId
-    && (block.isError === undefined || block.isError === false)
-    && data?.error === undefined
-  if (matched && successful) {
-    projection.activated = true
-    projection.pendingModelCalls.clear()
-  }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:786-799](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L786-L799)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:786-799](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L786-L799)
 
 评估的当前 Agent、会话、命令、队列和忙闲条件。
 
@@ -454,6 +428,116 @@ function foldActivationEvent(
 <summary>查看原文（14行）</summary>
 
 ```text
+    if (!wasActivated && state.activation.activated
+      && agent.status === 'idle' && !state.pauseAfterTurnError) {
+      this.requestEvaluation(state)
+    }
+    if (event.type === 'command/run') {
+      state.commands.add(String(event.data.commandId))
+      state.competing = true
+      this.cancelPending(state)
+      return
+    }
+    if (event.type === 'command/done') {
+      state.commands.delete(String(event.data.commandId))
+      if (state.commands.size === 0) {
+        state.competing = inboxHasPending(agent.inbox)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:307-326](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L307-L326)
+
+绑定必须唯一且线程与字段一致。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+    pendingModelCalls: new Set(),
+    activated: false,
+  }
+  try {
+    for (const event of session.snapshotEvents()) foldActivationEvent(projection, event)
+  } catch {
+    projection.pendingModelCalls.clear()
+    projection.activated = false
+  }
+  return projection
+}
+
+/**
+ * Whether an Agent still holds input it has not consumed. The 0.1.5 Inbox
+ * exposes the two pending queues instead of the retired `hasPending` flag.
+ */
+function inboxHasPending(inbox: Agent['inbox']): boolean {
+  return inbox.nextTurn.length > 0 || inbox.nextStep.length > 0
+}
+
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:916-950](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L916-L950)
+
+解析绑定并按同一轮次验证 quota。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+  private stateFor(agent: Agent): DriverState {
+    const existing = this.states.get(agent)
+    if (existing !== undefined) {
+      if (existing.activation.session !== agent.session) {
+        this.resolveEvaluationWaiters(existing, false)
+        this.cancelPending(existing)
+        this.retireReservation(existing)
+        existing.competing = inboxHasPending(agent.inbox)
+        existing.pauseAfterTurnError = false
+        existing.schedulerToken = ''
+        existing.unchangedPolls = 0
+        existing.commands.clear()
+        existing.activation = foldSessionActivation(agent.session)
+      }
+      return existing
+    }
+    const state: DriverState = {
+      agent,
+      activation: foldSessionActivation(agent.session),
+      requested: false,
+      stopping: false,
+      competing: inboxHasPending(agent.inbox),
+      pauseAfterTurnError: false,
+      schedulerToken: '',
+      unchangedPolls: 0,
+      commands: new Set(),
+      evaluationWaiters: new Set(),
+    }
+    this.states.set(agent, state)
+    return state
+  }
+
+  private captureIsLive(capture: GoalBarSessionCapture): boolean {
+    return !this.disposed
+      && capture.agent.session === capture.session
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:951-979](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L951-L979)
+
+heartbeat 身份通过后才构造排队计划。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+      && this.isLiveAgent(capture.agent)
+      && capture.agent.id === capture.session.id
+      && capture.agent.id === capture.session.header.id
+  }
+
   private ready(state: DriverState): boolean {
     return !this.disposed
       && !state.stopping
@@ -468,131 +552,21 @@ function foldActivationEvent(
       && !inboxHasPending(state.agent.inbox)
       && state.agent.id === state.agent.session.id
       && state.agent.id === state.agent.session.header.id
+      && typeof state.agent.session.header.cwd === 'string'
+      && state.agent.session.header.cwd.length > 0
+  }
+
+  private requestEvaluation(state: DriverState): void {
+    if (state.stopping || this.disposed
+      || state.activation.session !== state.agent.session
+      || !state.activation.activated) return
+    state.requested = true
+    if (state.run !== undefined) return
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:307-326](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L307-L326)
-
-绑定必须唯一且线程与字段一致。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  payload: Record<string, unknown>,
-  threadId: string,
-): Binding | undefined {
-  if (payload.schema_version !== RESOLUTION_SCHEMA
-    || payload.ok !== true
-    || payload.status !== 'bound'
-    || payload.host_surface !== HOST_SURFACE
-    || payload.thread_id !== threadId) return undefined
-  const goalId = typeof payload.goal_id === 'string' ? payload.goal_id : ''
-  const agentId = typeof payload.agent_id === 'string' ? payload.agent_id : ''
-  const matches = Array.isArray(payload.matches) ? payload.matches : []
-  const match = matches.length === 1 ? record(matches[0]) : undefined
-  return goalId.length > 0
-    && goalId.trim() === goalId
-    && agentId.length > 0
-    && agentId.trim() === agentId
-    && match?.goal_id === goalId
-    && match.agent_id === agentId
-    ? { goalId, agentId }
-    : undefined
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:916-950](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L916-L950)
-
-解析绑定并按同一轮次验证 quota。
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-    const bindingPayload = await this.resolveBinding(command, state.agent, signal)
-    this.ensureReady(state, signal, session)
-    if (bindingPayload.ok !== true) {
-      throw new LoopXCliError(
-        'typed_failure',
-        'LoopX binding authority rejected automatic continuation',
-        false,
-      )
-    }
-    const binding = exactBinding(bindingPayload, String(state.agent.id))
-    if (binding === undefined) {
-      return { kind: 'wait', schedulerToken: '', unchangedPolls: 0 }
-    }
-
-    const turnInstanceId = this.makeTurnInstanceId()
-    const quota = await this.readQuota(command, state.agent, binding, turnInstanceId, signal)
-    this.ensureReady(state, signal, session)
-    if (quota.ok !== true) {
-      throw new LoopXCliError(
-        'typed_failure',
-        'LoopX quota authority rejected automatic continuation',
-        false,
-      )
-    }
-    if (!exactQuotaContext(quota, binding)
-      || (quota.should_run === true && !exactQuotaReceipt(quota, turnInstanceId))) {
-      throw new LoopXCliError(
-        'invalid_schema',
-        'LoopX quota response did not match the bound Goal and Agent',
-        false,
-      )
-    }
-    if (quota.should_run !== true) {
-      return schedulerWait(quota, state.schedulerToken, state.unchangedPolls)
-    }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:951-979](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L951-L979)
-
-heartbeat 身份通过后才构造排队计划。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-    const heartbeat = await this.readHeartbeat(
-      command,
-      state.agent,
-      binding,
-      turnInstanceId,
-      signal,
-    )
-    this.ensureReady(state, signal, session)
-    if (heartbeat.ok !== true) {
-      throw new LoopXCliError(
-        'typed_failure',
-        'LoopX heartbeat authority rejected automatic continuation',
-        false,
-      )
-    }
-    const taskBody = exactHeartbeat(heartbeat, binding, turnInstanceId)
-    if (taskBody === undefined) {
-      throw new LoopXCliError(
-        'invalid_schema',
-        'LoopX heartbeat response did not match the bound Goal and Agent',
-        false,
-      )
-    }
-    return {
-      kind: 'queue',
-      ...binding,
-      session,
-      turnInstanceId,
-      taskBody: taskBodyWithRewardMemory(taskBody, quota),
-```
-
-</details>
-
-**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:875-893](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L875-L893)
+**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:875-893](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L875-L893)
 
 原会话建立预约和实际 followup。
 
@@ -600,30 +574,30 @@ heartbeat 身份通过后才构造排队计划。
 <summary>查看原文（19行）</summary>
 
 ```text
-    if (!this.ready(state) || state.agent.session !== plan.session) return true
-    const message = automaticMessage(plan)
-    const reservation: Reservation = {
-      messageId: message.id,
-      content: message.content,
-      source: message.source,
-      session: plan.session,
-      goalId: plan.goalId,
-      agentId: plan.agentId,
-      turnInstanceId: plan.turnInstanceId,
-      phase: 'queued',
-      preserveAcrossPause: false,
     }
-    state.reservation = reservation
-    try {
-      state.agent.followup(message)
-    } catch (error: unknown) {
+    const admitted = decision.messages.find(message => message.id === reservation.messageId)
+    if (decision.messages.filter(message => !isHostContextMessage(message)).length !== 1
+      || admitted === undefined
+      || !sameReservation(admitted, reservation)) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('downstream-batch', decision.messages, submitted, startedAt)}`)
       this.retireReservation(state)
-      this.warn(`dsh-loopx-driver: could not queue same-session work: ${renderThrown(error)}`)
+      this.restoreOtherMessages(agent, decision.messages, submitted)
+      return { kind: 'reject' }
+    }
+    if (!(await this.authorityStillAllows(state, reservation, signal))) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('authority-after-next', decision.messages, submitted, startedAt)}`)
+      this.retireReservation(state)
+      this.restoreOtherMessages(agent, decision.messages, submitted)
+      return { kind: 'reject' }
+    }
+    return decision
+  }
+
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:668-687](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L668-L687)
+**依据 8 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:668-687](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L668-L687)
 
 拒绝混合消息和权威失效。
 
@@ -631,31 +605,31 @@ heartbeat 身份通过后才构造排队计划。
 <summary>查看原文（20行）</summary>
 
 ```text
-    if (submitted === undefined) return next()
-    if (reservation === undefined || !sameReservation(submitted, reservation)
-      || reservation.phase !== 'claimed') {
-      if (reservation !== undefined && submitted.id === reservation.messageId) {
-        this.retireReservation(state)
-      }
-      this.restoreOtherMessages(agent, messages, submitted)
-      return { kind: 'reject' }
-    }
-    if (messages.some(message => message.id !== submitted.id)) {
-      this.retireReservation(state)
-      this.restoreOtherMessages(agent, messages, submitted)
-      return { kind: 'reject' }
-    }
+    if (state === undefined) return
+    this.stopState(state)
+    this.states.delete(agent)
+  }
 
-    if (!(await this.authorityStillAllows(state, reservation, signal))) {
-      this.retireReservation(state)
-      this.restoreOtherMessages(agent, messages, submitted)
-      this.requestEvaluation(state)
-      return { kind: 'reject' }
+  onSessionStart(agent: Agent): void {
+    const state = this.stateFor(agent)
+    this.cancelPending(state)
+    this.retireReservation(state)
+    state.competing = inboxHasPending(agent.inbox)
+    state.pauseAfterTurnError = false
+    state.schedulerToken = ''
+    state.unchangedPolls = 0
+    state.commands.clear()
+    state.activation = foldSessionActivation(agent.session)
+    this.requestEvaluation(state)
+  }
+
+  onAgentStatus(agent: Agent, status: AgentStatus): void {
+    if (status !== 'idle') return
 ```
 
 </details>
 
-**依据 9 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:708-721](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L708-L721)
+**依据 9 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:708-721](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L708-L721)
 
 下游判定后再次检查消息与权威。
 
@@ -663,25 +637,25 @@ heartbeat 身份通过后才构造排队计划。
 <summary>查看原文（14行）</summary>
 
 ```text
-    const admitted = decision.messages.find(message => message.id === reservation.messageId)
-    if (decision.messages.length !== 1
-      || admitted === undefined
-      || !sameReservation(admitted, reservation)) {
-      this.retireReservation(state)
-      this.restoreOtherMessages(agent, decision.messages, submitted)
-      return { kind: 'reject' }
+      return
     }
-    if (!(await this.authorityStillAllows(state, reservation, signal))) {
+    state.competing = true
+  }
+
+  onInboxDiscarded(agent: Agent, message: UserMessage): void {
+    const state = this.states.get(agent)
+    if (state?.reservation !== undefined && sameReservation(message, state.reservation)) {
       this.retireReservation(state)
-      this.restoreOtherMessages(agent, decision.messages, submitted)
-      return { kind: 'reject' }
     }
-    return decision
+  }
+
+  onAgentError(agent: Agent): void {
+    const state = this.stateFor(agent)
 ```
 
 </details>
 
-**依据 10 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1253-1262](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L1253-L1262)
+**依据 10 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1253-1262](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L1253-L1262)
 
 pre-step 和 exact Session 事件接线。
 
@@ -689,16 +663,215 @@ pre-step 和 exact Session 事件接线。
 <summary>查看原文（10行）</summary>
 
 ```text
-    ctx.on('agent/pre-step', ({ agent, messages, signal }, next) => (
-      driver.onPreStep(agent, messages, signal, next)
-    ))
-    ctx.on('session/event', (session, event) => {
-      if (event.type === 'step/end' || event.type === 'turn/end') {
-        goalBarCoordinator.publishSessionCandidate(session, event)
+        '--format', 'json',
+        'resolve-agent-thread',
+        '--host-surface', HOST_SURFACE,
+        '--thread-id', String(agent.id),
+      ],
+      {
+        runner: this.runner,
+        cwd: agent.session.header.cwd,
+        signal,
+        attempts: 3,
+```
+
+</details>
+
+**依据 11 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:350-439](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L350-L439)
+
+分页导航、选择哈希、偏移、总量和继续页约束。
+
+<details>
+<summary>查看原文（90行）</summary>
+
+```text
+const QUOTA_NAVIGATION_SCHEMA = 'context_capture_navigation_v1'
+const QUOTA_SELECTION_PAGE_SCHEMA = 'context_capture_selection_page_v1'
+const QUOTA_INLINE_PAGE_SCHEMA = 'context_capture_page_v1'
+const QUOTA_INDEX_SCHEMA = 'context_capture_index_v1'
+const QUOTA_SELECTION_SCHEMA = 'context_capture_selection_v1'
+const QUOTA_REQUIRED_POINTERS = ['/ok', '/mode', '/goal_id', '/should_run', '/agent_identity']
+const QUOTA_RECEIPT_POINTER = '/heartbeat_receipt'
+const QUOTA_OPTIONAL_POINTERS = [QUOTA_RECEIPT_POINTER, '/scheduler_hint', '/reward_memory_recall']
+
+type QuotaReadOptions = Pick<JsonCommandOptions, 'runner' | 'cwd' | 'signal'>
+
+function quotaNavigationReference(payload: Record<string, unknown>): string | undefined {
+  if (payload.schema_version !== QUOTA_NAVIGATION_SCHEMA || payload.ok !== true) return undefined
+  const path = record(payload.recovery)?.reference_file
+  return typeof path === 'string' && isAbsolute(path) && !path.includes('\0') ? path : undefined
+}
+
+async function readQuotaSelections(
+  command: LoopXCommand,
+  reference: string,
+  selectionArgs: readonly string[],
+  schema: string,
+  options: QuotaReadOptions,
+): Promise<unknown[]> {
+  let cursor = reference
+  let offset = 0
+  let total: number | undefined
+  let inlineDigests: { source: string; selection: string } | undefined
+  const parts: string[] = []
+  const isListing = schema === QUOTA_INDEX_SCHEMA
+  const pointers = isListing ? [''] : selectionArgs.filter((_, index) => index % 2 === 1)
+  for (;;) {
+    const page = await runJsonCommand(command, [
+      '--format', 'json', 'quota', 'context-read', '--reference-file', cursor,
+      '--offset', String(offset), '--page-bytes', '64000', '--max-page-output-bytes', '64000',
+      ...(offset === 0 || inlineDigests !== undefined ? selectionArgs : []),
+      ...(inlineDigests === undefined ? [] : ['--selection-sha256', inlineDigests.selection]),
+    ], options)
+    if (page.ok !== true
+      || (page.schema_version !== QUOTA_SELECTION_PAGE_SCHEMA && page.schema_version !== QUOTA_INLINE_PAGE_SCHEMA)
+      || typeof page.content !== 'string' || page.offset !== offset
+      || typeof page.total_bytes !== 'number' || !Number.isSafeInteger(page.total_bytes)
+      || page.total_bytes <= 0
+      || (total !== undefined && page.total_bytes !== total)) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an invalid page', false)
+    }
+    if (page.schema_version === QUOTA_INLINE_PAGE_SCHEMA) {
+      const { sha256: source, selection_sha256: selection, selected_pointers: selected } = page
+      if (typeof source !== 'string' || !/^[a-f0-9]{64}$/u.test(source)
+        || typeof selection !== 'string' || !/^[a-f0-9]{64}$/u.test(selection)
+        || (page.list_fields === true) !== isListing
+        || !Array.isArray(selected) || selected.length !== pointers.length
+        || !pointers.every(pointer => selected.includes(pointer))
+        || (inlineDigests === undefined && offset !== 0)
+        || (inlineDigests !== undefined && (source !== inlineDigests.source || selection !== inlineDigests.selection))) {
+        throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an invalid inline selection', false)
       }
-      const agent = ctx.agents.get(session.id)
-      if (agent?.session === session) driver.onSessionEvent(agent, event)
-    })
+      // A read-only capture may have no derived reader descriptor. Continue
+      // through the original reference with the same selector and view hash.
+      inlineDigests = { source, selection }
+    }
+    total = page.total_bytes
+    const next = offset + Buffer.byteLength(page.content, 'utf8')
+    parts.push(page.content)
+    if (page.eof === true && next === total && page.next_offset === null) break
+    const nextReference = inlineDigests === undefined ? page.reference_file : reference
+    if (page.eof !== false || next <= offset || next >= total || page.next_offset !== next
+      || typeof nextReference !== 'string' || !isAbsolute(nextReference)
+      || nextReference.includes('\0') || dirname(nextReference) !== dirname(reference)
+      || (offset !== 0 && nextReference !== cursor)) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an invalid continuation', false)
+    }
+    cursor = nextReference
+    offset = next
+  }
+  const selectedBody = parts.join('')
+  if (inlineDigests !== undefined
+    && createHash('sha256').update(selectedBody, 'utf8').digest('hex') !== inlineDigests.selection) {
+    throw new LoopXCliError('invalid_schema', 'LoopX quota capture selection digest did not match its bytes', false)
+  }
+  let body: Record<string, unknown> | undefined
+  try {
+    body = record(JSON.parse(selectedBody))
+  } catch {
+    throw new LoopXCliError('invalid_json', 'LoopX quota capture returned invalid selection JSON', false)
+  }
+  if (body?.schema_version !== schema || !Array.isArray(body.selections)) {
+    throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an incompatible selection', false)
+  }
+  return body.selections
+```
+
+</details>
+
+**依据 12 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:442-480](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L442-L480)
+
+首次与预执行复核字段范围及缺项拒绝。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+async function readQuotaCapture(
+  command: LoopXCommand,
+  reference: string,
+  options: QuotaReadOptions,
+  revalidateOnly: boolean,
+): Promise<Record<string, unknown>> {
+  // Entering a queued step requires the original Turn receipt. The scheduler
+  // and reward memory are only used when first deciding whether to queue work.
+  let pointers = [...QUOTA_REQUIRED_POINTERS, QUOTA_RECEIPT_POINTER]
+  if (!revalidateOnly) {
+    // The ordinary selector rejects missing paths. Discover which optional
+    // fields exist on the same verified capture before preparing the step.
+    const index = await readQuotaSelections(command, reference, ['--list'], QUOTA_INDEX_SCHEMA, options)
+    const root = record(index[0])
+    if (index.length !== 1 || root?.pointer !== '' || !Array.isArray(root.fields)) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an invalid field index', false)
+    }
+    const present = new Set(root.fields.map(field => record(field)?.pointer))
+    if (!QUOTA_REQUIRED_POINTERS.every(pointer => present.has(pointer))) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture lacks admission fields', false)
+    }
+    pointers = [...QUOTA_REQUIRED_POINTERS, ...QUOTA_OPTIONAL_POINTERS.filter(pointer => present.has(pointer))]
+  }
+  const selected = await readQuotaSelections(
+    command, reference, pointers.flatMap(pointer => ['--select', pointer]), QUOTA_SELECTION_SCHEMA, options,
+  )
+  const result: Record<string, unknown> = {}
+  const remaining = new Set(pointers)
+  for (const item of selected) {
+    const field = record(item)
+    if (typeof field?.pointer !== 'string' || !remaining.delete(field.pointer) || !Object.hasOwn(field, 'value')) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture returned an unexpected admission field', false)
+    }
+    result[field.pointer.slice(1)] = field.value
+  }
+  if (remaining.size !== 0) {
+    throw new LoopXCliError('invalid_schema', 'LoopX quota capture omitted requested admission fields', false)
+  }
+  return result
+```
+
+</details>
+
+**依据 13 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1279-1312](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L1279-L1312)
+
+CLI 代际分流和配额凭据对当前绑定的核验。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+    // supported CLIs continue to answer this Host-only call with raw JSON.
+    const progressive = supportedLoopXVersion(command.version, '2.3.0') !== undefined
+    const options = { runner: this.runner, cwd: agent.session.header.cwd, signal }
+    const rawAdmission = (payload: Record<string, unknown>) => payload.goal_id === binding.goalId
+      && typeof payload.ok === 'boolean' && typeof payload.should_run === 'boolean'
+    const quota = await runJsonCommand(
+      command,
+      [
+        '--registry', '.loopx/registry.json',
+        '--format', 'json',
+        'quota', 'should-run',
+        '--goal-id', binding.goalId,
+        '--agent-id', binding.agentId,
+        '--runtime-profile', 'generic_cli',
+        ...(progressive && revalidateOnly ? [] : ['--include-detail', 'scheduler']),
+        '--turn-instance-id', turnInstanceId,
+      ],
+      {
+        ...options,
+        attempts: 3,
+        retryDelaysMs: this.retryDelaysMs,
+        ...(progressive ? {} : { env: { ...process.env, LOOPX_CONTEXT_DELIVERY: 'off' } }),
+        validate: payload => rawAdmission(payload) || (progressive && quotaNavigationReference(payload) !== undefined),
+      },
+    )
+    const reference = progressive ? quotaNavigationReference(quota) : undefined
+    if (reference === undefined) return quota
+    // Reading a saved capture is outside the guard's transport retry.
+    const decision = await readQuotaCapture(command, reference, options, revalidateOnly)
+    if (!rawAdmission(decision)) {
+      throw new LoopXCliError('invalid_schema', 'LoopX quota capture did not match the bound Goal', false)
+    }
+    return decision
+  }
 ```
 
 </details>
@@ -721,9 +894,11 @@ pre-step 和 exact Session 事件接线。
 
 GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-lifecycle stop。若 CLI 执行未产生可核对回执，返回 operation_result_unknown。确认后才让 Driver 取消待评估与定时器，移除仍为 queued 的预约。claimed 或 admitted 预约会置 preserveAcrossPause，保留当前这一轮。对处于该状态的预约，pre-step 权威检查仍要求原绑定匹配，但允许绕过已停止目标的再次配额检查。后续回读失败或 Driver 未同步会返回带警告的应用结果。界面在目标 stopped 时显示 paused，即使 DSH Agent 仍 running。故用户需要分别检查 Goal、预约与当轮可见副作用，不能用一次 Pause 恢复已发工具效果。
 
+在 pre-step 交接时，仅 runtime-context、time-context 和 skill-catalog 这三类宿主来源可与续轮消息并存；插件的类似快照或目录形式不能靠外形获准。队列含其他竞争消息时撤回预约并交还其他消息；下游处理后还要求只剩一个非宿主上下文消息，且 ID 和 reservation 一致。授权在 next 前后各重查一次，下游拒绝或抛错会撤回或标暂停。入口检查证明竞争时的代码分流，真实宿主其他钩子的相互作用未实测。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:651-683](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/service.ts#L651-L683)
+**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:651-683](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/service.ts#L651-L683)
 
 先核对预期绑定、目标状态及身份，再实际发 stop 或 resume。
 
@@ -768,7 +943,7 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:695-711](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/service.ts#L695-L711)
+**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:695-711](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/service.ts#L695-L711)
 
 执行失败结果未知，确认后才通知 Driver。
 
@@ -797,7 +972,7 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:594-614](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L594-L614)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:594-614](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L594-L614)
 
 保留已认领或已接纳的预约，再取消未来工作。
 
@@ -805,32 +980,32 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 <summary>查看原文（21行）</summary>
 
 ```text
-  async cancelQueued(
-    capture: GoalBarSessionCapture,
-  ): Promise<GoalBarDriverActionReceipt> {
-    if (!this.captureIsLive(capture)) {
-      return { kind: 'unavailable', reason: 'session_unavailable' }
-    }
-    const state = this.states.get(capture.agent)
-    if (state === undefined) return { kind: 'applied' }
-    if (state.stopping || state.activation.session !== capture.session) {
-      return { kind: 'unavailable', reason: 'session_unavailable' }
-    }
-
-    const reservation = state.reservation
-    if (reservation?.phase === 'claimed' || reservation?.phase === 'admitted') {
-      reservation.preserveAcrossPause = true
-    }
-    this.cancelPending(state)
-    return this.captureIsLive(capture)
-      && state.activation.session === capture.session
-      ? { kind: 'applied' }
-      : { kind: 'unavailable', reason: 'session_unavailable' }
+    const candidateRef = typeof value?.candidate_ref === 'string'
+      ? value.candidate_ref : ''
+    const targetClass = typeof value?.target_class === 'string'
+      ? value.target_class : ''
+    const contentSummary = typeof value?.content_summary === 'string'
+      ? value.content_summary : ''
+    return candidateRef.length > 0
+      && candidateRef.length <= 160
+      && targetClass.length > 0
+      && targetClass.length <= 80
+      && contentSummary.length > 0
+      && contentSummary.length <= 500
+      ? [{ candidate_ref: candidateRef, target_class: targetClass,
+        content_summary: contentSummary }]
+      : []
+  }).slice(0, 4)
+  if (guidance.length === 0) return taskBody
+  const packet = JSON.stringify({
+    schema_version: 'loopx_turn_reward_memory_context_v0',
+    authority: 'guidance_only',
+    instruction: 'Use only when consistent with current evidence; this grants no action authority.',
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1177-1189](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L1177-L1189)
+**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1177-1189](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L1177-L1189)
 
 取消待评估和定时器，只移除 queued。
 
@@ -838,24 +1013,24 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 <summary>查看原文（13行）</summary>
 
 ```text
-  private cancelPending(state: DriverState): void {
-    state.requested = false
-    state.controller?.abort()
-    state.controller = undefined
-    if (state.timer !== undefined) {
-      this.clock.clearTimeout(state.timer)
-      state.timer = undefined
     }
-    const reservation = state.reservation
-    if (reservation === undefined || reservation.phase !== 'queued') return
-    state.agent.inbox.remove(reservation.messageId)
-    this.retireReservation(state)
   }
+
+  private async authorityStillAllows(
+    state: DriverState,
+    reservation: Reservation,
+    signal: AbortSignal,
+  ): Promise<boolean> {
+    if (!this.reservationIsCurrent(state, reservation, signal)) return false
+    const startedAt = performance.now()
+    try {
+      const command = await this.loopXCommand(signal)
+      const bindingPayload = await this.resolveBinding(command, state.agent, signal)
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:983-1008](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L983-L1008)
+**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:983-1008](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L983-L1008)
 
 保留预约仍需精确绑定，但可不再要求新的 quota。
 
@@ -863,37 +1038,37 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 <summary>查看原文（26行）</summary>
 
 ```text
-  private async authorityStillAllows(
-    state: DriverState,
-    reservation: Reservation,
-    signal: AbortSignal,
-  ): Promise<boolean> {
-    if (!this.reservationIsCurrent(state, reservation, signal)) return false
-    try {
-      const command = await this.loopXCommand(signal)
-      const bindingPayload = await this.resolveBinding(command, state.agent, signal)
-      const binding = exactBinding(bindingPayload, String(state.agent.id))
-      if (binding?.goalId !== reservation.goalId || binding.agentId !== reservation.agentId) {
-        return false
-      }
-      if (reservation.preserveAcrossPause) {
-        return this.reservationIsCurrent(state, reservation, signal)
-      }
-      const quota = await this.readQuota(
-        command,
-        state.agent,
-        reservation,
-        reservation.turnInstanceId,
-        signal,
-      )
-      return this.reservationIsCurrent(state, reservation, signal)
-        && (reservation.preserveAcrossPause
-          || exactQuota(quota, reservation, reservation.turnInstanceId))
+        while (state.requested && !state.stopping) {
+          state.requested = false
+          const waiters = [...state.evaluationWaiters]
+          for (const waiter of waiters) state.evaluationWaiters.delete(waiter)
+          let evaluated = false
+          try {
+            evaluated = await this.evaluate(state)
+          } finally {
+            this.resolveEvaluationWaiterBatch(state, waiters, evaluated)
+          }
+        }
+      })
+    } catch (error: unknown) {
+      state.requested = false
+      this.resolveEvaluationWaiters(state, false)
+      this.warn(`dsh-loopx-driver: could not start evaluation: ${renderThrown(error)}`)
+      return
+    }
+    state.run = run
+    const retire = (): void => {
+      state.run = undefined
+      if (state.requested && !state.stopping) this.requestEvaluation(state)
+    }
+    void run.then(retire, error => {
+      this.warn(`dsh-loopx-driver: evaluation failed: ${renderThrown(error)}`)
+      retire()
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:714-737](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/service.ts#L714-L737)
+**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:714-737](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/service.ts#L714-L737)
 
 权威回读与 Driver 同步失败分开。
 
@@ -929,7 +1104,7 @@ GoalBar 的 Pause 先核对当前绑定和目标状态，再执行 LoopX goal-li
 
 </details>
 
-**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx:23-28](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx#L23-L28)
+**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx:23-28](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx#L23-L28)
 
 界面停状态优先于 Agent running。
 
@@ -941,6 +1116,98 @@ function visibleStatus(
   return snapshot.agentStatus === 'running' ? 'running' : 'active'
 }
 ```
+
+**依据 8 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:173-184](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L173-L184)
+
+宿主上下文按来源 kind 识别。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+function isDriverMessage(message: UserMessage): boolean {
+  return continuationSource(message) !== undefined
+}
+
+function isHostContextMessage(message: UserMessage): boolean {
+  // DSH kind identifies the producer; snapshot/catalog forms also describe plugin messages.
+  const kind: string = message.source.kind
+  return kind === 'runtime-context' || kind === 'time-context' || kind === 'skill-catalog'
+}
+
+function sameReservation(message: UserMessage, reservation: Reservation): boolean {
+  const source = continuationSource(message)
+```
+
+</details>
+
+**依据 9 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:833-888](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L833-L888)
+
+并行消息、授权变化和下游判决的失败分支。
+
+<details>
+<summary>查看原文（56行）</summary>
+
+```text
+    if (reservation === undefined || !sameReservation(submitted, reservation)
+      || reservation.phase !== 'claimed') {
+      this.warn(`dsh-loopx-driver: ${preStepRejection(reservation === undefined ? 'missing-reservation' : !sameReservation(submitted, reservation) ? 'reservation-mismatch' : 'reservation-not-claimed', messages, submitted, startedAt)}`)
+      if (reservation !== undefined && submitted.id === reservation.messageId) {
+        this.retireReservation(state)
+      }
+      this.restoreOtherMessages(agent, messages, submitted)
+      return { kind: 'reject' }
+    }
+    if (messages.some(message => message.id !== submitted.id && !isHostContextMessage(message))) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('competing-messages', messages, submitted, startedAt)}`)
+      this.retireReservation(state)
+      this.restoreOtherMessages(agent, messages, submitted)
+      return { kind: 'reject' }
+    }
+
+    if (!(await this.authorityStillAllows(state, reservation, signal))) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('authority-before-next', messages, submitted, startedAt)}`)
+      this.retireReservation(state)
+      this.restoreOtherMessages(agent, messages, submitted)
+      this.requestEvaluation(state)
+      return { kind: 'reject' }
+    }
+
+    let decision: PreStepDecision
+    try {
+      decision = await next()
+    } catch (error: unknown) {
+      state.pauseAfterTurnError = true
+      this.retireReservation(state)
+      throw error
+    }
+    if (signal.aborted) {
+      state.pauseAfterTurnError = true
+      this.retireReservation(state)
+      return decision
+    }
+    if (decision.kind === 'reject') {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('downstream-reject', messages, submitted, startedAt)}`)
+      state.pauseAfterTurnError = true
+      this.retireReservation(state)
+      return decision
+    }
+    const admitted = decision.messages.find(message => message.id === reservation.messageId)
+    if (decision.messages.filter(message => !isHostContextMessage(message)).length !== 1
+      || admitted === undefined
+      || !sameReservation(admitted, reservation)) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('downstream-batch', decision.messages, submitted, startedAt)}`)
+      this.retireReservation(state)
+      this.restoreOtherMessages(agent, decision.messages, submitted)
+      return { kind: 'reject' }
+    }
+    if (!(await this.authorityStillAllows(state, reservation, signal))) {
+      this.warn(`dsh-loopx-driver: ${preStepRejection('authority-after-next', decision.messages, submitted, startedAt)}`)
+      this.retireReservation(state)
+      this.restoreOtherMessages(agent, decision.messages, submitted)
+```
+
+</details>
 
 #### 缺口
 
@@ -960,50 +1227,11 @@ function visibleStatus(
 
 固定包版本为 0.1.1-beta.6。清单列 Node ^22.22.3 或 >=24.0.0，宿主 peer 为若干具体范围。README 区分已发包的作者资格与本源候选额外声明，本轮未确认发行物等于该提交。启动初始化行自动尝试复用兼容 LoopX，显式 LOOPX_BIN 不兼容时停止，不能自动改用户指定程序。需要安装时，启动代码调用 Python 的 pip --target 把依赖写入 managed runtime，再执行 workflow skills install 并 inspect 回读。作者说明 Python 3.11+ 与 pip，缺兼容 CLI 时需要网络，最低 LoopX 版本为 1.2.4。初始化异常记状态并保留命令，不能把该处理写成全部桥接能力已可用。显式 /loopx-init 还会排队开始和完成或失败提示。观察器虽然有 Loader 行，只有 Goal、Session 和完整运行身份都有效才注册事件，并向单独的按目标哈希分账本追加诊断数据。
 
+CLI 探测预先验证候选的版本，失败记录阶段、候选类型、有限 OS 错误码、退出码和 cwd 是否存在等字段；配置命令、托管启动器、PATH 和 Python 模块候选仍需按现场逐个核对。受限诊断缓解了仅见 missing 的问题，不证明任意安装环境可用。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/package.json:48-50](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/package.json#L48-L50)
-
-固定 Node 版本范围。
-
-```text
-  "engines": {
-    "node": "^22.22.3 || >=24.0.0"
-  },
-```
-
-**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/package.json:67-85](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/package.json#L67-L85)
-
-DSH bundle、Web 注入与 peer 约束。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-connection",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-renderer"
-      ],
-      "platform": "web"
-    }
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.2",
-    "@deepseek-ai/dsh": ">=0.1.5-rc.1 <0.2.0-0 || >=0.1.7-rc.2 <0.1.7 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-rc.1 <0.2.1",
-    "@deepseek-ai/dsh-client-connection": ">=0.1.5-rc.1 <0.2.0-0 || >=0.1.7-rc.2 <0.1.7 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-rc.1 <0.2.1",
-    "@deepseek-ai/dsh-client-locale": ">=0.1.5-rc.1 <0.2.0-0 || >=0.1.7-rc.2 <0.1.7 || >=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-rc.1 <0.2.1",
-```
-
-</details>
-
-**依据 3 · 作者声明**：[packages/dsh-loopx-plugin/README.md:44-68](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/README.md#L44-L68)
+**依据 1 · 作者声明**：[packages/dsh-loopx-plugin/README.md:44-68](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/README.md#L44-L68)
 
 作者描述 Python、pip、网络和独立运行时。
 
@@ -1040,7 +1268,7 @@ owner. Older plugin releases retain their original CLI requirements.
 
 </details>
 
-**依据 4 · 作者声明**：[packages/dsh-loopx-plugin/README.md:69-85](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/README.md#L69-L85)
+**依据 2 · 作者声明**：[packages/dsh-loopx-plugin/README.md:69-85](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/README.md#L69-L85)
 
 作者分开已发包和源候选的宿主覆盖。
 
@@ -1048,6 +1276,10 @@ owner. Older plugin releases retain their original CLI requirements.
 <summary>查看原文（17行）</summary>
 
 ````text
+The continuation driver follows LoopX's context delivery setting on CLI 2.3
+and later. When the guard returns a capture reference, the driver reads the
+admission fields from that same capture. The driver requests raw admission
+JSON from older supported CLIs.
 Install the prebuilt release into the web profile:
 
 ```bash
@@ -1061,27 +1293,23 @@ RPC registration remains available to explicit callers, but plugin startup
 always uses the shared API.
 
 The source candidate additionally qualifies DSH 0.2.1-rc.2. Its frozen source
-host uses MCP client 2.3.0 and SDK 1.32.0 to address
-[GHSA-6prh-2h8m-c8cw](https://github.com/advisories/GHSA-6prh-2h8m-c8cw).
-These dependency overrides do not patch an independently installed DSH binary;
-that host's owner must update its affected MCP dependencies separately.
 ````
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/cli.ts:1-5](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/cli.ts#L1-L5)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/cli.ts:1-5](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/cli.ts#L1-L5)
 
 最低 LoopX 版本。
 
 ```text
 import { spawn } from 'node:child_process'
+import { statSync } from 'node:fs'
 
 // 1.2.4 includes the released Windows peer-file fix. Bootstrap and every
 // runtime consumer must use the same floor, including an existing global CLI.
-export const MINIMUM_LOOPX_VERSION = '1.2.4'
 ```
 
-**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:256-281](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L256-L281)
+**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:256-281](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L256-L281)
 
 实际执行 Python pip --target，有超时和输出上限。
 
@@ -1119,7 +1347,7 @@ async function installCli(
 
 </details>
 
-**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:315-339](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L315-L339)
+**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:315-339](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L315-L339)
 
 先找已有 CLI，拒绝不兼容的显式 override。
 
@@ -1156,7 +1384,7 @@ export async function initializeLoopX(options: LoopXInitOptions = {}): Promise<L
 
 </details>
 
-**依据 8 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:368-401](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L368-L401)
+**依据 6 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:368-401](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L368-L401)
 
 安装 Skill 后核对响应。
 
@@ -1202,7 +1430,7 @@ export async function initializeLoopX(options: LoopXInitOptions = {}): Promise<L
 
 </details>
 
-**依据 9 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:404-429](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L404-L429)
+**依据 7 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:404-429](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L404-L429)
 
 执行 inspect 确认不需要再装。
 
@@ -1240,7 +1468,7 @@ export async function initializeLoopX(options: LoopXInitOptions = {}): Promise<L
 
 </details>
 
-**依据 10 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:570-588](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L570-L588)
+**依据 8 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:570-588](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L570-L588)
 
 显式初始化可能送入两阶段 followup。
 
@@ -1271,7 +1499,7 @@ export async function initializeLoopX(options: LoopXInitOptions = {}): Promise<L
 
 </details>
 
-**依据 11 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:633-647](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/init-command.ts#L633-L647)
+**依据 9 · 源码核查**：[packages/dsh-loopx-plugin/src/init-command.ts:633-647](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/init-command.ts#L633-L647)
 
 自动初始化、错误日志和 bootstrap 状态。
 
@@ -1298,7 +1526,7 @@ export async function apply(ctx: Context, options: LoopXInitOptions = {}): Promi
 
 </details>
 
-**依据 12 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:264-279](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/observer.ts#L264-L279)
+**依据 10 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:264-279](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/observer.ts#L264-L279)
 
 诊断必须提供完整匹配配置。
 
@@ -1326,7 +1554,7 @@ export function resolveShadowObserverConfig(
 
 </details>
 
-**依据 13 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:315-327](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/observer.ts#L315-L327)
+**依据 11 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:315-327](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/observer.ts#L315-L327)
 
 账本追加的本地写盘路径。
 
@@ -1351,7 +1579,7 @@ export async function appendLedgerLines(config: ShadowObserverConfig, lines: rea
 
 </details>
 
-**依据 14 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:653-674](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/observer.ts#L653-L674)
+**依据 12 · 源码核查**：[packages/dsh-loopx-plugin/src/observer.ts:653-674](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/observer.ts#L653-L674)
 
 配置缺失时不会注册观察器。
 
@@ -1385,6 +1613,94 @@ export function apply(ctx: Context): void {
 
 </details>
 
+**依据 13 · 源码核查**：[packages/dsh-loopx-plugin/src/cli.ts:32-65](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/cli.ts#L32-L65)
+
+诊断只接收受限类型及标量。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+export interface LoopXCliDiagnostics {
+  osCode?: string | undefined
+  candidate?: 'configured-command' | 'managed-launcher' | 'path-loopx' | 'python-module' | undefined
+  cwdExists?: boolean | undefined
+  causeKind?: LoopXCliErrorKind | undefined
+  probes?: readonly LoopXCliError[] | undefined
+}
+
+export function spawnCwdExists(cwd?: string): boolean | undefined {
+  try {
+    return statSync(cwd ?? process.cwd(), { throwIfNoEntry: false })?.isDirectory() ?? false
+  } catch {
+    return undefined
+  }
+}
+
+/** Only closed labels and scalars belong in the driver's diagnostic record. */
+function cliFailureFields(error: unknown): string {
+  const failure = error instanceof LoopXCliError ? error : undefined
+  const details = failure?.diagnostics
+  const kind = (value: unknown): string => [
+    'aborted', 'missing', 'timeout', 'transport', 'output_limit', 'exit',
+    'typed_failure', 'invalid_json', 'invalid_schema',
+  ].includes(value as string) ? String(value) : 'internal'
+  const code = [
+    'ENOENT', 'EPERM', 'EACCES', 'ETIMEDOUT', 'EAGAIN', 'EBUSY', 'EMFILE',
+    'ENFILE', 'ENOMEM', 'ENOTDIR', 'E2BIG', 'ENOEXEC', 'EINVAL', 'ECANCELED', 'EIO',
+  ].includes(details?.osCode ?? '') ? details!.osCode : 'none'
+  const candidate = [
+    'configured-command', 'managed-launcher', 'path-loopx', 'python-module',
+  ].includes(details?.candidate ?? '') ? details!.candidate : 'unknown'
+  const exitCode = Number.isSafeInteger(failure?.exitCode) ? failure!.exitCode : 'none'
+  const cwd = typeof details?.cwdExists === 'boolean' ? details.cwdExists : 'unknown'
+  return `kind=${kind(failure?.kind)} cause_kind=${kind(details?.causeKind ?? failure?.kind)} code=${code} exit_code=${exitCode} candidate=${candidate} cwd_exists=${cwd}`
+```
+
+</details>
+
+**依据 14 · 源码核查**：[packages/dsh-loopx-plugin/src/cli.ts:432-461](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/cli.ts#L432-L461)
+
+版本探测失败后合并标签和原因。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+          signal: options.signal,
+          timeoutMs: 5_000,
+          maxOutputBytes: 16 * 1024,
+        },
+      )
+      if (options.signal?.aborted) {
+        throw new LoopXCliError('aborted', 'operation was cancelled', false)
+      }
+      const version = result.exitCode === 0 ? supportedLoopXVersion(result.stdout) : undefined
+      if (version) return { ...candidate, version, candidate: label }
+      throw new LoopXCliError(
+        result.exitCode === 0 ? 'invalid_schema' : 'exit',
+        'LoopX version probe did not verify', false, result.exitCode,
+      )
+    } catch (error: unknown) {
+      if (options.signal?.aborted) {
+        throw new LoopXCliError('aborted', 'operation was cancelled', false)
+      }
+      if (error instanceof LoopXCliError && error.kind === 'aborted') throw error
+      const failure = error instanceof LoopXCliError ? error
+        : new LoopXCliError('transport', 'LoopX version probe failed to execute', false)
+      probes.push(new LoopXCliError(failure.kind, 'version probe failed', false, failure.exitCode, {
+        osCode: failure.diagnostics.osCode, candidate: label, cwdExists,
+      }))
+    }
+  }
+  const last = probes.at(-1)
+  throw new LoopXCliError('missing', `LoopX CLI ${MINIMUM_LOOPX_VERSION} or newer is unavailable`, false, last?.exitCode, {
+    ...last?.diagnostics, causeKind: last?.kind, probes,
+  })
+```
+
+</details>
+
 #### 缺口
 
 - 没有验收实际发行包、首次网络安装和卸载残留
@@ -1405,7 +1721,7 @@ export function apply(ctx: Context): void {
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:523-539](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L523-L539)
+**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:523-539](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L523-L539)
 
 会话恢复闲置才重评，竞争消息取消待评估。
 
@@ -1413,40 +1729,40 @@ export function apply(ctx: Context): void {
 <summary>查看原文（17行）</summary>
 
 ```text
-  onAgentStatus(agent: Agent, status: AgentStatus): void {
-    if (status !== 'idle') return
-    const state = this.stateFor(agent)
-    if (state.reservation?.phase === 'claimed' || state.reservation?.phase === 'admitted') {
-      this.retireReservation(state)
-    }
-    state.competing = inboxHasPending(agent.inbox)
-    if (!state.pauseAfterTurnError) this.requestEvaluation(state)
+  const token = typeof reset?.reset_token === 'string' ? reset.reset_token : ''
+  const unchangedPolls = token.length > 0 && token === currentToken
+    ? currentPolls
+    : 0
+  const rawLimit = record(unchanged?.limits)?.local_scheduler
+  const limit = typeof rawLimit === 'number'
+    && Number.isSafeInteger(rawLimit)
+    && rawLimit >= 0
+    ? rawLimit
+    : undefined
+  if (limit !== undefined && unchangedPolls >= limit) {
+    return { kind: 'wait', schedulerToken: token, unchangedPolls }
   }
 
-  onInboxInserted(agent: Agent, message: UserMessage): void {
-    const state = this.stateFor(agent)
-    if (state.reservation !== undefined && sameReservation(message, state.reservation)) return
-    state.competing = true
-    if (message.source.kind === 'user') state.pauseAfterTurnError = false
-    this.cancelPending(state)
-  }
+  const progression = Array.isArray(local.example_progression_minutes)
+    ? local.example_progression_minutes.filter((value): value is number => (
+        typeof value === 'number' && Number.isFinite(value) && value > 0
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:557-561](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L557-L561)
+**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:557-561](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L557-L561)
 
 Agent 出错停下待处理。
 
 ```text
-  onAgentError(agent: Agent): void {
-    const state = this.stateFor(agent)
-    state.pauseAfterTurnError = true
-    this.cancelPending(state)
+    kind: 'wait',
+    delayMs: Math.min(Math.round(delayMs), MAX_WAIT_MS),
+    schedulerToken: token,
+    unchangedPolls: unchangedPolls + 1,
   }
 ```
 
-**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:643-653](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L643-L653)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:643-653](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L643-L653)
 
 精确消息被接纳及异常结束停续轮的分支。
 
@@ -1454,22 +1770,22 @@ Agent 出错停下待处理。
 <summary>查看原文（11行）</summary>
 
 ```text
-    if (event.type === 'user/message'
-      && state.reservation !== undefined
-      && event.data.id === state.reservation.messageId) {
-      state.reservation.phase = 'admitted'
-      return
-    }
-    if (event.type === 'turn/end'
-      && (event.data.reason.kind === 'max-tokens' || event.data.reason.kind === 'aborted')) {
-      state.pauseAfterTurnError = true
-      this.cancelPending(state)
-    }
+  constructor(options: LoopXDriverOptions) {
+    this.isLiveAgent = options.isLiveAgent
+    this.runner = options.runner
+    this.commandResolver = options.resolveCommand
+      ?? (signal => resolveLoopXCommand({ runner: this.runner, signal }))
+    this.clock = options.clock ?? systemClock
+    this.makeTurnInstanceId = options.makeTurnInstanceId
+      ?? (() => `dsh-loopx-${randomUUID()}`)
+    this.retryDelaysMs = options.retryDelaysMs ?? [200, 750]
+    this.runDetached = options.runDetached ?? (operation => operation())
+    this.warn = message => {
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:695-737](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/service.ts#L695-L737)
+**依据 4 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:695-737](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/service.ts#L695-L737)
 
 CLI 不确定、回读和同步警告结果分开。
 
@@ -1524,7 +1840,7 @@ CLI 不确定、回读和同步警告结果分开。
 
 </details>
 
-**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1080-1104](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L1080-L1104)
+**依据 5 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:1080-1104](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L1080-L1104)
 
 配额调用有固定轮次及有界重试。
 
@@ -1532,31 +1848,31 @@ CLI 不确定、回读和同步警告结果分开。
 <summary>查看原文（25行）</summary>
 
 ```text
-    return runJsonCommand(
-      command,
-      [
-        '--registry', '.loopx/registry.json',
-        '--format', 'json',
-        'quota', 'should-run',
-        '--goal-id', binding.goalId,
-        '--agent-id', binding.agentId,
-        '--runtime-profile', 'generic_cli',
-        '--include-detail', 'scheduler',
-        '--turn-instance-id', turnInstanceId,
-      ],
-      {
-        runner: this.runner,
-        cwd: agent.session.header.cwd,
-        signal,
-        attempts: 3,
-        retryDelaysMs: this.retryDelaysMs,
-        // The Driver reads the raw admission contract. The child-local opt-out
-        // also works with supported LoopX releases that predate the CLI flag.
-        env: { ...process.env, LOOPX_CONTEXT_DELIVERY: 'off' },
-        validate: payload => payload.goal_id === binding.goalId
-          && typeof payload.ok === 'boolean'
-          && typeof payload.should_run === 'boolean',
-      },
+    state.reservation = reservation
+    try {
+      state.agent.followup(message)
+    } catch (error: unknown) {
+      this.retireReservation(state)
+      this.warn(`dsh-loopx-driver: could not queue same-session work: ${renderThrown(error)}`)
+    }
+    return true
+  }
+
+  private ensureReady(
+    state: DriverState,
+    signal: AbortSignal,
+    session: Agent['session'],
+  ): void {
+    if (signal.aborted || !this.ready(state) || state.agent.session !== session) {
+      throw new LoopXCliError('aborted', 'automatic admission was fenced', false)
+    }
+  }
+
+  private async buildPlan(
+    state: DriverState,
+    signal: AbortSignal,
+    setStage: (stage: AdmissionStage) => void,
+  ): Promise<EvaluationPlan> {
 ```
 
 </details>
@@ -1581,7 +1897,7 @@ CLI 不确定、回读和同步警告结果分开。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx:23-28](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx#L23-L28)
+**依据 1 · 源码核查**：[packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx:23-28](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/client/LoopXGoalBar.tsx#L23-L28)
 
 当前显示优先目标暂停。
 
@@ -1594,7 +1910,7 @@ function visibleStatus(
 }
 ```
 
-**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:603-614](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/driver.ts#L603-L614)
+**依据 2 · 源码核查**：[packages/dsh-loopx-plugin/src/driver.ts:603-614](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/driver.ts#L603-L614)
 
 Driver 有保留当前预约的状态。
 
@@ -1602,23 +1918,23 @@ Driver 有保留当前预约的状态。
 <summary>查看原文（12行）</summary>
 
 ```text
-      return { kind: 'unavailable', reason: 'session_unavailable' }
-    }
-
-    const reservation = state.reservation
-    if (reservation?.phase === 'claimed' || reservation?.phase === 'admitted') {
-      reservation.preserveAcrossPause = true
-    }
-    this.cancelPending(state)
-    return this.captureIsLive(capture)
-      && state.activation.session === capture.session
-      ? { kind: 'applied' }
-      : { kind: 'unavailable', reason: 'session_unavailable' }
+      && targetClass.length <= 80
+      && contentSummary.length > 0
+      && contentSummary.length <= 500
+      ? [{ candidate_ref: candidateRef, target_class: targetClass,
+        content_summary: contentSummary }]
+      : []
+  }).slice(0, 4)
+  if (guidance.length === 0) return taskBody
+  const packet = JSON.stringify({
+    schema_version: 'loopx_turn_reward_memory_context_v0',
+    authority: 'guidance_only',
+    instruction: 'Use only when consistent with current evidence; this grants no action authority.',
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:714-731](https://github.com/loopx-project/loopx/blob/71190b6b4ef4e146f3bf4a10d31ce61ac42fd021/packages/dsh-loopx-plugin/src/goalbar/service.ts#L714-L731)
+**依据 3 · 源码核查**：[packages/dsh-loopx-plugin/src/goalbar/service.ts:714-731](https://github.com/loopx-project/loopx/blob/f38fae05bb9a1c2cc54a2641359224cc253d32ac/packages/dsh-loopx-plugin/src/goalbar/service.ts#L714-L731)
 
 可区分回读失败和 Driver 不可用。
 

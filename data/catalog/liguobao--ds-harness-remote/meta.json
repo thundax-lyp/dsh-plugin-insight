@@ -1,57 +1,44 @@
 {
     "repository": "liguobao/ds-harness-remote",
     "repository_id": 1334325657,
-    "captured_at": "2026-11-11T01:54:58.798Z",
-    "window_start": "2026-10-12T01:54:58.798Z",
-    "stars": 2527,
-    "pushed_at": "2026-11-10T16:48:26Z",
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 2916,
+    "pushed_at": "2026-11-15T15:14:23Z",
     "issues": {
-        "open": 35,
-        "closed": 143,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": 36,
+        "closed": 165,
+        "created_30d": 145,
+        "closed_30d": 117,
+        "updated_30d": 155
     },
-    "errors": [
-        {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aliguobao%2Fds-harness-remote%20is%3Aissue%20created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 602C:3DD246:160514:174392:6AF3CC73 and timestamp 2026-11-11 02:01:24 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aliguobao%2Fds-harness-remote%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6032:38A1DD:11D9A9:130291:6AF3CC75 and timestamp 2026-11-11 02:01:26 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Aliguobao%2Fds-harness-remote%20is%3Aissue%20updated%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6038:313553:125444:137CC6:6AF3CC78 and timestamp 2026-11-11 02:01:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        }
-    ],
+    "errors": [],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-10T17:18:51.228Z",
+        "captured_at": "2026-11-15T07:15:51.534Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
-        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
-        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
         "latest_error": null
     },
     "npm": {
         "package_name": "ds-harness-remote",
-        "captured_at": "2026-11-09T06:42:47.767Z",
-        "window_start": "2026-10-10",
-        "window_end": "2026-11-08",
-        "downloads_30d": 41072,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-10:2026-11-08/ds-harness-remote",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 65181,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/ds-harness-remote",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-19T02:48:02.537Z",
-            "captured_at": "2026-11-09T06:42:47.767Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
             "source_url": "https://registry.npmjs.org/ds-harness-remote",
             "error": null,
-            "latest_version": "0.6.4",
-            "latest_published_at": "2026-11-08T13:34:19.683Z",
+            "latest_version": "0.6.5",
+            "latest_published_at": "2026-11-14T17:39:16.490Z",
             "latest_error": null
         }
     }

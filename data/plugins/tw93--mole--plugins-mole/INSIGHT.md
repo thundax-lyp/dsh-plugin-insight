@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[ce56a5b](https://github.com/tw93/Mole/tree/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole)
+源码版本：[5dd93fe](https://github.com/tw93/Mole/tree/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole)
 
 <!-- BEGIN META -->
-[![GitHub ★ 74,465](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=74%2C465&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) [![npm 30d 849](https://img.shields.io/static/v1?label=npm+30d&message=849&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mole) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mole)
+[![GitHub ★ 75,104](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=75%2C104&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) [![npm 30d 2,265](https://img.shields.io/static/v1?label=npm+30d&message=2%2C265&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mole) [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-mole)
 <!-- END META -->
 
 > **功能**：在 DSH 中用 Mole CLI 指导磁盘占用查询、清理预览、应用卸载和系统状态检查。
 
 > **亮点**：将多平台的读、预览、确认和交接组织成对话步骤；核心清理能力仍由 Mole CLI 提供。[Q01](#research-q01) [Q02](#research-q02)
 
-> **主要限制**：注册器不执行授权校验，实际非交互清理会直接运行且重扫，用户确认的范围可能与执行时不同。[Q03](#research-q03)
+> **主要限制**：Skill 文本约定了先预览与用户确认。宿主接线没有限制外部 shell。Windows 的旧安装器、永久删除和外部卸载器还需按不同动作判断。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -80,7 +80,7 @@
 | 理解占用 | 正确区分缓存与用户数据 | 不预估腾出量 |
 | 减少误删 | 已批准范围与真实候选一致 | 机制尚未验证 |
 
-> **思考**：注册器不执行授权校验，实际非交互清理会直接运行且重扫，用户确认的范围可能与执行时不同。[Q03](#research-q03)
+> **思考**：Skill 文本约定了先预览与用户确认。宿主接线没有限制外部 shell。Windows 的旧安装器、永久删除和外部卸载器还需按不同动作判断。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
@@ -94,7 +94,7 @@
 
 ### 1.4 主要限制
 
-注册器不执行授权校验，实际非交互清理会直接运行且重扫，用户确认的范围可能与执行时不同。[Q03](#research-q03)
+Skill 文本约定了先预览与用户确认。宿主接线没有限制外部 shell。Windows 的旧安装器、永久删除和外部卸载器还需按不同动作判断。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
@@ -110,16 +110,16 @@
 
 源码确认 Skill 注册，平台说明与清理效果未经本轮执行。
 
-- 已检查：作者 README、包清单、源码路径 plugins/mole/index.js、plugins/mole/skills/mole/SKILL.md、plugins/mole/skills/mole/references/windows.md、plugins/mole/skills/mole/references/macos.md、plugins/mole/package.json、plugins/mole/cordis.patch.yml 及固定范围 inventory；组件：plugins/mole。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 plugins/mole/index.js、plugins/mole/skills/mole/SKILL.md、plugins/mole/skills/mole/references/windows.md、plugins/mole/skills/mole/references/macos.md、plugins/mole/package.json、plugins/mole/.claude-plugin/plugin.json 及固定范围 inventory；组件：plugins/mole。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：覆盖 plugins/mole 子组件及随包两套平台说明；未执行外部 CLI、安装或目标系统。
-- 下一步：使用假 CLI 测版本、只读结果、权限拒绝及预览漂移，检查是否正确拒绝进入删除。
+- 边界：覆盖 plugins/mole 子组件及随包两套平台说明；未执行外部 CLI、安装或目标系统。 本轮当前版本复核：ce56a5b3..5dd93fe3（固定提交 5dd93fe34af53cc6e0885cfc10234156fbc6d562）；比较目标组件差异并补充其影响。
+- 下一步：使用假 CLI 测版本、只读结果、权限拒绝及预览漂移，检查是否正确拒绝进入删除。 当前源码固定于 5dd93fe34af53cc6e0885cfc10234156fbc6d562；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[tw93/Mole](https://github.com/tw93/Mole)
-- **版本号**：0.1.3（[固定提交 ce56a5b](https://github.com/tw93/Mole/tree/ce56a5b386e3acc10ff031473007f1de584f7fee)）
-- **版本日期**：2026-11-10（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.5（[固定提交 5dd93fe](https://github.com/tw93/Mole/tree/5dd93fe34af53cc6e0885cfc10234156fbc6d562)）
+- **版本日期**：2026-11-15（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -129,7 +129,7 @@
 
 可用具备时限的候选清单约束批准，执行前检查是否漂移；如果正常批准大量受阻而越范围不减，就保留原有人工流程。[Q04](#research-q04)
 
-使用假 CLI 测版本、只读结果、权限拒绝及预览漂移，检查是否正确拒绝进入删除。
+使用假 CLI 测版本、只读结果、权限拒绝及预览漂移，检查是否正确拒绝进入删除。 当前源码固定于 5dd93fe34af53cc6e0885cfc10234156fbc6d562；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -143,17 +143,17 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .js | source | 1 | 74 | 58 | 9 | — |
-| .md | source | 5 | 509 | — | — | 5029 |
+| .md | source | 5 | 512 | — | — | 5098 |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 129](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=129&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 133](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=133&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
+[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 130](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=130&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z) [![近30天关闭 134](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=134&color=737b86&logo=github)](https://github.com/tw93/Mole/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z)
 
 
 
-统计日期：2026-11-11。
+统计日期：2026-11-16。
 
 <a id="detail-section-10"></a>
 
@@ -175,7 +175,7 @@
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[plugins/mole/README.md:1-11](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/README.md#L1-L11)
+**依据 1 · 作者声明**：[plugins/mole/README.md:1-11](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/README.md#L1-L11)
 
 作者描述查询与清理用途。
 
@@ -198,7 +198,7 @@ Install it in Claude Code with `/plugin marketplace add tw93/Mole` then `/plugin
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/mole/index.js:40-65](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/index.js#L40-L65)
+**依据 2 · 源码核查**：[plugins/mole/index.js:40-65](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/index.js#L40-L65)
 
 注册的是 Skill 内容、调用方式和资源目录。
 
@@ -236,7 +236,7 @@ const provider = {
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/mole/index.js:69-74](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/index.js#L69-L74)
+**依据 3 · 源码核查**：[plugins/mole/index.js:69-74](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/index.js#L69-L74)
 
 DSH 依赖 skills，只注册 provider。
 
@@ -249,7 +249,7 @@ export function apply(ctx) {
 }
 ```
 
-**依据 4 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:20-38](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/SKILL.md#L20-L38)
+**依据 4 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:20-38](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/SKILL.md#L20-L38)
 
 界定真实文件风险及平台辨识。
 
@@ -298,9 +298,11 @@ than the one the reference names, or a flag is rejected, run
 
 入口读取 SKILL.md 并归一 CRLF，以 frontmatter 提取 description 和触发词，向模型与用户开放调用，资源目录指向平台说明。操作要求先查看当前版本并只读取一套平台参考。Windows 卸载和部分预览需交用户终端，macOS 的卸载预览与清理有不同参数。这种组织便于复用同一 Skill，但版本差异和同名用户 Skill 优先会改变用户实际看到的内容。
 
+固定 Windows 参考把 installer 限于 CLI 1.45.0+。预览仅查 Downloads 中至少 14 天的 MSI，只有具有控制台才打开选择列表，无控制台预览全部；执行命令交给用户，采用选择列表再 y/N 确认。每次先辨明平台和 CLI 版本，不能将 macOS 的安装包类型或清理行为套给 Windows。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/mole/index.js:10-33](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/index.js#L10-L33)
+**依据 1 · 源码核查**：[plugins/mole/index.js:10-33](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/index.js#L10-L33)
 
 资源路径、优先级和 frontmatter 解析。
 
@@ -336,7 +338,7 @@ function parseSkill(raw) {
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:27-42](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/SKILL.md#L27-L42)
+**依据 2 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:27-42](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/SKILL.md#L27-L42)
 
 实际版本与平台决定命令。
 
@@ -364,7 +366,7 @@ from that system's reference. Install only after the user agrees.
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:24-48](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/references/windows.md#L24-L48)
+**依据 3 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:24-48](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/windows.md#L24-L48)
 
 Windows 非交互及终端分工。
 
@@ -386,6 +388,8 @@ Windows 非交互及终端分工。
 | `mo optimize` | **Starts immediately, no confirmation.** It ends with a y/N question about System File Checker, which takes minutes | Agent after consent; SFC is the user's call in their own console |
 | `mo purge --dry-run` | Prints the project count and total, then opens a selection list that reads keys from a console; without one it errors out or waits | User. `mo purge --help` lists the folders it scans, and the agent may run that |
 | `mo purge` | Selection list and a y/N confirmation | User |
+| `mo installer --dry-run` | 1.45.0 and newer. Preview of `.msi` installers in Downloads that are at least 14 days old; without a console it previews them all, with one it opens a selection list | Agent |
+| `mo installer` | 1.45.0 and newer. Selection list and a y/N confirmation; chosen files go to the Recycle Bin | User |
 | `mo uninstall --dry-run` | Selection list, needs a console | User |
 | `mo uninstall` | Selection list, then each app's own uninstaller | User |
 | `mo clean --whitelist` | Opens the whitelist in Notepad and waits | User, or edit the file (below) |
@@ -395,13 +399,11 @@ Windows 非交互及终端分工。
 pick by its `name`; the selection list supports type-to-search. Ask them to run
 `mo uninstall --dry-run` first, which names the uninstaller each app would use.
 The vendor's uninstaller decides what it removes inside its own folder, such as
-a game library or local saves; warn the user when the app keeps data there. There is no
-`--yes` on any Windows command, and no installer or slim command.
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[plugins/mole/skills/mole/references/macos.md:21-38](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/references/macos.md#L21-L38)
+**依据 4 · 源码核查**：[plugins/mole/skills/mole/references/macos.md:21-38](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/macos.md#L21-L38)
 
 macOS 非交互和卸载分工。
 
@@ -431,6 +433,36 @@ macOS 非交互和卸载分工。
 
 </details>
 
+**依据 5 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:26-43](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/windows.md#L26-L43)
+
+Windows 表格区分代理预览、用户执行和版本条件。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+| `mo analyze --json [path]` | Read-only JSON | Agent |
+| `mo status --json` / `mo status --watch --interval=1s` | Read-only JSON / NDJSON; write the interval with `=`, which 1.36.0 and older also parse | Agent |
+| `mo history --json --limit N` | Read-only JSON, N is 1-200 | Agent |
+| `mo uninstall --list` | Read-only JSON app inventory | Agent |
+| `mo clean --dry-run` | Preview, writes the path list | Agent |
+| `mo clean` | **Starts immediately, no confirmation.** User-level cleanup only | Agent after consent |
+| `mo clean --system` | Needs an Administrator PowerShell, for the preview too: without it `mo clean --system --dry-run` shows only the user-level part | User, in an elevated PowerShell: `mo clean --system --dry-run`, then `mo clean --system` |
+| `mo clean --game-media`, `mo clean --gpu-shaders` | Opt-in extras: game replays, screenshots and recordings older than 90 days; GPU shader caches that games rebuild on next launch | Agent after consent, only when the user asked for them |
+| `mo optimize --dry-run` | Preview of maintenance tasks | Agent |
+| `mo optimize` | **Starts immediately, no confirmation.** It ends with a y/N question about System File Checker, which takes minutes | Agent after consent; SFC is the user's call in their own console |
+| `mo purge --dry-run` | Prints the project count and total, then opens a selection list that reads keys from a console; without one it errors out or waits | User. `mo purge --help` lists the folders it scans, and the agent may run that |
+| `mo purge` | Selection list and a y/N confirmation | User |
+| `mo installer --dry-run` | 1.45.0 and newer. Preview of `.msi` installers in Downloads that are at least 14 days old; without a console it previews them all, with one it opens a selection list | Agent |
+| `mo installer` | 1.45.0 and newer. Selection list and a y/N confirmation; chosen files go to the Recycle Bin | User |
+| `mo uninstall --dry-run` | Selection list, needs a console | User |
+| `mo uninstall` | Selection list, then each app's own uninstaller | User |
+| `mo clean --whitelist` | Opens the whitelist in Notepad and waits | User, or edit the file (below) |
+| `mo purge --paths` | Interactive editor | User |
+```
+
+</details>
+
 #### 缺口
 
 - 实际 DSH 版本、注册优先级和本机 CLI 未验证
@@ -449,9 +481,11 @@ macOS 非交互和卸载分工。
 
 Skill 指示先预览再征得用户同意，但 DSH 适配器不检查同意或限制 shell。两套参考说明非交互 clean 可立即执行，预览只是快照且真实执行重扫；macOS 缓存的管理员会话还影响系统范围。Windows 的 clean 和 purge 永久删除，卸载由厂商程序决定。Skill 的 sandbox 章节对 uninstall --list 是否可读前后有不一致表述，实际失败应按本机返回诊断而不能把空结果解释成无占用。环境至少需要本机 shell、Mole CLI 和符合包声明的 DSH。
 
+Windows 文档将选中 MSI 送到回收站，与 clean、purge、optimize 的永久删除分开。旧 CLI 未声明支持 installer。仅确认 Skill 文本路线和该参考，未执行 CLI，也不能以回收站条目推断恢复一定成功。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:44-70](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/SKILL.md#L44-L70)
+**依据 1 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:44-70](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/SKILL.md#L44-L70)
 
 对话级同意，预览与实际重扫，终端交接。
 
@@ -490,7 +524,7 @@ Skill 指示先预览再征得用户同意，但 DSH 适配器不检查同意或
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:81-107](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/SKILL.md#L81-L107)
+**依据 2 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:81-107](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/SKILL.md#L81-L107)
 
 指出 sandbox 假成功和清单描述分歧。
 
@@ -529,7 +563,7 @@ and `mo uninstall --list` do not.
 
 </details>
 
-**依据 3 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:56-67](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/references/windows.md#L56-L67)
+**依据 3 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:56-67](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/windows.md#L56-L67)
 
 永久删除、回收站与卸载边界。
 
@@ -537,6 +571,8 @@ and `mo uninstall --list` do not.
 <summary>查看原文（12行）</summary>
 
 ```text
+Some uninstallers show their own UAC prompt or wizard.
+
 ## What a removal can be undone
 
 - `mo clean`, `mo purge` and `mo optimize` delete permanently. `mo clean` does
@@ -545,15 +581,13 @@ and `mo uninstall --list` do not.
   vendor wrote it. Afterwards Mole moves a verified leftover install folder to
   the Recycle Bin, never deleting it permanently.
 - Files deleted inside the interactive `mo analyze` go to the Recycle Bin.
+- `mo installer` moves the `.msi` files the user picks to the Recycle Bin.
 - `mo purge` targets build output and dependency folders (`node_modules`,
-  `target`, `build`, `dist`, `venv` and similar). Build output rebuilds
-  offline; dependency folders need a download. Git-tracked content and nested
-  repositories are kept.
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[plugins/mole/skills/mole/references/macos.md:27-38](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/references/macos.md#L27-L38)
+**依据 4 · 源码核查**：[plugins/mole/skills/mole/references/macos.md:27-38](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/macos.md#L27-L38)
 
 已缓存 sudo 会话与非交互执行说明。
 
@@ -577,19 +611,30 @@ and `mo uninstall --list` do not.
 
 </details>
 
-**依据 5 · 源码核查**：[plugins/mole/package.json:32-38](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/package.json#L32-L38)
+**依据 5 · 源码核查**：[plugins/mole/skills/mole/references/windows.md:58-70](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/references/windows.md#L58-L70)
 
-DSH 包要求和补丁。
+不同操作的恢复边界。
+
+<details>
+<summary>查看原文（13行）</summary>
 
 ```text
-  "engines": {
-    "dsh": ">=0.2.0 <0.3.0"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    }
+## What a removal can be undone
+
+- `mo clean`, `mo purge` and `mo optimize` delete permanently. `mo clean` does
+  not empty the Recycle Bin.
+- `mo uninstall` runs the app's registered uninstaller, which behaves as that
+  vendor wrote it. Afterwards Mole moves a verified leftover install folder to
+  the Recycle Bin, never deleting it permanently.
+- Files deleted inside the interactive `mo analyze` go to the Recycle Bin.
+- `mo installer` moves the `.msi` files the user picks to the Recycle Bin.
+- `mo purge` targets build output and dependency folders (`node_modules`,
+  `target`, `build`, `dist`, `venv` and similar). Build output rebuilds
+  offline; dependency folders need a download. Git-tracked content and nested
+  repositories are kept.
 ```
+
+</details>
 
 #### 缺口
 
@@ -611,7 +656,7 @@ DSH 包要求和补丁。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:49-61](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/skills/mole/SKILL.md#L49-L61)
+**依据 1 · 源码核查**：[plugins/mole/skills/mole/SKILL.md:49-61](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/skills/mole/SKILL.md#L49-L61)
 
 当前批准仅覆盖预览，真实重扫。
 
@@ -636,7 +681,7 @@ DSH 包要求和补丁。
 
 </details>
 
-**依据 2 · 源码核查**：[plugins/mole/index.js:69-74](https://github.com/tw93/Mole/blob/ce56a5b386e3acc10ff031473007f1de584f7fee/plugins/mole/index.js#L69-L74)
+**依据 2 · 源码核查**：[plugins/mole/index.js:69-74](https://github.com/tw93/Mole/blob/5dd93fe34af53cc6e0885cfc10234156fbc6d562/plugins/mole/index.js#L69-L74)
 
 适配器没有批准执行控制，可作对照。
 

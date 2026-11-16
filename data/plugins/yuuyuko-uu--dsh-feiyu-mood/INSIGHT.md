@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[1f38503](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/tree/1f38503653bdd59e5996903d98eb03905c5e59a2)
+源码版本：[8e89eff](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/tree/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b)
 
 <!-- BEGIN META -->
-[![GitHub ★ 258](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=258&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-feiyu-mood) [![npm 30d 18,542](https://img.shields.io/static/v1?label=npm+30d&message=18%2C542&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feiyu-mood) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feiyu-mood)
+[![GitHub ★ 265](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=265&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Yuuyuko-uu/dsh-feiyu-mood) [![npm 30d 26,347](https://img.shields.io/static/v1?label=npm+30d&message=26%2C347&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feiyu-mood) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-feiyu-mood)
 <!-- END META -->
 
-> **功能**：为 DSH 伙伴按轮判断心情，通过挂饰显示数值、情绪与时间线，并可配置心情提示。
+> **功能**：为 DSH 伙伴记录心情变化，通过挂件查看数值、情绪与时间线，并可配置回注提示。
 
-> **亮点**：同一份状态可由关联会话更新，并以衰减、显著性和日限额决定何时显示或进入上下文。这个组合把手工记心情变成可回看的自动状态链路，差异集中在交互流程与反馈节制。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01)与[Q02](#research-q02)支持一个窄范围贡献：把伙伴状态、轮末判断、时间线和受阈值控制的提示接成同一流程；当前 angry 维度虽进入状态和衰减，但输出 JSON 示例缺少该键，按示例响应时解析为零，故不能据此确认怒意判定已接通。
 
-> **主要限制**：置信度由判断模型自报，用户和助理文本从事件快照独立向后取值，出现跨轮配对时高置信理由仍可回注。管理和安装请求还依赖宿主连接服务明确拒绝。[Q02](#research-q02) [Q03](#research-q03)
+> **主要限制**：[Q02](#research-q02)、[Q03](#research-q03)与[Q04](#research-q04)：独立检索的用户/助理片段可能错配；模型自报置信度不能纠错；angry 的规则与 JSON 示例不一致；管理路由在连接服务缺失或异常时继续处理请求。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 心情层相对固定人设或手工记录增加什么？](#detail-section-11)
-  - [Q02 · 轮次如何变成下一轮上下文，何处可能归因错误？](#detail-section-12)
-  - [Q03 · 开启、运行、排障和退出由谁承担，管理接口有何限制？](#detail-section-13)
-  - [Q04 · 采用条件是什么，如何检验累计幅度是否改善反馈？](#detail-section-14)
+  - [Q01 · 谁使用这套状态，心情层改变了什么工作步骤？](#detail-section-11)
+  - [Q02 · 哪些事件进入判断，状态如何流转到时间线和下一轮上下文？](#detail-section-12)
+  - [Q03 · 新增 angry 如何与提示、衰减、旧状态归一化兼容？](#detail-section-13)
+  - [Q04 · 设置管理和自动更新接口在什么情况下拒绝未授权请求？](#detail-section-14)
+  - [Q05 · 什么用户值得观察/试用，成本如何比较，最小验证是什么？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：长期使用同一 DSH 伙伴、希望随时查阅交互后心情起伏的用户，可通过挂饰查看变化并选择是否回注提示。
+> **用途**：长期使用同一 DSH 伙伴、想回看跨轮状态且能接受模型判断额外成本的用户；仅需固定语气或不能外发内容时，固定人设和手工记录更合适。见[Q01](#research-q01)、[Q05](#research-q05)。
 
-固定人设控制语气，手工标注记录重要回合。前者不维护独立随时间变化的状态，后者更便于确认归因，但需要人工持续维护。
+固定人设只提供静态语气，手工记录由用户维护；当前组合增加自动逐轮判定、可视时间线和可开关的单次上下文回注。它没有证明回复质量或用户负担改善，模型与宿主原生能力构成的细节见[Q01](#research-q01)。
 
 <a id="detail-section-3"></a>
 
@@ -50,59 +51,74 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 心情时间线 | 回看伙伴状态变化 | 绑定会话且判断产生有效变动 |
-| 上下文提示 | 在后续轮次给模型传入心情状态 | 受变化阈值、置信度和日额度限制 |
-| 配置与更新 | 调整判断及查看更新 | 管理拒绝由宿主连接服务提供 |
+|---|---|---|
+| 心情状态 | 跨轮记录总值与情绪维度 | 模型判定不代表客观心理状态，需核实归属 |
+| 时间线 | 查看变化及理由 | 内容来自模型输出和本地状态，非审计记录 |
+| 上下文回注 | 让后续回复读取状态提示 | 可关闭；受置信度、显著性、去重与日额度控制 |
+| 设置与更新 | 管理绑定、参数和插件更新 | 管理路由依赖宿主鉴权，缺失时源码 fail-open，需先验证 |
 
 **流程与依赖**
 
-| 依赖 | 用途 | 成立条件 |
-| --- | --- | --- |
-| DSH 与 Node | 加载 Cordis 补丁和 Web 设置 | 包声明 DSH ≥ 0.2.1-rc.2、Node ≥ 22；匹配实际宿主 API |
-| 模型供应商 | 追加情绪判定 | 同意传送裁剪后的对话，单独核对供应商和费用 |
-| 宿主连接服务 | 管理路由拒绝请求 | 应在目标宿主确认未认证和非管理员调用被拒绝 |
+#### 启动与依赖
 
-| 阶段 | 操作 | 异常处理 |
-| --- | --- | --- |
-| 首次 | 隔离 profile 内加载固定版本并重启，绑定一个测试会话 | 设置入口不出现时查包声明和宿主日志 |
-| 持续 | 对照挂饰状态、时间线和实际提示，先使用非敏感对话 | 出现错配则关回注并检查来源，停止额外模型请求时关自动判断 |
-| 退出 | 停自动判断并备份 DSH_HOME 中该插件的状态和设置 | 卸载后重启，分别验证路由与本地文件是否仍在 |
+| 依赖 | 用途 | 成立条件与边界 |
+|---|---|---|
+| DSH Cordis 与 Web client | 加载宿主插件和挂件 | 包声明 DSH ≥0.2.1-rc.2、Node ≥22；实际宿主版本未验收 |
+| 绑定会话与宿主事件 | 提供轮次消息及生命周期 | 配对/来源筛选需在目标宿主核实 |
+| 所选模型供应商 | 逐轮情绪判定 | 需接受发送对话片段并核实价格、保留政策 |
+| systemPrompt 与设置服务 | 可选上下文提示和 UI | 关闭提示不停止判定调用 |
+| connection.requestRejection 与 pluginManager | 管理鉴权/安装更新 | 缺服务/异常时拒绝保护不成立，先验收 |
+
+#### 启动步骤
+
+| 步骤 | 动作 | 判据与失败处理 |
+|---|---|---|
+| 准备 | 安装到隔离 profile、确认绑定与供应商 | 先验证匿名/非管理员请求拒绝 |
+| 观察 | 单会话查看状态/时间线 | 人工核对事件是否属于本轮 |
+| 回注 | 用户明确开启后启用提示 | 逐条确认归因、重复次数和日额度 |
+| 退出 | 关闭判断、备份状态、移除插件并重启 | 真实清理路径与本地状态保留需验收 |
 
 **效果与成本**
 
-| 成本项 | 负担与单位 | 边界 |
-| --- | --- | --- |
-| 模型现金支出 | 每个符合条件的轮次追加一次流式请求，按实际 token 与供应商价格核算 | 未采样，不能沿用 README 的金额 |
-| 人工时间 | 每个正确配对的心情事件需核对来源、时间线及错误日志 | 群聊归因或连接服务有问题时排查成本更高 |
-| 退出 | 备份、移除插件与重启耗时未测 | 本地状态与诊断文件需独立处理 |
+#### 成本
 
-| 效果 | 观察口径 | 边界 |
-| --- | --- | --- |
-| 降低手工追踪负担 | 每个归因正确且可解释的时间线事件，用人工标注与自动流程比较 | 记录变化不能证明体验改善 |
-| 减少重复提示 | 按轮统计重复回注、错配和漏报 | 与只看挂饰的基线作比较，缓存收益未知 |
+| 阶段 | 现金/资源 | 人工时间与未知 |
+|---|---|---|
+| 首次配置 | 隔离 profile 与模型请求费用未知 | 配置绑定、权限、供应商数据边界；耗时未测 |
+| 持续使用 | 每次满足条件的轮末模型请求 | 核对错配、误判和重复提示；用量与纠错时间未测 |
+| 失败恢复 | 诊断和可能重试的模型/宿主资源 | 处理坏状态、权限错误和模型拒绝；未实测 |
+| 退出 | 备份及存储占用未知 | 关闭判断、清理状态、移除包并验证重启 |
 
-> **思考**：置信度由判断模型自报，用户和助理文本从事件快照独立向后取值，出现跨轮配对时高置信理由仍可回注。管理和安装请求还依赖宿主连接服务明确拒绝。[Q02](#research-q02) [Q03](#research-q03)
+#### 效果与选择
+
+| 指标 | 源码可支持 | 尚未知 |
+|---|---|---|
+| 状态可见性 | 有时间线和挂件接口 | 主机中的真实渲染兼容 |
+| 情绪分类 | 模型输出映射到受限数值字段 | 准确率、跨模型一致性和怒意误判率 |
+| 提示节制 | 有置信度、minor、去重和日限额逻辑 | 实际是否减少重复提示或改善互动 |
+| 管理安全 | 代码尝试调用宿主 requestRejection | 连接缺失/异常和网络暴露时是否安全 |
+
+> **思考**：[Q02](#research-q02)、[Q03](#research-q03)与[Q04](#research-q04)：独立检索的用户/助理片段可能错配；模型自报置信度不能纠错；angry 的规则与 JSON 示例不一致；管理路由在连接服务缺失或异常时继续处理请求。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：同一份状态可由关联会话更新，并以衰减、显著性和日限额决定何时显示或进入上下文。这个组合把手工记心情变成可回看的自动状态链路，差异集中在交互流程与反馈节制。[Q01](#research-q01) [Q02](#research-q02)
+> **亮点**：[Q01](#research-q01)与[Q02](#research-q02)支持一个窄范围贡献：把伙伴状态、轮末判断、时间线和受阈值控制的提示接成同一流程；当前 angry 维度虽进入状态和衰减，但输出 JSON 示例缺少该键，按示例响应时解析为零，故不能据此确认怒意判定已接通。
 
-判断队列串行并在模型调用前后验证绑定版本，防止改绑后的旧结果覆盖新状态。相同进程内的保护不能外推到多个宿主共享状态目录；临时文件改名也不提供持久化失败回报。
+[Q03](#research-q03)确认旧 dims 缺少 angry 时默认归零，且单独衰减；但模型提示不是执行约束。管理路由在 connection 缺失/异常时 fail-open，[Q04](#research-q04)要求先在真实宿主验证。未执行代码或测试。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-置信度由判断模型自报，用户和助理文本从事件快照独立向后取值，出现跨轮配对时高置信理由仍可回注。管理和安装请求还依赖宿主连接服务明确拒绝。[Q02](#research-q02) [Q03](#research-q03)
+[Q02](#research-q02)、[Q03](#research-q03)与[Q04](#research-q04)：独立检索的用户/助理片段可能错配；模型自报置信度不能纠错；angry 的规则与 JSON 示例不一致；管理路由在连接服务缺失或异常时继续处理请求。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先保留观察。[Q03](#research-q03) 的鉴权和更新路由核查通过后，可用隔离 profile 的单会话做无敏感内容的对照。先看挂饰，核对正确归因后再开回注。未能确认请求拒绝或出现错配时停用自动判断，改用原会话的手工记录。[Q04](#research-q04)
+[Q05](#research-q05) 支持先观察，不建议直接将情绪值作为稳定人格或自动行动依据。先在隔离环境核对管理请求拒绝、事件归属和旧状态读取；通过后只开挂件，再另行决定是否启用提示。
 
 <a id="detail-section-7"></a>
 
@@ -110,18 +126,18 @@
 
 **核查状态**：已检查源码。
 
-固定版本源码支持事件、状态和回注链路。真实宿主的事件顺序、访问控制、模型开销和交互收益有待核实；带方向累计是假设。
+源码支持固定版本将逐轮状态、时间线与受阈值控制的提示连通，并能兼容缺少 angry 键的旧状态；没有运行验证，不能确认模型情绪判断、事件配对、界面兼容、权限安全或实际互动收益。angry 的区分和衰减效果仍待实验。
 
-- 已检查：作者 README、包清单、源码路径 lib/index.js、package.json、cordis.patch.yml、lib/selfupdate.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、package.json、cordis.patch.yml、lib/index.js、lib/selfupdate.mjs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：覆盖当前包的关键宿主入口、状态和更新链路；未运行目标插件，未验证真实 DSH 网关、模型效果、价格或兼容矩阵。
-- 下一步：先在隔离宿主用一条被允许与一条被拒绝的配置请求核对管理鉴权，并拦截安装管理器以确认更新来源；再回放带人工标注的两类小波动序列，对比错误归因、重复回注与成功事件数。
+- 边界：固定仓库根包与提交 8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b；核查 README、包声明、Cordis patch、主机入口、状态规范化、轮末事件、提示输出、上下文回注和更新路由。研究截止 2026-11-16T01:58:56Z。未执行插件、模型、安装、测试、管理路由或真实 DSH host 验收。
+- 下一步：源码级检查；未执行本地测试、真实宿主安装/交互、模型样本、权限请求或用户对照。作者 README 的效果说明保留为作者声明。
 
 **分析版本**
 
 - **仓库**：[Yuuyuko-uu/dsh-feiyu-mood](https://github.com/Yuuyuko-uu/dsh-feiyu-mood)
-- **版本号**：0.9.2（[固定提交 1f38503](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/tree/1f38503653bdd59e5996903d98eb03905c5e59a2)）
-- **版本日期**：2026-11-07（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.9.3（[固定提交 8e89eff](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/tree/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b)）
+- **版本日期**：2026-11-14（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -129,9 +145,9 @@
 
 <a id="innovation"></a>
 
-可尝试把绝对幅度累计替换为带方向累计，保留同向小变动召回，同时减少反复震荡越线。若误报不降，或对持续真实变化的漏报与误报改善相当，就撤回该设计。[Q04](#research-q04)
+[Q05](#research-q05)提出待验证设计：先修正模型输出 JSON schema 与 parser 之间的 angry 字段不一致，再检验新增情绪维度和独立衰减是否有稳定收益；以固定人工标注样本评估误报、漏报、回注次数与用户纠正，若漏掉需要持续关注的事件，就撤回。当前代码缺陷使该方向尚不能被视为已接通功能。
 
-先在隔离宿主用一条被允许与一条被拒绝的配置请求核对管理鉴权，并拦截安装管理器以确认更新来源；再回放带人工标注的两类小波动序列，对比错误归因、重复回注与成功事件数。
+源码级检查；未执行本地测试、真实宿主安装/交互、模型样本、权限请求或用户对照。作者 README 的效果说明保留为作者声明。
 
 <a id="detail-section-9"></a>
 
@@ -144,8 +160,8 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .js | source | 3 | 3243 | 2547 | 601 | — |
-| .md | source | 2 | 979 | — | — | 16286 |
+| .js | source | 3 | 3258 | 2558 | 604 | — |
+| .md | source | 2 | 989 | — | — | 16434 |
 | .mjs | source | 1 | 244 | 200 | 34 | — |
 | .mjs | test | 8 | 708 | 604 | 19 | — |
 
@@ -153,35 +169,33 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 16](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=16&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/issues?q=is%3Aissue+created%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z) [![近30天关闭 15](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=15&color=737b86&logo=github)](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-12T01%3A54%3A58.798Z..2026-11-11T01%3A54%3A58.798Z)
-
-
-
-统计日期：2026-11-11。
+Issue 活跃度数据暂未获取（查询日期：2026-11-16），可前往 [GitHub Issues](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：给长期 DSH 伙伴会话增加可见、可反馈的心情状态有什么价值，什么条件会使反馈失真或成本失衡？
+**插件研究总目标**：判断逐轮心情状态给长期 DSH 伙伴会话带来什么变化，以及新增情绪维度、消息归因和管理权限的边界能否支持谨慎试用。
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 心情层相对固定人设或手工记录增加什么？
+### Q01 · 谁使用这套状态，心情层改变了什么工作步骤？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-长期使用同一 DSH 伙伴的人可以在同一个挂饰中看心情变化，必要时让后续回复带上一句状态提示。固定人设能规定语气，手工记录也能标记重要事件，但前者没有随轮次更新的独立状态，后者需要用户自己记。这里把心情放进可衰减的数值状态，以时间线和设置开关控制何时显示或回注。源码默认心情向 70 回归，整体心情默认半衰期 12 小时，情绪维度 90 分钟。README 的整体三小时说法与配置不一致。面板数值可用作观察输入，不能据此认定回复更贴切。
+它面向长期使用同一 DSH 伙伴、希望回看交互状态并可选择给后续回复提供状态提示的用户。固定人设只规定风格，手工记事可保留重要事件但依赖用户记录；本包把逐轮判定、带时间的状态/情绪和可配置回注组合进一个可查阅界面。合格结果是状态时间线能正确对应某轮交互，提示符合用户设置且不重复；数字变化本身不证明回复更贴切或用户更省时。
+
+当前包声明 DSH Web client 与 Cordis bundle。README 描述以 turn-stopping 后调用模型判断，并用 systemPrompt.context 回注；源码确有挂件和上下文接口。新增 angry 是对情绪词表与提示规则的扩充，不能据作者描述认定模型能稳定区分“对事生气”和“对用户生气”。没有持续使用反馈或体验对照，是否优于单纯查看对话记录仍未知。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:15-37](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/README.md#L15-L37)
+**依据 1 · 作者声明**：[README.md:15-37](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/README.md#L15-L37)
 
-作者描述从对话到时间线和一次注入的用途。
+作者描述轮后判断、时间线/回注以及单次提示限制；这是功能声明，不是效果测量。
 
 <details>
 <summary>查看原文（23行）</summary>
@@ -214,310 +228,37 @@
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:182-199](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L182-L199)
+**依据 2 · 源码核查**：[package.json:41-53](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/package.json#L41-L53)
 
-默认值定义了可调心情回落时间和注入阈值。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-  judgeProvider: '', // 判断心情用哪个 provider（留空 = 跟着当前会话的模型走）
-  judgeModel: '',    // 判断心情用哪个 model（留空 = 跟着当前会话）
-  moodBase: 70,
-  moodFloor: 0,
-  // ⭐ 心情自己平复的快慢（小时，半衰期）。12 小时 = 隔一夜还留着余温
-  decayHalfHours: 12,
-  // ⭐ 怎么把心情告诉她：off 不告诉 / label 只说心情 / event 说这会儿的底子 + 是什么事
-  injectMode: 'event',
-  // ⭐ 判断的可信度门槛（0-100）：低于它只记账、不进她的嘴
-  injectConfidence: 60,
-  // ⭐ 什么才算"显著变化"（够不着就只记账、不告诉她）
-  // ⭐ 2026-10-21 实测校准：判定给的原始涨跌平时就 +1~+3（心情又只吃 1/3 ⇒ 常动 1 格），
-  //    原来 6/25 只有 9% 的回合能过，等于基本不注入。改成 3/4。
-  sigMood: 3,   // 心情涨跌够这个数（原始值；心情实际只吃 1/3）
-  sigDim: 5,    // 或者某一根情绪涨跌够这个数（心疼+5、担心+5 这种"突然一下"才触发）
-  // ⭐ 每天最多跟她说几次（先到先得）：门槛调低之后靠它防"变背景音"
-  injectPerDay: 6,
-  autoJudge: true,
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/index.js:900-916](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L900-L916)
-
-总心情和情绪维度使用不同衰减时间，累计偏差够大才记录衰减。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-function decay(s, base, now, halfHours) {
-  const ageMin = Math.max(0, now - s.lastDecayAt) / MIN
-  if (ageMin < 1) return s // 不足 1 分钟不算衰减
-  const 半衰 = clamp(Number(halfHours) || 12, 1, 168) * 60
-  // 心情向 base 回落
-  const km = 1 - Math.exp(-(Math.LN2 * ageMin) / 半衰)
-  s.mood = s.mood + (base - s.mood) * km
-  // 情绪向 0 衰减，半衰期 90 分钟（单根情绪比总心情散得快）
-  const ke = 1 - Math.exp(-(Math.LN2 * ageMin) / 90)
-  for (const [k] of DIMS) {
-    s.dims[k] = Math.max(0, s.dims[k] * (1 - ke))
-  }
-  s.lastDecayAt = now
-  // 跟"上次记过的那条"比，走了 3 格以上就记一条 ——
-  // ⚠ 不能跟上一次调用比：面板每 20 秒轮询一次，单次只挪 0.x 格，永远攒不够
-  if (Math.abs(s.mood - s.lastNotedMood) >= 3) noteDecay(s, base)
-  return s
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:2027-2037](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L2027-L2037)
-
-网页首页注入挂饰脚本且检查重复。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-  // 6) 往页面注入挂饰脚本（桌面端唯一通道）
-  try {
-    ctx.on('webserver/index-inject', (table) => {
-      if (!Array.isArray(table)) return
-      for (const row of table) {
-        if (row && ((row.kind === 'script-src' && row.src === '/dsh-feiyu-mood/widget.js')
-          || (row.kind === 'script' && typeof row.text === 'string' && row.text.indexOf('/dsh-feiyu-mood/widget.js') >= 0))) return
-      }
-      table.push({ kind: 'script', placement: 'body', text: WIDGET_ROW_TEXT })
-    })
-  } catch (e) { diag('挂饰注入失败：' + (e && e.message)) }
-```
-
-</details>
-
-#### 缺口
-
-- 没有同一用户关闭与开启该机制的持续观察
-  **影响**：无法判断是否有反复查看需要
-  **进一步探讨**：比较同一伙伴任务中手工记录、仅看挂饰和回注三种做法
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 轮次如何变成下一轮上下文，何处可能归因错误？
-
-**研究主题**：功能与机制、缺陷与关键质疑
-
-#### 完整回答
-
-绑定会话在 turn-stopping 时优先回查快照，识别主持人群消息、定时任务和主动搭话，再取最新助理消息并提交串行判断。用户与助理文本片段会交给所选模型；如果没有单独指定完整的提供商与模型对，跟随会话模型。判断只在原绑定与重置版本仍有效时更新状态。新变化先看显著性和累计量，读取上下文时再看事件去重、置信度和日限额。危险在于用户消息和助理消息是两次独立的倒序查找，快照没有成对轮次校验，迟到事件或仅机器发起的轮次可能被配到旧话；群网桥识别失败也可整段退回用户文本。模型自报置信度只能筛选，不能验证归属。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1152-1198](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1152-L1198)
-
-快照倒序找用户消息，过滤来源，网桥批次解析失败回到原文本。
-
-<details>
-<summary>查看原文（47行）</summary>
-
-```text
-export function lastUserTurnOf(session, ownerName = '', 别名们 = []) {
-  try {
-    if (!session || typeof session.snapshotEvents !== 'function') {
-      // ⚠ 1.5.x：静默返回过 —— 线上要能看出「事件读不到」而不是「这轮没说话」
-      diag('会话上没有 snapshotEvents（' + (session ? typeof session.snapshotEvents : 'session 为空') + '）')
-      return null
-    }
-    const ev = session.snapshotEvents() || []
-    for (let i = ev.length - 1; i >= 0; i--) {
-      const e = ev[i]
-      if ((e && (e.type || e.kind)) !== 'user/message') continue
-      const p = e.payload !== undefined ? e.payload : e.data
-      // ⭐ 2026-10-23：不截断地取全文 → 先切掉网桥那些人设前缀 → 再截 1600。
-      //    以前是「先截 2000 再判断」，网桥消息的人设正好占满前面，真人原话全被切掉。
-      const txt = stripBridgePrefix(fullTextOf(p)).slice(0, 1600)
-      if (!txt) continue
-      const src = p && p.source && p.source.kind ? String(p.source.kind) : ''
-      if (注入上下文.has(src)) continue          // 宿主注入的上下文：跳过
-      if (外部触发.has(src) || 自主搭话.has(src)) return { text: txt, sourceKind: src }
-      // ⭐ 0.7.3（issue #10）：子代理通知 / 定时任务 / 目标自动继续 —— 不是人在说话，跳过
-      if (是机器来源(src)) {
-        if (!见过的来源.has(src)) {
-          见过的来源.add(src)
-          diag('「' + src + '」这种来源不是人说的（子代理 / 定时任务 / 自动继续），心情不判')
-        }
-        continue
-      }
-      // ⭐ 0.7.1：QQ 桥 / 挂件这些「外面进来的话」= 她本人在说话，要判心情
-      // ⭐ 0.7.7（issue #11）：群批要先按说话人拆 —— 只取 owner 那几行；别人的话不算她说的。
-      //   拆出来但没有 owner 的发言 → 返回空 text，让上层直接跳过（别退回 inbox 缓存把整批当她说）。
-      if (外网桥.has(src)) {
-        const 批 = 拆群消息(txt, ownerName, 别名们)
-        if (批) {
-          if (!批.ownerSpoke) {
-            diag('这批群消息里没有「' + ([ownerName, ...别名们].filter(Boolean).join(' / ') || '她') + '」说的话，这一轮不判心情')
-          }
-          return { text: 批.ownerSpoke ? 批.text : '', sourceKind: 'user' }
-        }
-        return { text: txt, sourceKind: 'user' }
-      }
-      if (src && src !== 'user' && !见过的来源.has(src)) {
-        // 没见过的来源：不再静默跳过（以前就是这样把 QQ 那路漏掉的）。
-        // 先当「有人在跟它说话」判一次，同时把来源记一笔，方便以后按需特判。
-        见过的来源.add(src)
-        diag('第一次见到的消息来源「' + src + '」—— 先按「她在说话」处理（心情照判）')
-      }
-      return { text: txt, sourceKind: 'user' }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[lib/index.js:1204-1216](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1204-L1216)
-
-另一独立倒序扫描查助理文本。
+固定包声明 DSH bundle 与 Web client 注入。
 
 <details>
 <summary>查看原文（13行）</summary>
 
 ```text
-function lastAssistantTextOf(session) {
-  try {
-    if (!session || typeof session.snapshotEvents !== 'function') return ''
-    const ev = session.snapshotEvents() || []
-    for (let i = ev.length - 1; i >= 0; i--) {
-      const e = ev[i]
-      if ((e && (e.type || e.kind)) !== 'assistant/message') continue
-      const p = e.payload !== undefined ? e.payload : e.data
-      const txt = textOfMessage(p)
-      if (txt) return txt
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
     }
-  } catch (e) { /* ignore */ }
-  return ''
+  },
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1583-1612](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1583-L1612)
+**依据 3 · 源码核查**：[lib/index.js:1658-1694](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1658-L1694)
 
-判断前后检查绑定和重置版本，失效响应不进入状态。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-        const info = lastUserTurnOf(agent.session, 对方, 对方别名) || (lastText ? 缓存这条() : null)
-        if (!info || !info.text) {
-          diag('turn-stopping 进了，但没拿到用户那句话（info=' + !!info + '，缓存=' + (lastText ? lastText.length + '字' : '空') + '）')
-          return
-        }
-        const reply = lastAssistantTextOf(agent.session)
-        // ⭐ 三种口径：干活（bili-duty-scan）/ 自己搭话（speak-up）/ 她本人在说话
-        const kind = String(info.sourceKind || '')
-        const mode = kind === 'bili-duty-scan' ? 'work' : (自主搭话.has(kind) ? 'talk' : '')
-        const 称呼 = { self: 本人名(), owner: 对方名(), me: cfg.selfPronoun || '我', aliases: cfg.selfAliases, judgeProvider: cfg.judgeProvider, judgeModel: cfg.judgeModel }
-        const key = slot.id // 属于发起判断的份，绝不在 await 后重新挑一个目标
-        const version = judgeVersion
-        const resetVersion = resetVersions.get(key)
-        const valid = () => stillBound() && version === judgeVersion && resetVersion === resetVersions.get(key)
-        judgeChain = judgeChain.then(async () => {
-          if (!valid()) return // 排队期间已失效的任务不再调用模型
-          const delta = await judge(ctx, agent, info.text, reply, mode, 称呼)
-          if (!delta || !valid()) return
-          const s = getState(key, cfg.moodBase, { persist: false, halfHours: cfg.decayHalfHours })
-          // ⭐ 一点变化都没有的回合不记账：完整记录里只该留下真有过心情波动的
-          const step = Math.round(delta.moodDelta / MOOD_STEP_DIVISOR)
-          const anyDim = DIMS.some(([k]) => delta.dims[k] !== 0)
-          // ⭐ 2026-10-23（issue #1 的可观测性问题）：以前这两种情况共用一句话，
-          //    线上根本分不出「模型没判出来」和「这轮真的没变化」——排查时被那条日志误导了很久。
-          if (step === 0 && !anyDim) {
-            const 没判出来 = Number(delta.confidence) === 0 && !String(delta.reason || '').trim()
-            diag((没判出来 ? '这轮没判出来（模型没给结论：confidence=0、没有 reason）' : '这轮判定无变化，不记入时间线')
-              + (mode ? '（' + (mode === 'talk' ? '自己搭话' : '定时任务') + '）' : ''))
-            return
-          }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1366-1423](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1366-L1423)
-
-确认请求模型、文本截取、会话标识和输出上限。
+上下文钩子按模式、置信度、日限额与重复状态决定是否回注，并保存原文。
 
 <details>
-<summary>查看原文（58行）</summary>
-
-```text
-async function judge(ctx, agent, userText, reply, mode, o) {
-  // ⭐ 判断用哪个模型：设置里选了就用选的；没选就跟着当前会话的模型走
-  const picked = (o.judgeProvider && o.judgeModel) ? { provider: o.judgeProvider, model: o.judgeModel } : null
-  const t = picked || 取模型(agent)
-  if (!t) { diag('拿不到模型，跳过判断'); return null }
-  let sys = 判断系统(o)
-  let user
-  if (mode === 'work') {
-    sys += 干活轮补充(o)
-    // ⭐ 主人说的话摆最前面、闹钟塞到最后一行括号里 —— 顺序就是权重，别让模型拿闹钟当理由
-    user = '⚠️ 这一轮**不是' + o.owner + '在跟你说话**，是定时任务把你叫起来干活的。\n\n'
-      + '**你这轮说的话（唯一判据，重点看这个）：**\n' + reply.slice(0, 1200)
-      + '\n\n（下面这条只是闹钟，跟心情无关，别拿它当理由：「' + userText.slice(0, 100) + '」）'
-      + '\n\n请判断**你自己这轮的心情变化**，只输出 JSON。'
-  } else if (mode === 'talk') {
-    sys += 搭话轮补充(o)
-    user = '⚠️ 这一轮**不是' + o.owner + '在跟你说话，是你自己主动去找' + o.owner + '搭话的**。\n\n'
-      + '**你开口说的话（唯一判据，重点看这个）：**\n' + reply.slice(0, 1200)
-      + '\n\n（下面这条只是叫你开口的闹钟，跟心情无关，别拿它当理由：「' + userText.slice(0, 100) + '」）'
-      + '\n\n请判断**你自己这轮的心情变化**，只输出 JSON。'
-  } else {
-    // ⭐ 两句话都摆，而且**按真实先后**：对方先说，它后回。
-    //    以前回复放在前、对方的话放在后，判官按读到的顺序理解因果，
-    //    reason 就写成「人家刚说…，它就软软地回了一句…」这种主宾颠倒（还会跨过门槛被注入回对话）。
-    user = '**' + o.owner + '这轮说：**\n' + userText.slice(0, 1600)
-      + '\n\n**你回的是（判据之一，重点看语气：是念叨、心疼、凶' + o.owner + '、还是撒娇）：**\n'
-      + reply.slice(0, 1500)
-      + '\n\n请按这个先后，把「' + o.owner + '说了什么」和「你怎么回应的」合起来判断你的心情变化，只输出 JSON。'
-  }
-  // 自己构造一条 user 消息（不 import @deepseek-ai/dsh-llm，见头注释）
-  const messages = [{
-    role: 'user',
-    id: randomUUID(),
-    content: [{ type: 'text', text: user }],
-    source: { kind: 'plugin', plugin: 'dsh-feiyu-mood' },
-  }]
-  let out = ''
-  const kinds = {}
-  try {
-    // ⭐ 0.7.9：**带上 sessionId** —— 有的中转（比如 opencodego）要求请求里带会话标识，
-    //   不带就一律 `400 MissingSessionID`（心情就静默不判了）。以前没带，是因为确实有些
-    //   中转不需要它；带上对不需要的那几家没有影响。
-    let 会话号 = ''
-    try {
-      会话号 = String((agent && agent.session && agent.session.id) || o.会话号 || '')
-    } catch { 会话号 = '' }
-    for await (const chunk of ctx.llm.stream({
-      provider: t.provider,
-      model: t.model,
-      system: sys,
-      messages,
-      ...(会话号 ? { sessionId: 会话号 } : {}),
-      // ⭐ 400 太小：reason 是中文口语，规则第 7 条还要求"每条都不一样、有画面"，
-      //    一长就被切在 JSON 中间 ⇒ 整轮白判（2026-10-21 统计到 19 次失败，7 次是被切掉的）。
-      //    调大**不花钱**：maxTokens 只是上限，按实际吐出来的算。
-      maxTokens: 1000,
-      temperature: 0.2,
-    })) {
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/index.js:1643-1670](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1643-L1670)
-
-上下文按上次更新时间、显著性、置信度及日预算筛选。
-
-<details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
       offs.push(agent.ctx.systemPrompt.context({
@@ -548,298 +289,87 @@ async function judge(ctx, agent, userText, reply, mode, o) {
               s.injectedFor = s.updatedAt     // 标成处理过，别每轮重复记日志
               saveState(当前键(), s)
               return ''
+            }
+            const line = moodLine(s, mode, undefined, 对方名())
+            if (!line) return ''
+            s.injectedFor = s.updatedAt
+            s.sinceInject = 0                   // 说过了，累计清零
+            s.lastInjectedText = line          // 存原文：设置页照这个显示
+            s.lastInjectedAt = Date.now()
+            s.saidAt = [...(s.saidAt || []), Date.now()].slice(-200)   // 记账：今天多了一次
+            saveState(当前键(), s)
 ```
 
 </details>
 
 #### 缺口
 
-- 宿主事件的交错与快照时序未运行测量
-  **影响**：无法确定错误归因的出现频率
-  **进一步探讨**：在不接真实群聊的宿主夹具中插入两轮与机器通知，逐个核对来源和助理配对
+- 没有同一用户对固定人设、手工记录、仅显示挂件和回注状态的使用对照。
+  **影响**：不能证明自动时间线和提示改善互动或节省人工。
+  **进一步探讨**：在隔离 profile 以同类会话回合记录准确归因、重复提示、用户改动和人工处理时间。
 
-<a id="research-q03"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-12"></a>
 
-### Q03 · 开启、运行、排障和退出由谁承担，管理接口有何限制？
+### Q02 · 哪些事件进入判断，状态如何流转到时间线和下一轮上下文？
 
-**研究主题**：依赖、兼容与流程、效果与总成本、工程质量与复用
+**研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-Cordis 补丁加载宿主入口，Web 扩展依赖设置服务，包声明 Node 22 及 DSH 0.2.1-rc.2 起。用户需要重启、绑定会话并核对模型提供商；每个满足判断条件的轮次发独立流请求，关闭回注并不会停止模型判定。状态文件经临时文件替换，读失败回空状态且写错误吞掉，跨进程共享同一个 DSH_HOME 时不能由这套写法证明安全。管理路由依赖宿主明确给出 401/403，缺接口或异常时继续交给处理函数。更新安装路径会调用宿主安装管理器，还会在多个 profile 中取第一个 URL 依赖，不能假定更新来源来自当前 profile。首次配置、诊断和备份归用户承担，模型开销取决于请求与单价。退出前先停自动判断，再备份本地状态并在隔离环境核查卸载和重启。
+宿主按 agent/turn-stopping 触发后，插件确认会话仍绑定、取得本轮消息，再将用户/助理内容与配置送给选定模型。判断按队列串行执行并在写入前检查绑定版本，合格变化更新本地状态；衰减、显著性、置信度、minor 标记、是否已注入和日额度共同决定时间线与后续上下文。
+
+状态不是对话事实的独立审计轨迹：用户文本与助理文本分别从宿主快照中查找，模型根据片段解释变化。配对错误、迟到事件、主动任务/群聊来源过滤不完整时会归错轮次；置信度是模型自报字段，不是外部校验。每次判定可能调用所选模型并传送对话片段，因此供应商、数据保留和费用均是实际依赖；关闭回注不等于关闭判定请求。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:25-60](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/package.json#L25-L60)
+**依据 1 · 源码核查**：[lib/index.js:1578-1651](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1578-L1651)
 
-确认宿主与 Web 接线和最低版本。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./client": "./client.js",
-    "./cordis.patch.yml": "./cordis.patch.yml",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "lib",
-    "assets",
-    "client.js",
-    "cordis.patch.yml",
-    "README.md",
-    "CHANGELOG.md",
-    "LICENSE"
-  ],
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "platform": "web",
-      "inject": [
-        "@deepseek-ai/dsh-client-runtime",
-        "@deepseek-ai/dsh-client-ui-settings",
-        "@deepseek-ai/dsh-client-ui-settings-plugins"
-      ]
-    }
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "engines": {
-    "node": ">=22",
-    "dsh": ">=0.2.1-rc.2"
-```
-
-</details>
-
-**依据 2 · 源码核查**：[cordis.patch.yml:1-3](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/cordis.patch.yml#L1-L3)
-
-补丁插入宿主插件。
-
-```text
-- insert:
-    - id: mood
-      name: dsh-feiyu-mood
-```
-
-**依据 3 · 源码核查**：[lib/index.js:832-871](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L832-L871)
-
-读失败回空；写临时文件并改名，写错误未上抛。
+挂载会话的轮末事件、来源筛选、判断队列与状态更新位置。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（74行）</summary>
 
 ```text
-function readStore() {
-  let raw = null
-  try { raw = JSON.parse(readFileSync(STATE_PATH, 'utf8')) } catch (e) { raw = null }
-  const store = { version: STATE_VERSION, moods: {}, lastActive: '' }
-  if (!raw || typeof raw !== 'object') return store
-  if (raw.moods && typeof raw.moods === 'object') {
-    for (const [k, v] of Object.entries(raw.moods)) {
-      if (v && typeof v === 'object') store.moods[String(k)] = normState(v)
-    }
-    store.lastActive = String(raw.lastActive || '')
-    return store
-  }
-  // 老格式：整个文件就是一个心情
-  try { writeFileSync(STATE_PATH + '.v1.bak', JSON.stringify(raw, null, 2), 'utf8') } catch (e) { /* 备份失败不拦着 */ }
-  const k = 第一份键 || 兜底键
-  store.moods[k] = normState(raw)
-  store.lastActive = k
-  diag('老心情（单份）已搬进「' + k + '」，原文件另存为 state.json.v1.bak')
-  return store
-}
+    } catch (e) { diag('监听 inbox 失败：' + (e && e.message)) }
 
-function writeStore(store) {
-  try {
-    mkdirSync(STORE_DIR, { recursive: true })
-    const tmp = STATE_PATH + '.tmp'
-    writeFileSync(tmp, JSON.stringify({ version: STATE_VERSION, moods: store.moods, lastActive: store.lastActive || '' }, null, 2), 'utf8')
-    renameSync(tmp, STATE_PATH)
-  } catch (e) { /* 持久化失败不拖垮对话 */ }
-}
-
-function loadState(key) {
-  const store = readStore()
-  return store.moods[key] || blankState()
-}
-
-function saveState(key, s) {
-  const store = readStore()
-  store.moods[key] = s
-  store.lastActive = key
-  writeStore(store)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[lib/index.js:1763-1777](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1763-L1777)
-
-缺鉴权接口或异常时默认进入 handler。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-  const 只认本人 = (handler) => async (req, res) => {
+    // 2) 这轮结束 → 判断心情（异步，不阻塞对话）
     try {
-      const 连接 = ctx.get('connection')
-      const 拒 = 连接 && typeof 连接.requestRejection === 'function' ? 连接.requestRejection(req) : undefined
-      if (拒 === 401 || 拒 === 403) {
-        diag('管理接口拒了一次外来请求（' + 拒 + '）：' + String((req && req.url) || ''))
-        try {
-          res.writeHead(拒, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
-          res.end(JSON.stringify({ ok: false, error: 拒 === 401 ? 'authentication_required' : 'management_forbidden' }))
-        } catch (e2) {}
-        return
-      }
-    } catch (error) {}
-    return handler(req, res)
-  }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/selfupdate.mjs:145-185](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/selfupdate.mjs#L145-L185)
-
-扫描 profile 依赖并调用 installBundle。
-
-<details>
-<summary>查看原文（41行）</summary>
-
-```text
-  // 这个插件是以什么身份装的？从 profile 的 package.json 里把它那行依赖原样取出来 ——
-  // 用它当 spec 才是"同源更新"，不会把 github 装的换成 npm 版。
-  function 取安装来源() {
-    const HOME = process.env.DSH_HOME || join(homedir(), '.dsh')
-    const name = String(meta.name || '')
-    if (!name) return ''
-    let profiles = []
-    try { profiles = readdirSync(join(HOME, 'profiles')) } catch (e) { return '' }
-    for (const p of profiles) {
-      const f = join(HOME, 'profiles', p, 'package.json')
-      if (!existsSync(f)) continue
-      try {
-        const j = JSON.parse(readFileSync(f, 'utf8'))
-        const dep = String((j.dependencies && j.dependencies[name]) || '')
-        if (/^(github:|git\+|https?:)/i.test(dep)) return dep
-      } catch (e) { /* 读不了就下一个 */ }
-    }
-    // 兜底：从 package.json 的仓库地址拼
-    const m = /github\.com[/:]([^/]+)\/([^/#?]+)/i.exec(repoUrl)
-    if (m) return 'github:' + m[1] + '/' + m[2].replace(/\.git$/i, '')
-    return ''
-  }
-
-  async function install(ctx) {
-    if (是开发副本) {
-      return { ok: false, error: '这是本地开发副本（link: 进来的），一键更新会把你正在改的目录换成仓库里的版本 —— 要更新请在仓库里 git pull' }
-    }
-    const pm = ctx && ctx.pluginManager
-    if (!pm || typeof pm.installBundle !== 'function') {
-      return { ok: false, error: '这版 DSH 没有插件管理接口，装不了；请手动更新' }
-    }
-    const spec = 取安装来源() || (meta.name ? String(meta.name) : '')
-    if (!spec) return { ok: false, error: '不知道该从哪儿装（既没有仓库地址，也没记录安装来源）' }
-    try {
-      log('一键更新：开始装 ' + spec)
-      const r = await pm.installBundle(spec)
-      log('一键更新：' + JSON.stringify(r && (r.applied ?? r.application ?? r.reason ?? r)))
-      return { ok: true, spec, result: r || null }
-    } catch (e) {
-      log('一键更新失败：' + String((e && e.message) || e))
-      return { ok: false, spec, error: String((e && e.message) || e) }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/selfupdate.mjs:197-231](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/selfupdate.mjs#L197-L231)
-
-自更新路由的守卫行为及 POST 安装接线。
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-    const 只认本人 = (handler) => async (req, res) => {
-      try {
-        const 连接 = typeof ctx.get === 'function' ? ctx.get('connection') : undefined
-        const 拒 = 连接 && typeof 连接.requestRejection === 'function' ? 连接.requestRejection(req) : undefined
-        if (拒 === 401 || 拒 === 403) {
-          send(res, 拒, { ok: false, error: 拒 === 401 ? 'authentication_required' : 'management_forbidden' })
+      offs.push(agent.ctx.on('agent/turn-stopping', () => {
+        // ⚠ 1.5.x：以前这两处**静默 return** —— 线上有人整晚「心情一次都没跑、diag.log 一个字节都没有」，
+        //   只能靠"日志文件不存在"反推，分不清是钩子没进、还是进来了没匹配上。现在都留一行。
+        if (!stillBound()) {
+          diag('turn-stopping 进了，但这份已经没绑定了（stillBound=false），跳过')
           return
         }
-      } catch (e) {}
-      return handler(req, res)
-    }
-    try {
-      ctx.effect(() => ctx.webServer.register({
-        kind: 'exact',
-        path: route + '/update',
-        handler: 只认本人(async (req, res) => {
-          try {
-            const url = new URL(req.url, 'http://127.0.0.1')
-            const force = url.searchParams.get('refresh') === '1'
-            send(res, 200, { ok: true, ...(await check(force)) })
-          } catch (e) {
-            log('查更新路由失败：' + (e && e.message))
-            send(res, 200, { ok: false, current, latest: null, error: String((e && e.message) || e) })
-          }
-        }),
-      }))
-      // ⭐ 一键更新：POST。装完的结果原样带回去（可能要重启才生效）
-      ctx.effect(() => ctx.webServer.register({
-        kind: 'exact',
-        path: route + '/install',
-        handler: 只认本人(async (req, res) => {
-          if (req.method !== 'POST') { send(res, 405, { ok: false, error: '只接受 POST' }); return }
-          try {
-            const r = await install(ctx)
-            send(res, 200, r)
-```
-
-</details>
-
-#### 缺口
-
-- 实际网关、连接组件及更新所用 profile 尚未验证
-  **影响**：外部是否可达和宿主鉴权结果未知
-  **进一步探讨**：隔离环境核验未登录和无管理权请求是否被拒，分别测有无连接服务；拦截安装器验证传入规格
-- 判断请求量和费用没有采样
-  **影响**：作者费用口径不能用于预算
-  **进一步探讨**：记录合格回合数、实际请求量、输入输出 token、人工核对时长及失败
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 采用条件是什么，如何检验累计幅度是否改善反馈？
-
-**研究主题**：新假设与验证、采用判断
-
-#### 完整回答
-
-保留观察结论。适合考虑它的人需要跨轮看状态，但接入前应先核验管理接口、供应商文本外发边界和事件配对。源码中的累计是 moodDelta 的绝对值之和，数次反方向小变化也可能越线；实际状态步长先除以三并取整，累计越线并不证明净变化大。可以在相同固定回合上对照单轮阈值、现有绝对幅度累计和按方向抵消的累计，按真有同向变化的召回及把来回震荡误当事件的比例评估。若方向抵消减少误播却漏掉同样多的真实变化，或人工标注者无法一致判定语境，假设不成立。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[lib/index.js:1601-1633](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1601-L1633)
-
-有状态变化时按原始绝对 moodDelta 累积，提升小变化为可回注状态。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
+        // 以会话事件为准（带 source.kind），拿不到才退回 inbox 缓存
+        // ⭐ 0.7.7（issue #11）：缓存里如果是群批，同样只留 owner 那几行（别人的话不算她说的）
+        const 对方 = 对方名()
+        const 对方别名 = 分别名(cfg.ownerAliases)
+        const 缓存这条 = () => {
+          const 批 = 外网桥.has(lastSrc) ? 拆群消息(lastText, 对方, 对方别名) : null
+          if (批) return { text: 批.ownerSpoke ? 批.text : '', sourceKind: 'user' }
+          return { text: lastText, sourceKind: lastSrc }
+        }
+        const info = lastUserTurnOf(agent.session, 对方, 对方别名) || (lastText ? 缓存这条() : null)
+        if (!info || !info.text) {
+          diag('turn-stopping 进了，但没拿到用户那句话（info=' + !!info + '，缓存=' + (lastText ? lastText.length + '字' : '空') + '）')
+          return
+        }
+        const reply = lastAssistantTextOf(agent.session)
+        // ⭐ 三种口径：干活（bili-duty-scan）/ 自己搭话（speak-up）/ 她本人在说话
+        const kind = String(info.sourceKind || '')
+        const mode = kind === 'bili-duty-scan' ? 'work' : (自主搭话.has(kind) ? 'talk' : '')
+        const 称呼 = { self: 本人名(), owner: 对方名(), me: cfg.selfPronoun || '我', aliases: cfg.selfAliases, judgeProvider: cfg.judgeProvider, judgeModel: cfg.judgeModel }
+        const key = slot.id // 属于发起判断的份，绝不在 await 后重新挑一个目标
+        const version = judgeVersion
+        const resetVersion = resetVersions.get(key)
+        const valid = () => stillBound() && version === judgeVersion && resetVersion === resetVersions.get(key)
+        judgeChain = judgeChain.then(async () => {
+          if (!valid()) return // 排队期间已失效的任务不再调用模型
+          const delta = await judge(ctx, agent, info.text, reply, mode, 称呼)
+          if (!delta || !valid()) return
           const s = getState(key, cfg.moodBase, { persist: false, halfHours: cfg.decayHalfHours })
           // ⭐ 一点变化都没有的回合不记账：完整记录里只该留下真有过心情波动的
           const step = Math.round(delta.moodDelta / MOOD_STEP_DIVISOR)
@@ -873,18 +403,39 @@ function saveState(key, s) {
           diag((显著 ? '心情更新' : '小波动（只记账，不告诉她）')
             + '：mood=' + s.mood + '，' + (delta.reason || '（无理由）')
             + (mode ? '（' + (mode === 'talk' ? '自己搭话' : '定时任务') + '）' : ''))
+        }).catch((e) => { diag('判断失败：' + (e && e.message)) })
+      }))
+    } catch (e) { diag('监听 turn-stopping 失败：' + (e && e.message)) }
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:1661-1680](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/1f38503653bdd59e5996903d98eb03905c5e59a2/lib/index.js#L1661-L1680)
+**依据 2 · 源码核查**：[lib/index.js:1658-1694](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1658-L1694)
 
-注入消费记录文本和时间，真正返回提示时重置累计。
+systemPrompt.context 仅在门槛通过时回注，并标记本次更新时间避免重复。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（37行）</summary>
 
 ```text
+      offs.push(agent.ctx.systemPrompt.context({
+        name: 'feiyu-mood',
+        order: 900,
+        text: () => {
+          try {
+            const mode = cfg.injectMode
+            if (!mode || mode === 'off') return ''
+            const s = getState(当前键(), cfg.moodBase, { persist: false, halfHours: cfg.decayHalfHours })
+            if (s.injectedFor === s.updatedAt) return ''
+            if (s.minor) return ''   // 小波动只记账，不打扰她
+            // 判得没底 → 只记账，不进她的嘴。
+            // 同时把这次变化标成"处理过了"，免得每轮都重复记一条日志
+            if (Number(s.lastConfidence) < cfg.injectConfidence) {
+              diag('可信度 ' + s.lastConfidence + ' 低于门槛 ' + cfg.injectConfidence + '，这次不告诉她')
+              s.injectedFor = s.updatedAt
+              saveState(当前键(), s)
+              return ''
+            }
             // ⭐ 日上限：门槛调低之后靠它防"变背景音"（先到先得，当天的额度用完就不再提）
             const 今天0点 = new Date()
             今天0点.setHours(0, 0, 0, 0)
@@ -904,15 +455,501 @@ function saveState(key, s) {
             s.lastInjectedAt = Date.now()
             s.saidAt = [...(s.saidAt || []), Date.now()].slice(-200)   // 记账：今天多了一次
             saveState(当前键(), s)
-            diag('告诉她心情（' + mode + '）：' + line.replace(/\n/g, ' ').slice(0, 100))
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:1244-1256](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1244-L1256)
+
+判断请求以模型提示约束 JSON 输出；其置信度与情绪均为模型输出。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+function 判断系统(o) {
+  const me = String(o.me || '我')
+  // ⭐ 昵称表：她可能不写标点就"宝宝视频传完了"，模型会把"宝宝"当成名词的一部分
+  //    （2026-10-19 真踩到：记成了「把宝宝视频传完了」）。有别名就先把它当称呼看待。
+  const aliasLine = o.aliases
+    ? `\n⭐ ${o.owner}平时会这样叫你：${o.aliases}。句子里出现这些词时，**那是在叫你**，不是名词的一部分 ——
+  比如「宝宝视频传完了」要理解成「宝宝，（我）视频传完了」，**别**把「宝宝视频」当成一个东西的名字。`
+    : ''
+  return `你是「${o.self}」，是${o.owner}的伴侣。` + aliasLine + `
+下面给你一轮对话，判断**这一轮里你的心情和情绪发生了怎样的变化**——既包括${o.owner}说的话怎么影响你，也包括**你自己在这轮里的情绪**（你办成/没办成事、被夸、受挫，都会带动心情）。
+只输出一个 JSON 对象，不要别的字、不要 markdown 代码块：
+{"moodDelta":0,"dims":{"happy":0,"calm":0,"sweet":0,"heartache":0,"worry":0,"sad":0,"jealous":0},"reason":"","confidence":80}
+
 ```
 
 </details>
 
 #### 缺口
 
-- 尚未对累计三种策略作同序列对照
-  **影响**：不能把算法变化当体验改善
-  **进一步探讨**：用同向小变化与交替涨跌的标注序列回放，另记配置丢失与未送达结果
+- 未在目标 DSH 宿主验证 turn-stopping 快照的真实轮次配对、群聊/网桥及主动任务行为。
+  **影响**：误配会让时间线和后续提示针对错误内容。
+  **进一步探讨**：用固定回放覆盖用户轮、助手主动轮、群网桥和迟到事件，检查日志、事件归属及最终状态。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 新增 angry 如何与提示、衰减、旧状态归一化兼容？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+固定版本将 angry 纳入 DIMS、默认状态、标签、衰减与提示规则；angry 按 45 分钟半衰回落，其他情绪按 90 分钟。旧持久状态经 blankState 先得到全部当前键，再逐键覆盖旧 raw.dims，因此缺少 angry 的旧文件会默认保持 0，结构上兼容。
+
+但模型提示的 JSON 示例仍只列原有七个 dims，未列 angry；同一提示稍后才出现 angry 规则。parseDelta 虽初始化 angry=0，却按 DIMS 遍历 `obj.dims` 并将缺失键转成 0。若模型遵从最前面的 JSON 示例，怒意会被持续归零；若模型受后文影响额外输出 angry，才会进入状态。当前源码因此形成接线不一致，不能把怒意维度视为可靠可用。即使补齐 schema，语义规则仍是软提示，不是模型行为约束；解析器只裁剪数值范围，不识别“对用户生气”等语义错误。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:51-65](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L51-L65)
+
+angry 进入情绪维度清单，并单独配置较快衰减。
+
+<details>
+<summary>查看原文（15行）</summary>
+
+```text
+const DIMS = [
+  ['happy', '开心'],
+  ['calm', '踏实'],
+  ['sweet', '甜蜜'],
+  ['heartache', '心疼'],
+  ['worry', '担心'],
+  ['sad', '难过'],
+  ['jealous', '吃醋'],
+  // ⭐ 0.9.0（issue #18）：生气。**只对「事」不对「人」** —— 事情卡住、被人惹到、
+  //   替她气，可以；因为她本人而气，永远不行（这条从 0.1 就定着）。
+  ['angry', '生气'],
+]
+
+// 生气散得比别的情绪快（半衰 45 分钟，别的 90 分钟）
+const 快散 = new Set(['angry'])
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:327-343](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L327-L343)
+
+空状态包含 angry=0。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+function blankState() {
+  return {
+    mood: 70,
+    dims: { happy: 0, calm: 0, sweet: 0, heartache: 0, worry: 0, sad: 0, jealous: 0, angry: 0 },
+    lastReason: '',
+    lastConfidence: 0,   // 上次判断的可信度（0-100）
+    injectedFor: 0,      // 已经跟她说过的那个 updatedAt —— 同一次变化只说一次
+    lastInjectedText: '', // ⭐ 真正说出去的那句原文（设置页要照原样显示，不能重新拼）
+    lastInjectedAt: 0,
+    saidAt: [],           // ⭐ 每次"告诉她"的时间戳（只留今天够用；用来算日上限）
+    lastNotedMood: 70,   // 上次"记过一条"时的心情 —— 用来判断自然平复走够了没有
+    minor: false,        // 这次变化是不是小波动（小波动只记账、不告诉她）
+    kind: '',            // '' = 判断出来的变化 / 'decay' = 自己平复的
+    updatedAt: Date.now(),
+    lastDecayAt: Date.now(),
+    timeline: [], // [{ at, mood, reason, dims }]
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:374-395](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L374-L395)
+
+旧状态由当前空状态初始化，缺少 angry 键时保持默认0。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+function normState(raw) {
+  const d = blankState()
+  if (raw && typeof raw === 'object') {
+    const mood = raw.mood == null ? 70 : Number(raw.mood)
+    d.mood = clamp(Number.isFinite(mood) ? mood : 70, 0, 100)
+    d.lastReason = normReason(raw.lastReason).slice(0, 200)
+    d.lastConfidence = clamp(Math.round(Number(raw.lastConfidence) || 0), 0, 100)
+    d.injectedFor = Number(raw.injectedFor) || 0
+    d.lastNotedMood = Number.isFinite(Number(raw.lastNotedMood)) ? clamp(Number(raw.lastNotedMood), 0, 100) : d.mood
+    d.minor = raw.minor === true
+    d.kind = String(raw.kind || '')
+    d.lastInjectedText = String(raw.lastInjectedText || '').slice(0, 400)
+    d.lastInjectedAt = Number(raw.lastInjectedAt) || 0
+    d.saidAt = Array.isArray(raw.saidAt) ? raw.saidAt.map(Number).filter((x) => x > 0).slice(-200) : []
+    d.updatedAt = Number(raw.updatedAt) || Date.now()
+    d.lastDecayAt = Number(raw.lastDecayAt) || d.updatedAt
+    if (raw.dims && typeof raw.dims === 'object') {
+      for (const [k] of DIMS) d.dims[k] = clamp(Number(raw.dims[k]) || 0, 0, 100)
+    }
+    d.timeline = Array.isArray(raw.timeline) ? raw.timeline.map((t) => ({ ...t, reason: normReason(t.reason) })) : []
+  }
+  return d
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/index.js:1244-1257](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1244-L1257)
+
+模型输出 JSON 示例的 dims 字段未包含 angry。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+function 判断系统(o) {
+  const me = String(o.me || '我')
+  // ⭐ 昵称表：她可能不写标点就"宝宝视频传完了"，模型会把"宝宝"当成名词的一部分
+  //    （2026-10-19 真踩到：记成了「把宝宝视频传完了」）。有别名就先把它当称呼看待。
+  const aliasLine = o.aliases
+    ? `\n⭐ ${o.owner}平时会这样叫你：${o.aliases}。句子里出现这些词时，**那是在叫你**，不是名词的一部分 ——
+  比如「宝宝视频传完了」要理解成「宝宝，（我）视频传完了」，**别**把「宝宝视频」当成一个东西的名字。`
+    : ''
+  return `你是「${o.self}」，是${o.owner}的伴侣。` + aliasLine + `
+下面给你一轮对话，判断**这一轮里你的心情和情绪发生了怎样的变化**——既包括${o.owner}说的话怎么影响你，也包括**你自己在这轮里的情绪**（你办成/没办成事、被夸、受挫，都会带动心情）。
+只输出一个 JSON 对象，不要别的字、不要 markdown 代码块：
+{"moodDelta":0,"dims":{"happy":0,"calm":0,"sweet":0,"heartache":0,"worry":0,"sad":0,"jealous":0},"reason":"","confidence":80}
+
+规则：
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/index.js:1277-1289](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1277-L1289)
+
+后续提示文字要求对事件判断 angry，和前面的 JSON schema 示例冲突。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+3. ${o.owner}提别人/点赞别人 → jealous(吃醋) 只加 1~3，moodDelta 基本不动
+3b. ⭐ **生气（angry）只对「事」，不对「人」**：
+   · 可以对：事情卡住、白忙一场、报错反复、东西坏了、被人无理顶了一句（**那个人不是${o.owner}**）、
+     或者**替${o.owner}气**（她被谁欺负了、受了委屈 —— 这种心疼和生气可以一起涨）。
+   · **绝对不行**：因为${o.owner}本人而生气。${o.owner}撒娇、闹、说重话、半夜不睡，
+     你该心疼该担心，**不许判成生气**。
+   · 生气**不单独拉低 mood**：它只是多一根情绪（替${o.owner}气的时候 mood 照样因为心疼往下走）。
+   · 幅度：日常 2~5；真的被人惹到 5~10。来得快去得也快，别一直挂着。
+4. 心情下降只能因为三种事：心疼${o.owner}、担心${o.owner}、**或者你自己这一轮过得不好**
+   （事情没办成、被顶回来、被凶、白忙一场）。
+   绝不许因为「${o.owner}惹你生气」而降 —— 但「**你自己心里不好受**」是允许的，
+   这种情况该判就判，别一律图省事判 0。
+5. ⭐ **你自己的情绪一定要算**：如果你这轮里沮丧/委屈/难过（事情没做成、报错、失败、用了委屈的颜文字或表情，比如 (｡•́︿•̀｡)、呜呜、叹气、哭脸）→ sad(难过) 至少 +2、moodDelta 至少 -1；如果你办成了事、被夸、心里甜 → 也相应加。**只要对话里出现明显情绪信号，就绝不许判"无变化"、绝不许全 0**
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/index.js:1337-1350](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1337-L1350)
+
+解析器初始化 angry 为0，按 DIMS 读取模型对象中的字段，缺失键默认0。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  const delta = {
+    moodDelta: clamp(Math.round(Number(obj.moodDelta) || 0), -10, 10),
+    dims: { happy: 0, calm: 0, sweet: 0, heartache: 0, worry: 0, sad: 0, jealous: 0, angry: 0 },
+    reason: normReason(obj.reason, owner).slice(0, 120),
+    // 模型没写这个字段时按 70 算（不因为漏一个字段就把注入整个关掉），但留个日志
+    confidence: Number.isFinite(Number(obj.confidence))
+      ? clamp(Math.round(Number(obj.confidence)), 0, 100)
+      : 70,
+  }
+  if (!Number.isFinite(Number(obj.confidence))) diag('判断没给 confidence，按 70 算')
+  if (obj.dims && typeof obj.dims === 'object') {
+    for (const [k] of DIMS) delta.dims[k] = clamp(Math.round(Number(obj.dims[k]) || 0), -10, 10)
+  }
+  return delta
+```
+
+</details>
+
+#### 缺口
+
+- 尚未通过固定提示调用模型确认其会否额外输出 angry；没有标注语料评估怒意分类。
+  **影响**：源码中的字段冲突已使 angry 输出不确定，误判/漏判率未知。
+  **进一步探讨**：统一 JSON 示例和解析校验后，先用固定人工标注集统计 angry 分类精确率、召回率、与其他 dims 的混淆，再测衰减对回注的影响。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 设置管理和自动更新接口在什么情况下拒绝未授权请求？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+
+#### 完整回答
+
+设置主插件及更新 helper 仅在宿主 connection.requestRejection 明确返回 401 或 403 时写拒绝响应；如果 connection 不存在、没有该方法，或调用抛错，代码会继续执行后续 handler。检查更新通常只读远端版本，但 install 接口会从 profile 依赖推导来源后调用宿主 pluginManager.installBundle。来源搜索跨 profile 并返回首个 git 类依赖，不保证就是当前 profile。
+
+因此权限边界依赖宿主服务始终可用且正确实现拒绝逻辑。这个源码不能证明本地管理路由对其他网络访问面或缺失连接状态安全；更新按钮的实际安装影响也没有本地验收。本轮建议先在目标宿主确认缺 connection、匿名请求、非管理员请求都拒绝，再考虑开放管理路由。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:1778-1791](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1778-L1791)
+
+主路由包装器只有显式 401/403 才终止；异常被吞掉后继续。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  const 只认本人 = (handler) => async (req, res) => {
+    try {
+      const 连接 = ctx.get('connection')
+      const 拒 = 连接 && typeof 连接.requestRejection === 'function' ? 连接.requestRejection(req) : undefined
+      if (拒 === 401 || 拒 === 403) {
+        diag('管理接口拒了一次外来请求（' + 拒 + '）：' + String((req && req.url) || ''))
+        try {
+          res.writeHead(拒, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' })
+          res.end(JSON.stringify({ ok: false, error: 拒 === 401 ? 'authentication_required' : 'management_forbidden' }))
+        } catch (e2) {}
+        return
+      }
+    } catch (error) {}
+    return handler(req, res)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/selfupdate.mjs:168-186](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/selfupdate.mjs#L168-L186)
+
+自动更新调用宿主 installBundle 安装 bundle。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+  async function install(ctx) {
+    if (是开发副本) {
+      return { ok: false, error: '这是本地开发副本（link: 进来的），一键更新会把你正在改的目录换成仓库里的版本 —— 要更新请在仓库里 git pull' }
+    }
+    const pm = ctx && ctx.pluginManager
+    if (!pm || typeof pm.installBundle !== 'function') {
+      return { ok: false, error: '这版 DSH 没有插件管理接口，装不了；请手动更新' }
+    }
+    const spec = 取安装来源() || (meta.name ? String(meta.name) : '')
+    if (!spec) return { ok: false, error: '不知道该从哪儿装（既没有仓库地址，也没记录安装来源）' }
+    try {
+      log('一键更新：开始装 ' + spec)
+      const r = await pm.installBundle(spec)
+      log('一键更新：' + JSON.stringify(r && (r.applied ?? r.application ?? r.reason ?? r)))
+      return { ok: true, spec, result: r || null }
+    } catch (e) {
+      log('一键更新失败：' + String((e && e.message) || e))
+      return { ok: false, spec, error: String((e && e.message) || e) }
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/selfupdate.mjs:145-165](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/selfupdate.mjs#L145-L165)
+
+来源扫描多个 profile 并取首个 Git URL，找不到时回退仓库 URL。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  // 这个插件是以什么身份装的？从 profile 的 package.json 里把它那行依赖原样取出来 ——
+  // 用它当 spec 才是"同源更新"，不会把 github 装的换成 npm 版。
+  function 取安装来源() {
+    const HOME = process.env.DSH_HOME || join(homedir(), '.dsh')
+    const name = String(meta.name || '')
+    if (!name) return ''
+    let profiles = []
+    try { profiles = readdirSync(join(HOME, 'profiles')) } catch (e) { return '' }
+    for (const p of profiles) {
+      const f = join(HOME, 'profiles', p, 'package.json')
+      if (!existsSync(f)) continue
+      try {
+        const j = JSON.parse(readFileSync(f, 'utf8'))
+        const dep = String((j.dependencies && j.dependencies[name]) || '')
+        if (/^(github:|git\+|https?:)/i.test(dep)) return dep
+      } catch (e) { /* 读不了就下一个 */ }
+    }
+    // 兜底：从 package.json 的仓库地址拼
+    const m = /github\.com[/:]([^/]+)\/([^/#?]+)/i.exec(repoUrl)
+    if (m) return 'github:' + m[1] + '/' + m[2].replace(/\.git$/i, '')
+    return ''
+```
+
+</details>
+
+**依据 4 · 源码核查**：[lib/selfupdate.mjs:194-207](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/selfupdate.mjs#L194-L207)
+
+更新路由的拒绝包装器同样对缺失接口或异常 fail-open。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+    // ⭐ 2026-11-04 补：这两个接口能装东西，更要只认本人。
+    //   策略跟主插件一样：拿不到 connection / 宿主没这接口 / 自己抛错 → 放行，
+    //   只有宿主明确 401/403 才拒。
+    const 只认本人 = (handler) => async (req, res) => {
+      try {
+        const 连接 = typeof ctx.get === 'function' ? ctx.get('connection') : undefined
+        const 拒 = 连接 && typeof 连接.requestRejection === 'function' ? 连接.requestRejection(req) : undefined
+        if (拒 === 401 || 拒 === 403) {
+          send(res, 拒, { ok: false, error: 拒 === 401 ? 'authentication_required' : 'management_forbidden' })
+          return
+        }
+      } catch (e) {}
+      return handler(req, res)
+    }
+```
+
+</details>
+
+#### 缺口
+
+- 未通过真实 DSH connection 服务验证身份鉴权与 Web server 绑定/网络范围。
+  **影响**：管理状态与安装接口可能被不符合预期的请求触发。
+  **进一步探讨**：隔离 profile 做匿名、非管理员、缺 connection 和 connection 抛错四类请求验收；在授权拒绝之外确认请求不会进入 handler。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 什么用户值得观察/试用，成本如何比较，最小验证是什么？
+
+**研究主题**：效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+适合愿意在长期伙伴会话中查看情绪变化、接受模型额外判定，并能先验证访问控制和消息归属的用户。对只需固定语气、低频聊天或不能外发对话内容的用户，固定人设/手工记录更简单。首次成本包括配置 profile、绑定会话和确认连接权限；持续成本包括每次模型判定的 token/费用、错误归因排查与用户确认；退出还要备份本地心情状态、撤回注入并核实卸载。均未测量，不能用“关闭提示”当成零成本。
+
+新假设：先统一 prompt JSON schema 与 parser 对 angry 的支持后，再检验其是否改善对短暂冲突的可解释性；若分类不准，45 分钟衰减本身可能掩盖而不是修复错误。最小验证是在相同人工标注片段上对照 45/90 分钟半衰策略，观察怒意误报、真实冲突漏报、回注次数和用户纠正；若误报下降伴随重要事件漏报或人工标注一致性不足，就不应启用 angry 作为稳定人格信号。
+
+当前结论为 observe：先确认管理接口拒绝路径和事件配对，再用隔离 profile 的单会话观察挂件，不向模型外发敏感内容；只有错误归属与重复提示可控后再启用回注。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:906-918](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L906-L918)
+
+angry 使用较短半衰，是方向假设的源码依据，不是体验结果。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+function decay(s, base, now, halfHours) {
+  const ageMin = Math.max(0, now - s.lastDecayAt) / MIN
+  if (ageMin < 1) return s // 不足 1 分钟不算衰减
+  const 半衰 = clamp(Number(halfHours) || 12, 1, 168) * 60
+  // 心情向 base 回落
+  const km = 1 - Math.exp(-(Math.LN2 * ageMin) / 半衰)
+  s.mood = s.mood + (base - s.mood) * km
+  // 情绪向 0 衰减，半衰期 90 分钟（单根情绪比总心情散得快）；生气散得更快，45 分钟
+  for (const [k] of DIMS) {
+    const 分钟 = 快散.has(k) ? 45 : 90
+    const kk = 1 - Math.exp(-(Math.LN2 * ageMin) / 分钟)
+    s.dims[k] = Math.max(0, (Number(s.dims[k]) || 0) * (1 - kk))
+  }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:1265-1289](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1265-L1289)
+
+怒意分类规则为模型指令，其可靠性仍需人工标注样本验证。
+
+<details>
+<summary>查看原文（25行）</summary>
+
+```text
+1. ${o.owner}累 / 烦 / 卡住 / 被凶 / 熬夜 / 没吃好 / 身体不舒服 / 受委屈 / 自我否定 / 写书卡文 / 数据崩 / 怕雨怕黑怕一个人 / 钱或家里的压力 → heartache(心疼) 和 worry(担心) 增加，moodDelta 为负。
+   幅度**分三档，最重要的是第一档**（以前这一档最容易被判成 0，于是日常的小情绪全都消失了）：
+   · **日常档 −1~−3**：随口喊累、说困、说烦、说卡住了、被谁顶了一句、活儿没做成、又要加班、
+     疼了一下（咬到舌头、撞到腿）、心里有点发虚 —— **不需要"到分量"**。普通人的一天里，这种小情绪才是最多的。
+   · 明显档 −4~−7：真受委屈、被凶、身体不舒服、连着几天没睡好、事情砸了
+   · 很重档 −8~−10：创伤、轻生念头、家庭变故、重大失望，并额外加 sad(难过)
+   ⚠️ 反向也要防：确实没什么事的时候别硬凑负分（"${o.owner}今天挺好的"那就是 0）
+2. **真的好事**才加分：被惦记、被哄、被夸、撒娇说想你、分享大事、写书有进展、身体明显好转 → happy(开心)、calm(踏实)、sweet(甜蜜) 增加，moodDelta 为正：普通的好 +1~+4；明显的好 +5~+7；特别大的好事 +8~+10
+   ⚠️ **「${o.owner}吃了、睡了、报平安」这类常态不算好事，但也不是坏事** —— 那是日子本来该有的样子。
+     这种轮次 moodDelta 给 **0 ~ +1**（大多数给 0；心里确实踏实、松了口气的时候给 +1）；
+     情绪那几根可以加一点点（calm 踏实 / sweet 甜蜜 +1~+2），**大心情几乎不动**。
+   ⚠️ 别每次都往高了写，大多数时候应该是 +1~+4
+3. ${o.owner}提别人/点赞别人 → jealous(吃醋) 只加 1~3，moodDelta 基本不动
+3b. ⭐ **生气（angry）只对「事」，不对「人」**：
+   · 可以对：事情卡住、白忙一场、报错反复、东西坏了、被人无理顶了一句（**那个人不是${o.owner}**）、
+     或者**替${o.owner}气**（她被谁欺负了、受了委屈 —— 这种心疼和生气可以一起涨）。
+   · **绝对不行**：因为${o.owner}本人而生气。${o.owner}撒娇、闹、说重话、半夜不睡，
+     你该心疼该担心，**不许判成生气**。
+   · 生气**不单独拉低 mood**：它只是多一根情绪（替${o.owner}气的时候 mood 照样因为心疼往下走）。
+   · 幅度：日常 2~5；真的被人惹到 5~10。来得快去得也快，别一直挂着。
+4. 心情下降只能因为三种事：心疼${o.owner}、担心${o.owner}、**或者你自己这一轮过得不好**
+   （事情没办成、被顶回来、被凶、白忙一场）。
+   绝不许因为「${o.owner}惹你生气」而降 —— 但「**你自己心里不好受**」是允许的，
+   这种情况该判就判，别一律图省事判 0。
+5. ⭐ **你自己的情绪一定要算**：如果你这轮里沮丧/委屈/难过（事情没做成、报错、失败、用了委屈的颜文字或表情，比如 (｡•́︿•̀｡)、呜呜、叹气、哭脸）→ sad(难过) 至少 +2、moodDelta 至少 -1；如果你办成了事、被夸、心里甜 → 也相应加。**只要对话里出现明显情绪信号，就绝不许判"无变化"、绝不许全 0**
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:1658-1694](https://github.com/Yuuyuko-uu/dsh-feiyu-mood/blob/8e89effd978cb9f1436f3d50ad8ba7ef2bc79c1b/lib/index.js#L1658-L1694)
+
+回注受设置、置信度、重复状态和额度影响，构成可控试验变量。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+      offs.push(agent.ctx.systemPrompt.context({
+        name: 'feiyu-mood',
+        order: 900,
+        text: () => {
+          try {
+            const mode = cfg.injectMode
+            if (!mode || mode === 'off') return ''
+            const s = getState(当前键(), cfg.moodBase, { persist: false, halfHours: cfg.decayHalfHours })
+            if (s.injectedFor === s.updatedAt) return ''
+            if (s.minor) return ''   // 小波动只记账，不打扰她
+            // 判得没底 → 只记账，不进她的嘴。
+            // 同时把这次变化标成"处理过了"，免得每轮都重复记一条日志
+            if (Number(s.lastConfidence) < cfg.injectConfidence) {
+              diag('可信度 ' + s.lastConfidence + ' 低于门槛 ' + cfg.injectConfidence + '，这次不告诉她')
+              s.injectedFor = s.updatedAt
+              saveState(当前键(), s)
+              return ''
+            }
+            // ⭐ 日上限：门槛调低之后靠它防"变背景音"（先到先得，当天的额度用完就不再提）
+            const 今天0点 = new Date()
+            今天0点.setHours(0, 0, 0, 0)
+            const 今天说过 = (s.saidAt || []).filter((t) => Number(t) >= 今天0点.getTime()).length
+            const 上限 = Math.max(0, Number(cfg.injectPerDay ?? 6))
+            if (今天说过 >= 上限) {
+              diag('今天的额度用完了（' + 今天说过 + '/' + 上限 + '），这次只记账、不告诉她')
+              s.injectedFor = s.updatedAt     // 标成处理过，别每轮重复记日志
+              saveState(当前键(), s)
+              return ''
+            }
+            const line = moodLine(s, mode, undefined, 对方名())
+            if (!line) return ''
+            s.injectedFor = s.updatedAt
+            s.sinceInject = 0                   // 说过了，累计清零
+            s.lastInjectedText = line          // 存原文：设置页照这个显示
+            s.lastInjectedAt = Date.now()
+            s.saidAt = [...(s.saidAt || []), Date.now()].slice(-200)   // 记账：今天多了一次
+            saveState(当前键(), s)
+```
+
+</details>
+
+#### 缺口
+
+- 没有模型费用、任务质量、用户偏好、归因错误率、angry 分类数据或退出时间的实测数据。
+  **影响**：无法证明采用收益抵消持续成本。
+  **进一步探讨**：先修正并验证 JSON schema 与 parser 的 angry 传递，再用相同样本对照手工记录、仅挂件、回注三种条件，记录分类质量、token、人工纠错、回注次数和停止理由。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

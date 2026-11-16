@@ -25,7 +25,7 @@
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
-| [Mole DSH Skill](../../plugins/tw93--mole--plugins-mole/INSIGHT.md) | 在 DSH 中用 Mole CLI 指导磁盘占用查询、清理预览、应用卸载和系统状态检查。 | [![GitHub Star 74,465](https://img.shields.io/static/v1?label=&message=74%2C465&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) |
+| [Mole DSH Skill](../../plugins/tw93--mole--plugins-mole/INSIGHT.md) | 在 DSH 中用 Mole CLI 指导磁盘占用查询、清理预览、应用卸载和系统状态检查。 | [![GitHub Star 75,104](https://img.shields.io/static/v1?label=&message=75%2C104&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) |
 | [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) | 将 DeepSeek Harness 的本地 Web、Host 与插件系统整合进桌面窗口，提供工作配置、终端、更新与恢复入口。 | [![GitHub Star 34,996](https://img.shields.io/static/v1?label=&message=34%2C996&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop) |
 | [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md) | 浏览器扩展提供提示词管理，并在受支持的聊天网站提供时间线、文件夹、对话导出和公式复制。 | [![GitHub Star 20,587](https://img.shields.io/static/v1?label=&message=20%2C587&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/voyager-crew/voyager) |
 | [dsh-wallpaper-engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) | 在 DSH 对话界面显示本地场景、网页和视频壁纸，支持外观预设。 | [![GitHub Star 6,484](https://img.shields.io/static/v1?label=&message=6%2C484&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) |

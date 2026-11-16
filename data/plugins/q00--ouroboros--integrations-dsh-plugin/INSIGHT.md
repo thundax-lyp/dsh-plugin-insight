@@ -2,10 +2,10 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[592c667](https://github.com/Q00/ouroboros/tree/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin)
+源码版本：[54dad8e](https://github.com/Q00/ouroboros/tree/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,332](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C332&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
+[![GitHub ★ 6,365](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C365&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Q00/ouroboros)
 <!-- END META -->
 
 > **功能**：把 Ouroboros 的规格访谈、执行和评估工具接入 DeepSeek Harness 对话的配置包。
@@ -96,7 +96,7 @@
 
 > **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示子包将常用 stdio 连接和默认设置打包，降低多 profile 重复配置；工作流机制由根服务提供。
 
-[Q02](#research-q02) 的软启动错误将挂载失败与宿主启动区分，[Q03](#research-q03) 的双向集成仍需分别验证路径、凭据和宿主分派。
+[Q02](#research-q02) 的软失败能把服务失败与宿主启动区分，[Q03](#research-q03) 的根运行器能保留已固定的偏好并在持久契约坏掉时阻止恢复，但需实际运行的发行版本匹配才有意义。
 
 <a id="detail-section-5"></a>
 
@@ -118,16 +118,16 @@
 
 固定配置足以说明 MCP 挂载方式。真实宿主、下载结果和首调未经验证。版本与后端诊断属于假设。
 
-- 已检查：作者 README、包清单、源码路径 integrations/dsh-plugin/package.json、integrations/dsh-plugin/cordis.patch.yml、integrations/dsh-plugin/README.md、src/ouroboros/mcp/tools/execution_handlers.py、src/ouroboros/providers/factory.py、src/ouroboros/providers/dsh_llm_adapter.py、src/ouroboros/providers/dsh_acp_client.py、pyproject.toml 及固定范围 inventory；组件：integrations/dsh-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 integrations/dsh-plugin/README.md、integrations/dsh-plugin/package.json、integrations/dsh-plugin/cordis.patch.yml、src/ouroboros/mcp/tools/execution_handlers.py、src/ouroboros/providers/factory.py、src/ouroboros/providers/dsh_llm_adapter.py、src/ouroboros/providers/dsh_acp_client.py、pyproject.toml 及固定范围 inventory；组件：integrations/dsh-plugin。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查固定配置子包与直接依赖的同仓后端接口。未运行 DSH、uvx、MCP 服务或模型，也未复核宿主当前安装与重连行为。
-- 下一步：固定宿主和 Python 引擎，依次核对配置合成、工具列表、首个模型请求与宿主分派回执。
+- 边界：核查固定配置子包与直接依赖的同仓后端接口。未运行 DSH、uvx、MCP 服务或模型，也未复核宿主当前安装与重连行为。 本轮当前版本复核：592c667f..54dad8e1（固定提交 54dad8e1dd93aee31858bde72493cd7a0f938739）；比较目标组件差异并补充其影响。
+- 下一步：固定宿主和 Python 引擎，依次核对配置合成、工具列表、首个模型请求与宿主分派回执。 当前源码固定于 54dad8e1dd93aee31858bde72493cd7a0f938739；未运行插件或做生产验证。
 
 **分析版本**
 
 - **仓库**：[Q00/ouroboros](https://github.com/Q00/ouroboros)
-- **版本号**：0.1.0（[固定提交 592c667](https://github.com/Q00/ouroboros/tree/592c667f076c3dad7ef68d7844e91480d80135d0)）
-- **版本日期**：2026-11-05（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.1.0（[固定提交 54dad8e](https://github.com/Q00/ouroboros/tree/54dad8e1dd93aee31858bde72493cd7a0f938739)）
+- **版本日期**：2026-11-13（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -137,7 +137,7 @@
 
 [Q05](#research-q05) 提出将实际解析版本和最小后端检查单独显示，验证是否能减少工具可见却无法工作的情况。
 
-固定宿主和 Python 引擎，依次核对配置合成、工具列表、首个模型请求与宿主分派回执。
+固定宿主和 Python 引擎，依次核对配置合成、工具列表、首个模型请求与宿主分派回执。 当前源码固定于 54dad8e1dd93aee31858bde72493cd7a0f938739；未运行插件或做生产验证。
 
 <a id="detail-section-9"></a>
 
@@ -156,11 +156,11 @@
 
 **活跃度**
 
-[![Issue 未关闭 70](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=70&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 82](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=82&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z) [![近30天关闭 80](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=80&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z)
+[![Issue 未关闭 72](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=72&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 58](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=58&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z) [![近30天关闭 73](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=73&color=737b86&logo=github)](https://github.com/Q00/ouroboros/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z)
 
 
 
-统计日期：2026-11-09。
+统计日期：2026-11-16。
 
 <a id="detail-section-10"></a>
 
@@ -182,7 +182,29 @@
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[integrations/dsh-plugin/package.json:19-27](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/package.json#L19-L27)
+**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:3-12](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L3-L12)
+
+作者描述对话里的调用方式，明确配置包边界。
+
+<details>
+<summary>查看原文（10行）</summary>
+
+```text
+Mount [Ouroboros](https://github.com/Q00/ouroboros) — a spec-first AI dev
+workflow engine (Socratic interview → Seed spec → execute → evaluate → evolve)
+— into [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) as
+native tools. Once installed, type `ooo interview <goal>` or `ooo auto <goal>`
+directly in the dsh chat — the model finds and calls the matching
+`mcp__ouroboros__*` tool on its own.
+
+This is a **config-only bundle**: it contains no custom plugin code, just one
+row that mounts dsh's existing `@deepseek-ai/dsh-mcp-client` against
+`ouroboros mcp serve`.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[integrations/dsh-plugin/package.json:19-27](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/package.json#L19-L27)
 
 包仅携带补丁与 README，明确 DSH bundle。
 
@@ -198,7 +220,7 @@
   }
 ```
 
-**依据 2 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:43-57](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L43-L57)
+**依据 3 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:43-57](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L43-L57)
 
 复用 DSH MCP 客户端启动命名 stdio 服务。
 
@@ -225,28 +247,6 @@
 
 </details>
 
-**依据 3 · 作者声明**：[integrations/dsh-plugin/README.md:3-12](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L3-L12)
-
-作者描述对话里的调用方式，明确配置包边界。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-Mount [Ouroboros](https://github.com/Q00/ouroboros) — a spec-first AI dev
-workflow engine (Socratic interview → Seed spec → execute → evaluate → evolve)
-— into [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) as
-native tools. Once installed, type `ooo interview <goal>` or `ooo auto <goal>`
-directly in the dsh chat — the model finds and calls the matching
-`mcp__ouroboros__*` tool on its own.
-
-This is a **config-only bundle**: it contains no custom plugin code, just one
-row that mounts dsh's existing `@deepseek-ai/dsh-mcp-client` against
-`ouroboros mcp serve`.
-```
-
-</details>
-
 #### 缺口
 
 - 未对照手工 MCP 与 bundle 的接入耗时，也未测模型是否选中对应工具。
@@ -267,7 +267,21 @@ row that mounts dsh's existing `@deepseek-ai/dsh-mcp-client` against
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:43-57](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L43-L57)
+**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:118-124](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L118-L124)
+
+作者给出命名空间和工具数量，没有本轮运行证明。
+
+```text
+## What you get
+
+36 tools under the `ouroboros` namespace — `mcp__ouroboros__ouroboros_interview`,
+`mcp__ouroboros__ouroboros_auto`, `mcp__ouroboros__ouroboros_evaluate`,
+`mcp__ouroboros__ouroboros_ralph`, and more. Each carries its own description,
+so a plain `ooo interview: <vague idea>` or `ooo auto: <goal>` in chat is
+enough — no extra prompting required.
+```
+
+**依据 2 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:43-57](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L43-L57)
 
 真实命令和参数，MCP 固定而根包版本未锁。
 
@@ -294,7 +308,7 @@ row that mounts dsh's existing `@deepseek-ai/dsh-mcp-client` against
 
 </details>
 
-**依据 2 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:80-97](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L80-L97)
+**依据 3 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:80-97](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L80-L97)
 
 转发环境、工具时限和软失败。
 
@@ -324,20 +338,6 @@ row that mounts dsh's existing `@deepseek-ai/dsh-mcp-client` against
 
 </details>
 
-**依据 3 · 作者声明**：[integrations/dsh-plugin/README.md:118-124](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L118-L124)
-
-作者给出命名空间和工具数量，没有本轮运行证明。
-
-```text
-## What you get
-
-36 tools under the `ouroboros` namespace — `mcp__ouroboros__ouroboros_interview`,
-`mcp__ouroboros__ouroboros_auto`, `mcp__ouroboros__ouroboros_evaluate`,
-`mcp__ouroboros__ouroboros_ralph`, and more. Each carries its own description,
-so a plain `ooo interview: <vague idea>` or `ooo auto: <goal>` in chat is
-enough — no extra prompting required.
-```
-
 #### 缺口
 
 - 未运行 uvx 解析、目标宿主或 tools/list。
@@ -356,9 +356,47 @@ enough — no extra prompting required.
 
 bundle 默认 OUROBOROS_AGENT_RUNTIME=host，意味着根引擎将执行交给调用方宿主。固定根代码明确拒绝不带任务跟踪的直接执行形式，要求可观察并回应挂起分派的路径。OUROBOROS_LLM_BACKEND=dsh 则是访谈等模型调用后端，它通过工厂构造独立 DshAcpClient，要求绝对 composition 路径并据此调用 dsh-acp-demo，而不是利用已经打开的宿主模型进程。路径为绝对只防止相对项目目录解析，是否可信仍需操作者核对。根引擎对该子进程保留多数已有环境，不能把 bundle 的显式 Key 列表延伸成对所有后续进程的最小权限保证。服务列工具成功，仍可能在首个后端调用或宿主分派阶段失败。
 
+固定根引擎的后台执行支持传入已固定的偏好，恢复则从会话重建持久执行偏好。读取不到会话或持久契约不合法会拒绝恢复。这些是固定 Git 根源码的行为；默认运行由 uvx 解析的发布物，不能推定带有同一处理。
+
 #### 证据与依据
 
-**依据 1 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:80-86](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L80-L86)
+**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:59-82](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L59-L82)
+
+作者说明工具列表与首调失败的差别。
+
+<details>
+<summary>查看原文（24行）</summary>
+
+```text
+### Routing interview/Seed/QA back through DeepSeek Harness
+
+`OUROBOROS_LLM_BACKEND=dsh` is not a one-variable switch, and it does not reuse
+the dsh process you're already running. Ouroboros spawns **its own**
+`dsh-acp-demo` ACP child, and that child fails closed with `invalid_config`
+unless it is given a composition to load. To use it:
+
+1. Build DeepSeek Harness from source (`pnpm install && pnpm run build`,
+   Node.js >= 22) and make its `dsh-acp-demo` bin reachable — on `PATH`, or
+   named by `OUROBOROS_DSH_CLI_PATH`. A source build is the working path today:
+   installing the published `@deepseek-ai/dsh-acp-demo` still fails on a
+   peer-dependency conflict inside its own `dsh-tool-bash` chain.
+2. Point `OUROBOROS_DSH_CONFIG_PATH` at an **absolute** composition file.
+   Relative paths are rejected on purpose (they would resolve against the
+   untrusted project cwd). The file must sit where dsh's `node_modules` (or
+   workspace) is reachable: plugin package names in a composition resolve
+   relative to the composition file's own directory.
+3. Provide whatever credential that composition names — `DEEPSEEK_API_KEY` for
+   DeepSeek's own models. See the credentials note below: it must be present in
+   the dsh host environment, and this bundle forwards it explicitly.
+
+Without steps 1–2 the Ouroboros tools still register and list fine; the first
+interview/Seed/QA call is what fails. Everything except the `dsh` backend works
+without them.
+```
+
+</details>
+
+**依据 2 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:80-86](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L80-L86)
 
 两个设置分别控制执行 runtime 和模型后端。
 
@@ -372,14 +410,21 @@ bundle 默认 OUROBOROS_AGENT_RUNTIME=host，意味着根引擎将执行交给�
           DEEPSEEK_API_KEY: !!js process.env.DEEPSEEK_API_KEY ?? ''
 ```
 
-**依据 2 · 源码核查**：[src/ouroboros/mcp/tools/execution_handlers.py:1218-1234](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/src/ouroboros/mcp/tools/execution_handlers.py#L1218-L1234)
+**依据 3 · 源码核查**：[src/ouroboros/mcp/tools/execution_handlers.py:1197-1220](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/mcp/tools/execution_handlers.py#L1197-L1220)
 
 固定根服务要求 host 执行通过可跟踪任务入口。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
+        if not synchronous:
+            # The direct (fire-and-forget) entry has no JobManager job, so a
+            # parked host dispatch would have no ``job_wait``/``job_status``
+            # surface through which the caller could discover its
+            # ``fanout_id`` and submit a result. Only the job-tracked path
+            # (``StartExecuteSeedHandler``, which calls back in with
+            # ``synchronous=True``) can service a host dispatch.
             from ouroboros.orchestrator.runtime_factory import resolve_agent_runtime_backend
 
             try:
@@ -401,7 +446,7 @@ bundle 默认 OUROBOROS_AGENT_RUNTIME=host，意味着根引擎将执行交给�
 
 </details>
 
-**依据 3 · 源码核查**：[src/ouroboros/providers/factory.py:297-307](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/src/ouroboros/providers/factory.py#L297-L307)
+**依据 4 · 源码核查**：[src/ouroboros/providers/factory.py:297-307](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/providers/factory.py#L297-L307)
 
 dsh 后端读取配置并创建独立 adapter。
 
@@ -424,7 +469,7 @@ def _create_dsh_adapter(request: _LLMAdapterRequest) -> LLMAdapter:
 
 </details>
 
-**依据 4 · 源码核查**：[src/ouroboros/providers/dsh_llm_adapter.py:146-152](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/src/ouroboros/providers/dsh_llm_adapter.py#L146-L152)
+**依据 5 · 源码核查**：[src/ouroboros/providers/dsh_llm_adapter.py:146-152](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/providers/dsh_llm_adapter.py#L146-L152)
 
 模型调用创建 ACP client。
 
@@ -438,7 +483,7 @@ def _create_dsh_adapter(request: _LLMAdapterRequest) -> LLMAdapter:
         )
 ```
 
-**依据 5 · 源码核查**：[src/ouroboros/providers/dsh_acp_client.py:95-123](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/src/ouroboros/providers/dsh_acp_client.py#L95-L123)
+**依据 6 · 源码核查**：[src/ouroboros/providers/dsh_acp_client.py:95-123](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/providers/dsh_acp_client.py#L95-L123)
 
 子进程环境与绝对配置路径校验。
 
@@ -479,38 +524,58 @@ def _create_dsh_adapter(request: _LLMAdapterRequest) -> LLMAdapter:
 
 </details>
 
-**依据 6 · 作者声明**：[integrations/dsh-plugin/README.md:59-82](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L59-L82)
+**依据 7 · 源码核查**：[src/ouroboros/mcp/tools/execution_handlers.py:1249-1263](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/mcp/tools/execution_handlers.py#L1249-L1263)
 
-作者说明工具列表与首调失败的差别。
+后台运行可用被固定的偏好快照；恢复不使用这份新入参快照。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-### Routing interview/Seed/QA back through DeepSeek Harness
+        session_id = session_id or session_id_override
+        model_tier, base_model_tier_override, delegated_model_tier = _resolve_model_tier_request(
+            arguments
+        )
+        try:
+            execution_preferences, raw_efficiency_mode, raw_frugality_assurance = (
+                _preference_snapshot
+                if _preference_snapshot is not None and not is_resume
+                else _resolve_execution_preferences_request(arguments, is_resume=is_resume)
+            )
+        except ValueError as exc:
+            return Result.err(MCPToolError(str(exc), tool_name="ouroboros_execute_seed"))
+        # Omitted model_tier is public automatic selection, not an explicit
+        # resume override. Preserve a session's resolved routing contract unless
+        # the caller actually supplied model_tier on this invocation.
+```
 
-`OUROBOROS_LLM_BACKEND=dsh` is not a one-variable switch, and it does not reuse
-the dsh process you're already running. Ouroboros spawns **its own**
-`dsh-acp-demo` ACP child, and that child fails closed with `invalid_config`
-unless it is given a composition to load. To use it:
+</details>
 
-1. Build DeepSeek Harness from source (`pnpm install && pnpm run build`,
-   Node.js >= 22) and make its `dsh-acp-demo` bin reachable — on `PATH`, or
-   named by `OUROBOROS_DSH_CLI_PATH`. A source build is the working path today:
-   installing the published `@deepseek-ai/dsh-acp-demo` still fails on a
-   peer-dependency conflict inside its own `dsh-tool-bash` chain.
-2. Point `OUROBOROS_DSH_CONFIG_PATH` at an **absolute** composition file.
-   Relative paths are rejected on purpose (they would resolve against the
-   untrusted project cwd). The file must sit where dsh's `node_modules` (or
-   workspace) is reachable: plugin package names in a composition resolve
-   relative to the composition file's own directory.
-3. Provide whatever credential that composition names — `DEEPSEEK_API_KEY` for
-   DeepSeek's own models. See the credentials note below: it must be present in
-   the dsh host environment, and this bundle forwards it explicitly.
+**依据 8 · 源码核查**：[src/ouroboros/mcp/tools/execution_handlers.py:1427-1443](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/mcp/tools/execution_handlers.py#L1427-L1443)
 
-Without steps 1–2 the Ouroboros tools still register and list fine; the first
-interview/Seed/QA call is what fails. Everything except the `dsh` backend works
-without them.
+恢复先重建会话，再读持久偏好；错误回 launch_resume_blocked。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+            try:
+                if is_resume and session_id:
+                    tracker_result = await session_repo.reconstruct_session(session_id)
+                    if tracker_result.is_err:
+                        return Result.err(
+                            launch_error(
+                                "launch_resume_blocked",
+                                f"Session resume failed: {tracker_result.error.message}",
+                            )
+                        )
+                    tracker = tracker_result.value
+                    workspace_session_id = tracker.session_id
+                    workspace_execution_id = tracker.execution_id
+                    try:
+                        execution_preferences = persisted_execution_preferences(tracker.progress)
+                    except ValueError as exc:
+                        return Result.err(launch_error("launch_resume_blocked", str(exc)))
 ```
 
 </details>
@@ -535,7 +600,7 @@ without them.
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:14-24](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L14-L24)
+**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:14-24](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L14-L24)
 
 作者说明 uv、Python 和宿主执行选择。
 
@@ -558,7 +623,7 @@ without them.
 
 </details>
 
-**依据 2 · 作者声明**：[integrations/dsh-plugin/README.md:105-116](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L105-L116)
+**依据 2 · 作者声明**：[integrations/dsh-plugin/README.md:105-116](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L105-L116)
 
 作者明确重连取决于宿主及修复后重载。
 
@@ -582,7 +647,7 @@ than waiting for a reconnect.
 
 </details>
 
-**依据 3 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:87-97](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L87-L97)
+**依据 3 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:87-97](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L87-L97)
 
 固定超时和软失败配置。
 
@@ -605,7 +670,7 @@ than waiting for a reconnect.
 
 </details>
 
-**依据 4 · 源码核查**：[pyproject.toml:1-9](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/pyproject.toml#L1-L9)
+**依据 4 · 源码核查**：[pyproject.toml:1-9](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/pyproject.toml#L1-L9)
 
 固定根 Python 包及工具链要求。
 
@@ -641,7 +706,17 @@ requires-python = ">=3.12"
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:49-57](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/cordis.patch.yml#L49-L57)
+**依据 1 · 作者声明**：[integrations/dsh-plugin/README.md:80-82](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/README.md#L80-L82)
+
+作者已区分工具列表和首调。
+
+```text
+Without steps 1–2 the Ouroboros tools still register and list fine; the first
+interview/Seed/QA call is what fails. Everything except the `dsh` backend works
+without them.
+```
+
+**依据 2 · 源码核查**：[integrations/dsh-plugin/cordis.patch.yml:49-57](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/integrations/dsh-plugin/cordis.patch.yml#L49-L57)
 
 启动参数能固定部分依赖，根版本默认开放。
 
@@ -657,7 +732,7 @@ requires-python = ">=3.12"
           - serve
 ```
 
-**依据 2 · 源码核查**：[src/ouroboros/providers/dsh_acp_client.py:110-123](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/src/ouroboros/providers/dsh_acp_client.py#L110-L123)
+**依据 3 · 源码核查**：[src/ouroboros/providers/dsh_acp_client.py:110-123](https://github.com/Q00/ouroboros/blob/54dad8e1dd93aee31858bde72493cd7a0f938739/src/ouroboros/providers/dsh_acp_client.py#L110-L123)
 
 现有错误可区分缺少或相对配置路径。
 
@@ -682,16 +757,6 @@ requires-python = ">=3.12"
 ```
 
 </details>
-
-**依据 3 · 作者声明**：[integrations/dsh-plugin/README.md:80-82](https://github.com/Q00/ouroboros/blob/592c667f076c3dad7ef68d7844e91480d80135d0/integrations/dsh-plugin/README.md#L80-L82)
-
-作者已区分工具列表和首调。
-
-```text
-Without steps 1–2 the Ouroboros tools still register and list fine; the first
-interview/Seed/QA call is what fails. Everything except the `dsh` backend works
-without them.
-```
 
 #### 缺口
 

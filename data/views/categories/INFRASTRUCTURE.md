@@ -3579,7 +3579,7 @@
 
 ## [Treg](../../plugins/superdesigndev--treg/INSIGHT.md)
 
-[![GitHub ★ 7,597](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=7%2C597&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
+[![GitHub ★ 8,034](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=8%2C034&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/superdesigndev/treg)
 
 > **用途**：反复访问多个供应商工具的 Agent 团队，需要共享获准调用的工具，同时保留结果、调用号和费用的核对线索。[Q01](../../plugins/superdesigndev--treg/INSIGHT.md#research-q01)
 
