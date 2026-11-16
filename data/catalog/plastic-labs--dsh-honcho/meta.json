@@ -1,0 +1,66 @@
+{
+    "repository": "plastic-labs/dsh-honcho",
+    "repository_id": 1352680042,
+    "captured_at": "2026-11-16T04:12:58.039Z",
+    "window_start": "2026-10-17T04:12:58.039Z",
+    "stars": 34,
+    "pushed_at": "2026-10-29T21:37:52Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aplastic-labs%2Fdsh-honcho%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2D88:3219EA:143D97:15D11E:6AFA8327 and timestamp 2026-11-16 04:14:32 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aplastic-labs%2Fdsh-honcho%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2DA0:357B66:1294EF:141061:6AFA8329 and timestamp 2026-11-16 04:14:33 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aplastic-labs%2Fdsh-honcho%20is%3Aissue%20created%3A2026-10-17T04%3A12%3A58.039Z..2026-11-16T04%3A12%3A58.039Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2DAE:1B2702:13F647:158970:6AFA832A and timestamp 2026-11-16 04:14:34 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aplastic-labs%2Fdsh-honcho%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-17T04%3A12%3A58.039Z..2026-11-16T04%3A12%3A58.039Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2DB8:3E0A58:16069A:179A2A:6AFA832B and timestamp 2026-11-16 04:14:36 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aplastic-labs%2Fdsh-honcho%20is%3Aissue%20updated%3A2026-10-17T04%3A12%3A58.039Z..2026-11-16T04%3A12%3A58.039Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 2DCA:C4F98:14662B:15F9CF:6AFA832D and timestamp 2026-11-16 04:14:37 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T23:27:30.557Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@honcho-ai/dsh-honcho",
+        "captured_at": "2026-11-10T14:57:36.866Z",
+        "window_start": "2026-10-11",
+        "window_end": "2026-11-09",
+        "downloads_30d": 5937,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/%40honcho-ai%2Fdsh-honcho",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-02T14:57:56.487Z",
+            "captured_at": "2026-11-10T14:57:36.866Z",
+            "source_url": "https://registry.npmjs.org/%40honcho-ai%2Fdsh-honcho",
+            "error": null,
+            "latest_version": "0.1.4",
+            "latest_published_at": "2026-10-27T15:56:32.400Z",
+            "latest_error": null
+        }
+    }
+}

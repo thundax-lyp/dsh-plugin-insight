@@ -189,6 +189,7 @@
 | [Engramory DSH 适配目录](#plugin-1268424426-adapters-dsh) | Engramory 仓库中存放 DeepSeek Harness 插件实现的适配器分组目录。 | [Q02](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md#research-q02)仅observe资源导航，运行需求直接转固定plugin子包；不要把根和容器重复安装或把一份运行贡献计三次。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地 Markdown 记忆运行时，提供提取、后台索引、检索与删除接口。 | [Q06](../../plugins/evermind-ai--everos/INSIGHT.md#research-q06) 独立临时根与虚构低敏对话，固定1.6.0/算法版本，loopback+预算先add/flush→task→文件→keyword核，别把owner当ACL。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
+| [Hatoba Agent 插件](#plugin-1409494183-packaging-agent-plugin) | 让 DeepSeek Harness 等代理使用 Hatoba 保存的 SSH 主机执行命令和复制文件。 | 先把测试账号限制为只读，再选一台有唯一 ID 的测试主机查看磁盘用量。 |
 | [HOL Guard](#plugin-1194748811-root) | 为 Agent 动作提供策略审查、审批、扫描和证据入口。 | [Q04](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q04) 隔离验证实际钩子，不能以静态扫描代替执行覆盖。 |
 | [HuaweiCloud DevKit](#plugin-1314502072-root) | 给Agent分发华为云知识Skill、KooCLI和计划执行保护 | [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) 先单目标隔离只读、禁预装和遥测、最小IAM；写操作须独立批准/幂等。 |
 | [K8E](#plugin-292529340-root) | 自托管 AI Agent 沙箱平台，提供会话、执行、文件与 DSH 接入 | [Q05](../../plugins/xiaods--k8e/INSIGHT.md#research-q05) 建议已有运维条件的团队以独立 profile 试用读写、断连和销毁；发生本机误写、串扰或残留会话则停止并退回 CLI。 |
@@ -3062,6 +3063,22 @@
 
 [查看完整分析](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1409494183-packaging-agent-plugin"></a>
+
+## [Hatoba Agent 插件](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md)
+
+[![GitHub ★ 247](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=247&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/scarletkc/Hatoba) [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hatoba-agent-plugin)
+
+> **用途**：已将开发或测试主机存进 Hatoba、日常从桌面 DSH 排查远程状态的用户，可以让代理对选定的主机发起检查并收回结果。
+
+> **亮点**：发布时将同一份技能带入 DSH，代理可把主机解析与连接交回已有的 Hatoba 桌面进程，直接读取远端输出和退出状态。这项适配的价值随用户已保存的主机数量与重复检查频率而增加。[Q01](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md#research-q01) [Q02](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md#research-q02)
+
+> **思考**：启用外部访问后，当前系统用户下能访问 IPC 的程序可借用已保存主机权限。进程退出或关闭开关后，仍需检查已开始的远端工作有无留下副作用。[Q03](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md#research-q03)
+
+> **建议**：可用限时、限定主机和只读命令的授权把信任范围收窄到一次检查。这项设计尚待验证，用正确主机率、确认次数和写入拒绝结果对照当前的账户级开关。[Q04](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1194748811-root"></a>
 
 ## [HOL Guard](../../plugins/hashgraph-online--hol-guard/INSIGHT.md)
@@ -3706,4 +3723,4 @@
 
 ## 更新时间
 
-2026-11-14
+2026-11-16

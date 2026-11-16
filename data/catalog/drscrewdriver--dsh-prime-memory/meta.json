@@ -1,0 +1,45 @@
+{
+    "repository": "drscrewdriver/dsh-prime-memory",
+    "repository_id": 1353490737,
+    "captured_at": "2026-11-16T04:12:58.039Z",
+    "window_start": "2026-10-17T04:12:58.039Z",
+    "stars": 34,
+    "pushed_at": "2026-11-16T03:52:11Z",
+    "issues": {
+        "open": 3,
+        "closed": 22,
+        "created_30d": 22,
+        "closed_30d": 22,
+        "updated_30d": 25
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T23:27:30.557Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-prime-memory",
+        "captured_at": "2026-11-13T01:52:09.761Z",
+        "window_start": "2026-10-14",
+        "window_end": "2026-11-12",
+        "downloads_30d": 30700,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-14:2026-11-12/dsh-prime-memory",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-09-13T14:31:10.379Z",
+            "captured_at": "2026-11-13T01:52:09.761Z",
+            "source_url": "https://registry.npmjs.org/dsh-prime-memory",
+            "error": null,
+            "latest_version": "0.26.37",
+            "latest_published_at": "2026-11-06T15:13:58.847Z",
+            "latest_error": null
+        }
+    }
+}
