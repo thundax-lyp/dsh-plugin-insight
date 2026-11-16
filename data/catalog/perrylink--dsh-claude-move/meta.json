@@ -1,0 +1,66 @@
+{
+    "repository": "PerryLink/dsh-claude-move",
+    "repository_id": 1333354895,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-11-13T17:34:41Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-claude-move%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 476C:376257:0B53:0CA5:6AFA66D9 and timestamp 2026-11-16 02:13:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-claude-move%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 4786:CD9B8:06D3:07CF:6AFA66DA and timestamp 2026-11-16 02:13:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-claude-move%20is%3Aissue%20created%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 47AC:CCF83:B347:BFFD:6AFA66DB and timestamp 2026-11-16 02:13:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-claude-move%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 47C2:376257:0D18:0E7A:6AFA66DC and timestamp 2026-11-16 02:13:48 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3APerryLink%2Fdsh-claude-move%20is%3Aissue%20updated%3A2026-10-17T02%3A08%3A04.910Z..2026-11-16T02%3A08%3A04.910Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 47DA:1C195A:2273621:255A5D4:6AFA66DD and timestamp 2026-11-16 02:13:49 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T07:15:51.534Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-claude-move",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 3446,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-claude-move",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T16:08:34.281Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/dsh-claude-move",
+            "error": null,
+            "latest_version": "0.4.19",
+            "latest_published_at": "2026-11-05T05:54:34.076Z",
+            "latest_error": null
+        }
+    }
+}

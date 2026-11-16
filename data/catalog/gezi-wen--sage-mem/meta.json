@@ -1,0 +1,45 @@
+{
+    "repository": "gezi-wen/sage-mem",
+    "repository_id": 1333928224,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-11-15T14:42:55Z",
+    "issues": {
+        "open": 1,
+        "closed": 7,
+        "created_30d": 6,
+        "closed_30d": 7,
+        "updated_30d": 8
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T07:15:51.534Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "sage-mem",
+        "captured_at": "2026-11-14T22:29:51.681Z",
+        "window_start": "2026-10-15",
+        "window_end": "2026-11-13",
+        "downloads_30d": 15067,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/sage-mem",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T08:14:48.870Z",
+            "captured_at": "2026-11-14T22:29:51.681Z",
+            "source_url": "https://registry.npmjs.org/sage-mem",
+            "error": null,
+            "latest_version": "2.9.0",
+            "latest_published_at": "2026-11-14T07:22:32.832Z",
+            "latest_error": null
+        }
+    }
+}

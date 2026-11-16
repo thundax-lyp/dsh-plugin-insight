@@ -1,0 +1,45 @@
+{
+    "repository": "ChenYiming-aaa/dsh-ui-ux-pro-max",
+    "repository_id": 1339479954,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-10-21T13:55:51Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T17:00:20.787Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-ui-ux-pro-max",
+        "captured_at": "2026-11-15T22:53:03.252Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 5812,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-ui-ux-pro-max",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-26T06:50:46.541Z",
+            "captured_at": "2026-11-15T22:53:03.252Z",
+            "source_url": "https://registry.npmjs.org/dsh-ui-ux-pro-max",
+            "error": null,
+            "latest_version": "1.4.1",
+            "latest_published_at": "2026-10-18T16:36:47.713Z",
+            "latest_error": null
+        }
+    }
+}

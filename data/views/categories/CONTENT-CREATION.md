@@ -77,6 +77,7 @@
 | [NextTavern](#plugin-1366204745-root) | 为 DSH 提供角色扮演工作区，支持角色卡、世界线、记忆和小说导出。 | [Q04](../../plugins/a86582751--dsh-nexttavern/INSIGHT.md#research-q04) 先独立工作区核对原文出稿，再决定是否启用整理。 |
 | [No AI Style](#plugin-1418493685-root) | 为学术和专业写作提供检查、润色和起草 Skill，以及 DSH 输入栏模式按钮。 | [Q04](../../plugins/01ngvi-qingyi--no-ai-style/INSIGHT.md#research-q04) 先做只审阅并复核原文。 |
 | [Notes](#plugin-1182135360-root) | 提供便签编辑、主题排版与图片、Markdown 和网站导出。 | [Q04](../../plugins/zhaoolee--notes/INSIGHT.md#research-q04) 先以单活动编辑端和非敏感稿件试用，保留源稿并核对导出；多端状态不明时停止云写入并比较副本。 |
+| [novel-writer](#plugin-1335828785-root) | 为 DSH 安装小说创作预设，提供专用写作 Agent 能力。 | 在独立 DSH_HOME 做一次短场景试写，先核对两份预设的来源与成对性，再与手工提示比较设定一致性。 |
 | [Oh Story DSH](#plugin-1339737707-root) | 在 DSH 原生会话中提供小说、短剧、互动游戏和视频解说的文件创作工作台。 | [Q05](../../plugins/zenstory-ai--oh-story-dsh/INSIGHT.md#research-q05) 先用文本副本检验改稿、保存与冲突恢复，不把付费媒体纳入已支持试用范围；草稿或状态失配就保全文件回原流程。 |
 | [OpenPencil](#plugin-1159938129-root) | 独立桌面与 Web 设计应用，支持通过 MCP 读写可编辑 .op 文档和导出代码。 | [Q05](../../plugins/zseven-w--openpencil/INSIGHT.md#research-q05) 单写者在可销毁文件副本上试一个节点。 |
 | [OpenStory](#plugin-1197966970-root) | 基于 Agent-Kernel 的多智能体故事推演框架，含 WorldKernel 世界生成示例 | [Q04](../../plugins/zju-llms--openstory/INSIGHT.md#research-q04) 有Python/Redis/Ray能力者可在独立目录按固定小预算试世界与少量tick；角色失步或语义生成报错时暂停并回手工配置/单模型基线。 |
@@ -1133,6 +1134,22 @@
 > **建议**：[Q05](../../plugins/zhaoolee--notes/INSIGHT.md#research-q05) 假设客户端强制前置版本并保留冲突副本能降低无提示丢稿，尚未验证。
 
 [查看完整分析](../../plugins/zhaoolee--notes/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335828785-root"></a>
+
+## [novel-writer](../../plugins/sailoumili--novel-writer/INSIGHT.md)
+
+[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/sailoumili/novel-writer) [![npm 30d 1,512](https://img.shields.io/static/v1?label=npm+30d&message=1%2C512&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/novel-writer) [![最新发布 2026-09-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/novel-writer)
+
+> **用途**：用 DSH 写长篇的作者需要反复维护人物和世界规则。这里把世界、人物、剧情、文笔和复核分给不同子代理，再由主代理结合本地文件汇总成草稿。
+
+> **亮点**：随包预设把角色分工与宿主的子代理工具接好，用户可使用同一组角色和本地交接资料反复起草。加载入口补齐两个缺失文件，保存已有用户修改。[Q01](../../plugins/sailoumili--novel-writer/INSIGHT.md#research-q01) [Q02](../../plugins/sailoumili--novel-writer/INSIGHT.md#research-q02)
+
+> **思考**：独占复制保护同名文件，双方文件可以来自不同版本，失败可只完成一份，停用挂载不会清理目标路径。[Q02](../../plugins/sailoumili--novel-writer/INSIGHT.md#research-q02) [Q03](../../plugins/sailoumili--novel-writer/INSIGHT.md#research-q03)
+
+> **建议**：可以对每个章节的角色交接附上人物表版本和结论出处，比较同一段落的设定冲突与复核时间。已有预设通过工作区文件衔接，此方案仍需对照验证。[Q04](../../plugins/sailoumili--novel-writer/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/sailoumili--novel-writer/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1339737707-root"></a>
 

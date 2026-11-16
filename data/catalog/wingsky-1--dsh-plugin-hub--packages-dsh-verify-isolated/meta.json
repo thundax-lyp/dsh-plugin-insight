@@ -1,0 +1,45 @@
+{
+    "repository": "wingsky-1/dsh-plugin-hub",
+    "repository_id": 1336044501,
+    "captured_at": "2026-11-16T02:08:04.910Z",
+    "window_start": "2026-10-17T02:08:04.910Z",
+    "stars": 32,
+    "pushed_at": "2026-11-06T03:09:56Z",
+    "issues": {
+        "open": 14,
+        "closed": 460,
+        "created_30d": 26,
+        "closed_30d": 32,
+        "updated_30d": 38
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-15T17:00:20.787Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "b1c355cea7ab20f06c552cffc5c1804852bbfd30",
+        "blob_sha": "3bf7717912471ea73941042da6078f80ad033f25",
+        "errors_blob_sha": "d30c654eda70142f72e9e998db84dfd9d9ee2060",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@wingsky-1/dsh-verify-isolated",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 1622,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/%40wingsky-1%2Fdsh-verify-isolated",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-31T02:18:27.336Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/%40wingsky-1%2Fdsh-verify-isolated",
+            "error": null,
+            "latest_version": "0.2.11",
+            "latest_published_at": "2026-11-06T03:14:10.890Z",
+            "latest_error": null
+        }
+    }
+}

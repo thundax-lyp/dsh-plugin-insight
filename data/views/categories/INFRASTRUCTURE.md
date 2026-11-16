@@ -104,6 +104,8 @@
 | [dsh-launcher](#plugin-1333146829-root) | Windows轻量启动器，双击启动DSH并管理服务生命周期与诊断。 | [Q03](../../plugins/ruler4396--dsh-launcher/INSIGHT.md#research-q03)新增部署observe；既有用户先离线清点、备份与人工审诊断，副本评估退出，不为假设安装停更版本。 |
 | [dsh-llm-balance](#plugin-1366370702-root) | 在DSH常驻卡片显示DeepSeek/Moonshot余额与Kimi/OpenCode订阅窗口，按源缓存并保留失败旧值。 | 先观察；可信个人单账号route对照，限定sources并明确OAuth写回，默认先禁token持久化。 |
 | [dsh-llm-workbuddy](#plugin-1333868738-root) | 为 DSH 提供 WorkBuddy API Key、账号登录和会话独立凭据选择。 | [Q03](../../plugins/axiaohungry--dsh-llm-workbuddy/INSIGHT.md#research-q03) 单号验收后测试双号并发。 |
+| [dsh-m 插件市场](#plugin-1355583974-root) | 为 DSH Web 提供社区与精选插件目录、安装管理、Agent 工具和独立 CLI。 | 在可丢弃的 Web profile 只试一个可信小包，记录 origin、精确版本、锁完整性及安装前状态，再验证卸载和失败回执。 |
+| [dsh-mcp-manager](#plugin-1336044501-packages-dsh-mcp-manager) | 在 DSH Web 中管理 MCP 服务目录、配置和生命周期。 | 先在回环的独立 profile 配置一个无需凭据的可信本地示例，核对作用域、连接与一次工具响应。 |
 | [dsh-mcp-panel](#plugin-1333768172-root) | 为官方MCP桥提供配置、诊断、备份写入和宿主管道试调用。 | [Q03](../../plugins/perrylink--dsh-mcp-panel/INSIGHT.md#research-q03) 只读trial和副本写入分开验收。 |
 | [dsh-mcp-studio](#plugin-1389238192-root) | 在 DeepSeek Harness 管理 MCP 服务器和 Skills，并导入其他本地 Agent 的 MCP 配置。 | [Q03](../../plugins/functy23--dsh-mcp-studio/INSIGHT.md#research-q03) 只用隔离合成配置观察。 |
 | [dsh-mcp-tunnel](#plugin-1344713826-root) | 将本地 HTTP MCP 端点经 Docker/Cloudflare Quick Tunnel 暴露，并生成待确认的 DSH MCP Client 配置。 | 仅可在无敏感数据的隔离测试环境验证。 |
@@ -127,6 +129,7 @@
 | [dsh-plugin-mobile-gateway](#plugin-1338398749-root) | 为 DSH 提供设备配对、移动会话同步和可选实验传输。 | [Q03](../../plugins/clarklevis1995--dsh-plugin-mobile-gateway/INSIGHT.md#research-q03) 先只在受控 LAN 检查。 |
 | [dsh-plugin-proxy](#plugin-1374274543-root) | 为DSH提供直连、系统及HTTP/SOCKS手工代理设置，切换Undici全局路由并可导出子进程环境。 | 可信单一管理者且允许失败回原出口可试用。 |
 | [DSH-Portable](#plugin-1333591877-root) | 提供便携DSH桌面运行环境、分离更新及数据维护工具。 | [Q03](../../plugins/wsl043--dsh-portable/INSIGHT.md#research-q03) 稳定线同平台副本演练后再搬日常数据。 |
+| [dsh-proxy](#plugin-1334882617-root) | 为 DSH Web 提供带认证的局域网反向代理入口。 | 限可信隔离网或先在回环做演练，固定入口、设置两项测试凭据，保留上游令牌，用第二设备检查无效凭据拒绝、WebSocket 和实际关停。 |
 | [dsh-purge Community](#plugin-1421822085-root) | 集中管理 DSH 提示词、补丁状态和备份的宿主插件。显式应用可改写宿主审批及文件写入策略。 | [Q01](../../plugins/kingcharleslzy-ai--dsh-purge/INSIGHT.md#research-q01) 适合持有独立宿主副本的维护者先观察状态入口。 |
 | [dsh-reasoning-tiers](#plugin-1367305514-root) | 按模型知识规则补齐pi-ai推理档位声明，并提供模型上下文、输出与图片能力编辑页。 | 先观察，关闭自动写并备份，先修最终写集/撤销失败保留，再评估单profile单模型。 |
 | [dsh-recipe](#plugin-1336583700-root) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 作为选型草案试用，补齐profile/版本/配置再执行。 |
@@ -1703,6 +1706,38 @@
 
 [查看完整分析](../../plugins/axiaohungry--dsh-llm-workbuddy/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1355583974-root"></a>
+
+## [dsh-m 插件市场](../../plugins/iasiv5--dsh-m/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/iasiv5/dsh-m) [![npm 30d 48,707](https://img.shields.io/static/v1?label=npm+30d&message=48%2C707&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-m) [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-m)
+
+> **用途**：管理 DSH Web 插件目录与 profile 操作的用户，可由统一面板查询与维护；是否减负须实测。[Q01](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q01)
+
+> **亮点**：将多来源目录浏览、风险提示与 profile 管理集中到 DSH 面板/工具/CLI；安全审核仍由使用者承担。[Q01](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q01) [Q03](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q03)
+
+> **思考**：目录可信、peer 入参、安装后保护及恢复分别有条件。预检不可用可继续，回滚核对 profile 与依赖收敛，无法据此证明第三方安装脚本的外部状态已撤销。[Q02](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q02) [Q04](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q04)
+
+> **建议**：假设来源/版本固定与事务操作可减少错误更新；用隔离 profile 发生网络和写入故障时对比手工流程验证。[Q05](../../plugins/iasiv5--dsh-m/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/iasiv5--dsh-m/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1336044501-packages-dsh-mcp-manager"></a>
+
+## [dsh-mcp-manager](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md)
+
+[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/wingsky-1/dsh-plugin-hub) [![npm 30d 2,638](https://img.shields.io/static/v1?label=npm+30d&message=2%2C638&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wingsky-1/dsh-mcp-manager) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@wingsky-1/dsh-mcp-manager)
+
+> **用途**：面向需在 DSH Web 中添加、搜索、配置或管理 MCP 服务的用户。插件把目录浏览、条目详情/搜索、设置和服务管理集成到界面；相比手动编辑配置，更容易发现并管理已知条目。目录存在并不代表服务安全、兼容或可用，具体执行结果仍取决于用户配置、依赖安装和 MCP 服务端。
+
+> **亮点**：目录发现接到宿主配置读写，并用固定项目根完成更新和删除。读模型把敏感配置与状态展示分开，SSE 通知变更后由客户端重取摘要。[Q01](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md#research-q01) [Q02](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md#research-q02)
+
+> **思考**：非回环管理请求接宿主 admission，缺失便拒绝。读模型脱敏及路由围栏只能约束该入口，第三方 MCP 的进程权限和配置仍由使用者核对。[Q03](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md#research-q03)
+
+> **建议**：在多项目重复配置同一可信 MCP 的团队中，按项目根显示写入对象和连接回执可能减少误改全局配置。让两组用户用手工配置与管理器各完成一次添加、调用及移除，记录写错根、工具可用及残留进程，准确率或恢复时间无改善则保留手工方式。[Q04](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/wingsky-1--dsh-plugin-hub--packages-dsh-mcp-manager/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1333768172-root"></a>
 
 ## [dsh-mcp-panel](../../plugins/perrylink--dsh-mcp-panel/INSIGHT.md)
@@ -2070,6 +2105,22 @@
 > **建议**：[Q03](../../plugins/wsl043--dsh-portable/INSIGHT.md#research-q03) 同平台复制对照搬移和恢复成本。
 
 [查看完整分析](../../plugins/wsl043--dsh-portable/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334882617-root"></a>
+
+## [dsh-proxy](../../plugins/smanx--dsh-proxy/INSIGHT.md)
+
+[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/smanx/dsh-proxy) [![npm 30d 1,021](https://img.shields.io/static/v1?label=npm+30d&message=1%2C021&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@smanx/dsh-proxy) [![最新发布 2026-10-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@smanx/dsh-proxy)
+
+> **用途**：面向希望在同一局域网其他设备访问 DSH Web 的用户。DSH Web 拒绝直接将服务绑定为 0.0.0.0；插件单独监听 LAN 端口并反代至 loopback，还改写 Host/Origin、处理 WebSocket 和安全上下文差异。相比独立 dsh-proxy，贡献是宿主设置卡片、启动/停止与 profile 配置集成；开放 LAN 访问并不天然安全。
+
+> **亮点**：插件用当前 webServer 端口定位上游，转发 HTTP 与 WebSocket，并通过 Connection RPC 把启动、状态和关停放进 DSH Web 设置。技术增量主要是宿主内的管理接线，局域网可达性源自既有代理机制。[Q01](../../plugins/smanx--dsh-proxy/INSIGHT.md#research-q01) [Q02](../../plugins/smanx--dsh-proxy/INSIGHT.md#research-q02)
+
+> **思考**：固定默认在所有 IPv4 接口起 HTTP 监听，代理自身认证缺省关闭。试用仍要核对上游令牌、本地配置文件和状态 RPC 的密码访问范围。[Q03](../../plugins/smanx--dsh-proxy/INSIGHT.md#research-q03)
+
+> **建议**：在相同可信网络中，将代理状态和启停置于宿主设置，可能比单独维护代理减少配置失配与关闭后仍开放。对照同一设备、端口约束和鉴权要求，记录成功连接、配置步数、退出后残留及恢复时间；异常未减少则保留独立代理管理方式。[Q04](../../plugins/smanx--dsh-proxy/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/smanx--dsh-proxy/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1421822085-root"></a>
 
