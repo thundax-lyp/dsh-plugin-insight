@@ -253,6 +253,7 @@
 | [dsh-plugin-session-colors](#plugin-1394188597-root) | 通过侧栏悬停palette为会话设置颜色，host保存id颜色映射并以浏览器镜像加快显示。 | 先观察；独立本机/唯一标题与备份下核持久结果后再评估。 |
 | [dsh-plugin-session-delete](#plugin-1334028660-root) | 提供 Web 删除会话入口及模型工具，清理日志目录、投影缓存和工作区记账。 | 日常profile不推荐；副本审删除合同，真实清理先停机备份/正式API或归档。 |
 | [dsh-plugin-tts](#plugin-1334773156-root) | 为DSH Web消息提供手动与自动朗读，支持Edge、Cloud及多种本地音色和长文本分块播放。 | 建议先小范围试用。 |
+| [dsh-prime-memory](#plugin-1353490737-root) | 在 DeepSeek Harness 中捕获对话、分层蒸馏记忆，并在新用户步骤注入相关记录。 | 在没有敏感内容的隔离 profile 中先保留当前仓库的人工交接文档。 |
 | [dsh-profile-stylist](#plugin-1422500224-root) | 用宿主 LLM 起草 GitHub/Gitee 个人资料，默认 dry-run，确认后经浏览器填文本/头像并点击保存。 | 先在测试账号观察；直接 apply 统一校验与 Gitee 头像确认修复、远端回读之后才扩大使用。 |
 | [dsh-prompt](#plugin-1335735813-root) | 在 DSH 输入框提供模板浏览、筛选和自定义管理。 | [Q03](../../plugins/featherhunter--dsh-prompt/INSIGHT.md#research-q03) 在测试 profile 新建无敏感信息模板，验证筛选、插入、编辑和删除。 |
 | [dsh-prompt-market](#plugin-1406693236-root) | 在 DSH 输入框旁检索远端及本地提示词，并将选中内容写入草稿。 | 用少量固定提示任务与笔记复制对照，先核对持久存储和草稿读回；备份私存或先清token，不以过滤代替人工阅读。 |
@@ -313,6 +314,7 @@
 | [dsh-type-tune](#plugin-1388463793-root) | 为 DSH Web 提供对比度/字体/内容样式与预览调节，Host 状态和浏览器本地缓存协同。 | 仅回环、单人 Web 可审慎试用，留默认恢复路径；LAN/多人环境先补认证与错误反馈。 |
 | [dsh-ui-enhancer](#plugin-1339034478-root) | 组合右侧文件预览、@文件引用、本地壁纸和活动宠物，增强DSH web桌面体验。 | 先观察，优先核对活动路由授权与上游预览，明确边界后再评估个人本地小范围试用。 |
 | [dsh-usage-analytics](#plugin-1356960582-root) | 在DSH设置中展示本机1、7、30天Token图表、模型分布和技能调用状态，并支持重建派生缓存。 | 个人本机用户可用少量可人工核对的会话试用；先确认宿主依赖与访问控制，遇到用量无法对账、索引持续失败即停止依赖图表。 |
+| [dsh-usage-stats](#plugin-1334248865-root) | 在 DSH 设置页提供用量热力图、Token 与缓存统计、账户余额和工作区别名管理。 | 先确认固定版本分发与目标宿主的装载条件。 |
 | [dsh-video-skin](#plugin-1401755814-root) | 为 DSH 添加循环视频背景、可跳过的启动动画和透明度及素材设置。 | 先用短视频和保守透明度核对阅读与发热，遇问题关闭对应槽，完整重启后确认回到默认外观。 |
 | [dsh-vision-fallback](#plugin-1333993743-root) | 保持原主模型选择，把聊天与工具图片交给固定视觉模型转成文字观察，并保留界面原图。 | 适合明确接受外部图片和上下文传输的人，以auto和非敏感单图试用，重要结论回图核对并管理本地观察日志；漏读、陈旧观察或退出失效时停用。 |
 | [dsh-vision-free-eyes](#plugin-1335070045-packages-vision-tool) | 通过智谱GLM视觉API分析已知本地单张图片，提供图像问答与OCR工具。 | 先用已知答案的非敏感图片核验问答、OCR、缓存和取消；确认外传可接受后限定试用，失败时检查错误再重试。 |
@@ -4267,6 +4269,22 @@
 
 [查看完整分析](../../plugins/1624318455--dsh-plugin-tts/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1353490737-root"></a>
+
+## [dsh-prime-memory](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/drscrewdriver/dsh-prime-memory) [![npm 30d 30,700](https://img.shields.io/static/v1?label=npm+30d&message=30%2C700&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prime-memory) [![最新发布 2026-11-06](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-06&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-prime-memory)
+
+> **用途**：开发者希望在重开的 DSH 会话里复用项目的测试和交接约定，并能回到仓库的当前文档核对版本。见 [Q01](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q01)。
+
+> **亮点**：相对每次手工挑选交接材料，插件把捕获、蒸馏和会话内可见注入连到真实宿主事件。触发、预算与去重由本组件实现，分层设计在包声明中归为 MemoryCore 管线移植。[Q01](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q01) [Q02](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q02)
+
+> **思考**：默认全局的 L1 范围和历史搜索实际读面不能合并成一个隔离保证。收集器不可读时历史搜索报错，后台仍可空窗蒸馏。恢复水位先于队列持久化的丢失边界仍待运行验证。[Q02](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q02) [Q03](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q03)
+
+> **建议**：按当前仓库版本与适用范围标注候选，再分别验证自动召回和历史检索，可能帮助用户把注入提示用于交接而不失去对权威约定的控制。这个验证方案尚未实施。[Q05](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md#research-q05)
+
+[查看完整分析](../../plugins/drscrewdriver--dsh-prime-memory/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1422500224-root"></a>
 
 ## [dsh-profile-stylist](../../plugins/7gzgn--dsh-profile-stylist/INSIGHT.md)
@@ -5226,6 +5244,22 @@
 > **建议**：可探索字段级覆盖与源修订对账收据，用真实缺字段和重复事件样本比较是否减少误判及解释时间；当前未实现，不计为插件已有创新。详见[Q06](../../plugins/3361805598-gif--dsh-usage-analytics/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/3361805598-gif--dsh-usage-analytics/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334248865-root"></a>
+
+## [dsh-usage-stats](../../plugins/make0209--dsh-usage-stats/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Make0209/dsh-usage-stats) [![npm 30d 1,736](https://img.shields.io/static/v1?label=npm+30d&message=1%2C736&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-stats) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-usage-stats)
+
+> **用途**：经常跨工作区使用 DSH Web 的个人开发者可以按近期回合及 Token 使用找出值得回查的工作区和日期。按同一用户、时区与已登记路径抽查原始事件，才能完成一次可信的周复盘。
+
+> **亮点**：插件把已登记工作区的持久化会话和实时事件归并到 Web 设置页。与逐个查会话相比，用户可以从工作区和日期回查使用波动。复用宿主的会话、工作区和设置槽位，插件自身实现归属、去重、展示及别名。[Q01](../../plugins/make0209--dsh-usage-stats/INSIGHT.md#research-q01) [Q02](../../plugins/make0209--dsh-usage-stats/INSIGHT.md#research-q02)
+
+> **思考**：面板完成扫描后无法让用户判断缺少活动还是漏算。未匹配路径的记录会被跳过，部分错误仅在扫描中可见，且统计刷新不重跑回填。余额首选 Windows 子进程还会把凭据置入 argv。两处边界分别限制对账和部署。[Q02](../../plugins/make0209--dsh-usage-stats/INSIGHT.md#research-q02) [Q03](../../plugins/make0209--dsh-usage-stats/INSIGHT.md#research-q03)
+
+> **建议**：可在快照中保留未归属、读失败和完成补读的分项，向用户显示哪些工作区的零值仍需核对。用同一批混入路径迁移与读取异常的记录比较误判和复核耗时，只有提示减少误判且负担可接受才保留。[Q06](../../plugins/make0209--dsh-usage-stats/INSIGHT.md#research-q06)
+
+[查看完整分析](../../plugins/make0209--dsh-usage-stats/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1401755814-root"></a>
 
@@ -6783,4 +6817,4 @@
 
 ## 更新时间
 
-2026-11-14
+2026-11-16

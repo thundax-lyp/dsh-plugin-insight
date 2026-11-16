@@ -202,6 +202,7 @@
 | [dsh-github-router](#plugin-1339462797-root) | 提供PR、Issue、文件及API只读工具，通过API、gh、Git、HTML与可选镜像在宿主内降级取数。 | 先观察；公共仓库单用户隔离环境可对照，私有多身份/共享存储先解决缓存与授权边界。 |
 | [dsh-godot-skill](#plugin-1333504012-root) | 将 Godot 4 开发速查、工作流与代码模板注册为 DSH 可加载的运行时技能。 | 新项目固定Godot版本，从一关卡开始，人工试玩并打开导出物；不兼容回官方示例。 |
 | [dsh-hdc-bridge](#plugin-1333258432-root) | 在 DSH 中连接鸿蒙设备调试、版本化 API 知识、工程构建和部署，并提供设备面板。 | [Q04](../../plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md#research-q04) 先观察作用域，在无真实数据设备上以显式target做列表/诊断，确认实例隔离和面板可达范围后再决定受控部署。 |
+| [dsh-honcho](#plugin-1352680042-root) | 通过 Honcho 为 DeepSeek Harness 提供跨会话持久记忆、历史检索和信息保存。 | 先用只含模拟信息的测试工程验证一次交接。 |
 | [dsh-host-rsi](#plugin-1401710157-root) | 在 DSH Agent 的任务前后检索、捕获经验并可追加交付复查。 | [Q03](../../plugins/pk14742952-ad--dsh-host-rsi/INSIGHT.md#research-q03) 用显式独立目录和无敏感任务试验。 |
 | [dsh-IDE](#plugin-1333786261-root) | 提供 DSH Web 工作区面板、SSH 运维和远程工作区三个插件的源码套件。 | 建议先观察个人隔离 profile 的本地面板，SSH 组合须核对服务桥接和所有入口的实际目标。 |
 | [dsh-inject](#plugin-1417110833-root) | 为 DSH 提供按会话和模型范围选择的上下文整形、消息前缀和规则替换。 | [Q05](../../plugins/john-walks-slow--dsh-inject/INSIGHT.md#research-q05) 保持观察，只用两个隔离会话和模拟端点验证无害标记、模型范围及失败。 |
@@ -3477,6 +3478,22 @@
 > **建议**：[Q05](../../plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md#research-q05) 用会话/工程/设备/产物收据连接已有状态，检验双设备双工程下的误投与确认负担；当前为未验证假设。
 
 [查看完整分析](../../plugins/1na-ko--dsh-hdc-bridge/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1352680042-root"></a>
+
+## [dsh-honcho](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md)
+
+[![GitHub ★ 34](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=34&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/plastic-labs/dsh-honcho) [![npm 30d 5,937](https://img.shields.io/static/v1?label=npm+30d&message=5%2C937&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@honcho-ai/dsh-honcho) [![最新发布 2026-10-27](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-27&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@honcho-ai/dsh-honcho)
+
+> **用途**：经常重开同一项开发任务的 DSH 开发者，可以让代理在新会话找回此前交接的测试入口和工作约定。
+
+> **亮点**：把以前需人工粘贴的项目交接放进 DSH 的请求路径，先用有上限的首步等待获取资料，后续保持后台刷新，并给出可观察读取状态的诊断入口。主要机制依赖 Honcho 服务和 DSH 宿主挂载。[Q01](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md#research-q01) [Q03](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md#research-q03)
+
+> **思考**：开箱即有自动对话上传，正则脱敏只覆盖已知格式。关闭对话捕获后仍可能发送检索查询或主动保存的文本，同名目录和共享工作区也可能扩大记忆范围。[Q01](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md#research-q01) [Q02](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md#research-q02)
+
+> **建议**：可按项目保存带出处的经人确认的决策卡，只渲染本任务相关项，用跨项目标记与错误率检验能否兼得回忆和数据范围。这项设计尚待验证。[Q04](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md#research-q04)
+
+[查看完整分析](../../plugins/plastic-labs--dsh-honcho/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1401710157-root"></a>
 
@@ -7242,4 +7259,4 @@
 
 ## 更新时间
 
-2026-11-14
+2026-11-16
