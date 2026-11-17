@@ -1,0 +1,45 @@
+{
+    "repository": "jjxjjjjiik-bot/dsh-chat-timeline",
+    "repository_id": 1334380765,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 31,
+    "pushed_at": "2026-08-26T09:26:32Z",
+    "issues": {
+        "open": 0,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T07:19:34.507Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-chat-timeline",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 1285,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-chat-timeline",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T04:16:43.651Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/dsh-chat-timeline",
+            "error": null,
+            "latest_version": "0.1.5",
+            "latest_published_at": "2026-08-26T09:56:09.991Z",
+            "latest_error": null
+        }
+    }
+}

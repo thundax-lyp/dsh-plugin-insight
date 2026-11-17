@@ -1,0 +1,45 @@
+{
+    "repository": "SenmuuuuW/dsh-whale-report",
+    "repository_id": 1334073773,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 31,
+    "pushed_at": "2026-09-03T05:31:21Z",
+    "issues": {
+        "open": 5,
+        "closed": 3,
+        "created_30d": 2,
+        "closed_30d": 0,
+        "updated_30d": 2
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T07:19:34.507Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-report",
+        "captured_at": "2026-11-15T22:53:03.252Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 970,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-whale-report",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T05:56:47.999Z",
+            "captured_at": "2026-11-15T22:53:03.252Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-report",
+            "error": null,
+            "latest_version": "0.6.1",
+            "latest_published_at": "2026-09-03T05:02:52.783Z",
+            "latest_error": null
+        }
+    }
+}

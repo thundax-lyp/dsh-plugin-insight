@@ -1,0 +1,54 @@
+{
+    "repository": "loongsuite/dsh-plugin",
+    "repository_id": 1334798242,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 31,
+    "pushed_at": "2026-10-12T07:41:24Z",
+    "issues": {
+        "open": 3,
+        "closed": 5,
+        "created_30d": 0,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aloongsuite%2Fdsh-plugin%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 593C:AFB8:9528A:9EA64:6AFBB90C and timestamp 2026-11-17 02:16:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aloongsuite%2Fdsh-plugin%20is%3Aissue%20updated%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 5996:181D15:85DC7:8F35E:6AFBB90E and timestamp 2026-11-17 02:16:47 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T07:19:34.507Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@loongsuite/dsh-plugin",
+        "captured_at": "2026-11-16T19:39:05.779Z",
+        "window_start": "2026-10-17",
+        "window_end": "2026-11-15",
+        "downloads_30d": 5334,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-17:2026-11-15/%40loongsuite%2Fdsh-plugin",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T12:45:27.433Z",
+            "captured_at": "2026-11-16T19:39:05.779Z",
+            "source_url": "https://registry.npmjs.org/%40loongsuite%2Fdsh-plugin",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-10-12T07:40:06.357Z",
+            "latest_error": null
+        }
+    }
+}

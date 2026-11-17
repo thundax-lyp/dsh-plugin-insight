@@ -1,0 +1,66 @@
+{
+    "repository": "luweiyabo/dsh-whale-pet",
+    "repository_id": 1343837363,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 32,
+    "pushed_at": "2026-11-15T16:18:38Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluweiyabo%2Fdsh-whale-pet%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 86CA:18A947:8551E:8E9C0:6AFBB8DC and timestamp 2026-11-17 02:15:56 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluweiyabo%2Fdsh-whale-pet%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FC46:173649:9CC3D:A697D:6AFBB8DD and timestamp 2026-11-17 02:15:58 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluweiyabo%2Fdsh-whale-pet%20is%3Aissue%20created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FC5E:35F06D:8F8EA:98D6D:6AFBB8DF and timestamp 2026-11-17 02:15:59 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluweiyabo%2Fdsh-whale-pet%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FC7E:35816B:8F4A8:98A1F:6AFBB8E0 and timestamp 2026-11-17 02:16:00 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aluweiyabo%2Fdsh-whale-pet%20is%3Aissue%20updated%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID FC8E:154996:837F2:8CBA6:6AFBB8E1 and timestamp 2026-11-17 02:16:02 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T20:14:06.886Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@luweiyabo/dsh-whale-pet",
+        "captured_at": "2026-11-16T19:39:05.779Z",
+        "window_start": "2026-10-17",
+        "window_end": "2026-11-15",
+        "downloads_30d": 4658,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-17:2026-11-15/%40luweiyabo%2Fdsh-whale-pet",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-23T13:44:11.279Z",
+            "captured_at": "2026-11-16T19:39:05.779Z",
+            "source_url": "https://registry.npmjs.org/%40luweiyabo%2Fdsh-whale-pet",
+            "error": null,
+            "latest_version": "0.1.3",
+            "latest_published_at": "2026-10-04T04:12:55.055Z",
+            "latest_error": null
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "repository": "DamonKoy/dsh-web-ui",
+    "repository_id": 1335248751,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 31,
+    "pushed_at": "2026-08-15T16:40:33Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T07:19:34.507Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@linxin666/dsh-live-stats",
+        "captured_at": "2026-11-17T02:10:05.734Z",
+        "window_start": "2026-10-18",
+        "window_end": "2026-11-16",
+        "downloads_30d": 632,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-18:2026-11-16/%40linxin666%2Fdsh-live-stats",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-13T15:05:45.550Z",
+            "captured_at": "2026-11-17T02:10:05.734Z",
+            "source_url": "https://registry.npmjs.org/%40linxin666%2Fdsh-live-stats",
+            "error": null,
+            "latest_version": "0.1.20",
+            "latest_published_at": "2026-08-17T05:45:13.851Z",
+            "latest_error": null
+        }
+    }
+}
