@@ -16,6 +16,7 @@
 | [@240xu/dsh-websearch](#plugin-1340340493-root) | 为DSH注册unified搜索服务，聚合11后端，支持并发容错、去重、可选重排、多查询及缓存历史。 | 非敏感公开查询小集合试用，先关多查询/深覆盖，严格流程关缓存并清历史，审阅备用实例。 |
 | [@hyzyn/dsh-rss](#plugin-1335046216-packages-rss) | 聚合 RSS 与 Atom 订阅生成本地日报，可选 AI 摘要，并向 DSH 会话注入有限条目。 | 先关闭AI与公告，只用少量可信源手动核对日报、latest元数据和原链接。 |
 | [@hyzyn/dsh-search](#plugin-1335046216-packages-search) | 在 DSH Web 界面统一搜索历史会话、Prompt、MCP 工具与设置，并导航到命中对象。 | 可信本机用户先用已知冷热会话、旧Prompt版本和设置卡样本核对查询及导航；空结果回原入口确认。 |
+| [Academic Research Skills for DSH](#plugin-1347412606-root) | 把学术研究、论文写作、审稿和流水线技能及其手动命令接入 DeepSeek Harness。 | 先用不含敏感信息的非商业短稿观察引用核查提示是否可追溯。 |
 | [AgentKey](#plugin-1218688296-root) | 提供统一外部数据服务的 Agent Skill、安装脚本与托管 MCP 接入配置。 | [Q04](../../plugins/chainbase-labs--agentkey/INSIGHT.md#research-q04) 先固定外部CLI和宿主，在隔离profile验证完整调用与费用；当前保持观察。 |
 | [AnySearch for DSH](#plugin-1333247282-root) | 在 DSH 原生网页搜索与抓取接口接入 AnySearch，并提供垂直检索和有限并发批量搜索。 | [Q04](../../plugins/anysearch-team--anysearch-dsh/INSIGHT.md#research-q04) 非敏感问题先比原provider与批量结果，以有效引用而非命中数决定继续；限流或缺证回人工。 |
 | [Argo](#plugin-1304997851-root) | 为 Agent 提供多源搜索、网页取证和本地资料检索，并以 CLI、Skill 与 MCP 接口交付结果。 | [Q03](../../plugins/taxueseek--argo/INSIGHT.md#research-q03) 先固定少量公开源并关闭本地并入，保留原文和失败诊断，用同任务核对正确率与全部投入。 |
@@ -131,6 +132,7 @@
 | [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [Envoy](#plugin-1262941478-integrations-dsh-envoy-dsh) | DSH 子包注册 Envoy Skill、MCP 和链接读取提示，输出可定位资料。 | [Q03](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q03) 固定链接同预算人工对照。 |
+| [GEML for DeepSeek Harness](#plugin-1272251780-integrations-dsh-plugin) | 在 DeepSeek Harness 中加入 GEML 文档块 MCP 与文档、调用图技能。 | 先观察已知 CLI 版本和实际 cwd 后的只读定位，同仓规范作对照。 |
 | [GeoChat 画布](#plugin-959005755-plugins-deepseek-harness) | 让 DSH 模型操作会话右侧的 GeoGebra 画布 | [Q04](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q04) 使用固定 Web 版本对照双会话与断流。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
 | [Graph Memory](#plugin-1178312395-root) | 为 DSH 和 OpenClaw 压缩历史上下文，以图与向量导航召回原始问答并持久保存记忆。 | [Q04](../../plugins/adoresever--graph-memory/INSIGHT.md#research-q04) 个人非敏感任务用副本库对照；审计或多租户任务先保留原历史并验证隔离。 |
@@ -246,6 +248,22 @@
 > **建议**：未验证方向是将检索模式、覆盖与失败状态传到界面，并统一FTS/回退口径；应以冷历史和失败样本比较漏检误判与额外负担，见[Q06](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md#research-q06)。
 
 [查看完整分析](../../plugins/hyzyn--dsh-plugin-kit--packages-search/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1347412606-root"></a>
+
+## [Academic Research Skills for DSH](../../plugins/nullptr-dzf--dsh-academic-research-skills/INSIGHT.md)
+
+[![GitHub ★ 32](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=32&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/nullptr-DZF/dsh-academic-research-skills)
+
+> **用途**：在 DSH 中反复检查论文段落和引用的用户，可发现 ARS 的研究、写作与审稿入口。
+
+> **亮点**：移植层把既有 ARS 提示及资源目录注册进 DSH，给人类保留命令入口。上游研究方法的效果仍需独立证明。[Q01](../../plugins/nullptr-dzf--dsh-academic-research-skills/INSIGHT.md#research-q01)
+
+> **思考**：包内有要求运行确定性审阅门的提示，但检查器及共享契约需从上游另行取得，无法由注册或提示确认已运行。[Q02](../../plugins/nullptr-dzf--dsh-academic-research-skills/INSIGHT.md#research-q02)
+
+> **建议**：单一引用检查入口可能减少对缺证据条目的漏标；用混入错例的稿件比较，若模型报通过却无法回查原文则否定。[Q03](../../plugins/nullptr-dzf--dsh-academic-research-skills/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/nullptr-dzf--dsh-academic-research-skills/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1218688296-root"></a>
 
@@ -2087,6 +2105,22 @@
 
 [查看完整分析](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1272251780-integrations-dsh-plugin"></a>
+
+## [GEML for DeepSeek Harness](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md)
+
+[![GitHub ★ 31](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=31&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/geml-spec/geml) [![npm 30d 987](https://img.shields.io/static/v1?label=npm+30d&message=987&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@geml/dsh-plugin) [![最新发布 2026-09-28](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-28&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@geml/dsh-plugin)
+
+> **用途**：维护长规范的 DSH 用户可以在会话中找出目标文档块并按地址读它。
+
+> **亮点**：把已存在的 GEML 工具与两份技能组合进 DSH profile，减少手工配置；按块定位属于 GEML 的既有能力。[Q01](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md#research-q01)
+
+> **思考**：未固定 npm 版本和实际工作目录让源码保护难以直接外推到运行。写入成功后还要检查未预期的文档改动。[Q02](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md#research-q02)
+
+> **建议**：复用已查章节的块地址，可能比多次全量重读或手工翻查节省长文档诊断时间，需用同一章节任务和直接分段读取对照。[Q03](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md#research-q03)
+
+[查看完整分析](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-959005755-plugins-deepseek-harness"></a>
 
 ## [GeoChat 画布](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md)
@@ -2907,4 +2941,4 @@
 
 ## 更新时间
 
-2026-11-16
+2026-11-17

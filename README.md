@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1373](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1373&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1389](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1389&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -38,29 +38,29 @@
 
 > 查看最近发布的版本，了解用途和使用条件。
 
-- [dsh-m 插件市场](data/plugins/iasiv5--dsh-m/INSIGHT.md) · 为 DSH Web 提供社区与精选插件目录、安装管理、Agent 工具和独立 CLI。 · [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-m)
-- [Hatoba Agent 插件](data/plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md) · 让 DeepSeek Harness 等代理使用 Hatoba 保存的 SSH 主机执行命令和复制文件。 · [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/hatoba-agent-plugin)
-- [DS Harness Remote](data/plugins/liguobao--ds-harness-remote/INSIGHT.md) · 让受信设备从 Web、桌面或移动端接入原 DSH 宿主的会话、工作区和终端。 · [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/ds-harness-remote)
+- [DSH Super Kanban](data/plugins/topmindspace--dsh-super-kanban/INSIGHT.md) · 把 DeepSeek Harness 会话整理成任务卡，集中查看进展、待处理和待验收交付。 · [![最新发布 2026-11-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-kanban)
+- [DSH SSH](data/plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md) · 在 DSH Web 统一管理 SSH 主机并使用远端命令、终端、文件传输和隧道。 · [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
+- [梁神模式](data/plugins/damonkoy--dsh-web-ui--packages-dsh-liangshen/INSIGHT.md) · 在 DSH 提供梁神预设，将首阶段双工具切换到后续 Code Mode。 · [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-liangshen)
 
 ## [下载热门](data/views/columns/HOT.md)
 
 > 从近期下载较多的插件中，寻找适合自己任务的工具。
 
-- [Billion Context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 面向长会话的上下文压缩工具，可按范围生成摘要、检索并回读内容。 · [![npm 30d 3,310,468](https://img.shields.io/static/v1?label=npm+30d&message=3%2C310%2C468&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
-- [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过 CLI 与 MCP 分析应用构建物、二进制和网页，并输出可回查的分析证据。 · [![npm 30d 1,945,914](https://img.shields.io/static/v1?label=npm+30d&message=1%2C945%2C914&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
-- [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 · [![npm 30d 1,164,845](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164%2C845&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+- [Billion Context](data/plugins/ranxianglei--billion-context/INSIGHT.md) · 面向长会话的上下文压缩工具，可按范围生成摘要、检索并回读内容。 · [![npm 30d 3,582,530](https://img.shields.io/static/v1?label=npm+30d&message=3%2C582%2C530&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/billion-context)
+- [REA](data/plugins/morluto--rea/INSIGHT.md) · 通过终端或 MCP 调查原生二进制、JavaScript、Electron、.NET 与网站，输出分析证据及限制。 · [![npm 30d 1,944,247](https://img.shields.io/static/v1?label=npm+30d&message=1%2C944%2C247&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/rea-agents)
+- [DSH Market](data/plugins/dsh-market--dsh-market/INSIGHT.md) · 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 · [![npm 30d 1,289,262](https://img.shields.io/static/v1?label=npm+30d&message=1%2C289%2C262&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
 ## 按场景查找
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 410 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 415 |
 | [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 55 |
-| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 170 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 429 |
+| [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 172 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 437 |
 | [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 82 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 221 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 222 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 5 |
 
 [浏览全部分类](data/views/categories/INDEX.md)
@@ -76,4 +76,4 @@
 
 ## 更新时间
 
-2026-11-16
+2026-11-17

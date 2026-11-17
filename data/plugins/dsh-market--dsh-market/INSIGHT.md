@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[4c33068](https://github.com/dsh-market/dsh-market/tree/4c330686ee5d761f9e05637820532d8c080947d5)
+源码版本：[88de957](https://github.com/dsh-market/dsh-market/tree/88de9575946485c1dac5e1a5fbe57fa1f3c3988c)
 
 <!-- BEGIN META -->
-[![GitHub ★ 12,007](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C007&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,164,845](https://img.shields.io/static/v1?label=npm+30d&message=1%2C164%2C845&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-10](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-10&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+[![GitHub ★ 12,571](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C571&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,289,262](https://img.shields.io/static/v1?label=npm+30d&message=1%2C289%2C262&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 <!-- END META -->
 
 > **功能**：在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示，市场把搜索结果、操作进度、目标 profile 和宿主包管理接在一起。[Q03](#research-q03) 进一步确认了官方桌面移除再装过程的中断日志。现有机制依赖宿主管理器与目录，具体贡献是把多处状态连到操作者的同一个管理任务。
+> **亮点**：市场把候选包声明、当前宿主和安装后的激活结果带入同一个交互。候选筛选只隐藏明确冲突，安装回执再区分已落盘、已激活和需要后续处置。后台提醒只把已装包的具体更新带到用户面前，由用户决定是否变更。[Q01](#research-q01) [Q02](#research-q02) [Q04](#research-q04)
 
-> **主要限制**：[Q03](#research-q03) 与 [Q04](#research-q04) 指出，日志结清可对应旧版或目标版，集合操作还允许部分成功。恢复后应在实际 profile 核对版本、加载和业务状态，关键数据需要独立备份。 超时后包管理器可能仍在写入，此时继续提交可能增加恢复负担。
+> **主要限制**：安装成功回执、管理器状态和插件实际功能可能在不同时间生效。Desktop 拆换更新仍可能先移除旧包，补偿日志依赖下次启动、正确 profile 和可用来源，配置快照的恢复范围也有限。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 对已经可以用 Discover 或 CLI 的用户，市场为何仍有价值？](#detail-section-11)
-  - [Q02 · 点击安装或更新后，变更怎样落入当前宿主的正确 profile？](#detail-section-12)
-  - [Q03 · 更新中断时，恢复能覆盖哪些状态，哪些需要人工处理？](#detail-section-13)
-  - [Q04 · 如何用一个可逆试用衡量合格任务的总成本？](#detail-section-14)
+  - [Q01 · 原生 Discover 可浏览同一目录时，市场在检查哪些候选可装上仍增加哪一步？](#detail-section-11)
+  - [Q02 · 点击安装时，来源、目标 profile 和激活回执怎样收敛到同一个任务？](#detail-section-12)
+  - [Q03 · 热挂载失败或 Desktop 更新在卸载后中断时，可以恢复什么？](#detail-section-13)
+  - [Q04 · 后台更新检查如何产生可消除的提醒，网络出错或切换来源后有何边界？](#detail-section-14)
+  - [Q05 · 怎样以可逆试用比较多个插件的更新摩擦，哪些证据足以继续采用？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：经常维护 DSH profile 的使用者可以在市场界面选包、发起安装或更新，查看进度并回到宿主页面核对结果。
+> **用途**：常驻 DSH Web 且维护多个社区包的用户，可以从市场页核对候选兼容范围、安装来源和更新状态。
 
-作者在 README 说明同一目录可供新版宿主 Discover 搜索。已知准确包名和 profile 时，宿主原生插件管理页或 CLI 足以完成普通安装。市场的额外价值主要在有进度、排队和恢复需求的重复管理。
+原生 Discover 可订阅同一目录的格式一索引（项目自述）。按名称偶尔找包可用原生入口，熟悉 CLI 的用户可指定 profile 并手工检查插件功能。市场增加了候选声明筛选、同页操作回执和可选的未读更新提醒。
 
 <a id="detail-section-3"></a>
 
@@ -51,68 +52,67 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 市场标签及进度面板 | 从目录选择包，跟踪操作状态 | 取决于客户端插槽与原语 |
-| 安装路由 | 校验来源并提交活动 profile 的包操作 | 需可信包和可用宿主管理器 |
-| 更新中断修复 | 桌面启动后尝试恢复被卸载的包 | 仅适用于相关官方桌面分支，依赖日志和管理器 |
+| 市场页签 | 看候选声明、来源和安装状态 | 宿主支持 Web 原语；未知兼容仍可见 |
+| 安装与激活 | 把包写入正确的 profile 并核对启动状态 | 依赖可信目录、可达产物和相应包管理服务 |
+| 更新通知 | 让常驻宿主在用户启用后提示新版本 | 红点表示待看更新，后台没有自动安装 |
+| 中断补偿 | 在官方桌面启动后尝试补装缺失包 | 需日志、可用来源和管理器，配置与数据保全范围有限 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| DSH Web 的 webServer、loader 与客户端插槽及原语 | 核心界面必需 | 挂载路由与市场界面 | 宿主缺少 UI 原语时跳过注册 |
-| 目标 profile 与包管理器 | 安装和更新必需 | 写入活动 profile | 官方桌面 manager 缺接口时明确拒绝 |
-| 可解析的安全 profile 目录 | 官方桌面日志修复必需 | 持久保存待重装记录 | 该修复路径无法建立 |
-| 目录和目标包网络访问 | 获取条目和包时必需 | 解析来源并下载 | 访问失败可能阻断任务 |
-| 宿主 Agent 服务 | 活动任务感知所需 | 协调市场变更与 Agent 活动 | 缺少服务时不会提供活动任务保护 |
-| 宿主请求 gate 与登录 | 依赖宿主鉴权的 Web 部署所需 | 在市场路由前复用宿主请求拒绝 | 缺 gate 时透传，desktopHost 不经该 wrapper，需核对实际保护 |
+| Cordis、webServer、loader 与适配的 Web 客户端插槽 | 启动必需 | 挂载服务与市场页面 | 缺必需 UI 原语时市场页不挂载 |
+| 活动 profile 的包管理命令，或 Desktop 提供的相应服务 | 包操作必需 | 将包变更落到当前 profile | 服务不可用则从宿主管理入口诊断 |
+| 可达目录及安装物来源、与宿主匹配的目标包 | 发现和安装必需 | 加载目录、核对兼容及执行下载 | 无法核实的兼容保持未知，无法取包时无合格安装 |
+| 可用浏览器存储与可装饰的组件插槽 | 持久未读提醒使用 | 保存目标指纹并显示红点 | 退回临时状态或宿主原入口 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 使用者建立隔离 profile，记录目标版本并备份 | 备份能独立读取，目标包来源可核 |
-| 加载 | 在宿主原生管理中装入市场，打开插件页或设置入口 | 市场可见且诊断显示目标 profile |
-| 安装 | 在市场发起一个可逆的包安装，查看进度 | 宿主页显示正确包和版本 |
-| 验收与退出 | 使用者验证一次核心功能，再移除并核对状态 | 错装、部分加载或移除失败时停止并按备份恢复 |
+| 准备 | 用户复制 profile 并确认客户端分支 | 识别当前 profile 与恢复路径 |
+| 加载 | 宿主加载补丁及市场界面 | 能打开市场页并识别来源 |
+| 操作 | 用户确认候选，后台交给相应包管理器 | 回执指向预定包、来源和目标版 |
+| 验收 | 用户实际试用一项功能并退出试验 | 功能有效且可恢复，告警与功能异常先停查 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次使用 | 包下载、缓存与备份占用，金额和规模未知 | 准备 profile、核对包源和宿主版本 | 用时未知 |
-| 持续使用 | 目录更新及包下载流量未知 | 检查选定版本、加载与当前任务状态 | 每次所需核对耗时未知 |
-| 失败恢复 | 重新下载与重新安装可能增加资源，金额未知 | 识别落盘与组合状态，必要时人工恢复 | 可恢复范围及实际时长待演练 |
-| 退出 | 保存备份占用空间，大小未知 | 移除市场与测试包，再查 profile | 其他包与自有数据需独立处理 |
+| 首次使用 | 下载目录及安装物，支出未知 | 复制 profile、确认入口与来源，耗时未知 | 包构建与网络情况会改变负担 |
+| 持续使用 | 检查请求、下载与缓存占用未测 | 人工决定是否升级并验证，耗时未知 | 定时检查可关，失败可能退避 |
+| 失败恢复 | 重新取包、维护快照或完整副本，支出未知 | 检查实际状态、恢复数据与重测，耗时未知 | 快照不含第三方插件自写数据 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 进度反馈 | 源码将 202 操作投影为排队并进入操作面板 | 与原生管理相比能减少多少重复操作 |
-| 定位安装结果 | 源码检查新增组件与宿主加载状态 | 真实宿主的成功率 |
-| 中断修复 | 特定桌面路径保存记录，启动后有条件重装 | 实际恢复时长及业务数据完整性 |
+| 候选选择 | 排除声明不符并保留未知项 | 判断速度、误筛和未知占比 |
+| 安装复核 | 区分目标 profile、包落盘与插件激活 | 核心功能成功率、跨宿主兼容 |
+| 更新提醒 | 从已装目标指纹生成可消除提示 | 用户节时和提醒误扰 |
+| 恢复 | 对特定配置文件和中断路径执行补偿 | 实际数据完整率与人工恢复成本 |
 
-> **思考**：[Q03](#research-q03) 与 [Q04](#research-q04) 指出，日志结清可对应旧版或目标版，集合操作还允许部分成功。恢复后应在实际 profile 核对版本、加载和业务状态，关键数据需要独立备份。 超时后包管理器可能仍在写入，此时继续提交可能增加恢复负担。
+> **思考**：安装成功回执、管理器状态和插件实际功能可能在不同时间生效。Desktop 拆换更新仍可能先移除旧包，补偿日志依赖下次启动、正确 profile 和可用来源，配置快照的恢复范围也有限。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 显示，市场把搜索结果、操作进度、目标 profile 和宿主包管理接在一起。[Q03](#research-q03) 进一步确认了官方桌面移除再装过程的中断日志。现有机制依赖宿主管理器与目录，具体贡献是把多处状态连到操作者的同一个管理任务。
+> **亮点**：市场把候选包声明、当前宿主和安装后的激活结果带入同一个交互。候选筛选只隐藏明确冲突，安装回执再区分已落盘、已激活和需要后续处置。后台提醒只把已装包的具体更新带到用户面前，由用户决定是否变更。[Q01](#research-q01) [Q02](#research-q02) [Q04](#research-q04)
 
-每 profile 的待更新日志与包管理调用分开，启动时查版本和组合状态后决定重装。源码另有安装后的新增组件验证和针对部分失败的回滚分支。市场变更锁只覆盖自身管理路径；执行排队操作时会在锁内重新核对活动任务。宿主未暴露 agents 服务时，普通市场变更缺少活动任务保护。复杂宿主分流及恢复分支增加维护负担。 官方桌面更新等待截止通过竞速返回，不能据此确认管理器已停止，修复需要下次启动读取日志并核对盘面。
+作用域用活动 profile 锚定。桌面 manager 与 Web 命令具有不同职责，安装操作围绕变更锁、激活判断和限时补偿组织；可复用部分是把已装身份、变更执行和可观察结果拆开持久化。新宿主需提供稳定的 profile 与组合状态，受限设置中图标和热挂载会退化。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 与 [Q04](#research-q04) 指出，日志结清可对应旧版或目标版，集合操作还允许部分成功。恢复后应在实际 profile 核对版本、加载和业务状态，关键数据需要独立备份。 超时后包管理器可能仍在写入，此时继续提交可能增加恢复负担。
+安装成功回执、管理器状态和插件实际功能可能在不同时间生效。Desktop 拆换更新仍可能先移除旧包，补偿日志依赖下次启动、正确 profile 和可用来源，配置快照的恢复范围也有限。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 建议先在隔离 profile 验收一个非关键包。记录宿主与包版本，在宿主原生管理页核对加载，确认能移除后再考虑扩大范围。若目标目录、加载结果或退出状态不一致，停止继续更新并从独立备份恢复。
+先在复制的 Web profile 装一个已知来源的非关键插件，对照目标包和实际激活，确认能恢复副本。来源、包版本或功能无法对上时停止；仅需发现目录可沿用宿主 Discover。 [Q05](#research-q05)
 
 <a id="detail-section-7"></a>
 
@@ -120,18 +120,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持市场挂载、安装目标校验及官方桌面的有条件中断修复。试用建议基于源码。任务效果与各宿主的兼容性待实测，返工假设尚未验证。
+固定源码支持市场注册、profile 路由、后台检查和有条件的恢复机制。更新后的功能验收和提醒带来的节时尚无结果数据。合并来源、兼容与功能探针是待验证设计。
 
-- 已检查：作者 README、包清单、源码路径 src/index.ts、src/client/index.ts、cordis.patch.yml、package.json、tsconfig.json、tsdown.config.ts、src/client/MarketSection.tsx、src/routes.ts、src/http.ts、src/official-desktop.ts、src/pending-updates.ts、src/snapshot.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、package.json、src/client/MarketSection.tsx、src/client/PluginsUpdateIndicator.tsx、src/client/index.ts、src/client/update-notifications.ts、src/discovery-compatibility.ts、src/hot.ts、src/index.ts、src/official-desktop.ts、src/pending-updates.ts、src/routes.ts、src/snapshot.ts、src/update-notifications.ts、tsdown.config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交根组件，包清单版本 1.73.18。覆盖宿主挂载、安装入口、请求边界、profile 路由、官方桌面中断修复与使用成本。主题、评论、云备份、完整兼容矩阵及全部更新 API 路径未展开。
-- 下一步：在同一宿主、固定包、同一初始 profile 对照原生管理与市场路径，分别记录操作耗时、误重试、加载、故障恢复和卸载后状态。先在隔离环境验证中断，再决定是否用于常用 profile。
+- 边界：固定仓库根代码，按宿主接线、兼容、更新通知和恢复关键路径抽查。副本中的兼容、进程中断和端到端操作耗时留待验证。
+- 下一步：用同一包、目标版本与宿主版本进行原生入口和市场的配对试用。记录每次来源确认、落盘、激活、功能检查和退出结果，中断场景以副本中的复位结果为准。
 
 **分析版本**
 
 - **仓库**：[dsh-market/dsh-market](https://github.com/dsh-market/dsh-market)
-- **版本号**：1.73.18（[固定提交 4c33068](https://github.com/dsh-market/dsh-market/tree/4c330686ee5d761f9e05637820532d8c080947d5)）
-- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：1.73.20（[固定提交 88de957](https://github.com/dsh-market/dsh-market/tree/88de9575946485c1dac5e1a5fbe57fa1f3c3988c)）
+- **版本日期**：2026-11-16（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -139,9 +139,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提出的待验证假设是，分开显示排队、落盘与加载结果，能减少用户误以为失败而再次提交的次数。用同一隔离 profile 比较原生管理与市场路径，若误重试没有下降或额外维护耗时抵消节约，就放弃这一假设。
+在待更新项上同时保留来源、宿主声明和实际功能探针，可能缩短更新后排障时间。以已装包和相同任务做对照，测量首次安装、受控失败和退回原状态的总时间；若误报增加或合格率与排障时间持平，则不支持该设计。[Q05](#research-q05)
 
-在同一宿主、固定包、同一初始 profile 对照原生管理与市场路径，分别记录操作耗时、误重试、加载、故障恢复和卸载后状态。先在隔离环境验证中断，再决定是否用于常用 profile。
+用同一包、目标版本与宿主版本进行原生入口和市场的配对试用。记录每次来源确认、落盘、激活、功能检查和退出结果，中断场景以副本中的复位结果为准。
 
 <a id="detail-section-9"></a>
 
@@ -154,211 +154,257 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 8 | 1214 | — | — | 19780 |
-| .js | source | 1 | 19131 | 16782 | 3648 | — |
-| .mjs | source | 14 | 2076 | 1435 | 525 | — |
-| .ts | source | 78 | 42225 | 25683 | 14929 | — |
-| .tsx | source | 13 | 13498 | 10439 | 2793 | — |
-| .ts | test | 109 | 50791 | 38324 | 9068 | — |
-| .tsx | test | 11 | 13563 | 11038 | 1643 | — |
+| .md | source | 8 | 1216 | — | — | 20304 |
+| .js | source | 1 | 20726 | 18294 | 3798 | — |
+| .mjs | source | 15 | 2214 | 1560 | 531 | — |
+| .ts | source | 85 | 44779 | 27634 | 15383 | — |
+| .tsx | source | 15 | 14020 | 10897 | 2832 | — |
+| .ts | test | 120 | 54447 | 41161 | 9663 | — |
+| .tsx | test | 14 | 15244 | 12576 | 1696 | — |
 | .md | test | 1 | 15 | — | — | 120 |
-| .js | example | 4 | 244 | 72 | 155 | — |
+| .js | example | 6 | 252 | 80 | 155 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 98](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=98&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 195](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=195&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 134](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=134&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
+[![Issue 未关闭 115](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=115&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 175](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=175&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 92](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=92&color=737b86&logo=github)](https://github.com/dsh-market/dsh-market/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
 
 
 
-统计日期：2026-11-12。
+统计日期：2026-11-17。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在正确的宿主 profile 中安装或更新一个社区插件时，市场界面能改善哪些环节，出错后用户还能保留什么？
+**插件研究总目标**：在有多个插件的 DSH profile 中，用户如何从候选仓库或当前安装记录走到可核实的安装和更新结果，什么失败会让图形工作流失去优势？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 对已经可以用 Discover 或 CLI 的用户，市场为何仍有价值？
+### Q01 · 原生 Discover 可浏览同一目录时，市场在检查哪些候选可装上仍增加哪一步？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-经常在同一 DSH profile 中选包、观察安装进度、处理更新失败的用户，能在市场页连续完成这些操作。市场在有对应插槽的宿主注册独立标签，并使用自己的安装状态和操作列表。作者文档同时给出了宿主 Discover 接入同一索引的办法。因此，若任务只是搜索已知包，Discover 或已知包名的 CLI 路径已经足够。
+市场让维护多个第三方插件的 Web 用户在同一页先筛掉声明明确不兼容的候选，再进入安装和本地状态核对。README 给出了原生 Discover 使用同一索引的做法，已经满足按目录找名字的用户可以继续用它。市场的可核查增量在候选包和本机版本的比对。GitHub 的目录兼容事实须匹配同仓库的精确 Release tarball，清单不足或绑定不符由查清单路径补充。兼容计算读取 engines.dsh、已知 DSH 锁步包的 peer 和普通依赖声明，普通依赖同样可能把冲突版本装进 profile。
 
-市场的增量集中在交接处：从条目发起操作、看到请求是否排队，再回到宿主已安装页核对组件。合格结果应是目标包在预期 profile 可用并达到任务所需的加载状态。市场卡片提供入口和过程反馈，宿主页面仍承担部分逐项启停工作。这个分工使收益更可能出现在反复管理插件的人群，偶发检索用户要承担额外插件自身的维护。
+市场先固定分页范围，再按当前结果隐藏明确不兼容的卡片。未查、没有声明、无法获取清单或无法解析的候选仍显示，用户可避免一部分明显失败的下载，仍需自己确认未知项。卡片兼容也不能覆盖浏览器 slot、构建产物或主题与当前其他插件的交互。清单缓存可复用包事实，具体判断仍依赖当前宿主，也不会替换实际激活回执。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:12-14](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/README.md#L12-L14)
+**依据 1 · 作者声明**：[README.md:11-14](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/README.md#L11-L14)
 
-作者说明同一索引也可交给宿主 Discover，提供可比的检索替代。
+作者提供同源 Discover 索引，支持把原生市场作为查找基线。
 
 ```text
+
 The plugin market inside DeepSeek Harness. On dsh 0.2.1+ it is a tab on the **Plugins** page, right next to **Installed**; on older hosts open Settings → **Plugin Market**. Browse, search, one-click install.
 
 > 📡 **The same catalog is also a plugin market index.** On dsh 0.2.1+, open **Plugins → Discover → Index sources** and add `https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json`. That is this list as a format-1 index, served from npm so it loads quickly everywhere — dsh gives a source 15 seconds, and the GitHub Pages copies (`https://awesome-dsh-plugin.com/index.json` and `https://dshmarket.com/index.json`) can exceed that from some networks. The host's Discover tab and the `plugin_market` agent tool then search it.
 ```
 
-**依据 2 · 作者声明**：[README.md:48-59](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/README.md#L48-L59)
+**依据 2 · 源码核查**：[src/discovery-compatibility.ts:70-104](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/discovery-compatibility.ts#L70-L104)
 
-作者说明三种入口和原生页逐行启停的边界。
+目录事实绑定同仓库和精确归档，同时版本提示参与身份。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-Once it is installed, open the **Plugins** page and pick the **Plugin Market**
-tab next to **Installed** (dsh 0.2.1 and newer — plain `dsh web` included, no
-desktop app needed). The market is also still a section of **Settings → Plugin
-Market**: on dsh 0.2.0 and older that is the only way in, and from 0.2.1 the
-Settings dialog lives in the account menu. If you would rather reach it in one
-click from anywhere, the market can also put its own **Plugin Market** row in
-the sidebar; turn it on from the market's card under **Plugins**. All three
-entries can be switched individually under **Advanced** in that card, and the
-market refuses to close the last one. Going the
-other way, an installed plugin's **···** menu offers **View in Plugins** on
-dsh 0.2.1+: it opens the host's own page for that plugin, which is the only
-place its individual rows can be switched one by one.
+/** Only the selected artifact and its declarations determine a discovery verdict. */
+export function githubCompatibilityRevision(source: GitHubManifestSource): string {
+  const facts = catalogReleaseManifest(source)
+  return createHash('sha256').update(JSON.stringify([
+    source.url,
+    source.tarball ?? null,
+    range(source.version),
+    facts === null ? null : [facts.version, facts.enginesDsh,
+      Object.entries(facts.peerDependencies).sort(), Object.entries(facts.dependencies ?? {}).sort()],
+  ])).digest('hex')
+}
+
+/** Reuse catalog facts only for this repository's exact pinned install asset. */
+export function catalogReleaseManifest(source: GitHubManifestSource): NpmManifestFacts | null {
+  const facts = record(source.releaseManifest)
+  const repository = parseSourceUrl(source.url)?.repo
+  const release = /^https:\/\/github\.com\/([^/]+\/[^/]+)\/releases\/download\/[^/]+\/[^/?#]+\.(?:tgz|tar\.gz)$/.exec(source.tarball ?? '')
+  if (facts === null || !repository || !release || release[1]!.toLowerCase() !== repository.toLowerCase()
+    || facts.tarball !== source.tarball || !validFacts(facts)) return null
+  return {
+    version: facts.version,
+    enginesDsh: facts.enginesDsh,
+    peerDependencies: facts.peerDependencies,
+    dependencies: facts.dependencies ?? {},
+  }
+}
+
+function npmDiscoveryKey(name: string, registry: string, version: string | undefined): string {
+  return version === undefined ? name : `npm:${registry}\u0000${name}\u0000${version}`
+}
+
+function githubDiscoveryKey(source: GitHubManifestSource): string {
+  const key = `github:${source.url}\u0000${source.tarball ?? ''}`
+  const version = range(source.version)
+  return version === null ? key : `${key}\u0000${version}`
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/client/index.ts:263-279](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/client/index.ts#L263-L279)
+**依据 3 · 源码核查**：[src/discovery-compatibility.ts:292-339](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/discovery-compatibility.ts#L292-L339)
 
-注册独立插件页标签并保留市场自己的进度、任务和取消界面。
+锁步依赖和引擎范围参与判断，声明或宿主缺失回到未知。
+
+<details>
+<summary>查看原文（48行）</summary>
+
+```text
+export function deriveHostCompatibility(
+  facts: NpmManifestFacts | null,
+  hostVersion: string | null,
+  hostPackages: ReadonlySet<string>,
+): HostCompatibility {
+  if (facts === null) {
+    return { status: 'unknown', basis: 'unavailable', requirement: null, declarations: [] }
+  }
+  const declarations: HostRequirementDeclaration[] = []
+  if (facts.enginesDsh !== null) {
+    declarations.push({ kind: 'engine', range: facts.enginesDsh })
+  }
+  for (const [name, declared] of Object.entries(facts.peerDependencies)) {
+    // Cordis (4.x) and schemastery (3.x) are host packages, but are not on
+    // DSH's lockstep 0.x release line and therefore say nothing about the
+    // DSH version. `hostPackages` is the local install inventory plus its
+    // curated fallback, so future lockstep DSH packages are picked up too.
+    if (!hostPackages.has(name) || !/^@deepseek-ai\/dsh(?:-|$)/.test(name)) continue
+    declarations.push({ kind: 'peer', package: name, range: declared })
+  }
+  for (const [name, declared] of Object.entries(facts.dependencies ?? {})) {
+    // The peer filter above restricts itself to DSH's lockstep line because a
+    // peer range on cordis or schemastery says nothing about the DSH version.
+    // A dependency is different: it names a package the host itself provides,
+    // and pnpm will install the declared copy and hoist it over the host's.
+    // That is the dsh-qqbot failure — @deepseek-ai/dsh-settings and
+    // dsh-credentials as ordinary dependencies at `^0.1.0-rc.5` over a
+    // 0.2.2-rc.1 runtime — which the peer-only check could not see.
+    // Still only the lockstep line: the range is judged against the DSH
+    // version, and cordis (4.x) / schemastery (3.x) are not on it — a plugin
+    // that depends on `@deepseek-ai/cordis@^4` would otherwise read as
+    // incompatible with every host.
+    if (!hostPackages.has(name) || !/^@deepseek-ai\/dsh(?:-|$)/.test(name)) continue
+    declarations.push({ kind: 'dependency', package: name, range: declared })
+  }
+  const requirement = displayRequirement(declarations)
+  if (declarations.length === 0) {
+    return { status: 'unknown', basis: 'undeclared', requirement: null, declarations: [] }
+  }
+  if (hostVersion === null) {
+    return { status: 'unknown', basis: 'manifest', requirement, declarations }
+  }
+  const outcomes = declarations.map(item => declarationResult(item, hostVersion))
+  const status: HostCompatibilityStatus = outcomes.some(item => item === false)
+    ? 'incompatible'
+    : outcomes.every(item => item === true)
+      ? 'compatible'
+      : 'unknown'
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/discovery-compatibility.ts:407-424](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/discovery-compatibility.ts#L407-L424)
+
+缓存复用的是仍在 TTL 内且匹配预期版本的包事实，查询另有冷却。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+  private async fetchOne(
+    cacheKey: string,
+    record: boolean,
+    readManifest: () => Promise<NpmManifestFacts>,
+    expectedVersion?: string,
+  ): Promise<NpmManifestFacts | null> {
+    const cached = await this.cache.get(cacheKey)
+    const now = this.now()
+    if (cached !== undefined && now - cached.checkedAt < this.ttlMs
+      && (expectedVersion === undefined || cached.facts.version === expectedVersion)) return cached.facts
+    if (this.retryDelay(cacheKey, now) > 0) return null
+    // Advisory and recording lookups keep separate in-flight slots: an
+    // advisory call must not be answered by — or hand its answer to — a
+    // recording one, or `record` would stop meaning anything when the two
+    // overlap on the same package.
+    const key = record ? cacheKey : `${cacheKey}\u0000advisory`
+    const pending = this.inflight.get(key)
+    if (pending !== undefined) return await pending
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/client/MarketSection.tsx:4471-4487](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/MarketSection.tsx#L4471-L4487)
+
+先固定页面片段，明确不兼容才过滤。
 
 <details>
 <summary>查看原文（17行）</summary>
 
 ```text
-  // props this slot hands over (`install`, `openPackage`) drive the host's own
-  // install dialog and Installed list; the market brings both of its own, so
-  // they are deliberately not used — routing installs through the host would
-  // take the progress, the task list and the cancel with them.
-  //
-  // The gate (#1015): this entry is now the user's to keep or hide, but only
-  // where the slot exists — on older hosts there is nothing to gate.
-  const pluginsTabGate = createSectionGate(() => {
-    const off = ctx.slots.register({
-      name: 'plugins.tab',
-      id: NS,
-      order: -1,
-      label: () => t('nav'),
-      locale: NS,
-      inject: () => ({ t }),
-    }, () => buildMarketElement({ surface: 'plugins' }))
-    return typeof off === 'function' ? off as () => void : () => {}
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/client/MarketSection.tsx:4543-4561](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/client/MarketSection.tsx#L4543-L4561)
-
-客户端把服务端 202 响应投影为排队并打开操作面板。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-      .then(res => res.json().then(body => ({ status: res.status, body })))
-      .then(({ status, body }) => {
-        setBusyUrl(null)
-        sessionStorage.removeItem('dshm-pending')
-        if (status === 202 && typeof body.operationId === 'string') {
-          const operation = body.operation as DrainOperationWire | undefined
-          setRecords(list => patchRecord(withoutHostProjection(list, body.operationId, recordId), recordId, {
-            state: 'queued',
-            hostOperationId: body.operationId,
-            ...(operation?.wait === null || operation?.wait === undefined
-              ? {}
-              : { blockedBy: operation.wait.activeAgentIds, waitSince: operation.wait.since }),
-            reason: operation?.wait === null || operation?.wait === undefined
-              ? t('agentBusyQueued')
-              : t('agentDrainWaiting').replace('{0}', String(operation.wait.activeCount)),
-          }))
-          rememberDrainMarker({ operationId: body.operationId, kind: 'install', name: plugin.name, url: plugin.url })
-          setOperationsOpen(true)
-          return
+  // Fix the slice before compatibility resolves. Hiding a card must not
+  // pull in an unchecked replacement and start another batch.
+  const discoverResetDeps = [q, cat, sortField, sortDir, timeRange]
+  const { currentPage, totalPages, pageSize, goToPage, changePageSize } =
+    usePagination(pluginsUnblocked.length, discoverResetDeps, scrollToTop)
+  const discoverMore = useShownCount(pluginsUnblocked.length, discoverResetDeps, DEFAULT_PAGE_SIZE)
+  const basePage = surface === 'plugins'
+    ? pluginsUnblocked.slice(0, discoverMore.shown)
+    : pluginsUnblocked.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+  const baseRecent = recentlyAdded.slice(0, RECENT_STRIP_LIMIT)
+  const hostVerdict = (plugin: RegistryPlugin) => {
+    const key = hostCompatibilityKey(plugin)
+    return key === null ? undefined : hostCompatibility[key]
+  }
+  const compatible = (plugin: RegistryPlugin): boolean =>
+    !compatibleWithHost || hostVerdict(plugin)?.status !== 'incompatible'
+  const pagePlugins = basePage.filter(compatible)
 ```
 
 </details>
 
 #### 缺口
 
-- 缺同一版本上用户操作路径的直接比较
-  **影响**：无法量化持续管理的实际省时或减少误操作
-  **进一步探讨**：在同一宿主以原生 Discover 加管理页和市场界面各完成同一包的安装与回查
+- 进入用户实际候选结果的未知比例及误筛数尚无对照。
+  **影响**：决定它是否比逐一检查清单省力。
+  **进一步探讨**：选相同已声明、未声明、子包和不可达候选，在同一宿主人工核对所选安装物的清单及最终激活状态。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 点击安装或更新后，变更怎样落入当前宿主的正确 profile？
+### Q02 · 点击安装时，来源、目标 profile 和激活回执怎样收敛到同一个任务？
 
 **研究主题**：功能与机制、依赖、兼容与流程
 
 #### 完整回答
 
-市场页发送条目 URL 和可选固定版本，后端校验 POST、请求来源与目录匹配，随后在共享变更锁内解析目标。普通 Web 优先采用显式 profile 配置，其次采用 launcher 给出的 profile，再依次用启动参数和 web 默认值；只有选中 launcher 的 profile 时才同时用其目录。官方桌面分支委托运行时获取 pluginManager 并按目标 profile 校验，缺少安装、移除或取消接口就返回错误。第三方桌面按 desktopProfiles 与 desktopPnpm 绑定当前活动目录。
+市场服务端要求同源 POST，并在并发变更锁内用目录条目约束下载来源，未知 URL 直接返回错误。来源检查是操作允许范围，无法代替审核第三方代码。普通 Web 选择显式 profile、启动器 profile、启动参数或 web 默认值，并使用启动器给出的包管理器信息（存在时）。官方 Desktop 的 desktop profile 调用 pluginManager，按请求时查找服务。提供 desktopProfiles 的第三方宿主走 desktopPnpm，可另外提供重放桥。这个分支选择决定用户从哪里看到包、由哪个进程卸载和重启；用户应先核对活动 profile，别把 CLI 写进另一个 profile 的结果当成市场故障。
 
-请求来源检查会拒绝不受信任的 Host 和明确的跨站请求，同时允许满足 Host 检查的无 Origin 调用，以兼容桌面代理。这条检查是请求来源约束，部署时仍须核对宿主的访问控制。目录命中也是选包约束，包来源和安装脚本仍需由使用方确认。客户端缺少必要的 UI 原语时会直接跳过注册，因此只看安装命令成功无法确认入口出现。
-
-普通 Web 路由统一先调用宿主 connection.requestRejection。该接口由宿主决定请求围栏及登录拒绝，插件只转交拒绝结果，接口抛异常时返回 403。若宿主未提供该接口，插件 wrapper 直接放行到路由。desktopHost 分支跳过该 wrapper，仍会在安装路由检查来源。无 Origin 的非浏览器调用依然可能经过宿主 gate，但当前固定仓库无法确认任一具体宿主对该类请求的认证策略，不能以 Host/Origin 检查代替认证。
+落盘与生效分别处理。普通路径优先等宿主重放，按运行条目或补丁插入 ID 识别已有激活，避免重复挂载，再按是否有宿主半部检查 peer 门槛并尝试热挂载。客户端用回执分别提示 live、不兼容和等待重启，不兼容时不承诺重启可解决。安装命令碰到宿主端口占用但确有落盘时仍可能被视为安装成功，最终使用动作仍需在对应 profile 里确认。客户端缺少必需原语时会退出挂载，因此服务可达也不能代替页面出现。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/client/MarketSection.tsx:4517-4541](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/client/MarketSection.tsx#L4517-L4541)
+**依据 1 · 源码核查**：[src/routes.ts:7910-7965](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L7910-L7965)
 
-发起安装 POST 并传入目录 URL、选定版本与可选排队策略。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  const doInstall = useCallback((plugin: RegistryPlugin, force = false, version?: string, preferReject = false) => {
-    setBuildsSkipped(null)
-    setConfirming(null)
-    setInstallError(null)
-    setActivationWarnings([])
-    setBusyUrl(plugin.url)
-    // One record per attempt. A retry appends rather than reusing the old
-    // one, so the card resolves to the newest and its Install button returns.
-    const recordId = nextRecordId()
-    setRecords(list => enqueue(list, {
-      id: recordId, kind: 'install', name: plugin.name, url: plugin.url, state: 'running',
-    }))
-    sessionStorage.setItem('dshm-pending', JSON.stringify({ url: plugin.url, name: plugin.name }))
-    fetch(api('/dsh-market/install'), {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      // `version` when the refusal dialog found a release this host supports:
-      // the route pins THAT release instead of resolving the newest one —
-      // which is the release that was just refused (#581).
-      body: JSON.stringify({
-        url: plugin.url,
-        ...(force ? { force: true } : {}),
-        ...(version !== undefined ? { version } : {}),
-        ...(statusRef.current.agentDrain && !preferReject ? { busyPolicy: 'drain' } : {}),
-      }),
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/routes.ts:7645-7698](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/routes.ts#L7645-L7698)
-
-检查请求方法和来源，在锁内核对目录并拒绝不支持来源。
+同源、锁和目录条目校验限制安装请求。
 
 <details>
-<summary>查看原文（54行）</summary>
+<summary>查看原文（56行）</summary>
 
 ```text
+    registerRoute(captureLegacy('/dsh-market/install', {
+      kind: 'exact',
       path: '/dsh-market/install',
       handler: async (request, response) => {
         if (request.method !== 'POST') {
@@ -417,74 +463,24 @@ place its individual rows can be switched one by one.
 
 </details>
 
-**依据 3 · 源码核查**：[src/http.ts:224-249](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/http.ts#L224-L249)
+**依据 2 · 源码核查**：[src/index.ts:321-346](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/index.ts#L321-L346)
 
-来源防护检查及无 Origin 兼容分支。
+官方 desktop profile 选择实时查询的 manager。
 
 <details>
 <summary>查看原文（26行）</summary>
 
 ```text
-  const host = request.headers.host
-  if (host !== undefined && !loopbackAuthority(host) && !trustedAuthority(host, trustedHostsSource())) return false
-  // A browser states when IT considers a request cross-site, and the host's
-  // own fence refuses that outright. Cheap, and it covers what the Origin
-  // equality cannot: a cross-site request whose Origin happens to match.
-  if (request.headers['sec-fetch-site'] === 'cross-site') return false
-  // Chrome 151+ serializes a loopback Origin WITHOUT its explicit port
-  // (#1031): the page at `http://127.0.0.1:3080` now states `Origin:
-  // http://127.0.0.1` on its same-origin POSTs, so the strict `host` equality
-  // below refuses installs and updates from the newest browsers. Mirror the
-  // dsh core rule (`isSameAuthorityOrigin`): the hostname must match, and the
-  // omitted port is honoured only on the loopback fence — `loopbackAuthority`
-  // above has already decided the Host names loopback, a cross-site page still
-  // fails the hostname test, and a rebinding page still cannot get its own
-  // name through both. Declared LAN names and proxies keep needing the exact
-  // port, as before.
-  const origin = request.headers.origin
-  // A missing Origin is not a cross-site request: browsers send it on every
-  // POST, same-origin included, so its absence means the caller is not a
-  // page — and a non-browser client can set any Origin it likes, so
-  // refusing the absence bought nothing while breaking the Desktop proxy,
-  // which strips it (#648).
-  if (origin === undefined) return true
-  try {
-    const originUrl = new URL(origin)
-    if (originUrl.host === host) return true
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/index.ts:392-401](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/index.ts#L392-L401)
-
-普通 Web 的 profile 名称和目录优先级。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-      setHostPackageManager(hostPackageManagerOf(profileContext))
-      const useLaunchedDir = config?.profile === undefined && launched !== undefined
-      const resolved: MarketConfig = {
-        profile: config?.profile ?? launched?.name ?? argvProfile() ?? 'web',
-        ...(useLaunchedDir ? { profileDirectory: launched.dir } : {}),
-        origin: {
-          profileSource: config?.profile !== undefined ? 'configured (cordis.yml)'
-            : launched !== undefined ? 'launcher profileContext'
-            : argvProfile() !== undefined ? '--profile flag'
-            : 'default (no configured profile, no launcher profileContext, no --profile flag)',
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/index.ts:331-346](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/index.ts#L331-L346)
-
-官方桌面绑定 profile 与 manager 查找。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
+      const configured = config?.profile
+      const configuredDesktop = configured !== undefined && configured.toLowerCase() === 'desktop'
+      const officialElectron = launched !== undefined && launched.name.toLowerCase() === 'desktop'
+      // An explicitly configured `profile: desktop` takes this branch too. The
+      // CLI refuses that profile by NAME (see above — from inside the running
+      // app on every version), so routing it there — which is what
+      // an operator's own workaround for a host that hides `profileContext`
+      // does (#744) — makes every install fail for certain. The configuration
+      // still wins over the launcher for the name; it just cannot win a branch
+      // that is guaranteed to fail.
       if (configuredDesktop || (configured === undefined && officialElectron)) {
         const profileName = configured ?? launched!.name
         // The launcher owns where a profile lives — and its directory rides
@@ -505,12 +501,40 @@ place its individual rows can be switched one by one.
 
 </details>
 
-**依据 6 · 源码核查**：[src/index.ts:434-445](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/index.ts#L434-L445)
+**依据 3 · 源码核查**：[src/index.ts:389-404](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/index.ts#L389-L404)
 
-第三方桌面绑定当前 profile 与 pnpm 服务。
+普通 Web 路径解析 profile 与启动器包管理器。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（16行）</summary>
+
+```text
+      // The launcher's own package manager, when it publishes one. Registering
+      // it here covers both the pnpm probe and every install spawn, since the
+      // invocation's environment reaches both through spawnEnv (#653).
+      setHostPackageManager(hostPackageManagerOf(profileContext))
+      const useLaunchedDir = config?.profile === undefined && launched !== undefined
+      const resolved: MarketConfig = {
+        profile: config?.profile ?? launched?.name ?? argvProfile() ?? 'web',
+        ...(useLaunchedDir ? { profileDirectory: launched.dir } : {}),
+        origin: {
+          profileSource: config?.profile !== undefined ? 'configured (cordis.yml)'
+            : launched !== undefined ? 'launcher profileContext'
+            : argvProfile() !== undefined ? '--profile flag'
+            : 'default (no configured profile, no launcher profileContext, no --profile flag)',
+          launcherAtStart: describeProfileContext(profileContext),
+          launcherNow: () => describeProfileContext(ctx.get('profileContext')),
+        },
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/index.ts:435-456](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/index.ts#L435-L456)
+
+第三方桌面使用 desktopPnpm 与启动器 profile，重启交给宿主。
+
+<details>
+<summary>查看原文（22行）</summary>
 
 ```text
     hostCtx.inject(['desktopPnpm'], (desktopCtx: Context) => {
@@ -525,47 +549,28 @@ place its individual rows can be switched one by one.
           launcherAtStart: describeProfileContext(ctx.get('profileContext')),
           launcherNow: () => describeProfileContext(ctx.get('profileContext')),
         },
+        // The shell owns the window and the process lifecycle here; the
+        // capability bits report that, and an explicit profile directory no
+        // longer implies it (#639).
+        desktopHost: true,
+        // A shell that cannot be asked to replay still replays on its own,
+        // shortly after the install lands (#814): wait for it and adopt.
+        ...(desktopProfiles.pluginActivation === undefined ? { hostReplayWaitMs: 8000 } : {}),
+        // Relaunching a raw Electron process would bypass Desktop's launcher
+        // lifecycle. The shell remains responsible for restart in this mode.
+        allowRestart: false,
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[src/official-desktop.ts:528-540](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/official-desktop.ts#L528-L540)
+**依据 5 · 源码核查**：[src/client/index.ts:128-141](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/index.ts#L128-L141)
 
-官方运行时拒绝改错 profile，manager 缺失则返回提示。
-
-<details>
-<summary>查看原文（13行）</summary>
-
-```text
-  const runPlugin: DesktopPluginRuntime['runPlugin'] = (profile, argv) => {
-    if (disposed) return Promise.resolve(failure('official desktop plugin runtime is disposed', 127))
-    if (profile !== profileName) return Promise.resolve(failure('refusing to change a different profile', 127))
-    // A repair uses the same manager; overlapping the two would race the
-    // profile's write lock and the route's single-operation rule.
-    if (busy()) return Promise.resolve({ ...failure('another plugin operation is running', 127), busy: true })
-    const manager = managerLookup()
-    if (manager === undefined
-      || typeof manager.installBundle !== 'function'
-      || typeof manager.removeBundle !== 'function'
-      || typeof manager.cancelInstall !== 'function') {
-      return Promise.resolve(failure(OFFICIAL_PAGE_HINT, 127))
-    }
-```
-
-</details>
-
-**依据 8 · 源码核查**：[src/client/index.ts:122-135](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/client/index.ts#L122-L135)
-
-客户端在原语缺失时提前退出。
+缺少必需界面原语时停止前端挂载。
 
 <details>
 <summary>查看原文（14行）</summary>
 
 ```text
-export const inject = ['slots', 'locale', 'theme']
-export function apply(ctx: MarketClientContext): void {
-  // Older hosts resolve the primitives module but lack the rc.6 exports the
-  // market renders with. Skip registration (market simply absent from the
   // settings list) rather than throwing mid-render and blanking the dialog.
   // Icons are different (#671): 0.1.7 renamed …14/…16 to weight names with no
   // alias. icons.ts accepts either spelling and skips a missing glyph so the
@@ -576,128 +581,230 @@ export function apply(ctx: MarketClientContext): void {
   if (gaps.length > 0) {
     console.warn('[dsh-market] host ui-primitives missing ' + gaps.join(', ') + ' — market section disabled (dsh web >= 0.1.0-rc.6 required)')
     return
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/index.ts:242-251](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/index.ts#L242-L251)
-
-按请求读取宿主 connection 服务暴露的 requestRejection。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-  // The same service carries the host's request gate (#603): its fence plus
-  // its browser login, the check its own API runs. Read per request for the
-  // same reason as the authorities above.
-  const previousGate = setRequestGateSource(() => {
-    const connection = ctx.get('connection') as { requestRejection?: unknown } | undefined
-    const gate = connection?.requestRejection
-    return typeof gate === 'function'
-      ? (request => (gate as (request: unknown) => number | undefined).call(connection, request))
-      : undefined
-  })
-```
-
-</details>
-
-**依据 10 · 源码核查**：[src/routes.ts:2649-2672](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/routes.ts#L2649-L2672)
-
-普通 Web 注册统一 wrapper，desktopHost 直接注册。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-  /**
-   * Every market route goes through the host's own request gate first (#603).
-   *
-   * One entry for all of them, so a route added later cannot forget it: the
-   * report's ask was a single place that holds for reads and writes alike. On a
-   * host that publishes no gate this is a pass-through.
-   *
-   * Not on a Desktop host yet. Its page loads from `dsh-app://` through the
-   * app's own protocol handler, and whether those requests carry the session
-   * the host's gate checks has not been measured on a real Desktop; enforcing
-   * it blind could lock the market's own page out of its API. #603's exposure
-   * is `dsh web` reached through a proxy or a tunnel, which this covers.
-   */
-  const enforceHostGate = config.desktopHost !== true
-  const registerRoute = (route: Parameters<WebServerService['register']>[0]): (() => void) => {
-    if (!enforceHostGate) return host.webServer.register(route)
-    const handler = route.handler
-    return host.webServer.register({
-      ...route,
-      handler: (request: IncomingMessage, response: ServerResponse) => {
-        if (refuseUnadmitted(request, response)) return
-        return handler(request, response)
-      },
-    })
-```
-
-</details>
-
-**依据 11 · 源码核查**：[src/http.ts:70-87](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/http.ts#L70-L87)
-
-gate 缺失时透传，抛异常按拒绝处理，宿主拒绝则返回错误。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-export function refuseUnadmitted(request: IncomingMessage, response: ServerResponse): boolean {
-  const gate = requestGateSource()
-  if (gate === undefined) return false
-  let status: number | undefined
-  try {
-    status = gate(request)
-  } catch {
-    // A gate that throws has not admitted anything. Failing open here would
-    // turn a host bug into the exposure this exists to close.
-    status = 403
   }
-  if (status === undefined) return false
-  sendJson(response, status, {
-    error: status === 401
-      ? '需要先登录 DSH：请重新打开 dsh web 启动时打印的那个网址。 / DSH login required: reopen the URL dsh web printed at startup.'
-      : '这个请求来自不受信任的地址，已拒绝。 / This request came from an untrusted origin and was refused.',
-  })
-  return true
+  const iconGaps = missingIcons(mod)
+  if (iconGaps.length > 0) {
+    console.warn('[dsh-market] host ui-primitives missing icons ' + iconGaps.join(', ') + ' — rendering without them')
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/routes.ts:8370-8428](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L8370-L8428)
+
+识别宿主重放，兼容门控后热挂载，再核对激活结果。
+
+<details>
+<summary>查看原文（59行）</summary>
+
+```text
+                    const isAdopted = (): boolean => {
+                      const names = liveNames()
+                      return names.has(name)
+                        || names.has(`#${name}`)
+                        || bundlePatchInsertedIds(join(activeProfileDir, 'node_modules', name))
+                          .some(id => names.has(`#${id}`))
+                    }
+                    let adopted = isAdopted()
+                    // The replay lands after pnpm returns, not before (#814):
+                    // give a host that replays on its own the time to do it.
+                    // The profile watcher replays only what the manifest lists
+                    // as a bundle, so a client-only package is not waited for.
+                    const replayWaitMs = config.hostReplayWaitMs
+                      ?? (declaresBundle(activeProfileDir, name) && liveNames().has(PROFILE_HMR_ENTRY) ? PROFILE_HMR_REPLAY_WAIT_MS : 0)
+                    const waitUntil = Date.now() + replayWaitMs
+                    while (!adopted && Date.now() < waitUntil) {
+                      await new Promise(resolve => setTimeout(resolve, 250))
+                      adopted = isAdopted()
+                    }
+                    if (adopted && replayWaitMs > 0) {
+                      logEvent('info', 'install', `${name}: the host's own replay activated it; adopted instead of mounting a second copy (#814, #827)`)
+                    }
+                    let live = adopted
+                    if (!adopted && !pluginCategories(entry).includes('theme')) {
+                      // #758: this fallback hot-mount bypasses the host's own
+                      // boot gate, which would skip a peer-incompatible
+                      // plugin on every boot. Check the same gate first and
+                      // leave it unmounted when it would bite; the activation
+                      // report below then reads incompatible. Client-only
+                      // plugins never load in the host process, so the cap
+                      // cannot bite — skip the gate for them (#758 review),
+                      // matching what verifyActivation does outside bundles.
+                      const gate = hasHostHalf(config.profile, name, activeProfileDir)
+                        ? hostPeerGate(activeProfileDir, name, defaultHostRuntimeFacts(activeProfileDir))
+                        : null
+                      if (gate !== null) {
+                        logEvent('warn', 'install', `${name}: ${gate.peer} ${gate.range} excludes runtime ${gate.runtimeVersion}; leaving it unmounted for the next boot to skip (#757)`)
+                        live = false
+                      } else {
+                        live = (await hotMount(host, activeProfileDir, name)).ok
+                      }
+                    } else if (!adopted) {
+                      const result = await themes.activateTheme(name)
+                      live = result.ok
+                      if (result.reason !== undefined) themeFailures.set(name, result.reason)
+                    }
+                    if (!live) hot = false
+                  }
+                }
+                activation = {}
+                const live = liveNames()
+                // Same facts the mount decision above used, so the verdict
+                // cannot disagree with it within one request.
+                const hostFacts = defaultHostRuntimeFacts(activeProfileDir)
+                for (const name of added) {
+                  const result = verifyActivation(config.profile, name, live, activeProfileDir, disabled.has(name), hostFacts)
+                  const failure = themeFailures.get(name)
+                  activation[name] = failure === undefined
+                    ? result
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/client/MarketSection.tsx:4711-4731](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/MarketSection.tsx#L4711-L4731)
+
+界面区分已热挂载、未生效与不兼容。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+        if (status === 200 && body.ok) {
+          if (body.activation && typeof body.activation === 'object') {
+            setActivations(prev => ({ ...prev, ...body.activation }))
+            const warns = Object.entries(body.activation as Record<string, ActivationInfo>)
+              .filter(([, info]) => info.state !== 'live' && info.state !== 'missing' && info.loadedByProfile !== true && info.library !== true)
+              .map(([name, info]) => ({ name, info }))
+            setActivationWarnings(warns)
+          }
+          if (body.hot) {
+            // The status-poll recovery path may have already counted this URL
+            // as pending-restart before the install response confirmed a hot
+            // mount; a hot plugin must not stay in doneUrls (#73).
+            setDoneUrls(urls => urls.filter(url => url !== plugin.url))
+            setHotUrls(urls => urls.includes(plugin.url) ? urls : urls.concat(plugin.url))
+            setHotNames(names => names.includes(plugin.name) ? names : names.concat(plugin.name))
+          } else if (body.activation?.[plugin.name]?.state !== 'incompatible' && body.activation?.[plugin.name]?.library !== true) {
+            // An incompatible plugin stays incompatible across restarts, so
+            // "restart to apply" would promise a fix no restart can deliver;
+            // the activation warning on the installed card already says what
+            // to do instead.
+            setDoneUrls(urls => urls.includes(plugin.url) ? urls : urls.concat(plugin.url))
 ```
 
 </details>
 
 #### 缺口
 
-- 当前资料未验证各宿主版本的服务供给、代理透传与实际目录
-  **影响**：不能保证每种桌面封装都出现相同入口及能完成安装
-  **进一步探讨**：在实际试用宿主比对市场诊断、宿主原生页与测试 profile 的安装结果
-- 未验证反向代理或桌面协议处理器对无 Origin 请求的实际会话约束
-  **影响**：不能认定缺少宿主 gate 或跳过 wrapper 的部署具备管理鉴权
-  **进一步探讨**：在隔离部署对 Web 无会话 POST、同源有会话 POST 及桌面协议请求分别核验实际拒绝和落盘结果
+- 不同桌面构建中的服务出现顺序、代理同源头和插件实际起动未对照。
+  **影响**：源码分支存在不能保证用户机器有该入口或能安装。
+  **进一步探讨**：在可丢弃 Web 与有代表性的 Desktop profile 分别装一个非关键包，核对服务分支、路径、回执与实际功能。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 更新中断时，恢复能覆盖哪些状态，哪些需要人工处理？
+### Q03 · 热挂载失败或 Desktop 更新在卸载后中断时，可以恢复什么？
 
 **研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-官方桌面 manager 返回已安装时，普通包的更新会先把旧版、目标 spec 和 profile 写入本地日志，然后移除旧包并尝试安装，安装失败保留待修复记录。市场自身更新另走覆盖路径，以免更新逻辑随卸载一起消失。日志依赖可解析的安全 profile 目录。启动修复会等之前仍在 manager 内的操作结算，有活动操作或关键依赖不可用时先退出。
+热挂载超时首先解除请求对慢激活的等待，后台尽力释放挂载子树、删除临时重放文件，调用方返回需要重启的结果。释放本身不阻塞回复，重启也不能治愈不兼容或包缺产物。即便宿主对挂载作出成功判断，尚在等服务的入口仍可能没有提供实际功能，所以市场捕获该时段的宿主日志。安装失败路径会尝试恢复 manifest 和已捕获的 lockfile，日志能够指出恢复失败，不能据此推断包目录及插件自写数据恢复。
 
-修复先看磁盘安装版本和 profile 组合是否一致。已恢复到旧版或目标版时可能结清日志，所以日志消失后还要核对实际版本。缺失或未组合时会尝试目标 spec；若目标为范围，下一次解析可能和最初不同。重装失败累积到上限后需要人工处理。另有 profile 快照保护特定组成文件，业务数据、依赖文件与已执行脚本副作用超出所核查的快照范围。故障恢复的价值是减少包从活动 profile 消失后的处置步骤，使用方仍需独立备份重要状态。
-
-截止由 Promise.race 实现，结束的是市场等待，底层 manager 可能继续写入。官方桌面更新的超时结果可标记 repairOnRestart，更新路由因此跳过对同一个 manager 的即时回滚，并等待下次启动用日志对账。操作者遇到超时应先核验宿主和目标 profile 的实际状态，避免立即重复提交。重启后仍缺包、版本偏离目标或超过自动恢复上限时，应在宿主原生管理页按已备份状态手动恢复。
+官方 Desktop manager 对同名安装返回 already-installed 时，市场先写带来源与目标版本的记录再拆旧包。移除失败或取消时按其回执清理记录，替换失败后把记录留给后续启动。启动修复要求落盘与组合同时满足才结清记录，已组合的无关版本不被自动覆盖，缺失包在达到三次自动尝试上限后交回用户。市场自身通过原位更新避免卸载正在运行的修复代码。配置快照只有 package.json、cordis.patch.yml 和市场 state，第三方插件数据与包内容没有进入这个工件。路由提供的操作回滚还取决于操作后 profile 校验和实际恢复来源，用户应另保留关键数据。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/official-desktop.ts:389-433](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/official-desktop.ts#L389-L433)
+**依据 1 · 源码核查**：[src/hot.ts:1380-1424](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/hot.ts#L1380-L1424)
 
-区分市场自身覆盖更新和带日志的移除再装；失败后保留记录。
+超时释放、失败返回与宿主待服务日志是不同结果。
+
+<details>
+<summary>查看原文（45行）</summary>
+
+```text
+    try {
+      await raceActivationTimeout(handle.await())
+    } catch (error) {
+      mountLog.stop()
+      // A failed or wedged mount must leave NOTHING behind: the disposed
+      // subtree stops retrying the import, and the input file is removed so
+      // it cannot be re-imported by a later boot or replay (a leftover file
+      // re-throwing the same resolve error on every composition replay
+      // produced unbounded error-log growth on a closure-hosted loader).
+      try { Promise.resolve(handle.dispose()).catch(() => {}) } catch { /* best effort */ }
+      try { rmSync(file, { force: true }) } catch { /* best effort */ }
+      hotTrees.delete(pathToFileURL(file).href)
+      if (error instanceof ActivationTimeout) {
+        // A wedged activation would otherwise hold this request open forever:
+        // the route's `finally { installing = false }` never runs, so every
+        // later install/update/uninstall gets 409'd until a host restart.
+        // Unwind the half-mounted subtree best-effort; disposal never blocks
+        // the reply, and the caller falls back to restart activation.
+      }
+      throw error
+    }
+    hotHandles.set(packageName, handle)
+    hotTreeOf.set(packageName, pathToFileURL(file).href)
+    const failure = hotMountFailure(packageName, profileDir)
+    const lines = mountLog.finish()
+    if (failure === null) {
+      ctx.logger?.info?.(`[dsh-market] hot-mounted ${packageName}`)
+      logEvent('info', 'hot-mount', `${packageName}: live${shimNames.has(packageName) ? ' (client-only shim)' : ''}`)
+    } else {
+      ctx.logger?.warn(`[dsh-market] ${packageName}: ${failure}`)
+      logEvent('warn', 'hot-mount', `${packageName}: ${failure}`)
+    }
+    // A mount that resolves while an entry is still waiting on a service is
+    // "live" by the host's own verdict, so the verdict stands — but the lines
+    // the host logged meanwhile are the only record of why the entry never
+    // started serving (#1197).
+    for (const line of lines) {
+      logEvent('warn', 'hot-mount', `${packageName}: the host logged this while mounting — ${line}`)
+    }
+    return mountResult(failure)
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error)
+    ctx.logger?.warn(`[dsh-market] hot mount of ${packageName} failed, restart required: ${message}`)
+    logEvent('warn', 'hot-mount', `${packageName}: fell back to restart — ${message}`)
+    return { ok: false, reason: `热挂载失败,重启后生效 — ${message} / hot-mount failed — restart required: ${message}` }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/routes.ts:8263-8280](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L8263-L8280)
+
+安装失败尝试恢复 manifest 和已记录 lockfile，端口冲突例外依赖实际落盘。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+            drainPhaseOf(request)?.('verifying')
+            const cancelled = result.cancelled
+            const portCollisionLanded = !cancelled
+              && isHostPortCollision(result)
+              && installApplied(config.profile, before, activeProfileDir)
+            if ((result.exitCode !== 0 || result.timedOut) && !cancelled && !portCollisionLanded) {
+              const rolledBack = restoreProfileManifest(config.profile, manifestBefore, activeProfileDir)
+              if (rolledBack.length > 0) logEvent('warn', 'install', `${target}: rolled back manifest residue of the failed run: ${rolledBack.join(', ')}`)
+              if (lockfileBefore.ok) {
+                const lock = restoreProfileLockfile(lockfileBefore.snapshot)
+                if (!lock.ok) logEvent('warn', 'install', `${target}: could not restore pnpm-lock.yaml after the failed run: ${lock.detail ?? 'unknown'}`)
+              }
+            }
+            let ok = (result.exitCode === 0 && !result.timedOut && !cancelled) || portCollisionLanded
+            if (portCollisionLanded && result.exitCode !== 0) {
+              logEvent('info', 'install', `${target}: command exited after the host port was already in use; the new plugin is on disk, treating as success (#975)`)
+            }
+            const cancelDiff = cancelled ? changedSince(beforeSpecs) : null
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/official-desktop.ts:389-433](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/official-desktop.ts#L389-L433)
+
+官方桌面拆装更新前写 journal，失败留修复记录，自身采用原位分支。
 
 <details>
 <summary>查看原文（45行）</summary>
@@ -752,53 +859,24 @@ export function refuseUnadmitted(request: IncomingMessage, response: ServerRespo
 
 </details>
 
-**依据 2 · 源码核查**：[src/official-desktop.ts:514-522](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/official-desktop.ts#L514-L522)
+**依据 4 · 源码核查**：[src/pending-updates.ts:230-244](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/pending-updates.ts#L230-L244)
 
-安全目录缺失时不创建更新日志。
-
-```text
-  const directory = safeProfileDirectory(profileName, _profileDirectory)
-  const journal = directory === undefined ? undefined : PendingUpdateJournal.forProfile(directory)
-  const updateContext: UpdateContext | undefined = directory === undefined || journal === undefined
-    ? undefined
-    : {
-      profile: profileName,
-      profileDirectory: directory,
-      journal,
-      packageManager,
-```
-
-**依据 3 · 源码核查**：[src/official-desktop.ts:672-685](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/official-desktop.ts#L672-L685)
-
-启动修复等待上次操作，并检查 manager、目录和日志。
+自动恢复有启动次数和每次安装时间上限。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-  const repairPendingUpdates = async (): Promise<RepairReport> => {
-    const empty: RepairReport = { reinstalled: [], finished: [], failed: [], abandoned: [] }
-    // An operation a previous instance started is still inside the manager:
-    // its journal record is in progress, not interrupted. Let it settle first
-    // — it finishes its own record on success, and a failure leaves the
-    // record for exactly this repair. The operation is bounded by its own
-    // deadline, so this wait is too.
-    if (active === undefined) await runningOperation()?.done.catch(() => {})
-    if (disposed || repairing || active !== undefined) return empty
-    const manager = managerLookup()
-    if (manager === undefined || directory === undefined || journal === undefined) return empty
-    repairing = true
-    try {
-      return await repairInterruptedUpdates({ profile: profileName, profileDirectory: directory, manager, journal })
-```
+export const REPAIR_INSTALL_TIMEOUT_MS = 300_000
 
-</details>
-
-**依据 4 · 源码核查**：[src/pending-updates.ts:240-244](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/pending-updates.ts#L240-L244)
-
-定义自动重装尝试上限。
-
-```text
+/**
+ * How many starts may each spend up to REPAIR_INSTALL_TIMEOUT_MS trying to put
+ * one package back before the market stops trying by itself.
+ *
+ * Retrying is right while the cause might be transient (offline, a registry
+ * briefly down, the host still shutting down). It stops being right when every
+ * start pays the full timeout for a spec that will never install — the shape a
+ * reporter lived through on the Desktop host (#1061: five days of failing
  * reinstalls on every boot, all of it invisible). The record is kept, so the
  * package is not forgotten; only the automatic attempt stops, and the user is
  * told where to act.
@@ -806,14 +884,20 @@ export function refuseUnadmitted(request: IncomingMessage, response: ServerRespo
 export const MAX_AUTO_REPAIR_ATTEMPTS = 3
 ```
 
-**依据 5 · 源码核查**：[src/pending-updates.ts:333-373](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/pending-updates.ts#L333-L373)
+</details>
 
-先检查磁盘与组合状态，再依据日志和次数决定重装。
+**依据 5 · 源码核查**：[src/pending-updates.ts:329-373](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/pending-updates.ts#L329-L373)
+
+结清需要安装及组合吻合，其他版本或重试上限有明确分支。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（45行）</summary>
 
 ```text
+export async function repairInterruptedUpdates(options: RepairOptions): Promise<RepairReport> {
+  const journal = options.journal ?? PendingUpdateJournal.forProfile(options.profileDirectory)
+  const report: RepairReport = { reinstalled: [], finished: [], failed: [], abandoned: [] }
+  const pending = journal.list().filter(entry => entry.profile === options.profile)
   for (const entry of pending) {
     const installed = readInstalledVersion(options.profile, entry.name, options.profileDirectory)
     const settled = composed(options.profile, options.profileDirectory, entry.name)
@@ -859,280 +943,629 @@ export const MAX_AUTO_REPAIR_ATTEMPTS = 3
 
 </details>
 
-**依据 6 · 源码核查**：[src/snapshot.ts:7-13](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/snapshot.ts#L7-L13)
+**依据 6 · 源码核查**：[src/snapshot.ts:37-52](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/snapshot.ts#L37-L52)
 
-列出快照的组成文件和恢复方式。
-
-```text
- * A snapshot is a single JSON document under `<profile>/.dsh-market/
- * snapshots/<timestamp>-<seq>.json` describing the files that define the
- * profile's composition: package.json (dependency + bundle list),
- * cordis.patch.yml (the user patch layer) and state.json (market disable
- * list + groups). Version 2 records optional-file absence explicitly;
- * restoring validates every path, reconciles writes and deletions, and rolls
- * completed actions back if a later action fails.
-```
-
-**依据 7 · 源码核查**：[src/pending-updates.ts:179-201](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/pending-updates.ts#L179-L201)
-
-Promise.race 只结束调用方等待，未对 manager 注入取消。
+配置快照文件白名单明确保存范围。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-/**
- * Bound a manager call that the host should answer but may never do.
- *
- * The host's reconciliation has no deadline of its own, so a plugin whose
- * lifecycle never settles takes the promise with it: the route waits forever
- * and the UI keeps saying "updating". A deadline cannot cancel the host, but
- * it ends the market's wait, and the journal makes the next start finish the
- * job.
- */
-export async function withDeadline<T>(work: Promise<T>, ms: number, label: string): Promise<T> {
-  let timer: ReturnType<typeof setTimeout> | undefined
-  try {
-    return await Promise.race([
-      work,
-      new Promise<never>((_resolve, reject) => {
-        timer = setTimeout(() => reject(new DeadlineExceeded(label, ms)), ms)
-        // Never keep a finished process alive just to reject a promise.
-        ;(timer as { unref?: () => void }).unref?.()
-      }),
-    ])
-  } finally {
-    if (timer !== undefined) clearTimeout(timer)
-  }
+function validSnapshotId(id: string): boolean {
+  return SNAPSHOT_ID_RE.test(id)
+}
+
+/** The files a snapshot captures, relative to the profile directory. */
+const SNAPSHOT_FILES = ['package.json', 'cordis.patch.yml', '.dsh-market/state.json'] as const
+
+interface SnapshotFile {
+  path: string
+  /** JSON documents keep their parsed form (re-serialized on restore). */
+  json?: unknown
+  /** Line-oriented text files (cordis.patch.yml) keep their lines. */
+  lines?: string[]
+  /** V2 records absence explicitly so restore can remove a later file. */
+  absent?: true
+}
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[src/official-desktop.ts:590-607](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/official-desktop.ts#L590-L607)
+**依据 7 · 源码核查**：[src/routes.ts:7843-7876](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L7843-L7876)
 
-超时标记需要重启对账，底层调用可能已写入。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-      // ordinary install or uninstall needs the same bound.
-      const deadline = command === 'remove' ? REMOVE_DEADLINE_MS : OPERATION_DEADLINE_MS
-      operation = withDeadline(
-        command === 'remove'
-          ? manager.removeBundle(target)
-          : installOrReinstall(manager, spec, options, updateContext),
-        deadline,
-        `${command} ${target}`,
-      ).catch((error: unknown) => {
-        if (!(error instanceof DeadlineExceeded)) throw error
-        return {
-          application: 'failed' as const,
-          // Neither "nothing happened" nor "undo it": the manager may have
-          // written the change already. The next start reconciles against
-          // disk instead of the market inventing an answer here.
-          repairOnRestart: true,
-          error: { code: 'operation-incomplete' },
-        }
-```
-
-</details>
-
-**依据 9 · 源码核查**：[src/routes.ts:6038-6052](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/routes.ts#L6038-L6052)
-
-更新路由遇 repairOnRestart 则跳过即时回滚。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-            if (result.repairOnRestart === true) {
-              // The manager stopped answering and may already have removed the
-              // package. Restoring through it would block on the profile lock
-              // it still holds, so the journal repairs the profile on the next
-              // start instead (#928).
-              logEvent('warn', 'update',
-                `${name}: the desktop manager did not settle; the removal will be finished or undone on the next start`)
-            }
-            if ((result.exitCode !== 0 || result.timedOut) && !cancelled && result.busy !== true
-              && !pnpmNeverStarted(result)
-              // The manager never settled (#928): the profile may be
-              // half-updated, and its write lock is still held by whatever
-              // stopped answering. Nothing the route can do here can restore
-              // it; the market's journal does that on the next start.
-              && result.repairOnRestart !== true
-```
-
-</details>
-
-#### 缺口
-
-- 未复现实机崩溃、未验证第三方插件自有数据恢复
-  **影响**：不能估计中断后的可用性及人工修复时长
-  **进一步探讨**：在隔离桌面 profile 试验移除完成后终止宿主，再对照启动后的版本、组合状态及独立备份
-- 未验证 manager 超时后迟到写入与下一次启动修复的重叠情形
-  **影响**：不能确定任何超时后的实际包状态，不能保证立即重试安全
-  **进一步探讨**：隔离 profile 模拟底层调用晚于截止返回，再记录磁盘版本、组合记录、日志与启动修复是否冲突
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 如何用一个可逆试用衡量合格任务的总成本？
-
-**研究主题**：效果与总成本、采用判断、新假设与验证
-
-#### 完整回答
-
-建议常做插件维护且能建立隔离 profile 的用户先试一个来源已核实、可移除的非关键包。安装前记下宿主版本、目标 profile、目标包版本与备份位置，随后在市场提交操作，回到宿主已安装页核对包和版本，执行一个最低限度的功能检查，再移除并核对 profile 状态。若市场提示包已落盘但加载失败，或只完成集合的部分子项，按未达到测试目标处理。若 profile 不符或宿主服务拒绝，停止在市场继续提交，改用宿主原生管理页和独立备份恢复。
-
-可验证的假设是，对经常安装更新的人，把排队、落盘和加载结果分开核对，会降低因错误重试带来的返工。用同一宿主版本、同一包与同一 profile 初始状态，比较市场和原生管理路径。分别计入初装市场、每次操作与人工检查、失败恢复三段耗时和资源。成功单位限定为包在目标 profile 加载并通过功能检查且可退出的任务。若耗时和错误重试未减少，或新增兼容成本超过节约，放弃假设。现有源码能说明为何该差异有可能出现，现金与实际时长仍未知。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[src/routes.ts:8020-8053](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/routes.ts#L8020-L8053)
-
-成功路径再查新增项目，集合允许部分成功并随后读已安装及准备验证加载。
+操作级回滚在失效或 profile 漂移时拒绝，依赖留存的来源。
 
 <details>
 <summary>查看原文（34行）</summary>
 
 ```text
-            // Fake-success guard (#18): a clean exit that added nothing
-            // installable must not read as success. Runs even when
-            // retargeting partially failed — a broken piece that slipped in
-            // must never survive to brick the next boot.
-            let notAPlugin = false
-            // pnpm exited 0 and the profile did not change at all — a
-            // different failure from "what it added was unusable" (#258).
-            let addedNothing = false
-            let removedBroken: string[] = []
-            let conflicts: { name: string; id: string; owner: string }[] = []
-            if ((result.exitCode === 0 || portCollisionLanded) && !cancelled) {
-              if (!assertDrainMutation(request, response)) return
-              const validated = await validateAddedPlugins(runPlugin, config.profile, before, activeProfileDir)
-              removedBroken = validated.removedBroken
-              conflicts = validated.conflicts
-              if (removedBroken.length > 0) {
-                logEvent('warn', 'install', `${target}: removed uninstallable pieces (no dsh manifest or missing build artifacts): ${removedBroken.join(', ')}`)
-              }
-              if (validated.keep.length === 0) {
-                ok = false
-                notAPlugin = true
-                addedNothing = validated.added.length === 0
-                logEvent('error', 'install', addedNothing
-                  ? `${target}: the plugin command reported success but added nothing to the profile`
-                  : `${target}: nothing installable survived validation (added: ${validated.added.join(', ')})`)
-              } else {
-                // Partial success across a collection still counts as success.
-                ok = true
-              }
+        }
+        try {
+          await withMutationLock(response, 'install', async () => {
+            const body = (await readJsonBody(request)) as { rollbackId?: unknown }
+            const id = typeof body.rollbackId === 'string' ? body.rollbackId : ''
+            const pending = pendingRollbacks.get(id)
+            if (pending === undefined) {
+              sendJson(response, 400, { error: 'rollback is not available (it may have been superseded by another operation) / 回滚已不可用（可能已被后续操作覆盖）' })
+              return
             }
-            const conflictGroups = groupConflictsByOwner(conflicts)
-            const installed = readInstalled(config.profile, activeProfileDir)
+            // The token captures whole-profile manifest and lock state. A
+            // terminal-side pnpm/dsh command is outside this route's mutation
+            // lock, so internal invalidation alone cannot prevent an old token
+            // from overwriting a newer external edit. Refuse unless the exact
+            // post-operation state that the user was shown is still current.
+            if (!profileStateMatches(pending.expectedState)) {
+              pendingRollbacks.delete(id)
+              sendJson(response, 400, {
+                error: 'rollback is not available because the profile changed after this operation / 操作后配置已发生变化，回滚不可用',
+              })
+              return
+            }
+            let ok = true
             let hot = false
-            let activation: Record<string, ReturnType<typeof verifyActivation>> | undefined
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/routes.ts:7994-8012](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/routes.ts#L7994-L8012)
-
-某些命令错误后尝试恢复 manifest 和锁文件，端口冲突后可将已落盘视为成功。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-            drainPhaseOf(request)?.('verifying')
-            const cancelled = result.cancelled
-            const portCollisionLanded = !cancelled
-              && isHostPortCollision(result)
-              && installApplied(config.profile, before, activeProfileDir)
-            if ((result.exitCode !== 0 || result.timedOut) && !cancelled && !portCollisionLanded) {
-              const rolledBack = restoreProfileManifest(config.profile, manifestBefore, activeProfileDir)
-              if (rolledBack.length > 0) logEvent('warn', 'install', `${target}: rolled back manifest residue of the failed run: ${rolledBack.join(', ')}`)
-              if (lockfileBefore.ok) {
-                const lock = restoreProfileLockfile(lockfileBefore.snapshot)
-                if (!lock.ok) logEvent('warn', 'install', `${target}: could not restore pnpm-lock.yaml after the failed run: ${lock.detail ?? 'unknown'}`)
-              }
-            }
-            let ok = (result.exitCode === 0 && !result.timedOut && !cancelled) || portCollisionLanded
-            if (portCollisionLanded && result.exitCode !== 0) {
-              logEvent('info', 'install', `${target}: command exited after the host port was already in use; the new plugin is on disk, treating as success (#975)`)
-            }
-            const cancelDiff = cancelled ? changedSince(beforeSpecs) : null
-            if (ok) invalidateUpdates()
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/snapshot.ts:425-443](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/snapshot.ts#L425-L443)
-
-快照恢复约束及失败时回滚已写文件的设计。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
- * each write uses a same-directory temp + rename, and a failure mid-restore
- * rolls completed writes/deletions back to their pre-restore contents.
- * @returns the paths restored; an error result when the snapshot is unsafe,
- * unknown, or a write failed (with any partial writes rolled back).
- */
-export function restoreSnapshot(profileDir: string, id: string): { ok: boolean; restored: string[]; error?: string } {
-  if (!validSnapshotId(id)) {
-    return { ok: false, restored: [], error: 'invalid snapshot id / 无效的快照 id' }
-  }
-  let parsed: unknown
-  try {
-    parsed = JSON.parse(readFileSync(snapshotFile(profileDir, id), 'utf8')) as unknown
-  } catch {
-    return { ok: false, restored: [], error: 'snapshot not found / 快照不存在' }
-  }
-  const validated = validateSnapshotDocument(parsed)
-  if (!validated.ok) return { ok: false, restored: [], error: validated.error }
-  if (validated.value.snapshot.id !== id) {
-    return { ok: false, restored: [], error: 'snapshot id does not match its filename / 快照 id 与文件名不匹配' }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/client/MarketSection.tsx:4543-4561](https://github.com/dsh-market/dsh-market/blob/4c330686ee5d761f9e05637820532d8c080947d5/src/client/MarketSection.tsx#L4543-L4561)
-
-单独展示排队请求，适合作为比较中识别状态的观察点。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-      .then(res => res.json().then(body => ({ status: res.status, body })))
-      .then(({ status, body }) => {
-        setBusyUrl(null)
-        sessionStorage.removeItem('dshm-pending')
-        if (status === 202 && typeof body.operationId === 'string') {
-          const operation = body.operation as DrainOperationWire | undefined
-          setRecords(list => patchRecord(withoutHostProjection(list, body.operationId, recordId), recordId, {
-            state: 'queued',
-            hostOperationId: body.operationId,
-            ...(operation?.wait === null || operation?.wait === undefined
-              ? {}
-              : { blockedBy: operation.wait.activeAgentIds, waitSince: operation.wait.since }),
-            reason: operation?.wait === null || operation?.wait === undefined
-              ? t('agentBusyQueued')
-              : t('agentDrainWaiting').replace('{0}', String(operation.wait.activeCount)),
-          }))
-          rememberDrainMarker({ operationId: body.operationId, kind: 'install', name: plugin.name, url: plugin.url })
-          setOperationsOpen(true)
-          return
+            let detail: string | null = null
+            if (pending.kind === 'update') {
+              const name = pending.names[0]!
+              const result = pending.updateSource === undefined
+                ? { ok: false, detail: 'the saved update rollback source is unavailable' }
+                : await executeUpdateRollback(name, pending.manifestBefore!, pending.updateSource, pending.preserveProfilePolicy)
+              ok = result.ok
+              detail = result.detail
+            } else {
+              for (const name of pending.names) {
 ```
 
 </details>
 
 #### 缺口
 
-- 缺同条件的任务实测与完整退出成本数据
-  **影响**：只能提出隔离试用方案，无法确认持续采用收益
-  **进一步探讨**：记录首次配置、重复操作、故障恢复各环节的用时与实际结果
+- 桌面进程终止在移除和写入的不同位置时，包配置是否完整留下尚不清楚。
+  **影响**：中断恢复效果与隔离试用的退出代价取决于此。
+  **进一步探讨**：复制 profile，以四个阶段分别终止进程，比较日志、包目录、补丁、配置及第三方插件数据。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 后台更新检查如何产生可消除的提醒，网络出错或切换来源后有何边界？
+
+**研究主题**：功能与机制、工程质量与复用、效果与总成本
+
+#### 完整回答
+
+服务器为活动 profile 启一个检查监视器，只有显式把开关置为 true 才调度。启用后首次等待 30 秒，间隔可选 6、12、72、168 小时，失败退避受上限约束。只读 GET 返回检查快照，设置或立即检查的 POST 先校验同源和参数。有进行中检查时合并请求，手工更新在必要时跟一次强制检查。状态用 profile、渠道、区域、代理及当前安装身份对照，检查返回时身份变了就丢弃对应结果。网络失败保留最近已知状态并标为 stale，所以红点后的条目还要人确认来源和目标，后台本身只读。
+
+客户端只在支持插槽装饰、能安全定位原生 Plugins 图标时注册提示，退出或 slot 冲突会撤销装饰。通知筛掉禁用、排除、已忽略和本轮处理过的更新。打开 Plugins 后已读指纹仅影响提醒，更新条目仍在列表。指纹以 profile 及实际目标版本为条件，持久存储不可用时保真退回当前客户端可保存的范围，无法承诺不同浏览器共享。常驻用户因此可少打开市场查一遍，频繁切源或网络失败也可能让检查变成新摩擦。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/routes.ts:2697-2717](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L2697-L2717)
+
+活动 profile 与安装来源、已装版本和锁定引用绑定监视器。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+  const updateNotifications = createUpdateNotificationMonitor({
+    boot: BOOT_ID,
+    // Keep read receipts scoped across restarts without sending local paths.
+    profileKey: createHash('sha256').update(activeProfileDir).digest('hex'),
+    enabled: marketState.backgroundUpdateChecks === true,
+    intervalHours: marketState.backgroundUpdateIntervalHours,
+    inventory: () => {
+      const installed = readInstalled(config.profile, activeProfileDir)
+      const commits = readLockCommits(config.profile, activeProfileDir)
+      return {
+        context: JSON.stringify([activeProfileDir, activeChannel(), config.region, marketState.githubProxy]),
+        packages: Object.fromEntries(Object.entries(installed).map(([name, spec]) => [name, JSON.stringify([
+          spec, readInstalledVersion(config.profile, name, activeProfileDir),
+          readGitResolutionCommit(config.profile, spec, activeProfileDir),
+          commits.get(hostedRepoKey(spec) ?? '') ?? null,
+          // A local package can switch forks at the same path and version.
+          // Reuse its manifest/checkout evidence, without scanning a directory
+          // tree or changing the authority of explicit git/npm sources.
+          /^(?:file|link):/i.test(spec)
+            ? readInstalledRepoEvidence(config.profile, name, spec, activeProfileDir) : null,
+        ])])),
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/routes.ts:2855-2896](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L2855-L2896)
+
+只读快照和变更设置的 POST 分开，间隔调整保留独立开关。
+
+<details>
+<summary>查看原文（42行）</summary>
+
+```text
+  const disposers = [
+    registerRoute({
+      kind: 'exact',
+      path: '/dsh-market/update-notifications',
+      handler: async (request, response) => {
+        if (request.method === 'GET') {
+          sendJson(response, 200, updateNotifications.snapshot())
+          return
+        }
+        if (request.method !== 'POST') {
+          response.writeHead(405, { allow: 'GET, POST' })
+          response.end()
+          return
+        }
+        if (!sameOrigin(request)) {
+          sendJson(response, 403, { error: 'untrusted origin' })
+          return
+        }
+        try {
+          const body = await readJsonBody(request)
+          if (body === null || typeof body !== 'object' || Array.isArray(body)) {
+            sendJson(response, 400, { error: 'expected an update-check setting or check request' })
+            return
+          }
+          const { enabled, intervalHours, check } = body as { enabled?: unknown; intervalHours?: unknown; check?: unknown }
+          if ((enabled !== undefined && typeof enabled !== 'boolean') || (check !== undefined && check !== true)
+            || (intervalHours !== undefined && !isUpdateCheckIntervalHours(intervalHours))
+            || (enabled === undefined && intervalHours === undefined && check === undefined)) {
+            sendJson(response, 400, { error: 'enabled must be a boolean; intervalHours must be 6, 12, 72 or 168; check must be true' })
+            return
+          }
+          if (typeof enabled === 'boolean' || isUpdateCheckIntervalHours(intervalHours)) {
+            const state = readMarketState(activeProfileDir)
+            if (typeof enabled === 'boolean') state.backgroundUpdateChecks = enabled
+            if (isUpdateCheckIntervalHours(intervalHours)) state.backgroundUpdateIntervalHours = intervalHours
+            // Validate the complete request, then persist both choices before
+            // changing the live timer. Partial preference writes keep the other.
+            writeMarketState(activeProfileDir, state)
+            marketState.backgroundUpdateChecks = state.backgroundUpdateChecks
+            marketState.backgroundUpdateIntervalHours = state.backgroundUpdateIntervalHours
+            if (isUpdateCheckIntervalHours(intervalHours)) updateNotifications.setIntervalHours(intervalHours)
+            if (typeof enabled === 'boolean') updateNotifications.setEnabled(enabled)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/update-notifications.ts:93-122](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/update-notifications.ts#L93-L122)
+
+开关控制首次调度，检查合并且失败有退避。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+  const stopTimer = (): void => {
+    if (timer !== undefined) clearTimeout(timer)
+    timer = undefined
+    nextCheckAt = null
+  }
+
+  const schedule = (delay: number): void => {
+    stopTimer()
+    if (disposed || !enabled) return
+    nextCheckAt = Date.now() + delay
+    timer = setTimeout(() => { void check(stale) }, delay)
+    timer.unref?.()
+  }
+
+  const nextDelay = (): number => failures > 0
+    ? Math.min(RETRY_MAX_MS, RETRY_BASE_MS * 2 ** Math.min(failures - 1, 5))
+    : intervalHours * 60 * 60_000
+
+  const check = (force = false): Promise<Record<string, UpdateStatus>> => {
+    if (disposed) return Promise.resolve({ ...updates })
+    if (pending !== null) {
+      if (!force || pendingForced) return pending
+      // A manual refresh arriving during a cache-eligible read must still
+      // bypass that cache, once. Several such callers share the follow-up.
+      queuedForce ??= pending.then(() => check(true)).finally(() => { queuedForce = null })
+      return queuedForce
+    }
+    stopTimer()
+    const started = reconcile()
+    pendingForced = force || stale
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/update-notifications.ts:125-171](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/update-notifications.ts#L125-L171)
+
+身份变化与网络错误不以旧结果替代当前确认，保留 stale 边界。
+
+<details>
+<summary>查看原文（47行）</summary>
+
+```text
+    pending = Promise.resolve().then(async () => {
+      try {
+        const result = await deps.check(pendingForced)
+        if (disposed) return { ...updates }
+        const current = reconcile()
+        const next = { ...updates }
+        let incomplete = result.error !== undefined
+        for (const [name, status] of Object.entries(result.updates)) {
+          if (current.context !== started.context || current.packages[name] === undefined
+            || current.packages[name] !== started.packages[name]) {
+            incomplete = true
+            continue
+          }
+          if (status.checkFailed === true || status.checkError !== undefined) {
+            incomplete = true
+            next[name] = { ...(updates[name] ?? status), checkFailed: true, checkError: 'unavailable',
+              ...(status.sourceMigration === undefined ? {} : { sourceMigration: status.sourceMigration }) }
+          } else {
+            next[name] = status
+          }
+        }
+        if (Object.keys(current.packages).some(name => result.updates[name] === undefined
+          || current.context !== started.context || current.packages[name] !== started.packages[name])) incomplete = true
+        updates = next
+        checkedAt = Date.now()
+        stale = incomplete
+        error = incomplete ? result.error ?? 'Some plugin updates could not be checked. Try again later.' : null
+        if (!incomplete) lastSuccessAt = checkedAt
+        failures = incomplete ? failures + 1 : 0
+      } catch {
+        if (disposed) return { ...updates }
+        reconcile()
+        updates = Object.fromEntries(Object.entries(updates).map(([name, status]) => [name, { ...status, checkFailed: true as const, checkError: 'unavailable' as const }]))
+        checkedAt = Date.now()
+        stale = true
+        error = 'Plugin updates could not be checked. Try again later.'
+        failures += 1
+      } finally {
+        pending = null
+        if (!disposed) schedule(nextDelay())
+      }
+      return { ...updates }
+    })
+    return pending
+  }
+
+  schedule(UPDATE_CHECK_START_DELAY_MS)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/client/update-notifications.ts:50-86](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/update-notifications.ts#L50-L86)
+
+提醒排除用户禁用、免更新等项，按匿名 profile 或启动域保存。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+/** The attention count excludes dismissed, disabled and already-completed updates. */
+export function notificationNames(snapshot: UpdateNotificationSnapshot): string[] {
+  const restart = readSession(RESTART_SESSION_KEY)
+  const updated: string[] = restart?.boot === snapshot.boot && Array.isArray(restart.updated)
+    ? restart.updated.filter((name: unknown): name is string => typeof name === 'string') : []
+  const quiet = new Set([
+    ...snapshot.updateExempt, ...snapshot.disabled, ...snapshot.blocked,
+    // A cached sidebar snapshot can lag behind the page's newer boot. Reading
+    // its count must never erase a dismissal already saved for that new boot.
+    ...readIgnoredUpdates(snapshot.boot, false), ...updated,
+  ])
+  return Object.entries(snapshot.updates).filter(([name, status]) => !quiet.has(name)
+    && status.notAPlugin !== true
+    && (status.updateAvailable === true || (status.kind === 'generation' && status.latest != null)))
+    .map(([name]) => name).sort()
+}
+
+interface SeenScope { key: string; persistent: boolean }
+// Storage can be unavailable in a restricted webview. Keep acknowledgements
+// effective for this client lifetime; readable invalid records still fail open.
+const seenInMemory = new Map<string, Set<string>>()
+const unpersistedSeen = new Set<string>()
+
+function seenScope(snapshot: UpdateNotificationSnapshot): SeenScope | null {
+  const persistent = typeof snapshot.profileKey === 'string' && snapshot.profileKey !== ''
+  if (!persistent && snapshot.boot === '') return null
+  // The endpoint separates reverse-proxy deployments on the same origin;
+  // profileKey is opaque and never stores the host's filesystem path here.
+  return {
+    key: SEEN_UPDATES_KEY_PREFIX + JSON.stringify([api('/dsh-market/update-notifications'),
+      persistent ? 'profile' : 'boot', persistent ? snapshot.profileKey : snapshot.boot]),
+    persistent,
+  }
+}
+
+function seenStorage(scope: SeenScope): Storage {
+  return scope.persistent ? localStorage : sessionStorage
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/client/update-notifications.ts:116-151](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/update-notifications.ts#L116-L151)
+
+读取确认绑定更新身份，保存失败使用内存回执。
+
+<details>
+<summary>查看原文（36行）</summary>
+
+```text
+function updateFingerprint(snapshot: UpdateNotificationSnapshot, name: string): string {
+  const status = snapshot.updates[name]!
+  const migration = status.sourceMigration
+  return JSON.stringify([
+    name, status.kind ?? null, status.current ?? null, status.version ?? null,
+    status.eligibleVersion ?? status.latest ?? null, status.restoreRequired === true,
+    migration?.kind === 'git-to-npm'
+      ? [migration.kind, migration.repo, migration.target]
+      : migration?.kind === 'npm-rename' ? [migration.kind, migration.from, migration.target] : null,
+  ])
+}
+
+/** Sidebar attention is unread state; the pending update list stays intact. */
+export function unseenNotificationNames(snapshot: UpdateNotificationSnapshot): string[] {
+  const names = notificationNames(snapshot)
+  const scope = seenScope(snapshot)
+  if (scope === null) return names
+  const seen = readSeen(scope)
+  return names.filter(name => !seen.has(updateFingerprint(snapshot, name)))
+}
+
+/** Returns true only when the visit acknowledged at least one new update. */
+function acknowledgeSnapshot(snapshot: UpdateNotificationSnapshot): boolean {
+  const scope = seenScope(snapshot)
+  if (scope === null) return false
+  const saved = readSeen(scope)
+  const seen = new Set(saved)
+  for (const name of notificationNames(snapshot)) seen.add(updateFingerprint(snapshot, name))
+  if (seen.size === saved.size) return false
+  seenInMemory.set(scope.key, seen)
+  try {
+    seenStorage(scope).setItem(scope.key, JSON.stringify({ version: 1, fingerprints: [...seen] }))
+    unpersistedSeen.delete(scope.key)
+  } catch {
+    // A full quota can block writes while reads still work. Remember that
+    // the in-memory receipt is newer than the unchanged stored record.
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/client/PluginsUpdateIndicator.tsx:157-191](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/PluginsUpdateIndicator.tsx#L157-L191)
+
+只有兼容且归属明确的宿主入口被包装，移除装饰有反向清理。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
+      const reconcile = (): void => {
+        if (closed || disposed) return
+        if (reconciling) { changedWhileReconciling = true; return }
+        reconciling = true
+        try {
+          const entries = slots.entries('sidebar.panellist').filter(entry => entry.options.id === 'plugins' && entry.component !== Decoration)
+          const next = entries.length === 1 && (entries[0].options.priority ?? 0) === 0 && canWrap(entries[0]) ? entries[0] : undefined
+          if (next === original) return
+          remove()
+          if (next === undefined) return
+          const active = slots.entriesOfSlot('sidebar.panellist').find(entry => entry.options.id === 'plugins')
+          if (active !== next) return
+          const Original = next.component as ComponentType<IconOwnerProps>
+          Decoration = owner => createElement(PluginsUpdateIcon, { original: Original, owner, activity })
+          const off = slots.register({
+            name: 'sidebar.panellist', id: 'plugins', priority: -1,
+            ...(next.options.order === undefined ? {} : { order: next.options.order }),
+            ...(next.options.label === undefined ? {} : { label: next.options.label }),
+            ...(next.locale === undefined ? {} : { locale: next.locale }),
+          }, Decoration)
+          original = next
+          stopDecoration = typeof off === 'function' ? off as () => void : undefined
+        } catch {
+          dispose()
+        } finally {
+          reconciling = false
+          if (changedWhileReconciling) {
+            changedWhileReconciling = false
+            queueMicrotask(reconcile)
+          }
+        }
+      }
+      const unsubscribe = slots.subscribe('sidebar.panellist', reconcile)
+      stopIcon = () => { closed = true; quietly(unsubscribe); remove() }
+      reconcile()
+```
+
+</details>
+
+#### 缺口
+
+- 粘滞提醒在代理、页面重载和失败退避后出现的实际频率未知。
+  **影响**：影响用户常驻后台功能以及是否仍需手工更新列表。
+  **进一步探讨**：固定一组 npm 与 GitHub 已装包，分别制造新版本、离线、换渠道与第二个 profile，比较提醒、来源、时间和已读。
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 怎样以可逆试用比较多个插件的更新摩擦，哪些证据足以继续采用？
+
+**研究主题**：效果与总成本、采用判断、新假设与验证
+
+#### 完整回答
+
+适合先试的是常驻 Web 且有几个社区包待维护、能复制 profile 的使用者。用同一非关键包和固定目标做两条任务，原生界面或 CLI 加手工记录为基线，市场则从查看候选或更新提醒进入来源确认、下载、激活与功能检查。计时从找包开始，计入查路径、网络重试、重启、复核和恢复。合格结果须写入指定 profile、目标版本和来源可追溯、功能实际执行成功，并能回到预定状态。只看进度显示或提醒消失会把通知已读和安装成功混在一起。无合格结果时不报单位成本。
+
+可以检验的假设是，给待更新项附上同屏的来源、宿主兼容状态和更新后激活探针，可减少「装上了却没工作」后的排障。当前界面分别有兼容结果和激活告警，后台提醒也追踪具体目标身份，但这些证据尚未形成同一份验收记录。用首次安装、需要重启、目标不可达和看似兼容但无法激活四类任务比较，若探针无法覆盖主要功能、误报增加或排障计时与基线持平，便没有采用这一设计的依据。第一次试用只改可恢复配置和非关键包，确认来源不明、激活状态与真实功能矛盾或回滚不再可用时停止，按副本恢复并回到宿主管理入口。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/routes.ts:8377-8428](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L8377-L8428)
+
+活跃状态回执与包已经下载分开，可用来设计显式验收。
+
+<details>
+<summary>查看原文（52行）</summary>
+
+```text
+                    let adopted = isAdopted()
+                    // The replay lands after pnpm returns, not before (#814):
+                    // give a host that replays on its own the time to do it.
+                    // The profile watcher replays only what the manifest lists
+                    // as a bundle, so a client-only package is not waited for.
+                    const replayWaitMs = config.hostReplayWaitMs
+                      ?? (declaresBundle(activeProfileDir, name) && liveNames().has(PROFILE_HMR_ENTRY) ? PROFILE_HMR_REPLAY_WAIT_MS : 0)
+                    const waitUntil = Date.now() + replayWaitMs
+                    while (!adopted && Date.now() < waitUntil) {
+                      await new Promise(resolve => setTimeout(resolve, 250))
+                      adopted = isAdopted()
+                    }
+                    if (adopted && replayWaitMs > 0) {
+                      logEvent('info', 'install', `${name}: the host's own replay activated it; adopted instead of mounting a second copy (#814, #827)`)
+                    }
+                    let live = adopted
+                    if (!adopted && !pluginCategories(entry).includes('theme')) {
+                      // #758: this fallback hot-mount bypasses the host's own
+                      // boot gate, which would skip a peer-incompatible
+                      // plugin on every boot. Check the same gate first and
+                      // leave it unmounted when it would bite; the activation
+                      // report below then reads incompatible. Client-only
+                      // plugins never load in the host process, so the cap
+                      // cannot bite — skip the gate for them (#758 review),
+                      // matching what verifyActivation does outside bundles.
+                      const gate = hasHostHalf(config.profile, name, activeProfileDir)
+                        ? hostPeerGate(activeProfileDir, name, defaultHostRuntimeFacts(activeProfileDir))
+                        : null
+                      if (gate !== null) {
+                        logEvent('warn', 'install', `${name}: ${gate.peer} ${gate.range} excludes runtime ${gate.runtimeVersion}; leaving it unmounted for the next boot to skip (#757)`)
+                        live = false
+                      } else {
+                        live = (await hotMount(host, activeProfileDir, name)).ok
+                      }
+                    } else if (!adopted) {
+                      const result = await themes.activateTheme(name)
+                      live = result.ok
+                      if (result.reason !== undefined) themeFailures.set(name, result.reason)
+                    }
+                    if (!live) hot = false
+                  }
+                }
+                activation = {}
+                const live = liveNames()
+                // Same facts the mount decision above used, so the verdict
+                // cannot disagree with it within one request.
+                const hostFacts = defaultHostRuntimeFacts(activeProfileDir)
+                for (const name of added) {
+                  const result = verifyActivation(config.profile, name, live, activeProfileDir, disabled.has(name), hostFacts)
+                  const failure = themeFailures.get(name)
+                  activation[name] = failure === undefined
+                    ? result
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/routes.ts:7843-7876](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/routes.ts#L7843-L7876)
+
+回滚令牌和恢复来源有失效条件，任务必须验证退出。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+        }
+        try {
+          await withMutationLock(response, 'install', async () => {
+            const body = (await readJsonBody(request)) as { rollbackId?: unknown }
+            const id = typeof body.rollbackId === 'string' ? body.rollbackId : ''
+            const pending = pendingRollbacks.get(id)
+            if (pending === undefined) {
+              sendJson(response, 400, { error: 'rollback is not available (it may have been superseded by another operation) / 回滚已不可用（可能已被后续操作覆盖）' })
+              return
+            }
+            // The token captures whole-profile manifest and lock state. A
+            // terminal-side pnpm/dsh command is outside this route's mutation
+            // lock, so internal invalidation alone cannot prevent an old token
+            // from overwriting a newer external edit. Refuse unless the exact
+            // post-operation state that the user was shown is still current.
+            if (!profileStateMatches(pending.expectedState)) {
+              pendingRollbacks.delete(id)
+              sendJson(response, 400, {
+                error: 'rollback is not available because the profile changed after this operation / 操作后配置已发生变化，回滚不可用',
+              })
+              return
+            }
+            let ok = true
+            let hot = false
+            let detail: string | null = null
+            if (pending.kind === 'update') {
+              const name = pending.names[0]!
+              const result = pending.updateSource === undefined
+                ? { ok: false, detail: 'the saved update rollback source is unavailable' }
+                : await executeUpdateRollback(name, pending.manifestBefore!, pending.updateSource, pending.preserveProfilePolicy)
+              ok = result.ok
+              detail = result.detail
+            } else {
+              for (const name of pending.names) {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/client/update-notifications.ts:116-134](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/client/update-notifications.ts#L116-L134)
+
+通知区分具体目标，出现和消失都可与实际安装操作独立观察。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+function updateFingerprint(snapshot: UpdateNotificationSnapshot, name: string): string {
+  const status = snapshot.updates[name]!
+  const migration = status.sourceMigration
+  return JSON.stringify([
+    name, status.kind ?? null, status.current ?? null, status.version ?? null,
+    status.eligibleVersion ?? status.latest ?? null, status.restoreRequired === true,
+    migration?.kind === 'git-to-npm'
+      ? [migration.kind, migration.repo, migration.target]
+      : migration?.kind === 'npm-rename' ? [migration.kind, migration.from, migration.target] : null,
+  ])
+}
+
+/** Sidebar attention is unread state; the pending update list stays intact. */
+export function unseenNotificationNames(snapshot: UpdateNotificationSnapshot): string[] {
+  const names = notificationNames(snapshot)
+  const scope = seenScope(snapshot)
+  if (scope === null) return names
+  const seen = readSeen(scope)
+  return names.filter(name => !seen.has(updateFingerprint(snapshot, name)))
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/snapshot.ts:37-52](https://github.com/dsh-market/dsh-market/blob/88de9575946485c1dac5e1a5fbe57fa1f3c3988c/src/snapshot.ts#L37-L52)
+
+试用退出须考虑快照白名单外的数据。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+function validSnapshotId(id: string): boolean {
+  return SNAPSHOT_ID_RE.test(id)
+}
+
+/** The files a snapshot captures, relative to the profile directory. */
+const SNAPSHOT_FILES = ['package.json', 'cordis.patch.yml', '.dsh-market/state.json'] as const
+
+interface SnapshotFile {
+  path: string
+  /** JSON documents keep their parsed form (re-serialized on restore). */
+  json?: unknown
+  /** Line-oriented text files (cordis.patch.yml) keep their lines. */
+  lines?: string[]
+  /** V2 records absence explicitly so restore can remove a later file. */
+  absent?: true
+}
+```
+
+</details>
+
+#### 缺口
+
+- 同条件任务的合格率、人工时间和资源支出均未测量。
+  **影响**：源码只支持低风险探索，无法支持节时或长期迁移的结论。
+  **进一步探讨**：用复制的 profile 做配对，记录每阶段起止、全部尝试数、有效合格数及最终文件与功能差异。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)

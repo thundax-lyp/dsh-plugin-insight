@@ -1,18 +1,18 @@
-# dsh-pet
+# DSH Pet
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[ae2c9d4](https://github.com/zhu1090093659/dsh-pet/tree/ae2c9d443eda35a6439597c1787c7607e988bbed)
+源码版本：[4def8a8](https://github.com/zhu1090093659/dsh-pet/tree/4def8a84622304da67c750fd35dfdb3a2aac7c69)
 
 <!-- BEGIN META -->
-[![GitHub ★ 69](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=69&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-pet) [![npm 30d 140,192](https://img.shields.io/static/v1?label=npm+30d&message=140%2C192&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-pet) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-pet)
+[![GitHub ★ 71](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=71&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-pet) [![npm 30d 136,499](https://img.shields.io/static/v1?label=npm+30d&message=136%2C499&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-pet) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-pet)
 <!-- END META -->
 
-> **功能**：在 DSH Web 显示跟随会话活动的悬浮宠物，支持互动、亲密度和自定义素材。
+> **功能**：在 DSH Web 显示随会话活动变化的浮动宠物，支持宠物切换、命名、投喂与亲密度。
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的增量是把宿主事件变为可常驻的交互提示，并通过可见性及请求顺序约束页面更新。
+> **亮点**：[Q01](#research-q01) 在跨会话等待时把需要关注的顶层活动放进可回跳的浮层。[Q02](#research-q02) 可见性控制和请求序号减小无效刷新与响应倒序影响。[Q03](#research-q03) 包内双语卡片让支持该机制的插件列表可以直接读取本地化介绍。
 
-> **主要限制**：[Q02](#research-q02) 的轮询可能错过短事件。[Q03](#research-q03) 的客户端启动心跳位于启用判断之前，关闭宠物后仍需独立核查网络行为。
+> **主要限制**：[Q02](#research-q02) 气泡读的是当前快照，短暂活动可能落在采样间隔内。[Q04](#research-q04) 功能停用的路由和轮询开关位于心跳的独立触发之后，不能单从页面上宠物消失判断浏览器请求。
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 多会话等待时，悬浮反馈相比会话状态有什么增量？](#detail-section-11)
-  - [Q02 · 宠物从会话事件到 Web 渲染如何同步和停止？](#detail-section-12)
-  - [Q03 · 关闭宠物时哪些本地与外部行为仍需注意？](#detail-section-13)
-  - [Q04 · 如何验证提示能否减少来回查看且不会误导？](#detail-section-14)
+  - [Q01 · 谁能从常驻气泡获得什么？](#detail-section-11)
+  - [Q02 · 宿主事件如何走到气泡，哪些情况会漏显？](#detail-section-12)
+  - [Q03 · 双语插件列表介绍依赖哪些发布条件？](#detail-section-13)
+  - [Q04 · 如何确认停用与撤出，哪些成本和网络行为需要单独看？](#detail-section-14)
+  - [Q05 · 如何验证常驻气泡在双会话任务上有帮助？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合在 DSH Web 同时等待多轮任务且喜欢常驻反馈的人，用浮层查看哪条会话还在活动。
+> **用途**：适合在 DSH Web 同时等待两条任务、希望从当前页面找回需要处理的会话的人。
 
-以原生会话状态和手工切页为参照。需要准确定位短暂失败时，仍回到会话和工具输出。
+[Q01](#research-q01) 原生会话列表和会话页提供任务历史与工具回执。浮层可作为同一浏览器页面里的回查入口，是否遗漏或节省查看时间取决于活动长度、页面可见性和持有的会话数。
 
 <a id="detail-section-3"></a>
 
@@ -51,63 +52,66 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 悬浮宠物 | 在 Web 中显示会话活动并互动 | 启用且依赖齐备，短事件受轮询限制 |
-| 状态与媒体路由 | 为浏览器供应快照和素材 | 插件启用才挂载 |
-| 心跳 | 发送安装遥测 | 客户端加载时尝试，受存储、自动化和出网限制 |
+| 顶层活动气泡 | 查看当前和近期活动，跳到对应会话 | 周期采样且气泡限量，最终结果仍回原会话确认 |
+| 宠物互动和设置 | 切换、命名、投喂与调整浮层 | 依赖宿主客户端服务、资源和设置 |
+| 双语插件卡片 | 在插件列表介绍包的用途 | 宿主与发布文件都支持相应 locale 机制 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| 声明 DSH >=0.2.2-rc.1、Web 与 React 18 | 必需 | 加载宿主和浏览器入口 | 看 profile、Web 依赖注入和版本 |
-| webServer 和会话事件 | 必需 | 暴露状态及映射活动 | 原生会话仍是核查入口 |
-| 允许相应浏览器网络行为 | 按环境 | 管理心跳和隔离 | 先确认出网约束 |
+| DSH >=0.2.2-rc.2、Web 所需连接、会话、设置与工作区服务 | 对本代表任务必需 | 挂载插件及导航到具体会话 | 旧宿主需先核对声明版本和 Web 注入 |
+| Node >=24.9.0、React 18 peer 和双入口产物 | 按包声明必需 | 运行构建后的宿主与客户端 | 核对实际发布包和宿主环境 |
+| 可读取的宠物清单与资源 | 界面所需 | 生成宠物内容和媒体资源 | 试用先核对一个内置素材 |
+| 可接受启动心跳的网络条件 | 本轮试用条件 | 数据流涉及浏览器本地标识与外部请求 | 不符合时沿用原生会话视图 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 用户查看目标 profile 及出网规则 | 仅在可控环境开始 |
-| 核对 | 用户用空会话触发两种活动 | 浮层变化能与对应会话对上 |
-| 停用 | 用户关闭浮层，再按需移除插件 | 分别核对同源请求与外发心跳 |
+| 准备 | 用户在临时 DSH Web profile 核对宿主、拟用包与网络条件 | 能辨认宿主挂载条目和预期会话 |
+| 使用 | 启动两个无敏感数据的会话，切换后点击对应气泡 | 回到正确的仍可用会话，关键结果回原页查看 |
+| 复核 | 观察前后台轮询与普通浏览器请求，再单独切换 enabled | 宿主路由和显示按预期变化，心跳单独判定 |
+| 退出 | 移除临时 profile 里的插件并重载 | 核对插件客户端和请求状态，保留所需布局数据 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 素材和浏览器资源未测 | 核对 profile、宿主与外联 | 目标版本未跑 |
-| 持续 | 轮询、动画和网络开销未知 | 核对提示、处理遮挡 | 隐藏页面停定时轮询 |
-| 恢复及退出 | 网络与重新加载开销未知 | 回到会话，移除插件并读回状态 | 关闭宠物不控制初次加载心跳 |
+| 首次使用 | 包和宠物资源，费用未知 | 核查版本、建立临时 profile、审阅网络 | 旧宿主可能增加升级工作 |
+| 持续使用 | 前台轮询、素材解码和浏览器资源，量未测 | 核对短活动、会话归属及显示遮挡 | 没有端到端耗时实测 |
+| 失败恢复 | 重新加载与资源请求，成本未知 | 退回会话视图，回查短事件或错误归属 | 轮询无法补读所有状态历史 |
+| 退出 | 持久化和浏览器标识占用未知 | 分别检查停用、移除和所需数据保留 | 真实卸载尚未验证 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 多会话提示 | 映射状态并按最新响应更新 | 短事件识别与切页节省 |
-| 暂停 | 不可见时停止轮询，停用时清理 | 浏览器资源节省量 |
-| 心跳 | 独立于启用状态发起 | 实际对端处理 |
+| 活动回查 | 顶层会话状态和有效会话导航 | 正确找到目标的速度和短状态漏看率 |
+| 页面资源 | 隐藏标签页暂停周期请求，返回立即刷新 | 浏览器负荷和不同素材的开销 |
+| 列表发现 | 包内可读的中英文标题和描述来源 | 指定版本发布归档和宿主是否展示 |
 
-> **思考**：[Q02](#research-q02) 的轮询可能错过短事件。[Q03](#research-q03) 的客户端启动心跳位于启用判断之前，关闭宠物后仍需独立核查网络行为。
+> **思考**：[Q02](#research-q02) 气泡读的是当前快照，短暂活动可能落在采样间隔内。[Q04](#research-q04) 功能停用的路由和轮询开关位于心跳的独立触发之后，不能单从页面上宠物消失判断浏览器请求。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 与 [Q02](#research-q02) 的增量是把宿主事件变为可常驻的交互提示，并通过可见性及请求顺序约束页面更新。
+> **亮点**：[Q01](#research-q01) 在跨会话等待时把需要关注的顶层活动放进可回跳的浮层。[Q02](#research-q02) 可见性控制和请求序号减小无效刷新与响应倒序影响。[Q03](#research-q03) 包内双语卡片让支持该机制的插件列表可以直接读取本地化介绍。
 
-[Q02](#research-q02) 用可见性与请求顺序约束刷新，接管后清理旧 React 根和定时器。轮询顺序控制不能让历史短事件重新可见。
+[Q02](#research-q02) 以服务实例管理事件和主视图投影，浏览器侧用请求序号拒绝过期响应。[Q03](#research-q03) 发布时同时维护静态词典、导出和白名单，源码中的断言能对三者做一致性检查。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 的轮询可能错过短事件。[Q03](#research-q03) 的客户端启动心跳位于启用判断之前，关闭宠物后仍需独立核查网络行为。
+[Q02](#research-q02) 气泡读的是当前快照，短暂活动可能落在采样间隔内。[Q04](#research-q04) 功能停用的路由和轮询开关位于心跳的独立触发之后，不能单从页面上宠物消失判断浏览器请求。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q03](#research-q03) 建议在接受相应网络行为的临时 profile 对照两个空会话。先看活动能否归到正确会话，再分别核对关闭与移除后的页面请求。敏感环境先保留原生视图。
+[Q04](#research-q04) 只在兼容且允许该外部请求的临时 DSH Web profile 试用。观察两个空会话，核对气泡回跳和前后台请求。遇到误归属、漏掉关键状态或不满足网络要求，移除插件并回到原生会话视图。分别检查隐藏、停用和移除，三者的运行条件不同。
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +119,18 @@
 
 **核查状态**：已检查源码。
 
-已查宿主事件、路由与浏览器生命周期，真实反馈及时性和心跳接收待核。
+固定源码支持双入口、活动快照和可回跳气泡。已核到双语元数据与 rc.2 宿主门槛。网络和真实页面行为待确认，双会话收益待对照。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/service.ts、src/routes.ts、package.json、src/index.ts、src/client/index.ts、src/client/telemetry.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、src/service.ts、src/client/index.ts、package.json、cordis.patch.yml、tsdown.config.ts、shared/tsdown.client.ts、src/index.ts、src/routes.ts、locale/en.json、locale/zh.json、tests/display-metadata.spec.ts、docs/release-notes/v0.4.19.md、src/client/telemetry.ts、src/persist.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查固定版本的宿主挂载、会话投影、状态路由、浏览器轮询和心跳发起。全部素材、真实出网与宿主交互未运行。
-- 下一步：按 [Q04](#research-q04) 对照并行任务的正确识别和打扰，另区分关闭浮层与卸载客户端后的网络。
+- 边界：核查固定版本双入口、活动投影、同源路由、轮询、遥测发起和插件列表元数据。未运行目标包、真实宿主、外部服务或目标测试，未核实所有素材和市场端处理。
+- 下一步：[Q05](#research-q05) 用两个有固定状态记录的空会话对照原生列表与浮层，并在普通浏览器单独观察加载、隐藏、停用和移除。用固定包验证列表语言切换。
 
 **分析版本**
 
 - **仓库**：[zhu1090093659/dsh-pet](https://github.com/zhu1090093659/dsh-pet)
-- **版本号**：0.4.16（[固定提交 ae2c9d4](https://github.com/zhu1090093659/dsh-pet/tree/ae2c9d443eda35a6439597c1787c7607e988bbed)）
-- **版本日期**：2026-11-07（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.19（[固定提交 4def8a8](https://github.com/zhu1090093659/dsh-pet/tree/4def8a84622304da67c750fd35dfdb3a2aac7c69)）
+- **版本日期**：2026-11-16（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +138,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提议在相同双会话任务里比较浮层和原会话状态。若正确识别无改善或遮挡、误判上升，则不支持这一使用方式。假设待验证。
+[Q05](#research-q05) 用两条已知活动的会话比较常驻气泡与原生列表对回查速度和误归属的影响，并单列短活动与页面遮挡。若识别没有改善且会打断工作，常驻展示在该任务中不成立。
 
-按 [Q04](#research-q04) 对照并行任务的正确识别和打扰，另区分关闭浮层与卸载客户端后的网络。
+[Q05](#research-q05) 用两个有固定状态记录的空会话对照原生列表与浮层，并在普通浏览器单独观察加载、隐藏、停用和移除。用固定包验证列表语言切换。
 
 <a id="detail-section-9"></a>
 
@@ -149,12 +153,12 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 57 | 4318 | — | — | 64467 |
+| .md | source | 62 | 4519 | — | — | 70902 |
 | .mjs | source | 1 | 150 | 109 | 34 | — |
 | .mjs | test | 2 | 310 | 267 | 14 | — |
 | .cjs | source | 1 | 169 | 138 | 21 | — |
 | .ts | source | 56 | 13501 | 9141 | 3598 | — |
-| .ts | test | 43 | 10263 | 8525 | 936 | — |
+| .ts | test | 44 | 10355 | 8599 | 946 | — |
 | .tsx | test | 10 | 3844 | 3136 | 431 | — |
 | .tsx | source | 11 | 3951 | 2884 | 919 | — |
 
@@ -162,35 +166,37 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=3&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=2&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
 
 
 
-统计日期：2026-11-12。
+统计日期：2026-11-17。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：悬浮宠物能给同时等待多个 DSH 任务的人提供哪些可用反馈，哪些状态和副作用需要独立核对？
+**插件研究总目标**：对 DSH Web 内并行等待的用户，活动气泡能否补足原会话视图，试用要满足哪些宿主、网络和退出条件？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 多会话等待时，悬浮反馈相比会话状态有什么增量？
+### Q01 · 谁能从常驻气泡获得什么？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-在 DSH Web 里同时等两个或更多任务的人，可以让常驻宠物显示模型和工具进展，减少为确认哪个会话仍忙而往返切页的操作。作者描述全局形象跟随最近的有效事件并给活动会话各自提示。服务端按 session 记录事件，浏览器传回当前会话以调整展示先后。相比直接读会话状态，变化是把注意力线索放到浮层，并加入摸头、投喂和亲密度交互。任务是否通过仍须打开对应会话检查工具结果。对习惯同时监看原生会话列表的人，额外浮层也可能遮挡内容或增加打扰。
+适合在 DSH Web 同时等待两条任务、愿意用页面常驻反馈提醒自己查看结果的人。例如先发起较长的一轮代码调查，再切到另一条会话核对需求。当前视图可将当前会话排在气泡首位，其他有气泡的顶层会话按活动排序。成员不包含子代理独立气泡，也会滤掉限量之外或已经平息的会话。点选时会先查询会话是否仍在可用列表，再交给工作区导航。
+
+原生会话列表及打开具体会话能确认真实历史、工具回执和最终答复。浮层的增量是在新建对话和切换会话时持续提示可见活动，并提供回到相应会话的入口。若用户只专注一条会话，或需要可靠提醒所有短任务，常驻动画与额外判断的负担可能超过收益。合格结果是一眼找到需要回查的那条会话，并在原会话里确认结果。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:20-41](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/README.md#L20-L41)
+**依据 1 · 作者声明**：[README.md:20-41](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/README.md#L20-L41)
 
-作者界定交互和多会话提示。
+作者介绍多会话、养成、状态气泡和返回会话。
 
 <details>
 <summary>查看原文（22行）</summary>
@@ -222,14 +228,306 @@ Re-engineered from desktop companion concepts into an official DSH cordis bundle
 
 </details>
 
-**依据 2 · 源码核查**：[src/service.ts:641-669](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/service.ts#L641-L669)
+**依据 2 · 源码核查**：[src/service.ts:1058-1096](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/service.ts#L1058-L1096)
 
-按会话消费事件，处理传统输入与正式完成奖励。
+状态视图过滤非顶层和静止活动，限制气泡数，以当前会话优先。
 
 <details>
-<summary>查看原文（29行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
+  private view(currentSessionId?: string): PetStateView {
+    const snapshot = this.machine.render()
+    const entry = this.activeEntry()
+    // One bubble per concurrently active TOP-LEVEL session. The GUI's current
+    // session leads the stack when reported (the browser half passes its
+    // session list's 'current'); everything else keeps the most recent
+    // meaningful event order. Subagent children render no bubble of their own
+    // (their activity already shows through the spawning conversation's
+    // bubble/display, and the bubble buttons navigate to GUI sessions, which
+    // subagents are not). Sessions whose own machine has settled (no bubble
+    // copy) drop out, so a finished turn does not leave a stale bubble behind.
+    const sessions: PetSessionView[] = []
+    for (const [session, activity] of [...this.sessionActivity.entries()].reverse()) {
+      if (sessions.length >= MAX_SESSION_BUBBLES) break
+      if (session.header?.origin === 'subagent') continue
+      const perSession = activity.machine.render()
+      if (perSession.bubble === undefined) continue
+      // Each session's whisper rides its own bubble while fresh; an expired
+      // whisper simply stops appearing (the client's 2 s poll drops it).
+      const whisper = activity.whisper
+      const freshWhisper = whisper !== undefined && Date.now() - whisper.at < WHISPER_TTL_MS
+        ? whisper.text
+        : undefined
+      sessions.push({
+        sessionId: String(session.id),
+        animation: perSession.animation,
+        bubble: perSession.bubble,
+        phase: perSession.phase,
+        ...(freshWhisper === undefined ? {} : { whisper: freshWhisper }),
+      })
+    }
+    // The browser half reports the session the user is currently on; that
+    // session's bubble leads the stack (its whisper then speaks on the
+    // collapsed single bubble). An unreported or absent session keeps the
+    // legacy most-recent-first order.
+    if (currentSessionId !== undefined) {
+      const index = sessions.findIndex(session => session.sessionId === currentSessionId)
+      if (index > 0) sessions.unshift(sessions.splice(index, 1)[0]!)
+    }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/client/index.ts:509-515](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L509-L515)
+
+只在目标仍存在于会话列表时触发工作区导航。
+
+```text
+      const openSession = (sessionId: string): void => {
+        const list = sessions.list.getSnapshot()
+        if ((list.byId as any)[sessionId] === undefined) return
+        // Navigation belongs to the workspace UI since the multi-instance Client
+        // Session model; the Session Controller no longer opens one.
+        ctx.uiWorkspace.openSession(sessionId as never)
+      }
+```
+
+#### 缺口
+
+- 缺使用强度和切换收益资料。
+  **影响**：只能说明常驻入口的任务，无法判断收益的普遍性。
+  **进一步探讨**：比较双会话的回查耗时与误归属。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 宿主事件如何走到气泡，哪些情况会漏显？
+
+**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用
+
+#### 完整回答
+
+根包用 Cordis patch 把自身加入 profile，宿主从根导出加载模块。清单还声明 Web 客户端依赖，通过 ./client 导出与构建配置选中 src/client/index.ts。宿主 apply 先实例化 PetService，再按 enabled 注册同源路由；状态路由读取浏览器给出的 current 参数并调用服务生成快照。Web 客户端依赖连接、会话、设置和工作区服务，缺相应注入时无法推出界面可挂载。固定清单的 DSH 门槛是 >=0.2.2-rc.2，React peer 是 18，Node 清单为 >=24.9.0。
+
+PetService 从官方会话事件和流帧提取活动，将旧 activity/status 作为兼容输入。发现官方事件后旧 done 不再发放回合奖励，避免两种事件重复计入。会话销毁会清理该会话及相应显示状态。浏览器取得最新快照后在全局 React 界面显示气泡；按可见性开启约 2 秒的周期请求，恢复前台立即刷新，当前会话变化也会触发。序号使旧请求的迟到响应无法覆盖新请求，失败通过状态进入错误分支。序号并不重放两个快照之间的状态，短事件、服务器排序上限及页面恢复时机均会影响呈现。禁用、页签不可见和实例销毁属于不同条件，禁用应单独核对本地 API 与监听器。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:11-19](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/package.json#L11-L19)
+
+包声明 Node 门槛及构建。
+
+```text
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "scripts": {
+    "build": "tsc -b && tsdown",
+    "test": "vitest run",
+    "pet:cli": "node scripts/dsh-pet.cjs",
+    "typecheck": "tsc -b --pretty false && tsc -p tsconfig.test.json --pretty false",
+    "prepare": "tsdown --config tsdown.prepare.config.ts"
+```
+
+**依据 2 · 源码核查**：[package.json:21-31](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/package.json#L21-L31)
+
+根及 client 入口导出。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+```
+
+</details>
+
+**依据 3 · 源码核查**：[package.json:54-79](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/package.json#L54-L79)
+
+DSH 版本、patch、Web 注入、React peer。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.2-rc.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+```
+
+</details>
+
+**依据 4 · 源码核查**：[cordis.patch.yml:8-10](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/cordis.patch.yml#L8-L10)
+
+挂载本包。
+
+```text
+- insert:
+    - id: pet
+      name: '@linxin666/dsh-pet'
+```
+
+**依据 5 · 源码核查**：[tsdown.config.ts:1-17](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/tsdown.config.ts#L1-L17)
+
+配置真实宿主入口。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+import { clientBundle } from './shared/tsdown.client.ts'
+import { live2dVendorBundle } from './tsdown.live2d-vendor.ts'
+
+export default clientBundle('@linxin666/dsh-pet', [
+  'src/index.ts',
+], {
+  companions: [live2dVendorBundle()],
+  libExternal: [
+    '@deepseek-ai/dsh-client-locale',
+    '@deepseek-ai/dsh-client-ui-conversation',
+    '@deepseek-ai/dsh-client-ui-settings',
+    '@deepseek-ai/dsh-client-ui-slots',
+    '@deepseek-ai/dsh-host-webserver',
+    '@deepseek-ai/dsh-session',
+    '@deepseek-ai/dsh-settings',
+  ],
+})
+```
+
+</details>
+
+**依据 6 · 源码核查**：[shared/tsdown.client.ts:150-160](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/shared/tsdown.client.ts#L150-L160)
+
+存在源 client 时作为入口。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  const lib = clientLibraryConfig(id, libEntry, options.lib, options.libExternal)
+  return ({ env }) => {
+    const face = buildFace(env?.DSH_BUILD_FACE)
+    // Host-only plugins (no src/client entry) skip the browser face entirely.
+    const hasClient = existsSync(resolvePath(process.cwd(), 'src/client/index.ts'))
+    const client = hasClient ? clientConfig(id, face === undefined
+      ? 'src/client/index.ts'
+      : 'lib/types/client/index.js', options.clientPlugins) : undefined
+    const node = [lib, ...(options.companions ?? [])]
+    if (face === 'host') return options.hostPhase === true ? node : [SKIP_WORKSPACE_BUILD]
+    if (face === 'client') return options.hostPhase === true ? (client ? [client] : []) : (client ? [...node, client] : node)
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/index.ts:359-376](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/index.ts#L359-L376)
+
+apply 通过 registry 生成 PetService。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+export const apply = mountOnce('@linxin666/dsh-pet', applyImpl)
+
+/** Plugin config: the tuning block a profile may declare plus the pet's settings fields. */
+export type PetPluginConfig = Omit<PetConfig, 'enabled' | 'decorationEnabled'> & PetFormConfig
+
+function applyImpl(ctx: Context, config: PetPluginConfig = {}): void {
+  const registry = config.registry
+    ?? loadPetRegistry({
+      packageRoot: petPackageRoot(import.meta.url),
+      ...(config.pets === undefined ? {} : { extra: config.pets }),
+    })
+  const service = new PetService(ctx, {
+    ...config,
+    enabled: readLive(config.enabled, PET_FORM_DEFAULTS.enabled),
+    decorationEnabled: readLive(config.decorationEnabled, PET_FORM_DEFAULTS.decorationEnabled),
+    statusBubbles: statusBubbleMode(readLive<PetStatusBubbleMode | undefined>(config.statusBubbles, undefined)),
+    registry,
+  })
+```
+
+</details>
+
+**依据 8 · 源码核查**：[src/index.ts:398-413](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/index.ts#L398-L413)
+
+Web 路由按开关注册和释放。
+
+<details>
+<summary>查看原文（16行）</summary>
+
+```text
+  const routes = makePetRoutes({ service, ctx })
+  let disposeRoutes: (() => void) | undefined
+  const syncRoutes = (): void => {
+    const enabled = current().enabled ?? true
+    if (disposeRoutes === undefined && enabled) {
+      disposeRoutes = ctx.effect(
+        () => {
+          const disposers = routes.map((route) => ctx.webServer.register(route))
+          return () => { for (const dispose of disposers) dispose() }
+        },
+        'pet: routes',
+      )
+    } else if (disposeRoutes !== undefined && !enabled) {
+      disposeRoutes()
+      disposeRoutes = undefined
+    }
+```
+
+</details>
+
+**依据 9 · 源码核查**：[src/service.ts:633-701](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/service.ts#L633-L701)
+
+注册活动回调，识别兼容与官方事件并清理已销毁会话。
+
+<details>
+<summary>查看原文（69行）</summary>
+
+```text
+  private syncActivity(): void {
+    if (this.disposeActivity !== undefined) {
+      this.disposeActivity()
+      this.disposeActivity = undefined
+    }
+    if (!this.enabled) return
+    this.disposeActivity = (() => {
+      const disposers = [
         this.ctx.on('session/event', (session: Session, event: SessionEvent) => {
           const runtime = this.activityOf(session).runtime
           // `activity/status` is an optional compatibility input. It is not
@@ -259,13 +557,45 @@ Re-engineered from desktop companion concepts into an official DSH cordis bundle
           this.applyActivity(session, transition.input, transition.whisper)
           if (transition.completedTurn !== undefined) {
             this.rewardTurn(String(session.id), transition.completedTurn)
+          }
+        }),
+        this.ctx.on('agent/assistant-stream', ({ agent, frame }: { agent: { session: Session }; frame: AssistantStreamFrame }) => {
+          const session = agent.session
+          const runtime = this.activityOf(session).runtime
+          const transition = projectAssistantStreamFrame(frame, runtime)
+          if (transition === undefined) return
+          runtime.officialEventsSeen = true
+          this.officialEventSessions.add(session)
+          this.applyActivity(session, transition.input, transition.whisper)
+        }),
+        this.ctx.on('session/disposed', (session: Session) => {
+          this.ledger.forgetSession(String(session.id))
+          this.officialEventSessions.delete(session)
+          this.sessionActivity.delete(session)
+          if (session !== this.displaySession) return
+          // The display session is gone: fall back to the most recent
+          // remaining session's last input, or settle to idle when none.
+          this.displaySession = undefined
+          const remaining = [...this.sessionActivity.entries()].at(-1)
+          if (remaining !== undefined) {
+            const [nextSession, activity] = remaining
+            this.displaySession = nextSession
+            if (activity.lastInput !== undefined) this.machine.onActivityStatus(activity.lastInput)
+            this.machine.onSessionActive()
+          } else {
+            this.machine.onSessionDisposed()
+          }
+        }),
+      ]
+      return () => { for (const dispose of disposers) dispose() }
+    })()
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/routes.ts:574-588](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/routes.ts#L574-L588)
+**依据 10 · 源码核查**：[src/routes.ts:574-588](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/routes.ts#L574-L588)
 
-状态查询接收当前会话，交互请求限制类别。
+状态路由读取当前会话，互动路由检查动词。
 
 <details>
 <summary>查看原文（15行）</summary>
@@ -290,147 +620,29 @@ export function makePetRoutes(deps: { service: PetService; ctx: Context; assetCa
 
 </details>
 
-#### 缺口
+**依据 11 · 源码核查**：[src/client/index.ts:101-108](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L101-L108)
 
-- 没有同时等待多会话时的对照。
-  **影响**：无法推断切页、时间和注意力收益。
-  **进一步探讨**：记录原生状态与浮层下的识别耗时和误判。
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 宠物从会话事件到 Web 渲染如何同步和停止？
-
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
-
-#### 完整回答
-
-清单将宿主和浏览器拆开，目标为 DSH Web，宿主强注入 webServer。在启用时，插件注册同源 API，由浏览器读取状态和宠物清单。宿主从正式会话事件和流帧投影活动，在会话释放时清掉登记。浏览器每两秒刷新，隐藏页暂停定时器，回到可见时立刻刷新。轮询、恢复可见和交互可能重叠，顺序号只允许最新发起的状态请求更新，旧响应会被忽略。失败时最新请求标记传输错误。关闭或被新实例接管时，页面会卸载 React 根、清理定时器和会话监听；宿主启用开关同时摘掉路由。这些措施缩小乱序与重复挂载的影响。两次轮询间的短事件可能只剩最新状态，不能把浮层当完整事件日志。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:51-76](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/package.json#L51-L76)
-
-声明 DSH 版本、Web 依赖和注入。
-
-<details>
-<summary>查看原文（26行）</summary>
+声明轮询间隔与实际注入。
 
 ```text
-  "dsh": {
-    "engines": {
-      "dsh": ">=0.2.2-rc.1"
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-connection",
-        "@deepseek-ai/dsh-client-ui-settings",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-api-session-controller",
-        "@deepseek-ai/dsh-client-ui-workspace"
-      ],
-      "platform": "web"
-    }
-  },
-  "dependencies": {
-    "@deepseek-ai/schemastery": "~3.19.0",
-    "clsx": "^2.1.1"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/dsh": ">=0.2.2-rc.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+/** Poll interval for the host snapshot. */
+const POLL_MS = 2000
+
+/** Settings namespace of the pet's settings page. It is the profile entry id the Host serves a form for. */
+const PET_SETTINGS_NS = 'pet'
+
+/** Required services (sessions powers bubble-to-session navigation). */
+export const inject = ['slots', 'locale', 'connection', 'configForms', 'remote', 'sessions', 'uiWorkspace']
 ```
 
-</details>
+**依据 12 · 源码核查**：[src/client/index.ts:445-507](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L445-L507)
 
-**依据 2 · 源码核查**：[src/index.ts:398-413](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/index.ts#L398-L413)
-
-启停切换注册或释放 API。
+按文档可见性刷新，在请求序号变化时忽略旧响应。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（63行）</summary>
 
 ```text
-  const routes = makePetRoutes({ service, ctx })
-  let disposeRoutes: (() => void) | undefined
-  const syncRoutes = (): void => {
-    const enabled = current().enabled ?? true
-    if (disposeRoutes === undefined && enabled) {
-      disposeRoutes = ctx.effect(
-        () => {
-          const disposers = routes.map((route) => ctx.webServer.register(route))
-          return () => { for (const dispose of disposers) dispose() }
-        },
-        'pet: routes',
-      )
-    } else if (disposeRoutes !== undefined && !enabled) {
-      disposeRoutes()
-      disposeRoutes = undefined
-    }
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/service.ts:663-687](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/service.ts#L663-L687)
-
-正式事件、流帧和会话释放。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-          const transition = projectOfficialEvent(event, runtime)
-          if (transition === undefined) return
-          runtime.officialEventsSeen = true
-          this.officialEventSessions.add(session)
-          this.applyActivity(session, transition.input, transition.whisper)
-          if (transition.completedTurn !== undefined) {
-            this.rewardTurn(String(session.id), transition.completedTurn)
-          }
-        }),
-        this.ctx.on('agent/assistant-stream', ({ agent, frame }: { agent: { session: Session }; frame: AssistantStreamFrame }) => {
-          const session = agent.session
-          const runtime = this.activityOf(session).runtime
-          const transition = projectAssistantStreamFrame(frame, runtime)
-          if (transition === undefined) return
-          runtime.officialEventsSeen = true
-          this.officialEventSessions.add(session)
-          this.applyActivity(session, transition.input, transition.whisper)
-        }),
-        this.ctx.on('session/disposed', (session: Session) => {
-          this.ledger.forgetSession(String(session.id))
-          this.officialEventSessions.delete(session)
-          this.sessionActivity.delete(session)
-          if (session !== this.displaySession) return
-          // The display session is gone: fall back to the most recent
-          // remaining session's last input, or settle to idle when none.
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/client/index.ts:435-496](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/index.ts#L435-L496)
-
-可见性、顺序号和轮询失败处理。
-
-<details>
-<summary>查看原文（62行）</summary>
-
-```text
-      // The registry list is fetched lazily with retries baked into the poll
-      // cycle: until it lands, the dock entry renders nothing and every 2s
-      // tick tries again. After it lands, one list feeds both the sprite and
-      // the settings card's choices.
-      let petsLoaded = false
-      // Latest-wins guard: the 2s tick, visibility recovery, and
-      // interaction-triggered refreshes can overlap; only the newest
-      // response may publish, so a slow older one can never roll the
-      // snapshot back.
-      let stateSeq = 0
       const pollNow = (): void => {
         if (!petsLoaded) {
           petApi.pets().then((list) => {
@@ -483,85 +695,315 @@ export function makePetRoutes(deps: { service: PetService; ctx: Context; assetCa
           stop()
           document.removeEventListener('visibilitychange', onVisibility)
         }
+      }, 'pet: poll')
+
+      // A current-session switch should re-order the bubble stack right away,
+      // not on the next 2s tick. Poll only while the tab is visible, as the
+      // poll loop itself does.
+      const disposeSessionWatch = ctx.effect(() => {
+        const unsubscribe = sessions.list.subscribe(() => {
+          if (document.visibilityState === 'visible') pollNow()
+        })
+        return unsubscribe
+      }, 'pet: current-session watch')
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/client/index.ts:662-696](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/index.ts#L662-L696)
+<a id="research-q03"></a>
 
-新实例接管及资源清理。
+<a id="detail-section-13"></a>
+
+### Q03 · 双语插件列表介绍依赖哪些发布条件？
+
+**研究主题**：工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+本包在 locale/en.json 与 locale/zh.json 提供 meta.title 和 meta.description，清单为两者提供子路径导出，并把 locale 目录列入发布范围。英文和中文值相异，列表在支持该契约的宿主中因此有直接可读的标题与用途来源。作者发行说明称宿主会先解析英文文件，再通过相同导出机制读取目录下各语言，缺文件、导出或打包项时会回退。没有独立查验宿主加载器的真实回退分支，故将回退归为作者说明。
+
+源码中的契约测试检查磁盘词典与导出键匹配、元数据格式、中文和英文差别，并检查打包白名单与图标；本轮未运行。清单同时把 DSH 要求提高到 rc.2，影响仍使用较早宿主的人。双语词典只为插件列表提供信息，养成、拖拽及状态映射没有依赖这些 meta 值的证据。是否展示取决于真实 tarball 与宿主版本，不能从文件存在推导旧版宿主或所有安装都成功。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:23-51](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/package.json#L23-L51)
+
+两项 locale 导出及白名单实际写入清单。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（29行）</summary>
 
 ```text
-      let uiGone = false
-      disposeUi = () => {
-        if (uiGone) return
-        uiGone = true
-        clearUiTeardown?.()
-        clearUiTeardown = undefined
-        unsubscribeLocale()
-        petRoot.unmount()
-        container.remove()
-        disposePoll()
-        disposeSessionWatch()
-        disposeUi = undefined
-      }
-      // The slot teardown is the takeover hook a later apply body runs; it
-      // marks this instance terminal so a late settings callback from the
-      // still-draining instance cannot remount a second pet.
-      clearUiTeardown = registerPetUiTeardown(() => {
-        uiDead = true
-        disposeUi?.()
-      })
-    } else if (!uiDead && !enabled() && disposeUi !== undefined) {
-      disposeUi()
-      disposeUi = undefined
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.js.map",
+    "lib/**/*.d.ts",
+    "lib/**/*.d.ts.map",
+    "src",
+    "cordis.patch.yml",
+    "assets/whale",
+    "assets/whale-refined",
+    "assets/ouo-neko",
+    "assets/blue-throated-bee-eater",
+    "assets/decorations",
+    "contracts",
+    "locale",
+    "icon.svg"
+```
+
+</details>
+
+**依据 2 · 源码核查**：[package.json:54-79](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/package.json#L54-L79)
+
+声明新版 DSH floor。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ],
+      "platform": "web"
     }
+  },
+  "dependencies": {
+    "@deepseek-ai/schemastery": "~3.19.0",
+    "clsx": "^2.1.1"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh": ">=0.2.2-rc.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+```
+
+</details>
+
+**依据 3 · 源码核查**：[locale/en.json:1-6](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/locale/en.json#L1-L6)
+
+英文卡片标题与描述。
+
+```text
+{
+  "meta": {
+    "title": "Desktop pet",
+    "description": "An interactive pet on the desktop."
   }
-  // The settings subscription and the pet UI lifetime follow the fiber
-  // (issue #785): disposal drops the subscription and tears the UI down
-  // (terminal), so a hot-reloaded or re-injected bundle never leaves the
-  // previous React root, container, or poll loop behind on document.body.
-  const unsubscribeSettings = settingsForm.subscribe(syncUi)
-  ctx.effect(
-    () => () => {
-      unsubscribeSettings()
-      // Release the deferred form's retry timer and its mirror subscription so a
-      // disposed fiber can never bind or publish after teardown.
+}
+```
+
+**依据 4 · 源码核查**：[locale/zh.json:1-6](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/locale/zh.json#L1-L6)
+
+中文卡片标题与描述。
+
+```text
+{
+  "meta": {
+    "title": "桌面宠物",
+    "description": "桌面上的互动宠物"
+  }
+}
+```
+
+**依据 5 · 源码核查**：[tests/display-metadata.spec.ts:41-90](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/tests/display-metadata.spec.ts#L41-L90)
+
+仓库中的合约断言覆盖双语、导出集合与发布配置。
+
+<details>
+<summary>查看原文（50行）</summary>
+
+```text
+  it('ships the languages the plugin page renders', () => {
+    for (const language of REQUIRED_LANGUAGES) {
+      expect(existsSync(join(ROOT, 'locale', language + '.json')), language).toBe(true)
+    }
+  })
+
+  it('exports every locale file on disk and ships no key without a file', () => {
+    const exported = Object.keys(MANIFEST.exports ?? {})
+      .filter((key) => key.startsWith('./locale/'))
+      .map((key) => key.slice('./locale/'.length))
+      .sort()
+    expect(exported).toEqual(localeFiles())
+  })
+
+  it('carries only a non-empty title and description per language', () => {
+    for (const file of localeFiles()) {
+      const doc = JSON.parse(readFileSync(join(ROOT, 'locale', file), 'utf8')) as Record<string, unknown>
+      expect(Object.keys(doc), file).toEqual(['meta'])
+      const meta = doc.meta as Record<string, unknown>
+      for (const field of ['title', 'description']) {
+        expect(typeof meta[field], file + ' meta.' + field).toBe('string')
+        expect((meta[field] as string).trim(), file + ' meta.' + field).not.toBe('')
+      }
+    }
+  })
+
+  it('writes Chinese copy that differs from English and stays short', () => {
+    const en = metaOf('en')
+    const zh = metaOf('zh')
+    expect(zh.title).not.toBe(en.title)
+    expect(zh.description).not.toBe(en.description)
+    const han = zh.description?.match(HAN) ?? []
+    expect(han.length).toBeGreaterThan(0)
+    expect(han.length).toBeLessThanOrEqual(MAX_ZH_DESCRIPTION_HAN)
+  })
+
+  it('publishes the locale directory and the card icon', () => {
+    expect(Array.isArray(MANIFEST.files)).toBe(true)
+    const files = MANIFEST.files as string[]
+    expect(files).toContain('locale')
+    const icon = MANIFEST.icon
+    expect(typeof icon).toBe('string')
+    expect(isAbsolute(icon as string)).toBe(false)
+    const iconPath = resolve(ROOT, icon as string)
+    const inside = relative(ROOT, iconPath).replaceAll('\\', '/')
+    expect(inside.length).toBeGreaterThan(0)
+    expect(inside.startsWith('..')).toBe(false)
+    expect(statSync(iconPath).isFile()).toBe(true)
+    expect(ICON_EXTENSIONS).toContain(extname(iconPath).toLowerCase())
+    expect(files).toContain(inside)
+```
+
+</details>
+
+**依据 6 · 作者声明**：[docs/release-notes/v0.4.19.md:5-21](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/docs/release-notes/v0.4.19.md#L5-L21)
+
+作者解释宿主查找流程及缺项的回退；未验证宿主。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+### 新功能
+
+- 插件页显示元数据（`a465df5`）：npm 包清单自带的 `description` 只有一句英文、标题只能落到包名，插件列表因此一直显示 `@linxin666/dsh-pet` 与那句英文描述。本版补上宿主已经在读的本地化通道：
+  - `locale/en.json`：`meta.title` 为 `Desktop pet`，`meta.description` 为 `An interactive pet on the desktop.`
+  - `locale/zh.json`：`meta.title` 为 `桌面宠物`，`meta.description` 为 `桌面上的互动宠物`
+  - `package.json` 的 `exports` 增加 `./locale/en.json` 与 `./locale/zh.json` 两条映射，`files` 白名单增加 `locale` 目录
+- 三处必须在场，缺一不可：宿主先解析 `locale/en.json`，再枚举该目录下每个 `*.json` 并经本包自己的 `exports` 映射逐个解析。文件在而导出键缺、导出键在而文件缺、或者 `locale` 目录被 npm 的 `files` 白名单漏掉（打包时整个目录不进 tarball），任何一种都会让整次元数据读取失败，页面静默退回包名与英文描述，且不给任何报错
+- 影响面只在显示层：宠物注册表、渲染、拖拽、交互与持久化一条都不经过这条通道，运行时行为与 0.4.18 逐条一致
+- 文案本身也受约束：中文标题与描述必须与英文不同，中文描述的汉字数不超过 20，两条标题都非空——这几条写在测试里，不是口头约定
+
+### 修复
+
+- 无缺陷修复：本区间唯一的提交只新增两份 locale 文件、两条导出键、一条 `files` 条目与一支测试，没有一行改动既有行为代码、资产或契约
+
+### 其他改动
+
+- 新增测试 `tests/display-metadata.spec.ts`（92 行，vitest，五条断言）：`en` / `zh` 两个文件都在；`exports` 里以 `./locale/` 开头的键与磁盘上的 `locale/*.json` 双向完全相等（有键无文件、有文件无键都失败）；每份文件顶层只有 `meta`，且 `title` / `description` 都是非空字符串；中文标题与描述分别不同于英文，且中文描述的汉字数落在 1 到 20 之间；`files` 含 `locale`，`icon` 是包内相对路径、文件真实存在、扩展名在 `.svg` / `.png` / `.jpg` / `.jpeg` / `.webp` 之内，并且已经写进 `files`
 ```
 
 </details>
 
 #### 缺口
 
-- 固定宿主和浏览器上的峰值、闪烁及热重载行为未验证。
-  **影响**：无法判定多会话与快速切页下每个提示都能观察到。
-  **进一步探讨**：在合成连续短事件和延迟响应下抓取页面变化与请求。
+- 真实归档及宿主卡片处置未验。
+  **影响**：无法保证目标版本列表会显示或如何回退。
+  **进一步探讨**：检查固定发布产物并在隔离 profile 切换语言。
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 关闭宠物时哪些本地与外部行为仍需注意？
+### Q04 · 如何确认停用与撤出，哪些成本和网络行为需要单独看？
 
-**研究主题**：缺陷与关键质疑、效果与总成本、采用判断
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本、采用判断
 
 #### 完整回答
 
-设置关闭会停止宠物界面、轮询和宿主 API，但客户端 apply 在读取启用状态前就尝试外发安装心跳。客户端在可用的本地存储中复用随机标识，发往 dsh-market.com 的载荷包括访客标识、包名和构建已提供的版本。载荷由安装项构造，代码所示没有会话文本。自动化浏览器和无法取得本地存储标识的环境会跳过，只有收到成功响应后才记当天已发送，离线失败可在后续挂载时重试。外部服务实际收到或保留什么、访问时间和网络开销没有实测。
+宿主的 enabled 判断控制状态和媒体路由的注册，服务禁用时撤掉活动订阅并清理瞬态状态。浏览器也依据 enabled 控制全局 UI 和轮询；面板里的隐藏只是把显示位置交给召唤入口。浏览器 apply 进入时却先调用独立的心跳，之后才建立设置与 enabled 的判断。隐藏界面或关闭宠物功能仍得另行检查客户端是否随 profile 继续装载。
 
-普通 Web 用户若接受这项网络行为，可在临时 profile 用空会话试一个回合，检查禁用后的浮层与同源请求。要求应用静默外联的环境宜先观察并核实实际网络策略，不用宠物设置当心跳退出开关。要退出应移除客户端插件或通过符合环境要求的出网限制阻断该请求，并确认重载后没有遗留界面。安装与排障是人工投入，持续资源有轮询、渲染和素材，均未计量。
+心跳尝试向 dsh-market.com 发送 POST，正文包含访客随机标识和插件包名，可带构建时版本。该代码使用 localStorage 存放访客标志，当日已成功、自动化 webdriver 标志存在或存储出错时不发；成功后写 UTC 日标记，网络错误静默，在以后装载时可能重试。消息形状未包含会话字段，市场终端的保留、网络层可见数据和端到端送达不从本插件推定。自动化环境因明确跳过，单靠无人浏览器抓不到请求并不能替代对正常浏览器的验证。
+
+只建议接受这一网络边界且已有兼容 DSH Web 的用户在临时 profile 试用。首次人工成本包括核对版本和临时配置、准备双会话与审阅网络，持续成本包括轮询、图像解码和页面资源，实际现金、内存和耗时未知。若气泡将行动引到错误会话、短回合遗漏影响决策或网络要求不合适，退回原生会话视图。移除 profile 中的插件、重载页面并核对客户端和请求；需要保留布局或养成状态时先检查 DSH_HOME 下的 pet.json。功能关闭、profile 移除与浏览器持久化清理要分别验收。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/client/index.ts:359-395](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/index.ts#L359-L395)
+**依据 1 · 源码核查**：[src/index.ts:398-413](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/index.ts#L398-L413)
 
-客户端先触发心跳，随后处理启用状态。
+宿主禁用时撤路由。
 
 <details>
-<summary>查看原文（37行）</summary>
+<summary>查看原文（16行）</summary>
+
+```text
+  const routes = makePetRoutes({ service, ctx })
+  let disposeRoutes: (() => void) | undefined
+  const syncRoutes = (): void => {
+    const enabled = current().enabled ?? true
+    if (disposeRoutes === undefined && enabled) {
+      disposeRoutes = ctx.effect(
+        () => {
+          const disposers = routes.map((route) => ctx.webServer.register(route))
+          return () => { for (const dispose of disposers) dispose() }
+        },
+        'pet: routes',
+      )
+    } else if (disposeRoutes !== undefined && !enabled) {
+      disposeRoutes()
+      disposeRoutes = undefined
+    }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/service.ts:630-641](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/service.ts#L630-L641)
+
+停用重置活动并移除活动监听。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+    if (!enabled) this.resetActivity()
+  }
+
+  private syncActivity(): void {
+    if (this.disposeActivity !== undefined) {
+      this.disposeActivity()
+      this.disposeActivity = undefined
+    }
+    if (!this.enabled) return
+    this.disposeActivity = (() => {
+      const disposers = [
+        this.ctx.on('session/event', (session: Session, event: SessionEvent) => {
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/client/index.ts:359-383](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L359-L383)
+
+在设置开关计算前发起心跳。
+
+<details>
+<summary>查看原文（25行）</summary>
 
 ```text
 export function apply(ctx: ClientContext): void {
@@ -589,28 +1031,62 @@ export function apply(ctx: ClientContext): void {
       ? snapshot.value?.enabled ?? true
       : snapshot.status === 'unavailable'
   }
-
-  // One staged form follows the pet page between Web Extensions and the
-  // standalone first-level section. Seat migration does not reset drafts.
-  const petSettings = new PetSettingsCardController(settingsForm)
-  const disposeSettingsRegistration = installPetSettingsRegistration(ctx, petSettings)
-  ctx.effect(() => () => {
-    disposeSettingsRegistration()
-    petSettings.dispose()
-  }, 'pet: settings page')
-
-  // The global pet entry, its store, and the poll loop live while the plugin
-  // is enabled; toggling the setting off hides the pet and stops polling.
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/client/telemetry.ts:25-55](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/telemetry.ts#L25-L55)
+**依据 4 · 源码核查**：[src/client/index.ts:394-417](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L394-L417)
 
-目的地与本地随机标识。
+受 enabled 和实例终止控制的 UI。
 
 <details>
-<summary>查看原文（31行）</summary>
+<summary>查看原文（24行）</summary>
+
+```text
+  // The global pet entry, its store, and the poll loop live while the plugin
+  // is enabled; toggling the setting off hides the pet and stops polling.
+  // 'uiDead' marks a terminal teardown (takeover by a later bundle instance
+  // or fiber disposal): a taken-over or disposed instance must never remount
+  // from a late settings callback (issue #785).
+  let disposeUi: (() => void) | undefined
+  let clearUiTeardown: (() => void) | undefined
+  let uiDead = false
+  const killUi = (): void => {
+    if (uiDead) return
+    uiDead = true
+    clearUiTeardown?.()
+    clearUiTeardown = undefined
+    disposeUi?.()
+    disposeUi = undefined
+  }
+  const syncUi = (): void => {
+    if (!uiDead && enabled() && disposeUi === undefined) {
+      // ONE store instance for the whole app, owned by this apply body. The
+      // pet is host-global (state/display/interactions are /api/pet/*
+      // endpoints with no session dimension), so the slot system's per-session
+      // store scoping would only reset the pet on session switches and leave
+      // it stateless on the new-conversation screen (no session to scope by).
+      const petStore: PetStoreInstance = createPetStore().create()
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/client/index.ts:543-548](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L543-L548)
+
+隐藏只调用 setVisible。
+
+```text
+        hide: () => {
+          petApi.setVisible(false).then(() => {
+            pollNow()
+          }, () => {
+            // Ignore; next poll resyncs.
+          })
+```
+
+**依据 6 · 源码核查**：[src/client/telemetry.ts:25-31](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/telemetry.ts#L25-L31)
+
+标志键、目标端点和可选构建版本。
 
 ```text
 const VISITOR_KEY = 'dsh-web-ui-telemetry-visitor'
@@ -620,18 +1096,16 @@ const ENDPOINT = 'https://dsh-market.com/api/telemetry/event'
 // Baked into each client bundle by shared/tsdown.client.ts (the package's own
 // package.json version at build time). Undefined in dev/test builds.
 declare const __DSH_PKG_VERSION__: string | undefined
+```
 
-/** The building package's version, when the bundle carries it. */
-function bakedVersion(): string | undefined {
-  try {
-    return typeof __DSH_PKG_VERSION__ === 'string' && __DSH_PKG_VERSION__ !== ''
-      ? __DSH_PKG_VERSION__
-      : undefined
-  } catch {
-    return undefined
-  }
-}
+**依据 7 · 源码核查**：[src/client/telemetry.ts:44-55](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/telemetry.ts#L44-L55)
 
+随机访客标识可持久化，存储失败时不报。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
 /** Read or lazily create the anonymous visitor id; null when storage is unavailable. */
 function visitorId(): string | null {
   try {
@@ -648,9 +1122,9 @@ function visitorId(): string | null {
 
 </details>
 
-**依据 3 · 源码核查**：[src/client/telemetry.ts:75-104](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/telemetry.ts#L75-L104)
+**依据 8 · 源码核查**：[src/client/telemetry.ts:75-104](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/telemetry.ts#L75-L104)
 
-发出的实际字段、跳过条件及静默失败。
+自动化标志、日去重和实际 POST 的字段及成功标记。
 
 <details>
 <summary>查看原文（30行）</summary>
@@ -690,92 +1164,99 @@ export function reportDailyHeartbeat(items: readonly TelemetryItem[]): void {
 
 </details>
 
-**依据 4 · 源码核查**：[src/client/index.ts:662-696](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/index.ts#L662-L696)
+**依据 9 · 源码核查**：[src/persist.ts:275-279](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/persist.ts#L275-L279)
 
-停用移除界面和本地轮询。
-
-<details>
-<summary>查看原文（35行）</summary>
+持久化目标是该目录中的 pet.json。
 
 ```text
-      let uiGone = false
-      disposeUi = () => {
-        if (uiGone) return
-        uiGone = true
-        clearUiTeardown?.()
-        clearUiTeardown = undefined
-        unsubscribeLocale()
-        petRoot.unmount()
-        container.remove()
-        disposePoll()
-        disposeSessionWatch()
-        disposeUi = undefined
-      }
-      // The slot teardown is the takeover hook a later apply body runs; it
-      // marks this instance terminal so a late settings callback from the
-      // still-draining instance cannot remount a second pet.
-      clearUiTeardown = registerPetUiTeardown(() => {
-        uiDead = true
-        disposeUi?.()
-      })
-    } else if (!uiDead && !enabled() && disposeUi !== undefined) {
-      disposeUi()
-      disposeUi = undefined
-    }
-  }
-  // The settings subscription and the pet UI lifetime follow the fiber
-  // (issue #785): disposal drops the subscription and tears the UI down
-  // (terminal), so a hot-reloaded or re-injected bundle never leaves the
-  // previous React root, container, or poll loop behind on document.body.
-  const unsubscribeSettings = settingsForm.subscribe(syncUi)
-  ctx.effect(
-    () => () => {
-      unsubscribeSettings()
-      // Release the deferred form's retry timer and its mirror subscription so a
-      // disposed fiber can never bind or publish after teardown.
+export function savePetPersist(data: PetPersist, dir: string = petHomeDir()): void {
+  mkdirSync(dir, { recursive: true })
+  const target = join(dir, 'pet.json')
+  const tmp = `${target}.tmp`
+  writeFileSync(tmp, JSON.stringify(data, null, 2), 'utf8')
 ```
-
-</details>
 
 #### 缺口
 
-- 未实测安装、禁用后的网络及对端存储行为。
-  **影响**：不能从设置开关或作者说明推出隔离环境已经合规。
-  **进一步探讨**：用临时 profile 记录初装、关闭与移除三种状态下的请求。
+- 实际网络传输、市场服务端储存和客户端资源消耗未知。
+  **影响**：不能承诺关闭或重载后的真实出网状态，也无法给出实际成本。
+  **进一步探讨**：分别观察正常浏览器中的载入、隐藏、停用、移除，并比较页面资源。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 如何验证提示能否减少来回查看且不会误导？
+### Q05 · 如何验证常驻气泡在双会话任务上有帮助？
 
 **研究主题**：新假设与验证
 
 #### 完整回答
 
-未验证假设是悬浮状态能减少等待多任务时的切页，同时不增加对完成或失败的错误判断。让同一用户以交叉顺序完成两组等价的双会话脚本，一组使用原会话状态，另一组打开宠物。每组加入一次短工具失败和一次隐藏页后回到可见，记录用户确认正确会话所需的切页数、错误完成判断和重新检查时间，并记录浮层遮挡。只统计能正确定位任务结果的样本作为完成。若误判或遮挡上升，即使切页更少也不能支持该用法。
+假设是显示可回跳的前台会话及其他活动，能使用户更快找到需要处理的并行会话，且不增加误归属。当前提供以 current 参数排序的顶层气泡和经过真实列表检查的导航。约两秒轮询以及筛掉子代理或无气泡活动，意味着用户可能错过短状态。两类作用应在同任务内一起比较。
+
+随机交换两份相同任务脚本的显示顺序，在同一宿主记录两个顶层会话的已知状态。交替使用原生列表和宠物气泡，任务是从任一对话快速跳到指定会话查实际回执。包括持续活动、短于轮询的动作、切回前台和状态已结束的反例；测正确找到会话的耗时、误归属、漏看、额外点击和遮挡。若正确率没有改善，且耗时、误归属或遮挡恶化，则不支持该任务的常驻使用。实验本身尚未执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/client/index.ts:454-496](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/client/index.ts#L454-L496)
+**依据 1 · 源码核查**：[src/service.ts:1058-1096](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/service.ts#L1058-L1096)
 
-可见性与最近请求控制，提供实验条件。
+顶层可见气泡集合和当前会话排序提供试验输入。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+  private view(currentSessionId?: string): PetStateView {
+    const snapshot = this.machine.render()
+    const entry = this.activeEntry()
+    // One bubble per concurrently active TOP-LEVEL session. The GUI's current
+    // session leads the stack when reported (the browser half passes its
+    // session list's 'current'); everything else keeps the most recent
+    // meaningful event order. Subagent children render no bubble of their own
+    // (their activity already shows through the spawning conversation's
+    // bubble/display, and the bubble buttons navigate to GUI sessions, which
+    // subagents are not). Sessions whose own machine has settled (no bubble
+    // copy) drop out, so a finished turn does not leave a stale bubble behind.
+    const sessions: PetSessionView[] = []
+    for (const [session, activity] of [...this.sessionActivity.entries()].reverse()) {
+      if (sessions.length >= MAX_SESSION_BUBBLES) break
+      if (session.header?.origin === 'subagent') continue
+      const perSession = activity.machine.render()
+      if (perSession.bubble === undefined) continue
+      // Each session's whisper rides its own bubble while fresh; an expired
+      // whisper simply stops appearing (the client's 2 s poll drops it).
+      const whisper = activity.whisper
+      const freshWhisper = whisper !== undefined && Date.now() - whisper.at < WHISPER_TTL_MS
+        ? whisper.text
+        : undefined
+      sessions.push({
+        sessionId: String(session.id),
+        animation: perSession.animation,
+        bubble: perSession.bubble,
+        phase: perSession.phase,
+        ...(freshWhisper === undefined ? {} : { whisper: freshWhisper }),
+      })
+    }
+    // The browser half reports the session the user is currently on; that
+    // session's bubble leads the stack (its whisper then speaks on the
+    // collapsed single bubble). An unreported or absent session keeps the
+    // legacy most-recent-first order.
+    if (currentSessionId !== undefined) {
+      const index = sessions.findIndex(session => session.sessionId === currentSessionId)
+      if (index > 0) sessions.unshift(sessions.splice(index, 1)[0]!)
+    }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/client/index.ts:465-507](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L465-L507)
+
+可见性和轮询间隔让短活动成为重要反例。
 
 <details>
 <summary>查看原文（43行）</summary>
 
 ```text
-        const seq = stateSeq + 1
-        stateSeq = seq
-        petApi.state(currentSessionId()).then((snapshot) => {
-          if (seq !== stateSeq) return
-          setSnapshot(snapshot)
-        }, () => {
-          if (seq !== stateSeq) return
-          setState('error', 'pet.state transport error')
-        })
-      }
-
       const disposePoll = ctx.effect(() => {
         // Poll only while the tab is visible: the host snapshot does not
         // change while the page is hidden, so a background interval would
@@ -808,51 +1289,39 @@ export function reportDailyHeartbeat(items: readonly TelemetryItem[]): void {
           stop()
           document.removeEventListener('visibilitychange', onVisibility)
         }
+      }, 'pet: poll')
+
+      // A current-session switch should re-order the bubble stack right away,
+      // not on the next 2s tick. Poll only while the tab is visible, as the
+      // poll loop itself does.
+      const disposeSessionWatch = ctx.effect(() => {
+        const unsubscribe = sessions.list.subscribe(() => {
+          if (document.visibilityState === 'visible') pollNow()
+        })
+        return unsubscribe
+      }, 'pet: current-session watch')
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/service.ts:663-687](https://github.com/zhu1090093659/dsh-pet/blob/ae2c9d443eda35a6439597c1787c7607e988bbed/src/service.ts#L663-L687)
+**依据 3 · 源码核查**：[src/client/index.ts:509-515](https://github.com/zhu1090093659/dsh-pet/blob/4def8a84622304da67c750fd35dfdb3a2aac7c69/src/client/index.ts#L509-L515)
 
-会话活动会因消息和释放变动，可设置识别任务。
-
-<details>
-<summary>查看原文（25行）</summary>
+入口可回到尚存在的目标会话。
 
 ```text
-          const transition = projectOfficialEvent(event, runtime)
-          if (transition === undefined) return
-          runtime.officialEventsSeen = true
-          this.officialEventSessions.add(session)
-          this.applyActivity(session, transition.input, transition.whisper)
-          if (transition.completedTurn !== undefined) {
-            this.rewardTurn(String(session.id), transition.completedTurn)
-          }
-        }),
-        this.ctx.on('agent/assistant-stream', ({ agent, frame }: { agent: { session: Session }; frame: AssistantStreamFrame }) => {
-          const session = agent.session
-          const runtime = this.activityOf(session).runtime
-          const transition = projectAssistantStreamFrame(frame, runtime)
-          if (transition === undefined) return
-          runtime.officialEventsSeen = true
-          this.officialEventSessions.add(session)
-          this.applyActivity(session, transition.input, transition.whisper)
-        }),
-        this.ctx.on('session/disposed', (session: Session) => {
-          this.ledger.forgetSession(String(session.id))
-          this.officialEventSessions.delete(session)
-          this.sessionActivity.delete(session)
-          if (session !== this.displaySession) return
-          // The display session is gone: fall back to the most recent
-          // remaining session's last input, or settle to idle when none.
+      const openSession = (sessionId: string): void => {
+        const list = sessions.list.getSnapshot()
+        if ((list.byId as any)[sessionId] === undefined) return
+        // Navigation belongs to the workspace UI since the multi-instance Client
+        // Session model; the Session Controller no longer opens one.
+        ctx.uiWorkspace.openSession(sessionId as never)
+      }
 ```
-
-</details>
 
 #### 缺口
 
-- 未做该行为实验。
-  **影响**：不能宣称工作效率改进。
-  **进一步探讨**：按相同任务记录四项指标和失败样本。
+- 尚无受控用户结果。
+  **影响**：减少回查时间和误归属只是推演。
+  **进一步探讨**：用同一事件记录做原生列表与浮层的随机对照。
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)

@@ -1,18 +1,18 @@
-# dsh-context
+# DSH Context
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[4d8fb8a](https://github.com/bowenliang123/dsh-context/tree/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef)
+源码版本：[9e22119](https://github.com/bowenliang123/dsh-context/tree/9e221195ac7c02cff9a21311dda6d61f50cf50d3)
 
 <!-- BEGIN META -->
-[![GitHub ★ 4,948](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=4%2C948&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 433,565](https://img.shields.io/static/v1?label=npm+30d&message=433%2C565&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-11-09](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-09&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
+[![GitHub ★ 5,162](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C162&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 519,030](https://img.shields.io/static/v1?label=npm+30d&message=519%2C030&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
 <!-- END META -->
 
-> **功能**：为 DSH 会话展示上下文组成、历史趋势和用量，提供 Context 标签及 /context 入口。
+> **功能**：查看 DeepSeek Harness 会话的上下文组成、演变、事件和跨会话使用概况。
 
-> **亮点**：[Q01](#research-q01) 将总体压力与历史来源联系起来。[Q02](#research-q02) 通过活动投影、冷读和按版本缓存提供可回查的明细。
+> **亮点**：把宿主现有的压力数字与可追查的历史请求、上下文分项和注入来源连接起来。来源标签和历史步骤要回原事件核对。[Q01](#research-q01) [Q03](#research-q03)
 
-> **主要限制**：[Q02](#research-q02) 的空结果可以来自服务未就绪、兼容降级或冷读限制。[Q03](#research-q03) 的成本是估计，宿主授权和非空提示词配置需分别核对。
+> **主要限制**：上下文浏览依赖历史观察与当前窗口的明细，切换分片窗口时有待复现的错位风险。跨会话的费用是按目录估计，不能代替实际账单。[Q02](#research-q02) [Q03](#research-q03)
 
 **本文目录**
 
@@ -26,10 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 哪类会话诊断比原生压力提示多获得什么？](#detail-section-11)
-  - [Q02 · 历史明细从宿主取得的路径与失败边界是什么？](#detail-section-12)
-  - [Q03 · 哪些数据与提示词行为影响试用？](#detail-section-13)
-  - [Q04 · 如何验证分项和明细能否更快找到膨胀来源？](#detail-section-14)
+  - [Q01 · 比原生压力提示多得到什么，历史步骤能否成为定位工具？](#detail-section-11)
+  - [Q02 · 活动与离线会话事实怎样被投影、回放和按窗口复用？](#detail-section-12)
+  - [Q03 · Agent 注入标签和跨会话成本分别能归因到什么程度？](#detail-section-13)
+  - [Q04 · 诊断试用有哪些运行、隐私和输出边界？](#detail-section-14)
+  - [Q05 · 额外归因能否缩短正确定位上下文来源所需时间？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：面向调试长会话的人，把上下文压力与分项、历史步骤放在一个分析视图中。
+> **用途**：维护长 DSH 会话的工程师，可从宿主压力数字追查历史步骤、工具或 Agent 注入。
 
-原生压力提示加手工读日志是可用基线。插件保留宿主计量并增加分项、历史与跳转路径。
+常规选择是原生压力提示加手工翻转录或日志，同一占用率仍取原生投影。插件增加按步骤的浏览和带覆盖状态的聚合。
 
 <a id="detail-section-3"></a>
 
@@ -51,63 +52,64 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 会话上下文分析 | 核对压力来源与组成 | 沿用宿主标准投影 |
-| 按需历史明细 | 回查不活动会话的事件 | 受观察服务、冷读门和权限约束 |
-| 提示词首尾 | 按配置加入文字 | 默认空，依赖宿主 systemPrompt |
+| Context 会话视图 | 按历史步骤追查压力及相关事件 | 数据范围依赖有效投影或回放 |
+| Agent 与注入标签 | 从消息与引用回查来源 | 标签可缺失，需查原始消息 |
+| Overview | 整理活动与估算费用 | 成本口径受目录与覆盖影响 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| 宿主 Web 与 sessionProjections | 必需 | 上下文投影和视图 | 旧版本降级，检查实际加载 |
-| connection 和 sessions | 明细需要 | 读取活动会话和历史 | 缺失时查原生日志 |
-| systemPrompt | 前后缀按需 | 注册可选提示文字 | 诊断试用留空 |
+| sessionProjections 与 Web 插槽 | 诊断必需 | 投影及呈现 | 旧宿主降级或 UI 无法显示 |
+| connection 和会话 observe | 历史明细必需 | 按需读活动与历史数据 | 对应窗口不完整 |
+| 模型目录价格和用量 | 成本估计必需 | 按活动汇总 | 查账单与可见覆盖 |
+| systemPrompt | 配置前后缀时才需 | 注册主动提示词文本 | 空设置适合只诊断 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 用户选隔离会话并保留空提示词 | 已有事件可对照 |
-| 定位 | 用户由压力进入 Context 明细 | 能定位已知事件和步骤 |
-| 退出 | 用户停用并查原生会话 | 缺失数据不视为零 |
+| 准备 | 用户创建有已知长输出的隔离会话 | 只有获准的测试数据 |
+| 定位 | 从压力开会话视图，选历史步骤 | 能回查请求和相关原始事件 |
+| 复核 | 检查版本、覆盖及账单口径 | 无覆盖或数字错位改查原始日志 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 环境成本未知 | 核宿主版本和权限 | 兼容未运行 |
-| 持续 | 历史读取和缓存占用未知 | 检查事件和估算口径 | 账单单独核对 |
-| 恢复和退出 | 重读和回归开销未知 | 停用并核对提示词 | 共享部署授权未验 |
+| 首次使用 | 资源增量未知 | 核对宿主版本、空配置与授权 | 有版本降级 |
+| 持续使用 | 历史读与浏览器缓存，实际峰值未测 | 读取事件、判断来源和核对费用 | 不把估价当账单 |
+| 退出 | 数据资源变化未知 | 禁用、撤回配置和回查日志 | 跨用户访问范围须先核查 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 上下文定位 | 宿主分项和历史明细 | 准确率及节时 |
-| 历史请求 | 限量冷读和版本缓存 | 长历史下稳定性 |
-| 用量成本 | 目录价估算并保留缺口 | 真实收费 |
+| 追查长会话原因 | 步骤选择、分片与宿主投影 | 误归因率和人工节时 |
+| 跨会话核对 | 使用量和有价覆盖统计 | 实际账单与覆盖流失 |
+| 历史查看 | 有界观察、缓存和租约释放 | 大会话资源用量、同修订窗口切换 |
 
-> **思考**：[Q02](#research-q02) 的空结果可以来自服务未就绪、兼容降级或冷读限制。[Q03](#research-q03) 的成本是估计，宿主授权和非空提示词配置需分别核对。
+> **思考**：上下文浏览依赖历史观察与当前窗口的明细，切换分片窗口时有待复现的错位风险。跨会话的费用是按目录估计，不能代替实际账单。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 将总体压力与历史来源联系起来。[Q02](#research-q02) 通过活动投影、冷读和按版本缓存提供可回查的明细。
+> **亮点**：把宿主现有的压力数字与可追查的历史请求、上下文分项和注入来源连接起来。来源标签和历史步骤要回原事件核对。[Q01](#research-q01) [Q03](#research-q03)
 
-[Q02](#research-q02) 的历史读会复用匹配观察修订的缓存，并在读取结束释放观察。堆阈值拒绝读取不等于资源占用已测试。
+观察会话按租约、版本和持久化来源管理，复用需与分片请求的窗口身份对齐。Agent 模式和字典式别名必须保留原事件链接来复核。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 的空结果可以来自服务未就绪、兼容降级或冷读限制。[Q03](#research-q03) 的成本是估计，宿主授权和非空提示词配置需分别核对。
+上下文浏览依赖历史观察与当前窗口的明细，切换分片窗口时有待复现的错位风险。跨会话的费用是按目录估计，不能代替实际账单。[Q02](#research-q02) [Q03](#research-q03)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q03](#research-q03) 在个人隔离 Web profile 检查一个已知大工具结果，保持提示词首尾为空并确认明细归属。遇到空值、授权疑问或文字变化，停用并用原始日志排查。
+有一笔已知长工具返回时可在个人隔离 Web profile 试查，保持额外提示词为空，发生空明细、跨会话错位或权限无法说明时停用插件并回到原始日志。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持分析视图、明细和可选提示词接线。兼容、会话访问隔离及真实效益待验证。
+源码支持多维诊断及按需构建历史的机制。定位正确率、跨用户权限与实际节时尚待验证。
 
-- 已检查：作者 README、包清单、源码路径 README.md、src/client/sessionData.ts、src/client/index.ts、src/client/command.ts、package.json、src/host/index.ts、src/host/detail.ts、src/host/coldRead.ts、src/host/postRoute.ts、src/host/cost.ts、src/host/config.ts、src/host/promptInjection.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、package.json、src/client/components/browserHelpers.ts、src/client/index.ts、src/client/sessionData.ts、src/client/timelineSource.ts、src/host/config.ts、src/host/facts.ts、src/host/foldInjections.ts、src/host/index.ts、src/host/overviewAggregate.ts、src/host/promptInjection.ts、tsdown.config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查宿主挂载、会话视图、代表明细通道、估价与提示词入口。未运行宿主、未全面审计共享权限或其他通道。
-- 下一步：按 [Q04](#research-q04) 做已知会话对照，再按不同用户身份补查历史和活动会话读取边界。
+- 边界：固定根组件，按 Host、Web 和长历史行为抽查，不运行目标代码。
+- 下一步：在不同长度且有已知正确答案的重放数据中比较两种诊断方式，记录搜索不到、缓存窗口错位、正确定位与人工复核耗时。
 
 **分析版本**
 
 - **仓库**：[bowenliang123/dsh-context](https://github.com/bowenliang123/dsh-context)
-- **版本号**：0.83.1（[固定提交 4d8fb8a](https://github.com/bowenliang123/dsh-context/tree/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef)）
-- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.85.1（[固定提交 9e22119](https://github.com/bowenliang123/dsh-context/tree/9e221195ac7c02cff9a21311dda6d61f50cf50d3)）
+- **版本日期**：2026-11-16（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +136,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提议用已知大工具结果和历史缺失样本比较插件与原生状态。如果归因准确性下降或复核时间更长，就不支持常用。
+给压力告警配带来源的步骤可减少正确定位时间。可以用已知长输出和已知缺失日志的会话回放交叉比较；如果误归因增加或总人工时间持平，则不支持。[Q05](#research-q05)
 
-按 [Q04](#research-q04) 做已知会话对照，再按不同用户身份补查历史和活动会话读取边界。
+在不同长度且有已知正确答案的重放数据中比较两种诊断方式，记录搜索不到、缓存窗口错位、正确定位与人工复核耗时。
 
 <a id="detail-section-9"></a>
 
@@ -149,60 +151,78 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 13 | 2418 | — | — | 43743 |
-| .ts | source | 164 | 30422 | 28262 | 133 | — |
-| .mjs | source | 4 | 242 | 216 | 0 | — |
-| .tsx | source | 61 | 13562 | 12870 | 67 | — |
-| .ts | test | 112 | 65051 | 59890 | 246 | — |
-| .tsx | test | 1 | 113 | 103 | 0 | — |
+| .md | source | 13 | 2421 | — | — | 44574 |
+| .ts | source | 165 | 30798 | 28613 | 133 | — |
+| .mjs | source | 4 | 285 | 255 | 0 | — |
+| .tsx | source | 62 | 13827 | 13114 | 66 | — |
+| .ts | test | 116 | 66448 | 61213 | 248 | — |
+| .tsx | test | 1 | 125 | 114 | 0 | — |
 | .js | example | 3 | 9 | 9 | 0 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 2](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=2&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 70](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=70&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 70](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=70&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
+[![Issue 未关闭 4](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=4&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 74](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=74&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 71](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=71&color=737b86&logo=github)](https://github.com/bowenliang123/dsh-context/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
 
 
 
-统计日期：2026-11-12。
+统计日期：2026-11-17。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：DSH 使用者能否从上下文分项和历史明细定位长会话膨胀，哪些数字、权限和提示词修改须另行核对？
+**插件研究总目标**：运行长会话的工程师如何从压力数字定位一笔请求、工具输出或 Agent 注入，何时诊断结果不足以据此行动？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 哪类会话诊断比原生压力提示多获得什么？
+### Q01 · 比原生压力提示多得到什么，历史步骤能否成为定位工具？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-适合经常把多个工具调用放进同一长会话的工程师。看到原生上下文压力升高时，用户可以打开 Context 或输入 /context，按分项和历史明细找是哪一步注入或工具结果使窗口变重。Web 侧压力、组成和用量直接取宿主标准投影，额外提供的是分析视图与会话内定位，不应把相同数字算作独立校验。作为替代，可以看原生压力提示后手工翻会话和日志。短会话或无需定位原因时，原生提示通常足够。合格诊断应明确会话和步骤，能回查相关事件，并区分历史请求与当前窗口。
+经常在一个 DSH 长会话中执行工具或协作的工程师，遇到压力升高时需要定位来源。插件仍读取宿主的 contextPressure、contextBreakdown 和用量投影，所以同一窗口的数字只能互相对齐。插件多提供的是会话内上下文标签及浏览器，用户能从窗口或历史步骤追查请求、消息、事件。可先开原生压力环和日志，偶尔看占比的人通常到这一步就够。复杂会话诊断可带着会话、步骤、消息和变化来源交付给同伴，避免仅报告总量。
+
+步骤选择器有当前窗口项，默认只给最近至多 500 个，选中较早步骤可把窗口移到其周围。搜索从已经取得的序列尾部找标签或值，结果本身也最多 500，并未跨过历史回放的边界。因此在空搜索中不能据此说事件不存在，尤其应核对窗口和会话的版本。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:15-20](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/README.md#L15-L20)
+**依据 1 · 作者声明**：[README.md:89-102](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/README.md#L89-L102)
 
-作者描述总览、会话标签和命令。
+作者将原生数据投影与插件额外定位视图关联。
+
+<details>
+<summary>查看原文（14行）</summary>
 
 ```text
-[`dsh-context`](https://www.npmjs.com/package/dsh-context) 提供完整的上下文生命周期管理功能。
-- **上下文洞察页面** — 跨会话总览，作为一级侧边栏面板（与 Plugins 和 Automation tasks 并列）：包含 7 天 Token/成本使用图表的 KPI 栏、活动热力图、汇总组成环形图，以及可筛选并可直接跳转至任一会话的会话卡片。
-- **Context 标签页** — DeepSeek Harness 上下文统计、组成、趋势、事件、消息和命令执行的 UI 上下文仪表板。
-- **Fleet 标签页** — Agent 家族专属页面：当前 Agent、它的父级，以及每个子 Agent 各自显示为一张实时卡片。
-- **Context 面板** — 同一仪表板也可作为右侧边栏标签页：在侧边栏指南页面选择 **Context**，面板便会在聊天旁打开，并包含 Agent 网络。
-- **`/context` 命令** — 斜杠命令会显示当前上下文组成模型和近期上下文演变。
+| **Token Stats** | 计费 Token 用在了哪里——总量与输入框下方聊天统计行相同，拆分为系统提示词、工具定义、用户消息、注入上下文、技能注入、工具调用、推理和回答。工具调用把工具名称与参数（提示词中重放的部分，加上输出中生成的部分）与这些工具返回的结果一并计入；回答从同一份助手内容与输出中拆出模型的回复正文；推理以同样方式拆出其思考内容；会话的缓存命中率显示在角落。 |
+| **Timing Stats** | 活跃时间如何分布在模型调用、工具运行和开销之间。 |
+| **Current Context** | 此刻窗口中的内容。 |
+| **Context Trend** | 每个请求的大小及其变化过程。 |
+| **Context Browser** | 任意请求实际由哪些内容组成。 |
+| **Context Events** | 上下文窗口何时以及为何发生变化。 |
+| **File Activity** | Agent 对你的文件做了什么。 |
+| **命令执行** | Agent 执行了哪些命令、每次运行如何结束、主要用到了哪些程序。 |
+
+成本估算遵循一套有文档记录的规则：[模型定价如何映射](docs/model-pricing-mapping.md)。
+
+标题中的占用率和组成数据读取的都是与聊天输入框上下文环形图相同的**官方 Token 计量投影**（`contextPressure` / `contextBreakdown`），因此数值始终与环形图一致——卡片中的百分比就是同一占用率，精确显示到小数点后一位。
+
+**Context Stats** 卡片中的 Agent Network 单元格（整个 Agent 家族的计费 Token 和预估成本）会跳转至 **Fleet** 标签页。输入输出一行的胶囊同样是跳转链接：**用户输入** 打开上下文浏览器的用户消息，**读取 / 写入 / 搜索 / 图片** 落到文件活动卡片并选中对应筛选。
 ```
 
-**依据 2 · 源码核查**：[src/client/sessionData.ts:13-21](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/client/sessionData.ts#L13-L21)
+</details>
 
-读取官方压力、组成、用量投影。
+**依据 2 · 源码核查**：[src/client/sessionData.ts:13-22](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/sessionData.ts#L13-L22)
+
+界面直接取宿主压力、组成和用量。
+
+<details>
+<summary>查看原文（10行）</summary>
 
 ```text
 export function useContextSession(props: SessionStandardProps): ContextSession {
@@ -214,137 +234,104 @@ export function useContextSession(props: SessionStandardProps): ContextSession {
     breakdown: projectionOf(props, 'contextBreakdown', contextBreakdownOf),
     usage: projectionOf(props, 'tokenUsage', tokenUsageOf),
   }
-```
-
-**依据 3 · 源码核查**：[src/client/index.ts:90-125](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/client/index.ts#L90-L125)
-
-注册视图、消息动作、命令和输入框弹层。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-  const ContextView = makeContextView(ctx, kit, settings, heads)
-  const FleetView = makeFleetView(ctx, kit, heads)
-
-  ctx.effect(() => watchPlacement(settings, {
-    tab: () => ctx.slots.inject('conversation.view', () => ctx.slots.register(
-      { name: 'conversation.view', id: CONTEXT_VIEW_ID, order: 20, locale: NS, label: () => t('tab.context') },
-      props => h(ContextView, props),
-    )),
-    sidebar: () => watchSidebarContextTab(ctx, ContextView, t, NS),
-  }), 'dsh-context: placement')
-
-  ctx.effect(() => watchFleetTab(
-    ctx,
-    settings,
-    props => h(FleetView, props as unknown as Parameters<typeof FleetView>[0]),
-    t,
-    NS,
-  ), 'dsh-context: fleet tab')
-
-  const ContextJump = makeContextJumpButton(ctx, kit, settings)
-  ctx.slots.inject(JUMP_SLOT, () => {
-    return ctx.slots.register(
-      { name: JUMP_SLOT, id: JUMP_ID, order: 20, locale: NS },
-      props => h(ContextJump, props),
-    )
-  })
-
-  registerContextCommand(ctx, kit)
-  const ContextModal = makeContextModal(ctx, kit, settings)
-  ctx.slots.inject('conversation.input.overlay', () => {
-    return ctx.slots.register(
-      { name: 'conversation.input.overlay',
-        id: 'context-modal',
-        order: 10,
-        locale: NS,
-        inject: (sessionId = '') => ({ hooks: { contextModal: modalStoreOf(sessionId) }, warm: true }) },
+}
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/client/command.ts:29-40](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/client/command.ts#L29-L40)
+**依据 3 · 源码核查**：[src/client/components/browserHelpers.ts:48-98](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/components/browserHelpers.ts#L48-L98)
 
-命令消费输入、打开当前会话弹层。
+列表按步骤序号选择有界窗口，搜索只枚举已取得的 requests。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（51行）</summary>
 
 ```text
-      onPick: (pick) => {
-        setPendingConsume(pick.session.sessionId, { kind: 'span', span: pick.span })
-        modalStoreOf(pick.session.sessionId).set(true)
-        return 'handled'
-      },
-      matchEnter: (session, line) => {
-        if (line !== LINE) return Promise.resolve(undefined)
-        setPendingConsume(session.sessionId, { kind: 'bare-token', token: LINE })
-        modalStoreOf(session.sessionId).set(true)
-        return Promise.resolve<'handled'>('handled')
-      },
-    }), 'dsh-context: /context command')
+export const STEP_PICK_MAX = 500
+
+export interface StepPickOption {
+  value: string
+  label: string
+}
+
+function stepMatches(option: StepPickOption, query: string): boolean {
+  return `${option.label} ${option.value}`.toLowerCase().includes(query)
+}
+
+export function stepPickOptionsOf(
+  requests: readonly RequestRecord[],
+  sel: 'live' | number,
+  seq: number | null,
+  live: StepPickOption,
+  optionOf: (request: RequestRecord) => StepPickOption,
+): StepPickOption[] {
+  const count = requests.length
+  let from = Math.max(0, count - STEP_PICK_MAX)
+  if (count > STEP_PICK_MAX) {
+    const newest = requests[from]
+    const selSeq = typeof sel === 'number' && (seq === null || seq < newest.seq) ? sel : null
+    if (selSeq !== null) {
+      let low = 0
+      let high = count - 1
+      let idx = count - 1
+      while (low <= high) {
+        const mid = (low + high) >> 1
+        if (requests[mid].seq >= selSeq) { idx = mid; high = mid - 1 } else low = mid + 1
+      }
+      from = Math.max(0, idx - (STEP_PICK_MAX >> 1))
+    }
+  }
+  return [live, ...requests.slice(from, from + STEP_PICK_MAX).map(optionOf).reverse()]
+}
+
+export function stepPickMatchesOf(
+  requests: readonly RequestRecord[],
+  query: string,
+  live: StepPickOption,
+  optionOf: (request: RequestRecord) => StepPickOption,
+): StepPickOption[] {
+  const q = query.trim().toLowerCase()
+  const out: StepPickOption[] = stepMatches(live, q) ? [live] : []
+  for (let i = requests.length - 1; i >= 0 && out.length < STEP_PICK_MAX; i--) {
+    const option = optionOf(requests[i])
+    if (stepMatches(option, q)) out.push(option)
+  }
+  return out
+}
 ```
 
 </details>
 
 #### 缺口
 
-- 诊断准确率和人工用时未比较。
-  **影响**：不能证明更容易定位膨胀来源。
-  **进一步探讨**：用已知哪一步造成大结果的会话比较两个流程。
+- 复杂实际会话下旧步骤的可检索比例未测。
+  **影响**：决定这一步能否代替手工翻原始日志。
+  **进一步探讨**：用前段、中段和尾段分别埋入长工具结果，在同一历史范围核对步骤和检索结果。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 历史明细从宿主取得的路径与失败边界是什么？
+### Q02 · 活动与离线会话事实怎样被投影、回放和按窗口复用？
 
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
+**研究主题**：功能与机制、依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-宿主由 bundle 挂载并要求 sessionProjections。发现已知宿主版本低于插件基线时注册降级 timeline、headers 与 activity 并提前退出。正常分支注册这三类投影和明细通道，Web 界面负责选择展示位置。明细 POST 需要 connection 与 sessions。会话仍活动时读取现有投影或明细镜像；离线会话走观察服务取得事件后折叠。冷读经过串行门，V8 堆占用达到阈值时跳过。缓存只有会话身份、观察版本及持久化服务匹配时才使用，观察租约在 finally 释放。无观察服务、投影未就绪或准入受阻都可能表现为返回空值，不能把空面板解读为会话没有上下文。堆阈值和条目上限用于控制工作范围，缺少在长历史与并发下的实际资源数字。
+Host 要求 sessionProjections。版本低于基线时挂 fallback 后提前返回，近期宿主才继续注册活动、头部、时间线和细读。明细连接从已活动的会话投影和镜像取结果，离线走有准入门的 observe 回放，缓存由会话 ID、观察修订及持久化服务身份组成。finally 释放观察租约。缺 session 或 observe 可能得到空响应，不能视作确实无上下文。
+
+客户端把明细按请求、节点、文件等部分求取，修订与已接受的版本一致才合并。切换窗口时清除该部分的版本命中，等待再拉。源码同时暴露一个待复现的竞态：旧窗口请求正在飞行时，新窗口会因为 in-flight 被跳过；旧响应回来只检查 generation 和 revision，再给该部分写当前版本，finally 仅在版本不同重拉。于是同一 revision 内快速切换窗口有可能让旧片段占住新需求，下一次修订才纠正。先把这种情况视为待验证的显示边界，不据此推定所有浏览器会表现异常。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:56-70](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/package.json#L56-L70)
+**依据 1 · 源码核查**：[src/host/index.ts:37-71](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/index.ts#L37-L71)
 
-宿主补丁和浏览器依赖。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-connection",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-settings",
-        "@deepseek-ai/dsh-client-ui-sidebar-right"
-      ],
-      "platform": "web"
-    },
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/host/index.ts:35-77](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/index.ts#L35-L77)
-
-启动、降级、注册投影与通道。
+完整和降级投影明确分支。
 
 <details>
-<summary>查看原文（43行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-export const name = 'dsh-context'
-
 export const inject = ['sessionProjections']
 
 export { Config } from './config'
@@ -380,99 +367,63 @@ export function apply(ctx: Context, config: Config): void {
   gate.retain('contextTimeline', ctx.sessionProjections.register(createContextTimelineDefinition(config, () => gate.live, pricing)))
   ctx.sessionProjections.register(createContextHeadersDefinition(name => attribution.ownerOf(name)))
   ctx.sessionProjections.register(createContextActivityDefinition())
-  watchTimelineRowSweep(ctx)
-  const cache = createOverviewCache()
-  const backfill = watchActivityBackfill(ctx, coldReads, undefined, { ownCache: cache, config })
-  watchSnapshotRoute(ctx, backfill)
-  watchOverviewRoute(ctx, pricing, backfill, { cache })
-  watchPromptInjection(ctx, config)
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/host/detail.ts:81-115](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/detail.ts#L81-L115)
+**依据 2 · 源码核查**：[src/host/facts.ts:257-308](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/facts.ts#L257-L308)
 
-明细路由、参数检查和活动会话分支。
+活动与观察回放分支，缓存键和租约释放。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（52行）</summary>
 
 ```text
-): DetailChannelGate {
-  const payloads = makeFoldCache<ColdPayload>(ctx, { maxEntries: PAYLOAD_CACHE_MAX, idleMs: options.idleSweepMs })
-  mountPostRoute({
-    ctx,
-    deps: ['connection', 'sessions'],
-    path: DETAIL_ROUTE,
-    label: 'dsh-context: detail route',
-    gate,
-    handler: (c) => {
-      const sessions = c.get('sessions') as SessionsHostFace | undefined
-      const getSession = typeof sessions?.get === 'function' ? sessions.get.bind(sessions) : undefined
-      if (getSession === undefined) return undefined
-
       return async (request: Request): Promise<Response> => {
-        payloads.touch()
+        stateCache.touch()
+        const getSession = ((): ((id: string) => unknown) | undefined => {
+          const sessions = c.get('sessions') as SessionsFace | undefined
+          return typeof sessions?.get === 'function' ? sessions.get.bind(sessions) : undefined
+        })()
+        const observe = observeOf(c)
         const read = await readBody(request)
         if (!read.ok) return read.response
-        const body = read.body
-        const sessionId = body !== null && typeof body === 'object'
-          ? (body as { sessionId?: unknown }).sessionId
-          : undefined
-        const headOnly = body !== null && typeof body === 'object' && (body as { head?: unknown }).head === true
-        if (typeof sessionId !== 'string' || sessionId === '') {
-          return failure('dsh-context/bad-request', 'missing sessionId')
-        }
+        const wanted = partsOf(read.body, caps)
+        if (wanted === null) return failure('dsh-context/bad-request', 'missing sessionId')
+        const wantedDetail = detailPartsRequested(wanted.parts)
         try {
-          const session = getSession(sessionId)
+          const session = getSession?.(wanted.sessionId)
           if (session !== undefined && session !== null) {
-            const state = gate.stateOf(session, 'contextTimeline') as TimelineState | undefined
-            if (state === undefined) return reply({ ok: true, value: null })
-            if (headOnly) return reply({ ok: true, value: headPayloadOf(state, cost) })
-            const detailState = await shadow.stateOf(sessionId)
-            if (detailState === null) return reply({ ok: true, value: null })
-            return reply({ ok: true, value: withDetailCost(cost, buildTimelineDetail(detailState, bounds)) })
+            const state = stateOfLive(session)
+            if (state === null || state === undefined) return reply({ ok: true, value: null })
+            const projections = c.get('sessionProjections') as StateProjectionsFace | undefined
+            const kernel = kernelOfLive(projections, session)
+            const needsDetail = wantedDetail.length > 0 || wanted.parts.has('series')
+            const detailState = needsDetail ? await liveDetailState(wanted.sessionId) : null
+            return reply({
+              ok: true,
+              value: valueOf(state as TimelineState, true, wanted, kernel, detailState, bounds.maxArchiveNodes, deps.cost),
+            })
           }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/host/detail.ts:116-150](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/detail.ts#L116-L150)
-
-观察、缓存匹配、事件折叠与释放。
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-          const observe = observeOf(ctx)
           if (observe === undefined) return reply({ ok: true, value: null })
           const value = await coldReads.admit(async () => {
-            const observation = await observe(sessionId, { projectionMode: 'none' })
+            const observation = await observe(wanted.sessionId, { projectionMode: 'none' })
             const release = leaseOf(observation)
             try {
-              const persistence = serviceIdentityOf(ctx.get('sessionPersistence'))
-              const revision = revisionOf(observation)
-              if (revision !== undefined) {
-                const hit = payloads.get(sessionId, cached => cached.revision === revision && cached.persistence === persistence)
-                if (hit !== undefined) {
-                  if (headOnly) {
-                    /* v8 ignore next 1 */
-                    return hit.value.head === undefined
-                      ? { rev: hit.value.rev }
-                      : { rev: hit.value.rev, head: withCost(cost, hit.value.head) }
-                  }
-                  return withDetailCost(cost, hit.value)
-                }
-              }
+              const persistence = serviceIdentityOf(c.get('sessionPersistence'))
               const events = asRecord(observation)?.events
               if (!Array.isArray(events)) return null
-              const state = (await foldLog(events, bounds)).state
-              if (headOnly) return headPayloadOf(state, cost)
-              const detail = buildTimelineDetail(state, bounds)
-              if (revision === undefined) return withDetailCost(cost, detail)
-              payloads.set(sessionId, { persistence, revision, value: detail })
-              return withDetailCost(cost, detail)
+              const revision = revisionOf(observation) ?? coldCursorOf(events)
+              const header = asRecord(observation)?.header
+              const cached = stateCache.get(wanted.sessionId, entry => entry.revision === revision && entry.persistence === persistence)
+              if (cached !== undefined) {
+                const kernel = kernelOfCold(c.get('sessionProjectionCache') as CachedSnapshotFace | undefined, header)
+                return valueOf(cached.state, false, wanted, kernel, cached.state, bounds.maxArchiveNodes, deps.cost)
+              }
+              const state = (await foldLog(events as SessionEvent[], bounds)).state
+              stateCache.set(wanted.sessionId, { persistence, revision, state })
+              const kernel = kernelOfCold(c.get('sessionProjectionCache') as CachedSnapshotFace | undefined, header)
+              return valueOf(state, false, wanted, kernel, state, bounds.maxArchiveNodes, deps.cost)
             } finally {
               release()
             }
@@ -484,196 +435,364 @@ export function apply(ctx: Context, config: Config): void {
 
 </details>
 
-**依据 5 · 源码核查**：[src/host/coldRead.ts:12-38](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/coldRead.ts#L12-L38)
+**依据 3 · 源码核查**：[src/client/timelineSource.ts:406-414](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/timelineSource.ts#L406-L414)
 
-V8 阈值和串行队列。
-
-<details>
-<summary>查看原文（27行）</summary>
+窗口改变时更新 wantedParts 和该部分修订。
 
 ```text
-const HIGH_WATER = 2 / 3
+  readonly ensurePart = (part: FactPart, window: FactWindow = {}): void => {
+    if (this.facts === undefined || this.factsUnavailable) return
+    const prev = this.wantedParts.get(part)
+    const same = prev !== undefined && sameWindow(prev, window)
+    if (same && this.partRev.get(part) === this.acceptedRev) return
+    this.wantedParts.set(part, window)
+    if (prev !== undefined && !same) this.partRev.delete(part)
+    this.fetchWantedParts()
+  }
+```
 
-function v8Reading(): HeapReading {
-  const stats = getHeapStatistics()
-  return { used: stats.used_heap_size, limit: stats.heap_size_limit }
-}
+**依据 4 · 源码核查**：[src/client/timelineSource.ts:570-576](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/timelineSource.ts#L570-L576)
 
-const noop = (): void => {}
+每部分并发请求被去重。
 
-export function makeColdReadGate(reading: () => HeapReading = v8Reading): ColdReadGate {
-  const clear = (): boolean => {
-    try {
-      const { used, limit } = reading()
-      if (!Number.isFinite(used) || !Number.isFinite(limit) || limit <= 0) return true
-      return used < limit * HIGH_WATER
-    } catch {
-      return true
+```text
+  private fetchWantedParts(): void {
+    const facts = this.facts
+    if (facts === undefined || this.detail === null || this.acceptedRev < 0 || this.factsUnavailable) return
+    for (const [part, window] of this.wantedParts) {
+      if (this.unavailableParts.has(part) || this.inflightParts.has(part) || this.partRev.get(part) === this.acceptedRev) continue
+      void this.fetchPart(facts, part, window)
     }
-  }
-  let tail: Promise<unknown> = Promise.resolve()
-  return {
-    admit<T>(read: () => Promise<T>): Promise<T | undefined> {
-      const run = tail.then(() => (clear() ? read() : undefined))
-      tail = run.then(noop, noop)
-      return run
-    },
-  }
+```
+
+**依据 5 · 源码核查**：[src/client/timelineSource.ts:617-660](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/timelineSource.ts#L617-L660)
+
+响应合并判断依赖 generation/revision，未校验当前窗口身份。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+  private async fetchPart(facts: FactsFetchers, part: FactPart, window: FactWindow): Promise<void> {
+    const generation = this.generation
+    const rev = this.acceptedRev
+    this.inflightParts.add(part)
+    this.emit()
+    try {
+      const read = await facts.part(part, window)
+      if (generation !== this.generation || this.acceptedRev !== rev) return
+      if (read === null) {
+        this.schedulePartRetry(part)
+        return
+      }
+      if (!('parts' in read)) {
+        this.unavailableParts.add(part)
+        this.dropPart(part)
+        return
+      }
+      if (read.rev !== rev) {
+        this.wantedRev = Math.max(this.wantedRev, read.rev)
+        this.schedule()
+        return
+      }
+      if (read.missing?.includes(part) === true) {
+        this.unavailableParts.add(part)
+        this.dropPart(part)
+        return
+      }
+      if (read.parts[part] === undefined) {
+        this.unavailableParts.add(part)
+        this.dropPart(part)
+        return
+      }
+      const merged = mergeFactsInto(this.detail as ContextTimelineDetail, read)
+      this.detail = merged
+      this.bytes = detailBytesOf(merged)
+      this.partRev.set(part, rev)
+      this.clearPartRetry(part)
+      this.onResize?.()
+    } catch {
+      if (generation === this.generation && this.acceptedRev === rev) this.schedulePartRetry(part)
+    } finally {
+      this.inflightParts.delete(part)
+      if (generation === this.generation && this.acceptedRev !== rev) this.fetchWantedParts()
+      this.emit()
 ```
 
 </details>
 
 #### 缺口
 
-- 未量化并行历史查询、堆占用和界面加载。
-  **影响**：缓存和阈值不能替代性能验收。
-  **进一步探讨**：在长短已知会话中注入重复历史请求并记录内存和等待。
+- 新的窗口切换竞态是否可从现有界面稳定触发未知。
+  **影响**：可能在同一资料修订错看旧片段，影响问题定位。
+  **进一步探讨**：延时第一个分片请求，同一 revision 切换增大窗口，检查后承载的尾部和是否有续发。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 哪些数据与提示词行为影响试用？
+### Q03 · Agent 注入标签和跨会话成本分别能归因到什么程度？
 
-**研究主题**：缺陷与关键质疑、效果与总成本、采用判断
+**研究主题**：缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-先用个人隔离 Web profile 和无敏感内容的会话，验证一笔已知的长工具结果。明细路由通过宿主 connection.fetch 注册，代表分支验证 sessionId 并进入会话服务。源码可确认这一挂载和查询路径，宿主如何给请求授权以及不同用户能否读取对方会话需要另查。成本视图使用目录价格估计费用，遇到无目录或不匹配项时保留未就绪或缺失信息，不能直接用于核账。
+Agent 标签只处理指定来源类型。会话引用读 references 标签，其他 Agent 来源按结构化 sender、当前记录的别名，及部分事件的正文摘要提取显示名，优先级由种类决定。有名字并不证明内容来源或身份不可伪造。状态添加新 alias 有 512 项上限，达到后忽略新键；已存在键仍可修正。工具名来源存在兼容差异时，应退回对应原始事件，而不直接依据可见标签决定由哪个插件或 Agent 负责。
 
-插件还有独立的提示词首尾配置，默认空。宿主 systemPrompt 服务提供所需方法时，非空文字在指定核心段落前后注册，且不做插值。诊断试用先保持空，避免同时改变模型收到的系统提示。环境配置和检查授权属于首次人力，持续有历史重建与页面资源，误读成本或误配提示词会增加排查。若出现跨会话数据不符、空明细或未预期的提示文字，移除对应配置或停用插件，再回到原生会话、原始日志及账单；实际耗时和资源未知。
+Overview 把窗口日期谓词传入用量与时间累加，明列 costSessions、usageSessions 和覆盖。costUsd 用目录 CostSource 聚合，缺数据可能只能给部分视图，服务也不知道实际账单折扣、缓存报价或计价账单的关账阶段。跨会话聚合适合挑选优先复核的高消耗会话，不能给财务对账盖章。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/host/postRoute.ts:61-71](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/postRoute.ts#L61-L71)
+**依据 1 · 源码核查**：[src/host/foldInjections.ts:44-96](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/foldInjections.ts#L44-L96)
 
-通过宿主连接注册及路由作用域。
+参考标签、结构化别名和正文模式参与 Agent 展示。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（53行）</summary>
 
 ```text
-export function mountPostRoute(mount: PostRouteMount): unknown {
-  const { ctx, deps, path, label, gate } = mount
-  return ctx.inject(deps, (c) => {
-    const fetch = mount.handler(c)
-    if (fetch === undefined) return
-    const connection = c.get('connection') as ConnectionHostFace | undefined
-    if (!registerPostRoute(c, connection, path, fetch, label)) return
-    if (gate === undefined) return
-    gate.live = true
-    return () => { gate.live = false }
-  })
+function textAgentOf(kind: string, content: unknown, summary: string | undefined): string | undefined {
+  if (kind === 'subagent-settled') {
+    const text = firstFullText(content)
+    const match = SETTLED_AGENT.exec(text) ?? (summary === undefined ? null : SETTLED_AGENT.exec(summary))
+    return match?.[1]
+  }
+  return kind === 'agent-message' ? RELAY_AGENT.exec(firstFullText(content))?.[1] : undefined
+}
+
+function referenceAgentOf(source: MessageSource): string | undefined {
+  const references = Array.isArray(source.references) ? source.references : []
+  const labels: string[] = []
+  for (const reference of references) {
+    const label = agentNameOf(reference?.label)
+    if (label === undefined) continue
+    if (typeof reference?.sessionId === 'string' && reference.sessionId === reference.label) continue
+    labels.push(label)
+  }
+  if (labels.length === 0) return undefined
+  return labels.length === 1 ? labels[0] : labels[0] + ' +' + String(labels.length - 1)
+}
+
+function senderIdOf(source: MessageSource): string | undefined {
+  if (typeof source.senderSessionId === 'string' && source.senderSessionId !== '') return source.senderSessionId
+  if (typeof source.senderId === 'string' && source.senderId !== '') return source.senderId
+  return undefined
+}
+
+function agentAliasOf(state: TimelineState, id: string | undefined): AgentAlias | undefined {
+  if (id === undefined) return undefined
+  const agents = state.agents
+  return agents !== undefined && Object.hasOwn(agents, id) ? agents[id] : undefined
+}
+
+export function agentOfInjection(source: MessageSource | null | undefined, content: unknown, state: TimelineState): string | undefined {
+  if (source === undefined || source === null) return undefined
+  const kind = typeof source.kind === 'string' ? source.kind : ''
+  if (!AGENT_SOURCE_KINDS.has(kind)) return undefined
+  if (kind === 'session-reference') return referenceAgentOf(source)
+  const senderId = senderIdOf(source)
+  const token = textAgentOf(kind, content, source.summary)
+  if (token !== undefined && token !== senderId) return agentNameOf(token)
+  const alias = agentAliasOf(state, senderId)
+  const aliasName = agentNameOf(alias?.catalogName)
+  if (aliasName !== undefined) return aliasName
+  if (kind === 'team-message') {
+    const sender = agentNameOf(source.senderName)
+    if (sender !== undefined && sender !== senderId) return sender
+  }
+  const member = agentNameOf(alias?.memberName)
+  if (member !== undefined) return member
+  return agentNameOf(alias?.catalogLabel)
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/host/detail.ts:94-117](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/detail.ts#L94-L117)
+**依据 2 · 源码核查**：[src/host/foldInjections.ts:121-142](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/foldInjections.ts#L121-L142)
 
-按 sessionId 进入代表查询路径。
+别名折叠有界，达到上限后新项不入状态。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（22行）</summary>
+
+```text
+function noteAgentAlias(st: TimelineState, id: string, alias: AgentAlias): boolean {
+  const agents = { ...(st.agents ?? {}) }
+  if (Object.hasOwn(agents, id)) {
+    agents[id] = { ...agents[id], ...alias }
+    st.agents = agents
+    return true
+  }
+  if (Object.keys(agents).length >= AGENT_ALIASES_MAX) return false
+  agents[id] = alias
+  st.agents = agents
+  return true
+}
+
+export function applyAgentAliasEvent(
+  state: TimelineState,
+  type: string,
+  data: Record<string, unknown> | undefined,
+): TimelineState | undefined {
+  const fact = agentAliasEvent(type, data)
+  if (fact === null) return undefined
+  const st = { ...state }
+  return noteAgentAlias(st, fact.id, fact.alias) ? st : undefined
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/host/overviewAggregate.ts:243-285](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/overviewAggregate.ts#L243-L285)
+
+按日过滤核出总量、已计价/有用量会话数和覆盖。
+
+<details>
+<summary>查看原文（43行）</summary>
+
+```text
+export function summaryOf(
+  allRows: readonly HostRow[],
+  rows: readonly HostRow[],
+  filters: Filters,
+  cost: CostSource,
+  coverage: BackfillCoverage,
+): OverviewSummary {
+  const admit = dayPredicate(filters)
+  const tokenParts = partsOf(rows, admit)
+  let usage: SessionCostUsage | null = null
+  let turns = 0
+  const windowTiming = { calls: 0, toolCalls: 0, toolsMs: 0, wallMs: 0 }
+  let costSessions = 0
+  let usageSessions = 0
+  let sessionsArchived = 0
+  for (const row of rows) {
+    const totals = activityTotalsOf(row.activity, admit)
+    usage = mergeCostUsage(usage, totals.usage)
+    turns += totals.turns
+    windowTiming.calls += totals.calls
+    windowTiming.toolCalls += totals.toolCalls
+    windowTiming.toolsMs += totals.toolsMs
+    windowTiming.wallMs += totals.wallMs
+    if (cost.complete(totals.usage)) costSessions++
+    if (totals.usage !== null) usageSessions++
+    if (row.archived) sessionsArchived++
+  }
+  const usageTotals = usage === null ? null : usageTotalsOf(usage)
+  return {
+    sessions: rows.length,
+    sessionsTotal: allRows.length,
+    sessionsArchived,
+    archivedScoped: sessionsArchived,
+    tokens: usageTotals?.total ?? 0,
+    turns,
+    costUsd: cost.usd(usage),
+    costSessions,
+    usageSessions,
+    cacheHit: cacheHitOf(usageTotals),
+    tokenParts,
+    timing: timingSumOf(rows),
+    windowTiming,
+    coverage,
+```
+
+</details>
+
+#### 缺口
+
+- 不同来源类型、别名冲突和中途回放的误归因率未知。
+  **影响**：标签误判会让优化动作落到无关调用。
+  **进一步探讨**：挑匿名的团队事件做已知身份标注，并用原始请求和实际账单对照覆盖。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 诊断试用有哪些运行、隐私和输出边界？
+
+**研究主题**：缺陷与关键质疑、依赖、兼容与流程、效果与总成本、采用判断
+
+#### 完整回答
+
+个人隔离 Web profile 中用非敏感会话先查一笔已知长工具结果。明细通过连接注册，能按 sessionId 取会话及历史。该 handler 展开的是查询路径，用户级隔离取决于宿主连接和部署。共享或代理环境中应先在不同用户之间确认会话权限再考虑放出上下文或文件记录。
+
+插件还有主动修改系统提示的单独能力。配置默认空串，宿主 systemPrompt 暴露所需 API 时才挂接。非空前后缀分别放在身份和部署 Persona 的相邻外侧，读活值且不插值。试用中留空，避免同时变更模型输入。关注诊断耗时、页面与历史回放资源、是否为额外配置承担排查人力。显示错位、明细空白或发现非预期提示内容时，先还原配置或停用插件；用原生界面、原始日志与账单复核。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/host/facts.ts:257-285](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/facts.ts#L257-L285)
+
+明细从宿主连接调用并按 sessionId 选择数据。
+
+<details>
+<summary>查看原文（29行）</summary>
 
 ```text
       return async (request: Request): Promise<Response> => {
-        payloads.touch()
+        stateCache.touch()
+        const getSession = ((): ((id: string) => unknown) | undefined => {
+          const sessions = c.get('sessions') as SessionsFace | undefined
+          return typeof sessions?.get === 'function' ? sessions.get.bind(sessions) : undefined
+        })()
+        const observe = observeOf(c)
         const read = await readBody(request)
         if (!read.ok) return read.response
-        const body = read.body
-        const sessionId = body !== null && typeof body === 'object'
-          ? (body as { sessionId?: unknown }).sessionId
-          : undefined
-        const headOnly = body !== null && typeof body === 'object' && (body as { head?: unknown }).head === true
-        if (typeof sessionId !== 'string' || sessionId === '') {
-          return failure('dsh-context/bad-request', 'missing sessionId')
-        }
+        const wanted = partsOf(read.body, caps)
+        if (wanted === null) return failure('dsh-context/bad-request', 'missing sessionId')
+        const wantedDetail = detailPartsRequested(wanted.parts)
         try {
-          const session = getSession(sessionId)
+          const session = getSession?.(wanted.sessionId)
           if (session !== undefined && session !== null) {
-            const state = gate.stateOf(session, 'contextTimeline') as TimelineState | undefined
-            if (state === undefined) return reply({ ok: true, value: null })
-            if (headOnly) return reply({ ok: true, value: headPayloadOf(state, cost) })
-            const detailState = await shadow.stateOf(sessionId)
-            if (detailState === null) return reply({ ok: true, value: null })
-            return reply({ ok: true, value: withDetailCost(cost, buildTimelineDetail(detailState, bounds)) })
+            const state = stateOfLive(session)
+            if (state === null || state === undefined) return reply({ ok: true, value: null })
+            const projections = c.get('sessionProjections') as StateProjectionsFace | undefined
+            const kernel = kernelOfLive(projections, session)
+            const needsDetail = wantedDetail.length > 0 || wanted.parts.has('series')
+            const detailState = needsDetail ? await liveDetailState(wanted.sessionId) : null
+            return reply({
+              ok: true,
+              value: valueOf(state as TimelineState, true, wanted, kernel, detailState, bounds.maxArchiveNodes, deps.cost),
+            })
           }
-          const observe = observeOf(ctx)
           if (observe === undefined) return reply({ ok: true, value: null })
+          const value = await coldReads.admit(async () => {
+            const observation = await observe(wanted.sessionId, { projectionMode: 'none' })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/host/cost.ts:38-73](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/cost.ts#L38-L73)
+**依据 2 · 源码核查**：[src/host/config.ts:47-52](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/config.ts#L47-L52)
 
-使用目录价格估算并记录缺失。
-
-<details>
-<summary>查看原文（36行）</summary>
+配置的提示词两端默认为空。
 
 ```text
-export function createCostSource(catalog: CatalogService): CostSource {
-  return {
-    ready(): boolean {
-      return catalog.book() !== null
-    },
-    read(usage: SessionCostUsage | null | undefined): SessionCostRead | undefined {
-      if (usage === null || usage === undefined) return undefined
-      catalog.ensure()
-      const book = catalog.book()
-      if (book === null) return { usd: null, ready: false }
-      const usd = calculateSessionCost(usage, book)
-      const faces: CostPriceFace[] = []
-      const misses: CostPriceMiss[] = []
-      for (const lookup of priceLookupsOf(usage, book)) {
-        if (lookup.face !== null) faces.push(faceOf(lookup.provider, lookup.model, lookup.face))
-        else misses.push(missOf(lookup.provider, lookup.model, lookup.miss))
-      }
-      return {
-        usd,
-        ready: true,
-        ...(faces.length === 0 ? {} : { faces }),
-        ...(misses.length === 0 ? {} : { misses }),
-      }
-    },
-    usd(usage: SessionCostUsage | null | undefined): number | null {
-      if (usage === null || usage === undefined) return null
-      catalog.ensure()
-      return calculateSessionCost(usage, catalog.book())
-    },
-    complete(usage: SessionCostUsage | null | undefined): boolean {
-      if (usage === null || usage === undefined) return false
-      catalog.ensure()
-      const book = catalog.book()
-      if (book === null) return false
-      const lookups = priceLookupsOf(usage, book)
-      return lookups.length > 0 && lookups.every(lookup => lookup.face !== null)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/host/config.ts:45-51](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/config.ts#L45-L51)
-
-提示词前后缀缺省为空。
-
-```text
-  insightsEntry: volatileField(z.union(['show', 'hide']).default('show').loose()),
-  defaultDurationCurve: volatileField(z.union(['show', 'hide']).default('show').loose()),
   overviewAutoSteps: volatileField(z.union(['100', '200', '300', 'off']).default('100').loose()),
-  defaultOverviewRange: volatileField(z.union(['today', '7d', '30d', 'all']).default('30d').loose()),
+  defaultOverviewRange: volatileField(z.union(['today', '7d', '30d']).default('30d').loose()),
   fleetTab: volatileField(z.union(['show', 'hide']).default('show').loose()),
   promptPrefix: volatileField(z.string().default('').loose()),
   promptSuffix: volatileField(z.string().default('').loose()),
+})
 ```
 
-**依据 5 · 源码核查**：[src/host/promptInjection.ts:26-53](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/promptInjection.ts#L26-L53)
+**依据 3 · 源码核查**：[src/host/promptInjection.ts:14-52](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/promptInjection.ts#L14-L52)
 
-空白处理、可选服务与首尾段落注册。
+以活配置读文本，注册前后两个固定位置的非插值段落。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
+function liveText(value: unknown): () => string {
+  if (value !== null && typeof value === 'object' && typeof (value as { get?: unknown }).get === 'function') {
+    const get = (value as { get: () => unknown }).get
+    return () => {
+      const text = get()
+      return typeof text === 'string' ? text : ''
+    }
+  }
+  const text = typeof value === 'string' ? value : ''
+  return () => text
+}
+
 function sectionText(read: () => string): (context: unknown) => string {
   return () => {
     const text = read()
@@ -701,83 +820,124 @@ export function watchPromptInjection(ctx: Context, config: Config): void {
       text: sectionText(liveText(config.promptSuffix)),
       interpolate: false,
     })
-  })
 ```
 
 </details>
 
 #### 缺口
 
-- 尚未独立验收不同身份和远程连接的明细访问边界。
-  **影响**：个人会话机制不足以支持共享部署的授权结论。
-  **进一步探讨**：用不同身份按会话 ID 分别测试活动、历史和不存在会话。
+- 宿主与代理的跨用户边界、长历史回放资源使用未验证。
+  **影响**：个人可控数据的试用逻辑不能扩张到共享实例。
+  **进一步探讨**：先用两个隔离账号测试可见范围，再用小历史和长历史分别监测堆与请求次数。
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 如何验证分项和明细能否更快找到膨胀来源？
+### Q05 · 额外归因能否缩短正确定位上下文来源所需时间？
 
-**研究主题**：新假设与验证
+**研究主题**：新假设与验证、效果与总成本
 
 #### 完整回答
 
-假设额外的时间线和分项可减少从压力告警到定位正确工具结果的时间。准备四份等量的会话回放，交错埋入大工具结果、长用户消息和一个记录不全的旧会话。让同一个人交叉使用原生压力加日志与插件分析两种流程，提交源事件、发生步骤和覆盖缺口。比较正确定位率、错误归因、诊断时间和复核耗时。若时间差来自直接猜测、错误归因上升，或历史明细经常缺失到妨碍复核，则不支持采用。试验保持提示词配置为空。
+假设把原生压力、候选步骤和可分别取回的事实并排呈现，会缩短正确定位耗时。用同一宿主版本准备四类回放：巨大工具结果、巨大用户消息、Agent 注入、观察缺部分历史。让同一批工程师交叉使用原生压力加日志与插件视图定位，控制任务顺序。合格答案要写源事件、会话与请求步号、重新核对日志的结果；缺失资料时明确表示无法判定。然后按合格数计算从告警到人工复核的总时间，失败和重开标签都计入。成本数据另对照实际计价覆盖，也要看复核用时和资源。
+
+如果节时仅来自过早采用错误标签、历史不足时无法判断，或切换视图的失败率掩掉收益，则不支持推广。这个试验保持主动提示词配置为空，也不先启用独立模型实验。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/client/sessionData.ts:13-21](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/client/sessionData.ts#L13-L21)
+**依据 1 · 源码核查**：[src/client/components/browserHelpers.ts:59-98](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/client/components/browserHelpers.ts#L59-L98)
 
-共同的原生压力和用量基线。
-
-```text
-export function useContextSession(props: SessionStandardProps): ContextSession {
-  const source = useTimelineSource(props)
-  return {
-    source,
-    data: source.data,
-    pressure: projectionOf(props, 'contextPressure', contextPressureOf),
-    breakdown: projectionOf(props, 'contextBreakdown', contextBreakdownOf),
-    usage: projectionOf(props, 'tokenUsage', tokenUsageOf),
-  }
-```
-
-**依据 2 · 源码核查**：[src/host/detail.ts:116-150](https://github.com/bowenliang123/dsh-context/blob/4d8fb8a6b8c9e5df4e11878d655fc8f6ba5a33ef/src/host/detail.ts#L116-L150)
-
-历史明细可能缺失，适合设反例。
+已实现按步骤范围和搜索查询，能定义比较步骤。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
-          const observe = observeOf(ctx)
+export function stepPickOptionsOf(
+  requests: readonly RequestRecord[],
+  sel: 'live' | number,
+  seq: number | null,
+  live: StepPickOption,
+  optionOf: (request: RequestRecord) => StepPickOption,
+): StepPickOption[] {
+  const count = requests.length
+  let from = Math.max(0, count - STEP_PICK_MAX)
+  if (count > STEP_PICK_MAX) {
+    const newest = requests[from]
+    const selSeq = typeof sel === 'number' && (seq === null || seq < newest.seq) ? sel : null
+    if (selSeq !== null) {
+      let low = 0
+      let high = count - 1
+      let idx = count - 1
+      while (low <= high) {
+        const mid = (low + high) >> 1
+        if (requests[mid].seq >= selSeq) { idx = mid; high = mid - 1 } else low = mid + 1
+      }
+      from = Math.max(0, idx - (STEP_PICK_MAX >> 1))
+    }
+  }
+  return [live, ...requests.slice(from, from + STEP_PICK_MAX).map(optionOf).reverse()]
+}
+
+export function stepPickMatchesOf(
+  requests: readonly RequestRecord[],
+  query: string,
+  live: StepPickOption,
+  optionOf: (request: RequestRecord) => StepPickOption,
+): StepPickOption[] {
+  const q = query.trim().toLowerCase()
+  const out: StepPickOption[] = stepMatches(live, q) ? [live] : []
+  for (let i = requests.length - 1; i >= 0 && out.length < STEP_PICK_MAX; i--) {
+    const option = optionOf(requests[i])
+    if (stepMatches(option, q)) out.push(option)
+  }
+  return out
+}
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/host/facts.ts:270-308](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/facts.ts#L270-L308)
+
+活动与历史的不同资料有效性可作为试验分层。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+          const session = getSession?.(wanted.sessionId)
+          if (session !== undefined && session !== null) {
+            const state = stateOfLive(session)
+            if (state === null || state === undefined) return reply({ ok: true, value: null })
+            const projections = c.get('sessionProjections') as StateProjectionsFace | undefined
+            const kernel = kernelOfLive(projections, session)
+            const needsDetail = wantedDetail.length > 0 || wanted.parts.has('series')
+            const detailState = needsDetail ? await liveDetailState(wanted.sessionId) : null
+            return reply({
+              ok: true,
+              value: valueOf(state as TimelineState, true, wanted, kernel, detailState, bounds.maxArchiveNodes, deps.cost),
+            })
+          }
           if (observe === undefined) return reply({ ok: true, value: null })
           const value = await coldReads.admit(async () => {
-            const observation = await observe(sessionId, { projectionMode: 'none' })
+            const observation = await observe(wanted.sessionId, { projectionMode: 'none' })
             const release = leaseOf(observation)
             try {
-              const persistence = serviceIdentityOf(ctx.get('sessionPersistence'))
-              const revision = revisionOf(observation)
-              if (revision !== undefined) {
-                const hit = payloads.get(sessionId, cached => cached.revision === revision && cached.persistence === persistence)
-                if (hit !== undefined) {
-                  if (headOnly) {
-                    /* v8 ignore next 1 */
-                    return hit.value.head === undefined
-                      ? { rev: hit.value.rev }
-                      : { rev: hit.value.rev, head: withCost(cost, hit.value.head) }
-                  }
-                  return withDetailCost(cost, hit.value)
-                }
-              }
+              const persistence = serviceIdentityOf(c.get('sessionPersistence'))
               const events = asRecord(observation)?.events
               if (!Array.isArray(events)) return null
-              const state = (await foldLog(events, bounds)).state
-              if (headOnly) return headPayloadOf(state, cost)
-              const detail = buildTimelineDetail(state, bounds)
-              if (revision === undefined) return withDetailCost(cost, detail)
-              payloads.set(sessionId, { persistence, revision, value: detail })
-              return withDetailCost(cost, detail)
+              const revision = revisionOf(observation) ?? coldCursorOf(events)
+              const header = asRecord(observation)?.header
+              const cached = stateCache.get(wanted.sessionId, entry => entry.revision === revision && entry.persistence === persistence)
+              if (cached !== undefined) {
+                const kernel = kernelOfCold(c.get('sessionProjectionCache') as CachedSnapshotFace | undefined, header)
+                return valueOf(cached.state, false, wanted, kernel, cached.state, bounds.maxArchiveNodes, deps.cost)
+              }
+              const state = (await foldLog(events as SessionEvent[], bounds)).state
+              stateCache.set(wanted.sessionId, { persistence, revision, state })
+              const kernel = kernelOfCold(c.get('sessionProjectionCache') as CachedSnapshotFace | undefined, header)
+              return valueOf(state, false, wanted, kernel, state, bounds.maxArchiveNodes, deps.cost)
             } finally {
               release()
             }
@@ -789,10 +949,41 @@ export function useContextSession(props: SessionStandardProps): ContextSession {
 
 </details>
 
+**依据 3 · 源码核查**：[src/host/foldInjections.ts:78-96](https://github.com/bowenliang123/dsh-context/blob/9e221195ac7c02cff9a21311dda6d61f50cf50d3/src/host/foldInjections.ts#L78-L96)
+
+可分析 Agent 标签与原始来源差异。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+export function agentOfInjection(source: MessageSource | null | undefined, content: unknown, state: TimelineState): string | undefined {
+  if (source === undefined || source === null) return undefined
+  const kind = typeof source.kind === 'string' ? source.kind : ''
+  if (!AGENT_SOURCE_KINDS.has(kind)) return undefined
+  if (kind === 'session-reference') return referenceAgentOf(source)
+  const senderId = senderIdOf(source)
+  const token = textAgentOf(kind, content, source.summary)
+  if (token !== undefined && token !== senderId) return agentNameOf(token)
+  const alias = agentAliasOf(state, senderId)
+  const aliasName = agentNameOf(alias?.catalogName)
+  if (aliasName !== undefined) return aliasName
+  if (kind === 'team-message') {
+    const sender = agentNameOf(source.senderName)
+    if (sender !== undefined && sender !== senderId) return sender
+  }
+  const member = agentNameOf(alias?.memberName)
+  if (member !== undefined) return member
+  return agentNameOf(alias?.catalogLabel)
+}
+```
+
+</details>
+
 #### 缺口
 
-- 未执行对照。
-  **影响**：不能把观察面板的结构换算成效率提升。
-  **进一步探讨**：对固定回放保存答案和用时，按已知事件逐份核对。
+- 插件和原生流程都没有同条件人时、误判率或合格率。
+  **影响**：现有证据只支持条件试用。
+  **进一步探讨**：以盲标注的回放和交叉顺序记录正确率与人工时。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

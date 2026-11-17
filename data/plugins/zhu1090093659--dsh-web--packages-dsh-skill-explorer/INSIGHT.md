@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer)
+源码版本：[5cdf871](https://github.com/zhu1090093659/dsh-web/tree/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10,353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 161,812](https://img.shields.io/static/v1?label=npm+30d&message=161%2C812&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer)
+[![GitHub ★ 10,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C442&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 160,579](https://img.shields.io/static/v1?label=npm+30d&message=160%2C579&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-client-ui-skill-explorer)
 <!-- END META -->
 
-> **功能**：在 DSH Web 面板中按来源浏览、查找和管理 Skill。
+> **功能**：在 DSH Web 按来源浏览、编辑、创建、导入或停用 Skill。
 
-> **亮点**：把工作区、来源优先级和可操作文件汇到同一个面板，减少逐目录核对。写入目标用重新扫描的路径约束，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 借扫描和 registry 优先级提供来源视图。[Q02](#research-q02) 再扫描可拒绝同名目标切换后的写入，明确区分普通文件和 provider 记录。
 
-> **主要限制**：隐藏提供者 Skill 后，宿主仍可能把它交给模型。预设内的 Skill 也可能未出现在面板中，见 [Q02](#research-q02)。
+> **主要限制**：[Q02](#research-q02) 面板记录可影响呈现，真实 provider 仍可能被模型读取。[Q03](#research-q03) 存在回环、配对及宿主连接准入路径，真实部署要查实际通过条件。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 跨项目管理同名 Skill 时，面板比手动改文件多解决什么？](#detail-section-11)
-  - [Q02 · 哪些开关影响 SKILL.md，哪些只影响面板？](#detail-section-12)
-  - [Q03 · 浏览器怎样接入文件写入，哪些风险由宿主接管？](#detail-section-13)
-  - [Q04 · 怎样试用一次可验收的跨工作区 Skill 管理？](#detail-section-14)
-  - [Q05 · 把开关作用域放在操作前能否减少误以为禁用了 Skill？](#detail-section-15)
+  - [Q01 · 如何定位多个工作区里的同名 Skill？](#detail-section-11)
+  - [Q02 · 普通开关和提供者开关分别改哪里？](#detail-section-12)
+  - [Q03 · 网站访问通过哪几个准入条件？](#detail-section-13)
+  - [Q04 · 一次修改怎样确认生效并能退回？](#detail-section-14)
+  - [Q05 · 如何证明标出开关作用范围能减少错判？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合维护多个 DSH 工作区、要辨认同名 Skill 来自何处的开发者，见 [Q01](#research-q01)。
+> **用途**：适合维护多个 DSH 工作区的开发者，查同名 Skill 的获选来源，再修改一条可恢复的项目文件。
 
-直接用编辑器定位 SKILL.md，并在目标会话检查官方 Skill 目录。只有一个目录时，这条路线已经清楚。
+[Q01](#research-q01) 手工打开文件与使用会话目录可以交叉定位。面板将多层来源放在同一处，使用时仍应核对真实目标会话。
 
 <a id="detail-section-3"></a>
 
@@ -52,61 +52,64 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| Skill 中心 | 按来源筛选与定位 | 仅覆盖扫描和注册表范围 |
-| 文件操作 | 变更或移入回收区 | 链接拒删 |
-| 批量导入 | 读入 Skill 定义 | 同级冲突跳过 |
+| 来源视图 | 理清项目、用户与注册表来源 | 预设作用域需要查目标会话 |
+| 文件编辑 | 修改普通 SKILL.md 或排他导入 | 依据当前项目与实际获选路径 |
+| 提供者开关 | 改变面板上的可调用状态 | 真实停用还须查提供者配置 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| DSH Web、宿主 skills 和 sessions | 必需 | 挂载和识别有效来源 | 面板或列表缺失 |
-| 可写工作区或用户目录 | 文件变更时 | 修改 Skill | 操作失败，保留原文件 |
+| DSH >=0.2.2-rc.3 与所需 Web 服务 | 必需 | 注册宿主路由与面板 | 旧宿主或注入不足会影响装载 |
+| 可读项目、用户目录和注册表 | 代表任务必需 | 获取当前有效 Skill | 读取不完整要从会话确认 |
+| 宿主连接认证或配对 | 远端按需 | 通过路由访问边界 | 路由还检查回环与其他有效入口 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 在测试项目保留副本 | 目标 Skill 可恢复 |
-| 核对 | 打开面板选工作区 | 名称和来源符合预期 |
-| 试用 | 切换后查看文件和会话 | 两者不符则恢复 |
+| 准备 | 核对独立项目、宿主与原 Skill 文件 | 记录项目根和当前会话来源 |
+| 修改 | 完成一次普通文件开关或编辑 | 文件路径及差异正确 |
+| 验收 | 在目标会话核对实际目录 | 不符时回到编辑器和原生目录 |
+| 退出 | 恢复原文件并移除试用配置 | 重查会话与网络，区分面板状态 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 包和本地环境 | 准备测试文件 | 费用与耗时未量化 |
-| 持续 | 本地文件和面板 | 核对来源 | 多预设需查看官方目录 |
-| 失败恢复 | 回收区及备份 | 回滚文件或调整提供者 | 同路径并发未测 |
+| 首次使用 | 软件与环境资源未知 | 核对版本、项目根和可撤回文件 | 远端认证额外核查 |
+| 持续使用 | 扫描耗用未知 | 比对同名来源、会话上下文 | 未测减少的切换次数 |
+| 失败恢复 | 重载耗用未知 | 回查冲突与缓存并恢复文件 | 同路径并发仍应独立确认 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 来源定位 | 扫描和注册表合并 | 预设覆盖率 |
-| 变更 | 文件和面板分开写 | 目标会话刷新时序 |
+| 来源定位 | 扫描与 registry 按层级合并 | 预设下的实际发现和节时 |
+| 真实编辑 | 对普通文件执行防陈旧路径的写入 | 外部并发和加载时机 |
+| 提供者开关 | 面板保存独立状态 | 会话真实权限仍需查提供者 |
 
-> **思考**：隐藏提供者 Skill 后，宿主仍可能把它交给模型。预设内的 Skill 也可能未出现在面板中，见 [Q02](#research-q02)。
+> **思考**：[Q02](#research-q02) 面板记录可影响呈现，真实 provider 仍可能被模型读取。[Q03](#research-q03) 存在回环、配对及宿主连接准入路径，真实部署要查实际通过条件。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把工作区、来源优先级和可操作文件汇到同一个面板，减少逐目录核对。写入目标用重新扫描的路径约束，见 [Q01](#research-q01) 和 [Q02](#research-q02)。
+> **亮点**：[Q01](#research-q01) 借扫描和 registry 优先级提供来源视图。[Q02](#research-q02) 再扫描可拒绝同名目标切换后的写入，明确区分普通文件和 provider 记录。
 
-优先级合并、陈旧目标拒绝和排他导入解决不同冲突。路径校验不能说明同路径内容未被并发修改，见 [Q02](#research-q02)。
+[Q02](#research-q02) 使用重新扫描及排他创建分别处理陈旧目标和覆盖冲突。[Q03](#research-q03) 可选宿主认证通过作用域取得子服务，其他准入仍按原分支判断。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-隐藏提供者 Skill 后，宿主仍可能把它交给模型。预设内的 Skill 也可能未出现在面板中，见 [Q02](#research-q02)。
+[Q02](#research-q02) 面板记录可影响呈现，真实 provider 仍可能被模型读取。[Q03](#research-q03) 存在回环、配对及宿主连接准入路径，真实部署要查实际通过条件。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-在独立工作区用一条可回退的普通 Skill 核对来源、文件变更和目标会话；发现三者不符时回到编辑器和官方目录，见 [Q04](#research-q04)。
+[Q04](#research-q04) 仅用一条可恢复的普通项目 Skill 在隔离环境试用。先核对项目与文件，再检查写入和目标会话。出现不一致时撤回文件并回到编辑器与原生会话目录。
 
 <a id="detail-section-7"></a>
 
@@ -114,18 +117,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持工作区与来源浏览和管理。目标会话可调用范围及部署权限需要宿主复核。
+固定源码验证了来源聚合、真实文件修改和走不同语义的提供者开关。连接桥、已发布产物与实际会话效果待验证。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-skill-explorer/README.md、packages/dsh-skill-explorer/src/collect.ts、packages/dsh-skill-explorer/src/routes.ts、packages/dsh-skill-explorer/package.json、packages/dsh-skill-explorer/cordis.patch.yml、packages/dsh-skill-explorer/src/index.ts、packages/dsh-skill-explorer/src/client/index.ts、packages/dsh-skill-explorer/src/access.ts、packages/dsh-skill-explorer/src/import.ts 及固定范围 inventory；组件：packages/dsh-skill-explorer。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-skill-explorer/src/collect.ts、packages/dsh-skill-explorer/README.md、packages/dsh-skill-explorer/src/routes.ts、packages/dsh-skill-explorer/src/import.ts、packages/dsh-skill-explorer/package.json、packages/dsh-skill-explorer/cordis.patch.yml、packages/dsh-skill-explorer/src/index.ts、packages/dsh-skill-explorer/src/access.ts、packages/dsh-skill-explorer/src/client/index.ts、packages/dsh-skill-explorer/src/client/telemetry.ts 及固定范围 inventory；组件：packages/dsh-skill-explorer。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核对 Web 注册、来源合并、开关、导入和访问边界；未实测配对、预设范围和部署。
-- 下一步：两工作区放同名 Skill 并使用不同预设，分别查看面板、源文件及官方会话目录，然后恢复文件。
+- 边界：核查固定子包的扫描、写入、会话目录、宿主连接桥、心跳和代表性导入。未执行目标及实际宿主、远端与打包产物。
+- 下一步：[Q05](#research-q05) 在同宿主、同项目与预设分别对照文件变化、面板状态和实际会话目录。另查真实网络路径和准入。
 
 **分析版本**
 
 - **仓库**：[zhu1090093659/dsh-web](https://github.com/zhu1090093659/dsh-web)
-- **版本号**：0.4.16（[固定提交 971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1)）
-- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.19（[固定提交 5cdf871](https://github.com/zhu1090093659/dsh-web/tree/5cdf8717475b6cbf85604f3c5428f332416c978b)）
+- **版本日期**：2026-11-17（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -133,9 +136,9 @@
 
 <a id="innovation"></a>
 
-在开关前后显示写入对象与生效范围，观察是否能减少把面板隐藏当成会话禁用，见 [Q05](#research-q05)。
+[Q05](#research-q05) 将作用范围、写入对象和会话回读并列提示，用同名、预设和提供者反例比较误停用。
 
-两工作区放同名 Skill 并使用不同预设，分别查看面板、源文件及官方会话目录，然后恢复文件。
+[Q05](#research-q05) 在同宿主、同项目与预设分别对照文件变化、面板状态和实际会话目录。另查真实网络路径和准入。
 
 <a id="detail-section-9"></a>
 
@@ -149,79 +152,71 @@
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
 | .md | source | 3 | 481 | — | — | 6455 |
-| .ts | source | 23 | 3945 | 2419 | 1284 | — |
+| .ts | source | 23 | 4070 | 2498 | 1328 | — |
 | .tsx | source | 6 | 1148 | 886 | 201 | — |
-| .ts | test | 16 | 4168 | 3046 | 676 | — |
+| .ts | test | 16 | 4484 | 3303 | 706 | — |
 | .tsx | test | 2 | 1026 | 780 | 159 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 156](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=156&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
+[![Issue 未关闭 3](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=3&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 152](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=152&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
 
 
 
-统计日期：2026-11-12。
+统计日期：2026-11-17。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Skill Explorer 能否帮助多项目用户找到生效的 Skill，并让用户分辨文件变更与面板显示？
+**插件研究总目标**：多工作区里如何找对并修改目标 Skill，面板状态和真实会话可调用性各能证明什么？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 跨项目管理同名 Skill 时，面板比手动改文件多解决什么？
+### Q01 · 如何定位多个工作区里的同名 Skill？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-频繁维护项目、用户和插件来源 Skill 的 DSH 用户，可以按工作区观察同名项的有效来源。源码把文件扫描和注册表快照合并，以来源 rank 处理重复，也保留显式调用标记。相比手动遍历目录，能在一处看到不同来源并复用工作区上下文。官方 Skill 工具才说明会话能加载什么。快照未带预设查看范围，预设专属 Skill 可能缺席，因此用户要用目标会话核对。
+适合在多个项目维护同名 SKILL.md、要找出当前面板为什么选中一条的开发者。服务扫描当前及其他有效项目的 .dsh 和 .agents、用户根以及自定义路径，再按各 cwd 查全局 registry。低排名序号的声明可替换弱来源，等序位可补描述和调用元数据。注册表失败时仍返回文件扫描结果，但以 complete 区分缺项。相对手工逐目录打开，面板提供同一查找入口和来源。会话实际能加载什么还受预设作用域影响，作者明确把仅预设内的 provider 列为范围外。合格任务要在编辑器及真实目标会话都核对来源。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-skill-explorer/README.md:20-37](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L20-L37)
+**依据 1 · 源码核查**：[packages/dsh-skill-explorer/src/collect.ts:492-525](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/collect.ts#L492-L525)
 
-作者介绍面板与来源分组。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-## What it does
-
-- **Sidebar row** "Skill Center" opens a native center-column page — a row in
-  the shell's own panel list, beside Plugins, Schedule and the task board —
-  with a tab bar. The row opens the page, and opening any session (or a new
-  chat) returns the center column to the conversation, exactly like the shell's
-  own Plugins and Schedule pages; the page carries no back control of its own.
-- **Skills tab**: skills grouped by source (system bundled / project
-  `.dsh/skills` / project `.agents/skills` / custom directories / user
-  `~/.dsh/skills` / user `~/.agents/skills` / runtime registered), with a
-  search box that filters by name or description as you type (name hits listed
-  first; Escape clears it) and stacks with the workspace picker. Each row shows
-  description, when-to-use, invocation marks, an enable/disable switch
-  (rewrites `disable-model-invocation` in the SKILL.md frontmatter,
-  hot-refreshed by the model catalog; a plugin-provided file has no such path,
-  so its switch is recorded in the panel's own store instead), a duplicate
-  action (a copy of the skill as a starting point in the create form), an edit
-  action and a delete button
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/collect.ts:514-554](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/collect.ts#L514-L554)
-
-注册表快照覆盖范围、优先级及不完整标记。
+项目与用户扫描和注册表快照。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（34行）</summary>
 
 ```text
+export async function collectSkills(options: CollectOptions): Promise<CollectResult> {
+  const { cwd, customSkillDirs, dshHome, agentsHome, registry } = options
+  const byName = new Map<string, SkillEntry>()
+  const activeProjectRoot = findProjectRoot(cwd)
+  const roots = new Set<string>(options.projectRoots !== undefined && options.projectRoots.length > 0 ? [activeProjectRoot, ...options.projectRoots] : [activeProjectRoot])
+  // Each root scans independently, in parallel (Map writes are atomic under the single thread).
+  const scanTasks: Array<Promise<void>> = []
+  for (const root of roots) {
+    const isActive = root === activeProjectRoot || root === cwd
+    const wsInfo = {
+      root,
+      name: basename(root) || root,
+      active: isActive,
+    }
+    scanTasks.push(scanSkillRoot(join(root, '.dsh', 'skills'), 'project-dsh', byName, wsInfo))
+    scanTasks.push(scanSkillRoot(join(root, '.agents', 'skills'), 'project-agents', byName, wsInfo))
+  }
+  for (const dir of normalizeSkillRoots(customSkillDirs ?? [])) scanTasks.push(scanSkillRoot(dir, 'custom', byName))
+  scanTasks.push(scanSkillRoot(join(dshHome, 'skills'), 'user-dsh', byName, undefined, true))
+  scanTasks.push(scanSkillRoot(join(agentsHome, 'skills'), 'user-agents', byName))
+  await Promise.all(scanTasks)
+
   // Registry supplement: same-name skills get whenToUse / invocation flags
   // filled in; registry-only skills (bundled / runtime) join as-is.
   // Query the registry for primary cwd and any other active project roots so
@@ -234,6 +229,18 @@
       if (snapshot.complete !== true) complete = false
       for (const skill of snapshot.skills) {
         const existing = byName.get(skill.name)
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/collect.ts:526-560](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/collect.ts#L526-L560)
+
+按相对优先级合并并保留不完整标志。
+
+<details>
+<summary>查看原文（35行）</summary>
+
+```text
         const serialized = serializeRegistry(skill)
         if (existing === undefined) {
           byName.set(skill.name, serialized)
@@ -263,22 +270,24 @@
       // Registry unavailable: the filesystem result still stands.
       complete = false
     }
+  }
+  // The panel's own provider-skill switches close the collection: a row the
+  // user switched off reads as not model invocable here, exactly like a
+  // skill whose own frontmatter disables model invocation.
+  applyProviderToggles(byName.values(), options.providerDisabledSkills ?? [])
+  return { skills: [...byName.values()], complete }
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[packages/dsh-skill-explorer/README.md:194-206](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L194-L206)
+**依据 3 · 作者声明**：[packages/dsh-skill-explorer/README.md:198-211](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/README.md#L198-L211)
 
-作者说明预设范围限制与官方目录对照。
+作者说明作用域与提供者开关边界。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
-- Frontmatter parsing is a lightweight zero-dependency implementation
-  (block scalars, booleans, input nested block); exotic YAML features are not
-  supported — the official dsh-skill-filesystem provider remains the
-  authoritative parser.
 - The panel covers the filesystem roots it scans plus the global layer of the
   `ctx.skills` registry (bundled and runtime entries). `customSkillDirs`
   declared on a host-plane `skill-filesystem` row are scanned, because the
@@ -288,471 +297,99 @@
   viewing scope. A skill absent from the panel is therefore not necessarily
   absent from the model: the official `skill` tool catalog is the authority on
   what a session can load.
-```
-
-</details>
-
-#### 缺口
-
-- 预设限定和同名项的面板覆盖率未经宿主对照
-  **影响**：无法把面板清单当可调用全集
-  **进一步探讨**：在两个不同预设的会话核同名文件与官方目录
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 哪些开关影响 SKILL.md，哪些只影响面板？
-
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-普通文件开关按名称和预期路径重新扫描，路径不符返回 409，通过后写入 disable-model-invocation。插件提供的文件走另一条路由，禁用前按提供者和名称复核，之后修改面板开关记录。重新启用只删记录，即使提供者已卸载也可清理。这个开关能改变面板的调用标记，不能从代码推断宿主会撤下工具。相同路径校验能挡住同名路径替换，源码片段没有用文件内容摘要校验同路径并发改动。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:217-234](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L217-L234)
-
-以重新扫描的名称和路径拒绝陈旧项。
-
-<details>
-<summary>查看原文（18行）</summary>
-
-```text
-  /** Resolve the exact file the panel showed, rejecting stale same-name fallbacks. */
-  const resolveScannedSkill = async (
-    name: string,
-    expectedPath: string,
-    cwd: string,
-    res: ServerResponse,
-  ): Promise<(SkillEntry & { path: string }) | undefined> => {
-    const skill = await findSkill(name, cwd)
-    if (skill?.path === undefined) {
-      writeJson(res, 404, { error: `skill ${name} has no editable file` })
-      return undefined
-    }
-    if (skill.path !== expectedPath) {
-      writeJson(res, 409, { error: `skill ${name} changed since the panel loaded; refresh and retry` })
-      return undefined
-    }
-    return skill as SkillEntry & { path: string }
-  }
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:296-318](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L296-L318)
-
-普通文件写入调用标记。
-
-<details>
-<summary>查看原文（23行）</summary>
-
-```text
-          const body = await readJsonBody(req, { maxBytes: 128 * 1024, objectOnly: true })
-          if (body === null) {
-            writeJson(res, 400, { error: 'invalid JSON body' })
-            return
-          }
-          const payload = body as Record<string, unknown>
-          const { name, path, enabled } = payload
-          if (typeof name !== 'string' || !isSkillName(name) || typeof path !== 'string' || path.trim() === '' || typeof enabled !== 'boolean') {
-            writeJson(res, 400, { error: 'expected { name, path, enabled }' })
-            return
-          }
-          // The client path is only an identity claim: a fresh scan must
-          // resolve the same effective skill before any file is touched.
-          const skill = await resolveScannedSkill(name, path, panelCwd(), res)
-          if (skill === undefined) return
-          // Disabled = disable-model-invocation: true; enabled = false.
-          const frontmatter = setFrontmatterField(skill.path, 'disable-model-invocation', enabled ? false : true)
-          writeJson(res, 200, {
-            name,
-            enabled: frontmatter.disableModelInvocation !== true,
-            modelInvocable: frontmatter.disableModelInvocation !== true,
-            path: skill.path,
-          })
-```
-
-</details>
-
-**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:337-366](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L337-L366)
-
-提供者开关写面板记录。
-
-<details>
-<summary>查看原文（30行）</summary>
-
-```text
-          const { name, provider, enabled } = payload
-          if (typeof name !== 'string' || typeof enabled !== 'boolean' || (provider !== undefined && typeof provider !== 'string')) {
-            writeJson(res, 400, { error: 'expected { name, provider, enabled }' })
-            return
-          }
-          const identity = providerSkillIdentity(name, provider)
-          if (identity === undefined) {
-            writeJson(res, 400, { error: 'name must be kebab-case (lowercase letters/digits first) and provider a short provider id' })
-            return
-          }
-          if (enabled) {
-            // Enabling only ever drops a record, so it stays allowed for a
-            // skill the panel no longer lists: a plugin can be uninstalled
-            // while its record is still stored, and that record must remain
-            // removable. Nothing is written when it is already absent.
-            await setProviderSkillEnabled(dshHome, identity, true)
-            writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: false })
-            return
-          }
-          // Disabling creates a record the panel will honor from the next list
-          // on, so it must address a skill a fresh collection still lists as
-          // plugin-provided — the same "only what the panel showed" rule the
-          // file write routes follow, here with the identity instead of a path.
-          const skill = await findProviderSkill(identity, panelCwd())
-          if (skill === undefined) {
-            writeJson(res, 404, { error: `skill ${identity.name} is not a plugin-provided skill with a local file` })
-            return
-          }
-          await setProviderSkillEnabled(dshHome, identity, false)
-          writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: true })
-```
-
-</details>
-
-**依据 4 · 作者声明**：[packages/dsh-skill-explorer/README.md:207-216](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L207-L216)
-
-作者说明模型仍可收到插件 Skill 及符号链接边界。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
 - The switch on a **"Provided by plugin"** row is a panel-local view
   decision: it changes what this panel lists as invocable, not what the host
   registry loads, so the model still receives the skill. Taking such a skill
   away from the model for real means removing or disabling it where its
   provider gets it.
-- Linked skills cannot be deleted (see the security model); enable/disable works
-  normally on them (rewriting the target's `SKILL.md` frontmatter). Both
-  directory and single-file links list normally; a single-file link (pointing
-  at one `.md`) is replaced by a plain file during the atomic rewrite — the link
-  is not kept and the target file is left untouched.
 ```
 
 </details>
 
 #### 缺口
 
-- 同路径并发编辑与宿主重新扫描顺序未验证
-  **影响**：面板保存成功后仍可能与目标会话不同
-  **进一步探讨**：并行编辑同一测试文件，并核对目标会话的调用目录
+- 缺实际多预设运行。
+  **影响**：面板缺行不能代表真实会话找不到。
+  **进一步探讨**：对同名项目和预设条目比较面板与会话目录。
 
-<a id="research-q03"></a>
+<a id="research-q02"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-12"></a>
 
-### Q03 · 浏览器怎样接入文件写入，哪些风险由宿主接管？
+### Q02 · 普通开关和提供者开关分别改哪里？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-补丁挂载包，宿主依赖 webServer、skills、sessions，浏览器另依赖槽位和界面服务。HTTP 访问允许宿主连接服务接受的请求，否则转配对或回环判断。错误文案写 loopback-only，但不能用文案证明只接受本机。普通写目标需重新扫描，链接文件拒绝删除，普通删除移到回收区。导入发现同名同优先级或更强来源时跳过，写入使用排他创建；这控制覆盖风险，导入内容仍会成为可用的 Skill，需先人工审阅可信度。
+普通开关在当下查一次工作区扫描，只有请求的路径和此时同名获选文件一致才写 disable-model-invocation。缺可编辑文件返回未找到，陈旧路径返回冲突。这个比较限定目标文件身份，未比较文件内容哈希或外部并发变更。提供者开关将 provider 与 name 存进面板记录，关闭暂时改变面板的可调用投影；真实宿主仍可将它提供给模型，要从其供应配置撤回。写入后尽量失效宿主与预设缓存并提示目录变化，缓存读取或失效报错不会回滚已写的文件。导入沿当前工作区来检查遮挡并选择目标根，写入采用排他创建。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-skill-explorer/package.json:23-48](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/package.json#L23-L48)
+**依据 1 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:195-243](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L195-L243)
 
-声明 Web 面与宿主最低版本。
+工作区定位、重新扫描与缓存失效。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（49行）</summary>
 
 ```text
-  "dsh": {
-    "engines": {
-      "dsh": ">=0.2.2-rc.1"
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-renderer",
-        "@deepseek-ai/dsh-client-ui-layout"
-      ],
-      "platform": "web"
+  const panelCwd = (override?: string): string =>
+    (override !== undefined && override.trim() !== '' ? override : undefined)
+    ?? safeSessionCwds()[0]
+    ?? DEFAULT_CWD()
+
+  /** Find a skill by name from a fresh collection pass (trusts scanned paths only). */
+  const findSkill = async (name: string, cwd: string): Promise<SkillEntry | undefined> => {
+    const { skills } = await collectSkills(await collectOptions(cwd))
+    return skills.find((candidate) => candidate.name === name)
+  }
+
+  /**
+   * Drop host and preset-scoped skill registry caches and signal the client
+   * slash-menu cache after any disk write commits (#2041). Never emits session
+   * events or touches session history.
+   */
+  const notifySkillCatalogChanged = (): void => {
+    const skillTargets = new Set<unknown>()
+    try {
+      const liveSkills = (ctx as unknown as {
+        get?(name: string, strict?: boolean): unknown
+      }).get?.('skills', false) ?? (ctx as unknown as { skills?: unknown }).skills ?? registry
+      if (liveSkills !== undefined && liveSkills !== null) skillTargets.add(liveSkills)
+    } catch {
+      // Cache lookup stays best-effort after the skill file mutation succeeded.
     }
-  },
-  "scripts": {
-    "build": "tsc -b tsconfig.build.json && tsdown",
-    "prepare": "tsdown",
-    "watch": "tsdown --watch",
-    "test": "vitest run",
-    "typecheck": "tsgo --noEmit"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/dsh": ">=0.2.2-rc.1",
-    "react": "^18.2.0"
-```
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-skill-explorer/cordis.patch.yml:5-7](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/cordis.patch.yml#L5-L7)
-
-补丁插入实际入口。
-
-```text
-- insert:
-    - id: ui-skill-explorer
-      name: '@linxin666/dsh-client-ui-skill-explorer'
-```
-
-**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/index.ts:103-128](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/index.ts#L103-L128)
-
-组装依赖并注册路由。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-  }
-
-  const routes = makeRoutes(ctx, {
-    dshHome,
-    agentsHome,
-    customSkillDirs,
-    registry: skillCtx.skills,
-    activeSessionCwds,
-    logger: { warn: (error: unknown) => ctx.logger.warn(error) },
-  })
-
-  ctx.effect(() => {
-    const disposers = routes.map((route) => ctx.webServer.register(route))
-    return () => {
-      for (const dispose of disposers) dispose()
-    }
-  }, 'skill-explorer: routes')
-}
-
-/**
- * Single-instance guard shared by the plugin family: the aggregate bundle
- * (dsh-web-all) and a standalone install of this package can coexist in
- * one profile, so the second host apply must be a no-op instead of
- * re-registering the same routes and failing the boot.
- */
-export const apply = mountOnce('@linxin666/dsh-client-ui-skill-explorer', applyImpl)
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/dsh-skill-explorer/src/client/index.ts:72-91](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/client/index.ts#L72-L91)
-
-注册面板。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  // issued before the service settles still lands once it does, and the face
-  // throws by contract before the layout root entry mounts, which the
-  // controller tolerates.
-  const controller = new PanelController({
-    panel: {
-      select: panelId => {
-        const layout = (ctx as unknown as { get?(name: string): unknown }).get?.('layout') as { selectPanel?: (id: string | null) => void } | undefined
-        layout?.selectPanel?.(panelId)
-      },
-    },
-  })
-  const disposers: Array<() => void> = []
-  try {
-    disposers.push(registerSkillExplorerPanel(ctx, controller, api))
-    // The layout's panel selection is reconciled back into the controller, so
-    // the panel follows the user clicking another panel row.
-    const layoutFace = (ctx as unknown as { get?(name: string): unknown }).get?.('layout') as { panelInfo?: { subscribe(listener: () => void): () => void; getSnapshot(): { activePanelId: unknown } } } | undefined
-    if (layoutFace?.panelInfo !== undefined) {
-      const sync = (): void => {
-        const active = layoutFace.panelInfo!.getSnapshot().activePanelId
-```
-
-</details>
-
-**依据 5 · 源码核查**：[packages/dsh-skill-explorer/src/access.ts:23-47](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/access.ts#L23-L47)
-
-宿主连接服务优先，另有配对或回环判断。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-function resolveConnection(ctx: Context): HostConnectionService | undefined {
-  try {
-    const candidate = typeof ctx.get === 'function'
-      ? (ctx.get('connection', false) ?? ctx.get('connection'))
-      : (ctx as { connection?: HostConnectionService }).connection
-    return candidate !== undefined && candidate !== null && typeof candidate.requestRejection === 'function'
-      ? candidate
-      : undefined
-  } catch {
-    return undefined
-  }
-}
-
-/**
- * Whether this request may enter any /api/dsh-skill-explorer route.
- * @param ctx - host context; may expose remoteWebUiPairing or connection.
- * @param request - the incoming HTTP request.
- * @returns true for loopback, a live paired-device cookie, or an admitted host connection.
- */
-export function isSkillExplorerAllowed(ctx: Context, request: IncomingMessage): boolean {
-  const connection = resolveConnection(ctx)
-  if (connection !== undefined && connection.requestRejection?.(request) === undefined) {
-    return true
-  }
-  return isPairedOrLoopbackAllowed(ctx, request)
-```
-
-</details>
-
-**依据 6 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:538-548](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L538-L548)
-
-链接拒删，普通文件移回收区。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-          const skill = await resolveScannedSkill(name, path, panelCwd(), res)
-          if (skill === undefined) return
-          // A linked skill lives behind a symlink (mount-of-intent content, not
-          // created under this root). Deleting it would move the target's real
-          // SKILL.md out of place, escaping this skill root — refuse deletion.
-          if (skill.linked === true) {
-            writeJson(res, 400, { error: `skill ${name} is a linked skill and cannot be deleted` })
-            return
+    try {
+      const store = (ctx as unknown as {
+        reflect?: { store?: Record<symbol, { name?: string; value?: unknown }> }
+      }).reflect?.store
+      if (store !== undefined && store !== null) {
+        for (const sym of Object.getOwnPropertySymbols(store)) {
+          const entry = store[sym]
+          if (entry?.name === 'skills' && entry.value !== undefined && entry.value !== null) {
+            skillTargets.add(entry.value)
           }
-          const moved = await trashSkillFile(skill.path)
-          writeJson(res, 200, { ok: true, name, moved })
-```
-
-</details>
-
-**依据 7 · 源码核查**：[packages/dsh-skill-explorer/src/import.ts:343-367](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/import.ts#L343-L367)
-
-拒绝重复或被遮蔽名称。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  const targetRank = rankOf(targetLevel)
-  const byName = new Map(existing.map(skill => [skill.name, skill]))
-  const seen = new Set<string>()
-  const plan: ImportPlanItem[] = []
-  for (const candidate of candidates) {
-    if (seen.has(candidate.name)) {
-      plan.push({ candidate, decision: 'skip', reason: 'duplicate' })
-      continue
-    }
-    seen.add(candidate.name)
-    const current = byName.get(candidate.name)
-    if (current !== undefined) {
-      const currentRank = rankOf(current.level)
-      if (currentRank < targetRank) {
-        plan.push({ candidate, decision: 'skip', reason: 'shadowed' })
-        continue
+        }
       }
-      if (currentRank === targetRank) {
-        plan.push({ candidate, decision: 'skip', reason: 'exists' })
-        continue
+    } catch {
+      // Preset-scoped cache discovery stays best-effort.
+    }
+    for (const target of skillTargets) {
+      try {
+        ;(target as { invalidateCache?(): void }).invalidateCache?.()
+      } catch {
+        // Cache invalidation stays best-effort after the skill file mutation succeeded.
       }
     }
-    plan.push({ candidate, decision: 'import' })
-  }
-  return plan
+    try {
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[packages/dsh-skill-explorer/src/import.ts:387-400](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/import.ts#L387-L400)
+**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:271-287](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L271-L287)
 
-排他创建。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-    const targetDir = join(baseDir, candidate.name)
-    const target = join(targetDir, 'SKILL.md')
-    if (existsSync(target)) {
-      outcomes.push({ name: candidate.name, origin: candidate.origin, status: 'skipped', reason: 'exists' })
-      continue
-    }
-    // The name is a validated kebab-case skill name, so this can only ever
-    // create one directory directly under the target root. The write itself
-    // uses O_EXCL ('wx'), so two concurrent imports of the same name cannot
-    // both win even if both pass the existsSync check above.
-    await mkdir(targetDir, { recursive: true })
-    await writeFile(target, candidate.content, { encoding: 'utf8', flag: 'wx' })
-    outcomes.push({ name: candidate.name, origin: candidate.origin, status: 'imported', path: target })
-  }
-```
-
-</details>
-
-#### 缺口
-
-- 反向代理后的宿主 connection 策略和配对边界未实测
-  **影响**：无法从插件自身断言部署授权范围
-  **进一步探讨**：在独立 profile 对未配对、已配对及拒绝请求核查读写权限
-
-<a id="research-q04"></a>
-
-<a id="detail-section-14"></a>
-
-### Q04 · 怎样试用一次可验收的跨工作区 Skill 管理？
-
-**研究主题**：效果与总成本、采用判断
-
-#### 完整回答
-
-适合同时维护多个项目 Skill 的用户。先在测试项目留一份普通 Skill，记下当前 Git 内容与目标会话目录，打开面板核对同名来源并切换一次。手工方法用编辑器改 frontmatter 后核对宿主目录。试用成功需面板位置正确、写入可回退且目标会话的可调用变化符合文件策略。按一次成功定位和调整计人工时间，另记备份、导入和冲突复核。固定核查没有相关现金或节时实测。若改到非目标路径、会话仍与面板不同或只能操作提供者面板开关，回到原文件及提供者管理流程。
-
-#### 证据与依据
-
-**依据 1 · 作者声明**：[packages/dsh-skill-explorer/README.md:89-104](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L89-L104)
-
-作者的安装渠道。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-````text
-## Install
-
-### From npm (recommended)
-
-```sh
-dsh plugin --profile web add @linxin666/dsh-client-ui-skill-explorer@latest
-```
-
-### From the repository (development)
-
-```sh
-git clone https://github.com/zhu1090093659/dsh-web.git
-cd dsh-web
-pnpm install
-pnpm -r build
-dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
-````
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:217-233](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L217-L233)
-
-写入前精确路径核对。
+路径不匹配拒绝。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -779,35 +416,540 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/collect.ts:536-549](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/collect.ts#L536-L549)
+**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:354-375](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L354-L375)
 
-有来源优先级和调用标记。
+普通开关写 frontmatter 并通知。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-        if (rankOf(serialized.level) < rankOf(existing.level)) {
-          byName.set(skill.name, serialized)
-          continue
-        }
-        if (rankOf(serialized.level) > rankOf(existing.level)) continue
-        if (serialized.whenToUse !== undefined) existing.whenToUse = serialized.whenToUse
-        if (serialized.provider !== undefined) existing.provider = serialized.provider
-        // Only let the registry refine invocation when it actually states a
-        // policy. scanSkillRoot() already resolved the file frontmatter with
-        // the official rule (omitted => allowed), so overwriting it with the
-        // serialized default would re-introduce the false-negative that made
-        // every skill render as not invocable.
-        if (skill.invocation?.modelInvocable !== undefined) existing.modelInvocable = skill.invocation.modelInvocable
-        if (skill.invocation?.userInvocable !== undefined) existing.userInvocable = skill.invocation.userInvocable
+          }
+          const payload = body as Record<string, unknown>
+          const { name, path, enabled } = payload
+          if (typeof name !== 'string' || !isSkillName(name) || typeof path !== 'string' || path.trim() === '' || typeof enabled !== 'boolean') {
+            writeJson(res, 400, { error: 'expected { name, path, enabled }' })
+            return
+          }
+          // The client path is only an identity claim: a fresh scan must
+          // resolve the same effective skill before any file is touched.
+          const skill = await resolveScannedSkill(name, path, panelCwd(), res)
+          if (skill === undefined) return
+          // Disabled = disable-model-invocation: true; enabled = false.
+          const frontmatter = setFrontmatterField(skill.path, 'disable-model-invocation', !enabled)
+          notifySkillCatalogChanged()
+          writeJson(res, 200, {
+            name,
+            enabled: frontmatter.disableModelInvocation !== true,
+            modelInvocable: frontmatter.disableModelInvocation !== true,
+            path: skill.path,
+          })
+        } catch (error) {
+          logger.warn(error)
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[packages/dsh-skill-explorer/README.md:198-211](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L198-L211)
+**依据 4 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:394-423](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L394-L423)
 
-面板与实际宿主可见性不同的具体情形。
+提供者开关按记录操作。
+
+<details>
+<summary>查看原文（30行）</summary>
+
+```text
+            writeJson(res, 400, { error: 'expected { name, provider, enabled }' })
+            return
+          }
+          const identity = providerSkillIdentity(name, provider)
+          if (identity === undefined) {
+            writeJson(res, 400, { error: 'name must be kebab-case (lowercase letters/digits first) and provider a short provider id' })
+            return
+          }
+          if (enabled) {
+            // Enabling only ever drops a record, so it stays allowed for a
+            // skill the panel no longer lists: a plugin can be uninstalled
+            // while its record is still stored, and that record must remain
+            // removable. Nothing is written when it is already absent.
+            await setProviderSkillEnabled(dshHome, identity, true)
+            notifySkillCatalogChanged()
+            writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: false })
+            return
+          }
+          // Disabling creates a record the panel will honor from the next list
+          // on, so it must address a skill a fresh collection still lists as
+          // plugin-provided — the same "only what the panel showed" rule the
+          // file write routes follow, here with the identity instead of a path.
+          const skill = await findProviderSkill(identity, panelCwd())
+          if (skill === undefined) {
+            writeJson(res, 404, { error: `skill ${identity.name} is not a plugin-provided skill with a local file` })
+            return
+          }
+          await setProviderSkillEnabled(dshHome, identity, false)
+          notifySkillCatalogChanged()
+          writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: true })
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:501-519](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L501-L519)
+
+同一个面板工作区规划导入。
+
+<details>
+<summary>查看原文（19行）</summary>
+
+```text
+            writeJson(res, 400, { error: 'cwd is required (the workspace shown by the panel)' })
+            return
+          }
+          const resolved = resolveImportSource(source)
+          if (typeof resolved === 'string') {
+            writeJson(res, 400, { error: resolved })
+            return
+          }
+          // The conflict rule reads the catalog of the workspace the panel is
+          // showing, resolved exactly like the list route (and like create):
+          // a different base workspace would rank a project skill against the
+          // wrong root and import a file that is immediately shadowed.
+          const workspace = panelCwd(cwd)
+          const targetLevel = root === 'user' ? 'user-dsh' : 'project-dsh'
+          const baseDir = root === 'user' ? userSkillRoot(dshHome) : projectSkillRoot(findProjectRoot(cwd))
+          const { skills } = await collectSkills(await collectOptions(workspace))
+          const report = await importSkills({ baseDir, targetLevel, source: resolved, existing: skills })
+          notifySkillCatalogChanged()
+          writeJson(res, 200, { ok: true, ...report })
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/dsh-skill-explorer/src/import.ts:371-399](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/import.ts#L371-L399)
+
+排他创建保已有文件。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+ * Write the planned candidates into one skill root. Every write is a new file:
+ * an existing SKILL.md is never overwritten, and a failure after the first
+ * file leaves the earlier imports in place (each one is individually valid and
+ * the panel simply lists them — the report says which succeeded).
+ * @param plan - the plan from planImport.
+ * @param baseDir - the target skill root.
+ * @returns one outcome per plan item, in plan order.
+ */
+export async function executeImport(plan: readonly ImportPlanItem[], baseDir: string): Promise<ImportOutcome[]> {
+  const outcomes: ImportOutcome[] = []
+  for (const item of plan) {
+    const { candidate } = item
+    if (item.decision === 'skip') {
+      outcomes.push({ name: candidate.name, origin: candidate.origin, status: 'skipped', reason: item.reason })
+      continue
+    }
+    const targetDir = join(baseDir, candidate.name)
+    const target = join(targetDir, 'SKILL.md')
+    if (existsSync(target)) {
+      outcomes.push({ name: candidate.name, origin: candidate.origin, status: 'skipped', reason: 'exists' })
+      continue
+    }
+    // The name is a validated kebab-case skill name, so this can only ever
+    // create one directory directly under the target root. The write itself
+    // uses O_EXCL ('wx'), so two concurrent imports of the same name cannot
+    // both win even if both pass the existsSync check above.
+    await mkdir(targetDir, { recursive: true })
+    await writeFile(target, candidate.content, { encoding: 'utf8', flag: 'wx' })
+    outcomes.push({ name: candidate.name, origin: candidate.origin, status: 'imported', path: target })
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/dsh-skill-explorer/src/collect.ts:556-560](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/collect.ts#L556-L560)
+
+仅在面板投影施加 provider 开关。
+
+```text
+  // The panel's own provider-skill switches close the collection: a row the
+  // user switched off reads as not model invocable here, exactly like a
+  // skill whose own frontmatter disables model invocation.
+  applyProviderToggles(byName.values(), options.providerDisabledSkills ?? [])
+  return { skills: [...byName.values()], complete }
+```
+
+#### 缺口
+
+- 未运行编辑冲突、缓存失效与重载。
+  **影响**：同路径编辑和宿主加载时间未知。
+  **进一步探讨**：用临时项目分别做同路径编辑、路径替换、提供者开关和会话回查。
+
+<a id="research-q03"></a>
+
+<a id="detail-section-13"></a>
+
+### Q03 · 网站访问通过哪几个准入条件？
+
+**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+包通过 Cordis 挂载自身，宿主依赖 skills、sessions 和 webServer，客户端依赖布局、插槽和本地化。清单声明 DSH >=0.2.2-rc.3。实际路由先校验宿主 connection，要求 admit 返回有 peer 且无 rejection，兼容接口以没有 requestRejection 为通过。可选注入同时请求 connection 和 connection.authentication；宿主不能回答时仍落到既有配对或回环检查。拒绝的 HTTP 请求进不了路由主体，检查还限制 HTTP 方法。宿主认证只是多个可独立放行的分支之一。Web apply 另尝试外发心跳，普通安装应审查 dsh-market 端点及本地浏览器标识。Web 挂载成功与发布成品／远端请求是否实际发生仍需分别检查。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-skill-explorer/package.json:9-37](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/package.json#L9-L37)
+
+入口分发及宿主门槛。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./src/*": "./src/*",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.2.2-rc.3"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
+      "platform": "web"
+    }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-skill-explorer/cordis.patch.yml:5-7](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/cordis.patch.yml#L5-L7)
+
+实际挂载声明。
+
+```text
+- insert:
+    - id: ui-skill-explorer
+      name: '@linxin666/dsh-client-ui-skill-explorer'
+```
+
+**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/index.ts:109-125](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/index.ts#L109-L125)
+
+将可选连接桥交给真实路由。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  const connection = captureConnection(ctx)
+  const routes = makeRoutes(ctx, {
+    dshHome,
+    agentsHome,
+    customSkillDirs,
+    registry: skillCtx.skills,
+    activeSessionCwds,
+    logger: { warn: (error: unknown) => ctx.logger.warn(error) },
+    connection,
+  })
+
+  ctx.effect(() => {
+    const disposers = routes.map((route) => ctx.webServer.register(route))
+    return () => {
+      for (const dispose of disposers) dispose()
+    }
+  }, 'skill-explorer: routes')
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-skill-explorer/src/access.ts:52-103](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/access.ts#L52-L103)
+
+准入、降级与可选注入。
+
+<details>
+<summary>查看原文（52行）</summary>
+
+```text
+function connectionAdmits(connection: HostConnectionService, request: IncomingMessage): boolean {
+  try {
+    if (typeof connection.admit === 'function') {
+      const admission = connection.admit(request)
+      return admission.rejection === undefined && 'peer' in admission && admission.peer !== undefined
+    }
+    if (typeof connection.requestRejection === 'function') return connection.requestRejection(request) === undefined
+    return false
+  } catch {
+    return false
+  }
+}
+
+/**
+ * Whether this request may enter any /api/dsh-skill-explorer route.
+ * @param ctx - host context; may expose remoteWebUiPairing or connection.
+ * @param request - the incoming HTTP request.
+ * @returns true for loopback, a live paired-device cookie, or an admitted host connection.
+ */
+export function isSkillExplorerAllowed(
+  ctx: Context,
+  request: IncomingMessage,
+  connection: HostConnectionService | undefined = resolveConnection(ctx),
+): boolean {
+  if (connection !== undefined && connectionAdmits(connection, request)) return true
+  return isPairedOrLoopbackAllowed(ctx, request)
+}
+
+/**
+ * Capture the host connection service in a scope that injects BOTH
+ * `connection` and `connection.authentication`, the two services its
+ * `admit(request)` bridge reads. The row's own `inject` list stays unchanged
+ * (the service stays optional), and a cohort whose connection has no
+ * authentication sub-service never activates this scope, so the reader keeps
+ * returning whatever a bare lookup finds.
+ * @param ctx - the plugin context.
+ * @returns a reader of the captured service, undefined before it activates.
+ */
+export function captureConnection(ctx: Context): () => HostConnectionService | undefined {
+  let captured: HostConnectionService | undefined
+  const inject = (ctx as { inject?: (names: readonly string[], callback: (scoped: Context) => unknown) => unknown }).inject
+  if (typeof inject === 'function') {
+    inject.call(ctx, ['connection', 'connection.authentication'], (scoped: Context) => {
+      scoped.effect(() => {
+        captured = resolveConnection(scoped)
+        return () => {
+          captured = undefined
+        }
+      }, 'skill-explorer: connection trust')
+    })
+  }
+  return () => captured ?? resolveConnection(ctx)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:138-149](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L138-L149)
+
+守卫拒绝并约束方法。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  /** Guard helper: fence + method check. */
+  const guard = (req: IncomingMessage, res: ServerResponse, method: string): boolean => {
+    if (!isSkillExplorerAllowed(ctx, req, connection())) {
+      writeJson(res, 403, { error: 'forbidden: loopback-only' })
+      return false
+    }
+    if (req.method !== method) {
+      writeJson(res, 405, { error: `method not allowed: ${req.method}` })
+      return false
+    }
+    return true
+  }
+```
+
+</details>
+
+**依据 6 · 源码核查**：[packages/dsh-skill-explorer/src/client/index.ts:50-61](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/client/index.ts#L50-L61)
+
+启动尝试心跳和注册词典。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+export function apply(ctx: ClientContext): void {
+  // Anonymous install heartbeat (docs/telemetry.md): one beat per browser per
+  // UTC day, package name only, silent failure.
+  reportDailyHeartbeat([{ name: '@linxin666/dsh-client-ui-skill-explorer' }])
+
+  ctx.effect(() => {
+    try {
+      return ctx.locale.register(NS, { zh, en })
+    } catch {
+      return () => {}
+    }
+  }, 'skill-explorer: dictionaries')
+```
+
+</details>
+
+**依据 7 · 源码核查**：[packages/dsh-skill-explorer/src/client/index.ts:75-103](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/client/index.ts#L75-L103)
+
+布局与真实面板注册。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+  const controller = new PanelController({
+    panel: {
+      select: panelId => {
+        const layout = (ctx as unknown as { get?(name: string): unknown }).get?.('layout') as { selectPanel?: (id: string | null) => void } | undefined
+        layout?.selectPanel?.(panelId)
+      },
+    },
+  })
+  const disposers: Array<() => void> = []
+  try {
+    disposers.push(registerSkillExplorerPanel(ctx, controller, api))
+    // The layout's panel selection is reconciled back into the controller, so
+    // the panel follows the user clicking another panel row.
+    const layoutFace = (ctx as unknown as { get?(name: string): unknown }).get?.('layout') as { panelInfo?: { subscribe(listener: () => void): () => void; getSnapshot(): { activePanelId: unknown } } } | undefined
+    if (layoutFace?.panelInfo !== undefined) {
+      const sync = (): void => {
+        const active = layoutFace.panelInfo!.getSnapshot().activePanelId
+        controller.syncPanelSelection(active === SKILL_EXPLORER_PANEL_ID ? SKILL_EXPLORER_PANEL_ID : null)
+      }
+      sync()
+      disposers.push(layoutFace.panelInfo.subscribe(sync))
+    }
+  } catch (error) {
+    // Registration failures degrade the panel, never the GUI.
+    console.warn('[skill-explorer] panel registration failed:', error)
+  }
+  ctx.effect(() => () => {
+    for (const dispose of disposers.splice(0)) dispose()
+  }, 'skill-explorer: ui mounts')
+```
+
+</details>
+
+**依据 8 · 源码核查**：[packages/dsh-skill-explorer/src/client/telemetry.ts:119-150](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/client/telemetry.ts#L119-L150)
+
+存储、自动化跳过、请求正文与发送。
+
+<details>
+<summary>查看原文（32行）</summary>
+
+```text
+    // First guard: a stored opt-out or the browser's Do Not Track stops every
+    // read below from minting an id, marking the day, or reaching the network.
+    if (isTelemetrySuppressed()) return
+    if (items.length === 0) return
+    const today = new Date().toISOString().slice(0, 10)
+    // Automation contexts (CDP-driven QA browsers, fresh isolated profiles)
+    // mint a new visitor id per run and would inflate instance counts.
+    if (navigator.webdriver) return
+    if (localStorage.getItem(DAY_KEY_PREFIX + today) !== null) return
+    const visitor = visitorId()
+    if (visitor === null) return
+    pruneDayKeys(today)
+    const payloadItems = items.map((item) => {
+      const out: Record<string, string> = { name: item.name }
+      const version = item.version ?? bakedVersion()
+      if (version !== undefined) out.version = version
+      if (item.channel !== undefined) out.channel = item.channel
+      return out
+    })
+    const body = JSON.stringify({ kind: 'heartbeat', visitor, items: payloadItems })
+    void fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body,
+      keepalive: true,
+    }).then((response) => {
+      // Mark the day only after an accepted send, so offline browsers retry
+      // on a later mount instead of going dark until tomorrow.
+      if (response.ok) localStorage.setItem(DAY_KEY_PREFIX + today, '1')
+    }).catch(() => { /* unreachable endpoint: stay silent */ })
+  } catch { /* never break the host UI over telemetry */ }
+}
+```
+
+</details>
+
+#### 缺口
+
+- 真实配对和代理环境未核实。
+  **影响**：不能以接口名字假定所有部署的鉴权或数据发送相同。
+  **进一步探讨**：在目标本机、配对客户端和无凭据请求分别观测。
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 一次修改怎样确认生效并能退回？
+
+**研究主题**：采用判断、效果与总成本、缺陷与关键质疑
+
+#### 完整回答
+
+先有一个独立项目和可恢复的普通 SKILL.md，记下原文和实际会话看到的条目。打开面板选中项目及同名技能，核对来源后切一次，再比较磁盘差异和目标会话实际可调用范围。若路径不同或来源变动，刷新并手工查；若文件写对但会话仍显示旧范围，先核查官方目录与预设。涉及 provider 的开关不能用作安全控制。首次负担是确认版本、配对或本机权限，持续负担是同名及并发编辑的回查。错误发生时恢复原文件与原工作方式；移除 UI 后也要独立复核先前已写文件和请求。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:271-287](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L271-L287)
+
+约束目标路径，陈旧时给明确冲突。
+
+<details>
+<summary>查看原文（17行）</summary>
+
+```text
+  /** Resolve the exact file the panel showed, rejecting stale same-name fallbacks. */
+  const resolveScannedSkill = async (
+    name: string,
+    expectedPath: string,
+    cwd: string,
+    res: ServerResponse,
+  ): Promise<(SkillEntry & { path: string }) | undefined> => {
+    const skill = await findSkill(name, cwd)
+    if (skill?.path === undefined) {
+      writeJson(res, 404, { error: `skill ${name} has no editable file` })
+      return undefined
+    }
+    if (skill.path !== expectedPath) {
+      writeJson(res, 409, { error: `skill ${name} changed since the panel loaded; refresh and retry` })
+      return undefined
+    }
+    return skill as SkillEntry & { path: string }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:361-373](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L361-L373)
+
+实际写入可人工回读。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+          // The client path is only an identity claim: a fresh scan must
+          // resolve the same effective skill before any file is touched.
+          const skill = await resolveScannedSkill(name, path, panelCwd(), res)
+          if (skill === undefined) return
+          // Disabled = disable-model-invocation: true; enabled = false.
+          const frontmatter = setFrontmatterField(skill.path, 'disable-model-invocation', !enabled)
+          notifySkillCatalogChanged()
+          writeJson(res, 200, {
+            name,
+            enabled: frontmatter.disableModelInvocation !== true,
+            modelInvocable: frontmatter.disableModelInvocation !== true,
+            path: skill.path,
+          })
+```
+
+</details>
+
+**依据 3 · 作者声明**：[packages/dsh-skill-explorer/README.md:198-211](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/README.md#L198-L211)
+
+会话目录及 provider 限制。
 
 <details>
 <summary>查看原文（14行）</summary>
@@ -833,44 +975,33 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
 
 #### 缺口
 
-- 同样任务下的耗时和误选率未知
-  **影响**：无法量化 GUI 的长期节省
-  **进一步探讨**：记录各十次来源定位、切换、复核和失败恢复的时间
+- 无源码以外的费用和误操作时间。
+  **影响**：采用只限独立项目可撤回的试用。
+  **进一步探讨**：定时记录定位、编辑、目标会话回读与复原时间。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 把开关作用域放在操作前能否减少误以为禁用了 Skill？
+### Q05 · 如何证明标出开关作用范围能减少错判？
 
 **研究主题**：新假设与验证
 
 #### 完整回答
 
-可以让按钮在变更前明确展示会写项目文件还是只改面板，并在反馈中给出打开目标会话核查的入口。现有设计已有提供者标记，待验证的增量是动作发生前和结果之后都展示写入对象及目标范围。用包含普通文件、提供者文件和预设私有 Skill 的任务，盲比分组提示是否减少把面板隐藏认作会话禁用的次数。若理解错误不下降，或用户操作耗时显著增加，就不扩大提示。
+假设面板若在确认前显示当前项目根、文件写入或面板记录，完成后显示目标会话的实际加载状态，会减少把面板隐藏当成禁用。用项目与用户同名 Skill、预设专属 Skill 和 provider 三种反例比较现有界面与带提示的草稿。两组同样要定位并撤回某条可调用 Skill，以实际文件和会话目录作真值。记录改错文件次数、误以为安全控制生效的次数与核验时间。如果错误不下降，或提示负担明显盖过收益，停止该方向。该设计待验证。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-skill-explorer/README.md:207-211](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/README.md#L207-L211)
+**依据 1 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:354-373](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L354-L373)
 
-提供者开关的真实作用域。
-
-```text
-- The switch on a **"Provided by plugin"** row is a panel-local view
-  decision: it changes what this panel lists as invocable, not what the host
-  registry loads, so the model still receives the skill. Taking such a skill
-  away from the model for real means removing or disabling it where its
-  provider gets it.
-```
-
-**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:301-318](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L301-L318)
-
-普通文件写入。
+普通开关的文件写入。
 
 <details>
-<summary>查看原文（18行）</summary>
+<summary>查看原文（20行）</summary>
 
 ```text
+          }
           const payload = body as Record<string, unknown>
           const { name, path, enabled } = payload
           if (typeof name !== 'string' || !isSkillName(name) || typeof path !== 'string' || path.trim() === '' || typeof enabled !== 'boolean') {
@@ -882,7 +1013,8 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
           const skill = await resolveScannedSkill(name, path, panelCwd(), res)
           if (skill === undefined) return
           // Disabled = disable-model-invocation: true; enabled = false.
-          const frontmatter = setFrontmatterField(skill.path, 'disable-model-invocation', enabled ? false : true)
+          const frontmatter = setFrontmatterField(skill.path, 'disable-model-invocation', !enabled)
+          notifySkillCatalogChanged()
           writeJson(res, 200, {
             name,
             enabled: frontmatter.disableModelInvocation !== true,
@@ -893,12 +1025,12 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:347-366](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-skill-explorer/src/routes.ts#L347-L366)
+**依据 2 · 源码核查**：[packages/dsh-skill-explorer/src/routes.ts:402-423](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-skill-explorer/src/routes.ts#L402-L423)
 
-面板记录写入。
+另一条记录开关。
 
 <details>
-<summary>查看原文（20行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
           if (enabled) {
@@ -907,6 +1039,7 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
             // while its record is still stored, and that record must remain
             // removable. Nothing is written when it is already absent.
             await setProviderSkillEnabled(dshHome, identity, true)
+            notifySkillCatalogChanged()
             writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: false })
             return
           }
@@ -920,6 +1053,7 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
             return
           }
           await setProviderSkillEnabled(dshHome, identity, false)
+          notifySkillCatalogChanged()
           writeJson(res, 200, { ok: true, name: identity.name, provider: identity.provider, disabled: true })
 ```
 
@@ -927,8 +1061,8 @@ dsh plugin --profile web add link:$(pwd)/packages/dsh-skill-explorer
 
 #### 缺口
 
-- 已有提供者提示是否已足够未知
-  **影响**：无法从接口差异推断额外提示有效
-  **进一步探讨**：用相同任务比较现有提示与动作前后提示
+- 没有受控实测。
+  **影响**：收益推演仅立于已查到的语义差异。
+  **进一步探讨**：以三个同名和作用域样例做盲评。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

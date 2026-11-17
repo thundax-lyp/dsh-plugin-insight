@@ -1,18 +1,18 @@
-# Better Sidebar
+# DSH Better Sidebar
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[8d8592b](https://github.com/omdsh-dev/DSH-better-sidebar/tree/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2)
+源码版本：[2811573](https://github.com/omdsh-dev/DSH-better-sidebar/tree/2811573c9c0bad51d77db6c3c94d78f5aed8d38a)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5,087](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C087&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/DSH-better-sidebar) [![npm 30d 314,654](https://img.shields.io/static/v1?label=npm+30d&message=314%2C654&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar) [![最新发布 2026-11-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar)
+[![GitHub ★ 5,186](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C186&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/DSH-better-sidebar) [![npm 30d 329,965](https://img.shields.io/static/v1?label=npm+30d&message=329%2C965&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar) [![最新发布 2026-11-12](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-12&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-better-sidebar)
 <!-- END META -->
 
-> **功能**：为 DSH 提供会话侧栏和底部工作台，用于文件、变更、任务和侧聊。
+> **功能**：在 DSH 原生右侧和底部工作台查看文件、差异与预览，并提供可扩展的侧栏服务。
 
-> **亮点**：[Q01](#research-q01) 和 [Q03](#research-q03) 显示，插件把会话文件入口和外部页面、预览器挂在同一工作台。
+> **亮点**：将会话文件定位、可查差异和外部预览扩展放进两种共用的工作台。新增可撤销的导览接管让原生标签和自绘面板在同一服务上分工。[Q01](#research-q01) [Q03](#research-q03)
 
-> **主要限制**：[Q02](#research-q02) 显示，会话路径只定位文件，读写范围由宿主认证与运行账号权限约束。仅分开 profile 无法限制可访问文件。
+> **主要限制**：文件目标是路径解析结果，能否操作取决于宿主请求检查与 OS 用户权限。mtime 检查也无法给并发保存提供完整版本锁。[Q02](#research-q02)
 
 **本文目录**
 
@@ -26,10 +26,10 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 侧栏工作台相对原生预览和编辑器有什么增量？](#detail-section-11)
-  - [Q02 · 会话和工作树如何决定文件访问？](#detail-section-12)
-  - [Q03 · 插件挂载和外部扩展依赖哪些条件？](#detail-section-13)
-  - [Q04 · 如何在不影响现有开发目录的情况下评估收益？](#detail-section-14)
+  - [Q01 · 谁需要双工作台，导览接管怎样影响打开文件的步骤？](#detail-section-11)
+  - [Q02 · 通过会话路由后，文件读写受什么约束？](#detail-section-12)
+  - [Q03 · 扩展和原生安装如何共存，失败后能否撤销？](#detail-section-13)
+  - [Q04 · 怎样在可回退的环境里判断会话工作台是否省时？](#detail-section-14)
 
 <a id="detail-section-1"></a>
 
@@ -39,9 +39,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：在 DSH 中按会话定位文件、差异和任务的开发者，可在侧栏或底部工作台查看相关内容。
+> **用途**：在 DSH 对话中反复查看文件与差异的用户，可以沿当前工作树打开对应预览。
 
-原生预览和外部编辑器仍能查看文件与变更；市场增量集中在会话关联与工作台切换。
+用宿主原生预览和外部编辑器，手工确认文件路径、工作树和当前会话。
 
 <a id="detail-section-3"></a>
 
@@ -51,63 +51,63 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 工作台 | 查看对话相关文件 | 依赖客户端插槽 |
-| 文件接口 | 打开文件与预览 | 由宿主账号权限决定可访问范围 |
-| 扩展服务 | 第三方添加标签和预览 | 需匹配客户端服务版本 |
+| 原生侧栏与底部工作台 | 按会话查看文件与差异 | 宿主类型与 slots 需匹配 |
+| 预览扩展 | 共享第三方 tabs/viewers | 依赖服务接口和注册状态 |
+| 文件操作 | 打开及编辑目标文件 | Host 用户及真实目录权限 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| DSH 对应版本及宿主服务 | 必需 | 注册服务与界面 | 缺依赖会影响挂载 |
-| 连接请求检查与低权限账号 | 受控部署所需 | 限制调用与文件访问 | 会话路径无法提供权限隔离 |
-| 外部扩展版本匹配 | 接入额外标签时 | 调用侧栏注册服务 | 扩展可能不能显示 |
+| DSH 0.2.2-rc.2 线调用接口 | 启动 | 挂载 host 和 client | 注册失败或部分界面缺失 |
+| 宿主会话及工作树可定位 | 读取 | 判定文件范围 | 改查原生日志与路径 |
+| 低权限测试账号 | 试用 | 限制错误路径影响 | 先准备隔离数据 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 开发者选低权限账号与测试仓库 | 运行账号可访问范围已核对 |
-| 加载 | 单独挂载固定插件 | 界面及宿主正常加载 |
-| 验收 | 打开一个已知文件并与原生方案比较 | 文件与工作树正确且退出后恢复 |
+| 准备 | 用户创建可丢弃仓库 | 查重复 bundle 与权限 |
+| 定位 | 打开两个工作树的同名文件 | 核对绝对路径和内容 |
+| 退出 | 禁用接管或插件 | 原生界面恢复 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 下载和缓存大小未知 | 建立受限账号与匹配宿主 | 耗时未知 |
-| 持续 | 预览及监视资源未知 | 核对路径和扩展 | 实际切换次数待测 |
-| 失败恢复 | 重复配置资源未知 | 禁用并恢复原生界面 | 文件副作用需独立排查 |
+| 首次 | 实际资源未知 | 配置版本和隔离账号 | 需核实挂载顺序 |
+| 持续 | 客户端预览与目录读取尚未测量 | 路径、文件版本与结果复核 | 并发保存或旧状态可增加排障 |
+| 失败恢复 | 额外支出未知 | 回原生入口，恢复测试目录 | 只测试可丢弃内容 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 文件定位 | 相对路径按会话或工作树解释 | 是否减少错开文件 |
-| 扩展 | 可注册标签及预览器 | 生态版本兼容 |
-| 退出 | 可禁用挂载 | 配置与实际文件影响需核查 |
+| 会话定位 | 活动工作树解析 | 误开率 |
+| 工作台导航 | 两套同源界面 | 节时与重复切换次数 |
+| 文件冲突处理 | mtime 与独立临时写入 | 并发覆盖概率 |
 
-> **思考**：[Q02](#research-q02) 显示，会话路径只定位文件，读写范围由宿主认证与运行账号权限约束。仅分开 profile 无法限制可访问文件。
+> **思考**：文件目标是路径解析结果，能否操作取决于宿主请求检查与 OS 用户权限。mtime 检查也无法给并发保存提供完整版本锁。[Q02](#research-q02)
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 和 [Q03](#research-q03) 显示，插件把会话文件入口和外部页面、预览器挂在同一工作台。
+> **亮点**：将会话文件定位、可查差异和外部预览扩展放进两种共用的工作台。新增可撤销的导览接管让原生标签和自绘面板在同一服务上分工。[Q01](#research-q01) [Q03](#research-q03)
 
-服务注册有注销接口。路径解析函数仍使用历史命名，实际只规范化路径，调用方不能从函数名推断权限。
+原生标签注册释放、临时文件写入与版本冲突提示值得复用。聚合安装顺序及宿主权限需独立检查。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 显示，会话路径只定位文件，读写范围由宿主认证与运行账号权限约束。仅分开 profile 无法限制可访问文件。
+文件目标是路径解析结果，能否操作取决于宿主请求检查与 OS 用户权限。mtime 检查也无法给并发保存提供完整版本锁。[Q02](#research-q02)
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 建议先用独立低权限账号执行一个只读任务。若目录解析或访问范围超出预期，立即退回原生界面。
+个人可在专用低权限账号与可丢弃项目试查同名文件，先比较只读定位。权限、工作树或插件顺序无法核对时退出视图并回到编辑器。[Q04](#research-q04)
 
 <a id="detail-section-7"></a>
 
@@ -115,18 +115,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码确认宿主接线、扩展服务与文件路由；未做宿主运行及任务对照。
+源码支持多种界面入口和工作树路径，实际权限、兼容与节时仍无运行证据。
 
-- 已检查：作者 README、包清单、源码路径 src/index.ts、src/client/index.tsx、src/client/service.ts、src/path-security.ts、src/session-path.ts、package.json、cordis.patch.yml、tsdown.config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 README.md、cordis.patch.yml、package.json、src/client/index.tsx、src/client/native/index.ts、src/fs-operations.ts、src/index.ts、src/path-security.ts、tsdown.config.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：固定提交 0.31.1，覆盖文件访问、会话定位、注册与挂载；侧聊、任务、Git 写入及全部路由未展开。
-- 下一步：在相同文件查看任务比较原生与侧栏，记录路径正确性、切换次数、用时以及禁用后的状态。
+- 边界：固定根组件，只追文件定位、原生导览和注册处置路径。
+- 下一步：固定宿主和工作树，交叉比较两种查看流程，主动使同名文件、已删除文件和共享权限成为反例。
 
 **分析版本**
 
 - **仓库**：[omdsh-dev/DSH-better-sidebar](https://github.com/omdsh-dev/DSH-better-sidebar)
-- **版本号**：0.31.1（[固定提交 8d8592b](https://github.com/omdsh-dev/DSH-better-sidebar/tree/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2)）
-- **版本日期**：2026-11-11（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.32.1（[固定提交 2811573](https://github.com/omdsh-dev/DSH-better-sidebar/tree/2811573c9c0bad51d77db6c3c94d78f5aed8d38a)）
+- **版本日期**：2026-11-13（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -134,9 +134,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 可验证会话定位是否减少切换与误开文件。若同任务排查成本抵消省时，放弃这一假设。
+把工作树、会话和当前文件的来源一起显示，可能减少同名文件误开。对照原生路径记录正确率与总耗时，若复核和排障抵消收益则停止。[Q04](#research-q04)
 
-在相同文件查看任务比较原生与侧栏，记录路径正确性、切换次数、用时以及禁用后的状态。
+固定宿主和工作树，交叉比较两种查看流程，主动使同名文件、已删除文件和共享权限成为反例。
 
 <a id="detail-section-9"></a>
 
@@ -149,13 +149,13 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 115 | 17279 | — | — | 370874 |
+| .md | source | 118 | 17486 | — | — | 377505 |
 | .mjs | source | 8 | 1125 | 890 | 195 | — |
 | .js | source | 1 | 93 | 58 | 32 | — |
-| .ts | source | 177 | 55170 | 37135 | 16065 | — |
-| .tsx | source | 69 | 25659 | 17458 | 7305 | — |
-| .ts | test | 186 | 46901 | 35621 | 8033 | — |
-| .tsx | test | 133 | 40135 | 30259 | 6612 | — |
+| .ts | source | 179 | 55657 | 37568 | 16098 | — |
+| .tsx | source | 73 | 26350 | 18049 | 7377 | — |
+| .ts | test | 189 | 47258 | 35897 | 8085 | — |
+| .tsx | test | 134 | 40572 | 30685 | 6613 | — |
 | .mjs | test | 1 | 227 | 150 | 56 | — |
 | .js | example | 1 | 4 | 1 | 3 | — |
 | .md | example | 1 | 57 | — | — | 240 |
@@ -164,133 +164,259 @@
 
 **活跃度**
 
-[![Issue 未关闭 136](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=136&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 137](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=137&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 106](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=106&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
+[![Issue 未关闭 153](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=153&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 132](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=132&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 102](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=102&color=737b86&logo=github)](https://github.com/omdsh-dev/DSH-better-sidebar/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
 
 
 
-统计日期：2026-11-12。
+统计日期：2026-11-17。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：在 DSH 里从对话定位并查看文件时，侧栏减少什么交接，能接触什么文件范围？
+**插件研究总目标**：在 DSH 对话中打开正确工作树的文件，何时双工作台比原生侧栏和编辑器更易用？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 侧栏工作台相对原生预览和编辑器有什么增量？
+### Q01 · 谁需要双工作台，导览接管怎样影响打开文件的步骤？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-适合需要按对话反复打开相关文件的 DSH 用户。作者列出的文件树、可编辑预览及任务页在同一个工作台中，客户端实际发布 betterSidebar 服务，使其他插件可提供页面和预览器。相对在聊天中复制路径再切到编辑器，增量是文件入口和扩展在同一会话工作台共享；对长期编辑和复杂重构，外部编辑器已有成熟能力。合格任务是从正确会话打开正确文件并保留所需上下文。
+同一会话中频繁查看文件、草稿和差异的人，可用原生右侧和独立底部面板。作者描述的共用服务确实在客户端建 catalog、service 和 native surface，再挂载内置 tabs/viewers。新增 guide 接管使原生右边入口由同一 tab catalog 呈现。有插件市场、工作区或终端服务时才传相应按钮行为，没有这些服务不建立该项动作。关闭 guideTakeover 时释放注册，恢复宿主导览。底部专用类型不会再在原生面板冒出第二个不能绘制的入口。
+
+该设计的增量在会话内切换和扩展复用。单次预览可用原生 UI，大范围重构仍可留在编辑器。正确打开应该回查路径和当前工作树，而不仅看同名文件出现。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[README.md:25-29](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/README.md#L25-L29)
+**依据 1 · 作者声明**：[README.md:1-8](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/README.md#L1-L8)
 
-作者列出文件、预览、任务与侧聊等工作台能力。
+作者把原生侧栏和底部工作台视作同一双界面。
 
 ```text
-| **🗂️ File Management**<br/>Lazy-loading tree, git status colors, live directory watch, global search, drag-and-drop upload, multi-select batch actions, dual-source "Open with" menu.<br/><img alt="File tree with git colors" src="./docs/screenshots/files-tree.png" /><br/><img alt="Context menu: Open with + Zip and download" src="./docs/screenshots/files-menu-openwith.png" /> | **🌿 Git**<br/>Source Control (Merge / Staged / Changes groups, message box with Generate, branch + sync footer) plus a this-session AI-changes lens, with a **read-only commit graph** (lanes, branch and tag badges, branch filter, commit details) in one tab.<br/><img alt="Git: changes and commit graph with tags" src="./docs/screenshots/changes-tree.png" /> |
-| **📝 Editable Editor & Previews**<br/>An editable CodeMirror (the stock preview is read-only), Markdown + Mermaid + floating outline, sandboxed HTML preview, `.jsonl` record cards, paged preview for huge files, streaming transfers with no size caps.<br/><img alt="Markdown + Mermaid preview" src="https://github.com/user-attachments/assets/fe0e5182-55bb-45cc-b98b-a2877c2bdd38" /> | **🧩 Tasks**<br/>Live subagent topology (workflow graph / tree modes) + background task list: exit codes, live output, force-kill.<br/><img alt="Tasks: subagent topology" src="https://github.com/user-attachments/assets/dcd8ed2f-59fa-405b-937b-2d250f5034dd" /> |
-| **💬 Side Chat (beta)**<br/>Codex-style side threads: inherit the full parent context and run independently, realtime push, visible & revocable queue, per-thread model selection, one-click promotion to a top-level session.<br/><img alt="Side Chat" src="https://github.com/user-attachments/assets/3a338c36-f5de-4000-95f3-4b1cd04f60fc" /> | **🖥️ Bottom Workbench**<br/>A self-drawn bottom panel that coexists with the native right sidebar: drag-to-split panes, multiple terminal tabs, per-session persisted layout.<br/><img alt="Dual workbench" src="https://github.com/user-attachments/assets/dfdb875e-a1a8-4d4b-8340-353736b1708f" /> |
+# dsh-better-sidebar
 
-**Also**: 📂 the `sidebar_open` tool lets the model open the sidebar itself · ⚡ ~325KB core at startup, heavy chunks load on demand · 🌏 i18n follows DSH · 📱 narrow screens switch to a full-width drawer
+<div align="center">
+  <b style="font-size: 1.15em;">A dual workbench for DSH: native right sidebar + self-drawn bottom panel, with the <code>ctx.betterSidebar</code> service open to every plugin</b><br /><br />
+  <a href="https://www.npmjs.com/package/dsh-better-sidebar"><img alt="npm version" src="https://img.shields.io/npm/v/dsh-better-sidebar" /></a>
+  <a href="https://www.npmjs.com/package/dsh-better-sidebar"><img alt="npm downloads" src="https://img.shields.io/npm/dm/dsh-better-sidebar" /></a>
+  <a href="https://github.com/omdsh-dev/DSH-better-sidebar/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/omdsh-dev/DSH-better-sidebar/actions/workflows/ci.yml/badge.svg" /></a>
+  <a href="https://github.com/omdsh-dev/DSH-better-sidebar/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/omdsh-dev/DSH-better-sidebar" /></a>
 ```
 
-**依据 2 · 源码核查**：[src/client/index.tsx:163-177](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/client/index.tsx#L163-L177)
+**依据 2 · 源码核查**：[src/client/index.tsx:183-229](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/client/index.tsx#L183-L229)
 
-注册供外部插件使用的侧栏服务。
+客户端注册 native surface 和内置 tabs/viewers。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（47行）</summary>
 
 ```text
-    }
-  }
-  // One store instance per activation: production code creates it only here,
-  // then hands it to the mounted panel and closes over it in the slot
-  // registrations (the official createXXXStore() factory rule — no
-  // module-level singleton).
-  const sidebarStore = createSidebarStore()
-  // The sidebar registry service: external plugins register tab types and
-  // file previewers through `ctx.betterSidebar.registerTab/registerFileViewer`.
-  // Published before the panel mounts so consumers injecting 'betterSidebar'
-  // are ready by the time the sidebar renders.
-  const service = createBetterSidebarService(sidebarStore)
-  ctx.provide('betterSidebar', service)
-  ctx.effect(() => () => { disposeSidechatSurfaces(service) }, 'dsh-better-sidebar: sidechat surface adapters')
-  // The native right-Sidebar surface: the plugin's content is registered as
+  // One live catalog of host guide cards, shared by the start-page takeover
+  // and the settings inventory. It subscribes to the host tab registry and is
+  // released with this activation.
+  const nativeGuide = createNativeGuideCatalog(ctx)
+  ctx.effect(() => () => { nativeGuide.dispose() }, 'dsh-better-sidebar: native guide catalog')
+  const nativeSurface = createNativeSurface(ctx, nativeRecords)
+  service.setSurface(nativeSurface)
+  // The optional dsh-context diagnostics: ONE controller per activation. It
+  // re-proves the optional runtime faces itself, so the plugin needs no new
+  // inject entry; it is threaded explicitly into the three consumers (the two
+  // host slots by closure, the plugin's own React tree through the provider,
+  // and the native tab bodies through the native surface's deps). On a
+  // deployment without dsh-context it reports `available: false` and every
+  // entry point stays absent.
+  const diagnostics = createContextDiagnosticsHost(ctx)
+  ctx.effect(
+    () => registerNativeSurface({
+      ctx, store: sidebarStore, service, records: nativeRecords, diagnostics,
+      guideCatalog: nativeGuide.catalog,
+      reportFailure: (phase, error) => { fail(`native ${phase}`, error) },
+    }),
+    'dsh-better-sidebar: native right-Sidebar registrations',
+  )
+  // The bottom workbench's expand/collapse button in DSH's session header
+  // (the header's corner seat belongs to the native sidebar's own control).
+  ctx.effect(
+    () => registerBottomToggle(ctx, sidebarStore),
+    'dsh-better-sidebar: bottom-workbench toggle',
+  )
+  ctx.effect(
+    () => () => { nativeSurface.dispose(); service.setSurface(undefined) },
+    'dsh-better-sidebar: native right-Sidebar surface',
+  )
+  ctx.effect(
+    () => registerContextDiagnosticsUI(ctx, diagnostics),
+    'dsh-better-sidebar: context diagnostics surfaces',
+  )
+  // The controller holds a child fiber (its runtime-face integration) and a
+  // pending-open timer; releasing both is what keeps a disabled plugin — and a
+  // hot reload that activates a fresh one — from leaving the old one behind.
+  ctx.effect(() => () => { diagnostics.dispose() }, 'dsh-better-sidebar: context diagnostics controller')
+  // Register the plugin's own built-in tabs and viewers through the same
+  // service (eating our own dogfood). The disposer unregisters them on
+  // fiber disposal (HMR-safe).
+  ctx.effect(
+    () => registerBuiltins(ctx, service),
+    'dsh-better-sidebar: register built-in tabs and viewers',
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/client/service.ts:1116-1142](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/client/service.ts#L1116-L1142)
+**依据 3 · 源码核查**：[src/client/native/index.ts:335-399](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/client/native/index.ts#L335-L399)
 
-标签和文件预览器分别注册并返回注销。
+导览接管可撤，Host 服务存在才提供相关动作。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（65行）</summary>
 
 ```text
-  const registerTab = (descriptor: TabDescriptor): (() => void) => {
-    if (tabs.has(descriptor.id)) {
-      throw new Error(`[dsh-better-sidebar] tab type "${descriptor.id}" already registered`)
-    }
-    tabs.set(descriptor.id, descriptor)
-    notify()
-    return () => {
-      if (tabs.get(descriptor.id) === descriptor) {
-        tabs.delete(descriptor.id)
-        notify()
+    // The start page: replace the host guide body with the plugin's own grid.
+    // Its lifetime follows the `guideTakeover` preference, so turning the
+    // switch off unregisters the chain entry and the shipped guide resumes.
+    let disposeGuide: (() => void) | undefined
+    const syncGuide = (): void => {
+      if (guideCatalog === undefined) return
+      if (store.getPrefs().guideTakeover === false) {
+        if (disposeGuide !== undefined) {
+          disposeSafely(disposeGuide, 'the start-page guide takeover')
+          disposeGuide = undefined
+        }
+        return
       }
-    }
-  }
+      if (disposeGuide !== undefined) return
+      const catalog = guideCatalog
+      try {
+        disposeGuide = ctx.slots.inject('sidebar.right.tab.guide', () => {
+          try {
+            return ctx.slots.register({
+              name: 'sidebar.right.tab.guide',
+              // Always elect: the shipped guide is the fallback we replace.
+              select: () => ({}),
+              inject: (sessionId: string) => {
+                const scope = typeof sessionId === 'string' && sessionId !== ''
+                  ? sessionId
+                  : mountedSessionId(ctx)
+                const terminals = webTerminals(ctx)
+                const navigation = ctx.get('pluginNavigation') as unknown as PluginNavigationFace | undefined
+                const workspace = ctx.get('uiWorkspace') as unknown as WorkspaceSessionFace | undefined
+                const onBrowsePlugins = typeof navigation?.openList === 'function'
+                  ? () => { navigation.openList!() }
+                  : undefined
+                const onCreatePlugin = typeof workspace?.startSession === 'function'
+                  ? () => {
+                    workspace.startSession!(undefined, {
+                      agentPreset: 'cordis',
+                      prompt: t('guideCreatePrompt'),
+                      whenDraftExists: 'append',
+                    })
+                  }
+                  : undefined
+                const shellMenu = scope !== undefined
+                  && terminals?.launchShells !== undefined
+                  && terminals?.selectShell !== undefined
+                  ? {
+                    // Call the methods on the SERVICE: the shell catalog reads
+                    // its own remote field, and a detached call throws
+                    // "Cannot read properties of undefined (reading 'remote')".
+                    launchShells: (signal: AbortSignal) => terminals.launchShells!(scope, signal),
+                    selectShell: (path: string) => { terminals.selectShell!(path) },
+                  }
+                  : undefined
+                return {
+                  catalog,
+                  store,
+                  service,
+                  ...(shellMenu === undefined ? {} : { shellMenu }),
+                  ...(onBrowsePlugins === undefined ? {} : { onBrowsePlugins }),
+                  ...(onCreatePlugin === undefined ? {} : { onCreatePlugin }),
+                }
+              },
+            }, NativeGuide)
+          } catch (error) {
+            reportFailure?.('register start page', error)
+            return () => {}
+```
 
-  const registerFileViewer = (descriptor: FileViewerDescriptor): (() => void) => {
-    if (viewers.has(descriptor.id)) {
-      throw new Error(`[dsh-better-sidebar] file viewer "${descriptor.id}" already registered`)
-    }
-    viewers.set(descriptor.id, descriptor)
-    notify()
-    return () => {
-      if (viewers.get(descriptor.id) === descriptor) {
-        viewers.delete(descriptor.id)
-        notify()
+</details>
+
+**依据 4 · 源码核查**：[src/client/native/index.ts:584-620](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/client/native/index.ts#L584-L620)
+
+客户端拒绝为底部专用类型复制原生入口。
+
+<details>
+<summary>查看原文（37行）</summary>
+
+```text
+    /** Bring the live registrations in line with the registry + the settings. */
+    const sync = (): void => {
+      syncGuide()
+      const wanted = new Map<string, () => () => void>()
+      for (const descriptor of service.getTabs()) {
+        if (!service.isTabEnabled(descriptor.id)) continue
+        // A `bottomOnly` type lives in the plugin's own workbench and has no
+        // native tab: registering one would put a second capsule in the
+        // host's guide for a page it cannot draw (the bottom terminal is the
+        // case — the host owns the right-Sidebar `terminal` kind outright).
+        if (descriptor.bottomOnly === true) continue
+        wanted.set(descriptor.id, () => registerDescriptor(descriptor))
       }
-    }
-  }
+      for (const [descriptorId, registration] of live) {
+        // `files` is this module's OWN takeover, never a descriptor (`wanted`
+        // only ever holds descriptor ids): its lifetime belongs to the
+        // editor-type switch below. Disposing it here on EVERY notification
+        // (any prefs/state pulse, a Session switch included) re-mounted the
+        // explorer body and lost the tree's own component state — and a
+        // re-registration attempted on an already-inactive context (a plugin
+        // reload) left the type registered with nobody holding its disposer,
+        // so the same id could never be registered again for the rest of the
+        // page's life.
+        if (descriptorId === FILES_KIND || wanted.has(descriptorId)) continue
+        disposeSafely(() => registration.dispose(), `native tab type "${descriptorId}"`)
+        live.delete(descriptorId)
+      }
+      for (const [descriptorId, create] of wanted) {
+        if (live.has(descriptorId)) continue
+        // One descriptor must not take the rest of the surface down with it:
+        // report and continue so the remaining types still register. `create`
+        // has already released whatever it managed to install.
+        try {
+          live.set(descriptorId, { dispose: create() })
+        } catch (error) {
+          reportFailure?.(`register ${descriptorId}`, error)
+        }
 ```
 
 </details>
 
 #### 缺口
 
-- 未在固定宿主操作工作台
-  **影响**：无法确认相对原生预览和编辑器的效率
-  **进一步探讨**：用同一个对话指向的文件对照两条打开路径
+- 不同宿主与其他扩展同时启用的加载体验未执行。
+  **影响**：实际导览是否减少切换取决于能显示哪些类型。
+  **进一步探讨**：在目标 DSH 版本开关导览并核对文件与底部专用入口。
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 会话和工作树如何决定文件访问？
+### Q02 · 通过会话路由后，文件读写受什么约束？
 
 **研究主题**：功能与机制、缺陷与关键质疑
 
 #### 完整回答
 
-路由先委托宿主 connection.requestRejection 处理部署信任与请求认证。对通过请求，工作目录优先取当前宿主工作目录服务或会话头，随后取存档、默认目录、客户端提供的绝对路径，最后落到进程目录。文件 API 还可依据活动工作树或选定 Git 根来解释相对路径。绝对路径、波浪号和折叠后的上级路径并不限制在会话工作区内，写路径也走同一词法解析，可能穿过符号链接。会话归属是定位，不是文件权限。通过宿主请求检查的操作者可接触运行账号有权访问的文件；不可将会话 ID 或隔离 profile 当作文件沙箱。
+宿主路由先调用 connection.requestRejection 判断请求能否通过。API 为 POST，路由名被限定在定义的前缀与单层方法。通过验证后，以会话目录、活动 worktree 解释相对目标，允许绝对路径、主目录和折叠后的上级路径。路径处理只是取得目标，操作系统权限才限制最终能触达的范围，隔离 profile 不能收窄 Host 用户实际可访问的目录。
+
+文本写入先解析编码和换行。客户端提供 expectedMtimeMs 时，文件已删除或与预期时间不同返回冲突；然后使用独立临时文件和 rename，减小半写入带来的残留。检查与 rename 之间没有文件版本锁，并发保存仍可能都通过检查后互相覆盖。读取、保存和重命名应结合实际工作树和文件历史，不能靠标签文字推断授权范围或完整事务性。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:1438-1445](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L1438-L1445)
+**依据 1 · 源码核查**：[src/index.ts:1438-1446](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/index.ts#L1438-L1446)
 
-统一委托宿主 connection 请求检查。
+路由信任委托宿主连接服务。
 
 ```text
 export function apply(ctx: Context, config?: SidebarConfig): void {
@@ -301,55 +427,15 @@ export function apply(ctx: Context, config?: SidebarConfig): void {
   // The model-facing open-request registry: queues `sidebar_open` requests
   // per session and pushes them to connected sidebar views over the
   // `/sidebar/ws/agent-opens` socket.
+  const agentOpenRegistry = new AgentOpenRegistry()
 ```
 
-**依据 2 · 源码核查**：[src/index.ts:244-272](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L244-L272)
+**依据 2 · 源码核查**：[src/index.ts:1630-1646](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/index.ts#L1630-L1646)
 
-工作目录优先级及回退。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-async function sessionCwdOf(ctx: Context, sessionId: string, clientCwd?: string): Promise<string> {
-  const session = ctx.sessions.get(sessionId)
-  // The immutable header here is the fallback, not the authority: the host's
-  // committed value tracks `cd` and wins whenever it is available.
-  if (session !== undefined) {
-    const cwd = ctx.get('workingDirectory')?.get(session) ?? session.header.cwd
-    if (cwd !== undefined && cwd !== '') return cwd
-  }
-  const stored = await storedHeaderCwdOf(ctx, sessionId)
-  if (stored !== undefined) {
-    // A corrupt relative cwd must be refused here: resolving it against the
-    // host process cwd is exactly the "outside workspace" misclassification
-    // the header read exists to avoid.
-    try {
-      return requireAbsolute(stored)
-    } catch {
-      throw new SidebarError('bad-request', `invalid working directory "${stored}"`)
-    }
-  }
-  const defaultDirectory = ctx.get('workingDirectory')?.defaultDirectory
-  if (defaultDirectory !== undefined && defaultDirectory !== '') return requireAbsolute(defaultDirectory)
-  if (clientCwd !== undefined && clientCwd !== '') {
-    try {
-      return requireAbsolute(clientCwd)
-    } catch {
-      throw new SidebarError('bad-request', `invalid working directory "${clientCwd}"`)
-    }
-  }
-  return process.cwd()
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/index.ts:1630-1645](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L1630-L1645)
-
-实际 API 请求检查和方法匹配。
+只处理受验的 POST 方法路径。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（17行）</summary>
 
 ```text
   ctx.effect(() => ctx.webServer.register({
@@ -368,67 +454,44 @@ async function sessionCwdOf(ctx: Context, sessionId: string, clientCwd?: string)
       const method = pathname.startsWith('/sidebar/api/') ? pathname.slice('/sidebar/api/'.length) : undefined
       if (method === undefined || method.includes('/')) {
         writeError(res, new SidebarError('not-found', 'unknown sidebar API method', 404))
+        return
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[src/index.ts:1846-1860](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L1846-L1860)
+**依据 3 · 源码核查**：[src/index.ts:1730-1742](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/index.ts#L1730-L1742)
 
-文件路由读取会话及活动工作树并调用路径解析。
+取会话工作目录后再定位活动工作树。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-        const sessionId = url.searchParams.get('sessionId')
-        const raw = url.searchParams.get('path')
-        if (sessionId === null || raw === null) throw new SidebarError('bad-request', 'sessionId and path are required')
+        const relativePath = url.searchParams.get('relativePath')
+        if (sessionId === null || dir === null || relativePath === null || relativePath.trim() === '') {
+          throw new SidebarError('bad-request', 'sessionId, dir, and relativePath are required')
+        }
         const cwd = await activeWorktreeRootOf(ctx, sessionId, await sessionCwdOf(ctx, sessionId, url.searchParams.get('cwd') ?? undefined))
-        // Resolution is the shared contract's alone: relative joins the
-        // session cwd, absolute stays, `~` expands against the home (#713),
-        // remote-mirror namespaces project. Pre-joining here would paste a
-        // `~` target after the cwd and hide it from the resolver.
-        // Resolution is the shared contract's alone: relative joins the
-        // session cwd, absolute stays, `~` expands against the home (#713),
-        // remote-mirror namespaces project. Pre-joining here would paste a
-        // `~` target after the cwd and hide it from the resolver.
-        const path = await ensureWorkspacePath(cwd, raw)
-        const info = await statFileForRoute(path)
-        if (!info.isFile()) {
+        const { path, size } = await writeWorkspaceUpload({
+          cwd,
+          dir,
+          relativePath,
+          chunks: req,
+        })
+        writeOk(res, { path, size })
+      } catch (error) {
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[src/path-security.ts:38-76](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/path-security.ts#L38-L76)
+**依据 4 · 源码核查**：[src/path-security.ts:24-41](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/path-security.ts#L24-L41)
 
-读写只作路径解析，保留绝对路径与家目录，未实施目录封闭。
+词法路径允许绝对、主目录和相对路径。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
-export async function ensureWorkspacePath(cwd: string, target: string, _fence?: boolean): Promise<string> {
-  return resolveTarget(cwd, target)
-}
-
-/**
- * Resolve a path for a WRITE destination (which may not exist yet).
- *
- * Lexical only, exactly like {@link ensureWorkspacePath}: a missing target is
- * returned as the caller composed it (its parent is created on demand), and an
- * existing symlink in the path is NOT resolved — the caller writes through it,
- * which is what "no containment policy" means.
- *
- * @param cwd - Session workspace directory (the base of relative targets).
- * @param target - Client-supplied absolute or session-relative path.
- * @param _fence - IGNORED (see {@link ensureWorkspacePath}).
- * @returns The absolute destination path.
- * @deprecated The name is historical — this is now plain resolution.
- */
-export async function ensureWorkspaceWritePath(cwd: string, target: string, _fence?: boolean): Promise<string> {
-  return resolveTarget(cwd, target)
-}
-
 /**
  * The single resolution primitive: session-relative targets resolve under the
  * session cwd, absolute targets stay absolute, and the result is `resolve()`d
@@ -446,93 +509,123 @@ export function resolveTarget(cwd: string, target: string): string {
   // write / rename / remove / upload, media, html) shares ONE contract.
   const joined = isAbsolute(homeExpanded) ? homeExpanded : join(cwd, homeExpanded)
   return requireAbsolute(resolveSessionPath(cwd, joined))
+}
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/fs-operations.ts:221-259](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/fs-operations.ts#L221-L259)
+
+mtime 检查发生于临时文件和重命名前，无 CAS。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+export async function writeWorkspaceText(input: WorkspaceWriteInput): Promise<{ mtimeMs?: number }> {
+  const { cwd, path, content, expectedMtimeMs } = input
+  const absolute = resolveTarget(cwd, path)
+  // Detect the byte encoding AND the line ending BEFORE the temp write, so the
+  // save round-trips what the file already used.
+  const { encoding, eol } = await fileFormatOf(absolute)
+  if (expectedMtimeMs !== undefined) {
+    const current = await stat(absolute).then(info => info.mtimeMs).catch(() => undefined)
+    // A NUMERIC baseline can only come from a successful read of a file that
+    // existed, so "no stat" is not "nothing to compare" — it means the path was
+    // removed (or renamed away) while the draft was open. Reading that as "no
+    // gate" wrote the draft back over the user's own deletion and re-created
+    // the file (and its parent directory) with no prompt. Creating a file is a
+    // different intent with its own entry points (`fs.createFile`, the upload
+    // writer), so refusing here costs nothing.
+    if (current !== expectedMtimeMs) {
+      const why = current === undefined
+        ? `no longer exists on disk (expected mtime ${expectedMtimeMs})`
+        : `changed on disk since it was loaded (expected mtime ${expectedMtimeMs}, found ${current})`
+      throw new SidebarError('fs-conflict', `"${absolute}" ${why}`, 409)
+    }
+  }
+  // Per-request temp name (same pattern as writeWorkspaceUpload): a
+  // pid-suffixed name is shared by every concurrent save to the same path,
+  // letting two writers interleave into one temp file — and the failure-path
+  // rm could delete the other writer's in-flight temp.
+  const tmp = join(dirname(absolute), `.${basename(absolute)}.dsh-sidebar-tmp-${randomUUID()}.tmp`)
+  try {
+    await mkdir(dirname(absolute), { recursive: true })
+    await writeFile(tmp, encodeText(restoreEol(content, eol), encoding), { flag: 'wx' })
+    await rename(tmp, absolute)
+  } catch (error) {
+    await rm(tmp, { force: true }).catch(() => {})
+    throw new SidebarError('fs-error', `cannot write "${absolute}": ${error instanceof Error ? error.message : String(error)}`, 400)
+  }
+  invalidateDirectoryCache(dirname(absolute))
+  // The fresh baseline the client adopts after a successful save.
+  const mtimeMs = await stat(absolute).then(info => info.mtimeMs).catch(() => undefined)
+  return { ...(mtimeMs !== undefined ? { mtimeMs } : {}) }
 ```
 
 </details>
 
 #### 缺口
 
-- 未验证各部署的宿主认证与操作系统权限
-  **影响**：不能推断通过宿主登录的多人共享部署有会话级文件隔离
-  **进一步探讨**：用专用低权限账号和测试文件检查拒绝的请求与可访问路径
+- 共享实例的宿主请求权限以及多用户保存的实际冲突概率未知。
+  **影响**：任何可写验证都应使用可丢弃数据，无法许可共享运行号时不启用。
+  **进一步探讨**：不同账号和并发编辑分别验证请求拒绝与两个同时持草稿的保存结果。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 插件挂载和外部扩展依赖哪些条件？
+### Q03 · 扩展和原生安装如何共存，失败后能否撤销？
 
 **研究主题**：依赖、兼容与流程、工程质量与复用
 
 #### 完整回答
 
-包发布 host 与 client 两个入口，分别由固定构建配置生成，宿主需要 webServer、sessions、connection、tools，客户端也需要会话、连接与插槽等服务。补丁按包名挂载；重复保护只能看到先处理的已启用不同 ID 聚合行，反向顺序或手工同 ID 重复仍可能失败。固定包依赖 0.2.2-rc.1 系列宿主包，作者也要求匹配该宿主线。外部扩展使用客户端 betterSidebar 服务，注册函数返回注销，支持与扩展生命周期配合；这不代表任意旧版扩展可用。
+包清单规定 host/client 入口与 Web 注入，Host 依赖四个核心服务。当前 peers 在 0.2.2-rc.2 线，须按固定源码看兼容范围。补丁 guard 只看处理到当前行已可见的其他启用 entry。在聚合行先加载时能防重复，但同 ID 或逆序手工组合尚可能重复路由并终止该树。安全试用时先检查 profile 的 bundles 和人工行。
+
+原生 tabs 按服务的 descriptor 与偏好配对。同步时释放禁用项，单个注册异常会记录并继续。files 接管单独跟随 editor 类型开关，避免任意会话变化导致重新挂载和丢树状态。此机制可给第三方 viewer 复用，但注册释放和 slot API 必须匹配。弹出提示或启动成功只证明其中某项注册，不保证全部外部扩展同时正常。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:13-31](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/package.json#L13-L31)
+**依据 1 · 源码核查**：[package.json:95-110](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/package.json#L95-L110)
 
-Host、client 和服务导出。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-  "main": "lib/index.js",
-  "types": "lib/types/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./lib/types/index.d.ts",
-      "default": "./lib/index.js"
-    },
-    "./client": {
-      "types": "./lib/types/client/index.d.ts",
-      "default": "./lib/client.js"
-    },
-    "./client/service": {
-      "types": "./lib/types/client/service.d.ts",
-      "default": "./lib/client.js"
-    },
-    "./client/api": {
-      "types": "./lib/types/client/service.d.ts",
-      "default": "./lib/client.js"
-    },
-```
-
-</details>
-
-**依据 2 · 源码核查**：[package.json:95-111](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/package.json#L95-L111)
-
-宿主 peer 版本和服务包。
+固定 peers 明确指向当前宿主线。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
+  "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/cordis": "^4.1.0",
     "@deepseek-ai/schemastery": ">=3.18.5 <4",
-    "@deepseek-ai/dsh-agent": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-locale": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-conversation": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-input-trigger": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-primitives": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-settings": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-sidebar-right": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-client-ui-slots": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-host-webserver": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-llm": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-session": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-settings": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-subagent": "^0.2.2-rc.1",
-    "@deepseek-ai/dsh-tools": "^0.2.2-rc.1",
+    "@deepseek-ai/dsh-agent": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-locale": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-conversation": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-input-trigger": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-primitives": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-settings": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-sidebar-right": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-client-ui-slots": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-host-webserver": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-llm": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-session": "^0.2.2-rc.2",
+    "@deepseek-ai/dsh-settings": "^0.2.2-rc.2",
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[cordis.patch.yml:26-42](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/cordis.patch.yml#L26-L42)
+**依据 2 · 源码核查**：[src/index.ts:116-116](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/index.ts#L116-L116)
 
-重复挂载防护仅观察已有行。
+服务端依赖 webServer、sessions、connection、tools。
+
+```text
+export const inject = ['webServer', 'sessions', 'connection', 'tools']
+```
+
+**依据 3 · 源码核查**：[cordis.patch.yml:26-42](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/cordis.patch.yml#L26-L42)
+
+bundle 防重只看到当前已启用和不同 ID 的行。
 
 <details>
 <summary>查看原文（17行）</summary>
@@ -559,161 +652,125 @@ Host、client 和服务导出。
 
 </details>
 
-**依据 4 · 源码核查**：[src/index.ts:113-118](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L113-L118)
+**依据 4 · 源码核查**：[src/client/native/index.ts:584-635](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/client/native/index.ts#L584-L635)
 
-服务器所需宿主服务。
-
-```text
-}
-
-/** Services required before mounting: routes, sessions, native request admission, and tools. */
-export const inject = ['webServer', 'sessions', 'connection', 'tools']
-
-/** Content types for media files and HTML preview resources, by extension. */
-```
-
-**依据 5 · 源码核查**：[src/client/index.tsx:53-76](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/client/index.tsx#L53-L76)
-
-客户端所需服务及 locale 注册清理。
+依偏好收敛并局部处理失败，内置 files 由 editor 接管。
 
 <details>
-<summary>查看原文（24行）</summary>
+<summary>查看原文（52行）</summary>
 
 ```text
-export const inject = ['slots', 'sessions', 'locale', 'modules', 'connection', 'remote', 'remote.session']
-
-/**
- * Error boundary over the sidebar tree (root scope): a render error in the
- * sidebar SHELL itself must never blank the page silently — the shared
- * RenderBoundary shows a dismissible error strip and logs the stack. The
- * per-tab scope (Sidebar.tsx) catches viewer/editor crashes first; this root
- * boundary stays as the last resort for Workbench/shell errors.
- */
-/**
- * Client plugin body.
- * @param ctx - the client cordis context (slots, sessions).
- */
-export function apply(ctx: Context): void {
-  // The sidebar follows the DSH i18n system: attach the locale service so
-  // the module-level t()/isZh() resolve the Host-backed language preference
-  // (and switch live — the Sidebar root subscribes to it), and register the
-  // plugin's dictionaries into the shared locale registry. The disposers
-  // run on fiber disposal, so re-activation (HMR) re-registers cleanly.
-  attachLocale(ctx.locale)
-  ctx.effect(() => {
-    const offZh = ctx.locale.register(LOCALE_NS, 'zh', zh)
-    const offEn = ctx.locale.register(LOCALE_NS, 'en', en)
-    return () => { offZh(); offEn() }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/client/service.ts:1116-1142](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/client/service.ts#L1116-L1142)
-
-注册与解除生命周期。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  const registerTab = (descriptor: TabDescriptor): (() => void) => {
-    if (tabs.has(descriptor.id)) {
-      throw new Error(`[dsh-better-sidebar] tab type "${descriptor.id}" already registered`)
-    }
-    tabs.set(descriptor.id, descriptor)
-    notify()
-    return () => {
-      if (tabs.get(descriptor.id) === descriptor) {
-        tabs.delete(descriptor.id)
-        notify()
+    /** Bring the live registrations in line with the registry + the settings. */
+    const sync = (): void => {
+      syncGuide()
+      const wanted = new Map<string, () => () => void>()
+      for (const descriptor of service.getTabs()) {
+        if (!service.isTabEnabled(descriptor.id)) continue
+        // A `bottomOnly` type lives in the plugin's own workbench and has no
+        // native tab: registering one would put a second capsule in the
+        // host's guide for a page it cannot draw (the bottom terminal is the
+        // case — the host owns the right-Sidebar `terminal` kind outright).
+        if (descriptor.bottomOnly === true) continue
+        wanted.set(descriptor.id, () => registerDescriptor(descriptor))
       }
-    }
-  }
-
-  const registerFileViewer = (descriptor: FileViewerDescriptor): (() => void) => {
-    if (viewers.has(descriptor.id)) {
-      throw new Error(`[dsh-better-sidebar] file viewer "${descriptor.id}" already registered`)
-    }
-    viewers.set(descriptor.id, descriptor)
-    notify()
-    return () => {
-      if (viewers.get(descriptor.id) === descriptor) {
-        viewers.delete(descriptor.id)
-        notify()
+      for (const [descriptorId, registration] of live) {
+        // `files` is this module's OWN takeover, never a descriptor (`wanted`
+        // only ever holds descriptor ids): its lifetime belongs to the
+        // editor-type switch below. Disposing it here on EVERY notification
+        // (any prefs/state pulse, a Session switch included) re-mounted the
+        // explorer body and lost the tree's own component state — and a
+        // re-registration attempted on an already-inactive context (a plugin
+        // reload) left the type registered with nobody holding its disposer,
+        // so the same id could never be registered again for the rest of the
+        // page's life.
+        if (descriptorId === FILES_KIND || wanted.has(descriptorId)) continue
+        disposeSafely(() => registration.dispose(), `native tab type "${descriptorId}"`)
+        live.delete(descriptorId)
       }
-    }
-  }
+      for (const [descriptorId, create] of wanted) {
+        if (live.has(descriptorId)) continue
+        // One descriptor must not take the rest of the surface down with it:
+        // report and continue so the remaining types still register. `create`
+        // has already released whatever it managed to install.
+        try {
+          live.set(descriptorId, { dispose: create() })
+        } catch (error) {
+          reportFailure?.(`register ${descriptorId}`, error)
+        }
+      }
+      // The built-in files kind follows the editor type's switch: with the
+      // editor disabled the plugin has no explorer to put there.
+      const wantsFiles = service.isTabEnabled(EDITOR_KIND)
+      const hasFiles = live.has(FILES_KIND)
+      if (wantsFiles && !hasFiles) {
+        try {
+          live.set(FILES_KIND, { dispose: registerFilesKind(service.getTab(EDITOR_KIND)) })
+        } catch (error) {
+          reportFailure?.(`register ${FILES_KIND}`, error)
+        }
+      }
+      if (!wantsFiles && hasFiles) {
+        const takeover = live.get(FILES_KIND)
+        live.delete(FILES_KIND)
 ```
 
 </details>
 
 #### 缺口
 
-- 未执行发布包挂载及第三方扩展兼容验证
-  **影响**：无法确认不同宿主版本和聚合顺序都可启动
-  **进一步探讨**：先在独立 profile 对单包挂载，再按正确聚合顺序复核
+- 真实聚合包逆序、多发行版本扩展兼容矩阵未知。
+  **影响**：扩展缺席与原生接管失败可能影响整个目标工作流。
+  **进一步探讨**：用两个可恢复的 profile 观察先启聚合与后启聚合，并核对注销。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 如何在不影响现有开发目录的情况下评估收益？
+### Q04 · 怎样在可回退的环境里判断会话工作台是否省时？
 
-**研究主题**：效果与总成本、采用判断、新假设与验证
+**研究主题**：效果与总成本、新假设与验证、采用判断
 
 #### 完整回答
 
-用专用低权限账号、隔离 profile 和可丢弃仓库测试只读查看。对同一任务分别用侧栏和原生界面配外部编辑器，从对话打开文件、核对正确目录、定位对应变更。分别记录安装配置时间、重复切换次数、错误文件次数与故障恢复，终点是看到正确工作树上的文件和相关差异。待验证假设是会话定位能降低切换和误开；若侧栏仍频繁回退外部工具或省时被额外排查抵消，放弃假设。若路由能读取不应可见的测试文件、挂载失败或会话定位不一致，禁用该挂载，恢复原生界面和编辑器。
+从同一个会话中找两个分支均有的同名文件，在可丢弃低权限目录分别用原生与外部编辑器，及 Better Sidebar 路径完成查看文件和差异。合格任务要求活动工作树、绝对路径和实际内容都一致，再记录正确定位率、全部切换、复核和重试时间。可把导览接管开关作为额外变量，在确定只读定位后才考虑对同一个可丢弃文件做保存对照。
+
+假设会话路由和共同工作台能减少误开及切换。若跳转同名文件错误增加、Host 权限超出设计或放大排查，则退回原生侧栏与编辑器。尚无实测速率，也无法从一次点击拆出长期配置与排障总成本。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/index.ts:876-897](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/index.ts#L876-L897)
+**依据 1 · 源码核查**：[src/index.ts:1730-1742](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/index.ts#L1730-L1742)
 
-读取及分页均由会话路径解析决定，提供可重复对照。
+工作树解析可以作为试验核对点。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-      const { cwd } = await cwdOf(payload)
-      // File links are session-relative. Git callers must provide an absolute
-      // path or explicitly select a repository; missing files never change base.
-      const selected = selectedRepoOf(payload)
-      const base = selected === undefined ? cwd : await git.repoRoot(cwd, selected)
-      const path = await ensureWorkspacePath(base, requireString(payload, 'path'))
-      return await readText(path)
-    },
-    // One byte window of a large text file, for the read-only paged preview.
-    // The window is line-aligned by the host, so the client can treat each
-    // response as whole lines (and, for a `.jsonl`, whole records) without
-    // having to re-split anything.
-    'fs.readPage': async (payload) => {
-      const { cwd } = await cwdOf(payload)
-      const selected = selectedRepoOf(payload)
-      const base = selected === undefined ? cwd : await git.repoRoot(cwd, selected)
-      const path = await ensureWorkspacePath(base, requireString(payload, 'path'))
-      const record = payload as { offset?: unknown } | null
-      const offset = typeof record?.offset === 'number' && Number.isFinite(record.offset) && record.offset >= 0
-        ? Math.floor(record.offset)
-        : 0
-      return await readPage(path, offset)
+        const relativePath = url.searchParams.get('relativePath')
+        if (sessionId === null || dir === null || relativePath === null || relativePath.trim() === '') {
+          throw new SidebarError('bad-request', 'sessionId, dir, and relativePath are required')
+        }
+        const cwd = await activeWorktreeRootOf(ctx, sessionId, await sessionCwdOf(ctx, sessionId, url.searchParams.get('cwd') ?? undefined))
+        const { path, size } = await writeWorkspaceUpload({
+          cwd,
+          dir,
+          relativePath,
+          chunks: req,
+        })
+        writeOk(res, { path, size })
+      } catch (error) {
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/path-security.ts:60-76](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/src/path-security.ts#L60-L76)
+**依据 2 · 源码核查**：[src/path-security.ts:29-41](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/path-security.ts#L29-L41)
 
-路径访问边界决定试用要用低权限账号，而非只换 profile。
+权限按实际文件系统进一步验证。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（13行）</summary>
 
 ```text
-/**
- * The single resolution primitive: session-relative targets resolve under the
- * session cwd, absolute targets stay absolute, and the result is `resolve()`d
- * (lexical `..` collapse). Throws fs-error for a non-absolute result.
- */
 export function resolveTarget(cwd: string, target: string): string {
   // #713: `~` names the user's home directory, not a session-relative path —
   // expand it before the join so it is not pasted after the cwd (ENOENT).
@@ -726,30 +783,99 @@ export function resolveTarget(cwd: string, target: string): string {
   // write / rename / remove / upload, media, html) shares ONE contract.
   const joined = isAbsolute(homeExpanded) ? homeExpanded : join(cwd, homeExpanded)
   return requireAbsolute(resolveSessionPath(cwd, joined))
+}
 ```
 
 </details>
 
-**依据 3 · 作者声明**：[README.md:47-55](https://github.com/omdsh-dev/DSH-better-sidebar/blob/8d8592bb0ec33fa82b4c41bed04cb885fcd7fda2/README.md#L47-L55)
+**依据 3 · 源码核查**：[src/client/native/index.ts:335-355](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/client/native/index.ts#L335-L355)
 
-作者给出固定版本与宿主匹配条件。
-
-```text
-> **Compatibility warning — match the plugin to the host line.** As of 2026-11-04, DSH's npm `latest` is **0.2.1-rc.5** and `next` is **0.2.2-rc.1**. **v0.31.1 requires DSH 0.2.2-rc.1+**; hosts on the 0.2.1 line (**0.2.1-rc.1 ~ rc.5**, i.e. today's `latest`) must pin `dsh-better-sidebar@0.28.2` — v0.29.0 was never published to npm. DSH 0.2.1-alpha.5 users must pin `dsh-better-sidebar@0.28.0-alpha.0`, and hosts still on **0.2.0-rc.2** must pin `dsh-better-sidebar@0.26.1`. A 0.x caret never spans a minor version, so one plugin build cannot serve two host lines. The marketplace installer picks the plugin's `latest` regardless of host version, so an old host gets a version-rejection error — upgrade the host or pin the version explicitly. The two packages' `latest` tags are independent.
+切换 guide 可定义有无接管的条件。
 
 <details>
-<summary><b>Pick the plugin version for your DSH version</b></summary>
+<summary>查看原文（21行）</summary>
 
-| Your DSH version | Install command |
-| --- | --- |
-| **0.2.2-rc.1+** | `dsh plugin --profile web add dsh-better-sidebar@0.31.1` |
-| **0.2.1-rc.1 ~ 0.2.1-rc.5** | `dsh plugin --profile web add dsh-better-sidebar@0.28.2` |
+```text
+    // The start page: replace the host guide body with the plugin's own grid.
+    // Its lifetime follows the `guideTakeover` preference, so turning the
+    // switch off unregisters the chain entry and the shipped guide resumes.
+    let disposeGuide: (() => void) | undefined
+    const syncGuide = (): void => {
+      if (guideCatalog === undefined) return
+      if (store.getPrefs().guideTakeover === false) {
+        if (disposeGuide !== undefined) {
+          disposeSafely(disposeGuide, 'the start-page guide takeover')
+          disposeGuide = undefined
+        }
+        return
+      }
+      if (disposeGuide !== undefined) return
+      const catalog = guideCatalog
+      try {
+        disposeGuide = ctx.slots.inject('sidebar.right.tab.guide', () => {
+          try {
+            return ctx.slots.register({
+              name: 'sidebar.right.tab.guide',
+              // Always elect: the shipped guide is the fallback we replace.
 ```
+
+</details>
+
+**依据 4 · 源码核查**：[src/fs-operations.ts:221-259](https://github.com/omdsh-dev/DSH-better-sidebar/blob/2811573c9c0bad51d77db6c3c94d78f5aed8d38a/src/fs-operations.ts#L221-L259)
+
+需用实际磁盘冲突与内容验证。
+
+<details>
+<summary>查看原文（39行）</summary>
+
+```text
+export async function writeWorkspaceText(input: WorkspaceWriteInput): Promise<{ mtimeMs?: number }> {
+  const { cwd, path, content, expectedMtimeMs } = input
+  const absolute = resolveTarget(cwd, path)
+  // Detect the byte encoding AND the line ending BEFORE the temp write, so the
+  // save round-trips what the file already used.
+  const { encoding, eol } = await fileFormatOf(absolute)
+  if (expectedMtimeMs !== undefined) {
+    const current = await stat(absolute).then(info => info.mtimeMs).catch(() => undefined)
+    // A NUMERIC baseline can only come from a successful read of a file that
+    // existed, so "no stat" is not "nothing to compare" — it means the path was
+    // removed (or renamed away) while the draft was open. Reading that as "no
+    // gate" wrote the draft back over the user's own deletion and re-created
+    // the file (and its parent directory) with no prompt. Creating a file is a
+    // different intent with its own entry points (`fs.createFile`, the upload
+    // writer), so refusing here costs nothing.
+    if (current !== expectedMtimeMs) {
+      const why = current === undefined
+        ? `no longer exists on disk (expected mtime ${expectedMtimeMs})`
+        : `changed on disk since it was loaded (expected mtime ${expectedMtimeMs}, found ${current})`
+      throw new SidebarError('fs-conflict', `"${absolute}" ${why}`, 409)
+    }
+  }
+  // Per-request temp name (same pattern as writeWorkspaceUpload): a
+  // pid-suffixed name is shared by every concurrent save to the same path,
+  // letting two writers interleave into one temp file — and the failure-path
+  // rm could delete the other writer's in-flight temp.
+  const tmp = join(dirname(absolute), `.${basename(absolute)}.dsh-sidebar-tmp-${randomUUID()}.tmp`)
+  try {
+    await mkdir(dirname(absolute), { recursive: true })
+    await writeFile(tmp, encodeText(restoreEol(content, eol), encoding), { flag: 'wx' })
+    await rename(tmp, absolute)
+  } catch (error) {
+    await rm(tmp, { force: true }).catch(() => {})
+    throw new SidebarError('fs-error', `cannot write "${absolute}": ${error instanceof Error ? error.message : String(error)}`, 400)
+  }
+  invalidateDirectoryCache(dirname(absolute))
+  // The fresh baseline the client adopts after a successful save.
+  const mtimeMs = await stat(absolute).then(info => info.mtimeMs).catch(() => undefined)
+  return { ...(mtimeMs !== undefined ? { mtimeMs } : {}) }
+```
+
+</details>
 
 #### 缺口
 
-- 未测用时和额外配置负担
-  **影响**：不能认定实际任务成本下降
-  **进一步探讨**：在同宿主版本重复运行只读任务并记录结果
+- 任务耗时、成功率及首次接入时间均未知。
+  **影响**：只能做隔离试用，未形成已证实的效率收益。
+  **进一步探讨**：同一实际文件任务两条路径交叉计时并验证结果。
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)

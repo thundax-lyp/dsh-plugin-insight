@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
 
-源码版本：[971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh)
+源码版本：[5cdf871](https://github.com/zhu1090093659/dsh-web/tree/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh)
 
 <!-- BEGIN META -->
-[![GitHub ★ 10,353](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C353&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 113,274](https://img.shields.io/static/v1?label=npm+30d&message=113%2C274&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh) [![最新发布 2026-11-07](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-07&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
+[![GitHub ★ 10,442](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=10%2C442&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/zhu1090093659/dsh-web) [![npm 30d 113,620](https://img.shields.io/static/v1?label=npm+30d&message=113%2C620&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
 <!-- END META -->
 
-> **功能**：为 DSH 提供远端 SSH 主机管理、终端、命令、文件传输和转发。
+> **功能**：在 DSH Web 统一管理 SSH 主机并使用远端命令、终端、文件传输和隧道。
 
-> **亮点**：把浏览器和模型操作接到同一别名及连接池，终端视图脱离后可由宿主会话承接，见 [Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 将同一配置的远端命令与终端接到 DSH，便于在会话中核对和追踪输出。[Q02](#research-q02) 连接池把健康操作失败和需重连的情况分开。
 
-> **主要限制**：通道断开没有退出码时，远端可能已执行，重连后重发会产生重复副作用。主机信任也需单独核查，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **主要限制**：[Q02](#research-q02) 缺退出码时结果可能已经在远端生效，重放风险取决于命令。[Q03](#research-q03) 回环准入与远端身份都需要核对，凭据文件权限并不加密字段。
 
 **本文目录**
 
@@ -26,11 +26,11 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 同一台远程主机的诊断如何在浏览器与 Agent 间交接？](#detail-section-11)
-  - [Q02 · 远程命令断线后，何时会再发一次？](#detail-section-12)
-  - [Q03 · 哪一层保护浏览器操作、凭据和远端身份？](#detail-section-13)
-  - [Q04 · 为何应先观察，再决定是否把远端诊断纳入常用流程？](#detail-section-14)
-  - [Q05 · 增加远端结果未知状态能否减少重复执行？](#detail-section-15)
+  - [Q01 · 谁能用同一别名完成一次远端诊断？](#detail-section-11)
+  - [Q02 · 断线、取消与超时各能证明执行到了哪里？](#detail-section-12)
+  - [Q03 · 本机路由和远端主机身份有哪些独立约束？](#detail-section-13)
+  - [Q04 · 上传失败和退出后仍要确认什么？](#detail-section-14)
+  - [Q05 · 结果未知提示能否减少远端重复动作？](#detail-section-15)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +40,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合需要在 DSH 诊断对话与远端终端间切换的运维人员，见 [Q01](#research-q01)。
+> **用途**：适合需要在 DSH 调查会话和远端客户端之间核对同一测试机状态的人。
 
-使用已审查的 OpenSSH 配置与终端，再把必要的脱敏结果带入 DSH。
+[Q01](#research-q01) 已配置的 OpenSSH 客户端可以完成同样的诊断，插件主要增加在 DSH 内共享别名和工具上下文。
 
 <a id="detail-section-3"></a>
 
@@ -52,63 +52,65 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 | --- | --- | --- |
-| 远程命令 | 通过别名执行 | 损坏连接可能重试 |
-| 浏览器终端 | 接入宿主 PTY 会话 | HTTP 升级须经过回环门槛 |
-| 文件传输与转发 | 移动文件和访问远端服务 | 传输用宿主路径，转发有本地监听 |
-| 集群操作 | 向选定多台主机派发 | 工具要求非空筛选 |
+| 别名与会话 | 从模型工具或浏览器找到远端 | 需核对主机身份及连接条件 |
+| SSH 命令 | 获取退出码、输出与错误 | 断开或超时时不能单靠回执判断 |
+| 文件上传 | 暂存并向远端 SFTP | 字节受限，本地和远端留存需查 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 | --- | --- | --- | --- |
-| DSH Web 与 Node 24.9 及以上 | 启动必需 | 挂载宿主与界面 | 无法使用宿主路由与工具 |
-| 低权限远端账户 | 诊断时 | 授权并限制命令 | 需先配置别名并独立验证远端 |
-| ssh-agent | 选择 Agent 认证或转发时 | 使用本机签名服务 | 端点缺失明确报错 |
+| Node >=24.9.0、DSH >=0.2.2-rc.3 及 Web 服务 | 按清单必需 | 挂载两侧并注册 SSH | 固定发布包和宿主要额外核验 |
+| 可核实身份的一次性远端测试主机 | 代表任务必需 | 核对同一别名和输出 | 先用原终端验证身份 |
+| 低权限认证和可控网络 | 代表任务必需 | 限制错误代价 | 出现未核实密钥或地址就退出 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 | --- | --- | --- |
-| 准备 | 配置一次性远端和测试别名 | 核对目标及信任策略 |
-| 核查 | 发一次只读命令并对照终端 | 独立核对输出和主机身份 |
-| 退出 | 断线后查远端实际结果 | 保持原终端流程 |
+| 准备 | 用户从原终端核对一次性测试机及身份，再配置别名 | 目标和权限能独立确认 |
+| 使用 | 在 DSH 请求一个只读命令 | 同一主机，退出码和输出可回查 |
+| 异常 | 保留回执，回原终端确认效果 | 缺退出码不盲重发 |
+| 退出 | 释放终端和隧道，停用或解除挂载 | 核对实际连接、暂存与凭据保留范围 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 | --- | --- | --- | --- |
-| 首次 | 宿主与远端测试机 | 配置别名、权限及身份验证 | 工时未知 |
-| 持续 | 远端资源、模型与网络 | 审核输出及主机变更 | 没有单位诊断实测 |
-| 失败恢复 | 可能再耗远端执行资源 | 查远端结果再决定操作 | 命令可能已执行 |
+| 首次使用 | 测试机和网络资源未量化 | 核对端点、认证、别名与宿主环境 | 主机身份须独立确认 |
+| 持续使用 | 连接、转发和传输负荷未知 | 回看输出、重试与残留会话 | 未测相对原终端节时 |
+| 失败恢复 | 远端重复或临时文件资源未知 | 检查已经执行哪部分再清理 | 中断回执不能直接说明远端状态 |
+| 退出 | 本地和远端留存占用未知 | 关终端、隧道及回收试用凭据 | 真实撤出未验证 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 | --- | --- | --- |
-| 交接 | 界面和 Agent 共享别名 | 实际减少的切换时间 |
-| 远端执行 | 池与工具结果有接线 | 断线后的执行次数 |
+| 远端回查 | 同一别名有工具和终端 | 多机实测结果及节时 |
+| 重连 | 池按连接状态处理失败和重试 | 无退出码时真实副作用 |
+| 文件流 | 限流、暂存及结果帧 | 所有断连的本地与远端清理 |
 
-> **思考**：通道断开没有退出码时，远端可能已执行，重连后重发会产生重复副作用。主机信任也需单独核查，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+> **思考**：[Q02](#research-q02) 缺退出码时结果可能已经在远端生效，重放风险取决于命令。[Q03](#research-q03) 回环准入与远端身份都需要核对，凭据文件权限并不加密字段。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：把浏览器和模型操作接到同一别名及连接池，终端视图脱离后可由宿主会话承接，见 [Q01](#research-q01)。
+> **亮点**：[Q01](#research-q01) 将同一配置的远端命令与终端接到 DSH，便于在会话中核对和追踪输出。[Q02](#research-q02) 连接池把健康操作失败和需重连的情况分开。
 
-连接池区分健康连接上的业务异常和已坏连接，取消有独立处理。重放边界仍需远端结果证明，见 [Q02](#research-q02)。
+[Q02](#research-q02) 取消和模型工具共享同一信号，断线重试保留各自条件。[Q04](#research-q04) 上传错误逐路径回收，真实清理仍需要验证。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-通道断开没有退出码时，远端可能已执行，重连后重发会产生重复副作用。主机信任也需单独核查，见 [Q02](#research-q02) 与 [Q03](#research-q03)。
+[Q02](#research-q02) 缺退出码时结果可能已经在远端生效，重放风险取决于命令。[Q03](#research-q03) 回环准入与远端身份都需要核对，凭据文件权限并不加密字段。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-先用一次性测试机和只读命令核对远端身份与输出，保持原终端作为复核入口。遇到缺回执先查远端状态，见 [Q04](#research-q04)。
+[Q04](#research-q04) 仅在能独立核对身份的一次性隔离机上用只读命令试一次，不用共享生产凭据。若身份或退出回执无法核实，从原终端检查并结束试用。
 
 <a id="detail-section-7"></a>
 
@@ -116,18 +118,18 @@
 
 **核查状态**：已检查源码。
 
-源码支持 DSH 挂载、连接池、工具、终端及传输。远端主机身份、断线后的命令结果和会话权限需先核查。
+固定源码核查 SSH Web 接线、连接池和代表性上传。远端主机密钥校验、真实行为与故障收益未测。
 
-- 已检查：作者 README、包清单、源码路径 packages/dsh-ssh/README.md、packages/dsh-ssh/cordis.patch.yml、packages/dsh-ssh/src/index.ts、packages/dsh-ssh/src/routes.ts、packages/dsh-ssh/src/tools.ts、packages/dsh-ssh/src/engine/connection-pool.ts、packages/dsh-ssh/src/store.ts 及固定范围 inventory；组件：packages/dsh-ssh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 packages/dsh-ssh/README.md、packages/dsh-ssh/src/index.ts、packages/dsh-ssh/src/tools.ts、packages/dsh-ssh/src/engine/connection-pool.ts、packages/dsh-ssh/src/routes.ts、packages/dsh-ssh/src/loopback.ts、packages/dsh-ssh/src/store.ts、packages/dsh-ssh/src/client/index.ts、packages/dsh-ssh/src/client/telemetry.ts 及固定范围 inventory；组件：packages/dsh-ssh。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查双面挂载、主机认证配置、访问、连接池与代表工具；未连远端或复验各系统与跳板。
-- 下一步：用可销毁 SSH 主机模拟错误 host key、正常回执及远端写入后断线，单独查远端实际次数。
+- 边界：仅查固定子包的双入口、Web HTTP 与升级路由、认证配置、连接池和代表性上传。未连接远端、未执行测试或组件。
+- 下一步：[Q05](#research-q05) 用隔离主机核对一次只读回执，同时专门验证主机密钥匹配分支，再做带已知远端记录的断线对照。
 
 **分析版本**
 
 - **仓库**：[zhu1090093659/dsh-web](https://github.com/zhu1090093659/dsh-web)
-- **版本号**：0.4.16（[固定提交 971cc3e](https://github.com/zhu1090093659/dsh-web/tree/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1)）
-- **版本日期**：2026-11-12（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.19（[固定提交 5cdf871](https://github.com/zhu1090093659/dsh-web/tree/5cdf8717475b6cbf85604f3c5428f332416c978b)）
+- **版本日期**：2026-11-17（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -135,9 +137,9 @@
 
 <a id="innovation"></a>
 
-将已发出但没有退出回执的操作标为结果未知，比较默认停重试后是否更少重复写入，见 [Q05](#research-q05)。
+[Q05](#research-q05) 将无明确退出的动作标成结果未知，并要求远端状态查证后才重试，能否减少重复写入需在一次性主机对照。
 
-用可销毁 SSH 主机模拟错误 host key、正常回执及远端写入后断线，单独查远端实际次数。
+[Q05](#research-q05) 用隔离主机核对一次只读回执，同时专门验证主机密钥匹配分支，再做带已知远端记录的断线对照。
 
 <a id="detail-section-9"></a>
 
@@ -160,44 +162,36 @@
 
 **活跃度**
 
-[![Issue 未关闭 1](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=1&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 155](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=155&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+created%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z) [![近30天关闭 156](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=156&color=737b86&logo=github)](https://github.com/zhu1090093659/dsh-web/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-13T01%3A48%3A39.164Z..2026-11-12T01%3A48%3A39.164Z)
-
-
-
-统计日期：2026-11-12。
+Issue 活跃度数据暂未获取（查询日期：2026-11-17），可前往 [GitHub Issues](https://github.com/zhu1090093659/dsh-web/issues) 查看。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：确定 DSH 如何复用同一 SSH 主机配置，以及凭据、身份验证与断线重放的实际边界。
+**插件研究总目标**：怎样用同一 SSH 别名完成一次可复核的远端诊断，断线、认证与停用分别有什么边界？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 同一台远程主机的诊断如何在浏览器与 Agent 间交接？
+### Q01 · 谁能用同一别名完成一次远端诊断？
 
 **研究主题**：场景与需求、贡献与相对优势
 
 #### 完整回答
 
-对频繁在 DSH 询问远程状态并手工进终端复核的运维人员，统一别名的增量是让 Agent 与人从同一宿主配置选择目标。补丁挂载宿主与客户端，宿主实际注册 HTTP、终端升级和模型工具。终端断开浏览器视图时在宿主保留会话注册，能按 ID 重新附着。用现有 OpenSSH 与独立终端时仍能做同一诊断，还能保留熟悉的授权和已知主机核验流程。合格交付是目标主机和只读输出可独立复核，而非面板可打开。
+已有一台允许只读排查的测试机时，使用 DSH 分析告警的人可在模型工具和 Web 终端间用同一别名查主机状态。相对回到原 SSH 客户端复用主机列表，增量主要是将工具输出直接放回 DSH 调查，从同一别名访问终端。常规命令仍需明确目标、退出码和来源。作者说明面板切页后的终端与转发在宿主维护；本次确认宿主注册 WebSocket、普通路由与模型工具，切走界面不应被视为远端退出。若原终端已有验证指纹与审计，切换的节省不一定抵消额外配置。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-ssh/README.md:20-35](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/README.md#L20-L35)
+**依据 1 · 作者声明**：[packages/dsh-ssh/README.md:24-35](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/README.md#L24-L35)
 
-作者说明共用别名与终端能力。
+作者列出共享别名、终端、存续与模型工具。
 
 <details>
-<summary>查看原文（16行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-## Capabilities
-
-| Capability | Description |
-| --- | --- |
 | Host management | CRUD, search, connection test; collapsible grouping by environment / tags with per-group batch test; config stored in `~/.dsh/dsh-ssh.json`; supports key / password / ssh-agent auth (OpenSSH agent, with Pageant still selectable on Windows), passphrase keys, ProxyJump jump hosts (multi-level) and OpenSSH `ProxyCommand` transports (bastion clients) |
 | Config import | One-click parse of a standard `~/.ssh/config` (Host/HostName/User/Port/IdentityFile/IdentityAgent/ForwardAgent/ProxyJump/ProxyCommand, `Include` files, blocks without HostName); `ForwardAgent yes|true|on` imports as enabled and `no|false|off` (or no directive) as disabled; skipped blocks are listed with their reason (wildcard pattern, existing alias, Match block, invalid fields) |
 | Persistent connection pool | Reuses a long-lived connection per host (opposite of the ssh-skill daemon), automatically disconnects after 30 minutes idle, auto-reconnects on disconnect (up to 3 times) |
@@ -214,26 +208,12 @@ The panel loads its contents on first open. Closing and reopening it preserves t
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-ssh/cordis.patch.yml:6-12](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/cordis.patch.yml#L6-L12)
+**依据 2 · 源码核查**：[packages/dsh-ssh/src/index.ts:219-239](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/index.ts#L219-L239)
 
-双面挂载。
-
-```text
-# The row is a bare plugin by package name: the node half (exports ".") runs
-# in the host process (SSH engine, /api/dsh-ssh routes, agent tools), and the
-# `dsh.client` declaration in package.json makes the browser half
-# (exports "./client", served at /plugins/<id>/client.js) load in the web GUI.
-- insert:
-    - id: ssh
-      name: '@linxin666/dsh-ssh'
-```
-
-**依据 3 · 源码核查**：[packages/dsh-ssh/src/index.ts:219-237](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/index.ts#L219-L237)
-
-实际注册 HTTP、升级和模型工具。
+真实注册路由、升级和模型工具。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
     disposeRoutes = ctx.effect(
@@ -255,70 +235,18 @@ The panel loads its contents on first open. Closing and reopening it preserves t
         const disposers = tools.map(tool => ctx.tools.register(tool))
         return () => { for (const dispose of disposers) dispose() }
       },
+      'dsh-ssh: tools',
+    )
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[packages/dsh-ssh/src/routes.ts:452-473](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/routes.ts#L452-L473)
+**依据 3 · 源码核查**：[packages/dsh-ssh/src/tools.ts:145-174](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/tools.ts#L145-L174)
 
-终端按别名或会话 ID 接入注册表。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-  // ---------------------------------------------- terminal (upgrade)
-  // The shell outlives the view that opened it: a session is created once and
-  // any later socket attaches by id, so a panel switch or a dropped socket
-  // does not tear the remote shell down (engine/terminal-sessions.ts).
-  const terminalSessions = new TerminalSessionRegistry({
-    openShell: (alias, size, onKeyboardInteractive) => engine.openShell(alias, size, onKeyboardInteractive),
-  })
-  const upgrade: WebUpgradeRoute = {
-    path: SSH_API.terminal,
-    handler: (req, socket, head) => {
-      if (!isLoopbackRequest(req)) {
-        socket.write('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n')
-        socket.destroy()
-        return
-      }
-      const url = new URL(req.url ?? '/', 'http://localhost')
-      const alias = queryParam(url, 'alias')
-      const sessionId = queryParam(url, 'session')
-      if (alias === undefined && sessionId === undefined) {
-        socket.write('HTTP/1.1 400 Bad Request\r\nConnection: close\r\n\r\n')
-        socket.destroy()
-        return
-```
-
-</details>
-
-#### 缺口
-
-- 插件别名与现有 OpenSSH 主机识别是否一致未验证
-  **影响**：影响人和 Agent 交接时的目标确定性
-  **进一步探讨**：对同一测试别名核对实际远端身份、输出与断线重接
-
-<a id="research-q02"></a>
-
-<a id="detail-section-12"></a>
-
-### Q02 · 远程命令断线后，何时会再发一次？
-
-**研究主题**：功能与机制、工程质量与复用
-
-#### 完整回答
-
-工具将别名、命令和取消信号转给引擎。连接池复用可用连接。调用异常且连接标记损坏时，可以进入下一次尝试；连接健康的异常直接上抛。通道关闭且未收到退出码会拒绝结果，进入池判断。超时尝试发 KILL、关通道并就地结算，取消也有独立分支，池见到取消会拒绝重放。但没有退出码并不能判断命令是否已经修改远端。业务脚本可能已经完成写入才失去回执，此时恢复连接后重复发命令存在副作用。需要远端任务标识或人工状态确认才能消除歧义。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[packages/dsh-ssh/src/tools.ts:145-183](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/tools.ts#L145-L183)
-
-工具把会话取消信号传给引擎。
+命令工具使用同一 engine 和取消信号。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（30行）</summary>
 
 ```text
 export function sshExecTool(engine: SshEngine) {
@@ -351,33 +279,83 @@ export function sshExecTool(engine: SshEngine) {
         // Forward the caller's cancellation: aborting closes the remote channel
         // instead of leaving the command running on the host.
         return await engine.exec(args.alias, args.command, args.timeoutMs, exec.signal)
-      } catch (error) {
-        return {
-          success: false,
-          exitCode: null,
-          timedOut: false,
-          stdout: '',
-          stderr: '',
-          durationMs: 0,
-          error: error instanceof Error ? error.message : String(error),
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:489-523](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L489-L523)
+#### 缺口
 
-仅标记断线的异常进入下一尝试，取消分支退出。
+- 未有真实运维频率或对照。
+  **影响**：收益仅指有同一别名的路径，不能估算时间。
+  **进一步探讨**：用一台一次性测试机对比同一命令与原终端。
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 断线、取消与超时各能证明执行到了哪里？
+
+**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+
+#### 完整回答
+
+执行用别名拿连接池连接，健康连接失败直接抛出，损坏连接可重连并在预算内重试。远端通道关闭没有数字退出码且没有被标超时，会被解释为连接中途丢失；若连接记录同时标坏，重连路径可能再次发起已部分或全部执行的命令。取消不会触发这条重试，超时会尝试发信号并关闭，再于本地截止先返回，无论远端确认是否到达。在跳板连接失败时封装错误保留跳板与原原因，便于识别搭链失败；这不说明已有远端副作用。只读任务可重查，涉及写入先用独立观察确认何处已生效。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:363-395](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L363-L395)
+
+跳板顺序、传输互斥与错误 cause。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（33行）</summary>
 
 ```text
-/**
- * Run `fn` with a live client for `alias`, reconnecting (up to the
- * attempt budget) when the connection broke mid-flight.
- */
-export async function withClient<T>(engine: PoolEngine, alias: string, fn: (client: Client) => Promise<T>, attempts = 3, signal?: AbortSignal): Promise<T> {
-  let lastError: unknown
+  if (chain.length > 0 && entry.proxyCommand !== undefined) {
+    throw new Error('entry \'' + entry.alias + '\' declares both proxyCommand and proxyJump — pick one transport per host')
+  }
+  /** Transports this call started; destroyed on every failure path. */
+  const transports: Duplex[] = []
+  const startTransport = (owner: SshHostEntry): ConnectConfig['sock'] => {
+    const { stream } = startProxyCommand(owner.proxyCommand as string, proxyTargetOf(owner))
+    transports.push(stream)
+    return stream
+  }
+  let sock: ConnectConfig['sock'] = entry.proxyCommand !== undefined ? startTransport(entry) : undefined
+  try {
+    for (let index = 0; index < chain.length; index += 1) {
+      const spec = chain[index]
+      const hop = resolveHop(engine, entry, spec)
+      if (index > 0 && hop.proxyCommand !== undefined) {
+        throw new Error('proxyJump hop \'' + spec + '\' declares a proxyCommand, which is only supported on the first hop')
+      }
+      const hopSock = index === 0 && hop.proxyCommand !== undefined ? startTransport(hop) : sock
+      let hopClient: Client
+      try {
+        hopClient = await connectClient(buildConnectConfig(hop, hopSock, engine.opts), onKeyboardInteractive)
+      } catch (error) {
+        // Name the hop: an address hop (or a typo'd alias) must stay
+        // diagnosable from the error alone.
+        throw new Error('proxyJump hop \'' + spec + '\' (' + hop.user + '@' + hop.host + ':' + hop.port + '): '
+          + (error instanceof Error ? error.message : String(error)), { cause: error })
+      }
+      hops.push(hopClient)
+      const next = index + 1 < chain.length ? resolveHop(engine, entry, chain[index + 1]) : undefined
+      const nextHost = next !== undefined ? next.host : entry.host
+      const nextPort = next !== undefined ? next.port : entry.port
+      sock = await new Promise<ConnectConfig['sock']>((resolve, reject) => {
+```
+
+</details>
+
+**依据 2 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:495-522](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L495-L522)
+
+区分健康异常、已取消与已坏连接重连。
+
+<details>
+<summary>查看原文（28行）</summary>
+
+```text
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     let record = engine.pool.get(alias)
     if (record === undefined || record.broken) {
@@ -406,19 +384,26 @@ export async function withClient<T>(engine: PoolEngine, alias: string, fn: (clie
     }
   }
   throw lastError instanceof Error ? lastError : new Error(String(lastError))
-}
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:583-612](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L583-L612)
+**依据 3 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:575-620](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L575-L620)
 
-超时、取消与缺退出码分支。
+超时与无退出码分支。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（46行）</summary>
 
 ```text
+            exitCode: null,
+            timedOut,
+            stdout: stdout.text,
+            stderr: stderr.text,
+            durationMs: Date.now() - started,
+            error: timedOut ? 'command timed out after ' + budget + ' ms' : undefined,
+          })
+        }
         const timer = setTimeout(() => {
           timedOut = true
           try { stream.signal('KILL') } catch { /* channel gone */ }
@@ -449,39 +434,43 @@ export async function withClient<T>(engine: PoolEngine, alias: string, fn: (clie
             return
           }
           resolve({
+            success: code === 0,
+            exitCode: code,
+            timedOut,
+            stdout: stdout.text,
+            stderr: stderr.text,
+            durationMs: Date.now() - started,
+          })
+        })
 ```
 
 </details>
 
 #### 缺口
 
-- 网络错误、远端执行与本地 broken 标志的实际先后未做故障注入
-  **影响**：无法保证非幂等命令只执行一次或杀掉远程所有进程
-  **进一步探讨**：在一次性主机用计数标记在回执前切断连接并检查变化次数
+- 未验证实际丢包、远端进程状态和中途重复。
+  **影响**：无退出码不能证明命令未执行。
+  **进一步探讨**：在一次性主机记录远端副作用并模拟回执前断连。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 哪一层保护浏览器操作、凭据和远端身份？
+### Q03 · 本机路由和远端主机身份有哪些独立约束？
 
-**研究主题**：缺陷与关键质疑、依赖、兼容与流程
+**研究主题**：依赖、兼容与流程、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-HTTP 路由与 WebSocket 升级都有回环判断，模型工具则通过 DSH 工具注册进入不同调用面。传输工具接受宿主本机路径，实际交给引擎；配置的密码和密钥口令写用户 JSON，临时文件以 0600 请求创建再重命名，文件权限并不加密。连接配置按密码、Agent 或读私钥构建，启用代理转发时会额外解析端点。所查连接配置未设置 hostVerifier，且作者的已知限制列出导入只覆盖部分 OpenSSH 语义，所以现有终端的主机信任设置不能直接当作插件的凭据。部署时仍需单独验证远端身份和会话可见工具。
+实际 HTTP 守卫查回环，判断包含 socket、Host、跨站标记和转发头。它控制谁可从浏览器进入插件，与连接到的 SSH 远端身份是两件事。构造 ssh2 的配置实际支持密码、代理或从本地读密钥，代理转发是额外显式开关，缺代理端点报错。检阅 buildConnectConfig 未见传入 hostVerifier 或已知主机指纹，不能把 OpenSSH 的主机验证习惯转到此路径。配置写入 JSON 临时文件并以 0600 模式换名，文件权限约束不提供字段加密。只有端点与网络身份在隔离环境中可独立核对时才考虑只读验证，保留原客户端作为实际身份复核。Web apply 还在启动尝试市场心跳，和 SSH 成功无关。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-ssh/src/routes.ts:68-97](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/routes.ts#L68-L97)
+**依据 1 · 源码核查**：[packages/dsh-ssh/src/routes.ts:69-77](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/routes.ts#L69-L77)
 
-HTTP 访问门槛。
-
-<details>
-<summary>查看原文（30行）</summary>
+宿主守卫拒绝非回环。
 
 ```text
-  /** Guard helper: fence + method check. */
   const guard = (req: IncomingMessage, res: ServerResponse, method: string): boolean => {
     if (!isLoopbackRequest(req)) {
       writeJson(res, 403, { error: 'forbidden: loopback-only' })
@@ -491,106 +480,63 @@ HTTP 访问门槛。
       writeJson(res, 405, { error: `method not allowed: ${req.method}` })
       return false
     }
-    return true
+```
+
+**依据 2 · 源码核查**：[packages/dsh-ssh/src/loopback.ts:59-92](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/loopback.ts#L59-L92)
+
+检查转发、socket、Host 和浏览器条件。
+
+<details>
+<summary>查看原文（34行）</summary>
+
+```text
+export function isProxiedRequest(request: IncomingMessage): boolean {
+  return request.headers['cf-connecting-ip'] !== undefined
+    || request.headers['x-forwarded-for'] !== undefined
+}
+
+/**
+ * Request-level trust fence: a loopback socket address AND a loopback Host
+ * header, plus browser same-origin markers. The socket address is
+ * authoritative for a direct connection; a request that carries a forwarding
+ * header is refused outright, because a proxy in front of the host makes both
+ * the socket address and the Host header describe the proxy rather than the
+ * client. X-Forwarded-For is therefore never evidence *for* loopback.
+ */
+export function isLoopbackRequest(request: IncomingMessage): boolean {
+  if (!isLoopbackAddress(request.socket.remoteAddress)) return false
+  if (isProxiedRequest(request)) return false
+  const host = request.headers.host
+  if (typeof host !== 'string') return false
+  let hostUrl: URL
+  try {
+    hostUrl = new URL('http://' + host)
+  } catch {
+    return false
   }
-
-  const routes: WebRoute[] = [
-    // ------------------------------------------------------------ hosts
-    {
-      kind: 'exact',
-      path: SSH_API.hosts,
-      handler: async (req, res) => {
-        // One handler per path (the webserver keyed route registry rejects
-        // duplicate (kind, path)); dispatch by HTTP method here.
-        const method = req.method ?? 'GET'
-        if (!isLoopbackRequest(req)) {
-          writeJson(res, 403, { error: 'forbidden: loopback-only' })
-          return
-        }
-        const url = new URL(req.url ?? '/', 'http://localhost')
-        if (method === 'GET') {
-          writeJson(res, 200, { hosts: engine.list(queryParam(url, 'query')) })
-          return
+  if (!isLoopbackHostname(hostUrl.hostname)) return false
+  if (request.headers['sec-fetch-site'] === 'cross-site') return false
+  const origin = request.headers.origin
+  if (origin === undefined) return true
+  try {
+    return new URL(origin).host === hostUrl.host
+  } catch {
+    return false
+  }
+}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-ssh/src/routes.ts:459-465](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/routes.ts#L459-L465)
+**依据 3 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:76-125](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L76-L125)
 
-升级也走同一判断。
-
-```text
-  const upgrade: WebUpgradeRoute = {
-    path: SSH_API.terminal,
-    handler: (req, socket, head) => {
-      if (!isLoopbackRequest(req)) {
-        socket.write('HTTP/1.1 403 Forbidden\r\nConnection: close\r\n\r\n')
-        socket.destroy()
-        return
-```
-
-**依据 3 · 源码核查**：[packages/dsh-ssh/src/tools.ts:193-218](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/tools.ts#L193-L218)
-
-上传工具把本地路径交引擎。
+列出实际 ssh2 连接选项，未见显式 hostVerifier。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（50行）</summary>
 
 ```text
-    name: 'ssh_upload',
-    description: 'Transfer a file FROM this machine (the dsh host) TO a remote SSH host. Use this only when the file must be copied to the remote host. Files that stay on this machine are handled with the local file tools (read / write / edit), not ssh_upload.',
-    parameters: {
-      alias: { type: 'string', required: true, description: 'Host alias from ssh_list.' },
-      localPath: { type: 'string', required: true, description: 'Absolute path of the source file on THIS machine (the dsh host) — not a path on the remote host.' },
-      remotePath: { type: 'string', required: true, description: 'Absolute destination path on the remote SSH host (parent dirs are created).' },
-    },
-    output: {
-      schema: {
-        type: 'object',
-        additionalProperties: false,
-        properties: {
-          ok: { type: 'boolean', required: true },
-          transferredBytes: { type: 'integer' },
-          files: { type: 'integer' },
-          error: { type: 'string' },
-        },
-      },
-      render: (_args, value: { ok: boolean; transferredBytes?: number; files?: number; error?: string }) => text(value.ok
-        ? `uploaded ${value.files ?? 1} file(s), ${value.transferredBytes ?? 0} bytes`
-        : `upload failed: ${value.error ?? 'unknown error'}`),
-    },
-    async execute(args) {
-      try {
-        const outcome = await engine.upload(args.alias, args.localPath, args.remotePath, false)
-        return { ok: true, transferredBytes: outcome.bytes, files: outcome.files }
-```
-
-</details>
-
-**依据 4 · 源码核查**：[packages/dsh-ssh/src/store.ts:395-403](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/store.ts#L395-L403)
-
-JSON 明文落盘和临时文件权限。
-
-```text
-  private save(file: StoreFile): void {
-    const dir = dirname(this.path)
-    if (!existsSync(dir)) mkdirSync(dir, { recursive: true, mode: 0o700 })
-    const tmp = this.path + '.tmp'
-    // Secrets live in this file: keep it readable by the owner only. The
-    // tmp file carries the 0600 mode through the rename.
-    writeFileSync(tmp, JSON.stringify(file, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
-    renameSync(tmp, this.path)
-    this.cache = undefined
-```
-
-**依据 5 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:77-119](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L77-L119)
-
-构造认证配置并可转发 Agent。
-
-<details>
-<summary>查看原文（43行）</summary>
-
-```text
+/** Build the ssh2 connect config for one entry (key read from disk). */
 export function buildConnectConfig(entry: SshHostEntry, sock: ConnectConfig['sock'] | undefined, opts: Required<EngineOptions>): ConnectConfig {
   const config: ConnectConfig = {
     host: entry.host,
@@ -634,195 +580,301 @@ export function buildConnectConfig(entry: SshHostEntry, sock: ConnectConfig['soc
       // allow agent forwarding") names neither the host nor a way out, so the
       // engine refuses first with an actionable one.
       throw new Error('agent forwarding is enabled for this host but no ssh-agent endpoint is available: '
+        + 'set SSH_AUTH_SOCK, start Pageant on Windows, or configure an agent path')
+    }
+    config.agent = agentPath
+    config.agentForward = true
+  }
+  return config
 ```
 
 </details>
 
-**依据 6 · 作者声明**：[packages/dsh-ssh/README.md:37-50](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/README.md#L37-L50)
+**依据 4 · 源码核查**：[packages/dsh-ssh/src/store.ts:395-403](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/store.ts#L395-L403)
 
-作者说明明文、转发及本机权限边界。
+私有模式的明文 JSON 持久化。
+
+```text
+  private save(file: StoreFile): void {
+    const dir = dirname(this.path)
+    if (!existsSync(dir)) mkdirSync(dir, { recursive: true, mode: 0o700 })
+    const tmp = this.path + '.tmp'
+    // Secrets live in this file: keep it readable by the owner only. The
+    // tmp file carries the 0600 mode through the rename.
+    writeFileSync(tmp, JSON.stringify(file, null, 2) + '\n', { encoding: 'utf8', mode: 0o600 })
+    renameSync(tmp, this.path)
+    this.cache = undefined
+```
+
+**依据 5 · 源码核查**：[packages/dsh-ssh/src/client/index.ts:74-84](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/client/index.ts#L74-L84)
+
+Web 启动尝试遥测。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（11行）</summary>
 
 ```text
-## Security model
+export function apply(ctx: ClientContext): void {
+  // Anonymous install heartbeat (docs/telemetry.md): one beat per browser per
+  // UTC day, package name only, silent failure.
+  reportDailyHeartbeat([{ name: '@linxin666/dsh-ssh' }])
 
-- All `/api/dsh-ssh/*` routes are loopback-only (with same-origin checks) — the interfaces that execute commands against remote servers are not exposed to the LAN.
-- Passwords / key passphrases are stored in plain text in `~/.dsh/dsh-ssh.json`, file mode 0600, directory 0700 (the same trust model as ssh-skill writing passwords into ssh-config comments).
-- ssh-agent auth stores only the agent socket path (or the special value `pageant`); it never reads or stores private-key material. An empty agent path is not a secret and is always saved: it means auto-detect (`SSH_AUTH_SOCK`, then the native OpenSSH named pipe on Windows), so switching a host to SSH Agent takes effect even with the field left blank.
-- Agent forwarding is opt-in per host and off by default. With `forwardAgent` enabled, every exec and PTY session on that host asks the server for `auth-agent-req@openssh.com`, which means the remote host can authenticate as this machine with your local keys. Enable it only for hosts you trust, and remember every session on such a host can use the forwarded agent. When no agent endpoint resolves (the configured agent path, `SSH_AUTH_SOCK`, the native OpenSSH named pipe on Windows) the connection fails instead of forwarding nothing, and a server that refuses the request surfaces its error exactly as it comes back.
-- Tunnels only listen on `127.0.0.1`.
-- Deleting a host or changing its connection fields (host / port / user / auth / proxyJump / proxyCommand / forwardAgent) immediately closes that alias's pooled connection and tunnels; later operations reconnect with the new configuration and never reuse a connection authenticated with the old credentials.
-- When the SSH connection behind a tunnel drops, the tunnel retires itself: the local port stops accepting, the tunnel leaves the list, and the connection that arrives during the drop is closed without traffic instead of interrupting the host process.
-- A `proxyCommand` value is a shell command executed by the DSH host process with its privileges — exactly the trust `ssh(1)` gives the same line in `~/.ssh/config`. It can only come from the user's own 0600 store file: the Agent cannot create or edit hosts, and `ssh_list` reports only whether a host has one, never the command text.
-- Before the Agent uses a tool, the host must first be configured in the GUI (or imported from ~/.ssh/config).
-- `ssh_upload` / `ssh_download` read/write arbitrary local paths on this machine with host-process privileges (not through the bash sandbox) — same host-local-path semantics as ssh-skill, be aware of that permission surface.
-- Agent transfer tools move files only between this machine and a remote SSH host; local-file reads and writes must use the local file tools (read / write / edit / bash), never the `ssh_*` tools.
-- The remote output of exec / cluster is returned verbatim (not sanitized); a command like `env` may bring secrets from the remote environment back into the conversation log.
+  ctx.effect(() => {
+    try {
+      return ctx.locale.register(NS, { zh, en })
+    } catch {
+      return () => {}
+    }
 ```
 
 </details>
 
-**依据 7 · 作者声明**：[packages/dsh-ssh/README.md:91-97](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/README.md#L91-L97)
+**依据 6 · 源码核查**：[packages/dsh-ssh/src/client/telemetry.ts:119-150](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/client/telemetry.ts#L119-L150)
 
-作者列出连接和导入限制。
+随机标识、去重和实际请求。
+
+<details>
+<summary>查看原文（32行）</summary>
 
 ```text
-- exec auto-reconnect on disconnect (up to 3 times) may re-execute non-idempotent commands — watch out for side effects on long commands.
-- A ProxyJump hop is either a host alias configured in this plugin or an OpenSSH `[user@]host[:port]` address; an address hop has no stored credentials, so it reuses the target host's authentication (configure a host entry when the hop needs its own).
-- `proxyCommand` and `proxyJump` cannot be combined on one host (OpenSSH resolves them by "whichever appears first in the config"; a stored entry has no order, so the plugin rejects the pair), and only the first hop of a chain may declare a ProxyCommand.
-- A ProxyCommand is executed through the user's shell, so it inherits the DSH process's `PATH` and environment. On Windows the shell is killed without its process group, so a client it spawned may outlive the transport.
-- The ssh_config import expands `Include` (globs, `~`, several pathnames, relative to the config directory) but not environment variables or `%` tokens, and a multi-pattern `Host a b` line still imports only its first pattern.
-- Resume (broken-transfer continuation) is not implemented yet.
-- The transfer of Agent tools is a host-machine local path (same semantics as ssh-skill).
+    // First guard: a stored opt-out or the browser's Do Not Track stops every
+    // read below from minting an id, marking the day, or reaching the network.
+    if (isTelemetrySuppressed()) return
+    if (items.length === 0) return
+    const today = new Date().toISOString().slice(0, 10)
+    // Automation contexts (CDP-driven QA browsers, fresh isolated profiles)
+    // mint a new visitor id per run and would inflate instance counts.
+    if (navigator.webdriver) return
+    if (localStorage.getItem(DAY_KEY_PREFIX + today) !== null) return
+    const visitor = visitorId()
+    if (visitor === null) return
+    pruneDayKeys(today)
+    const payloadItems = items.map((item) => {
+      const out: Record<string, string> = { name: item.name }
+      const version = item.version ?? bakedVersion()
+      if (version !== undefined) out.version = version
+      if (item.channel !== undefined) out.channel = item.channel
+      return out
+    })
+    const body = JSON.stringify({ kind: 'heartbeat', visitor, items: payloadItems })
+    void fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body,
+      keepalive: true,
+    }).then((response) => {
+      // Mark the day only after an accepted send, so offline browsers retry
+      // on a later mount instead of going dark until tomorrow.
+      if (response.ok) localStorage.setItem(DAY_KEY_PREFIX + today, '1')
+    }).catch(() => { /* unreachable endpoint: stay silent */ })
+  } catch { /* never break the host UI over telemetry */ }
+}
 ```
+
+</details>
 
 #### 缺口
 
-- 所选代理拓扑、ssh2 实际验主机策略和不同会话的工具可见性未实测
-  **影响**：不能确认它达到原 OpenSSH 流程的信任边界
-  **进一步探讨**：替换测试服务器 host key 并核对拒绝行为，同时审查最小权限会话能看见的工具
+- 真机主机校验、代理与网络模式未运行。
+  **影响**：不能将该研究用于生产端点身份保证。
+  **进一步探讨**：使用自有隔离机核对错误主机密钥行为，生产沿用已验证客户端。
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 为何应先观察，再决定是否把远端诊断纳入常用流程？
+### Q04 · 上传失败和退出后仍要确认什么？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：效果与总成本、采用判断、缺陷与关键质疑
 
 #### 完整回答
 
-远程只读诊断可能减少在终端与 DSH 间搬运输出，适用者是已有隔离测试机和低权限账户的运维人员。现阶段先核对测试别名确实指向预期主机、拒绝错误主机身份，并用可独立读取的只读输出对照现有终端。命令每次执行使用远端资源，模型调用与人工核对分开计量。若无法核验主机身份、输出带入凭据或断线后状态不明，仍用原有已审查的 SSH 终端，先从远端核对发生了什么，再考虑动作。集群需要非空筛选条件，但筛选条件可能仍匹配多台，因此单机结果不能直接外推。
+浏览器上传先检查声明长度，也累计分块实际字节，用 0600 的随机临时文件暂存。写流结束后通过 SFTP 上传，返回结果和进度。失败路径发结果，处理打开尚未结束的 sink 并尽量清除临时文件，清理出错被吞掉，且此前的远端上传能否清理要另查。固定版本只把已有清理函数移到共同作用域，未取得实际断连结果。初次使用要准备隔离机并核查主机身份和别名，持续要维护路由、认证、输出及活动终端。先不做上传或写命令，用原终端对照一次只读命令；若退出码缺失、目标不符或响应失去可信归属，停用并回原终端。关闭面板与卸载不同，后者才由 effect 释放 HTTP、升级路由、工具和终端会话。
 
 #### 证据与依据
 
-**依据 1 · 作者声明**：[packages/dsh-ssh/README.md:52-65](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/README.md#L52-L65)
+**依据 1 · 源码核查**：[packages/dsh-ssh/src/routes.ts:317-352](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/routes.ts#L317-L352)
 
-作者安装路线。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-````text
-## Install
-
-Install the family aggregate package `@linxin666/dsh-web-all` (all plugins and skins in one) or this plugin alone:
-
-```sh
-### From npm (recommended)
-dsh plugin --profile web add @linxin666/dsh-ssh@latest
-
-### From the repository (development)
-git clone https://github.com/zhu1090093659/dsh-web.git
-cd dsh-web
-pnpm install && pnpm -r build
-dsh plugin --profile web add link:$(pwd)/packages/dsh-ssh
-
-````
-
-</details>
-
-**依据 2 · 源码核查**：[packages/dsh-ssh/src/tools.ts:400-406](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/tools.ts#L400-L406)
-
-集群要求至少一个筛选条件并传取消。
-
-```text
-    async execute(args, exec) {
-      const hasSelector = (Array.isArray(args.aliases) && args.aliases.some((alias) => typeof alias === 'string' && alias.trim() !== '')) ||
-        (typeof args.environment === 'string' && args.environment.trim() !== '') ||
-        (Array.isArray(args.tags) && args.tags.some((tag) => typeof tag === 'string' && tag.trim() !== ''))
-      if (!hasSelector) throw new Error('ssh_cluster requires aliases, environment, or tags to limit the target set')
-      // Cancellation reaches every host's in-flight command.
-      return { results: await engine.cluster({ ...args, signal: exec.signal }) }
-```
-
-**依据 3 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:507-518](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L507-L518)
-
-连接损坏时有重放边界。
+预检大小和临时文件，清理失败会吞掉。
 
 <details>
-<summary>查看原文（12行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
-    } catch (error) {
-      lastError = error
-      // A cancelled call is never replayed: the caller asked for it to stop,
-      // and a retry would re-run a command that may not be idempotent.
-      if (signal?.aborted === true) throw error
-      // Retry only when the connection actually broke mid-flight: drop the
-      // corpse and let the next attempt reconnect (a reconnect may replay a
-      // non-idempotent command — the documented trade-off). A failure on a
-      // healthy connection is a logic error and is rethrown, not replayed.
-      if (!record.broken) throw error
-      disposeRecord(engine, alias, record)
-    } finally {
+        if (alias === undefined || remotePath === undefined) {
+          writeJson(res, 400, { error: 'alias and remotePath query parameters are required' })
+          return
+        }
+        const declared = Number(req.headers['content-length'])
+        if (Number.isFinite(declared) && declared > maxUploadBytes) {
+          writeJson(res, 413, { error: 'upload body too large' })
+          return
+        }
+        res.writeHead(200, {
+          'content-type': 'application/x-ndjson; charset=utf-8',
+          'cache-control': 'no-cache',
+          'referrer-policy': 'no-referrer',
+        })
+        const emit = (line: unknown): void => {
+          try { res.write(JSON.stringify(line) + '\n') } catch { /* client gone */ }
+        }
+        // Stage the uploaded bytes, then SFTP them out with progress frames.
+        const tmp = join(staging, `upload-${randomBytes(6).toString('hex')}`)
+        const sink = createWriteStream(tmp, { mode: 0o600 })
+        let settled = false
+        // End the response only after the tmp file is gone, and unlink only
+        // after the sink is fully closed: destroying a WriteStream whose
+        // fs.open is still pending lets the open RE-CREATE the file after
+        // an early unlink, leaving staging populated (this raced the
+        // response end and made the byte-cap test flaky).
+        const cleanup = (): void => {
+          void unlink(tmp).catch(() => undefined).finally(() => {
+            try { res.end() } catch { /* closed */ }
+          })
+        }
+        // Every terminal path (sink error, client abort, response loss) must
+        // emit a result frame, end the response, and remove the tmp file.
+        const fail = (error: unknown): void => {
+          if (settled) return
+          settled = true
 ```
 
 </details>
 
-**依据 4 · 作者声明**：[packages/dsh-ssh/README.md:43-50](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/README.md#L43-L50)
+**依据 2 · 源码核查**：[packages/dsh-ssh/src/routes.ts:350-385](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/routes.ts#L350-L385)
 
-作者说明转发、文件路径及输出限制。
+失败、断开、实际字节上限与清理。
+
+<details>
+<summary>查看原文（36行）</summary>
 
 ```text
-- Tunnels only listen on `127.0.0.1`.
-- Deleting a host or changing its connection fields (host / port / user / auth / proxyJump / proxyCommand / forwardAgent) immediately closes that alias's pooled connection and tunnels; later operations reconnect with the new configuration and never reuse a connection authenticated with the old credentials.
-- When the SSH connection behind a tunnel drops, the tunnel retires itself: the local port stops accepting, the tunnel leaves the list, and the connection that arrives during the drop is closed without traffic instead of interrupting the host process.
-- A `proxyCommand` value is a shell command executed by the DSH host process with its privileges — exactly the trust `ssh(1)` gives the same line in `~/.ssh/config`. It can only come from the user's own 0600 store file: the Agent cannot create or edit hosts, and `ssh_list` reports only whether a host has one, never the command text.
-- Before the Agent uses a tool, the host must first be configured in the GUI (or imported from ~/.ssh/config).
-- `ssh_upload` / `ssh_download` read/write arbitrary local paths on this machine with host-process privileges (not through the bash sandbox) — same host-local-path semantics as ssh-skill, be aware of that permission surface.
-- Agent transfer tools move files only between this machine and a remote SSH host; local-file reads and writes must use the local file tools (read / write / edit / bash), never the `ssh_*` tools.
-- The remote output of exec / cluster is returned verbatim (not sanitized); a command like `env` may bring secrets from the remote environment back into the conversation log.
+        const fail = (error: unknown): void => {
+          if (settled) return
+          settled = true
+          emit({ type: 'result', ok: false, error: error instanceof Error ? error.message : String(error) })
+          if (sink.destroyed) {
+            cleanup()
+          } else {
+            sink.once('close', cleanup)
+            try { sink.destroy() } catch { cleanup() }
+          }
+        }
+        const done = (): void => {
+          if (settled) return
+          settled = true
+          try { res.end() } catch { /* closed */ }
+        }
+        sink.on('error', (error) => fail(error))
+        req.on('error', (error) => fail(error))
+        req.on('aborted', () => fail('upload aborted by the client'))
+        res.on('error', () => fail('response stream closed'))
+        res.on('close', () => { if (!res.writableEnded) fail('connection closed') })
+        // The content-length pre-check above can be bypassed by chunked or
+        // header-less requests: count the bytes as they actually arrive and
+        // abort the moment the cap is exceeded.
+        let received = 0
+        let capped = false
+        req.on('data', (chunk: Buffer) => {
+          received += chunk.byteLength
+          if (received > maxUploadBytes && !capped) {
+            capped = true
+            fail('upload body too large')
+            // Keep the socket alive until the response flush finishes:
+            // destroying the request here races res.end() and the client
+            // sees a hang-up instead of the result frame. Drain the rest of
+            // the body so the socket can close cleanly afterwards.
+            res.on('finish', () => { try { req.destroy() } catch { /* closed */ } })
 ```
+
+</details>
+
+**依据 3 · 源码核查**：[packages/dsh-ssh/src/routes.ts:389-401](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/routes.ts#L389-L401)
+
+SFTP 从本地暂存发出并报告。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+        req.pipe(sink)
+        sink.on('finish', async () => {
+          if (settled) return
+          emit({ type: 'progress', progress: { phase: 'connecting', file: remotePath, transferred: 0, total: 0, percent: 0 } })
+          try {
+            const outcome = await engine.upload(alias, tmp, remotePath, false, progress => emit({ type: 'progress', progress }))
+            emit({ type: 'result', ok: true, transferredBytes: outcome.bytes })
+          } catch (error) {
+            emit({ type: 'result', ok: false, error: error instanceof Error ? error.message : String(error) })
+          } finally {
+            await unlink(tmp).catch(() => undefined)
+            done()
+          }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[packages/dsh-ssh/src/index.ts:219-239](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/index.ts#L219-L239)
+
+释放路由、终端与工具。
+
+<details>
+<summary>查看原文（21行）</summary>
+
+```text
+    disposeRoutes = ctx.effect(
+      () => {
+        const disposers = routes.map(route => ctx.webServer.register(route))
+        const upgradeDisposer = ctx.webServer.registerUpgrade(upgrade)
+        return () => {
+          for (const dispose of disposers) dispose()
+          upgradeDisposer()
+          // Dropping the routes also ends the terminal sessions they served:
+          // a live shell must not outlive the surface that can reach it.
+          terminalSessions.dispose()
+        }
+      },
+      'dsh-ssh: routes',
+    )
+    disposeTools = ctx.effect(
+      () => {
+        const disposers = tools.map(tool => ctx.tools.register(tool))
+        return () => { for (const dispose of disposers) dispose() }
+      },
+      'dsh-ssh: tools',
+    )
+```
+
+</details>
 
 #### 缺口
 
-- 还未确认固定宿主中的身份校验及断线行为
-  **影响**：无法判断便利是否值得替换既有可信连接
-  **进一步探讨**：在一次性主机核验错误指纹拒绝与断线后行为，再对照一次合格诊断
+- 未观察远端文件、清理用时和实际开销。
+  **影响**：无法保证所有遗留数据已删除。
+  **进一步探讨**：失败后检查宿主 staging 与远端目录，记录恢复动作。
 
 <a id="research-q05"></a>
 
 <a id="detail-section-15"></a>
 
-### Q05 · 增加远端结果未知状态能否减少重复执行？
+### Q05 · 结果未知提示能否减少远端重复动作？
 
 **研究主题**：新假设与验证
 
 #### 完整回答
 
-可把已发送但未收到退出码单独标作结果未知，并让默认策略只自动重试尚未发送的操作。用户可显式标记幂等命令，或用远端任务 ID 查询后再做决定。对照现有策略，在一次性主机分别制造发前断开、发送后写入前断开和写入后失回执，记录重复副作用、需人工恢复次数及完成时间。如果错误重放没有减少，或对已证幂等操作造成明显恢复退化，再修改策略。
+假设在命令已发但没有退出结果时，将状态标为未知且先查远端，能比直重发减少重复写入。用同一隔离测试主机和可对账的临时写入，在发出前、执行中和执行完未返退出码的位置断开。对照旧重试策略与先核对标识再决定，记实际命令次数、重复状态、恢复时间和漏完成。若重复没有减少，或漏完成和恢复代价超过可控范围，不建议扩展。该设计尚待验证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:489-523](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L489-L523)
+**依据 1 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:507-521](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L507-L521)
 
-池按连接坏状态决定重试。
+连接失败重试对非幂等命令有影响。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（15行）</summary>
 
 ```text
-/**
- * Run `fn` with a live client for `alias`, reconnecting (up to the
- * attempt budget) when the connection broke mid-flight.
- */
-export async function withClient<T>(engine: PoolEngine, alias: string, fn: (client: Client) => Promise<T>, attempts = 3, signal?: AbortSignal): Promise<T> {
-  let lastError: unknown
-  for (let attempt = 1; attempt <= attempts; attempt += 1) {
-    let record = engine.pool.get(alias)
-    if (record === undefined || record.broken) {
-      if (record !== undefined) disposeRecord(engine, alias, record)
-      record = await acquire(engine, alias)
-    }
-    record.idleAt = Date.now()
-    record.inFlight += 1
-    try {
-      const result = await fn(record.client)
-      record.idleAt = Date.now()
-      return result
     } catch (error) {
       lastError = error
       // A cancelled call is never replayed: the caller asked for it to stop,
@@ -838,18 +890,16 @@ export async function withClient<T>(engine: PoolEngine, alias: string, fn: (clie
       record.inFlight -= 1
     }
   }
-  throw lastError instanceof Error ? lastError : new Error(String(lastError))
-}
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:593-611](https://github.com/zhu1090093659/dsh-web/blob/971cc3e1f6f5b52bbcd86802a9be0e0c50fc32f1/packages/dsh-ssh/src/engine/connection-pool.ts#L593-L611)
+**依据 2 · 源码核查**：[packages/dsh-ssh/src/engine/connection-pool.ts:593-619](https://github.com/zhu1090093659/dsh-web/blob/5cdf8717475b6cbf85604f3c5428f332416c978b/packages/dsh-ssh/src/engine/connection-pool.ts#L593-L619)
 
-没有退出码时无法确定服务端结果。
+无退出码及正常返回分支。
 
 <details>
-<summary>查看原文（19行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
         stream.on('close', (code: number | null) => {
@@ -871,14 +921,22 @@ export async function withClient<T>(engine: PoolEngine, alias: string, fn: (clie
             reject(new Error('ssh: connection lost mid-flight (channel closed without an exit status)'))
             return
           }
+          resolve({
+            success: code === 0,
+            exitCode: code,
+            timedOut,
+            stdout: stdout.text,
+            stderr: stderr.text,
+            durationMs: Date.now() - started,
+          })
 ```
 
 </details>
 
 #### 缺口
 
-- 是否能可靠区分送达前与送达后未知
-  **影响**：避免误标已执行，需故障对照
-  **进一步探讨**：在模拟连接与一次性 SSH 主机各做三类断线并独立查远端记录
+- 未执行故障注入。
+  **影响**：暂无重复率、恢复时间依据。
+  **进一步探讨**：使用可恢复的测试状态在各断点追实际操作。
 
 [返回分类](../../views/categories/INFRASTRUCTURE.md) · [返回首页](../../../README.md)
