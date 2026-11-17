@@ -1,0 +1,452 @@
+{
+    "schema_version": 4,
+    "id": "001f2bea6424900941452494ef769f52",
+    "identity": "github:1335024815:root",
+    "slug": "isilsolme--dsh-anthropic-fonts",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1335024815:root",
+            "repository_id": 1335024815,
+            "component_id": "root",
+            "repository": "Isilsolme/dsh-anthropic-fonts",
+            "path": "",
+            "aliases": [],
+            "name": "DSH Anthropic Fonts",
+            "entry_type": "plugin",
+            "technical_category": "interface-input",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "da9ea6e6305c6c2de1576a71dcec359788621090e50d859cb15bd3f37e02eae6",
+                "code": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                "maintenance": "63b171eb18cff0e46eb4724099419a249c83f0c55312f6167f4b5627862bb1ff"
+            },
+            "sources": [
+                {
+                    "id": "2026-11-17-01-github-1335024815-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "c8ea8593d43cdbef4fbe69302e53c791f694dbba",
+                    "retrieved_at": "2026-11-17T02:35:33.091Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "2026-11-17-01-github-1335024815-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "README.md",
+                            "content_sha256": "c717b3480dc094f54e58ae3755c1a70ef175f7a063fff323f1fb0109d7005a6e"
+                        }
+                    ],
+                    "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                    "captured_at": "2026-11-17T02:35:33.091Z",
+                    "summary": "为 DSH Web 界面、Markdown 对话和代码设置不同字体族及回退。",
+                    "artifact": "data/runs/2026-11-17-01/isilsolme--dsh-anthropic-fonts/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "2026-11-17-01-github-1335024815-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/cordis.patch.yml",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "1658364c9005a7c40aa006afee29fb5ba168788a313c1e936ff20fae57c34af4"
+                        },
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "README.md",
+                            "content_sha256": "c717b3480dc094f54e58ae3755c1a70ef175f7a063fff323f1fb0109d7005a6e"
+                        },
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "lib/client.js",
+                            "content_sha256": "f879390cee39ff85ad2531cebc91984a25ccc2674763ef60a3726124d09a0f71"
+                        },
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "package.json",
+                            "content_sha256": "b4627981725de6a31faece248714dcd6e5464a45d407eeca8007c918c5c0df7a"
+                        },
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "lib/index.js",
+                            "content_sha256": "99cc68770810a4f864597096e4544e895e1663c8ca3b8df538b43df5442bc2d6"
+                        },
+                        {
+                            "repository_url": "https://github.com/Isilsolme/dsh-anthropic-fonts",
+                            "commit": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                            "path": "LICENSE",
+                            "content_sha256": "74adb2d2647cbb5a46da8b3f90a8f05b05855d75ec3159ee0298aeb101674f62"
+                        }
+                    ],
+                    "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                    "captured_at": "2026-11-17T02:35:33.091Z",
+                    "summary": "核查 cordis.patch.yml、README.md、lib/client.js、package.json、lib/index.js、LICENSE；空宿主壳伴随一个立即启用的 Web 模块，注入两代宿主字体变量和 Markdown 简写，见 [Q02](#research-q02)。",
+                    "artifact": "data/runs/2026-11-17-01/isilsolme--dsh-anthropic-fonts/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "固定发布 JavaScript 与作者说明，未执行目标宿主、安装或字体授权核验。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "适合希望分别调整 DSH Web 界面、对话和代码字体的个人用户，见 [Q01](#research-q01)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "空宿主壳伴随一个立即启用的 Web 模块，注入两代宿主字体变量和 Markdown 简写，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "固定发布 JavaScript 与作者说明，未执行目标宿主、安装或字体授权核验。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "源码中的 lib 进入包发布列表，字体留在仓库且受额外声明约束。未核注册表包。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web 和模块加载器 | 需要 | 加载 CSS 注入入口 | 无样式变化 |\n| 本机已安装对应字体 | 实际采用指定字体需要 | 浏览器匹配字形 | 使用列表里的回退 |",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 入门 | 本地资产 | 核字体和宿主 | 耗时待测 |\n| 持续 | 浏览器样式 | 回退对照 | 无测量 |\n| 退出 | 恢复 CSS | 复查原字型 | 无需服务端数据迁移的实现路径 |",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "有现成字体时在独立页面检查实际字形及大小。未达到预期就移除样式返回宿主配置，见 [Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 字体替换 | 写入族及排版变量 | 实际字形和可读性 |\n| 恢复 | 清理 style | 目标宿主卸载实效 |",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "仅一个 CSS 注入 effect，逻辑易检查，主题 token 的后续变动影响范围，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "technical_innovation",
+                    "basis": "interpretation",
+                    "text": "用同一浏览器插件分别设置 UI、对话和代码字体，延用多个宿主排版分量，见 [Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "CSS 变量存在不保证指定字体可用，字体覆盖和宿主样式优先级仍需验算，见 [Q03](#research-q03)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "为实际字体缺失及 token 漂移提供诊断提示，比较排查时间和误判，见 [Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1335024815:root",
+                            "area": "code",
+                            "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-17T02:35:33.091Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-17T02:35:33.091Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                "reviewed_at": "2026-11-17T02:35:33.091Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335024815:root",
+                        "area": "code",
+                        "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 9,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": " CSS kit 属常见适配，四项均 25%。复用宿主简写分量有局部机制贡献，但依赖这些变量，迁移和简化仅在同类主题接缝成立，见 [Q02](#research-q02)。",
+                    "score": 26,
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 4
+                    },
+                    "basis": "interpretation",
+                    "rationale": "减少手工写 CSS，流程 25%。交付内容与原对话相同，实质交付增量 0%。某些偏好用户少配样式，覆盖和经济 25%，实际价值未知，见 [Q01](#research-q01) 与 [Q03](#research-q03)。",
+                    "score": 18,
+                    "evidence_ids": [
+                        "2026-11-17-01-github-1335024815-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "trial",
+                "reason": "已具备所需字体且想分别调整 DSH Web 界面、对话和代码的个人用户，可以用隔离页面试样式。相比只改宿主默认正文和代码字体，插件还能为 Markdown 对话各变体设置衬线族。若出现中文回退、字号变动或宿主变量被覆盖，应移除插件回到原外观设置。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01) 用中英混排定义需要及验收，超过偶发便利，未有真实需求强度材料。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02) 的 lib/client.js 54–73 增加按变体适配，原外观仍是多数替代，因此为局部便利档。"
+                    },
+                    "evidence": {
+                        "score": 13,
+                        "rationale": "[Q02](#research-q02) 与 [Q03](#research-q03) 覆盖 CSS、回退出口和发布边界，可限制试用；缺本研究执行证据。"
+                    },
+                    "cost": {
+                        "score": 15,
+                        "rationale": "[Q03](#research-q03) 的 bundle 与 lib/client.js 78–89 支持可逆退出，超过显著维护档。字体资产和宿主差异限制高档。"
+                    }
+                },
+                "score": 49,
+                "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                "reviewed_at": "2026-11-17T02:35:33.091Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "2026-11-17-01-github-1335024815-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1335024815:root",
+                        "area": "code",
+                        "fingerprint": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1335024815:root",
+            "repository": "Isilsolme/dsh-anthropic-fonts",
+            "path": "",
+            "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+            "fingerprints": {
+                "directory": "da9ea6e6305c6c2de1576a71dcec359788621090e50d859cb15bd3f37e02eae6",
+                "code": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+                "maintenance": "63b171eb18cff0e46eb4724099419a249c83f0c55312f6167f4b5627862bb1ff"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-17T02:02:29Z",
+            "analysis_sha256": "61c66ff51b9e1c806a784cc4833f2c927eb78c45db613c9edb018706edf18c8d"
+        },
+        "publication.metadata": "data/catalog/isilsolme--dsh-anthropic-fonts/meta.json",
+        "publication.summaries": {
+            "text": "为 DSH Web 界面、Markdown 对话和代码设置不同字体族及回退。",
+            "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+            "source_url": "https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+            "items": {
+                "界面": "为 DSH Web 界面、Markdown 和代码注入分组字体族。"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 独立字体族 | 调整界面、对话及代码显示 | 需本机字体与 Web token，缺失时回退 |"
+        },
+        "publication.advice": {
+            "revision": "4bf1d25d25e2a89a0a4285928ea98913dc82e5c5",
+            "text": "有现成字体时在独立页面检查实际字形及大小。未达到预期就移除样式返回宿主配置，见 [Q04](#research-q04)。"
+        },
+        "registry": "data/plugins/isilsolme--dsh-anthropic-fonts",
+        "reports": "# DSH Anthropic Fonts\n\n> 为 DSH Web 界面、Markdown 对话和代码设置不同字体族及回退。\n\n## 研究范围\n\n- **仓库**：[Isilsolme/dsh-anthropic-fonts](https://github.com/Isilsolme/dsh-anthropic-fonts)\n- **版本号**：0.3.0（[固定提交 4bf1d25d25e2a89a0a4285928ea98913dc82e5c5](https://github.com/Isilsolme/dsh-anthropic-fonts/tree/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5)）\n- **版本日期**：2026-11-01（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n源码支持字体样式注入和移除。本次未执行固定宿主和字体实际渲染验收。\n\n## 洞察短评\n\n- **用途**：适合希望分别调整 DSH Web 界面、对话和代码字体的个人用户，见 [Q01](#research-q01)。\n- **亮点**：用同一浏览器插件分别设置 UI、对话和代码字体，延用多个宿主排版分量，见 [Q02](#research-q02)。\n- **思考**：CSS 变量存在不保证指定字体可用，字体覆盖和宿主样式优先级仍需验算，见 [Q03](#research-q03)。\n- **建议**：为实际字体缺失及 token 漂移提供诊断提示，比较排查时间和误判，见 [Q04](#research-q04)。\n\n采用建议：有现成字体时在独立页面检查实际字形及大小。未达到预期就移除样式返回宿主配置，见 [Q04](#research-q04)。\n\n## 核心贡献\n\n用同一浏览器插件分别设置 UI、对话和代码字体，延用多个宿主排版分量，见 [Q02](#research-q02)。\n\n## 关键质疑\n\nCSS 变量存在不保证指定字体可用，字体覆盖和宿主样式优先级仍需验算，见 [Q03](#research-q03)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n为实际字体缺失及 token 漂移提供诊断提示，比较排查时间和误判，见 [Q04](#research-q04)。\n\n同一消息逐项比较字形、尺寸和撤销，见 [Q04](#research-q04)。\n\n## 场景与替代办法\n\n适合希望分别调整 DSH Web 界面、对话和代码字体的个人用户，见 [Q01](#research-q01)。\n\n以宿主外观设置或已有 CSS 为对照，比较能否保持字号、字重和行高，见 [Q01](#research-q01)。\n\n## 依赖与流程\n\n#### 启动与依赖\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n| --- | --- | --- | --- |\n| DSH Web 和模块加载器 | 需要 | 加载 CSS 注入入口 | 无样式变化 |\n| 本机已安装对应字体 | 实际采用指定字体需要 | 浏览器匹配字形 | 使用列表里的回退 |\n\n#### 启动步骤\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n| --- | --- | --- |\n| 试用 | 隔离 profile，保留原字号 | 核对标题、代码和中文 |\n| 退出 | 卸载并刷新 | 原设置重新生效 |\n\n## 成本与效果\n\n#### 成本\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n| --- | --- | --- | --- |\n| 入门 | 本地资产 | 核字体和宿主 | 耗时待测 |\n| 持续 | 浏览器样式 | 回退对照 | 无测量 |\n| 退出 | 恢复 CSS | 复查原字型 | 无需服务端数据迁移的实现路径 |\n\n#### 效果\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n| --- | --- | --- |\n| 字体替换 | 写入族及排版变量 | 实际字形和可读性 |\n| 恢复 | 清理 style | 目标宿主卸载实效 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：DSH Web 用户能否替换三类字体而保留宿主排版，缺字体和卸载后发生什么？\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 何种需求适合安装字体插件？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n希望 DSH Web 区分界面、衬线对话和等宽代码的用户，可用同一则中英混合消息试验。相比在设置中直接换正文与代码族，增量是按宿主 Markdown 样式分开对话字体，并为多种强调样式统一重建字体简写。只想放大字体的用户用原有字号设置更直接。验收分别读 UI、标题、强调、表格和代码的计算样式，并检查字形实际渲染。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:9-29](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/README.md#L9-L29)\n\n作者描述字型、语言及回退。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n```text\n- **代码 / 代码块**：`Anthropic Mono Variable`\n\n中文回退到思源字体（`Noto Sans SC` / `Source Han Sans SC` / `Noto Serif SC`），未安装时回退到系统字体（苹方 / 微软雅黑 / 宋体）。\n\n## 字体\n\n> **重要：插件不内置字体**。npm 包不随包分发字体文件；安装插件后还需手动安装字体（见下表），然后刷新 / 重启 web 才会生效。\n\n插件引用的三个 Anthropic 拉丁字体（建议安装，英文 / 代码效果最佳）：\n\n| 字体 | 用途 | 获取方式 |\n|---|---|---|\n| Anthropic Sans Web Text | 界面 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\n| Anthropic Serif Web Text | 模型对话 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\n| Anthropic Mono Variable | 代码 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\n\n安装：Windows 双击每个 `.ttf` → 点「安装」；macOS 用「字体册」导入。安装后**刷新 / 重启 web** 生效。\n\n> 字体版权归 Anthropic 所有，仅供个人使用，不适用 MIT 许可（详见 [LICENSE](LICENSE) 字体声明）。\n\n中文无需额外安装：会回退到思源黑体 / 宋体（Noto Sans/Serif SC、Source Han），没有则用系统字体。\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:19-31](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L19-L31)\n\n界面与代码两层 token、Markdown 简写。\n\n<details>\n<summary>查看原文（13行）</summary>\n\n```text\n    var ROOT =\n      \"html:root{\" +\n      \"--dsh-font-family-text:\" + SANS + \";\" +\n      \"--dsh-font-family-code:\" + MONO + \";\" +\n      \"--dsw-font-family:\" + SANS + \";\" +\n      \"--ds-font-family-code:\" + MONO + \";\" +\n      \"--dsw-font-serif:\" + SERIF +\n      \"}\";\n\n    // 0.2.x 起 Markdown 正文与标题都走 font 简写 token（font:var(--dsw-font-markdown-h1)），\n    // 字体族已经烧进简写里，单独的 --dsw-font-markdown-*-font-family 不再被任何选择器读取。\n    // 这里用宿主自己的 style / weight / size / line-height 分量重建简写：字号行高继续跟随 DSH\n    // （含设置里的字号调整），只把字体族换成衬线。分量缺失时回退到 DSH 的默认值。\n```\n\n</details>\n\n**依据 3 · 源码核查**：[lib/client.js:54-73](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L54-L73)\n\n按变体覆盖字体族并复用宿主分量。\n\n<details>\n<summary>查看原文（20行）</summary>\n\n```text\n    function part(variant, field, fallback) {\n      return \"var(--dsw-font-markdown-\" + variant + \"-\" + field + \",\" + fallback + \")\";\n    }\n\n    function markdownTokens() {\n      var decls = [];\n      for (var i = 0; i < VARIANTS.length; i++) {\n        var variant = VARIANTS[i][0];\n        // 0.1.x 的选择器读的是这个族 token；0.2.x 已没有选择器读它，保留不影响新版本。\n        decls.push(\"--dsw-font-markdown-\" + variant + \"-font-family:var(--dsw-font-serif)\");\n        decls.push(\n          \"--dsw-font-markdown-\" + variant + \":\" +\n            part(variant, \"font-style\", VARIANTS[i][1]) + \" \" +\n            part(variant, \"font-weight\", VARIANTS[i][2]) + \" \" +\n            part(variant, \"font-size\", VARIANTS[i][3]) + \"/\" +\n            part(variant, \"line-height\", VARIANTS[i][4]) + \" \" +\n            \"var(--dsw-font-serif)\"\n        );\n      }\n      return \"html body{\" + decls.join(\";\") + \"}\";\n```\n\n</details>\n\n#### 缺口\n\n- 未比较真实可读性\n  **影响**：结论仅限样式机制\n  **进一步探讨**：用相同文本对照原外观设置\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 浏览器如何装配、回退及移除？\n\n**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程\n\n#### 完整回答\n\n包补丁载入宿主壳，Web 客户端声明立即启用。实际入口在宿主 ModuleLoader 注册，壳没有后台行为。CSS 写两代宿主的字体族变量，不直接逐段插入样式，Markdown 简写通过 var 从宿主读样式、字重、字号及行高，无值时才用定义中的回退。无 document 提前返回，已有同 ID 样式不重复插入，effect 处置移除原 style。若将来宿主不再引用这些 token 或更高优先级覆盖，标签存在也不代表视觉起效。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:15-48](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/package.json#L15-L48)\n\n发布入口和 Web 生命周期声明。\n\n<details>\n<summary>查看原文（34行）</summary>\n\n```text\n  \"main\": \"lib/index.js\",\n  \"exports\": {\n    \".\": \"./lib/index.js\",\n    \"./client\": \"./lib/client.js\",\n    \"./package.json\": \"./package.json\"\n  },\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.en.md\",\n    \"LICENSE\"\n  ],\n  \"keywords\": [\n    \"dsh\",\n    \"deepseek-harness\",\n    \"dsh-plugin\",\n    \"cordis\",\n    \"web-ui\",\n    \"font\",\n    \"anthropic\"\n  ],\n  \"engines\": {\n    \"node\": \">=22\",\n    \"dsh\": \">=0.1.0-rc.7 <0.3.0\"\n  },\n  \"dsh\": {\n    \"bundle\": {\n      \"patch\": \"./cordis.patch.yml\"\n    },\n    \"client\": {\n      \"inject\": [],\n      \"platform\": \"web\",\n      \"immediately\": true\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/index.js:1-3](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/index.js#L1-L3)\n\n宿主壳无主要逻辑。\n\n```text\n/** Host half is intentionally empty; the font effect is browser-only. */\nexport const name = 'dsh-anthropic-fonts'\nexport function apply() {}\n```\n\n**依据 3 · 源码核查**：[lib/client.js:1-31](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L1-L31)\n\n模块载入、字体层与规则。\n\n<details>\n<summary>查看原文（31行）</summary>\n\n```text\nwindow.__ModuleLoader__.load({\n  id: \"dsh-anthropic-fonts\",\n  factory: function (require) {\n    var module = { exports: {} };\n    var exports = module.exports;\n\n    // 只覆盖字体族，字号 / 行高 / 字重全部交给 DSH 自己的排版 token。\n    var SANS =\n      \"'Anthropic Sans Web Text','Noto Sans SC','Source Han Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif\";\n    var SERIF =\n      \"'Anthropic Serif Web Text',Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif\";\n    var MONO =\n      \"'Anthropic Mono Variable','Source Han Sans SC',ui-monospace,'SF Mono','JetBrains Mono','Fira Code',Consolas,'Liberation Mono',Menlo,Courier,monospace\";\n\n    // DSH >= 0.2 的排版分两层：--dsh-font-family-{text,code} 是唯一事实来源（设置里的\n    // 「正文字体 / 代码字体」写的就是它们），theme 再在 body 上把它们拼进 --dsw-font-family /\n    // --ds-font-family-code。所以必须覆盖 --dsh-* 这一层：只写 --dsw-font-family 会被 body 上那条\n    // 派生声明盖掉（0.1.x 没有 --dsh-* 层，故两套都写，两条曲线同时可用）。\n    var ROOT =\n      \"html:root{\" +\n      \"--dsh-font-family-text:\" + SANS + \";\" +\n      \"--dsh-font-family-code:\" + MONO + \";\" +\n      \"--dsw-font-family:\" + SANS + \";\" +\n      \"--ds-font-family-code:\" + MONO + \";\" +\n      \"--dsw-font-serif:\" + SERIF +\n      \"}\";\n\n    // 0.2.x 起 Markdown 正文与标题都走 font 简写 token（font:var(--dsw-font-markdown-h1)），\n    // 字体族已经烧进简写里，单独的 --dsw-font-markdown-*-font-family 不再被任何选择器读取。\n    // 这里用宿主自己的 style / weight / size / line-height 分量重建简写：字号行高继续跟随 DSH\n    // （含设置里的字号调整），只把字体族换成衬线。分量缺失时回退到 DSH 的默认值。\n```\n\n</details>\n\n**依据 4 · 源码核查**：[lib/client.js:54-89](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L54-L89)\n\n简写构造、去重和卸载。\n\n<details>\n<summary>查看原文（36行）</summary>\n\n```text\n    function part(variant, field, fallback) {\n      return \"var(--dsw-font-markdown-\" + variant + \"-\" + field + \",\" + fallback + \")\";\n    }\n\n    function markdownTokens() {\n      var decls = [];\n      for (var i = 0; i < VARIANTS.length; i++) {\n        var variant = VARIANTS[i][0];\n        // 0.1.x 的选择器读的是这个族 token；0.2.x 已没有选择器读它，保留不影响新版本。\n        decls.push(\"--dsw-font-markdown-\" + variant + \"-font-family:var(--dsw-font-serif)\");\n        decls.push(\n          \"--dsw-font-markdown-\" + variant + \":\" +\n            part(variant, \"font-style\", VARIANTS[i][1]) + \" \" +\n            part(variant, \"font-weight\", VARIANTS[i][2]) + \" \" +\n            part(variant, \"font-size\", VARIANTS[i][3]) + \"/\" +\n            part(variant, \"line-height\", VARIANTS[i][4]) + \" \" +\n            \"var(--dsw-font-serif)\"\n        );\n      }\n      return \"html body{\" + decls.join(\";\") + \"}\";\n    }\n\n    var css = ROOT + markdownTokens();\n\n    function apply(ctx) {\n      if (typeof document === \"undefined\") return;\n      var tagId = \"dsh-anthropic-fonts/fonts.css\";\n      if (document.querySelector(\"style[data-plugin-css=\" + JSON.stringify(tagId) + \"]\") !== null) return;\n      var tag = document.createElement(\"style\");\n      tag.dataset.plugin = \"dsh-anthropic-fonts\";\n      tag.dataset.pluginCss = tagId;\n      tag.textContent = css;\n      document.head.appendChild(tag);\n      ctx.effect(function () {\n        return function () { tag.remove(); };\n      });\n```\n\n</details>\n\n#### 缺口\n\n- 未运行目标浏览器\n  **影响**：真实样式和处置顺序需复测\n  **进一步探讨**：比较安装前后再卸载的计算样式及 style 数量\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 为何启用后可能还是显示系统字体？\n\n**研究主题**：缺陷与关键质疑、效果与总成本\n\n#### 完整回答\n\n包发布列表没有 fonts，Web 实现只声明字体族，没有 font-face 下载。因此系统没有对应字体名时会选列表里的中文或系统回退，计算样式展示字体列表也不能证明指定实际字形被使用。仓库的字体声明称这些字型为第三方专有内容且不在 MIT 软件许可之内，不能据软件许可推断可统一分发。README 报告旧宿主组合的安装及浏览器检查，本轮仅读作者材料，注册表包、覆盖范围和实际版本尚未确认。成本集中在本地字体和宿主版本核对，低频退路是移除样式并恢复默认。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:21-27](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/package.json#L21-L27)\n\n发布清单未包含 fonts。\n\n```text\n  \"files\": [\n    \"lib\",\n    \"cordis.patch.yml\",\n    \"README.md\",\n    \"README.en.md\",\n    \"LICENSE\"\n  ],\n```\n\n**依据 2 · 源码核查**：[lib/client.js:7-13](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L7-L13)\n\n只设字体族和回退。\n\n```text\n    // 只覆盖字体族，字号 / 行高 / 字重全部交给 DSH 自己的排版 token。\n    var SANS =\n      \"'Anthropic Sans Web Text','Noto Sans SC','Source Han Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif\";\n    var SERIF =\n      \"'Anthropic Serif Web Text',Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif\";\n    var MONO =\n      \"'Anthropic Mono Variable','Source Han Sans SC',ui-monospace,'SF Mono','JetBrains Mono','Fira Code',Consolas,'Liberation Mono',Menlo,Courier,monospace\";\n```\n\n**依据 3 · 源码核查**：[LICENSE:25-29](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/LICENSE#L25-L29)\n\n仓库字体额外声明。\n\n```text\nFont files notice: `fonts/AnthropicSansWebText.ttf`, `fonts/AnthropicSerifWebText.ttf`\nand `fonts/AnthropicMonoVariable.ttf` are proprietary typefaces of Anthropic,\nextracted from Anthropic's web products. They are included in this repository\nfor personal use only and are **not** covered by the MIT license above; all\nrights remain with Anthropic. The npm package does not ship these files.\n```\n\n**依据 4 · 作者声明**：[README.md:107-127](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/README.md#L107-L127)\n\n作者记录固定宿主组合的检查。\n\n<details>\n<summary>查看原文（21行）</summary>\n\n````text\n已验证版本（一次性 Profile，`DSH_HOME` 指向临时目录，不触碰真实 Profile）：\n\n| DSH 版本 | 安装 | 启动 | 卸载 |\n|---|---|---|---|\n| 0.1.5-alpha.2 | ✅ | ✅ | ✅ |\n| 0.1.5-rc.1 | ✅ | ✅ | ✅ |\n| 0.1.5-rc.2 | ✅ | ✅ | ✅ |\n| 0.2.1-rc.5 | ✅ | ✅ | ✅ |\n\n0.2.1-rc.5 额外做了浏览器内验收：在真实页面里读取计算样式，界面 `--dsw-font-family` 为 Anthropic Sans，Markdown 容器 / h1–h4 / p / strong / em / 表格为 Anthropic Serif，行内代码与代码块为 Anthropic Mono，且字号、行高、字重与 DSH 默认值逐项一致（h1 21px/700/30px、正文 14px/24px、表格 13px/22px 等）。\n\n验证步骤（每个版本各跑一次）：\n\n```sh\nDSH_HOME=/tmp/dsh-smoke dsh plugin --profile web add /path/to/dsh-anthropic-fonts  # 安装\nDSH_HOME=/tmp/dsh-smoke dsh --profile web --dump-config                            # 入口 anthropic-fonts 出现在组合配置里\nDSH_HOME=/tmp/dsh-smoke dsh --profile web --port 39123 --no-open                   # 启动并输出访问地址\nDSH_HOME=/tmp/dsh-smoke dsh plugin --profile web remove dsh-anthropic-fonts        # 卸载\n```\n\n覆盖到的证据：依赖写入 profile、bundle 追加进 `dsh.profile.bundles`、bundle patch 插入入口 `anthropic-fonts`（且没被兼容性 preflight 禁用）、web 服务正常监听并返回页面（启动载荷里已注册 `dsh-anthropic-fonts/client.js`）、卸载后依赖与 bundle 行都被移除。**未覆盖**：独立安全审计。\n````\n\n</details>\n\n#### 缺口\n\n- 缺注册表包及字体权利独立核验\n  **影响**：不支持组织统一分发判断\n  **进一步探讨**：有现成字体的个人环境仅核样式和回落\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 怎样判断字体变更符合要求？\n\n**研究主题**：新假设与验证、采用判断\n\n#### 完整回答\n\n先记录一则带标题、代码、表格与中文的消息。用同一浏览器、字号和消息比较原生及插件，既看 computed style，也确认实际渲染字体、代码列与截断。已具字体条件可用隔离 Web profile 尝试，缺字体又只想改变字号时先用宿主外观。可增加只读诊断列，提示字体家族没有匹配或宿主 token 没被消费，以降低排障时间。若提示不能区分 fallback 与正常字体，或引入闪动与耗时，则保留现有简单方案。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[lib/client.js:31-73](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L31-L73)\n\n不同变体与回退条件适于比较。\n\n<details>\n<summary>查看原文（43行）</summary>\n\n```text\n    // （含设置里的字号调整），只把字体族换成衬线。分量缺失时回退到 DSH 的默认值。\n    var DELTA = \"var(--dsh-content-font-delta)\";\n    var DELTA_2 = \"var(--dsh-content-font-delta-secondary,0px)\";\n    var SIZE = \"var(--dsh-content-font-size,14px)\";\n    var SIZE_2 = \"var(--dsh-content-font-size-secondary,13px)\";\n    // [variant, font-style, font-weight, font-size, line-height]\n    var VARIANTS = [\n      [\"h1\", \"normal\", \"700\", \"calc(21px + \" + DELTA + \")\", \"calc(30px + \" + DELTA + \")\"],\n      [\"h2\", \"normal\", \"700\", \"calc(19px + \" + DELTA + \")\", \"calc(28px + \" + DELTA + \")\"],\n      [\"h3\", \"normal\", \"700\", \"calc(18px + \" + DELTA + \")\", \"calc(26px + \" + DELTA + \")\"],\n      [\"h4\", \"normal\", \"600\", SIZE, \"calc(24px + \" + DELTA + \")\"],\n      [\"base\", \"normal\", \"400\", SIZE, \"calc(24px + \" + DELTA + \")\"],\n      [\"base-strong\", \"normal\", \"600\", SIZE, \"calc(24px + \" + DELTA + \")\"],\n      [\"base-italic\", \"italic\", \"400\", SIZE, \"calc(24px + \" + DELTA + \")\"],\n      [\"base-strong-italic\", \"italic\", \"600\", SIZE, \"calc(24px + \" + DELTA + \")\"],\n      [\"table\", \"normal\", \"400\", SIZE_2, \"calc(22px + \" + DELTA_2 + \")\"],\n      [\"table-head\", \"normal\", \"500\", SIZE_2, \"calc(22px + \" + DELTA_2 + \")\"],\n      [\"small\", \"normal\", \"400\", \"12px\", \"20px\"],\n      [\"small-strong\", \"normal\", \"600\", \"12px\", \"20px\"],\n      [\"small-italic\", \"italic\", \"400\", \"12px\", \"20px\"],\n      [\"small-strong-italic\", \"italic\", \"600\", \"12px\", \"20px\"]\n    ];\n\n    function part(variant, field, fallback) {\n      return \"var(--dsw-font-markdown-\" + variant + \"-\" + field + \",\" + fallback + \")\";\n    }\n\n    function markdownTokens() {\n      var decls = [];\n      for (var i = 0; i < VARIANTS.length; i++) {\n        var variant = VARIANTS[i][0];\n        // 0.1.x 的选择器读的是这个族 token；0.2.x 已没有选择器读它，保留不影响新版本。\n        decls.push(\"--dsw-font-markdown-\" + variant + \"-font-family:var(--dsw-font-serif)\");\n        decls.push(\n          \"--dsw-font-markdown-\" + variant + \":\" +\n            part(variant, \"font-style\", VARIANTS[i][1]) + \" \" +\n            part(variant, \"font-weight\", VARIANTS[i][2]) + \" \" +\n            part(variant, \"font-size\", VARIANTS[i][3]) + \"/\" +\n            part(variant, \"line-height\", VARIANTS[i][4]) + \" \" +\n            \"var(--dsw-font-serif)\"\n        );\n      }\n      return \"html body{\" + decls.join(\";\") + \"}\";\n```\n\n</details>\n\n**依据 2 · 源码核查**：[lib/client.js:78-89](https://github.com/Isilsolme/dsh-anthropic-fonts/blob/4bf1d25d25e2a89a0a4285928ea98913dc82e5c5/lib/client.js#L78-L89)\n\n可检查实际注入及移除。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n    function apply(ctx) {\n      if (typeof document === \"undefined\") return;\n      var tagId = \"dsh-anthropic-fonts/fonts.css\";\n      if (document.querySelector(\"style[data-plugin-css=\" + JSON.stringify(tagId) + \"]\") !== null) return;\n      var tag = document.createElement(\"style\");\n      tag.dataset.plugin = \"dsh-anthropic-fonts\";\n      tag.dataset.pluginCss = tagId;\n      tag.textContent = css;\n      document.head.appendChild(tag);\n      ctx.effect(function () {\n        return function () { tag.remove(); };\n      });\n```\n\n</details>\n\n#### 缺口\n\n- 未测试可用性或诊断假设\n  **影响**：仅建议可逆试用\n  **进一步探讨**：校验每一类元素的实际字形和尺寸\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：b91039862cfc469e8d8862eada8c3d2ac96df8ce6282785ea5ade4ecb1b02c65。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .js | source | 2 | 99 | 79 | 12 | — |\n| .md | source | 2 | 372 | — | — | 2803 |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n| --- | --- | --- |\n| 独立字体族 | 调整界面、对话及代码显示 | 需本机字体与 Web token，缺失时回退 |\n\n## 工程亮点\n\n仅一个 CSS 注入 effect，逻辑易检查，主题 token 的后续变动影响范围，见 [Q02](#research-q02)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 cordis.patch.yml、README.md、lib/client.js、package.json、lib/index.js、LICENSE 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：固定发布 JavaScript 与作者说明，未执行目标宿主、安装或字体授权核验。\n- 下一步：同一消息逐项比较字形、尺寸和撤销，见 [Q04](#research-q04)。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-17-01/isilsolme--dsh-anthropic-fonts/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"Isilsolme/dsh-anthropic-fonts\",\n  \"revision\": \"4bf1d25d25e2a89a0a4285928ea98913dc82e5c5\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"cordis.patch.yml\",\n    \"lib/client.js\",\n    \"lib/index.js\",\n    \"LICENSE\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"DSH Web 用户能否替换三类字体而保留宿主排版，缺字体和卸载后发生什么？\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"何种需求适合安装字体插件？\",\n        \"answer\": \"希望 DSH Web 区分界面、衬线对话和等宽代码的用户，可用同一则中英混合消息试验。相比在设置中直接换正文与代码族，增量是按宿主 Markdown 样式分开对话字体，并为多种强调样式统一重建字体简写。只想放大字体的用户用原有字号设置更直接。验收分别读 UI、标题、强调、表格和代码的计算样式，并检查字形实际渲染。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 9,\n            \"line_end\": 29,\n            \"observation\": \"作者描述字型、语言及回退。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 19,\n            \"line_end\": 31,\n            \"observation\": \"界面与代码两层 token、Markdown 简写。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 54,\n            \"line_end\": 73,\n            \"observation\": \"按变体覆盖字体族并复用宿主分量。\"\n          }\n        ],\n        \"status\": \"partial\",\n        \"unknowns\": [\n          {\n            \"issue\": \"未比较真实可读性\",\n            \"impact\": \"结论仅限样式机制\",\n            \"next_step\": \"用相同文本对照原外观设置\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\",\n          \"dependencies\"\n        ],\n        \"question\": \"浏览器如何装配、回退及移除？\",\n        \"answer\": \"包补丁载入宿主壳，Web 客户端声明立即启用。实际入口在宿主 ModuleLoader 注册，壳没有后台行为。CSS 写两代宿主的字体族变量，不直接逐段插入样式，Markdown 简写通过 var 从宿主读样式、字重、字号及行高，无值时才用定义中的回退。无 document 提前返回，已有同 ID 样式不重复插入，effect 处置移除原 style。若将来宿主不再引用这些 token 或更高优先级覆盖，标签存在也不代表视觉起效。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 15,\n            \"line_end\": 48,\n            \"observation\": \"发布入口和 Web 生命周期声明。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/index.js\",\n            \"line_start\": 1,\n            \"line_end\": 3,\n            \"observation\": \"宿主壳无主要逻辑。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 1,\n            \"line_end\": 31,\n            \"observation\": \"模块载入、字体层与规则。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 54,\n            \"line_end\": 89,\n            \"observation\": \"简写构造、去重和卸载。\"\n          }\n        ],\n        \"status\": \"partial\",\n        \"unknowns\": [\n          {\n            \"issue\": \"未运行目标浏览器\",\n            \"impact\": \"真实样式和处置顺序需复测\",\n            \"next_step\": \"比较安装前后再卸载的计算样式及 style 数量\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\",\n          \"cost\"\n        ],\n        \"question\": \"为何启用后可能还是显示系统字体？\",\n        \"answer\": \"包发布列表没有 fonts，Web 实现只声明字体族，没有 font-face 下载。因此系统没有对应字体名时会选列表里的中文或系统回退，计算样式展示字体列表也不能证明指定实际字形被使用。仓库的字体声明称这些字型为第三方专有内容且不在 MIT 软件许可之内，不能据软件许可推断可统一分发。README 报告旧宿主组合的安装及浏览器检查，本轮仅读作者材料，注册表包、覆盖范围和实际版本尚未确认。成本集中在本地字体和宿主版本核对，低频退路是移除样式并恢复默认。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 21,\n            \"line_end\": 27,\n            \"observation\": \"发布清单未包含 fonts。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 7,\n            \"line_end\": 13,\n            \"observation\": \"只设字体族和回退。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"LICENSE\",\n            \"line_start\": 25,\n            \"line_end\": 29,\n            \"observation\": \"仓库字体额外声明。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 107,\n            \"line_end\": 127,\n            \"observation\": \"作者记录固定宿主组合的检查。\"\n          }\n        ],\n        \"status\": \"partial\",\n        \"unknowns\": [\n          {\n            \"issue\": \"缺注册表包及字体权利独立核验\",\n            \"impact\": \"不支持组织统一分发判断\",\n            \"next_step\": \"有现成字体的个人环境仅核样式和回落\"\n          }\n        ]\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"怎样判断字体变更符合要求？\",\n        \"answer\": \"先记录一则带标题、代码、表格与中文的消息。用同一浏览器、字号和消息比较原生及插件，既看 computed style，也确认实际渲染字体、代码列与截断。已具字体条件可用隔离 Web profile 尝试，缺字体又只想改变字号时先用宿主外观。可增加只读诊断列，提示字体家族没有匹配或宿主 token 没被消费，以降低排障时间。若提示不能区分 fallback 与正常字体，或引入闪动与耗时，则保留现有简单方案。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 31,\n            \"line_end\": 73,\n            \"observation\": \"不同变体与回退条件适于比较。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"lib/client.js\",\n            \"line_start\": 78,\n            \"line_end\": 89,\n            \"observation\": \"可检查实际注入及移除。\"\n          }\n        ],\n        \"status\": \"partial\",\n        \"unknowns\": [\n          {\n            \"issue\": \"未测试可用性或诊断假设\",\n            \"impact\": \"仅建议可逆试用\",\n            \"next_step\": \"校验每一类元素的实际字形和尺寸\"\n          }\n        ]\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# dsh-anthropic-fonts\\n\\n[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)\\n\\n给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) Web 界面换上 Anthropic 字体：\\n\\n- **界面**（侧栏、标题、按钮、设置）：`Anthropic Sans Web Text`\\n- **模型对话**（Markdown 正文 / 标题 / 表格）：`Anthropic Serif Web Text`\\n- **代码 / 代码块**：`Anthropic Mono Variable`\\n\\n中文回退到思源字体（`Noto Sans SC` / `Source Han Sans SC` / `Noto Serif SC`），未安装时回退到系统字体（苹方 / 微软雅黑 / 宋体）。\\n\\n## 字体\\n\\n> **重要：插件不内置字体**。npm 包不随包分发字体文件；安装插件后还需手动安装字体（见下表），然后刷新 / 重启 web 才会生效。\\n\\n插件引用的三个 Anthropic 拉丁字体（建议安装，英文 / 代码效果最佳）：\\n\\n| 字体 | 用途 | 获取方式 |\\n|---|---|---|\\n| Anthropic Sans Web Text | 界面 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\\n| Anthropic Serif Web Text | 模型对话 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\\n| Anthropic Mono Variable | 代码 | 仓库 [`fonts/`](fonts/) 下载，或从 Claude 应用提取 |\\n\\n安装：Windows 双击每个 `.ttf` → 点「安装」；macOS 用「字体册」导入。安装后**刷新 / 重启 web** 生效。\\n\\n> 字体版权归 Anthropic 所有，仅供个人使用，不适用 MIT 许可（详见 [LICENSE](LICENSE) 字体声明）。\\n\\n中文无需额外安装：会回退到思源黑体 / 宋体（Noto Sans/Serif SC、Source Han），没有则用系统字体。\\n\\n## 安装\\n\\n标准的 `dsh` bundle 插件 —— 与 [`dsh-whale-animation`](https://github.com/LeemanCheung/dsh-whale-animation) 同一种形态。\\n\\n### CLI（推荐）\\n\\n已发布到 npm，一条命令安装：\\n\\n```sh\\ndsh plugin --profile web add dsh-anthropic-fonts\\n```\\n\\n也可以从 GitHub 安装：\\n\\n```sh\\ndsh plugin --profile web add \\\"github:Isilsolme/dsh-anthropic-fonts\\\"\\n```\\n\\n`dsh plugin add` 会在 profile 内执行 `pnpm add`，并自动把 bundle 追加到 `dsh.profile.bundles`。之后重启 web 即可生效。\\n\\n> ⚠️ 安装插件后**还需手动安装字体文件**（见上方「字体」）——npm 包不随包分发字体。\\n\\n### 手动安装\\n\\n```jsonc\\n// ~/.dsh/profiles/web/package.json\\n{\\n  \\\"dependencies\\\": {\\n    \\\"dsh-anthropic-fonts\\\": \\\"^0.3.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"profile\\\": {\\n      \\\"bundles\\\": [\\n        \\\"@deepseek-ai/dsh-base\\\",\\n        \\\"@deepseek-ai/dsh-web-app\\\",\\n        \\\"dsh-anthropic-fonts\\\"\\n      ]\\n    }\\n  }\\n}\\n```\\n\\n然后：\\n\\n```sh\\ncd ~/.dsh/profiles/web && pnpm install\\n```\\n\\n> 本地调试时，可用 `\\\"dsh-anthropic-fonts\\\": \\\"link:C:/path/to/dsh-anthropic-fonts\\\"` 指向本地目录。\\n\\n## 卸载 / 关闭\\n\\n```sh\\ndsh plugin --profile web remove dsh-anthropic-fonts\\n```\\n\\n（或从 `dependencies` 和 `bundles` 里移除，再 `pnpm install`）。重启即恢复默认字体。\\n\\n## 与 DSH 自带字体设置的关系\\n\\nDSH 0.2 起「设置 → 外观」里有「正文字体 / 代码字体」。插件针对的是**这两栏留空（默认）**的情况：如果你在那里填了自己的字体，DSH 会把它写成 `body` 上的内联变量，优先级高于插件注入的样式表——正文和代码会回落到你填的字体（对话衬线仍由插件接管）。想用插件的字体，保持这两栏为空即可。\\n\\n## 兼容性与权限\\n\\n| 项目 | 声明位置 | 值 |\\n|---|---|---|\\n| DSH 范围（DSH 实际校验） | `engines.dsh` | `>=0.1.0-rc.7 <0.3.0` |\\n| DSH 范围（文档 / 市场展示） | `dsh.compatibility.dsh` | `>=0.1.0-rc.7 <0.3.0` |\\n| DSH 逐版本 | `dsh.compatibility.dshReleases` | 见下 |\\n| Node.js | `engines.node` | `>=22` |\\n| Profile | `dsh.compatibility.profiles`、`dsh.client.platform` | `web` |\\n\\nDSH 0.2 起，启动 profile 前会先按 `engines.dsh`（没有则看 `@deepseek-ai/dsh*` 的 peer 依赖）做一次兼容性 preflight，不满足的插件行会被**直接禁用**。这里写 `engines.dsh` 是为了让超出范围时失败得明确，而不是静默不生效。\\n\\n`dshReleases` 对每个 DSH 版本逐项写 `compatible` / `incompatible` / `unknown`。**只有实际跑过一次性 Profile 冒烟验证的版本才写 `compatible`**；范围覆盖但未逐版本验证的一律是 `unknown`，范围声明不会被当作已验证。\\n\\n已验证版本（一次性 Profile，`DSH_HOME` 指向临时目录，不触碰真实 Profile）：\\n\\n| DSH 版本 | 安装 | 启动 | 卸载 |\\n|---|---|---|---|\\n| 0.1.5-alpha.2 | ✅ | ✅ | ✅ |\\n| 0.1.5-rc.1 | ✅ | ✅ | ✅ |\\n| 0.1.5-rc.2 | ✅ | ✅ | ✅ |\\n| 0.2.1-rc.5 | ✅ | ✅ | ✅ |\\n\\n0.2.1-rc.5 额外做了浏览器内验收：在真实页面里读取计算样式，界面 `--dsw-font-family` 为 Anthropic Sans，Markdown 容器 / h1–h4 / p / strong / em / 表格为 Anthropic Serif，行内代码与代码块为 Anthropic Mono，且字号、行高、字重与 DSH 默认值逐项一致（h1 21px/700/30px、正文 14px/24px、表格 13px/22px 等）。\\n\\n验证步骤（每个版本各跑一次）：\\n\\n```sh\\nDSH_HOME=/tmp/dsh-smoke dsh plugin --profile web add /path/to/dsh-anthropic-fonts  # 安装\\nDSH_HOME=/tmp/dsh-smoke dsh --profile web --dump-config                            # 入口 anthropic-fonts 出现在组合配置里\\nDSH_HOME=/tmp/dsh-smoke dsh --profile web --port 39123 --no-open                   # 启动并输出访问地址\\nDSH_HOME=/tmp/dsh-smoke dsh plugin --profile web remove dsh-anthropic-fonts        # 卸载\\n```\\n\\n覆盖到的证据：依赖写入 profile、bundle 追加进 `dsh.profile.bundles`、bundle patch 插入入口 `anthropic-fonts`（且没被兼容性 preflight 禁用）、web 服务正常监听并返回页面（启动载荷里已注册 `dsh-anthropic-fonts/client.js`）、卸载后依赖与 bundle 行都被移除。**未覆盖**：独立安全审计。\\n\\n**权限**：客户端只往 `document.head` 注入一个 `<style>`；不读写文件、不访问网络、不执行命令、不接触凭据。Host 半边（`lib/index.js`）为空。\\n\\n新的 DSH 版本发布后：在一次性 Profile 里重跑上面四步，把该版本写进 `dsh.compatibility.dshReleases`（`compatible`），并提升本插件 SemVer 后推送。\\n\\n## 原理\\n\\nDSH 0.2 起排版 token 分成两层：\\n\\n- `--dsh-font-family-{text,code}` 是唯一事实来源（「设置 → 外观」里的正文字体 / 代码字体写的就是它们）；\\n- theme 在 `body` 上把它们拼进 `--dsw-font-family` / `--ds-font-family-code`，其余所有排版 token 再引用这两个。\\n\\n所以插件覆盖的是 `--dsh-*` 这一层。**只写 `--dsw-font-family` 在 0.2 起会失效**：`body` 上那条派生声明会盖掉 `:root` 上的继承值——这正是 0.2.1 版本更新后插件「整体回到默认字体」的原因。0.1.x 没有 `--dsh-*` 层、直接读 `--dsw-font-family`，因此两套都写，两条曲线同时可用。\\n\\n对话的衬线来自 Markdown 简写 token。0.2.x 起 Markdown 正文与标题改用 `font: var(--dsw-font-markdown-h1)` 这类简写，字体族已经烧进简写值里，单独的 `--dsw-font-markdown-*-font-family` 不再被任何选择器读取。插件改用宿主自己的 `-font-style` / `-font-weight` / `-font-size` / `-line-height` 分量重建这些简写，只把字体族换成衬线：字号、行高、字重仍然跟着 DSH（包括设置里的字号调整），分量缺失时回退到 DSH 默认值，0.1.x 也照常工作。\\n\\n代码字体走 `--dsh-font-family-code` / `--ds-font-family-code`；终端字体（`--dsh-font-family-terminal`）不在插件范围内。\\n\\n注入的 `<style>` 归属 client fiber，卸载时一并清理。\\n\\n## 结构\\n\\n- `lib/index.js` —— Host 半边（空；字体效果只在浏览器）\\n- `lib/client.js` —— Client 半边（注入字体 CSS 变量覆盖）\\n- `cordis.patch.yml` —— bundle patch，插入插件行\\n- `fonts/` —— 三个拉丁字体文件\\n\\n## 参考\\n\\n字体栈参考了 [`blaxisomu/typora_claude`](https://github.com/blaxisomu/typora_claude) 的实现（拉丁用 Anthropic Web 字体、中文回退思源字体）。\\n\\n## 许可\\n\\nMIT\\n\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"dsh-anthropic-fonts\\\",\\n  \\\"version\\\": \\\"0.3.0\\\",\\n  \\\"description\\\": \\\"Switch the DSH web interface to Anthropic Sans Web Text and model conversation to Anthropic Serif Web Text.\\\",\\n  \\\"license\\\": \\\"MIT\\\",\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/Isilsolme/dsh-anthropic-fonts.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/Isilsolme/dsh-anthropic-fonts#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/Isilsolme/dsh-anthropic-fonts/issues\\\"\\n  },\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"main\\\": \\\"lib/index.js\\\",\\n  \\\"exports\\\": {\\n    \\\".\\\": \\\"./lib/index.js\\\",\\n    \\\"./client\\\": \\\"./lib/client.js\\\",\\n    \\\"./package.json\\\": \\\"./package.json\\\"\\n  },\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"cordis.patch.yml\\\",\\n    \\\"README.md\\\",\\n    \\\"README.en.md\\\",\\n    \\\"LICENSE\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"dsh\\\",\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh-plugin\\\",\\n    \\\"cordis\\\",\\n    \\\"web-ui\\\",\\n    \\\"font\\\",\\n    \\\"anthropic\\\"\\n  ],\\n  \\\"engines\\\": {\\n    \\\"node\\\": \\\">=22\\\",\\n    \\\"dsh\\\": \\\">=0.1.0-rc.7 <0.3.0\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    },\\n    \\\"client\\\": {\\n      \\\"inject\\\": [],\\n      \\\"platform\\\": \\\"web\\\",\\n      \\\"immediately\\\": true\\n    },\\n    \\\"compatibility\\\": {\\n      \\\"dsh\\\": \\\">=0.1.0-rc.7 <0.3.0\\\",\\n      \\\"dshReleases\\\": {\\n        \\\"rc.7\\\": \\\"unknown\\\",\\n        \\\"rc.8\\\": \\\"unknown\\\",\\n        \\\"0.1.1-rc.1\\\": \\\"unknown\\\",\\n        \\\"0.1.1-rc.2\\\": \\\"unknown\\\",\\n        \\\"0.1.2-alpha.2\\\": \\\"unknown\\\",\\n        \\\"0.1.2-alpha.3\\\": \\\"unknown\\\",\\n        \\\"0.1.2-alpha.4\\\": \\\"unknown\\\",\\n        \\\"0.1.2-alpha.5\\\": \\\"unknown\\\",\\n        \\\"0.1.2-rc.1\\\": \\\"unknown\\\",\\n        \\\"0.1.3-alpha.1\\\": \\\"unknown\\\",\\n        \\\"0.1.3-alpha.2\\\": \\\"unknown\\\",\\n        \\\"0.1.5-alpha.1\\\": \\\"unknown\\\",\\n        \\\"0.1.5-alpha.2\\\": \\\"compatible\\\",\\n        \\\"0.1.5-rc.1\\\": \\\"compatible\\\",\\n        \\\"0.1.5-rc.2\\\": \\\"compatible\\\",\\n        \\\"0.2.1-rc.2\\\": \\\"unknown\\\",\\n        \\\"0.2.1-rc.5\\\": \\\"compatible\\\"\\n      },\\n      \\\"profiles\\\": [\\n        \\\"web\\\"\\n      ]\\n    }\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"^4.0.1\\\"\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"cordis.patch.yml\",\n      \"content\": \"# dsh-anthropic-fonts: Anthropic Sans (UI) / Serif (conversation) for the DSH web surface.\\n- insert:\\n    - id: anthropic-fonts\\n      name: 'dsh-anthropic-fonts'\\n\"\n    },\n    {\n      \"path\": \"lib/client.js\",\n      \"content\": \"window.__ModuleLoader__.load({\\n  id: \\\"dsh-anthropic-fonts\\\",\\n  factory: function (require) {\\n    var module = { exports: {} };\\n    var exports = module.exports;\\n\\n    // 只覆盖字体族，字号 / 行高 / 字重全部交给 DSH 自己的排版 token。\\n    var SANS =\\n      \\\"'Anthropic Sans Web Text','Noto Sans SC','Source Han Sans SC',-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Helvetica Neue',Helvetica,Arial,sans-serif\\\";\\n    var SERIF =\\n      \\\"'Anthropic Serif Web Text',Georgia,'Times New Roman','Noto Serif SC','Source Han Serif SC','Songti SC','SimSun',serif\\\";\\n    var MONO =\\n      \\\"'Anthropic Mono Variable','Source Han Sans SC',ui-monospace,'SF Mono','JetBrains Mono','Fira Code',Consolas,'Liberation Mono',Menlo,Courier,monospace\\\";\\n\\n    // DSH >= 0.2 的排版分两层：--dsh-font-family-{text,code} 是唯一事实来源（设置里的\\n    // 「正文字体 / 代码字体」写的就是它们），theme 再在 body 上把它们拼进 --dsw-font-family /\\n    // --ds-font-family-code。所以必须覆盖 --dsh-* 这一层：只写 --dsw-font-family 会被 body 上那条\\n    // 派生声明盖掉（0.1.x 没有 --dsh-* 层，故两套都写，两条曲线同时可用）。\\n    var ROOT =\\n      \\\"html:root{\\\" +\\n      \\\"--dsh-font-family-text:\\\" + SANS + \\\";\\\" +\\n      \\\"--dsh-font-family-code:\\\" + MONO + \\\";\\\" +\\n      \\\"--dsw-font-family:\\\" + SANS + \\\";\\\" +\\n      \\\"--ds-font-family-code:\\\" + MONO + \\\";\\\" +\\n      \\\"--dsw-font-serif:\\\" + SERIF +\\n      \\\"}\\\";\\n\\n    // 0.2.x 起 Markdown 正文与标题都走 font 简写 token（font:var(--dsw-font-markdown-h1)），\\n    // 字体族已经烧进简写里，单独的 --dsw-font-markdown-*-font-family 不再被任何选择器读取。\\n    // 这里用宿主自己的 style / weight / size / line-height 分量重建简写：字号行高继续跟随 DSH\\n    // （含设置里的字号调整），只把字体族换成衬线。分量缺失时回退到 DSH 的默认值。\\n    var DELTA = \\\"var(--dsh-content-font-delta)\\\";\\n    var DELTA_2 = \\\"var(--dsh-content-font-delta-secondary,0px)\\\";\\n    var SIZE = \\\"var(--dsh-content-font-size,14px)\\\";\\n    var SIZE_2 = \\\"var(--dsh-content-font-size-secondary,13px)\\\";\\n    // [variant, font-style, font-weight, font-size, line-height]\\n    var VARIANTS = [\\n      [\\\"h1\\\", \\\"normal\\\", \\\"700\\\", \\\"calc(21px + \\\" + DELTA + \\\")\\\", \\\"calc(30px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"h2\\\", \\\"normal\\\", \\\"700\\\", \\\"calc(19px + \\\" + DELTA + \\\")\\\", \\\"calc(28px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"h3\\\", \\\"normal\\\", \\\"700\\\", \\\"calc(18px + \\\" + DELTA + \\\")\\\", \\\"calc(26px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"h4\\\", \\\"normal\\\", \\\"600\\\", SIZE, \\\"calc(24px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"base\\\", \\\"normal\\\", \\\"400\\\", SIZE, \\\"calc(24px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"base-strong\\\", \\\"normal\\\", \\\"600\\\", SIZE, \\\"calc(24px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"base-italic\\\", \\\"italic\\\", \\\"400\\\", SIZE, \\\"calc(24px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"base-strong-italic\\\", \\\"italic\\\", \\\"600\\\", SIZE, \\\"calc(24px + \\\" + DELTA + \\\")\\\"],\\n      [\\\"table\\\", \\\"normal\\\", \\\"400\\\", SIZE_2, \\\"calc(22px + \\\" + DELTA_2 + \\\")\\\"],\\n      [\\\"table-head\\\", \\\"normal\\\", \\\"500\\\", SIZE_2, \\\"calc(22px + \\\" + DELTA_2 + \\\")\\\"],\\n      [\\\"small\\\", \\\"normal\\\", \\\"400\\\", \\\"12px\\\", \\\"20px\\\"],\\n      [\\\"small-strong\\\", \\\"normal\\\", \\\"600\\\", \\\"12px\\\", \\\"20px\\\"],\\n      [\\\"small-italic\\\", \\\"italic\\\", \\\"400\\\", \\\"12px\\\", \\\"20px\\\"],\\n      [\\\"small-strong-italic\\\", \\\"italic\\\", \\\"600\\\", \\\"12px\\\", \\\"20px\\\"]\\n    ];\\n\\n    function part(variant, field, fallback) {\\n      return \\\"var(--dsw-font-markdown-\\\" + variant + \\\"-\\\" + field + \\\",\\\" + fallback + \\\")\\\";\\n    }\\n\\n    function markdownTokens() {\\n      var decls = [];\\n      for (var i = 0; i < VARIANTS.length; i++) {\\n        var variant = VARIANTS[i][0];\\n        // 0.1.x 的选择器读的是这个族 token；0.2.x 已没有选择器读它，保留不影响新版本。\\n        decls.push(\\\"--dsw-font-markdown-\\\" + variant + \\\"-font-family:var(--dsw-font-serif)\\\");\\n        decls.push(\\n          \\\"--dsw-font-markdown-\\\" + variant + \\\":\\\" +\\n            part(variant, \\\"font-style\\\", VARIANTS[i][1]) + \\\" \\\" +\\n            part(variant, \\\"font-weight\\\", VARIANTS[i][2]) + \\\" \\\" +\\n            part(variant, \\\"font-size\\\", VARIANTS[i][3]) + \\\"/\\\" +\\n            part(variant, \\\"line-height\\\", VARIANTS[i][4]) + \\\" \\\" +\\n            \\\"var(--dsw-font-serif)\\\"\\n        );\\n      }\\n      return \\\"html body{\\\" + decls.join(\\\";\\\") + \\\"}\\\";\\n    }\\n\\n    var css = ROOT + markdownTokens();\\n\\n    function apply(ctx) {\\n      if (typeof document === \\\"undefined\\\") return;\\n      var tagId = \\\"dsh-anthropic-fonts/fonts.css\\\";\\n      if (document.querySelector(\\\"style[data-plugin-css=\\\" + JSON.stringify(tagId) + \\\"]\\\") !== null) return;\\n      var tag = document.createElement(\\\"style\\\");\\n      tag.dataset.plugin = \\\"dsh-anthropic-fonts\\\";\\n      tag.dataset.pluginCss = tagId;\\n      tag.textContent = css;\\n      document.head.appendChild(tag);\\n      ctx.effect(function () {\\n        return function () { tag.remove(); };\\n      });\\n    }\\n\\n    exports.apply = apply;\\n    exports.inject = [];\\n    return module.exports;\\n  }\\n});\\n\"\n    },\n    {\n      \"path\": \"lib/index.js\",\n      \"content\": \"/** Host half is intentionally empty; the font effect is browser-only. */\\nexport const name = 'dsh-anthropic-fonts'\\nexport function apply() {}\\n\"\n    },\n    {\n      \"path\": \"LICENSE\",\n      \"content\": \"MIT License\\n\\nCopyright (c) 2026 Isilsolme and contributors\\n\\nPermission is hereby granted, free of charge, to any person obtaining a copy\\nof this software and associated documentation files (the \\\"Software\\\"), to deal\\nin the Software without restriction, including without limitation the rights\\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\\ncopies of the Software, and to permit persons to whom the Software is\\nfurnished to do so, subject to the following conditions:\\n\\nThe above copyright notice and this permission notice shall be included in all\\ncopies or substantial portions of the Software.\\n\\nTHE SOFTWARE IS PROVIDED \\\"AS IS\\\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\\nSOFTWARE.\\n\\n---\\n\\nFont files notice: `fonts/AnthropicSansWebText.ttf`, `fonts/AnthropicSerifWebText.ttf`\\nand `fonts/AnthropicMonoVariable.ttf` are proprietary typefaces of Anthropic,\\nextracted from Anthropic's web products. They are included in this repository\\nfor personal use only and are **not** covered by the MIT license above; all\\nrights remain with Anthropic. The npm package does not ship these files.\\n\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"4bf1d25d25e2a89a0a4285928ea98913dc82e5c5\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"b91039862cfc469e8d8862eada8c3d2ac96df8ce6282785ea5ade4ecb1b02c65\",\n    \"groups\": [\n      {\n        \"extension\": \".js\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 99,\n        \"code\": 79,\n        \"comments\": 12,\n        \"blank\": 8\n      },\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 372,\n        \"words\": 2803\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "aac1e84a9b151e1b5d546c8ef241ef583771f5af075164c29dbc60cbe1160157"
+        }
+    },
+    "unavailable_artifacts": []
+}

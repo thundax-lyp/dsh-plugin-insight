@@ -1,0 +1,58 @@
+{
+    "repository": "Lenonss/DSH_VsCodeMode",
+    "repository_id": 1340266494,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 33,
+    "pushed_at": "2026-11-15T03:29:41Z",
+    "issues": {
+        "open": 3,
+        "closed": 11,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALenonss%2FDSH_VsCodeMode%20is%3Aissue%20created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CE2:359F93:87067:9043D:6AFBB8CF and timestamp 2026-11-17 02:15:44 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALenonss%2FDSH_VsCodeMode%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CE8:21569:85E5C:8F20E:6AFBB8D0 and timestamp 2026-11-17 02:15:45 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ALenonss%2FDSH_VsCodeMode%20is%3Aissue%20updated%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 1CFC:18C6D2:82BC0:8BEC3:6AFBB8D2 and timestamp 2026-11-17 02:15:46 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T20:14:06.886Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-vscode-mode",
+        "captured_at": "2026-11-15T22:53:03.252Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 13190,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/dsh-vscode-mode",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-20T09:57:11.633Z",
+            "captured_at": "2026-11-15T22:53:03.252Z",
+            "source_url": "https://registry.npmjs.org/dsh-vscode-mode",
+            "error": null,
+            "latest_version": "0.30.0",
+            "latest_published_at": "2026-11-15T03:21:33.300Z",
+            "latest_error": null
+        }
+    }
+}

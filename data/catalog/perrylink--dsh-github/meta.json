@@ -1,0 +1,45 @@
+{
+    "repository": "PerryLink/dsh-github",
+    "repository_id": 1333457991,
+    "captured_at": "2026-11-17T02:10:05.734Z",
+    "window_start": "2026-10-18T02:10:05.734Z",
+    "stars": 31,
+    "pushed_at": "2026-11-09T03:01:38Z",
+    "issues": {
+        "open": 0,
+        "closed": 7,
+        "created_30d": 4,
+        "closed_30d": 6,
+        "updated_30d": 6
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-16T07:19:34.507Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "572161efeb99239b86daa40647f37a484fe2b337",
+        "blob_sha": "99727b798b036a8e717c9eda7b31946fd2982eb2",
+        "errors_blob_sha": "56053fd596203e574b298c609c88f9cff4840f40",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@perrylink/dsh-github",
+        "captured_at": "2026-11-16T19:39:05.779Z",
+        "window_start": "2026-10-17",
+        "window_end": "2026-11-15",
+        "downloads_30d": 8145,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-17:2026-11-15/%40perrylink%2Fdsh-github",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T11:20:57.922Z",
+            "captured_at": "2026-11-16T19:39:05.779Z",
+            "source_url": "https://registry.npmjs.org/%40perrylink%2Fdsh-github",
+            "error": null,
+            "latest_version": "0.7.34",
+            "latest_published_at": "2026-11-03T14:09:57.733Z",
+            "latest_error": null
+        }
+    }
+}
