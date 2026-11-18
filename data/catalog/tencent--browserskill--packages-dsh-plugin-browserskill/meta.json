@@ -1,44 +1,49 @@
 {
     "repository": "Tencent/BrowserSkill",
     "repository_id": 1276665883,
-    "captured_at": "2026-11-09T02:22:10.023Z",
-    "window_start": "2026-10-10T02:22:10.023Z",
-    "stars": 10163,
-    "pushed_at": "2026-11-08T16:13:48Z",
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 10508,
+    "pushed_at": "2026-11-17T12:30:22Z",
     "issues": {
-        "open": 86,
-        "closed": 131,
-        "created_30d": 79,
-        "closed_30d": 33,
-        "updated_30d": 94
+        "open": 53,
+        "closed": 200,
+        "created_30d": 100,
+        "closed_30d": 95,
+        "updated_30d": null
     },
-    "errors": [],
+    "errors": [
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-10-19T02%3A25%3A42.973Z..2026-11-18T02%3A25%3A42.973Z&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3ATencent%2FBrowserSkill%20is%3Aissue%20updated%3A2026-10-19T02%3A25%3A42.973Z..2026-11-18T02%3A25%3A42.973Z&per_page=1\": net/http: TLS handshake timeout"
+        }
+    ],
     "archived": false,
     "git_cache": {
-        "captured_at": "2026-11-08T06:43:41.836Z",
+        "captured_at": "2026-11-17T16:42:12.226Z",
         "source_repository": "thundax-lyp/dsh-plugin-meta",
         "path": "data/GIT-META.jsonl",
         "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
-        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
-        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
+        "commit_sha": "22d397bfc8bcaa7e64d05148d61491a16eeb6de7",
+        "blob_sha": "bf1db0bb67bad74d294e4f04bcb1ed9583ec1dbb",
+        "errors_blob_sha": "c7fb651ee8e95b110915f939a703f8178b915696",
         "latest_error": null
     },
     "npm": {
         "package_name": "@wxg-prc-cpg/browser-skill-dsh-plugin",
-        "captured_at": "2026-11-08T00:41:42.970Z",
-        "window_start": "2026-10-09",
-        "window_end": "2026-11-07",
-        "downloads_30d": 46565,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
+        "captured_at": "2026-11-18T00:59:31.345Z",
+        "window_start": "2026-10-19",
+        "window_end": "2026-11-17",
+        "downloads_30d": 56659,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-19:2026-11-17/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T11:43:40.257Z",
-            "captured_at": "2026-11-08T00:41:42.970Z",
+            "captured_at": "2026-11-18T00:59:31.345Z",
             "source_url": "https://registry.npmjs.org/%40wxg-prc-cpg%2Fbrowser-skill-dsh-plugin",
             "error": null,
-            "latest_version": "0.4.2",
-            "latest_published_at": "2026-11-05T12:25:43.950Z",
+            "latest_version": "0.5.0",
+            "latest_published_at": "2026-11-12T16:10:55.267Z",
             "latest_error": null
         }
     }

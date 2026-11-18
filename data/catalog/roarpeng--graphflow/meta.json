@@ -1,0 +1,45 @@
+{
+    "repository": "Roarpeng/GraphFlow",
+    "repository_id": 1251045010,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 30,
+    "pushed_at": "2026-11-14T03:28:21Z",
+    "issues": {
+        "open": 0,
+        "closed": 6,
+        "created_30d": 1,
+        "closed_30d": 1,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-17T16:42:12.226Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "22d397bfc8bcaa7e64d05148d61491a16eeb6de7",
+        "blob_sha": "bf1db0bb67bad74d294e4f04bcb1ed9583ec1dbb",
+        "errors_blob_sha": "c7fb651ee8e95b110915f939a703f8178b915696",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@roarpeng/graphflow",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 16663,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/%40roarpeng%2Fgraphflow",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-06-11T13:34:09.442Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/%40roarpeng%2Fgraphflow",
+            "error": null,
+            "latest_version": "3.9.2",
+            "latest_published_at": "2026-11-04T08:02:39.671Z",
+            "latest_error": null
+        }
+    }
+}

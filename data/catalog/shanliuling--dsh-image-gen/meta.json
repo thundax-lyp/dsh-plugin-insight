@@ -1,57 +1,39 @@
 {
     "repository": "shanliuling/dsh-image-gen",
     "repository_id": 1336998801,
-    "captured_at": "2026-11-09T02:22:10.023Z",
-    "window_start": "2026-10-10T02:22:10.023Z",
-    "stars": 1178,
-    "pushed_at": "2026-11-08T16:38:10Z",
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 1597,
+    "pushed_at": "2026-11-18T02:21:14Z",
     "issues": {
-        "open": 5,
-        "closed": 79,
-        "created_30d": null,
-        "closed_30d": null,
-        "updated_30d": null
+        "open": null,
+        "closed": 85,
+        "created_30d": 37,
+        "closed_30d": 36,
+        "updated_30d": 44
     },
     "errors": [
         {
-            "target": "created_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fdsh-image-gen%20is%3Aissue%20created%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B7C:99B28:1027B4EF:16F96D47:6AF12F90 and timestamp 2026-11-09 02:27:28 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "closed_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fdsh-image-gen%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B8A:29DA6C:5C3727C:847EFE0:6AF12F91 and timestamp 2026-11-09 02:27:29 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
-        },
-        {
-            "target": "updated_30d",
-            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fdsh-image-gen%20is%3Aissue%20updated%3A2026-10-10T02%3A22%3A10.023Z..2026-11-09T02%3A22%3A10.023Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 6B90:1C7601:5C9523E:84E0777:6AF12F92 and timestamp 2026-11-09 02:27:30 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Ashanliuling%2Fdsh-image-gen%20is%3Aissue%20is%3Aopen&per_page=1: Get \"https://api.github.com/search/issues?q=repo%3Ashanliuling%2Fdsh-image-gen%20is%3Aissue%20is%3Aopen&per_page=1\": net/http: TLS handshake timeout"
         }
     ],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-08T13:53:28.058Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "6fd0d9df2a828426895ffb9774abf99ad2c3effb",
-        "blob_sha": "27cf00955ce4c7c71714b0cbd1668160eac23edb",
-        "errors_blob_sha": "bfd2c3654770fb82cfc368ae4580679da42ad66e",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-image-gen",
-        "captured_at": "2026-11-08T17:57:25.757Z",
-        "window_start": "2026-10-09",
-        "window_end": "2026-11-07",
-        "downloads_30d": 69270,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-09:2026-11-07/dsh-image-gen",
+        "captured_at": "2026-11-17T03:56:51.018Z",
+        "window_start": "2026-10-18",
+        "window_end": "2026-11-16",
+        "downloads_30d": 87128,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-18:2026-11-16/dsh-image-gen",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-17T13:59:38.856Z",
-            "captured_at": "2026-11-08T17:57:25.757Z",
+            "captured_at": "2026-11-17T03:56:51.018Z",
             "source_url": "https://registry.npmjs.org/dsh-image-gen",
             "error": null,
-            "latest_version": "0.11.1",
-            "latest_published_at": "2026-11-08T15:43:14.865Z",
+            "latest_version": "0.11.3",
+            "latest_published_at": "2026-11-16T07:19:05.970Z",
             "latest_error": null
         }
     }
