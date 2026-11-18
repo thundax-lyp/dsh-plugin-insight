@@ -1,4 +1,4 @@
-# DSH Plugin Insight [![已研究 1389](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1389&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
+# DSH Plugin Insight [![已研究 1403](https://img.shields.io/static/v1?label=%E5%B7%B2%E7%A0%94%E7%A9%B6&message=1403&color=766494&style=flat&labelColor=555555&logoColor=white)](data/views/categories/INDEX.md)
 
 按 DSH 使用场景查找插件与相关工具，了解用途、使用条件和核查结果。
 
@@ -38,9 +38,9 @@
 
 > 查看最近发布的版本，了解用途和使用条件。
 
+- [DSH Plugin Hub](data/plugins/dshplugin--dsh-plugin-hub/INSIGHT.md) · 在 DeepSeek Harness 设置中浏览社区插件，管理安装、更新、卸载和任务日志。 · [![最新发布 2026-11-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin)
 - [DSH Super Kanban](data/plugins/topmindspace--dsh-super-kanban/INSIGHT.md) · 把 DeepSeek Harness 会话整理成任务卡，集中查看进展、待处理和待验收交付。 · [![最新发布 2026-11-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-super-kanban)
-- [DSH SSH](data/plugins/zhu1090093659--dsh-web--packages-dsh-ssh/INSIGHT.md) · 在 DSH Web 统一管理 SSH 主机并使用远端命令、终端、文件传输和隧道。 · [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-ssh)
-- [梁神模式](data/plugins/damonkoy--dsh-web-ui--packages-dsh-liangshen/INSIGHT.md) · 在 DSH 提供梁神预设，将首阶段双工具切换到后续 Code Mode。 · [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@linxin666/dsh-liangshen)
+- [DSH IM Connect](data/plugins/michengai--dsh-im-connect/INSIGHT.md) · 将 Telegram、飞书、钉钉等即时通讯渠道接入本机 DeepSeek Harness，会话可从聊天继续并在网页查看。 · [![最新发布 2026-11-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@michengai/dsh-im-connect)
 
 ## [下载热门](data/views/columns/HOT.md)
 
@@ -54,13 +54,13 @@
 
 | 分类 | 用途 | 数量 |
 | --- | --- | ---: |
-| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 415 |
-| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 55 |
+| [个人效率](data/views/categories/PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 420 |
+| [办公与运营](data/views/categories/OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 56 |
 | [研究与知识](data/views/categories/RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 172 |
-| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 437 |
+| [软件交付](data/views/categories/SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 441 |
 | [内容生产](data/views/categories/CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 82 |
 | [客户服务](data/views/categories/CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 222 |
+| [基础设施](data/views/categories/INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 226 |
 | [其他](data/views/categories/OTHER.md) | 其他尚未归入上述场景的插件 | 5 |
 
 [浏览全部分类](data/views/categories/INDEX.md)
@@ -76,4 +76,4 @@
 
 ## 更新时间
 
-2026-11-17
+2026-11-18

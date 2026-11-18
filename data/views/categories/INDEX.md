@@ -8,39 +8,39 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 415 |
-| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 55 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 420 |
+| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 56 |
 | [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 172 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 437 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 441 |
 | [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 82 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
-| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 222 |
+| [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 226 |
 | [其他](OTHER.md) | 其他尚未归入上述场景的插件 | 5 |
 
 ## 分类 Star 榜
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（415）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（420）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [Mole DSH Skill](../../plugins/tw93--mole--plugins-mole/INSIGHT.md) | 在 DSH 中用 Mole CLI 指导磁盘占用查询、清理预览、应用卸载和系统状态检查。 | [![GitHub Star 75,104](https://img.shields.io/static/v1?label=&message=75%2C104&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/tw93/Mole) |
 | [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) | 将 DeepSeek Harness 的本地 Web、Host 与插件系统整合进桌面窗口，提供工作配置、终端、更新与恢复入口。 | [![GitHub Star 34,996](https://img.shields.io/static/v1?label=&message=34%2C996&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop) |
 | [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md) | 浏览器扩展提供提示词管理，并在受支持的聊天网站提供时间线、文件夹、对话导出和公式复制。 | [![GitHub Star 20,587](https://img.shields.io/static/v1?label=&message=20%2C587&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/voyager-crew/voyager) |
-| [dsh-wallpaper-engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) | 在 DSH 对话界面显示本地场景、网页和视频壁纸，支持外观预设。 | [![GitHub Star 6,484](https://img.shields.io/static/v1?label=&message=6%2C484&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) |
+| [DSH Wallpaper Engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) | 在 DSH 对话页显示本地 Wallpaper Engine 场景、网页和视频壁纸，并提供外观预设、字体和玻璃效果。 | [![GitHub Star 7,355](https://img.shields.io/static/v1?label=&message=7%2C355&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) |
 | [dsh-pet](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) | 在 DeepSeek Harness 内显示互动桌宠，提供活动提醒、余额、待办、语音和闲聊。 | [![GitHub Star 6,344](https://img.shields.io/static/v1?label=&message=6%2C344&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) |
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
-### [办公与运营（55）](OFFICE-OPERATIONS.md)
+### [办公与运营（56）](OFFICE-OPERATIONS.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
 | [Reactive Resume](../../plugins/reactive-resume--reactive-resume/INSIGHT.md) | 独立简历/求职文档应用，以认证MCP/API编辑用户文档、保留版本并生成PDF导出。 | [![GitHub Star 45,386](https://img.shields.io/static/v1?label=&message=45%2C386&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/reactive-resume/reactive-resume) |
 | [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md) | 用于构建、运行和持续演进业务系统的开源应用平台，提供权限、工作流及 Agent 集成。 | [![GitHub Star 24,868](https://img.shields.io/static/v1?label=&message=24%2C868&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase) |
+| [BrowserSkill for DeepSeek Harness](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) | 在 DeepSeek Harness 中注册 BrowserSkill 技能，并为 bsk 命令提供路径配置和首次安装指引。 | [![GitHub Star 10,508](https://img.shields.io/static/v1?label=&message=10%2C508&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
 | [BrowserSkill](../../plugins/tencent--browserskill/INSIGHT.md) | 把可调用 bsk 的 Agent 接入 Chrome 或 Edge 的任务窗口，支持网页观察、交互和人工协作。 | [![GitHub Star 10,163](https://img.shields.io/static/v1?label=&message=10%2C163&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
-| [BrowserSkill for DeepSeek Harness](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) | 在 DeepSeek Harness 中使用 bsk 工具浏览网页、操作页面并查看截图和会话状态。 | [![GitHub Star 10,163](https://img.shields.io/static/v1?label=&message=10%2C163&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
 | [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) | 通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。 | [![GitHub Star 978](https://img.shields.io/static/v1?label=&message=978&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) |
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（437）](SOFTWARE-DELIVERY.md)
+### [软件交付（441）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -89,7 +89,7 @@
 
 [查看全部插件 →](CUSTOMER-SERVICE.md)
 
-### [基础设施（222）](INFRASTRUCTURE.md)
+### [基础设施（226）](INFRASTRUCTURE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -115,4 +115,4 @@
 
 ## 更新时间
 
-2026-11-17
+2026-11-18
