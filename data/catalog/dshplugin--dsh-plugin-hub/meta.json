@@ -1,44 +1,38 @@
 {
     "repository": "dshplugin/dsh-plugin-hub",
-    "repository_id": 1340244547,
-    "captured_at": "2026-11-11T01:54:58.798Z",
-    "window_start": "2026-10-12T01:54:58.798Z",
-    "stars": 506,
-    "pushed_at": "2026-11-09T02:06:10Z",
+    "repository_id": null,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": null,
+    "pushed_at": null,
     "issues": {
-        "open": 19,
-        "closed": 683,
-        "created_30d": 556,
-        "closed_30d": 540,
-        "updated_30d": 563
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-10T23:44:45.448Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "5bfa2ec939b308c71408142c0fe8dd1eb99d5319",
-        "blob_sha": "11427f3d8e9ca5e47de3164ad0b14e11afaa810a",
-        "errors_blob_sha": "ac3bc08114281d3a385c5c7206b782b261afaf35",
-        "latest_error": null
-    },
+    "errors": [
+        {
+            "target": "dshplugin/dsh-plugin-hub",
+            "message": "GitHub request failed for repositories/1340244547: Get \"https://api.github.com/repositories/1340244547\": net/http: TLS handshake timeout"
+        }
+    ],
     "npm": {
         "package_name": "dsh-plugin",
-        "captured_at": "2026-11-10T21:19:39.444Z",
-        "window_start": "2026-10-11",
-        "window_end": "2026-11-09",
-        "downloads_30d": 52334,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-11:2026-11-09/dsh-plugin",
+        "captured_at": "2026-11-17T16:06:47.910Z",
+        "window_start": "2026-10-18",
+        "window_end": "2026-11-16",
+        "downloads_30d": 55304,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-18:2026-11-16/dsh-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-20T05:41:39.452Z",
-            "captured_at": "2026-11-10T21:19:39.444Z",
+            "captured_at": "2026-11-17T16:06:47.910Z",
             "source_url": "https://registry.npmjs.org/dsh-plugin",
             "error": null,
-            "latest_version": "2.3.6",
-            "latest_published_at": "2026-11-09T02:06:51.879Z",
+            "latest_version": "2.4.0",
+            "latest_published_at": "2026-11-17T14:12:51.156Z",
             "latest_error": null
         }
     }

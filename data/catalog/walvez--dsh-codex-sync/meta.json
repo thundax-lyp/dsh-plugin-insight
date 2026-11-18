@@ -1,0 +1,45 @@
+{
+    "repository": "Walvez/dsh-codex-sync",
+    "repository_id": 1335661102,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 31,
+    "pushed_at": "2026-10-05T12:44:34Z",
+    "issues": {
+        "open": 4,
+        "closed": 1,
+        "created_30d": 4,
+        "closed_30d": 0,
+        "updated_30d": 4
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-17T16:42:12.226Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "22d397bfc8bcaa7e64d05148d61491a16eeb6de7",
+        "blob_sha": "bf1db0bb67bad74d294e4f04bcb1ed9583ec1dbb",
+        "errors_blob_sha": "c7fb651ee8e95b110915f939a703f8178b915696",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-codex-sync",
+        "captured_at": "2026-11-18T00:59:31.345Z",
+        "window_start": "2026-10-19",
+        "window_end": "2026-11-17",
+        "downloads_30d": 1427,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-19:2026-11-17/dsh-codex-sync",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T06:22:45.659Z",
+            "captured_at": "2026-11-18T00:59:31.345Z",
+            "source_url": "https://registry.npmjs.org/dsh-codex-sync",
+            "error": null,
+            "latest_version": "1.6.2",
+            "latest_published_at": "2026-10-05T12:53:11.691Z",
+            "latest_error": null
+        }
+    }
+}

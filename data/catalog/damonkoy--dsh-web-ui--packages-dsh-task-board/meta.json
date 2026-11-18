@@ -1,0 +1,27 @@
+{
+    "repository": "DamonKoy/dsh-web-ui",
+    "repository_id": 1335248751,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 33,
+    "pushed_at": "2026-08-15T16:40:33Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-17T16:42:12.226Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "22d397bfc8bcaa7e64d05148d61491a16eeb6de7",
+        "blob_sha": "bf1db0bb67bad74d294e4f04bcb1ed9583ec1dbb",
+        "errors_blob_sha": "c7fb651ee8e95b110915f939a703f8178b915696",
+        "latest_error": null
+    }
+}

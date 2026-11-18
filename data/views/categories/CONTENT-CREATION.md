@@ -40,7 +40,7 @@
 | [dsh-douyin-publish](#plugin-1422396858-root) | 把本地视频交给抖音或B站投稿页并填字段，默认草稿停手，可选配乐和显式发布分支。 | 先观察，仅受控草稿核有效配置/账号与字段，补授权和受理收据后再评估采用。 |
 | [dsh-game-material-master](#plugin-1377645668-root) | 在 DSH 中生成和加工游戏素材，提供地图编辑、检查与导出工作台。 | [Q03](../../plugins/universe-st--dsh-game-material-master/INSIGHT.md#research-q03) 先验证本地地图编辑，再单独评估外部生成和素材传输。 |
 | [dsh-hyperframes](#plugin-1334554606-root) | 在 DeepSeek Harness 中编辑 HTML 视频工程，管理素材并预览、导出 MP4。 | [Q03](../../plugins/stardustlc666--dsh-hyperframes/INSIGHT.md#research-q03) 用公开短片试用。 |
-| [dsh-image-gen](#plugin-1336998801-root) | 将多种图像供应商接入 DSH 对话，支持逐张批量生成、附件呈现和可选工作区保存。 | [Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 已有可信渠道的创作者可先用两到三条不同主题的无敏感内容提示词，核对每张附件与文件是否符合任务。 |
+| [dsh-image-gen](#plugin-1336998801-root) | 为 DeepSeek Harness 提供对话生图、编辑、批量配图和图像工作台，支持云端模型与本地 ComfyUI。 | [Q07](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q07) 在可控会话用可信渠道跑两三条公开配图提示词，核对成功图附件、工作区路径和返回格式。 |
 | [dsh-image2-plugin](#plugin-1422216012-root) | 通过 OpenAI 兼容中继生成或编辑图片，并把结果保存到会话。 | 可用公开图片和硬性单次预算试用；不要上传客户素材，先验证失败重试只计一次、文件落在会话目录且能完整删除。 |
 | [dsh-imagegen-video](#plugin-1420747575-root) | 在 DSH 中提供图片与视频生成、编辑、画布节点和本地片段拼接。 | [Q04](../../plugins/q253595422--dsh-imagegen-video/INSIGHT.md#research-q04) 先保留观察结论，核对异步任务账本和可终止渲染，再考虑付费工作流。 |
 | [dsh-LorebookMD](#plugin-1334395883-root) | 将Tavern角色卡与世界书导入DSH，生成本地设定文档和世界书、创作提示词，并按关键词追加设定条目。 | 先观察。 |
@@ -547,15 +547,15 @@
 
 ## [dsh-image-gen](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md)
 
-[![GitHub ★ 1,178](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C178&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 69,270](https://img.shields.io/static/v1?label=npm+30d&message=69%2C270&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-11-08](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-08&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
+[![GitHub ★ 1,597](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=1%2C597&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/shanliuling/dsh-image-gen) [![npm 30d 87,128](https://img.shields.io/static/v1?label=npm+30d&message=87%2C128&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-image-gen)
 
-> **用途**：在 DSH 写文章或准备项目材料的创作者，需要为一组已确定的主题逐张生成、验收和保存配图。
+> **用途**：已在 DSH 写文章或项目材料的创作者，可以把两三条不同主题的配图提示词放在同一会话，按每张结果验收图卡和项目文件。需要精细手改、特定比例或收据可审计的工作，对渠道和输出格式有更严格要求。
 
-> **亮点**：[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 与 [Q02](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q02) 确认有从多提示词到多附件的顺序工具入口，已配置渠道可把配图生成和会话呈现接在一起。
+> **亮点**：[Q01](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q01) 逐项回执把图片和失败留在同一任务里，成功位图直接用作会话附件，减去手工上传。工作台把已有和探测到的模型合并到候选，并在后台刷新，减少手填模型标识 [Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05)。矢量结果在对话卡片中可预览和下载，供应商回位图时也会报告实际交付格式 [Q04](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q04)。
 
-> **思考**：[Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03) 批量成功、附件存在和文件可读是不同条件。取消可能发生在外部生成或附件保存之后，重跑前需要核对已有成果和上游状态。
+> **思考**：[Q03](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q03) 取消会在上游已开始、附件已存或本地写入中间发生，工具错误会遮住已发生的动作，整批重跑可能重复请求。共享 Web 环境还依赖部署者核对入站保护与兼容下载默认值 [Q07](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q07)。
 
-> **建议**：[Q05](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q05) 逐项记录供应商响应、附件和工作区状态可能减少整批重跑，需与故障注入对照。
+> **建议**：[Q08](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md#research-q08) 可试验让每项分别对账上游接收、附件和工作区文件，观察它能否避免取消后重复生成。这需要稳定的回执或明确的未知状态，远端无法关联请求时可能失去收益。
 
 [查看完整分析](../../plugins/shanliuling--dsh-image-gen/INSIGHT.md) · [返回表格](#category-index)
 
@@ -1411,4 +1411,4 @@
 
 ## 更新时间
 
-2026-11-17
+2026-11-18

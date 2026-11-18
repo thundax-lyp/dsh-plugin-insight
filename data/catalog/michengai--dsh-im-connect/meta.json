@@ -1,34 +1,38 @@
 {
     "repository": "MichengAI/dsh-im-connect",
-    "repository_id": 1335758624,
-    "captured_at": "2026-11-13T02:05:03.217Z",
-    "window_start": "2026-10-14T02:05:03.217Z",
-    "stars": 136,
-    "pushed_at": "2026-11-12T08:11:23Z",
+    "repository_id": null,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": null,
+    "pushed_at": null,
     "issues": {
-        "open": 1,
-        "closed": 45,
-        "created_30d": 23,
-        "closed_30d": 23,
-        "updated_30d": 24
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
     },
-    "errors": [],
-    "archived": false,
+    "errors": [
+        {
+            "target": "MichengAI/dsh-im-connect",
+            "message": "GitHub request failed for repositories/1335758624: Get \"https://api.github.com/repositories/1335758624\": net/http: TLS handshake timeout"
+        }
+    ],
     "npm": {
         "package_name": "@michengai/dsh-im-connect",
-        "captured_at": "2026-11-12T19:58:57.468Z",
-        "window_start": "2026-10-13",
-        "window_end": "2026-11-11",
-        "downloads_30d": 68285,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-13:2026-11-11/%40michengai%2Fdsh-im-connect",
+        "captured_at": "2026-11-16T19:39:05.779Z",
+        "window_start": "2026-10-17",
+        "window_end": "2026-11-15",
+        "downloads_30d": 69170,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-17:2026-11-15/%40michengai%2Fdsh-im-connect",
         "error": null,
         "publication": {
             "first_published_at": "2026-08-16T18:57:23.738Z",
-            "captured_at": "2026-11-12T19:58:57.468Z",
+            "captured_at": "2026-11-16T19:39:05.779Z",
             "source_url": "https://registry.npmjs.org/%40michengai%2Fdsh-im-connect",
             "error": null,
-            "latest_version": "1.0.37",
-            "latest_published_at": "2026-11-12T08:15:43.921Z",
+            "latest_version": "1.0.42",
+            "latest_published_at": "2026-11-16T17:03:18.431Z",
             "latest_error": null
         }
     }

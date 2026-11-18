@@ -59,6 +59,7 @@
 | [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | 先在复制的 Web profile 装一个已知来源的非关键插件，对照目标包和实际激活，确认能恢复副本。 |
 | [DSH MCP Manager](#plugin-1333306299-root) | 在 DeepSeek Harness 中管理 OAuth 或 stdio MCP 服务、工作区工具范围及按需工具。 | 关注已知两个工作区在 native 显示的工具集能否正确分开，使用无凭据且只读的受控服务。 |
 | [DSH Multi Subscription Hub](#plugin-1334025844-root) | 集中订阅线路、账号池和模型运行配置 | [Q04](../../plugins/aa728848--dsh-chatgpt-subscription/INSIGHT.md#research-q04) 只观察已允许线路，隔离账号及原profile快照。 |
+| [DSH Plugin Hub](#plugin-1340244547-root) | 在 DeepSeek Harness 设置中浏览社区插件，管理安装、更新、卸载和任务日志。 | [Q04](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q04) 建议先用一次性 Web profile 查一个已知仓库并核对包名、版本和已装记录。 |
 | [DSH Plugin Manager](#plugin-1331636953-packages-dsh-plugin-manager) | 在 DSH 官方插件页检查已装插件版本、兼容性并执行更新。 | [Q04](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md#research-q04) 限定本机隔离单包更新，超时先对账，确认原生管理和备份可用后再扩大试用。 |
 | [DSH Plugin Radar](#plugin-1323404274-root) | 收集 DSH 插件候选，归并兼容性记录并发布可浏览目录与机器可读数据。 | [Q04](../../plugins/adamplatin123--dsh-plugin-radar/INSIGHT.md#research-q04) 先按固定提交读取少量候选，再回原仓核对版本和权限；数据日期或逐条证据不明时停止自动安装并人工查找。 |
 | [DSH Plugin Shop](#plugin-1345710688-packages-dsh-plugin-shop) | 在 DeepSeek Harness 中浏览插件目录、安装候选并管理已安装插件。 | [Q04](../../plugins/livxue--dsh-plugin-shop--packages-dsh-plugin-shop/INSIGHT.md#research-q04) 先浏览并核对身份，只有来源、版本与可退出条件均可查时才在隔离 profile 验证安装。 |
@@ -75,6 +76,7 @@
 | [DSH Standard](#plugin-1336081431-root) | 提供可独立实现的协议声明、协商器与 DeepSeek Harness 映射。 | [Q04](../../plugins/t-auto--dsh-std/INSIGHT.md#research-q04) 先用于单领域 CI，并另验运行映射。 |
 | [DSH UI Usage Billing](#plugin-1335651249-root) | 在 DSH 聚合模型用量和估算费用，并提供可选任务队列。 | [Q03](../../plugins/kenz1117--dsh-ui-usage-billing/INSIGHT.md#research-q03) 在隔离 profile 导入合成会话，核对按模型、日与会话统计以及价格来源。 |
 | [DSH Web All](#plugin-1331636953-packages-dsh-web-all) | 在 DSH Web profile 聚合安装配套插件，并提供宿主界面兼容层。 | 先用独立 profile 记录所需成员及禁用项，加载后核对实际面板和宿主。 |
+| [DSH Web UI 设置（DamonKoy 分叉）](#plugin-1335248751-packages-dsh-web-ui-settings) | 在 DSH Web 设置页集中展示 Web UI 系列插件的开关与配置表单，并列出社区插件链接。 | [Q04](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q04) 建议先观察，后续在临时 Web profile 验证一个非敏感开关和实际名单。 |
 | [DSH Web 根聚合载具](#plugin-1331636953-root) | 通过 Git 根清单为 DeepSeek Harness 装配 Web 界面组件和兼容层。 | [Q05](../../plugins/zhu1090093659--dsh-web/INSIGHT.md#research-q05) 把观察限定在固定入口和隔离 profile。 |
 | [DSH WebUI Market](#plugin-1333447648-root) | 在 Web 内浏览插件并向 profile 安装或卸载 | [Q04](../../plugins/sanqi-normal--dsh-webui-market-plugin/INSIGHT.md#research-q04) 临时 profile 检查试装、真实写与恢复。 |
 | [DSH WorkBuddy Bridge](#plugin-1387190592-root) | 将已登录的 WorkBuddy 桌面模型接入 DSH，并展示模型能力检测和积分。 | 先观察本人隔离账号的一条短消息。 |
@@ -139,6 +141,7 @@
 | [dsh-sakurafrp](#plugin-1365163902-root) | 在 DSH 中管理现有移动网关，提供链路状态、开关、配对二维码、设备撤销与自愈入口。 | 先观察，并在隔离链路验证关闭后跨重启仍关闭、标记不可写有明确失败、非3080端口不操作别的实例。 |
 | [dsh-sev](#plugin-1346872712-root) | 通过 SSH 隧道在本地 DSH 查看远端会话、打开界面并提交任务。 | [Q03](../../plugins/buzzso--dsh-sev/INSIGHT.md#research-q03) 先观察隔离远端，只用无副作用测试输入，未知状态回远端查证。 |
 | [dsh-skill-mcp-panel](#plugin-1333673564-root) | 在 DSH 侧栏与 dsh-panel 命令行管理工作区技能及 profile 的 MCP 服务器配置。 | [Q04](../../plugins/fishquito7--dsh-skill-mcp-panel/INSIGHT.md#research-q04) 可在完整备份和临时作用域中试用管理便利，先只读再导入可丢弃Skill；测试MCP前核对命令/地址/表达式。 |
+| [dsh-ssh](#plugin-1335248751-packages-dsh-ssh) | 在 DeepSeek Harness 网页管理 SSH 主机、打开终端、执行命令、传输文件与转发端口。 | [Q04](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md#research-q04) 建议先观察已有测试环境里的授权与对端身份。 |
 | [dsh-studio](#plugin-1334791300-root) | 独立 Tauri 客户端监督本机 Harness，提供插件浏览和配对网关。 | [Q03](../../plugins/moresyl--dsh-studio/INSIGHT.md#research-q03) 先在测试 profile 对照原流程并验收进程恢复。 |
 | [dsh-subagent-role-router](#plugin-1421306160-root) | 为 DSH 子代理分配模型路由，提供失败切换与当前会话的改路由工具。 | [Q03](../../plugins/643048695--dsh-subagent-role-router/INSIGHT.md#research-q03) 先用虚拟请求检查回退。 |
 | [dsh-sysmon](#plugin-1334434271-root) | DSH Web 悬浮显示宿主 CPU、内存与根文件系统使用率。 | Linux 单宿主仅作辅助观察；正式容量/告警仍用现有监控，试点时注入采样失败并确认 stale 状态。 |
@@ -191,6 +194,7 @@
 | [Engramory DSH 适配目录](#plugin-1268424426-adapters-dsh) | Engramory 仓库中存放 DeepSeek Harness 插件实现的适配器分组目录。 | [Q02](../../plugins/tinqiao-oss--engramory--adapters-dsh/INSIGHT.md#research-q02)仅observe资源导航，运行需求直接转固定plugin子包；不要把根和容器重复安装或把一份运行贡献计三次。 |
 | [EverOS](#plugin-1085086903-root) | 面向 Agent 和应用的本地 Markdown 记忆运行时，提供提取、后台索引、检索与删除接口。 | [Q06](../../plugins/evermind-ai--everos/INSIGHT.md#research-q06) 独立临时根与虚构低敏对话，固定1.6.0/算法版本，loopback+预算先add/flush→task→文件→keyword核，别把owner当ACL。 |
 | [feishu-dsh-plugin](#plugin-1364766828-root) | 通过自建飞书应用为 DSH 提供 IM、文档、Bitable、Sheets 和权限工具的集成插件。 | 按测试租户只读→写入→权限操作分级试用，所有发送/修改/分享需按用户范围授权。 |
+| [fnOS CLI Skill](#plugin-1384435305-root) | 在 DeepSeek Harness 注册 fnOS 管理 Skill，指引助手通过同包 CLI 查询或管理已授权设备。 | [Q05](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q05) 先核对固定包的版本、帮助和实际执行环境。 |
 | [Hatoba Agent 插件](#plugin-1409494183-packaging-agent-plugin) | 让 DeepSeek Harness 等代理使用 Hatoba 保存的 SSH 主机执行命令和复制文件。 | 先把测试账号限制为只读，再选一台有唯一 ID 的测试主机查看磁盘用量。 |
 | [HOL Guard](#plugin-1194748811-root) | 为 Agent 动作提供策略审查、审批、扫描和证据入口。 | [Q04](../../plugins/hashgraph-online--hol-guard/INSIGHT.md#research-q04) 隔离验证实际钩子，不能以静态扫描代替执行覆盖。 |
 | [HuaweiCloud DevKit](#plugin-1314502072-root) | 给Agent分发华为云知识Skill、KooCLI和计划执行保护 | [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) [Q04](../../plugins/huaweicloud--huaweicloud-devkit/INSIGHT.md#research-q04) 先单目标隔离只读、禁预装和遥测、最小IAM；写操作须独立批准/幂等。 |
@@ -987,6 +991,22 @@
 
 [查看完整分析](../../plugins/aa728848--dsh-chatgpt-subscription/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1340244547-root"></a>
+
+## [DSH Plugin Hub](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md)
+
+[![npm 30d 55,304](https://img.shields.io/static/v1?label=npm+30d&message=55%2C304&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin) [![最新发布 2026-11-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin)
+
+> **用途**：维护 DSH Web profile 的用户可以在设置查阅一个已知社区包，并回查对应安装任务与已装版本。
+
+> **亮点**：[Q01](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q01) 与 [Q03](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q03) 显示，市场在同一设置入口接好目录、变更队列与回查，并在常规日志缺失时保留实际命令、registry 和 profile 供用户排查。
+
+> **思考**：[Q02](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q02) 显示，目录包映射验证失败后仍可继续安装；构建失败恢复会修改 profile 的持久许可，且部分旧规则在归一时可能从精确来源降为裸包名。
+
+> **建议**：[Q04](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q04) 推导，执行前把精确目标、registry 与新增构建许可绑定到一份短期确认计划，可能减少用户未批准的变更。
+
+[查看完整分析](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1331636953-packages-dsh-plugin-manager"></a>
 
 ## [DSH Plugin Manager](../../plugins/zhu1090093659--dsh-web--packages-dsh-plugin-manager/INSIGHT.md)
@@ -1242,6 +1262,22 @@
 > **建议**：在安装与启用之间提供 profile 挂载预览，区分默认停用、旧壳和直挂失败，比较能否减少误诊，见 [Q05](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md#research-q05)。
 
 [查看完整分析](../../plugins/zhu1090093659--dsh-web--packages-dsh-web-all/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1335248751-packages-dsh-web-ui-settings"></a>
+
+## [DSH Web UI 设置（DamonKoy 分叉）](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DamonKoy/dsh-web-ui)
+
+> **用途**：装有多个 Web UI 系列插件的 DSH Web 维护者，可以在设置页集中找到同系列配置和社区入口。
+
+> **亮点**：[Q01](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q01) 把其他插件贡献的设置表单放到同一位置。[Q02](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q02) 优先选择可用的官方设置路径，需要时切换到宿主兼容桥并回读。
+
+> **思考**：[Q03](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q03) 的空或不可解析名单会回退到家族名单，空列表不能表示全关。[Q02](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q02) 的密钥清除和复合值回执应独立确认。
+
+> **建议**：[Q04](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md#research-q04) 提出区分缺省和空名单，显示生效命名空间及当前设置来源。对照是否减少误判和核对时间，决定是否增加这层界面。
+
+[查看完整分析](../../plugins/damonkoy--dsh-web-ui--packages-dsh-web-ui-settings/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1331636953-root"></a>
 
@@ -2267,6 +2303,22 @@
 
 [查看完整分析](../../plugins/fishquito7--dsh-skill-mcp-panel/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335248751-packages-dsh-ssh"></a>
+
+## [dsh-ssh](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/DamonKoy/dsh-web-ui)
+
+> **用途**：用 DSH Web 检查多台测试主机的维护者可在同一面板管理别名、开终端，并让 Agent 为已知目标采集状态。
+
+> **亮点**：[Q01](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md#research-q01) 显示，界面与模型共用主机别名和 SSH 引擎，可用交互终端接手并读取各自的命令结果。
+
+> **思考**：[Q02](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md#research-q02) 显示，模型工具直接使用宿主进程的文件与远端权限，连接配置未设置 SSH 主机密钥核验；[Q03](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md#research-q03) 的超时与关闭设置也不能确认远端作用已停止。
+
+> **建议**：[Q04](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md#research-q04) 提出为模型操作增加可核对的目标、路径和命令范围确认，用受控样本比较范围错误与完成代价。
+
+[查看完整分析](../../plugins/damonkoy--dsh-web-ui--packages-dsh-ssh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1334791300-root"></a>
 
 ## [dsh-studio](../../plugins/moresyl--dsh-studio/INSIGHT.md)
@@ -3099,6 +3151,22 @@
 
 [查看完整分析](../../plugins/2286893544--feishu-dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1384435305-root"></a>
+
+## [fnOS CLI Skill](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md)
+
+[![GitHub ★ 33](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=33&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fnnas-labs/fnos-cli-skill)
+
+> **用途**：已有飞牛国内版设备、也在使用 DSH 的用户，可以从一条明确设备的例行系统信息检查了解这个入口的作用。
+
+> **亮点**：[Q01](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q01) 将设备查询指引与发布包内启动器放在同一资源目录下，使助手能按宿主 Skill 选择，在同一任务中发起已有 CLI 查询。挂载自身只注册资料，设备响应由 CLI 与 NAS 决定 [Q02](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q02)。
+
+> **思考**：[Q03](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q03) 固定仓库提交仍可能通过 latest 得到不同依赖，而 OAuth 又按实际主机和 profile 存储。即使注册成功，也要分别确认包、执行环境和目标，避免查询或授权错设备 [Q04](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q04)。
+
+> **建议**：[Q06](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md#research-q06) 用脱敏收据同时绑定包哈希、执行环境和设备身份，可试验是否减少更新或容器切换后把错误查询当作成功。
+
+[查看完整分析](../../plugins/fnnas-labs--fnos-cli-skill/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1409494183-packaging-agent-plugin"></a>
 
 ## [Hatoba Agent 插件](../../plugins/scarletkc--hatoba--packaging-agent-plugin/INSIGHT.md)
@@ -3791,4 +3859,4 @@
 
 ## 更新时间
 
-2026-11-17
+2026-11-18

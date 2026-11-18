@@ -1,0 +1,45 @@
+{
+    "repository": "WizisCool/dsh-ears",
+    "repository_id": 1335131275,
+    "captured_at": "2026-11-18T02:25:42.973Z",
+    "window_start": "2026-10-19T02:25:42.973Z",
+    "stars": 31,
+    "pushed_at": "2026-11-13T00:16:30Z",
+    "issues": {
+        "open": 0,
+        "closed": 18,
+        "created_30d": 3,
+        "closed_30d": 3,
+        "updated_30d": 3
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-17T16:42:12.226Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "22d397bfc8bcaa7e64d05148d61491a16eeb6de7",
+        "blob_sha": "bf1db0bb67bad74d294e4f04bcb1ed9583ec1dbb",
+        "errors_blob_sha": "c7fb651ee8e95b110915f939a703f8178b915696",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-ears",
+        "captured_at": "2026-11-17T03:56:51.018Z",
+        "window_start": "2026-10-18",
+        "window_end": "2026-11-16",
+        "downloads_30d": 4550,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-18:2026-11-16/dsh-ears",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-19T02:31:59.071Z",
+            "captured_at": "2026-11-17T03:56:51.018Z",
+            "source_url": "https://registry.npmjs.org/dsh-ears",
+            "error": null,
+            "latest_version": "0.4.4",
+            "latest_published_at": "2026-11-09T15:30:41.054Z",
+            "latest_error": null
+        }
+    }
+}
