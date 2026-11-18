@@ -269,6 +269,7 @@ function selectRecommended(recommendations, byId, limit = 5) {
 export function renderRecommended(recommendations, byId, limit = 3) {
     const selected = selectRecommended(recommendations, byId, limit);
     return template('RECOMMENDED', {
+        intro: '展示最近 15 天有仓库推送或已核实 npm 发版的推荐，详情列出试用或安装条件。',
         items:
             selected
                 .map((r) => {
@@ -310,7 +311,7 @@ function recommendationEvidence(entry) {
             .join('；') + '。'
     );
 }
-// Standalone columns share the homepage's selection and ordering, with local comparison anchors.
+// Standalone columns share the ranking, with local comparison anchors.
 export function renderColumn(key, items, date, recommendations) {
     const byId = new Map(items.map((entry) => [entry.i.id, entry]));
     const selected =
@@ -419,8 +420,10 @@ export function renderColumn(key, items, date, recommendations) {
               details
           })
         : template(`COLUMN-EMPTY-${key}`);
-    // Share the reader-facing introduction while replacing only the compact list body.
-    return template(key, { items: content }).replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1');
+    return template(key, {
+        items: content,
+        intro: '看看插件能解决什么问题，以及试用前需要确认什么。'
+    }).replace(/^## \[([^\]]+)\]\([^\n]+\)/, '# $1');
 }
 export function categoryGroups(items) {
     const groups = new Map();

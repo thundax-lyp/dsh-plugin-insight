@@ -348,6 +348,15 @@ export function renderPublication(input, root = ROOT, context = null) {
         });
     const byId = new Map(items.map((p) => [p.i.id, p]));
     const recommendations = rankedRecommendations(items.filter(({ plugin }) => plugin.entry_type !== 'resource'));
+    const checkedAt = Date.parse(manifest.checked_at);
+    const recommendationCutoff = checkedAt - 15 * 24 * 60 * 60 * 1000;
+    const homeRecommendations = recommendations.filter(({ plugin_id }) => {
+        const { pushedAt, npmLatestPublished } = byId.get(plugin_id);
+        return [pushedAt, npmLatestPublished].some((value) => {
+            const at = Date.parse(value);
+            return at >= recommendationCutoff && at <= checkedAt;
+        });
+    });
     const link = (from, to) =>
         relative(dirname(local(root, from)), local(root, to))
             .split('\\')
@@ -422,7 +431,7 @@ export function renderPublication(input, root = ROOT, context = null) {
             navigation: renderHomeNavigation(homeGroups),
             latest: renderLatest(homeItems, updated),
             hot: renderHot(homeItems),
-            recommended: renderRecommended(recommendations, homeById),
+            recommended: renderRecommended(homeRecommendations, homeById),
             sources: renderSources(sources)
         }) + '\n';
     const registry = context?.registry

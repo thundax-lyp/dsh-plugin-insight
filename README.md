@@ -8,23 +8,7 @@
 
 ## [推荐尝试](data/views/columns/RECOMMENDED.md)
 
-> 看看插件能解决什么问题，以及试用前需要确认什么。
-
-- **[dsh-plugin-veriscope](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)** ｜ 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。
-
-    **推荐理由**：已有可信逐条分数与显式策略可试用，先用builtin和独立状态备份；PASS限输入范围，replay需固定环境且发布另负责。
-
-    **试用条件**：可信逐条分数可试用builtin，原replay固定环境，PASS不直接授权发布。详见[Q06](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md#research-q06)。
-
-    [查看完整分析](data/plugins/4444wjt--dsh-plugin-veriscope/INSIGHT.md)
-
-- **[dsh-markdown-live](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)** ｜ 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。
-
-    **推荐理由**：Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。
-
-    **试用条件**：经常写 Markdown 且能接受表格/图片限制的 DSH Desktop 用户可在非关键草稿试用；先复制带中英混排、列表、链接和代码围栏的固定样本，校验发送前后字节与撤销。依赖无障碍输入、超长文档或宿主版本频繁升级的人应先观察。 详见[Q09](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md#research-q09)。
-
-    [查看完整分析](data/plugins/9426haruka--dsh-markdown-live/INSIGHT.md)
+> 展示最近 15 天有仓库推送或已核实 npm 发版的推荐，详情列出试用或安装条件。
 
 - **[CC Safety Net](data/plugins/kenryu42--cc-safety-net/INSIGHT.md)** ｜ 为 DSH 等编码工具提供执行前规则，检查危险命令和敏感文件访问。
 
@@ -33,6 +17,22 @@
     **试用条件**：[Q03](data/plugins/kenryu42--cc-safety-net/INSIGHT.md#research-q03) 先核固定 profile、工具名单和工作目录。用假工具而非破坏性命令试验，出现覆盖或误拦问题时恢复原审批。
 
     [查看完整分析](data/plugins/kenryu42--cc-safety-net/INSIGHT.md)
+
+- **[OpenBitFun Agent 工作区](data/plugins/gcwing--openbitfun/INSIGHT.md)** ｜ 独立 Agent 工作区，支持跨设备控制、远程工作区与可选 DSH 会话。
+
+    **推荐理由**：有常开开发主机的开发者可以用测试账号从手机观察隔离仓库里的一次长任务并处理低风险审批。相比登录 SSH 再找对应终端，会话投影与审批入口能让操作者在同一界面确认任务进度。若无法确认目标主机、工作目录或一次写入是否已经生效，操作者应暂停后续操作并回主机核对。
+
+    **试用条件**：用测试账号和可回滚仓库先跑一次短任务，再从第二设备核对任务 ID 与审批。断开后回主机确认文件结果，状态未知时暂停后续写入。见 [Q04](data/plugins/gcwing--openbitfun/INSIGHT.md#research-q04)。
+
+    [查看完整分析](data/plugins/gcwing--openbitfun/INSIGHT.md)
+
+- **[ModSearch](data/plugins/liustack--modsearch/INSIGHT.md)** ｜ 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。
+
+    **推荐理由**：在 DSH 中反复核对公开资料的用户，可以在可信出网配置下用无敏感查询试用 ModSearch。相比单引擎搜索，它可以按预算切换引擎，并在 X 查询改由网页回答时保留二手语料标记。若无法打开原始来源、无法确认查询发往何处或管理路由可被未授权访问，用户应停止试用并切回原有工具。
+
+    **试用条件**：先用公开查询核对目标引擎、输出和引用，再检查代理与管理权限。来源无法核对或请求不应外发时回原生工具。见 [Q04](data/plugins/liustack--modsearch/INSIGHT.md#research-q04)。
+
+    [查看完整分析](data/plugins/liustack--modsearch/INSIGHT.md)
 
 ## [最近发布](data/views/columns/LATEST.md)
 
