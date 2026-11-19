@@ -1,4 +1,7 @@
 import { sortByHeat } from '../../_shared/scripts/heat-score.mjs';
+
+export const excludedResearchIds = (items) =>
+    items.filter((item) => /^deepseek-ai\//i.test(item.repository)).map((item) => item.id);
 // Resolve explicit inputs before defaults; updates never have an independent default.
 export function resolveResearchCounts({ limit, newLimit, updateLimit } = {}) {
     for (const [name, value] of Object.entries({ limit, newLimit, updateLimit }))
@@ -97,7 +100,8 @@ export function snapshotSelection(
     metadataPolicy = true,
     cooldownCheckedAt = null,
     heat = null,
-    quotas = null
+    quotas = null,
+    exclusionPolicy = false
 ) {
     const published = new Set(base.publication.records.map((record) => record.id));
     const researched = [
@@ -127,6 +131,7 @@ export function snapshotSelection(
     }
     return {
         mode: 'incremental',
+        ...(exclusionPolicy ? { excluded_ids: excludedResearchIds(items ?? []) } : {}),
         ...(quotas ? { quotas } : {}),
         ...(heat ? { heat } : {}),
         ...blockedSelection,
@@ -154,8 +159,12 @@ export function incrementalSelection(session) {
     const retries = new Set(session.selection.retry_ids ?? []);
     const metadataOnly = new Set(session.selection.metadata_only_ids ?? []);
     const cooldown = new Set(session.selection.cooldown_ids ?? []);
+    const excluded = new Set(session.selection.excluded_ids ?? []);
     const eligible = session.items.filter(
-        (item) => !suppressed.has(item.id) && (!cooldown.has(item.id) || required.has(item.id) || retries.has(item.id))
+        (item) =>
+            !excluded.has(item.id) &&
+            !suppressed.has(item.id) &&
+            (!cooldown.has(item.id) || required.has(item.id) || retries.has(item.id))
     );
     const updates = eligible.filter(
         (item) =>

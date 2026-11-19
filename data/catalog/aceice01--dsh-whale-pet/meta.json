@@ -1,0 +1,45 @@
+{
+    "repository": "aceice01/dsh-whale-pet",
+    "repository_id": 1334024593,
+    "captured_at": "2026-11-19T03:16:38.300Z",
+    "window_start": "2026-10-20T03:16:38.300Z",
+    "stars": 30,
+    "pushed_at": "2026-08-15T07:36:32Z",
+    "issues": {
+        "open": 1,
+        "closed": 2,
+        "created_30d": 1,
+        "closed_30d": 0,
+        "updated_30d": 1
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-19T03:04:10.200Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c57962304b6863725bb7ae25f37e7fad059e84e1",
+        "blob_sha": "c1709834fc1eae4e4b6cbdbc7cc4c0387bfa8911",
+        "errors_blob_sha": "927776150e84df930352379154c405b1f8e90be6",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-whale-pet",
+        "captured_at": "2026-11-19T03:16:38.300Z",
+        "window_start": "2026-10-20",
+        "window_end": "2026-11-18",
+        "downloads_30d": 1189,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-20:2026-11-18/dsh-whale-pet",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-17T06:53:51.525Z",
+            "captured_at": "2026-11-19T03:16:38.300Z",
+            "source_url": "https://registry.npmjs.org/dsh-whale-pet",
+            "error": null,
+            "latest_version": "0.1.0",
+            "latest_published_at": "2026-08-17T06:53:51.892Z",
+            "latest_error": null
+        }
+    }
+}

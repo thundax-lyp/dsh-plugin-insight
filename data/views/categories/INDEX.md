@@ -8,10 +8,10 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 420 |
-| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 56 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 424 |
+| [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 57 |
 | [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 172 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 441 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 443 |
 | [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 82 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
 | [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 226 |
@@ -21,7 +21,7 @@
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（420）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（424）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -33,7 +33,7 @@
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
-### [办公与运营（56）](OFFICE-OPERATIONS.md)
+### [办公与运营（57）](OFFICE-OPERATIONS.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（441）](SOFTWARE-DELIVERY.md)
+### [软件交付（443）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -115,4 +115,4 @@
 
 ## 更新时间
 
-2026-11-18
+2026-11-19

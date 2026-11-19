@@ -1,0 +1,45 @@
+{
+    "repository": "dennisyang1986/polymarket-proxy",
+    "repository_id": 1460183239,
+    "captured_at": "2026-11-19T03:16:38.300Z",
+    "window_start": "2026-10-20T03:16:38.300Z",
+    "stars": 146,
+    "pushed_at": "2026-11-18T04:07:13Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-19T03:04:02.372Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c57962304b6863725bb7ae25f37e7fad059e84e1",
+        "blob_sha": "c1709834fc1eae4e4b6cbdbc7cc4c0387bfa8911",
+        "errors_blob_sha": "927776150e84df930352379154c405b1f8e90be6",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-polymarket-proxy",
+        "captured_at": "2026-11-19T03:16:38.300Z",
+        "window_start": "2026-10-20",
+        "window_end": "2026-11-18",
+        "downloads_30d": 679,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-20:2026-11-18/dsh-polymarket-proxy",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-11-16T15:23:35.588Z",
+            "captured_at": "2026-11-19T03:16:38.300Z",
+            "source_url": "https://registry.npmjs.org/dsh-polymarket-proxy",
+            "error": null,
+            "latest_version": "1.1.0",
+            "latest_published_at": "2026-11-18T04:08:56.682Z",
+            "latest_error": null
+        }
+    }
+}

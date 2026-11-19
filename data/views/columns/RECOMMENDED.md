@@ -56,6 +56,7 @@
 | [DSH Web Tools](#plugin-1335219884-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DeepSeek Harness 提供多来源网页搜索与抓取，支持可配置后备链及 X、小红书原生访问。 | 经常在 DSH Web 查找网页证据且能管理两组凭据的使用者，可以在隔离 Profile 试用两个独立搜索来源。 |
 | [dsh-md-annotator](#plugin-1335286261-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 在 Better Sidebar 中预览和编辑 Markdown，添加块/选区批注并整理到所属会话草稿。 | 适合已有Better Sidebar且文稿有备份的用户试用；保存源码、导出批注并核对报告所属会话，刷新前防丢稿。 |
 | [dsh-ppt](#plugin-1335302697-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 在 DSH 从大纲或结构化资料生成 HTML、可编辑 PPTX 与工程文件，并维护修订和分享。 | 要同时交付浏览器和 Office 演示的用户，可以先用四页合成材料试用。 |
+| [DSH Archived Chats](#plugin-1335515059-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在 DSH 设置内搜索和整理会话，支持标签备注、项目批量归档、ZIP 转存、恢复及谱系查看。 | 有大量本地 DSH 会话且愿意先做脱敏副本的用户，可以试用查找、标签、批量归档及导出后在副本恢复。 |
 | [DSH IM Connect](#plugin-1335758624-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 将 Telegram、飞书、钉钉等即时通讯渠道接入本机 DeepSeek Harness，会话可从聊天继续并在网页查看。 | 已有专用机器人且经常从手机跟进 DSH 的用户，可在隔离私聊里完成一次不含敏感内容的只读摘要。 |
 | [DSH Automation](#plugin-1335813480-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在独立 DSH 会话中按计划执行编码任务，管理权限、状态和运行记录。 | 有重复 DSH 任务且能准备隔离工作区的工程师，可以试一次只生成测试报告的计划。 |
 | [Minecraft Dev](#plugin-1336062434-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | Minecraft 开发技能与工具集，用契约、清单审计和错误归属辅助多分片集成。 | 维护多个 Minecraft 模块且要协调共享注册的开发者，可在虚拟两片项目试用 freeze、brief、dryRun 合并与合成日志路由。 |
@@ -111,7 +112,6 @@
 | [dsh-composer-expand](#plugin-1334850903-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。 | 功能窄且无额外外部数据面，长稿单composer场景可控试用；先核IME/菜单/撤销和收起，广兼容表不等于操作验证。 |
 | [dsh-archived-conversations](#plugin-1335060115-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH设置页列归档会话并只读预览最近六条用户/助手文本，不切换或恢复会话。 | 可信本地HTTP单用户辨认归档可试用，知晓不能恢复/全文且快切要核标题正文。 |
 | [dsh-recipe](#plugin-1336583700-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 适合作场景清单与命令草案，逐组件检查并补profile、版本和配置后使用；不能按一行命令假定整套可靠。 |
-| [dsh-plugin-education](#plugin-1336663611-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。 | 适合教师审阅下做模板、转换和常规算表，先校数值域与知识答案；正式成绩和能力定级不宜直接自动发布。 |
 
 <a id="plugin-1422943787-root"></a>
 
@@ -1078,6 +1078,28 @@
 **试用条件**：[Q04](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q04) 先从四页合成稿试用，按 [Q02](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q02) 验证外部编辑后拒绝覆盖，按 [Q03](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md#research-q03) 比对目标软件字体和版式。可带走独立成品。
 
 [查看完整分析 →](../../plugins/stardustlc666--dsh-ppt/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1335515059-root"></a>
+
+## [DSH Archived Chats](../../plugins/ultroncn--dsh-archived-chats/INSIGHT.md)
+
+[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
+
+[![GitHub ★ 30](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=30&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ultroncn/dsh-archived-chats) [![npm 30d 5,252](https://img.shields.io/static/v1?label=npm+30d&message=5%2C252&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-archived-chats) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-archived-chats)
+
+**主要用途**：在 DSH 设置内搜索和整理会话，支持标签备注、项目批量归档、ZIP 转存、恢复及谱系查看。
+
+**建议**：试用
+
+**推荐理由**：有大量本地 DSH 会话且愿意先做脱敏副本的用户，可以试用查找、标签、批量归档及导出后在副本恢复。相比逐条整理和手工拼接备份，它把范围预览、检索和失败待办放进同一工作台，但检索有边界且 ZIP 不保证包含实际附件。恢复内容不齐、范围确认变化或出现持久化警告时，应停止写操作并保留源库，退回宿主单条归档与独立文件备份。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：先在脱敏副本上用已知对话验证查找、标签与导出/恢复；确认事件、关系及附件后再决定是否扩大。出现范围变化、warning或持久化错误时保留源库并停止写操作。不要把永久删除当普通归档，见 [Q06](../../plugins/ultroncn--dsh-archived-chats/INSIGHT.md#research-q06)。
+
+[查看完整分析 →](../../plugins/ultroncn--dsh-archived-chats/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -2291,30 +2313,8 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1336663611-root"></a>
-
-## [dsh-plugin-education](../../plugins/863683348--dsh-plugin-education/INSIGHT.md)
-
-[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md)
-
-[![npm 30d 940](https://img.shields.io/static/v1?label=npm+30d&message=940&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-education) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-plugin-education)
-
-**主要用途**：用edu_kit提供教案与题目骨架、测验结构检查、格式转换和成绩/计划统计，不替代教学内容审阅。
-
-**建议**：试用
-
-**推荐理由**：适合教师审阅下做模板、转换和常规算表，先校数值域与知识答案；正式成绩和能力定级不宜直接自动发布。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：教师审阅下试用模板/转换，数值与答案复核后使用。详见[Q05](../../plugins/863683348--dsh-plugin-education/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/863683348--dsh-plugin-education/INSIGHT.md)
-
-[返回表格](#column-index)
-
 [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-18
+2026-11-19

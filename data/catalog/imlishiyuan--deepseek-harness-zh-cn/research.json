@@ -1,0 +1,460 @@
+{
+    "schema_version": 4,
+    "id": "3a22d04b295caf3d11aa3fb06a044fd3",
+    "identity": "github:1334282453:root",
+    "slug": "imlishiyuan--deepseek-harness-zh-cn",
+    "data": {
+        "catalog.plugins": {
+            "id": "github:1334282453:root",
+            "repository_id": 1334282453,
+            "component_id": "root",
+            "repository": "imlishiyuan/deepseek-harness-zh-cn",
+            "path": "",
+            "aliases": [],
+            "name": "中文语言提醒",
+            "entry_type": "plugin",
+            "technical_category": "agent-workflow",
+            "business_category": "personal-productivity",
+            "tags": [],
+            "availability": "unknown",
+            "research_depth": "source",
+            "fingerprints": {
+                "directory": "f55e0a818928fa21b84db6d4aed6e1416d702347cbbb0d7ad0c841f4f170f51b",
+                "code": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                "maintenance": "3cf076b8dd004f285b15cff9c993574c7b7d258d24d3feac053b1232a3d500c2"
+            },
+            "sources": [
+                {
+                    "id": "research-2026-11-19-01-github-1334282453-root-directory-0",
+                    "url": "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                    "revision": "28c08a968dba78f674201dde91b47ec4df009715",
+                    "retrieved_at": "2026-11-19T03:30:18.193Z",
+                    "membership": "present"
+                },
+                {
+                    "id": "research-2026-11-19-01-github-1334282453-root-directory-1",
+                    "url": "https://github.com/0xsline/awesome-deepseek-harness",
+                    "revision": "e080d529318c1131c7e17e6a85ce7b5e108e8c5d",
+                    "retrieved_at": "2026-11-19T03:30:18.193Z",
+                    "membership": "present"
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "research-2026-11-19-01-github-1334282453-root-author",
+                    "kind": "author_claim",
+                    "url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "README.md",
+                            "content_sha256": "a2923795c43e30825841a3ef5eb7cc97e3306eda03fffacc556425ab2b60ea67"
+                        }
+                    ],
+                    "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                    "captured_at": "2026-11-19T03:30:18.193Z",
+                    "summary": "在每轮首步为 DeepSeek Harness 注入简体中文思考与回答的语言提醒。",
+                    "artifact": "data/runs/2026-11-19-01/imlishiyuan--deepseek-harness-zh-cn/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "功能摘要根据作者固定版本材料归纳，不是逐字引文或独立效果验证。"
+                    ]
+                },
+                {
+                    "id": "research-2026-11-19-01-github-1334282453-root-source",
+                    "kind": "source_inspection",
+                    "url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/package.json",
+                    "git_refs": [
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "package.json",
+                            "content_sha256": "5a272f95abdb4751201b471ca8828c21cc583bf9db1413805ff4618024570fbd"
+                        },
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "cordis.patch.yml",
+                            "content_sha256": "eeea0f97cdd6aa9d4d1ce8ac118a9922db6e9bdf674a06d85e72449a11fcfc4e"
+                        },
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "tsconfig.json",
+                            "content_sha256": "71157a9eb6fbe071078a478a16cdc810e5d0dddbfc7e6f7f12d52a290672aced"
+                        },
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "src/index.ts",
+                            "content_sha256": "51a70a429d7c44dba701d99ff3f81d8049cb75bb56c8e35311e6f20d760e00ad"
+                        },
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "README.md",
+                            "content_sha256": "a2923795c43e30825841a3ef5eb7cc97e3306eda03fffacc556425ab2b60ea67"
+                        },
+                        {
+                            "repository_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn",
+                            "commit": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                            "path": "AGENTS.md.example",
+                            "content_sha256": "0ea023c963f9de5825877698e1d5f3de68e636c13e7278d140ddf1e499d67da7"
+                        }
+                    ],
+                    "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                    "captured_at": "2026-11-19T03:30:18.193Z",
+                    "summary": "核查 package.json、cordis.patch.yml、tsconfig.json、src/index.ts、README.md、AGENTS.md.example；bundle 补丁按 deepseek-harness-zh-cn 加载根包，包导出指向 lib/index.js；tsconfig 将 src 编译到 lib。实际源码 apply 注册 prepend 的 agent/pre-step 瀑布监听器，先 await next() 取得其他处理结果，再检查 reject 或取消信号；这些情况下原结果直接返回。仅 step === 1 时，它返回 enter 并保留 decision.messages，再附加 createUserMessage 生成的语言提醒。每轮后续步骤不再附加。\n\n消息使用 producer 自有的 plugin:deepseek-harness-zh-cn 来源，form=snapshot，并把语言文本写入 sections。这有助于将插件消息归属到具体 producer，避免沿用共享 plugin kind。它不改模型权重、推理参数或工具执行器，也没有另一个服务进程。源码入口短，接线与拒绝/取消分支可直接追踪；没有运行证据证明所选宿主的瀑布契约完全一致。",
+                    "artifact": "data/runs/2026-11-19-01/imlishiyuan--deepseek-harness-zh-cn/REVIEWED-SOURCE.json",
+                    "limitations": [
+                        "已读取固定提交的package、补丁、tsconfig、全部src/index.ts、AGENTS.md.example与README相关声明；通过完整Git树核实lib未提交。checkout为稀疏检出，额外原件从固定Git blob读取。",
+                        "只执行本工程的统计和结构验证；没有执行目标插件、测试、安装或真实宿主验收。",
+                        "GitHub/npm 活跃度只作采集背景，未核实独立用户采用或同条件收益对照。"
+                    ]
+                }
+            ],
+            "findings": [
+                {
+                    "id": "scenario",
+                    "topic": "positioning",
+                    "basis": "interpretation",
+                    "text": "面向习惯用简体中文查看 DSH 处理轨迹和回答的用户，在每轮首步自动加入语言提醒，并保留代码、路径与标识符原文。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "mechanism",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "bundle 补丁按 deepseek-harness-zh-cn 加载根包，包导出指向 lib/index.js；tsconfig 将 src 编译到 lib。实际源码 apply 注册 prepend 的 agent/pre-step 瀑布监听器，先 await next() 取得其他处理结果，再检查 reject 或取消信号；这些情况下原结果直接返回。仅 step === 1 时，它返回 enter 并保留 decision.messages，再附加 createUserMessage 生成的语言提醒。每轮后续步骤不再附加。\n\n消息使用 producer 自有的 plugin:deepseek-harness-zh-cn 来源，form=snapshot，并把语言文本写入 sections。这有助于将插件消息归属到具体 producer，避免沿用共享 plugin kind。它不改模型权重、推理参数或工具执行器，也没有另一个服务进程。源码入口短，接线与拒绝/取消分支可直接追踪；没有运行证据证明所选宿主的瀑布契约完全一致。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "scope",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "已读取固定提交的package、补丁、tsconfig、全部src/index.ts、AGENTS.md.example与README相关声明；通过完整Git树核实lib未提交。checkout为稀疏检出，额外原件从固定Git blob读取。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "distribution",
+                    "topic": "engineering",
+                    "basis": "supported",
+                    "text": "清单声明npm包deepseek-harness-zh-cn与prepublishOnly编译；本轮未取得发布包，不将声明当分发验证。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "dependencies",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 支持 agent/pre-step 的 DSH | 必需 | 调用首步监听器 | 提醒不能进入请求 |\n| 可解析的 dsh-llm 与 createUserMessage | 必需 | 顶层导入并创建消息 | 模块加载失败，清单optional不代表无需依赖 |\n| lib/index.js 构建产物 | 必需 | 根包导出入口 | 固定Git树未包含，需核实发布包或自行构建 |\n| 遵从提示的模型 | 效果条件 | 生成中文叙述 | 只能提示，不能强制 |",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "cost",
+                    "topic": "limitations",
+                    "basis": "interpretation",
+                    "text": "| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包构建/存储，金额未知 | 核对profile、依赖和产物，时长未知 | Git无lib，不可假定直接可加载 |\n| 持续使用 | 每轮首步新增文本token，费用未知 | 检查叙述与代码，时长未知 | 无独立额外模型调用 |\n| 失败恢复 | 排障重试费用未知 | 检查加载日志或禁用挂载 | 历史消息不自动撤回 |\n| 退出 | 不再新增提醒 | 移除挂载，保留说明文件 | 具体耗时未测 |",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "adoption",
+                    "topic": "adoption",
+                    "basis": "interpretation",
+                    "text": "先合并维护已有项目或全局 AGENTS.md；确有每轮忘带中文偏好的摩擦，再核对包内构建输出和依赖，在独立 profile 比较叙述语言与代码保持。若出现语言冲突、代码被错误翻译或额外维护不值得，就禁用挂载并退回说明文件，具体判据见 [Q05](#research-q05)。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "value",
+                    "topic": "business_value",
+                    "basis": "interpretation",
+                    "text": "| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 减少手动重复提醒 | 源码自动首步附加固定文本 | 相对AGENTS.md的净改善 |\n| 中文叙述 | 文本明确要求中文并保留标识符 | 模型遵从率及不可见推理语言 |\n| 任务成本 | 无额外网络/模型执行链 | 总token、人工时间和单位合格任务费用 |",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "engineering",
+                    "topic": "engineering",
+                    "basis": "interpretation",
+                    "text": "首步guard和producer自有kind使行为范围与归属清楚，见 [Q02](#research-q02)。可借鉴的是提醒producer绑定，而非其语言文本具有强制力。清单可选peer与顶层运行时import并存、Git树缺lib意味着源码可读不等于构建发布可用，见 [Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "contribution",
+                    "topic": "mechanism",
+                    "basis": "supported",
+                    "text": "已有贡献是将固定语言提醒打包为 profile 插件并在每轮首步附加，有明确消息producer来源；相对手动每次提醒省去重复输入，但相对持久说明的效果增量尚未证明。见 [Q01](#research-q01)、[Q02](#research-q02)。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "critical_question",
+                    "topic": "limitations",
+                    "basis": "design_limit",
+                    "text": "最影响采用的是用户消息级提醒能否在不损坏代码与显式语言例外的前提下，比简单 AGENTS.md 更稳定；源码和作者说明均不支持强制中文思考。Git 源码还缺少导出所需的构建输出。见 [Q03](#research-q03)、[Q04](#research-q04)。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                },
+                {
+                    "id": "innovation_hypothesis",
+                    "topic": "technical_innovation",
+                    "basis": "unverified",
+                    "text": "待验证假设是长对话中逐轮首步提醒相对持久说明降低叙述语言漂移。按 [Q05](#research-q05) 比较合格叙述、代码保持、总token及人工投入；结果相当或冲突增加即否定采用增益。",
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ],
+                    "dependencies": [
+                        {
+                            "plugin_id": "github:1334282453:root",
+                            "area": "code",
+                            "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                        }
+                    ],
+                    "reviewed_at": "2026-11-19T03:30:18.193Z",
+                    "status": "current"
+                }
+            ],
+            "last_checked_at": "2026-11-19T03:30:18.193Z",
+            "innovation_scores": {
+                "rubric": "innovation-v1",
+                "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                "reviewed_at": "2026-11-19T03:30:18.193Z",
+                "status": "current",
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334282453:root",
+                        "area": "code",
+                        "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                    }
+                ],
+                "technical": {
+                    "criteria": {
+                        "novelty": 0,
+                        "mechanism": 8,
+                        "transferability": 5,
+                        "simplification": 4
+                    },
+                    "rationale": "参照README首选AGENTS.md及src/index.ts 33–48，未识别新语言控制方法(novelty=0)；每轮首步与producer组合是局部适配(mechanism=25%)；可转用于其他提醒但未验证(transferability=25%)；包装减少重复输入而增加依赖(simplification=25%)。",
+                    "basis": "interpretation",
+                    "score": 17,
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ]
+                },
+                "business": {
+                    "criteria": {
+                        "workflow": 9,
+                        "delivery": 0,
+                        "reach": 5,
+                        "economics": 0
+                    },
+                    "rationale": "README 13–18 与源码首步提示表明工作流只有局部profile配置便利(workflow=25%)，交付仍为原模型回答(delivery=0)，对中文阅读用户有有限可达性(reach=25%)；未识别已实现的新成本结构(economics=0)，不以未知收益补分。",
+                    "basis": "interpretation",
+                    "score": 14,
+                    "evidence_ids": [
+                        "research-2026-11-19-01-github-1334282453-root-source"
+                    ]
+                }
+            },
+            "recommendation": {
+                "rubric": "adoption-v1",
+                "decision": "observe",
+                "reason": "希望 DSH 默认中文叙述的用户可以先观察这项每轮首步提醒插件，并继续使用已维护的项目或全局说明。插件相对手动逐次提醒增加了 profile 化注入，但比持久说明更有效尚无对照。若构建输出缺失、语言冲突或代码被错误翻译，用户应停用该挂载并退回直接说明。",
+                "criteria": {
+                    "scenario": {
+                        "score": 15,
+                        "rationale": "[Q01](#research-q01)以README 13–18及src/index.ts 26–31明确中文读者、重复轮次与合格叙述，比仅潜在人群的25%更具体，取50%；没有直接使用摩擦和需求强度数据，不到75%。"
+                    },
+                    "advantage": {
+                        "score": 6,
+                        "rationale": "[Q01](#research-q01)、[Q05](#research-q05)的README 13–18自列AGENTS.md替代，src/index.ts 33–48仅增加profile化首步注入，超过无增量但只有局部便利，取25%；无遵从改善支持50%。"
+                    },
+                    "evidence": {
+                        "score": 6,
+                        "rationale": "[Q02](#research-q02)有完整src/index.ts接线，但[Q04](#research-q04)指出Git无lib、运行时peer及发布包未核验；超过纯声明却仍缺产物加载核心依据，取25%，不到支持有条件运行试用的50%。"
+                    },
+                    "cost": {
+                        "score": 10,
+                        "rationale": "[Q04](#research-q04)以package.json 24–41和源码33–48识别构建/挂载/每轮提示与禁用退路，负担可管理，超过恢复重要缺口的25%，取50%；版本解析和发布产物仍需排障且token未测，不到75%。"
+                    }
+                },
+                "score": 37,
+                "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                "reviewed_at": "2026-11-19T03:30:18.193Z",
+                "status": "current",
+                "evaluator": "ai",
+                "evidence_ids": [
+                    "research-2026-11-19-01-github-1334282453-root-source"
+                ],
+                "dependencies": [
+                    {
+                        "plugin_id": "github:1334282453:root",
+                        "area": "code",
+                        "fingerprint": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd"
+                    }
+                ]
+            }
+        },
+        "publication.records": {
+            "id": "github:1334282453:root",
+            "repository": "imlishiyuan/deepseek-harness-zh-cn",
+            "path": "",
+            "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+            "fingerprints": {
+                "directory": "f55e0a818928fa21b84db6d4aed6e1416d702347cbbb0d7ad0c841f4f170f51b",
+                "code": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+                "maintenance": "3cf076b8dd004f285b15cff9c993574c7b7d258d24d3feac053b1232a3d500c2"
+            },
+            "source_urls": [
+                "https://github.com/awesome-dsh-plugin/awesome-dsh-plugin",
+                "https://github.com/0xsline/awesome-deepseek-harness"
+            ],
+            "status": "complete",
+            "checked_at": "2026-11-19T03:10:08Z",
+            "analysis_sha256": "5db8899422575e3197a216b64d118c922ddd7706ae8f7b4e8e92a2af40c44720"
+        },
+        "publication.metadata": "data/catalog/imlishiyuan--deepseek-harness-zh-cn/meta.json",
+        "publication.summaries": {
+            "text": "在每轮首步为 DeepSeek Harness 注入简体中文思考与回答的语言提醒。",
+            "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+            "source_url": "https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md"
+        },
+        "publication.capabilities": {
+            "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+            "items": {
+                "事件监听": "每轮首步附加中文语言提醒"
+            },
+            "table": "| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 首步中文语言提醒 | 自动给模型加入语言偏好 | 用户消息级提示，不能强制推理语言 |"
+        },
+        "publication.advice": {
+            "revision": "285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd",
+            "text": "先合并维护已有项目或全局 AGENTS.md；确有每轮忘带中文偏好的摩擦，再核对包内构建输出和依赖，在独立 profile 比较叙述语言与代码保持。若出现语言冲突、代码被错误翻译或额外维护不值得，就禁用挂载并退回说明文件，具体判据见 [Q05](#research-q05)。"
+        },
+        "registry": "data/plugins/imlishiyuan--deepseek-harness-zh-cn",
+        "reports": "# 中文语言提醒\n\n> 在每轮首步为 DeepSeek Harness 注入简体中文思考与回答的语言提醒。\n\n## 研究范围\n\n- **仓库**：[imlishiyuan/deepseek-harness-zh-cn](https://github.com/imlishiyuan/deepseek-harness-zh-cn)\n- **版本号**：0.1.5（[固定提交 285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd](https://github.com/imlishiyuan/deepseek-harness-zh-cn/tree/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd)）\n- **版本日期**：2026-10-19（固定提交日期，北京时间；不是包发布日期）\n\n## 结论状态\n\n首步消息注入和producer归属由源码支持；中文思考、任务效果和假设均未验证。\n\n## 洞察短评\n\n- **用途**：面向习惯用简体中文查看 DSH 处理轨迹和回答的用户，在每轮首步自动加入语言提醒，并保留代码、路径与标识符原文。\n- **亮点**：已有贡献是将固定语言提醒打包为 profile 插件并在每轮首步附加，有明确消息producer来源；相对手动每次提醒省去重复输入，但相对持久说明的效果增量尚未证明。见 [Q01](#research-q01)、[Q02](#research-q02)。\n- **思考**：最影响采用的是用户消息级提醒能否在不损坏代码与显式语言例外的前提下，比简单 AGENTS.md 更稳定；源码和作者说明均不支持强制中文思考。Git 源码还缺少导出所需的构建输出。见 [Q03](#research-q03)、[Q04](#research-q04)。\n- **建议**：待验证假设是长对话中逐轮首步提醒相对持久说明降低叙述语言漂移。按 [Q05](#research-q05) 比较合格叙述、代码保持、总token及人工投入；结果相当或冲突增加即否定采用增益。\n\n采用建议：先合并维护已有项目或全局 AGENTS.md；确有每轮忘带中文偏好的摩擦，再核对包内构建输出和依赖，在独立 profile 比较叙述语言与代码保持。若出现语言冲突、代码被错误翻译或额外维护不值得，就禁用挂载并退回说明文件，具体判据见 [Q05](#research-q05)。\n\n## 核心贡献\n\n已有贡献是将固定语言提醒打包为 profile 插件并在每轮首步附加，有明确消息producer来源；相对手动每次提醒省去重复输入，但相对持久说明的效果增量尚未证明。见 [Q01](#research-q01)、[Q02](#research-q02)。\n\n## 关键质疑\n\n最影响采用的是用户消息级提醒能否在不损坏代码与显式语言例外的前提下，比简单 AGENTS.md 更稳定；源码和作者说明均不支持强制中文思考。Git 源码还缺少导出所需的构建输出。见 [Q03](#research-q03)、[Q04](#research-q04)。\n\n<a id=\"innovation\"></a>\n\n## 重点创新推演与最小验证\n\n待验证假设是长对话中逐轮首步提醒相对持久说明降低叙述语言漂移。按 [Q05](#research-q05) 比较合格叙述、代码保持、总token及人工投入；结果相当或冲突增加即否定采用增益。\n\n- 已检查源码及构建映射。\n- 未运行目标插件、构建、模型或真实宿主。\n- 模型语言效果、发布包文件和具体版本兼容仍有明确未知。\n\n## 场景与替代办法\n\n面向习惯用简体中文查看 DSH 处理轨迹和回答的用户，在每轮首步自动加入语言提醒，并保留代码、路径与标识符原文。\n\n直接维护项目或全局 AGENTS.md 是作者优先推荐的替代方式；两者都属于提示引导，不能强制模型内部语言。见 [Q01](#research-q01)。\n\n## 依赖与流程\n\n| 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |\n|---|---|---|---|\n| 支持 agent/pre-step 的 DSH | 必需 | 调用首步监听器 | 提醒不能进入请求 |\n| 可解析的 dsh-llm 与 createUserMessage | 必需 | 顶层导入并创建消息 | 模块加载失败，清单optional不代表无需依赖 |\n| lib/index.js 构建产物 | 必需 | 根包导出入口 | 固定Git树未包含，需核实发布包或自行构建 |\n| 遵从提示的模型 | 效果条件 | 生成中文叙述 | 只能提示，不能强制 |\n\n| 步骤 | 执行者与动作 | 成功判据或失败处理 |\n|---|---|---|\n| 准备 | 用户先试直接说明，确需时选profile和包版本 | 确认构建输出及依赖 |\n| 加载 | 用户安装并核对补丁，重启宿主 | 配置出现挂载不等于模型遵从 |\n| 执行 | 宿主每轮第一步附加提醒 | 拒绝/取消保留原结果 |\n| 验收与退出 | 用户检查叙述、代码与语言例外 | 冲突则禁用挂载并开新轮次 |\n\n## 成本与效果\n\n| 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |\n|---|---|---|---|\n| 首次使用 | 包构建/存储，金额未知 | 核对profile、依赖和产物，时长未知 | Git无lib，不可假定直接可加载 |\n| 持续使用 | 每轮首步新增文本token，费用未知 | 检查叙述与代码，时长未知 | 无独立额外模型调用 |\n| 失败恢复 | 排障重试费用未知 | 检查加载日志或禁用挂载 | 历史消息不自动撤回 |\n| 退出 | 不再新增提醒 | 移除挂载，保留说明文件 | 具体耗时未测 |\n\n| 效果项 | 当前证据支持 | 尚不能确定 |\n|---|---|---|\n| 减少手动重复提醒 | 源码自动首步附加固定文本 | 相对AGENTS.md的净改善 |\n| 中文叙述 | 文本明确要求中文并保留标识符 | 模型遵从率及不可见推理语言 |\n| 任务成本 | 无额外网络/模型执行链 | 总token、人工时间和单位合格任务费用 |\n\n## 研究问题与完整回答\n\n**插件研究总目标**：核对每轮中文语言提醒的真实注入、替代方式和采用边界。\n\n<a id=\"research-q01\"></a>\n\n### Q01 · 谁需要每轮中文提醒，为什么作者仍优先推荐 AGENTS.md？\n\n**研究主题**：场景与需求、贡献与相对优势\n\n#### 完整回答\n\n目标是习惯读简体中文、反复查看 Agent 处理轨迹和最终回答的 DSH 用户，合格结果是普通叙述使用中文，同时命令、标识符和路径原样保留。作者把复制全局 AGENTS.md 列为首选，把插件列为第二种方式，并说明通用提醒插件也可完成类似工作。因此可识别的增量是把固定语言规则包装为 profile 插件，并在每轮第一步重复附加，减少用户在每次提问时重写要求；它没有提供新的翻译模型或强制语言控制。\n\n直接维护全局说明文件更简单、更可定制。固定 Git 树包含 AGENTS.md.example，内容明确允许项目自身语言规则优先，因此已有说明文件是直接而可定制的替代；复制前应合并原说明，不能覆盖已有项目约定。没有同模型、同任务的对照，不能断言插件比持久说明更能提高遵从率，偶尔用中文的用户也未必值得增加一个加载依赖。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-18](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md#L13-L18)\n\n作者明确给出优先替代和插件第二方案。\n\n```text\nThis project offers two ways (**choose one; the first is recommended**) to turn your DSH's reasoning and output into Simplified Chinese, so Chinese-speaking users can read the trajectory and processing directly without translation overhead:\n\n- **Method 1 (recommended, simplest)**: copy `AGENTS.md.example` to `~/.dsh/AGENTS.md`.\n- **Method 2 (plugin)**: install this package from npm and mount it in the profile.\n\n> **Tip**: this plugin's \"Chinese-first\" rules can also be achieved with the [keep-reminder](https://github.com/imlishiyuan/keep-reminder) plugin — put the same rules into a project's `.keep-reminder` file, and customize the content freely (not limited to language).\n```\n\n**依据 2 · 源码核查**：[src/index.ts:26-31](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L26-L31)\n\n固定语言文本覆盖普通中文叙述，保留代码与标识符英文。\n\n```text\nconst ZH_DIRECTIVE = [\n  '始终使用简体中文进行思考（reasoning）与所有最终回答。',\n  '计划、工具调用、总结、代码注释同样使用简体中文。',\n  '仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。',\n  '除非用户明确要求其他语言，否则本规则优先。',\n].join('\\n')\n```\n\n**依据 3 · 源码核查**：[AGENTS.md.example:1-6](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/AGENTS.md.example#L1-L6)\n\n固定Git原件包含语言规则，并明确项目语言例外；稀疏检出不等于文件缺失。\n\n```text\n# 语言规则\n\n- 默认始终使用简体中文进行思考（reasoning）与所有最终回答。\n- 计划、工具调用、总结、代码注释同样使用简体中文。\n- 仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。\n- 若某个工作区/项目的 AGENTS.md 明确指定了其他语言，则以该项目级规则为准。\n```\n\n#### 缺口\n\n- 没有重复任务的同条件语言遵从和人工阅读对照。\n  **影响**：只能判断场景与机制，不能量化减少翻译负担。\n  **进一步探讨**：取同一模型的一组中文与混合技术任务，对比全局说明和插件的合格叙述比例及人工改写时间。\n\n<a id=\"research-q02\"></a>\n\n### Q02 · 插件什么时候附加消息，拒绝、取消和后续步骤如何处理？\n\n**研究主题**：功能与机制、工程质量与复用\n\n#### 完整回答\n\nbundle 补丁按 deepseek-harness-zh-cn 加载根包，包导出指向 lib/index.js；tsconfig 将 src 编译到 lib。实际源码 apply 注册 prepend 的 agent/pre-step 瀑布监听器，先 await next() 取得其他处理结果，再检查 reject 或取消信号；这些情况下原结果直接返回。仅 step === 1 时，它返回 enter 并保留 decision.messages，再附加 createUserMessage 生成的语言提醒。每轮后续步骤不再附加。\n\n消息使用 producer 自有的 plugin:deepseek-harness-zh-cn 来源，form=snapshot，并把语言文本写入 sections。这有助于将插件消息归属到具体 producer，避免沿用共享 plugin kind。它不改模型权重、推理参数或工具执行器，也没有另一个服务进程。源码入口短，接线与拒绝/取消分支可直接追踪；没有运行证据证明所选宿主的瀑布契约完全一致。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[cordis.patch.yml:1-3](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/cordis.patch.yml#L1-L3)\n\nbundle按根包名挂载。\n\n```text\n- insert:\n    - id: deepseek-harness-zh-cn\n      name: deepseek-harness-zh-cn\n```\n\n**依据 2 · 源码核查**：[tsconfig.json:1-12](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/tsconfig.json#L1-L12)\n\nsrc 到 lib 的编译映射。\n\n<details>\n<summary>查看原文（12行）</summary>\n\n```text\n{\n  \"compilerOptions\": {\n    \"target\": \"ES2022\",\n    \"module\": \"NodeNext\",\n    \"moduleResolution\": \"NodeNext\",\n    \"rootDir\": \"src\",\n    \"outDir\": \"lib\",\n    \"strict\": true,\n    \"skipLibCheck\": true\n  },\n  \"include\": [\"src\"]\n}\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:18-23](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L18-L23)\n\n消息 producer 类型与身份。\n\n```text\nconst SOURCE_KIND = 'plugin:deepseek-harness-zh-cn'\n\ndeclare module '@deepseek-ai/dsh-llm' {\n  interface MessageSourceMap {\n    'plugin:deepseek-harness-zh-cn': { kind: 'plugin:deepseek-harness-zh-cn' } & ContextFormed\n  }\n```\n\n**依据 4 · 源码核查**：[src/index.ts:33-49](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L33-L49)\n\n完整真实注入链和失败/取消/首步判断。\n\n<details>\n<summary>查看原文（17行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n  ctx.on('agent/pre-step', async ({ step, signal }, next): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject' || signal.aborted) return decision\n    if (step !== 1) return decision\n    return {\n      kind: 'enter',\n      messages: [\n        ...decision.messages,\n        createUserMessage({\n          content: [{ type: 'text', text: `<system-reminder>\\n${ZH_DIRECTIVE}\\n</system-reminder>` }],\n          source: { kind: SOURCE_KIND, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },\n        }),\n      ],\n    }\n  }, { prepend: true })\n}\n```\n\n</details>\n\n<a id=\"research-q03\"></a>\n\n### Q03 · 中文思考能否保证，如何处理指令冲突与推理不可见？\n\n**研究主题**：缺陷与关键质疑\n\n#### 完整回答\n\n不能保证。ZH_DIRECTIVE 的字符串要求始终用简体中文思考和回答，但它实际被 createUserMessage 包装为用户消息，文本中的 system-reminder 标签不会把它升级成模型系统权限。作者也明确承认没有强制 reasoning 语言的 Harness/API 开关，技术任务仍可能输出英文推理。可见中文回答不能证明不可见内部推理使用中文。\n\n规则保留用户明确要求其他语言的例外，也允许代码、命令、路径和 API 名称用英文，因此合格判据不能是逐字符全中文。规则还要求计划、工具调用和代码注释使用中文，可能与项目自身协作语言习惯不同；使用前应检查本项目约束。首步提醒也不能证明长轮次中后续内容始终遵从。核心限制是提示级引导而非语言策略执行器，不是从源码发现模型必定拒绝中文。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[src/index.ts:26-31](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L26-L31)\n\n语言要求、英文例外和用户其他语言例外。\n\n```text\nconst ZH_DIRECTIVE = [\n  '始终使用简体中文进行思考（reasoning）与所有最终回答。',\n  '计划、工具调用、总结、代码注释同样使用简体中文。',\n  '仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。',\n  '除非用户明确要求其他语言，否则本规则优先。',\n].join('\\n')\n```\n\n**依据 2 · 源码核查**：[src/index.ts:38-45](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L38-L45)\n\n语言提醒实际是用户消息，不是模型系统指令。\n\n```text\n    return {\n      kind: 'enter',\n      messages: [\n        ...decision.messages,\n        createUserMessage({\n          content: [{ type: 'text', text: `<system-reminder>\\n${ZH_DIRECTIVE}\\n</system-reminder>` }],\n          source: { kind: SOURCE_KIND, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },\n        }),\n```\n\n**依据 3 · 作者声明**：[README.md:71-79](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md#L71-L79)\n\n作者承认推理语言无法强制。\n\n```text\n## Scope and Limitations\n\n- Affects both the model's final answer and its reasoning (thinking) channel.\n- There is **no harness or DeepSeek API switch that forces the reasoning language**; on technical tasks the model's `reasoning_content` may still be English. A fully Chinese prompt maximizes the probability but does not guarantee it.\n\n## How It Works\n\n- **Method 1**: `~/.dsh/AGENTS.md` is injected by `dsh-agent-instructions` as a `<system-reminder>` user message — guidance-level, lower priority than the system prompt and direct user instructions.\n- **Method 2**: the plugin listens to the `agent/pre-step` waterfall and appends a `<system-reminder>` user message to the request batch at the first step of each turn, reinforcing the Chinese rule once per turn.\n```\n\n#### 缺口\n\n- 没有各模型、长轮次及互相冲突指令下的遵从率数据。\n  **影响**：不能把思考语言或持续遵从写成已验证能力。\n  **进一步探讨**：分别统计可见reasoning和最终叙述，不可见思考记未知；设置用户改语言和英文代码任务作为反例。\n\n<a id=\"research-q04\"></a>\n\n### Q04 · 安装、日常使用和失败退出分别有哪些依赖与成本？\n\n**研究主题**：依赖、兼容与流程、效果与总成本\n\n#### 完整回答\n\n运行需要兼容 agent/pre-step 和 createUserMessage 的 DSH/LLM 包；虽然清单把 dsh-llm peer 标为可选，src/index.ts 顶层却有运行时 import，目标环境仍必须能解析它。固定 Git 树未包含 lib，而 main/exports 指向 lib/index.js，仅有 prepublishOnly 构建脚本，不能把 Git 源码直接加载当成已有可用产物；应使用已核实含构建输出的发布包，或自行构建后核对输出。\n\n首次操作是选择 profile、安装包并核对最终补丁；手动安装路径还需维护 profile 挂载。持续使用会在每轮第一步增加一段提示文本，实际模型 token 及费用随 tokenizer、模型和调用量变化，当前没有测量。普通使用不增加独立网络服务或额外模型调用。异常时由用户检查依赖解析、补丁和消息来源；停止使用应从 profile 移除/禁用该挂载并开启新轮次，已经记录的历史消息不会因禁用而被撤回。若只需固定语言偏好，维护一份全局或项目说明可减少插件版本维护。\n\n#### 证据与依据\n\n**依据 1 · 源码核查**：[package.json:8-15](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/package.json#L8-L15)\n\nmain和文件列表要求lib，固定Git树检查未发现lib。\n\n```text\n  \"main\": \"./lib/index.js\",\n  \"files\": [\n    \"lib\",\n    \"README.md\",\n    \"README.zh.md\",\n    \"LICENSE\",\n    \"AGENTS.md.example\",\n    \"cordis.patch.yml\"\n```\n\n**依据 2 · 源码核查**：[package.json:24-41](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/package.json#L24-L41)\n\n构建脚本、可选peer和开发依赖；声明可选不覆盖运行时import。\n\n<details>\n<summary>查看原文（18行）</summary>\n\n```text\n  ],\n  \"scripts\": {\n    \"build\": \"tsc\",\n    \"prepublishOnly\": \"npm run build\"\n  },\n  \"peerDependencies\": {\n    \"@deepseek-ai/dsh-llm\": \"*\"\n  },\n  \"peerDependenciesMeta\": {\n    \"@deepseek-ai/dsh-llm\": {\n      \"optional\": true\n    }\n  },\n  \"devDependencies\": {\n    \"@deepseek-ai/cordis\": \"*\",\n    \"@deepseek-ai/dsh-agent\": \"^0.1.7-rc.2\",\n    \"@deepseek-ai/dsh-llm\": \"^0.1.7-rc.2\",\n    \"typescript\": \"^5\"\n```\n\n</details>\n\n**依据 3 · 源码核查**：[src/index.ts:1-5](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L1-L5)\n\ncreateUserMessage是运行时依赖。\n\n```text\nimport type { Context } from '@deepseek-ai/cordis'\nimport type {} from '@deepseek-ai/dsh-agent'\nimport type { PreStepDecision } from '@deepseek-ai/dsh-agent'\nimport { createUserMessage } from '@deepseek-ai/dsh-llm'\nimport type { ContextFormed } from '@deepseek-ai/dsh-llm'\n```\n\n**依据 4 · 作者声明**：[README.md:43-69](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md#L43-L69)\n\n作者安装、手动挂载与重启步骤。\n\n<details>\n<summary>查看原文（27行）</summary>\n\n````text\n### Method 2: Install the npm plugin\n\n**A. Official command** (backs onto pnpm; install pnpm first):\n\n```sh\nnpm i -g pnpm\ndsh plugin --profile web add deepseek-harness-zh-cn\n```\n\n**B. Install with npm directly into the profile directory**:\n\n```sh\ncd ~/.dsh/profiles/web    # Windows: C:\\Users\\<you>\\.dsh\\profiles\\web\nnpm install deepseek-harness-zh-cn --save\n```\n\n> Note: this `npm install` runs inside the **DSH profile directory**, not this plugin's project directory.\n\nMount it in `~/.dsh/profiles/<name>/cordis.patch.yml`:\n\n```yaml\n- insert:\n    - id: dsh-zh\n      name: 'deepseek-harness-zh-cn'\n```\n\nRestart `dsh web`.\n````\n\n</details>\n\n**依据 5 · 源码核查**：[src/index.ts:33-48](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L33-L48)\n\n每轮首步仅加消息，没有新模型/HTTP调用。\n\n<details>\n<summary>查看原文（16行）</summary>\n\n```text\nexport function apply(ctx: Context): void {\n  ctx.on('agent/pre-step', async ({ step, signal }, next): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject' || signal.aborted) return decision\n    if (step !== 1) return decision\n    return {\n      kind: 'enter',\n      messages: [\n        ...decision.messages,\n        createUserMessage({\n          content: [{ type: 'text', text: `<system-reminder>\\n${ZH_DIRECTIVE}\\n</system-reminder>` }],\n          source: { kind: SOURCE_KIND, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },\n        }),\n      ],\n    }\n  }, { prepend: true })\n```\n\n</details>\n\n#### 缺口\n\n- 没有核验注册表当前发布包的构建文件或实际依赖解析。\n  **影响**：发布包可安装性和具体宿主兼容组合仍未知。\n  **进一步探讨**：核对确切版本归档中的lib/index.js及其依赖，并在隔离profile读取加载日志。\n- 缺少模型用量、任务频率和人工排障记录。\n  **影响**：不能给出每个合格中文任务的现金费用或节时。\n  **进一步探讨**：同批任务记录总输入token、合格结果数、人工改写及维护耗时。\n\n<a id=\"research-q05\"></a>\n\n### Q05 · 哪类用户值得试，怎样判断每轮提醒是否必要？\n\n**研究主题**：新假设与验证、采用判断\n\n#### 完整回答\n\n当前更适合观察，而非优先增加插件。已经维护项目或全局说明、希望中文输出的用户，先用直接说明即可；确有跨项目忘带语言规则的重复摩擦时，可以在独立 profile 对固定包做受控比较。主要增量是 profile 化和每轮首步重复，不是比普通说明更高权限的强制机制。发布产物和具体宿主组合尚未核实，不宜把源码短小等同于安装成本已低。\n\n可验证假设是：在长对话或多次新轮次里，首步显式提醒比仅全局说明减少普通叙述跑回英文，而不损坏代码原文。用同模型、同预算和固定任务集分配全局说明与插件两组，分别检查叙述语言、代码标识符保持率、用户要求切换语言能否生效，并记录总token和人工改写时间。只有合格叙述改善且额外维护/提示成本可接受才支持假设；若两组相当、插件冲突更多或代码被错误翻译，就保留原说明文件并退出插件。这个实验尚未执行，不能计为现有贡献。\n\n#### 证据与依据\n\n**依据 1 · 作者声明**：[README.md:13-18](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/README.md#L13-L18)\n\n作者自列简单替代，不把包装当必要性。\n\n```text\nThis project offers two ways (**choose one; the first is recommended**) to turn your DSH's reasoning and output into Simplified Chinese, so Chinese-speaking users can read the trajectory and processing directly without translation overhead:\n\n- **Method 1 (recommended, simplest)**: copy `AGENTS.md.example` to `~/.dsh/AGENTS.md`.\n- **Method 2 (plugin)**: install this package from npm and mount it in the profile.\n\n> **Tip**: this plugin's \"Chinese-first\" rules can also be achieved with the [keep-reminder](https://github.com/imlishiyuan/keep-reminder) plugin — put the same rules into a project's `.keep-reminder` file, and customize the content freely (not limited to language).\n```\n\n**依据 2 · 源码核查**：[src/index.ts:26-48](https://github.com/imlishiyuan/deepseek-harness-zh-cn/blob/285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd/src/index.ts#L26-L48)\n\n首步重复及语言例外是对照假设的具体机制。\n\n<details>\n<summary>查看原文（23行）</summary>\n\n```text\nconst ZH_DIRECTIVE = [\n  '始终使用简体中文进行思考（reasoning）与所有最终回答。',\n  '计划、工具调用、总结、代码注释同样使用简体中文。',\n  '仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。',\n  '除非用户明确要求其他语言，否则本规则优先。',\n].join('\\n')\n\nexport function apply(ctx: Context): void {\n  ctx.on('agent/pre-step', async ({ step, signal }, next): Promise<PreStepDecision> => {\n    const decision = await next()\n    if (decision.kind === 'reject' || signal.aborted) return decision\n    if (step !== 1) return decision\n    return {\n      kind: 'enter',\n      messages: [\n        ...decision.messages,\n        createUserMessage({\n          content: [{ type: 'text', text: `<system-reminder>\\n${ZH_DIRECTIVE}\\n</system-reminder>` }],\n          source: { kind: SOURCE_KIND, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },\n        }),\n      ],\n    }\n  }, { prepend: true })\n```\n\n</details>\n\n#### 缺口\n\n- 每轮显式提醒相对全局说明是否带来净改善未知。\n  **影响**：不能据机制声称插件更有效或值得持续安装。\n  **进一步探讨**：进行同条件任务比较，以合格叙述、代码保持、总token和人工时间共同决定是否继续。\n\n## 工程统计\n\n统计范围：git tracked files at exact commit; component scope only；组件：根；内容摘要：f96ad66f9d1e153ae2e87bd0ceb904e84ec9066a09deb884aef4d5c127ba3df6。sloc 0.3.2，TypeScript 5.9.3。\n\n仅统计 Markdown 和指定的 JavaScript／TypeScript 扩展名；Python 等其他语言不纳入，表格不代表全语言代码规模。\n\n| 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |\n|---|---|---:|---:|---:|---:|---:|\n| .md | source | 2 | 258 | — | — | 1425 |\n| .ts | source | 1 | 49 | 36 | 7 | — |\n\n排除 0 项，解析错误 0 项；默认排除规则是启发式，源文件与打包产物可能重复，不能从行数推算原创量或工时。Markdown 字数与代码行分别计量，未知不填0。\n\n## 能力清单\n\n| 能力 | 主要用途 | 使用条件与边界 |\n|---|---|---|\n| 首步中文语言提醒 | 自动给模型加入语言偏好 | 用户消息级提示，不能强制推理语言 |\n\n## 工程亮点\n\n首步guard和producer自有kind使行为范围与归属清楚，见 [Q02](#research-q02)。可借鉴的是提醒producer绑定，而非其语言文本具有强制力。清单可选peer与顶层运行时import并存、Git树缺lib意味着源码可读不等于构建发布可用，见 [Q04](#research-q04)。\n\n## 验证与边界\n\n- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、tsconfig.json、src/index.ts、README.md、AGENTS.md.example 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。\n- 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。\n- 边界：已读取固定提交的package、补丁、tsconfig、全部src/index.ts、AGENTS.md.example与README相关声明；通过完整Git树核实lib未提交。checkout为稀疏检出，额外原件从固定Git blob读取。\n- 下一步：- 已检查源码及构建映射。\n- 未运行目标插件、构建、模型或真实宿主。\n- 模型语言效果、发布包文件和具体版本兼容仍有明确未知。\n"
+    },
+    "artifacts": {
+        "data/runs/2026-11-19-01/imlishiyuan--deepseek-harness-zh-cn/REVIEWED-SOURCE.json": {
+            "content": "{\n  \"repository\": \"imlishiyuan/deepseek-harness-zh-cn\",\n  \"revision\": \"285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd\",\n  \"component\": \"\",\n  \"inspected_paths\": [\n    \"README.md\",\n    \"package.json\",\n    \"cordis.patch.yml\",\n    \"tsconfig.json\",\n    \"src/index.ts\",\n    \"AGENTS.md.example\"\n  ],\n  \"research_questions\": {\n    \"goal\": \"核对每轮中文语言提醒的真实注入、替代方式和采用边界。\",\n    \"questions\": [\n      {\n        \"id\": \"Q01\",\n        \"topics\": [\n          \"scenario\",\n          \"contribution\"\n        ],\n        \"question\": \"谁需要每轮中文提醒，为什么作者仍优先推荐 AGENTS.md？\",\n        \"answer\": \"目标是习惯读简体中文、反复查看 Agent 处理轨迹和最终回答的 DSH 用户，合格结果是普通叙述使用中文，同时命令、标识符和路径原样保留。作者把复制全局 AGENTS.md 列为首选，把插件列为第二种方式，并说明通用提醒插件也可完成类似工作。因此可识别的增量是把固定语言规则包装为 profile 插件，并在每轮第一步重复附加，减少用户在每次提问时重写要求；它没有提供新的翻译模型或强制语言控制。\\n\\n直接维护全局说明文件更简单、更可定制。固定 Git 树包含 AGENTS.md.example，内容明确允许项目自身语言规则优先，因此已有说明文件是直接而可定制的替代；复制前应合并原说明，不能覆盖已有项目约定。没有同模型、同任务的对照，不能断言插件比持久说明更能提高遵从率，偶尔用中文的用户也未必值得增加一个加载依赖。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 13,\n            \"line_end\": 18,\n            \"observation\": \"作者明确给出优先替代和插件第二方案。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 26,\n            \"line_end\": 31,\n            \"observation\": \"固定语言文本覆盖普通中文叙述，保留代码与标识符英文。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"AGENTS.md.example\",\n            \"line_start\": 1,\n            \"line_end\": 6,\n            \"observation\": \"固定Git原件包含语言规则，并明确项目语言例外；稀疏检出不等于文件缺失。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有重复任务的同条件语言遵从和人工阅读对照。\",\n            \"impact\": \"只能判断场景与机制，不能量化减少翻译负担。\",\n            \"next_step\": \"取同一模型的一组中文与混合技术任务，对比全局说明和插件的合格叙述比例及人工改写时间。\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q02\",\n        \"topics\": [\n          \"mechanism\",\n          \"engineering\"\n        ],\n        \"question\": \"插件什么时候附加消息，拒绝、取消和后续步骤如何处理？\",\n        \"answer\": \"bundle 补丁按 deepseek-harness-zh-cn 加载根包，包导出指向 lib/index.js；tsconfig 将 src 编译到 lib。实际源码 apply 注册 prepend 的 agent/pre-step 瀑布监听器，先 await next() 取得其他处理结果，再检查 reject 或取消信号；这些情况下原结果直接返回。仅 step === 1 时，它返回 enter 并保留 decision.messages，再附加 createUserMessage 生成的语言提醒。每轮后续步骤不再附加。\\n\\n消息使用 producer 自有的 plugin:deepseek-harness-zh-cn 来源，form=snapshot，并把语言文本写入 sections。这有助于将插件消息归属到具体 producer，避免沿用共享 plugin kind。它不改模型权重、推理参数或工具执行器，也没有另一个服务进程。源码入口短，接线与拒绝/取消分支可直接追踪；没有运行证据证明所选宿主的瀑布契约完全一致。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"cordis.patch.yml\",\n            \"line_start\": 1,\n            \"line_end\": 3,\n            \"observation\": \"bundle按根包名挂载。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"tsconfig.json\",\n            \"line_start\": 1,\n            \"line_end\": 12,\n            \"observation\": \"src 到 lib 的编译映射。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 18,\n            \"line_end\": 23,\n            \"observation\": \"消息 producer 类型与身份。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 33,\n            \"line_end\": 49,\n            \"observation\": \"完整真实注入链和失败/取消/首步判断。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"本轮未安装或加载该插件。\",\n            \"impact\": \"源码接线不等于当前宿主已加载成功。\",\n            \"next_step\": \"在隔离 profile 检查挂载和首步日志来源，确认后续步骤没有重复消息。\",\n            \"kind\": \"scope_boundary\"\n          }\n        ],\n        \"status\": \"answered\"\n      },\n      {\n        \"id\": \"Q03\",\n        \"topics\": [\n          \"limitations\"\n        ],\n        \"question\": \"中文思考能否保证，如何处理指令冲突与推理不可见？\",\n        \"answer\": \"不能保证。ZH_DIRECTIVE 的字符串要求始终用简体中文思考和回答，但它实际被 createUserMessage 包装为用户消息，文本中的 system-reminder 标签不会把它升级成模型系统权限。作者也明确承认没有强制 reasoning 语言的 Harness/API 开关，技术任务仍可能输出英文推理。可见中文回答不能证明不可见内部推理使用中文。\\n\\n规则保留用户明确要求其他语言的例外，也允许代码、命令、路径和 API 名称用英文，因此合格判据不能是逐字符全中文。规则还要求计划、工具调用和代码注释使用中文，可能与项目自身协作语言习惯不同；使用前应检查本项目约束。首步提醒也不能证明长轮次中后续内容始终遵从。核心限制是提示级引导而非语言策略执行器，不是从源码发现模型必定拒绝中文。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 26,\n            \"line_end\": 31,\n            \"observation\": \"语言要求、英文例外和用户其他语言例外。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 38,\n            \"line_end\": 45,\n            \"observation\": \"语言提醒实际是用户消息，不是模型系统指令。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 71,\n            \"line_end\": 79,\n            \"observation\": \"作者承认推理语言无法强制。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有各模型、长轮次及互相冲突指令下的遵从率数据。\",\n            \"impact\": \"不能把思考语言或持续遵从写成已验证能力。\",\n            \"next_step\": \"分别统计可见reasoning和最终叙述，不可见思考记未知；设置用户改语言和英文代码任务作为反例。\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q04\",\n        \"topics\": [\n          \"dependencies\",\n          \"cost\"\n        ],\n        \"question\": \"安装、日常使用和失败退出分别有哪些依赖与成本？\",\n        \"answer\": \"运行需要兼容 agent/pre-step 和 createUserMessage 的 DSH/LLM 包；虽然清单把 dsh-llm peer 标为可选，src/index.ts 顶层却有运行时 import，目标环境仍必须能解析它。固定 Git 树未包含 lib，而 main/exports 指向 lib/index.js，仅有 prepublishOnly 构建脚本，不能把 Git 源码直接加载当成已有可用产物；应使用已核实含构建输出的发布包，或自行构建后核对输出。\\n\\n首次操作是选择 profile、安装包并核对最终补丁；手动安装路径还需维护 profile 挂载。持续使用会在每轮第一步增加一段提示文本，实际模型 token 及费用随 tokenizer、模型和调用量变化，当前没有测量。普通使用不增加独立网络服务或额外模型调用。异常时由用户检查依赖解析、补丁和消息来源；停止使用应从 profile 移除/禁用该挂载并开启新轮次，已经记录的历史消息不会因禁用而被撤回。若只需固定语言偏好，维护一份全局或项目说明可减少插件版本维护。\",\n        \"evidence\": [\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 8,\n            \"line_end\": 15,\n            \"observation\": \"main和文件列表要求lib，固定Git树检查未发现lib。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"package.json\",\n            \"line_start\": 24,\n            \"line_end\": 41,\n            \"observation\": \"构建脚本、可选peer和开发依赖；声明可选不覆盖运行时import。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 1,\n            \"line_end\": 5,\n            \"observation\": \"createUserMessage是运行时依赖。\"\n          },\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 43,\n            \"line_end\": 69,\n            \"observation\": \"作者安装、手动挂载与重启步骤。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 33,\n            \"line_end\": 48,\n            \"observation\": \"每轮首步仅加消息，没有新模型/HTTP调用。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"没有核验注册表当前发布包的构建文件或实际依赖解析。\",\n            \"impact\": \"发布包可安装性和具体宿主兼容组合仍未知。\",\n            \"next_step\": \"核对确切版本归档中的lib/index.js及其依赖，并在隔离profile读取加载日志。\",\n            \"kind\": \"research_gap\"\n          },\n          {\n            \"issue\": \"缺少模型用量、任务频率和人工排障记录。\",\n            \"impact\": \"不能给出每个合格中文任务的现金费用或节时。\",\n            \"next_step\": \"同批任务记录总输入token、合格结果数、人工改写及维护耗时。\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      },\n      {\n        \"id\": \"Q05\",\n        \"topics\": [\n          \"hypothesis\",\n          \"adoption\"\n        ],\n        \"question\": \"哪类用户值得试，怎样判断每轮提醒是否必要？\",\n        \"answer\": \"当前更适合观察，而非优先增加插件。已经维护项目或全局说明、希望中文输出的用户，先用直接说明即可；确有跨项目忘带语言规则的重复摩擦时，可以在独立 profile 对固定包做受控比较。主要增量是 profile 化和每轮首步重复，不是比普通说明更高权限的强制机制。发布产物和具体宿主组合尚未核实，不宜把源码短小等同于安装成本已低。\\n\\n可验证假设是：在长对话或多次新轮次里，首步显式提醒比仅全局说明减少普通叙述跑回英文，而不损坏代码原文。用同模型、同预算和固定任务集分配全局说明与插件两组，分别检查叙述语言、代码标识符保持率、用户要求切换语言能否生效，并记录总token和人工改写时间。只有合格叙述改善且额外维护/提示成本可接受才支持假设；若两组相当、插件冲突更多或代码被错误翻译，就保留原说明文件并退出插件。这个实验尚未执行，不能计为现有贡献。\",\n        \"evidence\": [\n          {\n            \"kind\": \"author_claim\",\n            \"source_path\": \"README.md\",\n            \"line_start\": 13,\n            \"line_end\": 18,\n            \"observation\": \"作者自列简单替代，不把包装当必要性。\"\n          },\n          {\n            \"kind\": \"source_inspection\",\n            \"source_path\": \"src/index.ts\",\n            \"line_start\": 26,\n            \"line_end\": 48,\n            \"observation\": \"首步重复及语言例外是对照假设的具体机制。\"\n          }\n        ],\n        \"unknowns\": [\n          {\n            \"issue\": \"每轮显式提醒相对全局说明是否带来净改善未知。\",\n            \"impact\": \"不能据机制声称插件更有效或值得持续安装。\",\n            \"next_step\": \"进行同条件任务比较，以合格叙述、代码保持、总token和人工时间共同决定是否继续。\",\n            \"kind\": \"research_gap\"\n          }\n        ],\n        \"status\": \"partial\"\n      }\n    ]\n  },\n  \"files\": [\n    {\n      \"path\": \"README.md\",\n      \"content\": \"# deepseek-harness-zh-cn\\n\\n**English** | [简体中文](README.zh.md)\\n\\n![npm version](https://img.shields.io/npm/v/deepseek-harness-zh-cn)\\n![license](https://img.shields.io/npm/l/deepseek-harness-zh-cn)\\n![downloads](https://img.shields.io/npm/dm/deepseek-harness-zh-cn)\\n\\nA Chinese-first plugin that makes [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) reason (`reasoning`) and answer in Simplified Chinese by default.\\n\\n## Overview\\n\\nThis project offers two ways (**choose one; the first is recommended**) to turn your DSH's reasoning and output into Simplified Chinese, so Chinese-speaking users can read the trajectory and processing directly without translation overhead:\\n\\n- **Method 1 (recommended, simplest)**: copy `AGENTS.md.example` to `~/.dsh/AGENTS.md`.\\n- **Method 2 (plugin)**: install this package from npm and mount it in the profile.\\n\\n> **Tip**: this plugin's \\\"Chinese-first\\\" rules can also be achieved with the [keep-reminder](https://github.com/imlishiyuan/keep-reminder) plugin — put the same rules into a project's `.keep-reminder` file, and customize the content freely (not limited to language).\\n\\n## Screenshot\\n\\n<div align=\\\"center\\\">\\n  <img src=\\\"images/1.png\\\" alt=\\\"Screenshot 1\\\" width=\\\"48%\\\" />\\n  <img src=\\\"images/2.png\\\" alt=\\\"Screenshot 2\\\" width=\\\"48%\\\" />\\n</div>\\n\\n## Quick Start\\n\\n### Method 1: Copy AGENTS.md (recommended)\\n\\nCopy `AGENTS.md.example` to the DSH home directory as `AGENTS.md`:\\n\\n- **Linux / macOS**: `~/.dsh/AGENTS.md`\\n- **Windows**: `C:\\\\Users\\\\<you>\\\\.dsh\\\\AGENTS.md`\\n\\n```sh\\n# Linux / macOS\\ncp AGENTS.md.example ~/.dsh/AGENTS.md\\n```\\n\\nOn Windows, copy the file manually. Then restart `dsh web` (or start a new session).\\n\\n### Method 2: Install the npm plugin\\n\\n**A. Official command** (backs onto pnpm; install pnpm first):\\n\\n```sh\\nnpm i -g pnpm\\ndsh plugin --profile web add deepseek-harness-zh-cn\\n```\\n\\n**B. Install with npm directly into the profile directory**:\\n\\n```sh\\ncd ~/.dsh/profiles/web    # Windows: C:\\\\Users\\\\<you>\\\\.dsh\\\\profiles\\\\web\\nnpm install deepseek-harness-zh-cn --save\\n```\\n\\n> Note: this `npm install` runs inside the **DSH profile directory**, not this plugin's project directory.\\n\\nMount it in `~/.dsh/profiles/<name>/cordis.patch.yml`:\\n\\n```yaml\\n- insert:\\n    - id: dsh-zh\\n      name: 'deepseek-harness-zh-cn'\\n```\\n\\nRestart `dsh web`.\\n\\n## Scope and Limitations\\n\\n- Affects both the model's final answer and its reasoning (thinking) channel.\\n- There is **no harness or DeepSeek API switch that forces the reasoning language**; on technical tasks the model's `reasoning_content` may still be English. A fully Chinese prompt maximizes the probability but does not guarantee it.\\n\\n## How It Works\\n\\n- **Method 1**: `~/.dsh/AGENTS.md` is injected by `dsh-agent-instructions` as a `<system-reminder>` user message — guidance-level, lower priority than the system prompt and direct user instructions.\\n- **Method 2**: the plugin listens to the `agent/pre-step` waterfall and appends a `<system-reminder>` user message to the request batch at the first step of each turn, reinforcing the Chinese rule once per turn.\\n\\n## Development\\n\\n### Build\\n\\n```sh\\nnpm install\\nnpm run build      # compiles src → lib/index.js\\n```\\n\\n### Mount locally\\n\\nDuring development you can mount the compiled output directly via a `file://` URL,\\nwith no package install. Edit `~/.dsh/profiles/<name>/cordis.patch.yml`:\\n\\n```yaml\\n- insert:\\n    - id: dsh-zh\\n      name: 'file:///D:/ui-workspace/deepseek-harness-zh-cn/lib/index.js'\\n```\\n\\nAdjust the URL to your checkout path.\\n\\n### Restart\\n\\n```sh\\nnpx @deepseek-ai/dsh web\\n```\\n\\nStop the running service first if it is already up.\\n\\n### Verify\\n\\n```sh\\n# Windows\\nnpx @deepseek-ai/dsh web --dump-config | findstr /C:\\\"dsh-zh\\\"\\n\\n# Linux / macOS\\nnpx @deepseek-ai/dsh web --dump-config | grep dsh-zh\\n```\\n\\nSeeing the `dsh-zh` row means the plugin is mounted. Then start a new session and the\\nmodel should reason and answer in Simplified Chinese.\\n\\n## Disclaimer\\n\\nThis project only injects a language directive; it does not modify model weights or the inference logic. The actual output language still depends on the selected model's behavior, and this project is not responsible for results where the model fails to follow the Chinese directive.\\n\\n## License\\n\\n[Apache-2.0](LICENSE)\"\n    },\n    {\n      \"path\": \"package.json\",\n      \"content\": \"{\\n  \\\"name\\\": \\\"deepseek-harness-zh-cn\\\",\\n  \\\"version\\\": \\\"0.1.5\\\",\\n  \\\"type\\\": \\\"module\\\",\\n  \\\"description\\\": \\\"A Chinese-first plugin for DeepSeek Harness: reason (reasoning) and answer in Simplified Chinese by default.\\\",\\n  \\\"license\\\": \\\"Apache-2.0\\\",\\n  \\\"exports\\\": \\\"./lib/index.js\\\",\\n  \\\"main\\\": \\\"./lib/index.js\\\",\\n  \\\"files\\\": [\\n    \\\"lib\\\",\\n    \\\"README.md\\\",\\n    \\\"README.zh.md\\\",\\n    \\\"LICENSE\\\",\\n    \\\"AGENTS.md.example\\\",\\n    \\\"cordis.patch.yml\\\"\\n  ],\\n  \\\"keywords\\\": [\\n    \\\"deepseek-harness\\\",\\n    \\\"dsh\\\",\\n    \\\"chinese\\\",\\n    \\\"i18n\\\",\\n    \\\"locale\\\",\\n    \\\"plugin\\\"\\n  ],\\n  \\\"scripts\\\": {\\n    \\\"build\\\": \\\"tsc\\\",\\n    \\\"prepublishOnly\\\": \\\"npm run build\\\"\\n  },\\n  \\\"peerDependencies\\\": {\\n    \\\"@deepseek-ai/dsh-llm\\\": \\\"*\\\"\\n  },\\n  \\\"peerDependenciesMeta\\\": {\\n    \\\"@deepseek-ai/dsh-llm\\\": {\\n      \\\"optional\\\": true\\n    }\\n  },\\n  \\\"devDependencies\\\": {\\n    \\\"@deepseek-ai/cordis\\\": \\\"*\\\",\\n    \\\"@deepseek-ai/dsh-agent\\\": \\\"^0.1.7-rc.2\\\",\\n    \\\"@deepseek-ai/dsh-llm\\\": \\\"^0.1.7-rc.2\\\",\\n    \\\"typescript\\\": \\\"^5\\\"\\n  },\\n  \\\"repository\\\": {\\n    \\\"type\\\": \\\"git\\\",\\n    \\\"url\\\": \\\"git+https://github.com/imlishiyuan/deepseek-harness-zh-cn.git\\\"\\n  },\\n  \\\"homepage\\\": \\\"https://github.com/imlishiyuan/deepseek-harness-zh-cn#readme\\\",\\n  \\\"bugs\\\": {\\n    \\\"url\\\": \\\"https://github.com/imlishiyuan/deepseek-harness-zh-cn/issues\\\"\\n  },\\n  \\\"dsh\\\": {\\n    \\\"bundle\\\": {\\n      \\\"patch\\\": \\\"./cordis.patch.yml\\\"\\n    }\\n  }\\n}\\n\"\n    },\n    {\n      \"path\": \"cordis.patch.yml\",\n      \"content\": \"- insert:\\n    - id: deepseek-harness-zh-cn\\n      name: deepseek-harness-zh-cn\\n\\n\"\n    },\n    {\n      \"path\": \"tsconfig.json\",\n      \"content\": \"{\\n  \\\"compilerOptions\\\": {\\n    \\\"target\\\": \\\"ES2022\\\",\\n    \\\"module\\\": \\\"NodeNext\\\",\\n    \\\"moduleResolution\\\": \\\"NodeNext\\\",\\n    \\\"rootDir\\\": \\\"src\\\",\\n    \\\"outDir\\\": \\\"lib\\\",\\n    \\\"strict\\\": true,\\n    \\\"skipLibCheck\\\": true\\n  },\\n  \\\"include\\\": [\\\"src\\\"]\\n}\"\n    },\n    {\n      \"path\": \"src/index.ts\",\n      \"content\": \"import type { Context } from '@deepseek-ai/cordis'\\nimport type {} from '@deepseek-ai/dsh-agent'\\nimport type { PreStepDecision } from '@deepseek-ai/dsh-agent'\\nimport { createUserMessage } from '@deepseek-ai/dsh-llm'\\nimport type { ContextFormed } from '@deepseek-ai/dsh-llm'\\n\\nexport const name = 'deepseek-harness-zh-cn'\\n\\nexport const inject: string[] = []\\n\\n/**\\n * 本插件在会话日志里的 producer 身份。\\n *\\n * DSH 0.1.7（session format v4）取消了共享的 `kind: 'plugin'`，消息来源必须是\\n * 「producer 自有的 kind」。第三方插件沿用 v3→v4 迁移器为未登记 producer 生成的\\n * `plugin:<包名>` 命名空间，使本插件写入的新消息与旧会话迁移后的 kind 保持一致。\\n */\\nconst SOURCE_KIND = 'plugin:deepseek-harness-zh-cn'\\n\\ndeclare module '@deepseek-ai/dsh-llm' {\\n  interface MessageSourceMap {\\n    'plugin:deepseek-harness-zh-cn': { kind: 'plugin:deepseek-harness-zh-cn' } & ContextFormed\\n  }\\n}\\n\\nconst ZH_DIRECTIVE = [\\n  '始终使用简体中文进行思考（reasoning）与所有最终回答。',\\n  '计划、工具调用、总结、代码注释同样使用简体中文。',\\n  '仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。',\\n  '除非用户明确要求其他语言，否则本规则优先。',\\n].join('\\\\n')\\n\\nexport function apply(ctx: Context): void {\\n  ctx.on('agent/pre-step', async ({ step, signal }, next): Promise<PreStepDecision> => {\\n    const decision = await next()\\n    if (decision.kind === 'reject' || signal.aborted) return decision\\n    if (step !== 1) return decision\\n    return {\\n      kind: 'enter',\\n      messages: [\\n        ...decision.messages,\\n        createUserMessage({\\n          content: [{ type: 'text', text: `<system-reminder>\\\\n${ZH_DIRECTIVE}\\\\n</system-reminder>` }],\\n          source: { kind: SOURCE_KIND, form: 'snapshot', sections: [{ name, text: ZH_DIRECTIVE }] },\\n        }),\\n      ],\\n    }\\n  }, { prepend: true })\\n}\"\n    },\n    {\n      \"path\": \"AGENTS.md.example\",\n      \"content\": \"# 语言规则\\n\\n- 默认始终使用简体中文进行思考（reasoning）与所有最终回答。\\n- 计划、工具调用、总结、代码注释同样使用简体中文。\\n- 仅代码、命令、文件路径、变量名、API 名称等必须原样保留的内容使用英文。\\n- 若某个工作区/项目的 AGENTS.md 明确指定了其他语言，则以该项目级规则为准。\"\n    }\n  ],\n  \"inventory\": {\n    \"schema_version\": 1,\n    \"revision\": \"285d5a3281661f3d0cf0df5e4b2d0adc7a401bcd\",\n    \"component\": \"\",\n    \"coverage\": \"git tracked files at exact commit; component scope only\",\n    \"omitted_non_regular\": [],\n    \"tools\": {\n      \"loc\": {\n        \"name\": \"sloc\",\n        \"version\": \"0.3.2\",\n        \"command\": \"node node_modules/sloc/bin/sloc --format json --details <selected-files-directory>\"\n      },\n      \"parser\": {\n        \"name\": \"typescript\",\n        \"version\": \"5.9.3\"\n      }\n    },\n    \"content_digest\": \"f96ad66f9d1e153ae2e87bd0ceb904e84ec9066a09deb884aef4d5c127ba3df6\",\n    \"groups\": [\n      {\n        \"extension\": \".md\",\n        \"role\": \"source\",\n        \"files\": 2,\n        \"lines\": 258,\n        \"words\": 1425\n      },\n      {\n        \"extension\": \".ts\",\n        \"role\": \"source\",\n        \"files\": 1,\n        \"lines\": 49,\n        \"code\": 36,\n        \"comments\": 7,\n        \"blank\": 6\n      }\n    ],\n    \"excluded\": [],\n    \"skills\": {\n      \"entry_candidates\": [],\n      \"non_example_candidates\": 0,\n      \"status\": \"ownership_and_runtime_registration_require_review\"\n    },\n    \"capabilities\": {\n      \"agents\": [],\n      \"tools\": [],\n      \"commands\": [],\n      \"events\": [\n        {\n          \"path\": \"src/index.ts\",\n          \"line\": 34,\n          \"api\": \"ctx.on\",\n          \"name\": \"agent/pre-step\",\n          \"aliases\": [],\n          \"status\": \"literal_candidate\",\n          \"role\": \"source\"\n        }\n      ],\n      \"timers\": [],\n      \"ui\": []\n    },\n    \"capability_summary\": {\n      \"agents\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"tools\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"commands\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"events\": {\n        \"literal_names\": [\n          \"agent/pre-step\"\n        ],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 1,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"timers\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      },\n      \"ui\": {\n        \"literal_names\": [],\n        \"unresolved_sites\": 0,\n        \"literal_count\": 0,\n        \"confirmed_count\": null,\n        \"status\": \"static_candidates_require_review\"\n      }\n    },\n    \"parse_errors\": [],\n    \"limitations\": [\n      \"LOC uses pinned sloc total; comment and source counts can overlap. Files use visible synthetic staging names because sloc ignores dot-prefixed paths; Markdown is staged as HTML for total lines only, and cjs/mts/cts are staged as js/ts because CLI aliases are ineffective.\",\n      \"Markdown words: one Han character or one contiguous non-Han letter/number word; markup and fenced code included.\",\n      \"Generated/vendor exclusions are heuristics; manually identify copied or bundled third-party code.\",\n      \"Agent counts are preset-definition candidates, not AGENTS.md, prompt roles, spawned instances or runtime availability.\",\n      \"Zero static candidates means not detected, not confirmed absent. YAML/JSON preset composition, aliases, dynamic factories and external providers need manual review.\"\n    ]\n  }\n}\n",
+            "sha256": "67aaab70b84536c010bb55e877f291038686a572f3309fa9e877576ea214f8ef"
+        }
+    },
+    "unavailable_artifacts": []
+}
