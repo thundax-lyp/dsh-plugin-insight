@@ -122,10 +122,16 @@ function startWorkUnlocked(input, path, limit, root, retryIds, heat, counts) {
         heat ?? { ...heatFromCaches(session.items, base.metadata, session.checked_at), base_digest: digest(base) },
         session.items
     );
-    session.selection = snapshotSelection(base, session.items, retryIds, true, session.checked_at, fixedHeat, {
-        additions: resolved.additions,
-        updates: resolved.updates
-    });
+    session.selection = snapshotSelection(
+        base,
+        session.items,
+        retryIds,
+        true,
+        session.checked_at,
+        fixedHeat,
+        { additions: resolved.additions, updates: resolved.updates },
+        true
+    );
     session.selected_ids = incrementalSelection(session);
     session.base_digest = digest(base);
     const work = {

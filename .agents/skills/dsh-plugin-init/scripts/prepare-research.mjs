@@ -168,6 +168,7 @@ async function prepareResearchUnlocked(
             ).length,
             update_adjusted: !resume && resolveResearchCounts({ limit, newLimit, updateLimit }).update_adjusted,
             suppressed: work.session.selection?.suppressed_ids?.length ?? 0,
+            excluded: work.session.selection?.excluded_ids?.length ?? 0,
             cooldown_skipped:
                 work.session.selection?.cooldown_ids?.filter(
                     (id) =>

@@ -1,5 +1,5 @@
 import { validateHeat } from '../../_shared/scripts/heat-score.mjs';
-import { incrementalSelection } from './research-selection.mjs';
+import { incrementalSelection, excludedResearchIds } from './research-selection.mjs';
 import { readWork } from '../../_shared/scripts/work-storage.mjs';
 import { existsSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -76,6 +76,11 @@ export function validateSession(session, root = ROOT, embeddedArtifacts = null) 
         const suppressed = new Set(session.selection.suppressed_ids ?? []);
         const retries = new Set(session.selection.retry_ids ?? []);
         const candidates = new Set(session.items.map((item) => item.id));
+        if (
+            session.selection.excluded_ids !== undefined &&
+            digest(session.selection.excluded_ids) !== digest(excludedResearchIds(session.items))
+        )
+            throw Error('invalid research exclusions');
         if (
             [...suppressed, ...retries].some((id) => !candidates.has(id)) ||
             [...retries].some((id) => suppressed.has(id))
