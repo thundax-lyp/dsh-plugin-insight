@@ -380,6 +380,7 @@
 | [LoopX DSH Plugin](#plugin-1255217938-packages-dsh-loopx-plugin) | 将 LoopX 初始化、同会话续轮和 GoalBar 接到 DeepSeek Harness。 | 按 [Q05](../../plugins/loopx-project--loopx--packages-dsh-loopx-plugin/INSIGHT.md#research-q05) 在无外部副作用的项目试一轮。 |
 | [Martty](#plugin-1333365124-npm) | 提供Martty原生painter启动、DSH插件入口、ACP会话连接池及Harness安装管理的npm子包。 | [Q05](../../plugins/openma-ai--martty--npm/INSIGHT.md#research-q05) 观察可信单Harness启动并做双会话/拒配置/安装取消测试，失败保设置回原CLI。 |
 | [Martty](#plugin-1333365124-root) | Rust原生Agent TUI，以ACP连接DSH或其他agent，Node Cordis组合会话视图、命令和插件。 | [Q05](../../plugins/openma-ai--martty/INSIGHT.md#research-q05) 观察可信单Harness副本任务，验证会话与本地权限后再扩范围；故障回原CLI核实际状态。 |
+| [Matt Pocock 技能集 DSH 适配](#plugin-1335576026-root) | 把 Matt Pocock 的工程技能集注册到 DSH，支持技能发现、按需加载和相对参考文件。 | 已有DSH和项目验收惯例的开发者，可先在独立分支加载一项澄清技能，检查候选、参考和用户确认是否正常。 |
 | [Matt Skills Deck](#plugin-1336488925-root) | 在 DSH 中提供内置工程 Skill、工作区任务面板和工单交接，支持不同 Tracker 后端。 | 先用隔离 Profile 和只读测试仓库验证一个工单交接，发现引用或权限不一致就回到原 Tracker。 |
 | [MC Mods Dev Bridge](#plugin-1426070939-root) | 驱动真实 Minecraft 服务端与客户端运行场景 JSON，采集探针证据并覆盖 Fabric、Forge、NeoForge。 | 适合维护 MC 26.3 多 loader 模组、已有合法实例且能承担真实进程成本的团队观察；先只做 preflight 和一个 smoke 场景，验收 teardown、证据目录、/mods 双侧一致与端口恢复。 |
 | [MemOS Local Plugin](#plugin-1014729376-apps-memos-local-plugin) | 为 DSH 等宿主提供本地记忆、按轮召回和后台捕获的多宿主插件。 | 按 [Q05](../../plugins/memtensor--memos--apps-memos-local-plugin/INSIGHT.md#research-q05) 用非敏感项目做可核对纠正，对比手工笔记。 |
@@ -445,6 +446,7 @@
 | [xskill](#plugin-1235225511-root) | 从编码 Agent 执行轨迹提取与分发可复用 Skill，包含 DSH 轨迹和安装适配。 | 保留人工 Skill 流程；仅用合成样本评估数据范围、版本及清理路径。 |
 | [ZeroToken Skill](#plugin-1222262862-root) | 提供面向 Agent 的简洁输出、渐进读取与平台适配规则。 | [Q04](../../plugins/phoenixlucky--zerotoken-skill/INSIGHT.md#research-q04) 先比较宿主规则并检查脚本副作用；复杂或需完整证据时按 [Q03](../../plugins/phoenixlucky--zerotoken-skill/INSIGHT.md#research-q03) 停止压缩。 |
 | [喵缓存账单](#plugin-1343002927-root) | 在 DSH 上下文圆环弹层展示缓存命中、未命中与输出费用，以及逐步、每轮、会话合计和历史花费曲线。 | 单脱敏会话、已知provider固定实际价，先逐步手算，再观察曲线；不自动换窗或用参考价报销。 |
+| [子 Agent 监控面板](#plugin-1334055906-root) | 在 DSH Web 侧栏和浮动看板展示当前会话直接子 Agent 的状态、用量与上下文估计。 | 先在隔离profile用两个直接子任务、一个孙任务和一次失败/重启检查层级及unknown，再回具体会话核对结果。 |
 | [嵌入式工作台](#plugin-1276714299-root) | 为嵌入式 C/C++ 开发提供按需技能，并在 DSH 首个模型步注入计划核查提醒。 | [Q04](../../plugins/amethystluna--embedded-workbench/INSIGHT.md#research-q04)先在可回滚任务中手动加载匹配领域Skill，核对同版编译和复现结果，再决定是否启用提醒；格式齐全但无证据时停止使用其结论。 |
 | [提示词与错误经验面板](#plugin-1418691015-root) | 在会话标题栏编辑全局和会话提示词，并审核模型自报错误的经验草稿。 | [Q04](../../plugins/1015677515--dsh-prompt-errornotes-desk/INSIGHT.md#research-q04) 先只采用经核实的合成教训。 |
 | [无限五代 IG5](#plugin-1335211378-root) | 集成 Reverse、Ghidra 静态分析和 x64dbg 无头调试，并提供 HTTP 流量采集与分析。 | [Q04](../../plugins/minglink--dsh-infinite-gen-5/INSIGHT.md#research-q04) 从授权副本的少量函数名开始，事先保存两个数据库的可恢复副本。 |
@@ -6342,6 +6344,22 @@
 
 [查看完整分析](../../plugins/openma-ai--martty/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1335576026-root"></a>
+
+## [Matt Pocock 技能集 DSH 适配](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md)
+
+[![GitHub ★ 30](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=30&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/gongyijie85/mattpocock-skills-dsh) [![npm 30d 2,011](https://img.shields.io/static/v1?label=npm+30d&message=2%2C011&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/mattpocock-skills-dsh) [![最新发布 2026-09-30](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-30&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/mattpocock-skills-dsh)
+
+> **用途**：面向已有 DSH 开发环境的软件开发者，把上游设计澄清、规格、测试和评审技能统一提供给 profile 内的 Agent；具体任务仍由模型、工具和用户共同完成。
+
+> **亮点**：贡献是将上游技能通过host provider接入DSH，保存用户调用标记和目录资源基址；这是分发/适配增量，不是新执行引擎或上游方法原创。见 [Q01](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md#research-q01)、[Q02](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md#research-q02)。
+
+> **思考**：关键限制是发现与可加载不等于具体工程可办结，部分技能会要求提交或外发；此外list仍读完整文件、读取错误可能静默缺席，不能将按需返回正文解释为完全免I/O或强权限门禁。见 [Q02](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md#research-q02)、[Q03](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md#research-q03)。
+
+> **建议**：待验证方向是保留调用语义与相对资源的打包provider能否减少手工技能同步漂移；按 [Q05](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md#research-q05)用同模型任务对照失败引用、人工维护与合格交付，若冲突及返工增加则否定。
+
+[查看完整分析](../../plugins/gongyijie85--mattpocock-skills-dsh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1336488925-root"></a>
 
 ## [Matt Skills Deck](../../plugins/featherhunter--dsh-mattpocock-skills-deck/INSIGHT.md)
@@ -7382,6 +7400,22 @@
 
 [查看完整分析](../../plugins/phant0meow--dsh-meow-cachebilling/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1334055906-root"></a>
+
+## [子 Agent 监控面板](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md)
+
+[![GitHub ★ 30](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=30&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Mombrane/dsh-subagent-monitor) [![npm 30d 1,049](https://img.shields.io/static/v1?label=npm+30d&message=1%2C049&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@leetoners/dsh-ui-subagent-monitor) [![最新发布 2026-09-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@leetoners/dsh-ui-subagent-monitor)
+
+> **用途**：面向同时委派多个子 Agent 的 DSH Web 用户，集中查看当前会话直接孩子的状态与用量，再打开具体对话核查结果。
+
+> **亮点**：真实增量是把全局生命周期按直接父ID过滤，并用持久子目录补齐卡片、用量及导航；同step用量替换和压缩影子价格避免部分重复计数与占用只增不减。见 [Q02](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md#research-q02)、[Q03](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md#research-q03)。
+
+> **思考**：集中展示会不会让旧或估计数据看起来像当前事实？历史回填结局未知、同child多run可能取旧条、切会话失败仍保留旧行；用量按会话累计而非单run精确账单。见 [Q02](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md#research-q02)至[Q04](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md#research-q04)。
+
+> **建议**：待验证方向是显式分开run/session口径，并带请求序号、新鲜度和切会话清行；用继续运行、交错响应与断网反例核对错误归属和人工查证，若不减少误判则只定位导航。见 [Q06](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md#research-q06)。
+
+[查看完整分析](../../plugins/mombrane--dsh-subagent-monitor/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1276714299-root"></a>
 
 ## [嵌入式工作台](../../plugins/amethystluna--embedded-workbench/INSIGHT.md)
@@ -7514,4 +7548,4 @@
 
 ## 更新时间
 
-2026-11-18
+2026-11-19

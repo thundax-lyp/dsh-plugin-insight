@@ -1,0 +1,58 @@
+{
+    "repository": "omdsh-dev/dsh-office",
+    "repository_id": 1334182694,
+    "captured_at": "2026-11-19T03:16:38.300Z",
+    "window_start": "2026-10-20T03:16:38.300Z",
+    "stars": 30,
+    "pushed_at": "2026-10-11T09:37:08Z",
+    "issues": {
+        "open": 3,
+        "closed": 4,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aomdsh-dev%2Fdsh-office%20is%3Aissue%20created%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D48:14DDAC:712DE8:780F7B:6AFE6B25 and timestamp 2026-11-19 03:21:09 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aomdsh-dev%2Fdsh-office%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3DA8:3CF9B2:7245A4:79281D:6AFE6B26 and timestamp 2026-11-19 03:21:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Aomdsh-dev%2Fdsh-office%20is%3Aissue%20updated%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3DFC:2AA5A7:7592F6:7C70CE:6AFE6B28 and timestamp 2026-11-19 03:21:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-19T03:04:10.200Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c57962304b6863725bb7ae25f37e7fad059e84e1",
+        "blob_sha": "c1709834fc1eae4e4b6cbdbc7cc4c0387bfa8911",
+        "errors_blob_sha": "927776150e84df930352379154c405b1f8e90be6",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@huiliyi37/dsh-office",
+        "captured_at": "2026-11-19T03:16:38.300Z",
+        "window_start": "2026-10-20",
+        "window_end": "2026-11-18",
+        "downloads_30d": 977,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-20:2026-11-18/%40huiliyi37%2Fdsh-office",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-14T13:03:13.932Z",
+            "captured_at": "2026-11-19T03:16:38.300Z",
+            "source_url": "https://registry.npmjs.org/%40huiliyi37%2Fdsh-office",
+            "error": null,
+            "latest_version": "0.2.4",
+            "latest_published_at": "2026-09-24T19:04:10.997Z",
+            "latest_error": null
+        }
+    }
+}

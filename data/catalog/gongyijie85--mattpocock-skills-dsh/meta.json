@@ -1,0 +1,66 @@
+{
+    "repository": "gongyijie85/mattpocock-skills-dsh",
+    "repository_id": 1335576026,
+    "captured_at": "2026-11-19T03:16:38.300Z",
+    "window_start": "2026-10-20T03:16:38.300Z",
+    "stars": 30,
+    "pushed_at": "2026-11-18T02:32:54Z",
+    "issues": {
+        "open": null,
+        "closed": null,
+        "created_30d": null,
+        "closed_30d": null,
+        "updated_30d": null
+    },
+    "errors": [
+        {
+            "target": "open",
+            "message": "GitHub request failed for search/issues?q=repo%3Agongyijie85%2Fmattpocock-skills-dsh%20is%3Aissue%20is%3Aopen&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3D86:2C0C0E:71D714:78BF5B:6AFE6B26 and timestamp 2026-11-19 03:21:10 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed",
+            "message": "GitHub request failed for search/issues?q=repo%3Agongyijie85%2Fmattpocock-skills-dsh%20is%3Aissue%20is%3Aclosed&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3DD2:157643:6F275A:760392:6AFE6B27 and timestamp 2026-11-19 03:21:11 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "created_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Agongyijie85%2Fmattpocock-skills-dsh%20is%3Aissue%20created%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3E10:2D5ABB:7078FF:775984:6AFE6B28 and timestamp 2026-11-19 03:21:12 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "closed_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Agongyijie85%2Fmattpocock-skills-dsh%20is%3Aissue%20is%3Aclosed%20closed%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3E6A:8D07C:7323DF:7A06ED:6AFE6B29 and timestamp 2026-11-19 03:21:14 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        },
+        {
+            "target": "updated_30d",
+            "message": "GitHub request failed for search/issues?q=repo%3Agongyijie85%2Fmattpocock-skills-dsh%20is%3Aissue%20updated%3A2026-10-20T03%3A16%3A38.300Z..2026-11-19T03%3A16%3A38.300Z&per_page=1: gh: API rate limit exceeded for user ID 84020791. If you reach out to GitHub Support for help, please include the request ID 3EB0:1D1C93:7621CD:7D04E3:6AFE6B2B and timestamp 2026-11-19 03:21:15 UTC. For more on scraping GitHub and how it may affect your rights, please review our Terms of Service (https://docs.github.com/en/site-policy/github-terms/github-terms-of-service) (HTTP 403)"
+        }
+    ],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-19T03:04:10.200Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c57962304b6863725bb7ae25f37e7fad059e84e1",
+        "blob_sha": "c1709834fc1eae4e4b6cbdbc7cc4c0387bfa8911",
+        "errors_blob_sha": "927776150e84df930352379154c405b1f8e90be6",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "mattpocock-skills-dsh",
+        "captured_at": "2026-11-16T06:37:33.161Z",
+        "window_start": "2026-10-17",
+        "window_end": "2026-11-15",
+        "downloads_30d": 2011,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-17:2026-11-15/mattpocock-skills-dsh",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-16T03:26:24.684Z",
+            "captured_at": "2026-11-16T06:37:33.161Z",
+            "source_url": "https://registry.npmjs.org/mattpocock-skills-dsh",
+            "error": null,
+            "latest_version": "0.1.8",
+            "latest_published_at": "2026-09-30T14:40:38.271Z",
+            "latest_error": null
+        }
+    }
+}

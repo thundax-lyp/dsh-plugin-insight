@@ -1,0 +1,45 @@
+{
+    "repository": "Mombrane/dsh-subagent-monitor",
+    "repository_id": 1334055906,
+    "captured_at": "2026-11-19T03:16:38.300Z",
+    "window_start": "2026-10-20T03:16:38.300Z",
+    "stars": 30,
+    "pushed_at": "2026-09-14T13:41:49Z",
+    "issues": {
+        "open": 1,
+        "closed": 2,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-19T03:04:10.200Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "c57962304b6863725bb7ae25f37e7fad059e84e1",
+        "blob_sha": "c1709834fc1eae4e4b6cbdbc7cc4c0387bfa8911",
+        "errors_blob_sha": "927776150e84df930352379154c405b1f8e90be6",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "@leetoners/dsh-ui-subagent-monitor",
+        "captured_at": "2026-11-15T06:40:50.361Z",
+        "window_start": "2026-10-16",
+        "window_end": "2026-11-14",
+        "downloads_30d": 1049,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-16:2026-11-14/%40leetoners%2Fdsh-ui-subagent-monitor",
+        "error": null,
+        "publication": {
+            "first_published_at": "2026-08-15T18:08:00.221Z",
+            "captured_at": "2026-11-15T06:40:50.361Z",
+            "source_url": "https://registry.npmjs.org/%40leetoners%2Fdsh-ui-subagent-monitor",
+            "error": null,
+            "latest_version": "0.5.0",
+            "latest_published_at": "2026-09-14T13:45:26.330Z",
+            "latest_error": null
+        }
+    }
+}

@@ -26,6 +26,7 @@
 | [DSH Generative UI](#plugin-1340581082-root) | 让回复中的 TSX 成为内联交互界面或持续画布 | [Q04](../../plugins/mindlab-research--dsh-generative-ui/INSIGHT.md#research-q04) 以隔离 Web profile 装固定版本，首先试不导入外部依赖的纯 React 计算卡。 |
 | [DSH IM Connect](#plugin-1335758624-root) | 将 Telegram、飞书、钉钉等即时通讯渠道接入本机 DeepSeek Harness，会话可从聊天继续并在网页查看。 | [Q07](../../plugins/michengai--dsh-im-connect/INSIGHT.md#research-q07) 先以隔离工作区、单渠道私聊和无敏感内容的只读任务核对同一 Host 会话。 |
 | [DSH Notes Export](#plugin-1182135360-dsh-plugin) | 把整理后的对话导出为工作区便签，或通过演示服务渲染为图片。 | [Q04](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q04) 建议已有可信便签服务的用户先用非敏感短文本核实目的地、内容与结果；超时后先回查再决定是否重试。 |
+| [DSH Office](#plugin-1334182694-root) | 为 DSH 提供表格、PDF、PPTX 和 DOCX 文件工具，包含生成、读取、部分编辑及公式检查。 | 先在新目录用小表和短报告试用，保留原件，指定output_path并检查实际文件与页面；公式检查不写回缓存。 |
 | [DSH Reaudit](#plugin-1172884215-packages-dsh-reaudit) | 通过 DSH MCP 客户端连接 Reaudit 托管服务，使用其远端工具。 | [Q04](../../plugins/rosesamaras--reaudit-ai-plugin--packages-dsh-reaudit/INSIGHT.md#research-q04) 建议先核服务政策与权限，再在隔离账户尝试非敏感只读请求；结果或目标不明时停止并人工回查。 |
 | [dsh-automation](#plugin-1333150357-root) | 按日程创建新的 DSH 根 Agent 执行完整任务，保存权限快照与运行历史。 | [Q03](../../plugins/titanwings--dsh-automation/INSIGHT.md#research-q03) 单个只读周期任务先验收。 |
 | [dsh-better-sidebar-plugin-office](#plugin-1331821326-root) | 为 better-sidebar 注册 docx、xlsx 和 pptx 侧栏预览，失败时提供原件下载。 | 先确认better-sidebar=0.6.0，用非敏感代表文件逐格式比对关键内容。 |
@@ -292,6 +293,22 @@
 > **建议**：[Q05](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md#research-q05) 提出稳定操作 ID 与结果未知时回读确认的未验证方案；服务不支持查询或收益不抵成本时否定。
 
 [查看完整分析](../../plugins/zhaoolee--notes--dsh-plugin/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1334182694-root"></a>
+
+## [DSH Office](../../plugins/omdsh-dev--dsh-office/INSIGHT.md)
+
+[![GitHub ★ 30](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=30&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/omdsh-dev/dsh-office) [![npm 30d 977](https://img.shields.io/static/v1?label=npm+30d&message=977&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huiliyi37/dsh-office) [![最新发布 2026-09-25](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-25&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/@huiliyi37/dsh-office)
+
+> **用途**：需要在DSH内反复交付实际Office文件的用户，可用固定工具参数减少临时库脚本接线；成品仍须内容与视觉验收，见 [Q01](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q01)。
+
+> **亮点**：[Q01](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q01)/[Q02](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q02)支持常规但具体的适配增量：将四类成熟文件库统一成DSH参数化工具面，提供family开关及公式问题检查，降低部分临时接线负担。相对增量是工具集成和使用纪律，不是新格式引擎或自动正确交付。
+
+> **思考**：[Q03](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q03)表明xlsx_recalc并不把结果回写文件；[Q04](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q04)的文字抽取/文字run修改不能验证视觉和完整内容，[Q05](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q05)又存在默认覆盖与部分写入。能生成文件和返回success，并不能独立证明可交付。
+
+> **建议**：[Q07](../../plugins/omdsh-dev--dsh-office/INSIGHT.md#research-q07)提出统一另存与检查范围回执，先明确哪些文件已写、哪些校验未做，再让用户决定交付；用误交付和核对负担验证，不把这个方案记为现有门禁。
+
+[查看完整分析](../../plugins/omdsh-dev--dsh-office/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1172884215-packages-dsh-reaudit"></a>
 
@@ -969,4 +986,4 @@
 
 ## 更新时间
 
-2026-11-18
+2026-11-19
