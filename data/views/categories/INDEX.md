@@ -8,10 +8,10 @@
 
 | 分类 | 适用任务 | 插件数 |
 | --- | --- | ---: |
-| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 424 |
+| [个人效率](PERSONAL-PRODUCTIVITY.md) | 输入、会话、快捷操作与个人工作体验 | 425 |
 | [办公与运营](OFFICE-OPERATIONS.md) | 工作记录、日程、团队用量与日常运营 | 57 |
-| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 172 |
-| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 443 |
+| [研究与知识](RESEARCH-KNOWLEDGE.md) | 信息检索、网页读取、笔记与长期知识 | 175 |
+| [软件交付](SOFTWARE-DELIVERY.md) | 代码开发、任务编排、调试与交付流程 | 444 |
 | [内容生产](CONTENT-CREATION.md) | 写作、语音、图片与视频内容生产 | 82 |
 | [客户服务](CUSTOMER-SERVICE.md) | 客户沟通、服务响应与支持流程 | 1 |
 | [基础设施](INFRASTRUCTURE.md) | 模型接入、认证、运行环境与系统支撑 | 226 |
@@ -21,7 +21,7 @@
 
 > 各类按 GitHub Star 排序。Star 反映关注度，使用建议请看完整分析。
 
-### [个人效率（424）](PERSONAL-PRODUCTIVITY.md)
+### [个人效率（425）](PERSONAL-PRODUCTIVITY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -29,7 +29,7 @@
 | [DSH Desktop](../../plugins/anywhere-labs--dsh-desktop/INSIGHT.md) | 将 DeepSeek Harness 的本地 Web、Host 与插件系统整合进桌面窗口，提供工作配置、终端、更新与恢复入口。 | [![GitHub Star 34,996](https://img.shields.io/static/v1?label=&message=34%2C996&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/anywhere-labs/dsh-desktop) |
 | [Voyager](../../plugins/voyager-crew--voyager/INSIGHT.md) | 浏览器扩展提供提示词管理，并在受支持的聊天网站提供时间线、文件夹、对话导出和公式复制。 | [![GitHub Star 20,587](https://img.shields.io/static/v1?label=&message=20%2C587&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/voyager-crew/voyager) |
 | [DSH Wallpaper Engine](../../plugins/elysia395--dsh-wallpaper-engine/INSIGHT.md) | 在 DSH 对话页显示本地 Wallpaper Engine 场景、网页和视频壁纸，并提供外观预设、字体和玻璃效果。 | [![GitHub Star 7,355](https://img.shields.io/static/v1?label=&message=7%2C355&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/elysia395/dsh-wallpaper-engine) |
-| [dsh-pet](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) | 在 DeepSeek Harness 内显示互动桌宠，提供活动提醒、余额、待办、语音和闲聊。 | [![GitHub Star 6,344](https://img.shields.io/static/v1?label=&message=6%2C344&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) |
+| [DSH Pet 桌宠与任务提醒](../../plugins/pc2005-cloud--dsh-pet--dsh-pet/INSIGHT.md) | 在 DSH 中显示桌宠、任务提醒、待办、余额与聊天，并可连接长期记忆和语音。 | [![GitHub Star 6,621](https://img.shields.io/static/v1?label=&message=6%2C621&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) |
 
 [查看全部插件 →](PERSONAL-PRODUCTIVITY.md)
 
@@ -41,11 +41,11 @@
 | [NocoBase](../../plugins/nocobase--nocobase/INSIGHT.md) | 用于构建、运行和持续演进业务系统的开源应用平台，提供权限、工作流及 Agent 集成。 | [![GitHub Star 24,868](https://img.shields.io/static/v1?label=&message=24%2C868&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/nocobase/nocobase) |
 | [BrowserSkill for DeepSeek Harness](../../plugins/tencent--browserskill--packages-dsh-plugin-browserskill/INSIGHT.md) | 在 DeepSeek Harness 中注册 BrowserSkill 技能，并为 bsk 命令提供路径配置和首次安装指引。 | [![GitHub Star 10,508](https://img.shields.io/static/v1?label=&message=10%2C508&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
 | [BrowserSkill](../../plugins/tencent--browserskill/INSIGHT.md) | 把可调用 bsk 的 Agent 接入 Chrome 或 Edge 的任务窗口，支持网页观察、交互和人工协作。 | [![GitHub Star 10,163](https://img.shields.io/static/v1?label=&message=10%2C163&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Tencent/BrowserSkill) |
-| [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) | 通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。 | [![GitHub Star 978](https://img.shields.io/static/v1?label=&message=978&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) |
+| [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) | 通过 DSH 的 MCP 桥连接 Windows 桌面工具，并提供会话开关、诊断和依赖版本管理。 | [![GitHub Star 2,200](https://img.shields.io/static/v1?label=&message=2%2C200&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) |
 
 [查看全部插件 →](OFFICE-OPERATIONS.md)
 
-### [研究与知识（172）](RESEARCH-KNOWLEDGE.md)
+### [研究与知识（175）](RESEARCH-KNOWLEDGE.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -57,7 +57,7 @@
 
 [查看全部插件 →](RESEARCH-KNOWLEDGE.md)
 
-### [软件交付（443）](SOFTWARE-DELIVERY.md)
+### [软件交付（444）](SOFTWARE-DELIVERY.md)
 
 | 插件 | 主要用途 | GitHub Star |
 | --- | --- | ---: |
@@ -97,7 +97,7 @@
 | [Our Free Model](../../plugins/ebony-vinyl--dsh-our-free-model/INSIGHT.md) | 在 DeepSeek Harness 中接入匿名与已配置的模型通道，提供组合路由、设置面板和本地转发。 | [![GitHub Star 72,723](https://img.shields.io/static/v1?label=&message=72%2C723&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/Ebony-Vinyl/dsh-our-free-model) |
 | [OpenViking](../../plugins/volcengine--openviking/INSIGHT.md) | 为 AI Agent 组织、浏览、检索与复用知识、记忆和技能的上下文数据库。 | [![GitHub Star 41,761](https://img.shields.io/static/v1?label=&message=41%2C761&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/volcengine/OpenViking) |
 | [EverOS](../../plugins/evermind-ai--everos/INSIGHT.md) | 面向 Agent 和应用的本地 Markdown 记忆运行时，提供提取、后台索引、检索与删除接口。 | [![GitHub Star 13,823](https://img.shields.io/static/v1?label=&message=13%2C823&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/EverMind-AI/EverOS) |
-| [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | [![GitHub Star 12,571](https://img.shields.io/static/v1?label=&message=12%2C571&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) |
+| [DSH Market 插件市场](../../plugins/dsh-market--dsh-market/INSIGHT.md) | 在 DSH 中浏览、搜索、安装和更新社区插件，提供 AI 查找、配置备份与恢复入口。 | [![GitHub Star 13,234](https://img.shields.io/static/v1?label=&message=13%2C234&color=9a742f&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) |
 
 [查看全部插件 →](INFRASTRUCTURE.md)
 
@@ -115,4 +115,4 @@
 
 ## 更新时间
 
-2026-11-19
+2026-11-23

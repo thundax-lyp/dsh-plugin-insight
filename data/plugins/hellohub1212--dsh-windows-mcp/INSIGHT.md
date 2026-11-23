@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)
 
-源码版本：[9347426](https://github.com/helloHub1212/dsh-windows-mcp/tree/9347426f35a897b5904223abb19ae9e4f30a78a6)
+源码版本：[3eeb984](https://github.com/helloHub1212/dsh-windows-mcp/tree/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019)
 
 <!-- BEGIN META -->
-[![GitHub ★ 978](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=978&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 752,551](https://img.shields.io/static/v1?label=npm+30d&message=752%2C551&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+[![GitHub ★ 2,200](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C200&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 826,247](https://img.shields.io/static/v1?label=npm+30d&message=826%2C247&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
 <!-- END META -->
 
-> **功能**：通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。
+> **功能**：通过 DSH 的 MCP 桥连接 Windows 桌面工具，并提供会话开关、诊断和依赖版本管理。
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，宿主助手可在会话里逐步取得桌面工具，同时由插件维护桥和依赖。新版释放旧工具限制并把 pre-step 决策交回宿主，修正了重新启用后无法揭示和会话可能中断的路径。
+> **亮点**：[Q01](#research-q01) 显示，本包把官方桌面桥、依赖维护和诊断接到 DSH；[Q02](#research-q02) 与 [Q03](#research-q03) 进一步将授权按会话判定，并将工具可见性和分派拒绝分层。增量属于宿主集成及权限组织，Windows 操作能力仍归上游，节时收益没有实测。
 
-> **主要限制**：[Q03](#research-q03) 显示，截图、窗口识别与输入效果分别受 DPI、UIA 和宿主条件影响。[Q04](#research-q04) 的重装保护依赖可见进程扫描，失败时仍可能开始安装。
+> **主要限制**：[Q02](#research-q02) 的有界决定表可能淘汰显式撤销，使判定回落到默认或祖先授权；[Q03](#research-q03) 的认证不可观察配置仍可处理写入。两者是源码边界，未复现越权；它们使“会话开关就是完整安全边界”的主张不能直接成立。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 一个 Windows 桌面观察任务如何进入 DSH？](#detail-section-11)
-  - [Q02 · 新版如何让允许的工具回到模型，并拦住直接调用？](#detail-section-12)
-  - [Q03 · 何时能区分可截图和可控制？](#detail-section-13)
-  - [Q04 · 安装、重装和版本切换怎样判断安全条件？](#detail-section-14)
-  - [Q05 · 观察试用要付出什么、何时退出？](#detail-section-15)
+  - [Q01 · 桌面任务的入口和真正能力由谁提供？](#detail-section-11)
+  - [Q02 · 会话授权、继承和退出如何确定，何时可能偏离用户决定？](#detail-section-12)
+  - [Q03 · 隐藏工具与调用拒绝是否一致，浏览器写授权有什么边界？](#detail-section-13)
+  - [Q04 · 诊断能否证明桌面输入会命中目标？](#detail-section-14)
+  - [Q05 · 依赖安装和版本切换失败后，用户如何恢复？](#detail-section-15)
+  - [Q06 · 何种任务值得继续观察，成本和停止条件是什么？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：需要检查没有专用 API 的 Windows 应用界面的 DSH 使用者，可用公开样例核对截图、窗口标题和状态。
+> **用途**：适用对象是需要检查没有稳定 API 的 Windows 应用、且能准备独立测试桌面的 DSH 使用者。一个合格观察任务应同时给出当前窗口的可读描述与对应画面，由使用者核对目标，而不能只接受工具返回成功。原办法是人工截图并交接窗口状态，或自己维护 Windows-MCP 与宿主桥的配置。本包把桥配置、诊断、依赖版本管理和会话控制放入宿主，减少的是这些接线工作的分散，而非证明桌面任务更快。
 
-原办法是用户自己截图并记录窗口状态，或手工配置 Windows-MCP 进程和桥。若已有稳定 API，桌面操作的焦点和缩放条件可能增加负担。
+人工截图和窗口交接、手工维护 Windows-MCP bridge，以及应用已有稳定 API 的直接读取。
 
 <a id="detail-section-3"></a>
 
@@ -52,66 +53,73 @@
 
 | 能力 | 主要用途 | 使用条件与边界 |
 |---|---|---|
-| Windows-MCP 桥 | 把桌面观察或输入接给 DSH | 依赖官方桥和本机 Windows 服务 |
-| 工具开关与揭示 | 控制会话中可见能力与调用 | 依赖宿主 API，启用并非只读授权 |
-| doctor | 诊断 UIA、句柄和 DPI 线索 | 单次启发式，超时可报告未测 |
-| 托管安装 | 下载、激活或回滚服务版本 | 需 uv 和可写 profile，扫描可能漏检 |
+| windows_mcp_doctor | 报告桥、工具链和桌面诊断 | 诊断计数不能证明输入命中 |
+| windows_desktop | 按需揭示桌面工具定义 | 当前会话须授权，定义来自已注册桥 |
+| 会话控制开关 | 设置本会话允许或拒绝 | 默认与继承、容量淘汰影响判定 |
+| 版本安装与激活 | 管理上游服务、切换和回滚 | 依赖 uv；桥/状态非原子落盘 |
+| 设置页面 | 编辑桥参数、默认授权与更新策略 | 部分桥参数需重启；设置文件受同用户权限控制 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
 |---|---|---|---|
-| Windows 和带官方 MCP 客户端的 DSH | 桥接必需 | 运行桌面服务并挂载工具 | 不能完成桌面任务 |
-| uv 与 Python 3.14 | 托管安装必需 | 准备版本目录 | 显示无安装工具、解释器或依赖错误 |
-| PowerShell | 两类诊断使用 | 枚举进程和探测窗口 | 结果可能为空或未测 |
-| 宿主限制和分派 API | 实现工具门禁必需 | 更新工具表并拦截调用 | 缺失方法时相应分支跳过 |
+| 带官方 MCP bridge 及 tools 服务的 DSH | 必需 | 加载桥、限制及分派拦截 | 门禁层可能跳过，保持桌面关闭 |
+| Windows 交互桌面与 Windows-MCP | 桌面任务必需 | 截图、窗口和输入 | 本包诊断不等于实际可操作 |
+| uv、Python 与包索引 | 托管安装必需 | 下载固定工具版本 | 由安装状态报告失败，需用户排障 |
+| connection.browserAuth | 浏览器写操作认证需要 | 校验签名 cookie | 不可观察时不强制拒绝，需可信本地部署 |
+| 可用备用版本与 profile 写权限 | 升级恢复需要 | 切换 bridge 指向 | 状态落盘可能部分完成 |
+
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
 |---|---|---|
-| 准备 | 使用者在可复位 Windows 桌面核对桥和工具链 | 版本目录存在且桥指向正确路径 |
-| 观察 | 使用者只揭示截图、窗口观察并记录画面 | 能同时得到正确图片和目标标题 |
-| 恢复 | 核对状态、日志与正在运行的版本 | 如桥与版本记录不一致先退出操作 |
-| 退出 | 停用桥并重启 DSH | 会话回到手工核对，确认未再调用桥 |
+| 准备 | 使用者固定宿主和上游版本，准备无敏感内容桌面 | 桥与实际可执行路径一致 |
+| 授权 | 使用者在当前会话打开控制，保持 defaultGrant 关闭 | 工具表与分派结果都符合本会话决定 |
+| 观察 | 助手先揭示截图与窗口观察 | 使用者核对同一目标窗口和画面 |
+| 恢复 | 使用者检查安装日志、桥与版本文件 | 部分落盘先人工核对，不把失败当自动回滚 |
+| 退出 | 使用者关闭当前授权或禁用桥并重启 | 后续桌面调用拒绝，恢复人工处理 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
 |---|---|---|---|
-| 首次使用 | 镜像下载和版本目录资源 | 准备宿主、uv 和独立桌面 | 下载耗时未知 |
-| 持续使用 | 图像传输与模型额度 | 核对 UIA、窗口、缩放和开关 | 单次任务成本未知 |
-| 失败恢复 | 保留备用版本及日志占用 | 停桥重启或重新激活，再查状态 | 回滚耗时和部分状态待测 |
+| 首次使用 | 工具链下载及版本目录资源 | 配置宿主、解释器、桌面与权限 | 下载金额、耗时未知 |
+| 持续使用 | 图片传输、模型额度、后台更新查询 | 核对窗口、授权与诊断 | 单任务请求数和时间未知 |
+| 失败恢复 | 重试下载、备用版本及日志 | 停桥、重启、核对部分写入 | 恢复成功率和耗时未知 |
+| 退出 | 保留或清理工具链空间 | 禁用桥，核对调用拒绝 | 未实测完整退出时间 |
+
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
 |---|---|---|
-| 桌面观察 | 宿主桥可挂载 Windows-MCP 工具 | 可见窗口、截图质量与输入效果 |
-| 工具范围 | 可见限制和调用拒绝分层实现 | 宿主兼容性、节省的上下文量 |
-| 维护 | 可识别占用目标目录的进程和部分本地失败 | 真实误检、漏检和重装成功率 |
+| 宿主集成 | patch 与 apply 接通诊断、桥和设置 | 实际宿主兼容及任务合格率 |
+| 会话控制 | 最近决定、子智能体继承和分派判定可追踪 | 容量淘汰及多窗口真实行为 |
+| 工具按需揭示 | 已注册能力按请求展开 | 实际上下文节省和端到端收益 |
+| 安装维护 | 占用检查和版本激活有明确失败分支 | 扫描漏检、部分失败与实际恢复效果 |
 
-> **思考**：[Q03](#research-q03) 显示，截图、窗口识别与输入效果分别受 DPI、UIA 和宿主条件影响。[Q04](#research-q04) 的重装保护依赖可见进程扫描，失败时仍可能开始安装。
+> **思考**：[Q02](#research-q02) 的有界决定表可能淘汰显式撤销，使判定回落到默认或祖先授权；[Q03](#research-q03) 的认证不可观察配置仍可处理写入。两者是源码边界，未复现越权；它们使“会话开关就是完整安全边界”的主张不能直接成立。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，宿主助手可在会话里逐步取得桌面工具，同时由插件维护桥和依赖。新版释放旧工具限制并把 pre-step 决策交回宿主，修正了重新启用后无法揭示和会话可能中断的路径。
+> **亮点**：[Q01](#research-q01) 显示，本包把官方桌面桥、依赖维护和诊断接到 DSH；[Q02](#research-q02) 与 [Q03](#research-q03) 进一步将授权按会话判定，并将工具可见性和分派拒绝分层。增量属于宿主集成及权限组织，Windows 操作能力仍归上游，节时收益没有实测。
 
-[Q02](#research-q02) 的释放、重入标记和 next 保留能解释开关恢复及宿主步骤隔离。[Q04](#research-q04) 的进程匹配与错误分类改善待验故障定位，但路径权限和状态落盘仍值得追查。
+[Q03](#research-q03) 的限制替换、防重入和 continuation 保留值得借鉴，移植必须匹配宿主 tools 生命周期；[Q02](#research-q02) 的有界授权缓存提示撤销语义应独立设计。[Q05](#research-q05) 明示部分落盘比误报成功更可诊断，但不是原子恢复。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 显示，截图、窗口识别与输入效果分别受 DPI、UIA 和宿主条件影响。[Q04](#research-q04) 的重装保护依赖可见进程扫描，失败时仍可能开始安装。
+[Q02](#research-q02) 的有界决定表可能淘汰显式撤销，使判定回落到默认或祖先授权；[Q03](#research-q03) 的认证不可观察配置仍可处理写入。两者是源码边界，未复现越权；它们使“会话开关就是完整安全边界”的主张不能直接成立。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 保留观察。只在可复位桌面验证公开窗口，并检查停用桥后不会继续调用。
+[Q06](#research-q06) 建议保持观察。先固定宿主与上游版本，关闭默认授权，在无敏感内容桌面核对会话开关、工具表、拒绝及画面；授权异常或目标不一致就停用 bridge 并重启，恢复人工处理。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +127,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码可追踪宿主桥、可见性与分派接线，以及诊断和升级中的失败分支。桌面级输入效果、宿主兼容与诊断阈值仍待验证。
+固定版本宿主集成和权限状态机制已有源码依据；授权淘汰后果为源码推导，非运行复现；未来门槛和撤销缓存设计均未验证。
 
-- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、lib/index.js、README.zh.md、lib/desktop-probe.js、lib/dependency.js、lib/processes.js、lib/updater.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、README.md、README.zh.md、lib/index.js、lib/client.js、lib/settings.js、lib/desktop-probe.js、lib/processes.js、lib/updater.js、lib/dependency.js 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：宿主插件、官方桥声明、工具门禁、Windows 诊断、托管安装与激活的固定源码。上游工具真实实现和 Windows 操作、远端镜像和包制品未实测。
-- 下一步：在无敏感信息的 Windows 测试桌面，分别记录工具列表、关闭后的分派拒绝、真实图像和窗口标题，再验证重启及回滚。以 [Q03](#research-q03) 的诊断冲突用例检查观察门槛。
+- 边界：已核查固定 package、patch、宿主入口、客户端会话开关、授权与工具分派、设置、桌面诊断和版本维护关键路径；官方宿主/Windows-MCP实现未由本次源码包独立验证。
+- 下一步：仅执行材料读取和本工程装配，未安装或运行目标插件、测试、Windows 桌面或付费实验。未把作者宿主验收声明升级为本次运行结果。
 
 **分析版本**
 
 - **仓库**：[helloHub1212/dsh-windows-mcp](https://github.com/helloHub1212/dsh-windows-mcp)
-- **版本号**：0.2.10（[固定提交 9347426](https://github.com/helloHub1212/dsh-windows-mcp/tree/9347426f35a897b5904223abb19ae9e4f30a78a6)）
-- **版本日期**：2026-11-13（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.2.11（[固定提交 3eeb984](https://github.com/helloHub1212/dsh-windows-mcp/tree/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019)）
+- **版本日期**：2026-11-15（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +146,9 @@
 
 <a id="innovation"></a>
 
-[Q03](#research-q03) 提出在诊断与窗口识别冲突时，保持只观察并让操作员确认同一目标，再允许交互。用实际窗口变化、错误落点与额外步骤比较这项待验证设计。
+[Q04](#research-q04) 提出将诊断冲突作为观察到交互的分阶段门槛；[Q02](#research-q02) 提出将明确撤销与可淘汰的允许缓存分开。二者均未验证，应分别比较错目标操作、撤销后分派、误拦及额外人工；若改善不能抵偿新增负担，就退回简单禁用桥和人工确认。
 
-在无敏感信息的 Windows 测试桌面，分别记录工具列表、关闭后的分派拒绝、真实图像和窗口标题，再验证重启及回滚。以 [Q03](#research-q03) 的诊断冲突用例检查观察门槛。
+仅执行材料读取和本工程装配，未安装或运行目标插件、测试、Windows 桌面或付费实验。未把作者宿主验收声明升级为本次运行结果。
 
 <a id="detail-section-9"></a>
 
@@ -153,44 +161,46 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 4 | 1096 | — | — | 12669 |
-| .js | source | 10 | 5822 | 4505 | 1017 | — |
+| .md | source | 4 | 1145 | — | — | 13612 |
+| .js | source | 10 | 5987 | 4592 | 1089 | — |
 | .mjs | source | 4 | 382 | 296 | 53 | — |
-| .mjs | test | 5 | 2428 | 2038 | 166 | — |
+| .mjs | test | 5 | 2777 | 2318 | 205 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=9&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+created%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z) [![近30天关闭 9](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=9&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z)
+[![Issue 未关闭 0](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=0&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 11](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=11&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+created%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z) [![近30天关闭 11](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=11&color=737b86&logo=github)](https://github.com/helloHub1212/dsh-windows-mcp/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z)
 
 
 
-统计日期：2026-11-14。
+统计日期：2026-11-23。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：Windows 桌面观察任务能否在 DSH 内完成，并在界面识别、工具权限和托管升级失败时可靠退出？
+**插件研究总目标**：多会话 DSH 用户能否在可控权限和维护负担下，将 Windows 桌面观察交给助手？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 一个 Windows 桌面观察任务如何进入 DSH？
+### Q01 · 桌面任务的入口和真正能力由谁提供？
 
-**研究主题**：场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-维护没有专用 API 的 Windows 应用的人，可以让 DSH 读取已打开的虚拟测试窗口标题和截图，再对照预期界面。与手动用截图和便签交接相比，插件把工具入口、依赖维护及受限揭示留在同一宿主。Bundle 插入自身和官方 MCP 客户端两行，桥默认禁用，安装后由 profile 覆盖指向具体 Windows-MCP 可执行文件。宿主的 apply 注册 doctor、设置、工具门禁与揭示，截图、点击等由官方桥通过标准输入输出交给 Python 端服务。新增便利来自宿主集成和安装维护，图像、坐标和输入效果仍由上游实现；原先若能用稳定 API 读状态，桌面桥通常会增加窗口焦点和识别约束。
+适用对象是需要检查没有稳定 API 的 Windows 应用、且能准备独立测试桌面的 DSH 使用者。一个合格观察任务应同时给出当前窗口的可读描述与对应画面，由使用者核对目标，而不能只接受工具返回成功。原办法是人工截图并交接窗口状态，或自己维护 Windows-MCP 与宿主桥的配置。本包把桥配置、诊断、依赖版本管理和会话控制放入宿主，减少的是这些接线工作的分散，而非证明桌面任务更快。
+
+package 导出 lib/index.js 与 lib/client.js，bundle patch 挂载自身和官方 @deepseek-ai/dsh-mcp-client 两行；桥以 stdio 启动 windows-mcp@0.8.8，默认 disabled，避免安装依赖阻塞宿主启动。apply 实际注册诊断、状态路由、工具门禁和揭示入口。截图、键鼠等具体能力来自上游 Windows-MCP 与官方桥，不能算成本包独立实现。若应用已有稳定 API，改用桌面工具反而增加焦点、窗口和缩放约束。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[package.json:8-12](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/package.json#L8-L12)
+**依据 1 · 源码核查**：[package.json:8-13](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/package.json#L8-L13)
 
-核对宿主和浏览器入口。
+宿主与客户端导出位置。
 
 ```text
   "main": "./lib/index.js",
@@ -198,11 +208,12 @@
     ".": "./lib/index.js",
     "./client": "./lib/client.js",
     "./package.json": "./package.json"
+  },
 ```
 
-**依据 2 · 源码核查**：[cordis.patch.yml:43-69](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/cordis.patch.yml#L43-L69)
+**依据 2 · 源码核查**：[cordis.patch.yml:43-69](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/cordis.patch.yml#L43-L69)
 
-补丁插入宿主和默认禁用的官方桥，配置 Windows-MCP 命令及排除项。
+实际双挂载、默认禁用和固定 Python 工具。
 
 <details>
 <summary>查看原文（27行）</summary>
@@ -239,18 +250,17 @@
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:1295-1316](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L1295-L1316)
+**依据 3 · 源码核查**：[lib/index.js:1428-1448](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L1428-L1448)
 
-宿主实际装配诊断、设置与工具控制。
+宿主装配到具体功能。
 
 <details>
-<summary>查看原文（22行）</summary>
+<summary>查看原文（21行）</summary>
 
 ```text
 export function apply(ctx) {
   try {
     const warn = makeLogger(ctx);
-    computerUse.enabled = readComputerUse().enabled;
     settings = readSettings(stateDirectory);
     updater = createUpdater({
       warn,
@@ -273,69 +283,160 @@ export function apply(ctx) {
 
 </details>
 
-**依据 4 · 作者声明**：[README.zh.md:20-44](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/README.zh.md#L20-L44)
+#### 缺口
 
-作者列出 Windows 工具及调度开关。
+- 没有同任务人工配置与插件方案的对照记录
+  **影响**：只能确认集成机制，不能量化节时或需求强度
+  **进一步探讨**：固定一个可复位 Windows 窗口，比较合格截图描述、配置步骤及人工复核时间
+
+<a id="research-q02"></a>
+
+<a id="detail-section-12"></a>
+
+### Q02 · 会话授权、继承和退出如何确定，何时可能偏离用户决定？
+
+**研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+授权以 sessionGrants 内存 Map 保存，值 false 是显式撤销，不是缺省。grantedFor 沿当前会话及最多八层祖先寻找最近明确决定，只有 header.origin 为 subagent 才继承；普通 fork 不沿父链。没有明确决定时回落到 defaultGrant，设置默认 false；未携带会话身份的调用拒绝。由此可以解释两个普通窗口的决定分离、子智能体继承以及重启后内存决定消失，但若用户将 defaultGrant 打开，新会话及重启后的未决定会话仍可能直接授权，不能笼统称“重启必关”。
+
+rememberGrant 按最后写入顺序保留最多 256 条决定，超过后删除最早项。源码上可推导一个重要边界：如果最早条目是显式 false，而默认授权为 true，或其仍有获准祖先，淘汰后再次判定会回落为获准。此处是根据状态分支推导的授权语义，不是已复现的越权事件。容量限制避免任意 sessionId 写入无限增长，却使撤销记录的生命周期与容量绑在一起；还没有会话结束时清除记录的可见接线。将明确撤销与可淘汰的允许缓存分开，可能比统一淘汰更容易保持用户预期。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[lib/index.js:343-385](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L343-L385)
+
+祖先链限制、subagent 条件、最近决定和默认回落。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
-## agent 能拿到什么
+function grantChainOf(session, lookup) {
+  const chain = [];
+  let current = session;
+  for (let depth = 0; depth < 8 && current !== null && current !== undefined; depth += 1) {
+    chain.push(current);
+    const header = current.header;
+    if (header?.origin !== "subagent" || typeof header.parentSession !== "string") break;
+    current = lookup(header.parentSession);
+  }
+  return chain;
+}
 
-装好插件且 Windows-MCP 可启动后，工具列表里会出现：
+/**
+ * True when the desktop is granted for this agent's conversation. The nearest
+ * explicit decision wins, so a session can also revoke what its lineage granted
+ * without touching the parent's switch. A conversation whose whole lineage has
+ * never decided falls back to the settings default; a call that names no session
+ * at all is refused, whatever that default says.
+ */
+function grantedFor(agent, lookup) {
+  const session = agent?.session;
+  if (session === null || session === undefined) {
+    const fallback = sessionIdOf(agent);
+    if (fallback === null) return false;
+    const explicit = sessionGrants.get(fallback);
+    return explicit === undefined ? defaultGrantEnabled() : explicit;
+  }
+  for (const candidate of grantChainOf(session, lookup)) {
+    const explicit = sessionGrants.get(candidate.id);
+    if (explicit !== undefined) return explicit;
+  }
+  return defaultGrantEnabled();
+}
 
-| 工具 | 作用 |
-| --- | --- |
-| `mcp__windows__Screenshot` | 截屏；图片会作为**真正的图片附件**进入对话 |
-| `mcp__windows__Snapshot` | 抓取无障碍树（纯文本，不花图片 token） |
-| `mcp__windows__DisplayInventory` | 枚举显示器及其几何信息 |
-| `mcp__windows__Click` / `Move` / `Scroll` | 鼠标输入 |
-| `mcp__windows__Type` / `Shortcut` | 键盘输入 |
-| `mcp__windows__Wait` / `WaitFor` | 等待固定时长，或等到某个界面条件成立 |
-| `mcp__windows__Scrape` | 抓取网页内容；也可从当前浏览器标签页抽取 DOM |
-| `mcp__windows__MultiSelect` / `MultiEdit` | 批量选中元素 / 批量编辑 |
-| `mcp__windows__Clipboard` | 读写剪贴板 |
-| `mcp__windows__Process` | 枚举、启动、结束进程 |
-| `mcp__windows__Notification` | 弹出 Windows 系统通知 |
-| `mcp__windows__Registry` | 读写注册表 |
-| `mcp__windows__ControlStatus` | 控制环状态。**无法关闭**——上游强制保留 |
-| `mcp__windows__App` | 启动/切换应用。*默认排除*（上游只在英文版 Windows 上稳定支持） |
-| `mcp__windows__PowerShell` / `FileSystem` | *默认排除*——DSH 已有 shell 与文件工具 |
+/** The grant for one session id, which is what the pill asks the route about. */
+function grantedForSessionId(sessionId, lookup) {
+  if (typeof sessionId !== "string" || sessionId === "") return false;
+  const session = lookup(sessionId);
+  if (session === null || session === undefined) {
+    const explicit = sessionGrants.get(sessionId);
+    return explicit === undefined ? defaultGrantEnabled() : explicit;
+  }
+  return grantedFor({ session }, lookup);
+```
 
-另外本插件自带一个工具 `windows_mcp_doctor`：当 `mcp__windows__*` 工具缺失时，用它查原因。
+</details>
 
-输入框工具行里还会多出一颗 **AI 控制电脑** 胶囊（就在"访问模式"旁边）：显示当前真正注册了几个桌面工具，并在重启后记住你的选择（状态文件：`~/.dsh/dsh-windows-mcp.state.json`）。它默认是**关闭**的——全新安装不会把桌面交给 agent，直到你亲手点亮这颗胶囊。
+**依据 2 · 源码核查**：[lib/index.js:388-400](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L388-L400)
+
+有界 Map 删除最早决定。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+/**
+ * Record one session's decision. Re-inserting keeps the map in
+ * least-recently-written order and the bound keeps a page that mints session ids
+ * from turning the route into a memory amplifier.
+ */
+function rememberGrant(sessionId, enabled) {
+  sessionGrants.delete(sessionId);
+  sessionGrants.set(sessionId, enabled === true);
+  while (sessionGrants.size > MAX_GRANT_ENTRIES) {
+    const oldest = sessionGrants.keys().next().value;
+    if (typeof oldest !== "string") break;
+    sessionGrants.delete(oldest);
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/settings.js:46-57](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/settings.js#L46-L57)
+
+defaultGrant 默认为 false，与懒揭示独立。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+  plugin: Object.freeze({
+    autoCheckUpdates: true,
+    preferredMirror: "auto",
+    // Hide the bridged desktop tools behind a one-line entry the model has to
+    // ask for; the default is the cheap mode, and the Settings page can turn
+    // it off for workflows that want every schema up front.
+    lazyTools: true,
+    // What a session that has never touched the composer pill starts with. The
+    // pill itself always wins per session; this is only the fallback, and it
+    // ships off so a fresh install grants the desktop to nobody by accident.
+    defaultGrant: false,
+  }),
 ```
 
 </details>
 
 #### 缺口
 
-- 无相同桌面任务的手工与插件对照
-  **影响**：无法量化交接耗时与需求强度
-  **进一步探讨**：固定一个可复位窗口，逐次比较截图与可读标题是否对应
+- 未取得跨256个决定的真实宿主授权轨迹
+  **影响**：容量淘汰后的撤销语义为源码推导，不能称为运行复现
+  **进一步探讨**：在无桌面副作用的宿主桩或隔离宿主记录被撤销会话、默认授权、祖先授权及淘汰前后的分派结果
 
-<a id="research-q02"></a>
+<a id="research-q03"></a>
 
-<a id="detail-section-12"></a>
+<a id="detail-section-13"></a>
 
-### Q02 · 新版如何让允许的工具回到模型，并拦住直接调用？
+### Q03 · 隐藏工具与调用拒绝是否一致，浏览器写授权有什么边界？
 
-**研究主题**：功能与机制、工程质量与复用、缺陷与关键质疑
+**研究主题**：功能与机制、依赖、兼容与流程、缺陷与关键质疑
 
 #### 完整回答
 
-工具过滤与调用门禁独立。插件从全局工具列表取已注册名字，再在 Agent 的工具作用域限制未揭示的 Windows 工具；关闭 Computer Use 时也隐藏揭示入口。变化时先释放原限制，防止重新切换开关后旧掩码仍生效；重入标志屏蔽同步 tools/change 导致的递归。新 pre-step 在应用限制失败时仍调用宿主 next，让会话决策链继续。分派 guard 即使拿到工具名也会按开关和揭示状态拒绝调用；如果宿主缺对应 restrict 或 guard 方法，这两个处理会跳过，不能宣称任何版本的宿主都能阻断。启用开关后，揭示工具可按名称或关键词挑选目录项，默认路径可以揭示全部。它提供上下文与可见范围管理，启用后并未将所有其他输入能力变成只读。
+插件按已注册工具重新计算 deny 集合，在每个 Agent 的 tools 作用域隐藏未获准或未揭示的 Windows 工具。先 dispose 原限制，再建立新限制，并以 applying 标志阻止 tools/change 同步递归；pre-step 无论限制结果如何仍调用 next，把决策权交回宿主。另一层 tools.guard 在分派时再查当前会话授权和揭示状态，因此历史中记住工具名并不自动获得执行权。windows_desktop 只负责按需揭示定义，授权关闭时返回提示，不自己授予桌面权限。缺少 restrict 或 guard 方法时对应层直接跳过，因此两层机制的存在不等于所有宿主配置都能执行门禁。
+
+客户端将 slot 注入的 sessionId 随 POST 发送，状态路由写入该会话后重新应用限制。HTTP 写操作仅在 browserAuth.isAuthenticated 明确 false 时拒绝；connection 服务不可观察时返回 null，并继续处理，页面报告 unobservable。这是部署边界，不能把签名 cookie 当作无条件认证。cookie 检查的是浏览器会话，所检查代码未将请求中的 sessionId 与浏览器身份再绑定；应按单一可信本地窗口理解，不能据此承诺多用户租户隔离。同一系统用户若能改 settings 文件仍可改 defaultGrant，浏览器门禁不限制文件系统权限。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:365-387](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L365-L387)
+**依据 1 · 源码核查**：[lib/index.js:461-487](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L461-L487)
 
-限制计算只匹配已注册工具及当前揭示状态。
+deny 依赖当前会话授权与揭示结果。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
   /** Tools this agent must not see right now, limited to what is registered. */
@@ -347,6 +448,9 @@ export function apply(ctx) {
       return null;
     }
     if (!Array.isArray(known)) return null;
+    // The decision is the conversation's, not the host's: two windows can sit
+    // on opposite sides of the switch at the same time.
+    const granted = grantedFor(agent, lookup);
     const deny = [];
     for (const schema of known) {
       const name = Array.isArray(schema) ? schema[0] : schema?.name;
@@ -354,43 +458,26 @@ export function apply(ctx) {
       if (name === REVEAL_TOOL_NAME) {
         // The entry itself is dead weight when the desktop is off or when every
         // schema is always shown.
-        if (!computerUse.enabled || !lazyToolsEnabled()) deny.push(name);
+        if (!granted || !lazyToolsEnabled()) deny.push(name);
         continue;
       }
       if (!isBridgedToolName(name)) continue;
-      if (computerUse.enabled && isToolRevealed(agent, name)) continue;
+      if (granted && isToolRevealed(agent, name)) continue;
       deny.push(name);
     }
+    return deny;
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/index.js:391-430](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L391-L430)
+**依据 2 · 源码核查**：[lib/index.js:508-529](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L508-L529)
 
-释放旧限制及防递归，缺少作用域时提前返回。
+限制替换及防重入。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-  function release(agent) {
-    const previous = applied.get(agent);
-    if (previous === undefined) return;
-    applied.delete(agent);
-    try { previous.dispose(); } catch { /* the agent scope may be gone */ }
-  }
-
-  /**
-   * True while this gate is itself mutating a tool layer. Registering or
-   * disposing a restriction runs `ScopedLayers.effect`, which synchronously
-   * emits `tools/change`; the listener below re-enters `reapply()`, which used
-   * to stack one more `restrict()` per level. Every level but the outermost
-   * lost its disposer (only the last handle is kept), so each orphaned deny
-   * mask stayed on the agent scope forever — that is why flipping the switch
-   * back on, or calling `windows_desktop`, never brought the tool back.
-   */
-  let applying = false;
-
   function applyToAgent(agent) {
     if (applying) return;
     if (agent === null || typeof agent !== "object") return;
@@ -417,30 +504,14 @@ export function apply(ctx) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/index.js:466-505](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L466-L505)
+**依据 3 · 源码核查**：[lib/index.js:581-605](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L581-L605)
 
-pre-step 保留宿主 continuation，分派 guard 拒绝关闭或隐藏工具。
+continuation 与分派拒绝。
 
 <details>
-<summary>查看原文（40行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-    hook("agent/created", (payload) => { applyToAgent(payload?.agent); });
-    hook("agent/disposed", (payload) => {
-      release(payload?.agent);
-      live.delete(payload?.agent);
-    });
-    // Safety net: repairs a decision the events above could not place yet.
-    //
-    // `agent/pre-step` is a Cordis WATERFALL, not a plain notification: the
-    // host (dsh-agent-loop `preStep()`) dispatches it as
-    // `waterfall("agent/pre-step", payload, () => ({ kind: "enter", messages }))`
-    // and then reads `decision.kind`. A waterfall listener that does not call
-    // `next()` vetoes the rest of the chain *including* that built-in, and its
-    // own return value becomes the decision — so returning `undefined` here
-    // makes the loop throw "Cannot read properties of undefined (reading
-    // 'kind')" and kills every turn before the step even starts. Always hand
-    // the chain back, whatever happened to the gate.
     hook("agent/pre-step", async (payload, next) => {
       try { applyToAgent(payload?.agent); } catch { /* a gate failure must never break the step */ }
       return typeof next === "function" ? next() : undefined;
@@ -459,81 +530,193 @@ pre-step 保留宿主 continuation，分派 guard 拒绝关闭或隐藏工具。
         scoped.tools.guard((execution) => {
           const name = execution?.name;
           if (!isBridgedToolName(name)) return undefined;
-          if (!computerUse.enabled) {
-            return `Computer Use is switched off, so "${name}" is not available. Switch the Computer Use control back on in the composer and retry.`;
+          if (!grantedFor(execution?.agent, lookup)) {
+            return `Computer Use is switched off for this session, so "${name}" is not available. Switch the Computer Use control on in this session's composer and retry.`;
           }
           if (!isToolRevealed(execution?.agent, name)) {
             return `"${name}" is hidden to save context. Call ${REVEAL_TOOL_NAME} first (with no arguments it reveals every desktop capability), then retry.`;
           }
+          return undefined;
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/index.js:580-606](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L580-L606)
+**依据 4 · 源码核查**：[lib/index.js:1031-1062](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L1031-L1062)
 
-揭示工具按开关与筛选词选择可用能力。
+认证不可观察时为 null，guard 仅拒绝 false。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（32行）</summary>
 
 ```text
-          execute(args, exec) {
-            if (!computerUse.enabled) {
-              return {
-                revealed: [],
-                tools: [],
-                note: "Computer Use is switched off, so there is nothing to reveal. Ask the user to switch the Computer Use control on in the composer first.",
-              };
+        const browserSession = (request) => {
+          const connection = connectionService();
+          const auth = connection === null || connection === undefined ? null : connection.browserAuth;
+          if (auth === null || auth === undefined || typeof auth.isAuthenticated !== "function") return null;
+          let secure = false;
+          try {
+            secure = scoped.get("webServer")?.protocol === "https:";
+          } catch {
+            secure = false;
+          }
+          try {
+            return auth.isAuthenticated(request, secure) === true;
+          } catch {
+            return false;
+          }
+        };
+
+        /**
+         * Refuse a mutation that did not come from the GUI window. Reads stay
+         * open; every POST that changes the flag, the patch layer, the settings
+         * or the toolchain has to prove it speaks for the browser session.
+         */
+        const guarded = (handler) => (request, response) => {
+          if (request.method === "POST" && browserSession(request) === false) {
+            respond(response, 401, {
+              error: "this change has to come from the DSH window",
+              hint: "The request carried no signed session cookie. Use the composer switch or the Settings page: a script, or a model with shell access, cannot turn desktop control on for itself.",
+            });
+            return;
+          }
+          handler(request, response);
+        };
+```
+
+</details>
+
+**依据 5 · 源码核查**：[lib/index.js:1174-1184](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L1174-L1184)
+
+请求 sessionId 校验后进入内存 Map。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+            const sessionId = typeof next?.sessionId === "string" ? next.sessionId.trim().slice(0, 128) : "";
+            if (typeof next?.enabled !== "boolean" || sessionId === "") {
+              respond(response, 400, {
+                error: "expected { enabled: boolean, sessionId: string }",
+                hint: "the switch belongs to one conversation: a host-wide write would silently move every other window too",
+              });
+              return;
             }
-            const catalog = desktopCatalog(scoped.tools);
-            const names = Array.isArray(args?.names) ? args.names.map((value) => String(value)).filter((value) => value !== "") : [];
-            const query = typeof args?.query === "string" ? args.query.trim().toLowerCase() : "";
-            let picked = catalog;
-            if (names.length > 0) {
-              picked = catalog.filter((entry) =>
-                names.some(
-                  (wanted) =>
-                    wanted === entry.name ||
-                    `${BRIDGE_TOOL_PREFIX}${wanted}` === entry.name ||
-                    (entry.name.startsWith(BRIDGE_TOOL_PREFIX) && entry.name.slice(BRIDGE_TOOL_PREFIX.length) === wanted),
-                ),
-              );
-            } else if (query !== "") {
-              picked = catalog.filter(
-                (entry) => entry.name.toLowerCase().includes(query) || entry.description.toLowerCase().includes(query),
-              );
-            }
-            const state = revealStateFor(exec?.agent);
+            rememberGrant(sessionId, next.enabled);
+            if (reapplyToolGate !== null) reapplyToolGate();
+            respond(response, 200, snapshot(sessionId));
+```
+
+</details>
+
+**依据 6 · 源码核查**：[lib/client.js:348-360](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/client.js#L348-L360)
+
+客户端 POST 携带当前会话身份。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+        if (view.phase === "loading" || view.busy) return;
+        var next = !view.enabled;
+        busyRef.current = true;
+        setView({ phase: view.phase, enabled: next, bridged: view.bridged, busy: true, error: null });
+        try {
+          fetch(apiUrl(STATE_PATH), {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ enabled: next, sessionId: sessionId }),
+          })
+            .then(function (response) {
+              if (!response.ok) throw new Error("HTTP " + response.status);
+              return response.json();
 ```
 
 </details>
 
 #### 缺口
 
-- 未跨宿主版本测试禁用、开关切换和直接调用
-  **影响**：不能确认限制 API 的运行兼容性或上下文节省
-  **进一步探讨**：同一个空白会话记录模型工具表、直接调用结果和切换后恢复，用不支持 guard 的配置作反例
+- 未独立取得对应版本官方 bridge、tools 服务和 browserAuth 的完整实现
+  **影响**：可确认本包接线和退让分支，不能证明宿主认证及限制 API 的实现边界
+  **进一步探讨**：绑定实际宿主版本核对 restrict、guard、browserAuth 与会话身份契约；缺任一层时保持桌面关闭
 
-<a id="research-q03"></a>
+<a id="research-q04"></a>
 
-<a id="detail-section-13"></a>
+<a id="detail-section-14"></a>
 
-### Q03 · 何时能区分可截图和可控制？
+### Q04 · 诊断能否证明桌面输入会命中目标？
 
-**研究主题**：功能与机制、缺陷与关键质疑、新假设与验证
+**研究主题**：缺陷与关键质疑、新假设与验证
 
 #### 完整回答
 
-新版 doctor 注册的执行函数会等待桌面探测，失败则仍给出诊断报告。探测限 Windows，运行短时 PowerShell 子进程并在超时后收束。报告比较 UIA 顶层窗口数、原生窗口句柄数与主屏缩放；句柄不少于 3 且 UIA 不超过 1 时提示上游 UIA 问题，高 DPI 时提示绝对坐标可能漂移。计数模式是单次启发式，不能独立归因到某个上游缺陷，进程访问权限和桌面活动也可能改变读数。README 还把图像缩放提示与最近物理输入引发的 USER_CONTROL 列为上游行为，只有真实宿主验证能确认对应版本。可以在诊断结果与新一次窗口识别冲突时，先停在观察态，再允许用户逐步验证窗口及点击后的界面变化；若此门槛频繁误拦等价的安全任务，说明阈值仍需修改。
+不能。doctor 会运行桌面探测并生成可读报告；desktop-probe 用固定 PowerShell 片段获取 UIA 顶层元素数量、原生窗口句柄数和系统 DPI。UIA 不超过一个且窗口句柄不少于三个时，报告归因于上游 UIA 故障；高缩放时提示坐标偏移。前两者是诊断启发式，进程权限、桌面活动及应用树结构也可影响计数，不能由一次计数证明特定上游问题，更不能由截图成功推出 Click 命中。上游图像缩放、物理输入抢占等在 README 中属于作者说明，本轮没有检查上游实现或记录真实输入。
+
+可从这种“诊断信号与最终动作结果分离”推导一个未验证设计：当 UIA 与窗口句柄矛盾，或截图尺度未确认时，先停留在观察状态，展示目标窗口及坐标换算，再由用户确认后放开交互。相对全开关，它增加按任务结果分阶段授权，需要维护窗口和尺度状态，可能增加误拦。最小比较应在相同无敏感信息的可复位 Windows 桌面，对照现有开关与分阶段方案，统计错目标输入、人工确认次数及最终合格率；若没有降低错误却显著增加阻断，假设被削弱。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/index.js:821-846](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L821-L846)
+**依据 1 · 源码核查**：[lib/desktop-probe.js:35-44](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/desktop-probe.js#L35-L44)
 
-doctor 的宿主注册及真实探测调用。
+诊断数据实际采集来源。
 
 <details>
-<summary>查看原文（26行）</summary>
+<summary>查看原文（10行）</summary>
+
+```text
+ */
+const PROBE_SCRIPT = [
+  "$ErrorActionPreference = 'SilentlyContinue'",
+  "$uia = -1",
+  "try { Add-Type -AssemblyName UIAutomationClient | Out-Null; $root = [System.Windows.Automation.AutomationElement]::RootElement; $uia = @($root.FindAll([System.Windows.Automation.TreeScope]::Children, [System.Windows.Automation.Condition]::TrueCondition)).Count } catch { $uia = -1 }",
+  "$win = -1",
+  "try { $win = @(Get-Process | Where-Object { $_.MainWindowHandle -ne 0 }).Count } catch { $win = -1 }",
+  "$scale = -1",
+  "try { Add-Type -TypeDefinition 'using System; using System.Runtime.InteropServices; public static class DshDpiProbe { [DllImport(\"user32.dll\")] public static extern uint GetDpiForSystem(); }' | Out-Null; $scale = [math]::Round([DshDpiProbe]::GetDpiForSystem() / 96.0, 3) } catch { $scale = -1 }",
+  "Write-Output ('{\"uia\":' + $uia + ',\"windows\":' + $win + ',\"scale\":' + $scale + '}')",
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/desktop-probe.js:104-125](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/desktop-probe.js#L104-L125)
+
+启发式阈值与高 DPI 提示。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+  const handles = probe.windowHandles;
+  const scale = probe.displayScale;
+  const parts = [];
+  parts.push(uia === null || uia === undefined ? "UI Automation unavailable" : `UI Automation sees ${uia} top-level window(s)`);
+  if (handles !== null && handles !== undefined) parts.push(`${handles} window handle(s)`);
+  if (scale !== null && scale !== undefined) parts.push(`display scale ${Math.round(scale * 100)}%`);
+
+  const notes = [];
+  if (
+    typeof uia === "number" &&
+    typeof handles === "number" &&
+    handles >= 3 &&
+    uia <= 1
+  ) {
+    notes.push(
+      `UI Automation enumerates ${uia} window(s) while ${handles} window handle(s) exist. Snapshot then prints "No windows found" / "No elements" and Move/Click/Type report success without acting: this is upstream ${UPSTREAM_UIA_ISSUE}, not an install, mirror, or sandbox problem. Signing out of the Windows session (or rebooting) usually restores UI Automation; the durable fix has to land upstream.`,
+    );
+  }
+  if (typeof scale === "number" && scale >= 1.25) {
+    notes.push(
+      `the primary display runs at ${Math.round(scale * 100)}% scaling. Upstream #607 divides absolute Move/Click coordinates by that factor, so requested positions land nearer the top-left than asked (1500,1100 arrives near ${Math.round(1500 / scale)},${Math.round(1100 / scale)} at this scale). Treat absolute coordinates as unreliable at non-100% scale and prefer reading positions from a Snapshot.`,
+    );
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:929-955](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L929-L955)
+
+doctor 工具执行探测，异常后仍返回报告。
+
+<details>
+<summary>查看原文（27行）</summary>
 
 ```text
         const dispose = scoped.tools.register({
@@ -557,194 +740,80 @@ doctor 的宿主注册及真实探测调用。
               return [{ type: "text", text: report }];
             },
           },
-          async execute() {
+          async execute(_args, exec) {
             // Bounded and read-only; the probe resolves to `{ error }` instead
             // of throwing, so the report is printed either way.
             const probe = await probeDesktop();
-            return { report: buildReport(scoped.tools, probe) };
+            return { report: buildReport(scoped.tools, probe, exec?.agent, lookup) };
+          },
 ```
 
 </details>
-
-**依据 2 · 源码核查**：[lib/desktop-probe.js:136-171](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/desktop-probe.js#L136-L171)
-
-平台判断、启动和超时退出。
-
-<details>
-<summary>查看原文（36行）</summary>
-
-```text
-export function probeDesktop(options = {}) {
-  const timeoutMs = Number.isFinite(options.timeoutMs) && options.timeoutMs > 0 ? options.timeoutMs : PROBE_TIMEOUT_MS;
-  const platform = typeof options.platform === "string" ? options.platform : process.platform;
-  if (platform !== "win32") {
-    return Promise.resolve({ skipped: "not a Windows host" });
-  }
-  const launcher = typeof options.spawn === "function" ? options.spawn : spawn;
-
-  return new Promise((resolve) => {
-    let settled = false;
-    let timer = null;
-    let child = null;
-    const finish = (value) => {
-      if (settled) return;
-      settled = true;
-      if (timer !== null) clearTimeout(timer);
-      resolve(value);
-    };
-
-    try {
-      timer = setTimeout(() => {
-        try {
-          if (child !== null && typeof child.kill === "function") child.kill();
-        } catch {
-          /* the result is already decided */
-        }
-        finish({ error: `timed out after ${timeoutMs} ms` });
-      }, timeoutMs);
-      child = launcher(
-        "powershell.exe",
-        ["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass", "-Command", PROBE_SCRIPT],
-        { windowsHide: true, stdio: ["ignore", "pipe", "pipe"] },
-      );
-    } catch (error) {
-      finish({ error: String(error) });
-      return;
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/desktop-probe.js:103-127](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/desktop-probe.js#L103-L127)
-
-报告基于计数与缩放解释，包含启发式阈值。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-  const uia = probe.uiaWindows;
-  const handles = probe.windowHandles;
-  const scale = probe.displayScale;
-  const parts = [];
-  parts.push(uia === null || uia === undefined ? "UI Automation unavailable" : `UI Automation sees ${uia} top-level window(s)`);
-  if (handles !== null && handles !== undefined) parts.push(`${handles} window handle(s)`);
-  if (scale !== null && scale !== undefined) parts.push(`display scale ${Math.round(scale * 100)}%`);
-
-  const notes = [];
-  if (
-    typeof uia === "number" &&
-    typeof handles === "number" &&
-    handles >= 3 &&
-    uia <= 1
-  ) {
-    notes.push(
-      `UI Automation enumerates ${uia} window(s) while ${handles} window handle(s) exist. Snapshot then prints "No windows found" / "No elements" and Move/Click/Type report success without acting: this is upstream ${UPSTREAM_UIA_ISSUE}, not an install, mirror, or sandbox problem. Signing out of the Windows session (or rebooting) usually restores UI Automation; the durable fix has to land upstream.`,
-    );
-  }
-  if (typeof scale === "number" && scale >= 1.25) {
-    notes.push(
-      `the primary display runs at ${Math.round(scale * 100)}% scaling. Upstream #607 divides absolute Move/Click coordinates by that factor, so requested positions land nearer the top-left than asked (1500,1100 arrives near ${Math.round(1500 / scale)},${Math.round(1100 / scale)} at this scale). Treat absolute coordinates as unreliable at non-100% scale and prefer reading positions from a Snapshot.`,
-    );
-  }
-  return { line: parts.join(", "), notes };
-```
-
-</details>
-
-**依据 4 · 作者声明**：[README.zh.md:236-241](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/README.zh.md#L236-L241)
-
-作者解释缩放坐标和物理输入拦截。
-
-```text
-| `App` 工具报错或没反应 | 上游明确说它只在英文版 Windows 上可靠；本插件默认已排除。 |
-| DSH 启动明显变慢 | 桥不该占用启动时间：它出厂 `disabled: true`，只有安装后把 `command` 指到可执行文件才会启动。启动变慢说明**别的**行在引导期解析工具链——看 `windows_mcp_doctor` 打印的生效行。 |
-| 截图里的字看不清 | 把 `WINDOWS_MCP_SCREENSHOT_SCALE` 提到接近 `1.0`；上游截图上限是 1920×1080。 |
-| 点击位置偏了，或截图比屏幕小 | 截图被缩小了。出现缩放时 `Screenshot` 会打印 `Screenshot Coordinate Scale`：把图像像素坐标乘以这个系数再交给 `Click` / `Move` / `Scroll`；也可以把 `WINDOWS_MCP_SCREENSHOT_SCALE` 设为 `1.0`（慢一些，但像素与屏幕一致）。上游的 `Click` 没有落点预演，也没有窗口/区域约束。 |
-| 自己在动鼠标键盘时所有工具都报 `USER_CONTROL` | 上游把最近 10 秒内的物理输入视为你收回了控制权，会拒绝**全部**工具，包括 `Screenshot` / `Snapshot`，直到 `wait_seconds` 归零。把手离开鼠标键盘约十秒即可。 |
-| 重装报 `uv exited with code 2`，之后 DSH 起不来 | 桥正从要重装的那个版本运行。Windows 锁定运行中的 `windows-mcp.exe`，就地重装会删掉环境的一部分又无法完成。安装器现在会在启动 uv 之前拒绝，并点名占用的进程；请切到另一个已安装版本（或禁用桥）、重启 DSH 后再装。目录被占用属于本机问题，不会再被报成镜像失败。 |
-```
 
 #### 缺口
 
-- 未取得缩放与 UIA 状态下的同版本屏幕对照
-  **影响**：只能分析诊断信号，无法证明屏幕输入命中
-  **进一步探讨**：在受控桌面先核查标题和句柄变化，再对比启用停留观察前后的误拦与误触
+- 缺少同版本多DPI和UIA失常下的目标窗口及点击结果对照
+  **影响**：不能证明诊断准确性或所提门槛降低误操作
+  **进一步探讨**：同任务记录原始计数、目标窗口、坐标、实际变化和额外确认，用反例检验门槛
 
-<a id="research-q04"></a>
+<a id="research-q05"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-15"></a>
 
-### Q04 · 安装、重装和版本切换怎样判断安全条件？
+### Q05 · 依赖安装和版本切换失败后，用户如何恢复？
 
-**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
+**研究主题**：依赖、兼容与流程、工程质量与复用、效果与总成本
 
 #### 完整回答
 
-托管安装先找宿主 PATH 上的 uv，以固定版本和 Python 3.14 范围调用 tool install。新版先用 PowerShell 枚举带可执行路径的进程，路径按当前目标版本目录前缀匹配，找到活动进程便在调用 uv 前拒绝并给出 PID 和停用指引。进程扫描返回空列表、超时或失败会放过，扫描和安装之间也有时间差。uv 失败时，锁目录、构建或缺解释器一类本地错误会提前结束镜像尝试；只有读到工具版本和可执行文件才走激活。激活先写 profile 桥再写版本状态，第二次落盘失败会明确报告桥已写入，不能把失败响应理解成已自动还原。回滚选择上一个版本重新激活。prepare 路由读取同步拒绝并以 409 回传，异步进程扫描可能先收到 202，再由状态查询告警。收到请求与完成安装是两个阶段。
+宿主需要能加载官方 MCP bridge；Windows 桌面能力需要对应服务进程和交互会话，托管安装还依赖 uv、Python 解释器及包索引。updater 在启动 uv 前检查目标版本目录下的活动进程，找到则拒绝原位重装并建议先换版本或停桥重启。processes 在非 Windows、超时、启动异常或读取异常时都返回空列表，preflight 对空列表放行，所以这是尽力保护，扫描与安装之间也有时间窗口。不能把它当作完整的目录锁。镜像读失败和本地安装错误需要区别处理，避免在本地失败时无意义地遍历镜像。
+
+安装结果只有版本标记匹配且可执行文件存在才进入激活。激活先写 profile bridge，再写版本状态；后一步失败时返回“bridge 已写但版本文件失败”，不是自动回滚事务。rollback 也是重新激活上个版本，需要用户核对有效 profile 行和实际进程、按提示重启。相较手工维护路径，版本目录、日志和回滚入口便于集中查找，但下载、解释器、占用和部分落盘仍由用户排障承担，首次与失败恢复耗时未知。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[lib/dependency.js:241-261](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/dependency.js#L241-L261)
+**依据 1 · 源码核查**：[lib/updater.js:180-203](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/updater.js#L180-L203)
 
-实际 uv 参数包含工具规格与 Python 范围。
+扫描空列表放行，命中目标进程拒绝。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（24行）</summary>
 
 ```text
-export function spawnUvInstall(options = {}) {
-  const uv = options.uv;
-  const spec = options.spec;
-  const indexUrl = typeof options.indexUrl === "string" && options.indexUrl !== "" ? options.indexUrl : null;
-  const toolDirectory = typeof options.toolDirectory === "string" && options.toolDirectory !== "" ? options.toolDirectory : null;
-  const onLine = typeof options.onLine === "function" ? options.onLine : () => {};
-  const python =
-    options.python === null
-      ? null
-      : typeof options.python === "string" && options.python !== ""
-        ? options.python
-        : UV_PYTHON_REQUIREMENT;
-  const args = ["tool", "install", "--force"];
-  if (indexUrl !== null) args.push("--default-index", indexUrl);
-  if (python !== null) args.push("--python", python);
-  args.push(spec);
-  const child = spawn(uv, args, {
-    cwd: typeof options.cwd === "string" ? options.cwd : homedir(),
-    env: { ...uvInstallEnvironment(toolDirectory), ...(options.env ?? {}) },
-    windowsHide: true,
-    stdio: ["ignore", "pipe", "pipe"],
+    try {
+      entries = await inspectProcesses();
+    } catch {
+      entries = [];
+    }
+    if (!Array.isArray(entries) || entries.length === 0) return { ok: true };
+    let toolRoot;
+    try {
+      toolRoot = versionToolRoot(root, version);
+    } catch {
+      return { ok: true };
+    }
+    const running = processesUnder(toolRoot, entries);
+    if (running.length === 0) return { ok: true };
+    // Another install may have started while the scan ran; do not overwrite it.
+    if (installState.phase === "installing") return { ok: false, error: "an install is already running" };
+    const pids = running
+      .slice(0, 3)
+      .map((entry) => `PID ${entry.pid}`)
+      .join(", ");
+    const message =
+      `Windows-MCP is running from ${toolRoot} (${pids}). Installing in place would delete that environment while it is in use and leave it unable to start. ` +
+      "Switch to another installed version (or disable the bridge), restart DSH, then install this version again.";
+    return refuseInstall(version, message);
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[lib/processes.js:70-79](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/processes.js#L70-L79)
+**依据 2 · 源码核查**：[lib/processes.js:88-122](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/processes.js#L88-L122)
 
-目标版本环境的路径匹配。
-
-<details>
-<summary>查看原文（10行）</summary>
-
-```text
-export function processesUnder(root, entries) {
-  if (typeof root !== "string" || root === "" || !Array.isArray(entries)) return [];
-  const wanted = comparablePath(root);
-  if (wanted === "") return [];
-  const prefix = wanted.endsWith("\\") ? wanted : `${wanted}\\`;
-  return entries.filter((entry) => {
-    if (entry === null || typeof entry !== "object" || typeof entry.path !== "string") return false;
-    const actual = comparablePath(entry.path);
-    return actual === wanted || actual.startsWith(prefix);
-  });
-```
-
-</details>
-
-**依据 3 · 源码核查**：[lib/processes.js:88-121](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/processes.js#L88-L121)
-
-非 Windows、超时与启动失败时返回空数组。
+平台、超时与启动异常结果。
 
 <details>
-<summary>查看原文（34行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
 export function listProcesses(options = {}) {
@@ -781,125 +850,19 @@ export function listProcesses(options = {}) {
     } catch {
       finish([]);
       return;
+    }
 ```
 
 </details>
 
-**依据 4 · 源码核查**：[lib/updater.js:178-204](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L178-L204)
+**依据 3 · 源码核查**：[lib/updater.js:393-411](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/updater.js#L393-L411)
 
-进程预检及失败放行范围。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-  async function preflight(version) {
-    let entries = [];
-    try {
-      entries = await inspectProcesses();
-    } catch {
-      entries = [];
-    }
-    if (!Array.isArray(entries) || entries.length === 0) return { ok: true };
-    let toolRoot;
-    try {
-      toolRoot = versionToolRoot(root, version);
-    } catch {
-      return { ok: true };
-    }
-    const running = processesUnder(toolRoot, entries);
-    if (running.length === 0) return { ok: true };
-    // Another install may have started while the scan ran; do not overwrite it.
-    if (installState.phase === "installing") return { ok: false, error: "an install is already running" };
-    const pids = running
-      .slice(0, 3)
-      .map((entry) => `PID ${entry.pid}`)
-      .join(", ");
-    const message =
-      `Windows-MCP is running from ${toolRoot} (${pids}). Installing in place would delete that environment while it is in use and leave it unable to start. ` +
-      "Switch to another installed version (or disable the bridge), restart DSH, then install this version again.";
-    return refuseInstall(version, message);
-  }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[lib/updater.js:442-487](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L442-L487)
-
-安装状态、二次并发检查、镜像尝试边界。
+安装产物检查和超时。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（19行）</summary>
 
 ```text
-  async function installVersion(version) {
-    if (typeof version !== "string" || version === "") return { ok: false, error: "a version is required" };
-    if (installPromise !== null) return { ok: false, error: "an install is already running" };
-    const uv = resolver("uv");
-    if (uv === null) {
-      return refuseInstall(
-        version,
-        "`uv` was not found on the PATH of this DSH process. Install uv (https://docs.astral.sh/uv/), restart DSH, then retry.",
-      );
-    }
-    const gate = await preflight(version);
-    if (gate.ok !== true) return gate;
-    // The scan is asynchronous, so a second click can get here too: re-check
-    // before claiming the install slot.
-    if (installPromise !== null) return { ok: false, error: "an install is already running" };
-    installPromise = (async () => {
-      installState.phase = "installing";
-      installState.version = version;
-      installState.mirror = null;
-      installState.startedAt = new Date().toISOString();
-      installState.finishedAt = null;
-      installState.error = null;
-      installState.bridge = null;
-      installState.log = [];
-      if (lastProbe === null) {
-        try {
-          lastProbe = await probe({ project: WINDOWS_MCP_TOOL });
-        } catch {
-          lastProbe = null;
-        }
-      }
-      const order = mirrorOrder(lastProbe);
-      let lastError = "no mirror was available";
-      for (const mirror of order) {
-        installState.mirror = mirror.id;
-        append(`trying ${mirror.label} (${formatBytesPerSecond(mirrorSpeed(lastProbe, mirror.id))})`);
-        const attempt = await installAttempt({ uv, version, mirror });
-        if (attempt.ok !== true) {
-          lastError = `${mirror.label}: ${attempt.error}`;
-          append(`failed: ${lastError}`);
-          if (attempt.fatal === true) {
-            // A missing wheel or interpreter fails identically on every mirror;
-            // walking the rest would only keep the real reason buried.
-            append("this failure is not mirror-specific, so the remaining mirrors are skipped");
-            break;
-          }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[lib/updater.js:383-402](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L383-L402)
-
-安装成功还需对比版本和可执行文件。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-      running.on("close", (code) => {
-        if (code !== 0) {
-          const detail = installFailureDetail(attemptLines);
-          finish({
-            ok: false,
-            error: `uv exited with code ${code}${detail.tail === null ? "" : `: ${detail.tail}`}`,
-            fatal: detail.fatal,
-          });
-          return;
-        }
         const installedVersion = toolVersionIn(toolDirectory);
         const executable = executableIn(toolDirectory);
         if (installedVersion !== version || executable === null) {
@@ -910,18 +873,28 @@ export function listProcesses(options = {}) {
           return;
         }
         finish({ ok: true, executable, toolDirectory });
+      });
+      timer = setTimeout(() => {
+        append("install timed out after 30 minutes");
+        try {
+          running.kill();
+        } catch {
+          /* already gone */
+        }
+        finish({ ok: false, error: "install timed out" });
 ```
 
 </details>
 
-**依据 7 · 源码核查**：[lib/updater.js:418-438](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L418-L438)
+**依据 4 · 源码核查**：[lib/updater.js:417-438](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/updater.js#L417-L438)
 
-两处状态的写入先后与部分成功。
+桥与版本状态两阶段落盘，部分失败明示。
 
 <details>
-<summary>查看原文（21行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
+  /** Rewrite the bridge to the given managed version and remember it. */
   function activate(version) {
     const executable = activeInstall({ active: version }, home)?.executable ?? null;
     if (executable === null) {
@@ -947,14 +920,15 @@ export function listProcesses(options = {}) {
 
 </details>
 
-**依据 8 · 源码核查**：[lib/updater.js:523-535](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L523-L535)
+**依据 5 · 源码核查**：[lib/updater.js:522-535](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/updater.js#L522-L535)
 
-切换和回滚统一走激活。
+激活与回滚需要已安装版本。
 
 <details>
-<summary>查看原文（13行）</summary>
+<summary>查看原文（14行）</summary>
 
 ```text
+  /** Switch to a version that is already installed (no download). */
   function activateInstalled(version) {
     if (installState.phase === "installing") return { ok: false, error: "an install is already running" };
     const activated = activate(version);
@@ -972,141 +946,151 @@ export function listProcesses(options = {}) {
 
 </details>
 
-**依据 9 · 源码核查**：[lib/dependency.js:60-96](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/dependency.js#L60-L96)
-
-本地错误按日志识别并保留尾部原因。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
-const MIRROR_INDEPENDENT_FAILURES = [
-  /Failed to build/iu,
-  /failed building wheel/iu,
-  /LINK\s*:\s*fatal error/iu,
-  /Microsoft Visual C\+\+/u,
-  /No interpreter found/iu,
-  /no python interpreter/iu,
-  // A locked file is a local problem: every mirror deletes the same directory
-  // and hits the same running executable, so retrying only destroys more.
-  /failed to remove directory/iu,
-  /os error 5\b/iu,
-  /Access is denied/iu,
-  /拒绝访问/u,
-  /being used by another process/iu,
-  /另一个程序正在使用此文件/u,
-];
-
-/**
- * Read the reason out of a failed `uv tool install` log.
- *
- * @param lines - the streamed output lines (or one chunk).
- * @returns `{ fatal, tail }` — `fatal` when another mirror cannot help, and
- *   `tail` the last error-looking line, trimmed for the page.
- */
-export function installFailureDetail(lines) {
-  const text = Array.isArray(lines) ? lines.join("\n") : String(lines ?? "");
-  const fatal = MIRROR_INDEPENDENT_FAILURES.some((pattern) => pattern.test(text));
-  const rows = text
-    .split(/\r?\n/u)
-    .map((line) => line.trim())
-    .filter((line) => line !== "");
-  const tail =
-    [...rows].reverse().find((line) => /^error[:\s]/iu.test(line)) ??
-    [...rows].reverse().find((line) => /error|failed|cannot|no interpreter/iu.test(line)) ??
-    rows[rows.length - 1] ??
-    null;
-  return { fatal, tail: tail === null ? null : tail.slice(0, MAX_LOG_LINE) };
-```
-
-</details>
-
-**依据 10 · 源码核查**：[lib/index.js:1070-1098](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L1070-L1098)
-
-路由回传同步请求拒绝并通过状态提供异步结果。
-
-<details>
-<summary>查看原文（29行）</summary>
-
-```text
-          const view = updater.view();
-          const target = view.versions.pinned ?? view.check.latest;
-          if (target === null) {
-            respond(response, 409, { started: false, reason: "no Windows-MCP version is known yet", prepare: prepareSnapshot() });
-            return;
-          }
-          if (view.install.phase === "installing") {
-            respond(response, 409, { started: false, reason: "an install is already running", prepare: prepareSnapshot() });
-            return;
-          }
-          void updater
-            .installVersion(target)
-            .then((result) => {
-              if (result === null || result === undefined || result.ok !== true) {
-                warn(`the install did not start: ${result?.error ?? "unknown error"}`);
-              }
-            })
-            .catch((error) => warn(`the install did not start: ${String(error)}`));
-          // A refusal (missing `uv`, unknown version) is recorded synchronously,
-          // before the promise settles, so it can be reported right here instead
-          // of answering 202 and leaving the page on `phase: "idle"`.
-          const after = updater.view().install;
-          const refused = after.phase === "failed" && typeof after.error === "string";
-          respond(response, refused ? 409 : 202, {
-            started: !refused,
-            reason: refused ? after.error : undefined,
-            spec: `windows-mcp@${target}`,
-            prepare: prepareSnapshot(),
-          });
-```
-
-</details>
-
 #### 缺口
 
-- 未在 Windows 验证扫描并发和无进程路径的情况
-  **影响**：无法断言 preflight 避免所有重装破坏
-  **进一步探讨**：用空闲版本、同目录活动进程、不可读列表和写版本文件失败分别检查 install 与回滚状态
+- 缺少目标进程不可见、并发启动以及版本状态写失败时的实际恢复记录
+  **影响**：不能证明所有占用可发现或回滚无状态分歧
+  **进一步探讨**：分别观察扫描失败、同目录占用和第二次落盘失败，核对桥指向、状态文件及实际子进程
 
-<a id="research-q05"></a>
+<a id="research-q06"></a>
 
-<a id="detail-section-15"></a>
+<a id="detail-section-16"></a>
 
-### Q05 · 观察试用要付出什么、何时退出？
+### Q06 · 何种任务值得继续观察，成本和停止条件是什么？
 
-**研究主题**：效果与总成本、采用判断
+**研究主题**：采用判断、效果与总成本、场景与需求
 
 #### 完整回答
 
-在一次性 Windows 测试桌面上打开无敏感信息的样例窗口，以图片和一段可复核的窗口描述作为合格结果。先准备能加载官方 MCP 桥的 DSH 与可用 uv，确认实际进程指向选定版本；需要比较开关时只揭示 Screenshot 和 Snapshot，切勿根据截图成功推断 Click 正常。因启用开关后揭示可扩到其他能力，应限制在无敏感内容的桌面，通过工具表及分派拒绝同时核查开关；无法确认时停用 profile 的桥并重启恢复手工。安装消耗依赖下载与本地版本目录空间，持续截图占图片传输或模型配额，人工用于核对 DPI/UIA 与版本切换。实际下载重试、模型费用和单次任务耗时均无实测。如果工具回执未反映窗口变化、诊断看不到目标窗口或关闭后仍能调用，停止助手操作并人工核对。
+当前建议观察，适合能准备一次性 Windows 桌面、理解窗口和权限边界的插件维护者研究宿主集成，而不据此交给普通用户持续控制重要桌面。先固定宿主与 Python 工具版本，关闭新会话默认授权，以截图和窗口描述一致为第一项合格结果；有稳定 API 的任务优先采用 API，偶发截图者可保留人工交接。桥接、会话决定与懒揭示有可追溯源码增量，但实际认证配置、门禁兼容、撤销记录淘汰及目标输入仍影响可控性。
+
+首次投入包括下载安装、版本目录空间和配置排障；持续投入包括图像传输、模型请求、人工核对窗口及授权；失败恢复包括停桥、重启、版本切换和检查部分写入状态；退出需禁用 bridge 并核对工具表与调用拒绝，恢复人工观察。没有现金金额、耗时、合格次数及同任务对照，不能称免费、低成本或节省固定比例。若关闭后仍能调用、授权出现在不预期会话、目标画面不一致或桥与版本状态冲突，应停止自动操作，由人确认 profile 和进程。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[cordis.patch.yml:25-29](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/cordis.patch.yml#L25-L29)
+**依据 1 · 源码核查**：[cordis.patch.yml:43-69](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/cordis.patch.yml#L43-L69)
 
-安装后的 profile 覆盖过程。
-
-```text
-# The installer then writes the row again into the profile's own patch layer
-# ($DSH_HOME/profiles/<profile>/cordis.patch.yml) between the
-# `# >>> dsh-windows-mcp …` markers, with `disabled: false` and `command:`
-# pointing at the installed executable — so later boots spawn the exe directly
-# and never touch the network or `uvx`.
-```
-
-**依据 2 · 源码核查**：[lib/index.js:497-506](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/index.js#L497-L506)
-
-关闭时工具分派应拒绝。
+退回禁用 bridge 的配置边界。
 
 <details>
-<summary>查看原文（10行）</summary>
+<summary>查看原文（27行）</summary>
 
 ```text
+- insert:
+    - id: windows-mcp-plugin
+      name: dsh-windows-mcp
+
+    - id: windows-mcp-bridge
+      name: "@deepseek-ai/dsh-mcp-client"
+      # Inert until the installer points it at a real executable (see above):
+      # a cold `uvx` resolve inside DSH's startup can hang the whole window.
+      disabled: true
+      config:
+        # Namespace for every tool name: mcp__windows__Screenshot, ...
+        serverName: windows
+        transport: stdio
+        # Only reached if someone re-enables this row without rewriting
+        # `command`; harmless, because by then the toolchain is installed.
+        command: uvx
+        args:
+          # Pinned for reproducibility. Replace with `windows-mcp` to float, or
+          # with an absolute path to a fixed interpreter (`python -m windows_mcp`).
+          - windows-mcp@0.8.8
+          - serve
+          # Curation: drop the tools DSH already covers (its own shell and file
+          # tools), plus `App`, which upstream only supports reliably on an
+          # English Windows install. Never list `ControlStatus` here — upstream
+          # keeps it unconditionally.
+          - --exclude-tools
+          - App,PowerShell,FileSystem
+```
+
+</details>
+
+**依据 2 · 源码核查**：[lib/index.js:343-400](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L343-L400)
+
+采用必须考虑会话继承、默认授权与有界决定。
+
+<details>
+<summary>查看原文（58行）</summary>
+
+```text
+function grantChainOf(session, lookup) {
+  const chain = [];
+  let current = session;
+  for (let depth = 0; depth < 8 && current !== null && current !== undefined; depth += 1) {
+    chain.push(current);
+    const header = current.header;
+    if (header?.origin !== "subagent" || typeof header.parentSession !== "string") break;
+    current = lookup(header.parentSession);
+  }
+  return chain;
+}
+
+/**
+ * True when the desktop is granted for this agent's conversation. The nearest
+ * explicit decision wins, so a session can also revoke what its lineage granted
+ * without touching the parent's switch. A conversation whose whole lineage has
+ * never decided falls back to the settings default; a call that names no session
+ * at all is refused, whatever that default says.
+ */
+function grantedFor(agent, lookup) {
+  const session = agent?.session;
+  if (session === null || session === undefined) {
+    const fallback = sessionIdOf(agent);
+    if (fallback === null) return false;
+    const explicit = sessionGrants.get(fallback);
+    return explicit === undefined ? defaultGrantEnabled() : explicit;
+  }
+  for (const candidate of grantChainOf(session, lookup)) {
+    const explicit = sessionGrants.get(candidate.id);
+    if (explicit !== undefined) return explicit;
+  }
+  return defaultGrantEnabled();
+}
+
+/** The grant for one session id, which is what the pill asks the route about. */
+function grantedForSessionId(sessionId, lookup) {
+  if (typeof sessionId !== "string" || sessionId === "") return false;
+  const session = lookup(sessionId);
+  if (session === null || session === undefined) {
+    const explicit = sessionGrants.get(sessionId);
+    return explicit === undefined ? defaultGrantEnabled() : explicit;
+  }
+  return grantedFor({ session }, lookup);
+}
+
+/**
+ * Record one session's decision. Re-inserting keeps the map in
+ * least-recently-written order and the bound keeps a page that mints session ids
+ * from turning the route into a memory amplifier.
+ */
+function rememberGrant(sessionId, enabled) {
+  sessionGrants.delete(sessionId);
+  sessionGrants.set(sessionId, enabled === true);
+  while (sessionGrants.size > MAX_GRANT_ENTRIES) {
+    const oldest = sessionGrants.keys().next().value;
+    if (typeof oldest !== "string") break;
+    sessionGrants.delete(oldest);
+  }
+```
+
+</details>
+
+**依据 3 · 源码核查**：[lib/index.js:595-605](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/index.js#L595-L605)
+
+关闭后的分派拒绝是退出检查依据。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+        if (typeof scoped?.tools?.guard !== "function") return;
         scoped.tools.guard((execution) => {
           const name = execution?.name;
           if (!isBridgedToolName(name)) return undefined;
-          if (!computerUse.enabled) {
-            return `Computer Use is switched off, so "${name}" is not available. Switch the Computer Use control back on in the composer and retry.`;
+          if (!grantedFor(execution?.agent, lookup)) {
+            return `Computer Use is switched off for this session, so "${name}" is not available. Switch the Computer Use control on in this session's composer and retry.`;
           }
           if (!isToolRevealed(execution?.agent, name)) {
             return `"${name}" is hidden to save context. Call ${REVEAL_TOOL_NAME} first (with no arguments it reveals every desktop capability), then retry.`;
@@ -1116,72 +1100,44 @@ export function installFailureDetail(lines) {
 
 </details>
 
-**依据 3 · 源码核查**：[lib/desktop-probe.js:111-125](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/desktop-probe.js#L111-L125)
+**依据 4 · 源码核查**：[lib/updater.js:417-438](https://github.com/helloHub1212/dsh-windows-mcp/blob/3eeb98423d26f5878b5ddf3f3abaa065e3e3f019/lib/updater.js#L417-L438)
 
-界面和显示缩放的关键验收信号。
+失败恢复需检查桥/版本状态分歧。
 
 <details>
-<summary>查看原文（15行）</summary>
+<summary>查看原文（22行）</summary>
 
 ```text
-  const notes = [];
-  if (
-    typeof uia === "number" &&
-    typeof handles === "number" &&
-    handles >= 3 &&
-    uia <= 1
-  ) {
-    notes.push(
-      `UI Automation enumerates ${uia} window(s) while ${handles} window handle(s) exist. Snapshot then prints "No windows found" / "No elements" and Move/Click/Type report success without acting: this is upstream ${UPSTREAM_UIA_ISSUE}, not an install, mirror, or sandbox problem. Signing out of the Windows session (or rebooting) usually restores UI Automation; the durable fix has to land upstream.`,
-    );
-  }
-  if (typeof scale === "number" && scale >= 1.25) {
-    notes.push(
-      `the primary display runs at ${Math.round(scale * 100)}% scaling. Upstream #607 divides absolute Move/Click coordinates by that factor, so requested positions land nearer the top-left than asked (1500,1100 arrives near ${Math.round(1500 / scale)},${Math.round(1100 / scale)} at this scale). Treat absolute coordinates as unreliable at non-100% scale and prefer reading positions from a Snapshot.`,
-    );
+  /** Rewrite the bridge to the given managed version and remember it. */
+  function activate(version) {
+    const executable = activeInstall({ active: version }, home)?.executable ?? null;
+    if (executable === null) {
+      return { ok: false, error: `Windows-MCP ${version} is not installed under ${root}` };
+    }
+    let bridge;
+    try {
+      bridge = writeBridge(executable);
+    } catch (error) {
+      bridge = { ok: false, error: String(error) };
+    }
+    if (bridge?.ok !== true) return { ok: false, error: bridge?.error ?? "the bridge row could not be written", bridge };
+    const state = readVersionsState(home);
+    const next = activateVersion(state, version);
+    try {
+      writeVersionsState(next, home);
+    } catch (error) {
+      return { ok: false, error: `the bridge was written, but the versions file could not be updated: ${String(error)}`, bridge };
+    }
+    installState.bridge = bridge;
+    return { ok: true, version, executable, bridge };
 ```
 
 </details>
-
-**依据 4 · 源码核查**：[lib/updater.js:403-413](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/lib/updater.js#L403-L413)
-
-单个安装尝试的超时及终止。
-
-<details>
-<summary>查看原文（11行）</summary>
-
-```text
-      });
-      timer = setTimeout(() => {
-        append("install timed out after 30 minutes");
-        try {
-          running.kill();
-        } catch {
-          /* already gone */
-        }
-        finish({ ok: false, error: "install timed out" });
-      }, INSTALL_TIMEOUT_MS);
-      if (typeof timer.unref === "function") timer.unref();
-```
-
-</details>
-
-**依据 5 · 作者声明**：[README.zh.md:236-240](https://github.com/helloHub1212/dsh-windows-mcp/blob/9347426f35a897b5904223abb19ae9e4f30a78a6/README.zh.md#L236-L240)
-
-作者列出不同观察与交互的失败边界。
-
-```text
-| `App` 工具报错或没反应 | 上游明确说它只在英文版 Windows 上可靠；本插件默认已排除。 |
-| DSH 启动明显变慢 | 桥不该占用启动时间：它出厂 `disabled: true`，只有安装后把 `command` 指到可执行文件才会启动。启动变慢说明**别的**行在引导期解析工具链——看 `windows_mcp_doctor` 打印的生效行。 |
-| 截图里的字看不清 | 把 `WINDOWS_MCP_SCREENSHOT_SCALE` 提到接近 `1.0`；上游截图上限是 1920×1080。 |
-| 点击位置偏了，或截图比屏幕小 | 截图被缩小了。出现缩放时 `Screenshot` 会打印 `Screenshot Coordinate Scale`：把图像像素坐标乘以这个系数再交给 `Click` / `Move` / `Scroll`；也可以把 `WINDOWS_MCP_SCREENSHOT_SCALE` 设为 `1.0`（慢一些，但像素与屏幕一致）。上游的 `Click` 没有落点预演，也没有窗口/区域约束。 |
-| 自己在动鼠标键盘时所有工具都报 `USER_CONTROL` | 上游把最近 10 秒内的物理输入视为你收回了控制权，会拒绝**全部**工具，包括 `Screenshot` / `Snapshot`，直到 `wait_seconds` 归零。把手离开鼠标键盘约十秒即可。 |
-```
 
 #### 缺口
 
-- 没有相同宿主版本的真实端到端观察和退出记录
-  **影响**：只支持观察结论及验收方案
-  **进一步探讨**：在可复位 Windows 会话比较屏幕结果、拒绝和重启后的桥状态，记录用户时间和实际请求
+- 没有同条件合格桌面任务的质量、总耗时和人工负担记录
+  **影响**：无法证明采用收益覆盖全周期负担
+  **进一步探讨**：固定公开任务与人工或API基线，计入失败重试与复核，并观察退出后是否仍有桌面副作用
 
 [返回分类](../../views/categories/OFFICE-OPERATIONS.md) · [返回首页](../../../README.md)

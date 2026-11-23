@@ -65,7 +65,7 @@
 | [Recruiting Copilot](#plugin-1294614772-root) | 将招聘 Skill、平台浏览器观察和本地招聘看板接入 DSH。 | [Q03](../../plugins/viy1204--recruiting-copilot/INSIGHT.md#research-q03) 先用独立工作区。 |
 | [Tencent Meeting CLI](#plugin-1203725733-root) | 基于 OAuth2 的腾讯会议命令行工具，支持会议、录制、纪要、报告及事件操作。 | [Q04](../../plugins/tencentcloud--tencentmeeting-cli/INSIGHT.md#research-q04) 小范围只读核身份/分页/原文，写和上传须具体授权；状态不明停并回GUI。 |
 | [WeLink DSH 插件](#plugin-1184366339-plugins-dsh-welink) | 在 DSH 中按需查看授权 WeLink 会话的日期，并在获准时读取或搜索有限消息。 | 先用虚构聊天与假后端，区分日期与正文许可；无法验证后端拒绝或结果去向时保留手工复制。 |
-| [Windows MCP 桌面集成](#plugin-1413849053-root) | 通过 DSH 的 MCP 客户端接入 Windows 桌面截图、窗口观察和输入操作。 | [Q05](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q05) 保留观察。 |
+| [Windows MCP 桌面集成](#plugin-1413849053-root) | 通过 DSH 的 MCP 桥连接 Windows 桌面工具，并提供会话开关、诊断和依赖版本管理。 | [Q06](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q06) 建议保持观察。 |
 | [公文全流程处理专家](#plugin-1306637593-root) | 在 DSH 中调用公文检查、修复与修订工具 | [Q04](../../plugins/linhut--gongwen-skill/INSIGHT.md#research-q04) 用虚构文档验证原件、取消与渲染。 |
 | [新诉讼可视化](#plugin-1294942686-root) | 把案件材料整理成有出处、可编辑和可打印的图表 | [Q04](../../plugins/miaoqichuan--new-litigation-visualization/INSIGHT.md#research-q04) 先以虚构材料试用时间轴，限制目标格式并保留复核。 |
 | [赤诚推送 chicheng-push](#plugin-1335382133-root) | 统一管理多种推送渠道，通过设置页、pushNotifier服务和HTTP API发送任务通知。 | 观察，继续从本机认证、最小凭证/目标与脱敏内容及明确受理证据入手。 |
@@ -922,15 +922,15 @@
 
 ## [Windows MCP 桌面集成](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md)
 
-[![GitHub ★ 978](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=978&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 752,551](https://img.shields.io/static/v1?label=npm+30d&message=752%2C551&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
+[![GitHub ★ 2,200](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2%2C200&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/helloHub1212/dsh-windows-mcp) [![npm 30d 826,247](https://img.shields.io/static/v1?label=npm+30d&message=826%2C247&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp) [![最新发布 2026-11-15](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-15&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-windows-mcp)
 
-> **用途**：需要检查没有专用 API 的 Windows 应用界面的 DSH 使用者，可用公开样例核对截图、窗口标题和状态。
+> **用途**：适用对象是需要检查没有稳定 API 的 Windows 应用、且能准备独立测试桌面的 DSH 使用者。一个合格观察任务应同时给出当前窗口的可读描述与对应画面，由使用者核对目标，而不能只接受工具返回成功。原办法是人工截图并交接窗口状态，或自己维护 Windows-MCP 与宿主桥的配置。本包把桥配置、诊断、依赖版本管理和会话控制放入宿主，减少的是这些接线工作的分散，而非证明桌面任务更快。
 
-> **亮点**：[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01) 和 [Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 显示，宿主助手可在会话里逐步取得桌面工具，同时由插件维护桥和依赖。新版释放旧工具限制并把 pre-step 决策交回宿主，修正了重新启用后无法揭示和会话可能中断的路径。
+> **亮点**：[Q01](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q01) 显示，本包把官方桌面桥、依赖维护和诊断接到 DSH；[Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 与 [Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 进一步将授权按会话判定，并将工具可见性和分派拒绝分层。增量属于宿主集成及权限组织，Windows 操作能力仍归上游，节时收益没有实测。
 
-> **思考**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 显示，截图、窗口识别与输入效果分别受 DPI、UIA 和宿主条件影响。[Q04](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q04) 的重装保护依赖可见进程扫描，失败时仍可能开始安装。
+> **思考**：[Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 的有界决定表可能淘汰显式撤销，使判定回落到默认或祖先授权；[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 的认证不可观察配置仍可处理写入。两者是源码边界，未复现越权；它们使“会话开关就是完整安全边界”的主张不能直接成立。
 
-> **建议**：[Q03](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q03) 提出在诊断与窗口识别冲突时，保持只观察并让操作员确认同一目标，再允许交互。用实际窗口变化、错误落点与额外步骤比较这项待验证设计。
+> **建议**：[Q04](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q04) 提出将诊断冲突作为观察到交互的分阶段门槛；[Q02](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md#research-q02) 提出将明确撤销与可淘汰的允许缓存分开。二者均未验证，应分别比较错目标操作、撤销后分派、误拦及额外人工；若改善不能抵偿新增负担，就退回简单禁用桥和人工确认。
 
 [查看完整分析](../../plugins/hellohub1212--dsh-windows-mcp/INSIGHT.md) · [返回表格](#category-index)
 
@@ -986,4 +986,4 @@
 
 ## 更新时间
 
-2026-11-19
+2026-11-23

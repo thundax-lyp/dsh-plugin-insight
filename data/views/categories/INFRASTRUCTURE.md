@@ -56,7 +56,7 @@
 | [DSH Full Remote](#plugin-1334709708-root) | 以设备认证代理开放同一DSH宿主完整Web特权访问，并提供跨会话远程待答控制台。 | [Q05](../../plugins/juanwang-buaa--dsh-full-remote/INSIGHT.md#research-q05)可信个人设备/隔离Host受限试用；生产全权限长期暴露先观察，核撤销和不明提交后才扩大。 |
 | [DSH HoneyBee / DSHB](#plugin-1355618827-packages-dshb) | 在 DSH 中管理 SSH/Docker 节点并路由文件、命令与终端，提供工作区指令和多实例会话同步。 | [Q03](../../plugins/artenx--dsh-honeybee--packages-dshb/INSIGHT.md#research-q03) 保持观察。 |
 | [DSH Interconnect](#plugin-1333084899-root) | 通过持久 WebSocket 连接 DeepSeek Harness 实例，提供配对、会话发现和消息交接。 | [Q04](../../plugins/chinesezjc--dsh-interconnect/INSIGHT.md#research-q04) 用隔离双实例合成消息试用，超时先核对目标，不盲目重发。 |
-| [DSH Market](#plugin-1333807290-root) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | 先在复制的 Web profile 装一个已知来源的非关键插件，对照目标包和实际激活，确认能恢复副本。 |
+| [DSH Market 插件市场](#plugin-1333807290-root) | 在 DSH 中浏览、搜索、安装和更新社区插件，提供 AI 查找、配置备份与恢复入口。 | [Q09](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q09) 先复制Web profile，留关键数据副本，只改一个非关键包并固定来源版本；查落盘、激活和真实功能，验证能恢复。 |
 | [DSH MCP Manager](#plugin-1333306299-root) | 在 DeepSeek Harness 中管理 OAuth 或 stdio MCP 服务、工作区工具范围及按需工具。 | 关注已知两个工作区在 native 显示的工具集能否正确分开，使用无凭据且只读的受控服务。 |
 | [DSH Multi Subscription Hub](#plugin-1334025844-root) | 集中订阅线路、账号池和模型运行配置 | [Q04](../../plugins/aa728848--dsh-chatgpt-subscription/INSIGHT.md#research-q04) 只观察已允许线路，隔离账号及原profile快照。 |
 | [DSH Plugin Hub](#plugin-1340244547-root) | 在 DeepSeek Harness 设置中浏览社区插件，管理安装、更新、卸载和任务日志。 | [Q04](../../plugins/dshplugin--dsh-plugin-hub/INSIGHT.md#research-q04) 建议先用一次性 Web profile 查一个已知仓库并核对包名、版本和已装记录。 |
@@ -945,17 +945,17 @@
 
 <a id="plugin-1333807290-root"></a>
 
-## [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md)
+## [DSH Market 插件市场](../../plugins/dsh-market--dsh-market/INSIGHT.md)
 
-[![GitHub ★ 12,571](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C571&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,289,262](https://img.shields.io/static/v1?label=npm+30d&message=1%2C289%2C262&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+[![GitHub ★ 13,234](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C234&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,340,541](https://img.shields.io/static/v1?label=npm+30d&message=1%2C340%2C541&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
-> **用途**：常驻 DSH Web 且维护多个社区包的用户，可以从市场页核对候选兼容范围、安装来源和更新状态。
+> **用途**：维护多个社区包的 DSH 用户需要把“找到名字”推进到“这个来源的这个版本能装入当前 profile，并实际提供所需功能”。原生 Discover 或目录网页足够满足简单找包；市场的增量是将候选兼容声明、安装来源、已装状态和后续更新/恢复放在同一交互。bundle patch 挂载 dshmarket，package 导出宿主 lib/index.js 与客户端 client/client.js，入口注入 webServer/loader 后按宿主能力选择运行时，说明它确实是可加载插件，不只是独立目录。
 
-> **亮点**：市场把候选包声明、当前宿主和安装后的激活结果带入同一个交互。候选筛选只隐藏明确冲突，安装回执再区分已落盘、已激活和需要后续处置。后台提醒只把已装包的具体更新带到用户面前，由用户决定是否变更。[Q01](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q01) [Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) [Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04)
+> **亮点**：[Q01](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q01)、[Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03) 与 [Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 将来源、当前profile、激活与中断恢复放进同一插件管理任务。[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) 的自然语言入口和 [Q07](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q07) 的固定意图等待机制扩大交互方式，但不替代用户对真实功能的核对。
 
-> **思考**：安装成功回执、管理器状态和插件实际功能可能在不同时间生效。Desktop 拆换更新仍可能先移除旧包，补偿日志依赖下次启动、正确 profile 和可用来源，配置快照的恢复范围也有限。[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) [Q03](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q03)
+> **思考**：[Q02](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q02) 的模型只能从本地截断候选中挑选，名字合法不代表适合；[Q04](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q04) 的请求超时不代表底层写入停止，[Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05) 的配置恢复不覆盖全部插件数据。发现、落盘、激活和业务成功仍必须分层判断。
 
-> **建议**：在待更新项上同时保留来源、宿主声明和实际功能探针，可能缩短更新后排障时间。以已装包和相同任务做对照，测量首次安装、受控失败和退回原状态的总时间；若误报增加或合格率与排障时间持平，则不支持该设计。[Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05)
+> **建议**：[Q09](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q09) 提出把AI相关理由、固定来源/版本和功能探针组成任务凭证的未验证设计。以同任务比较装错、合格率、排障总时间和请求成本；若探针不覆盖核心用途、误报增加或总负担不降，则不支持该设计。
 
 [查看完整分析](../../plugins/dsh-market--dsh-market/INSIGHT.md) · [返回表格](#category-index)
 
@@ -3859,4 +3859,4 @@
 
 ## 更新时间
 
-2026-11-19
+2026-11-23

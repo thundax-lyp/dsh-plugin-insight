@@ -1,34 +1,34 @@
 {
     "repository": "WNLUO/dsh-mobile-plugin",
     "repository_id": 1414092901,
-    "captured_at": "2026-11-17T02:10:05.734Z",
-    "window_start": "2026-10-18T02:10:05.734Z",
-    "stars": 71,
-    "pushed_at": "2026-11-16T21:38:09Z",
+    "captured_at": "2026-11-23T02:28:08.405Z",
+    "window_start": "2026-10-24T02:28:08.405Z",
+    "stars": 242,
+    "pushed_at": "2026-11-22T18:25:55Z",
     "issues": {
         "open": 0,
-        "closed": 14,
-        "created_30d": 14,
-        "closed_30d": 14,
-        "updated_30d": 14
+        "closed": 26,
+        "created_30d": 26,
+        "closed_30d": 26,
+        "updated_30d": 26
     },
     "errors": [],
     "archived": false,
     "npm": {
         "package_name": "dsh-mobile-plugin",
-        "captured_at": "2026-11-14T10:32:50.352Z",
-        "window_start": "2026-10-15",
-        "window_end": "2026-11-13",
-        "downloads_30d": 99158,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/dsh-mobile-plugin",
+        "captured_at": "2026-11-23T01:46:21.804Z",
+        "window_start": "2026-10-24",
+        "window_end": "2026-11-22",
+        "downloads_30d": 253905,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-24:2026-11-22/dsh-mobile-plugin",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-10T15:08:08.744Z",
-            "captured_at": "2026-11-14T10:32:50.352Z",
+            "captured_at": "2026-11-23T01:46:21.804Z",
             "source_url": "https://registry.npmjs.org/dsh-mobile-plugin",
             "error": null,
-            "latest_version": "0.5.52",
-            "latest_published_at": "2026-11-14T08:27:51.191Z",
+            "latest_version": "0.5.97",
+            "latest_published_at": "2026-11-22T18:32:26.800Z",
             "latest_error": null
         }
     }

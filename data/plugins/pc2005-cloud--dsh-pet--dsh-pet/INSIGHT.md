@@ -1,18 +1,18 @@
-# dsh-pet
+# DSH Pet 桌宠与任务提醒
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
 
-源码版本：[ef174be](https://github.com/PC2005-cloud/dsh-pet/tree/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet)
+源码版本：[fb38ce6](https://github.com/PC2005-cloud/dsh-pet/tree/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet)
 
 <!-- BEGIN META -->
-[![GitHub ★ 6,344](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C344&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 588,634](https://img.shields.io/static/v1?label=npm+30d&message=588%2C634&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-11-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet)
+[![GitHub ★ 6,621](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6%2C621&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/PC2005-cloud/dsh-pet) [![npm 30d 594,280](https://img.shields.io/static/v1?label=npm+30d&message=594%2C280&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet) [![最新发布 2026-11-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-pet)
 <!-- END META -->
 
-> **功能**：在 DeepSeek Harness 内显示互动桌宠，提供活动提醒、余额、待办、语音和闲聊。
+> **功能**：在 DSH 中显示桌宠、任务提醒、待办、余额与聊天，并可连接长期记忆和语音。
 
-> **亮点**：[Q01](#research-q01) 将审批事件、系统通知与回到原会话的操作接起来。[Q02](#research-q02) 在同一插件生命周期内装配路由和回收等待，但实际浏览器送达受权限与运行环境约束。
+> **亮点**：[Q01](#research-q01) 将宿主事件、浏览器通知与会话回跳连接，适合检验长任务回查；[Q03](#research-q03) 与 [Q04](#research-q04) 将关系摘要和原子细节并行接入聊天，但仅确认机制，未证明问答质量提高。
 
-> **主要限制**：[Q03](#research-q03) 启用长期记忆可把一轮双向文字传给所设服务，语音与天气还有各自的出站链。[Q04](#research-q04) 隐藏界面后的后台状态须以功能开关和实际网络核对。
+> **主要限制**：[Q04](#research-q04) 的主题优先预算可能完全排除关键原子细节；[Q03](#research-q03) 还存在本地历史和远端写入不同步的留存边界。[Q01](#research-q01) 的提醒送达受浏览器权限和页面状态限制，不能将宠物存在等同于任务已办结。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 拉回用户时能找到哪个会话？](#detail-section-11)
-  - [Q02 · 安装后会注册什么，卸载和断连释放什么？](#detail-section-12)
-  - [Q03 · 可选聊天、长期记忆、语音和天气发送哪些数据？](#detail-section-13)
-  - [Q04 · 待办与周期任务如何影响持续成本和撤出？](#detail-section-14)
-  - [Q05 · 如何检验通知改善了回查？](#detail-section-15)
+  - [Q01 · 审批或完成提醒如何回到正确会话？](#detail-section-11)
+  - [Q02 · 组件加载、请求断连和卸载分别回收什么？](#detail-section-12)
+  - [Q03 · 聊天记忆如何召回、写入并隔离宠物？](#detail-section-13)
+  - [Q04 · 双层召回是否必然同时保留概括和细节？](#detail-section-14)
+  - [Q05 · 待办、轮询、天气和语音如何增加持续负担？](#detail-section-15)
+  - [Q06 · 哪些人可以先试提醒，如何检验记忆方向？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：适合在 DSH Web 发起会遇到审批的长任务、随后切去做别的事的人。接到提醒后可检查审批来自哪条会话，并在原页面核对决策。
+> **用途**：适用场景是在 DSH Web 发起需要审批或选择的长任务后，用户切去做别的工作，接到提醒时能认出来源并回到原会话。合格结果包含正确会话归属、实际通知到达及可核对的原始审批内容；宠物动画或“任务完成”文字不单独算交付。原办法是反复看原生会话或使用宿主已有提醒，本包的可见增量是把会话事件、系统通知和回跳串在同一入口，是否优于原生仍需同条件对照。
 
-[Q01](#research-q01) 原生列表和原会话仍是审批及结果的验收入口。相对手工回看或原生提醒，插件的可核查增量是把带会话来源的通知送到浏览器系统表面，并提供返回动作。
+原生会话查看与提醒、人工维护待办和单独聊天；应用已有可靠提醒时不必仅为桌宠新增常驻依赖。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +52,75 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-| --- | --- | --- |
-| 会话提醒 | 后台审批时提醒并尝试回到会话 | 受权限、事件和导航依赖限制 |
-| 待办和界面 | 条件提醒、配置与交互 | 无监听、宠物睡眠或不可展示会影响本次提醒 |
-| 语音和长期记忆 | 定向增强闲聊 | 按提供方及端点产生独立外部请求 |
+|---|---|---|
+| 桌宠界面与任务状态 | 展示活动、气泡和动画 | 状态不是实际任务办结凭证 |
+| 系统通知与会话回跳 | 长任务审批和完成回查 | 浏览器权限、焦点和导航条件生效 |
+| 聊天及长期记忆 | 将用户输入与历史接入模型 | 可选远端服务接收双向文字，预算偏向主题 |
+| 待办提醒 | 提示到期事项 | 无在线监听不标已提醒，不保证系统已展示 |
+| 余额与碎碎念循环 | 按配置刷新信息或生成文案 | 需启用及相应模型/凭据，存在持续请求 |
+| 语音与天气 | 识别、播报及环境辅助 | 对应服务、凭据与出站条件需分别核对 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-| --- | --- | --- | --- |
-| 可装载所声明 Web 客户端和注入的 DSH、Node >=22.12.0 | 组件启动 | 提供宿主与页面环境 | 以实际宿主和发行包核对 |
-| 浏览器系统通知权限与会话导航 | 代表性试用 | 接收弹窗并回到会话 | 缺授权时无弹窗，缺导航时可能只聚焦 |
-| 模型、记忆地址、语音凭据 | 对应功能按需 | 生成对话、召回或识别与合成 | 试用提醒时单独关闭或检查，不以配置声明当有效 |
-| 页面或可消费状态的监听 | 计划提醒按需 | 消费待办提醒 | 无监听时本次不标已提醒 |
+|---|---|---|---|
+| 声明服务齐备的 DSH、Node >=22.12.0 | 组件必需 | 注入宿主及客户端能力 | 以实际加载核对，版本声明不是本次验收 |
+| 浏览器通知权限和会话导航 | 提醒回查需要 | 展示弹窗、返回来源会话 | 未授权无弹窗，缺导航可能仅聚焦 |
+| 监听端与可发声宠物 | 待办提醒需要 | 消费到期状态 | 无监听不推进提醒时刻 |
+| PowerContext地址和对应配置 | 该记忆功能需要 | 两层检索及双向文字写入 | 失败回退本地请求，远端留存另查 |
+| 模型、语音凭据与天气服务 | 对应功能按需 | 闲聊、语音和环境信息 | 各链独立失败与降级，不是通知启动必要条件 |
+
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-| --- | --- | --- |
-| 准备 | 在独立 profile 固定包和宿主，审查开关和权限 | 清楚区分提醒与外部能力 |
-| 触发 | 用户发起一个可控审批事件后切到别处 | 权限满足时收到对应提醒 |
-| 验收 | 点击回到会话，对照真实审批并观察请求 | 误跳或旁路请求则退回原生视图 |
-| 退出 | 从 profile 解除挂载并核对未结束工作和数据 | 检查命令、路由、进程及额外服务记录 |
+|---|---|---|
+| 准备 | 使用者建临时profile，检查注入与附加开关 | 无不期望的模型、记忆或语音请求 |
+| 触发 | 两条测试会话分别产生审批和后台活动 | 事件来自已知会话，不能误报团队完成 |
+| 回查 | 用户点通知并核对原审批 | 返回正确会话，失败则回原生入口 |
+| 记忆实验 | 维护者独立固定主题/原子命中做预算比较 | 回答的细节有真实依据，不能只看两路请求成功 |
+| 退出 | 使用者解除挂载并核对监听、路由与留存 | 等待已收束，远端数据另行确认 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-| --- | --- | --- | --- |
-| 首次使用 | 宿主、包和浏览器资源，量未知 | 核查兼容环境、权限及数据流开关 | 版本兼容仍待证 |
-| 持续使用 | 媒体、轮询、可选模型与服务费用未知 | 留意误报、清理待办、核对模型及凭据 | 合格通知任务的净时间未知 |
-| 失败恢复 | 重试与额外模型费用未知 | 查权限、事件归属及外部服务 | 仅凭弹窗无法确认任务结束 |
-| 退出 | 本地状态与远端记录占用未知 | 分开卸载、清理留存与核查在途操作 | 未查实际恢复用时 |
+|---|---|---|---|
+| 首次使用 | 宿主、插件和媒体资源，金额未知 | 配置权限、开关与临时profile | 实际兼容与耗时未知 |
+| 持续使用 | 媒体、轮询与可选模型/语音/记忆请求 | 处理误报、核对来源和数据发送 | 每合格回查成本未知 |
+| 失败恢复 | 重试请求和状态留存 | 查权限、会话和外部服务 | 远端capture不随本地清历史撤回 |
+| 退出 | 本地与远端留存空间 | 停挂载、清理数据及核对在途任务 | 完整退出时间未知 |
+
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-| --- | --- | --- |
-| 通知回查 | 条件通知、会话来源及跳转入口 | 系统后台的送达率与正确回跳率 |
-| 待办提醒 | 选到期项和发声宠物，写入气泡与标记 | 暂无监听时的实际恢复体验 |
-| 按需扩展 | 有记忆、模型与语音的独立调用条件 | 服务时延、成本及端到端收益 |
+|---|---|---|
+| 审批回查 | 通知带来源会话并尝试导航 | 到达率、误报和真实回跳效果 |
+| 记忆补充 | 并行检索主题/原子并装入正文 | 服务端质量、细节保留与问答改善 |
+| 生命周期 | 断连信号与卸载资源清理明确 | 远端工作是否取消及历史删除效果 |
+| 持续负担 | 功能各有触发条件和出站链 | 金额、总时间与净收益 |
 
-> **思考**：[Q03](#research-q03) 启用长期记忆可把一轮双向文字传给所设服务，语音与天气还有各自的出站链。[Q04](#research-q04) 隐藏界面后的后台状态须以功能开关和实际网络核对。
+> **思考**：[Q04](#research-q04) 的主题优先预算可能完全排除关键原子细节；[Q03](#research-q03) 还存在本地历史和远端写入不同步的留存边界。[Q01](#research-q01) 的提醒送达受浏览器权限和页面状态限制，不能将宠物存在等同于任务已办结。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 将审批事件、系统通知与回到原会话的操作接起来。[Q02](#research-q02) 在同一插件生命周期内装配路由和回收等待，但实际浏览器送达受权限与运行环境约束。
+> **亮点**：[Q01](#research-q01) 将宿主事件、浏览器通知与会话回跳连接，适合检验长任务回查；[Q03](#research-q03) 与 [Q04](#research-q04) 将关系摘要和原子细节并行接入聊天，但仅确认机制，未证明问答质量提高。
 
-[Q02](#research-q02) 路由作用域传递中止信号，卸载后回收等待与 Helper。配置队列约束同进程路径。[Q03](#research-q03) 召回有超时降级，历史写入后异步捕获，网络交付与本地显示有独立状态。
+[Q02](#research-q02) 把断连等待、配置串行队列和卸载资源归属分开，有利于定位责任；移植需宿主effect/路由契约。[Q03](#research-q03) 召回失败不阻塞对话，但等待预算与真实取消是不同层。[Q04](#research-q04) 固定层顺序显示“限制总量”不能保证信息多样性。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q03](#research-q03) 启用长期记忆可把一轮双向文字传给所设服务，语音与天气还有各自的出站链。[Q04](#research-q04) 隐藏界面后的后台状态须以功能开关和实际网络核对。
+[Q04](#research-q04) 的主题优先预算可能完全排除关键原子细节；[Q03](#research-q03) 还存在本地历史和远端写入不同步的留存边界。[Q01](#research-q01) 的提醒送达受浏览器权限和页面状态限制，不能将宠物存在等同于任务已办结。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q04](#research-q04) 对已有兼容 DSH Web 的用户，可在临时 profile 以一个无敏感内容的审批事件试用。先查相关开关与浏览器权限，再检查弹窗、点击和实际原会话，并观察是否出现预期之外的请求。若任一关键条件失败，解除挂载并回到原生会话。
+[Q06](#research-q06) 只在临时profile试一项无敏感内容审批提醒，先关闭无关聊天记忆与语音，核对实际请求和浏览器权限。点通知后回原界面确认；误跳、误报或不期望请求就解除挂载。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +128,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持 DSH 宿主和 Web 接入、条件通知、异步长期记忆和可选外部能力。真实送达、兼容性、供应商与实际收益待验证。
+固定组件通知、资源回收与双层记忆装配有源码依据；服务端效果及真实送达未验证；分层预算假设未验证。
 
-- 已检查：作者 README、包清单、源码路径 dsh-pet/src/host/plugin/session-watch.ts、dsh-pet/src/client/app.ts、dsh-pet/src/client/notify.ts、dsh-pet/package.json、dsh-pet/cordis.patch.yml、dsh-pet/tsdown.config.mjs、dsh-pet/src/host/index.ts、dsh-pet/src/host/plugin/http-route.ts、dsh-pet/src/host/plugin/lifecycle.ts、dsh-pet/src/host/plugin/chat-memory.ts、dsh-pet/src/host/memory/powercontext.ts、dsh-pet/src/host/uapi.ts、dsh-pet/src/host/voice/builtin-deepseek-asr.ts、dsh-pet/src/host/plugin/todo-reminders.ts、dsh-pet/src/host/plugin/loops.ts 及固定范围 inventory；组件：dsh-pet。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 dsh-pet/package.json、dsh-pet/cordis.patch.yml、dsh-pet/tsdown.config.mjs、dsh-pet/src/host/index.ts、dsh-pet/src/host/plugin/session-watch.ts、dsh-pet/src/client/notify.ts、dsh-pet/src/host/plugin/http-route.ts、dsh-pet/src/host/plugin/lifecycle.ts、dsh-pet/src/host/plugin/chat-memory.ts、dsh-pet/src/host/memory/powercontext.ts、dsh-pet/src/host/plugin/todo-reminders.ts、dsh-pet/src/host/plugin/loops.ts、dsh-pet/src/host/uapi.ts、dsh-pet/src/host/voice/builtin-deepseek-asr.ts 及固定范围 inventory；组件：dsh-pet。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查固定子包的 DSH Web 通知、路由和相关出站链，覆盖新增待办、Weather、PowerContext 和 ASR 的入口及限制。未运行目标或安装成品，独立桌面实际运行、语音效果和远端实现留在范围外。
-- 下一步：[Q05](#research-q05) 用两条可控审批会话分别试原生和插件，在限定权限下记录系统显示、回跳、误报和请求。启用每项附加能力时独立重测。
+- 边界：固定 dsh-pet 子包的入口、Web通知、路由、生命周期、聊天/PowerContext召回捕获、待办、轮询、天气与ASR关键链路；不将整个仓库或独立桌面模式当作已验收。
+- 下一步：仅源码与原始材料读取和本工程装配。未运行目标、测试、真实宿主、独立桌面、模型或外部记忆服务；无本轮费用和任务效果实测。
 
 **分析版本**
 
 - **仓库**：[PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet)
-- **版本号**：0.4.9（[固定提交 ef174be](https://github.com/PC2005-cloud/dsh-pet/tree/ef174beecc79df76baf9ca06ed152237bbb96875)）
-- **版本日期**：2026-11-16（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.4.9（[固定提交 fb38ce6](https://github.com/PC2005-cloud/dsh-pet/tree/fb38ce620576f5ed3735a99536d2b1a4a9eb313f)）
+- **版本日期**：2026-11-17（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +147,9 @@
 
 <a id="innovation"></a>
 
-[Q05](#research-q05) 在两条已知事件的会话中对照原生视图和系统通知。若缩短正确返回会话的延迟，同时控制误报和请求数，才支持该场景下的常驻提醒。
+[Q04](#research-q04) 推导出为主题与原子各留最小预算再合并的未验证设计，用固定命中对照关系与细节问答、噪声和token；若遗漏未降或噪声上升则否定。[Q06](#research-q06) 的通知比较独立检查正确回查，不将两个方向的收益混算。
 
-[Q05](#research-q05) 用两条可控审批会话分别试原生和插件，在限定权限下记录系统显示、回跳、误报和请求。启用每项附加能力时独立重测。
+仅源码与原始材料读取和本工程装配。未运行目标、测试、真实宿主、独立桌面、模型或外部记忆服务；无本轮费用和任务效果实测。
 
 <a id="detail-section-9"></a>
 
@@ -159,47 +168,47 @@
 | .mjs | test | 6 | 913 | 826 | 52 | — |
 | .md | test | 1 | 15 | — | — | 183 |
 | .js | test | 1 | 17 | 16 | 0 | — |
-| .ts | test | 228 | 39108 | 32234 | 3287 | — |
-| .ts | source | 418 | 52520 | 35414 | 13864 | — |
+| .ts | test | 228 | 39169 | 32292 | 3288 | — |
+| .ts | source | 418 | 52632 | 35486 | 13895 | — |
 
 </details>
 
 **活跃度**
 
-[![Issue 未关闭 7](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=7&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 174](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=174&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+created%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z) [![近30天关闭 170](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=170&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-18T02%3A10%3A05.734Z..2026-11-17T02%3A10%3A05.734Z)
+[![Issue 未关闭 25](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=25&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 161](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=161&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+created%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z) [![近30天关闭 138](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=138&color=737b86&logo=github)](https://github.com/PC2005-cloud/dsh-pet/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z)
 
 
 
-统计日期：2026-11-17。
+统计日期：2026-11-23。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：只启用 DSH Web 宠物的提醒，用户能否在离开页面后回到需要处理的会话？启用其他功能会增加哪些资源、数据边界和退出成本？
+**插件研究总目标**：用户离开DSH页面后，桌宠能否提供可信的任务回查，同时使聊天记忆与后台扩展保持可理解、可退出？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 拉回用户时能找到哪个会话？
+### Q01 · 审批或完成提醒如何回到正确会话？
 
 **研究主题**：场景与需求、功能与机制、贡献与相对优势
 
 #### 完整回答
 
-适用于在 DSH Web 发起一个需要审批或交互的任务、随后去做其他事的用户。用户希望收到提醒后能回到正确会话，在原有界面核对审批内容和结果。原办法是定期开原生会话列表或依赖原生提醒；插件提供浏览器系统通知及从会话事件携带的会话标识，浏览器及工作区支持时可以减少一次再定位。现有宿主是否已经提供同等可靠的通知路径仍待对照。
+适用场景是在 DSH Web 发起需要审批或选择的长任务后，用户切去做别的工作，接到提醒时能认出来源并回到原会话。合格结果包含正确会话归属、实际通知到达及可核对的原始审批内容；宠物动画或“任务完成”文字不单独算交付。原办法是反复看原生会话或使用宿主已有提醒，本包的可见增量是把会话事件、系统通知和回跳串在同一入口，是否优于原生仍需同条件对照。
 
-宿主 session/event 分支先以会话来源排除委派与子代理，再为审批等事件产生带会话标识的帧。完成类事件延迟判断活动，避免主回合结束时误报还有成员工作的团队。额外 agent/error 事件没有会话归属，无法从通知明确跳回哪条会话。客户端从 /state 变化转给通知入口，根据总开关、页面聚焦和系统权限决定展示。点击若有会话标识则尝试工作区定位，缺服务或跳转抛错仍会尝试聚焦窗口，无法保证焦点或会话已恢复。
+宿主 session/event 先排除子智能体和委派来源，再将审批等事件归成带 sessionId 的帧；完成事件额外延迟检查团队活动，避免主回合结束就误称全队完成。没有会话归属的 agent/error 不能保证回跳定位。浏览器从状态帧进入通知处理，受总开关、当前焦点策略及 Notification 权限约束；点击先尝试 openSession，再聚焦，导航缺失或异常时仍可能只叫回窗口。页面关闭后的可靠送达不由这条浏览器链路保证。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/session-watch.ts:261-311](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/session-watch.ts#L261-L311)
+**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/session-watch.ts:261-301](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/session-watch.ts#L261-L301)
 
-过滤分支、延迟完成、帧来源及监听清理。
+事件归属过滤、完成延迟和带会话帧。
 
 <details>
-<summary>查看原文（51行）</summary>
+<summary>查看原文（41行）</summary>
 
 ```text
   // 系统通知：监听 DSH 宿主事件生成通知帧入队，浏览器轮询 /state 读到后弹 toast（帧契约与
@@ -243,55 +252,16 @@
       // eslint-disable-next-line @typescript-eslint/no-explicit-any -- agent/error 载荷无公开类型，且低版本 DSH 可能不带 error 字段，只能 any 后按可选链取 payload?.error
       (payload: any) => {
         pushNotifyFrame(agentErrorFrame(payload?.error));
-      },
-    );
-    return () => {
-      // 卸载时清掉待查的定时器：否则插件已卸载，到点还去写一次 S
-      for (const t of notifyActivityTimers.values()) clearTimeout(t);
-      notifyActivityTimers.clear();
-      sessionDispose();
-      errorDispose();
-    };
-  }, 'dsh-pet: notify frames');
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-pet/src/client/app.ts:100-116](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/client/app.ts#L100-L116)
+**依据 2 · 源码核查**：[dsh-pet/src/client/notify.ts:121-175](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/client/notify.ts#L121-L175)
 
-客户端注册实际通知与会话跳转入口。
-
-<details>
-<summary>查看原文（17行）</summary>
-
-```text
-      // 系统通知：host 把通知帧写进 /state 的 sections.notify，统一轮询发现变化后弹 toast。
-      ctx.effect(
-        () =>
-          initNotify({
-            // 惰性取服务：它可能晚于本插件注册；缺失时退化为只把窗口叫回前台。
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any -- DSH 注入服务无静态类型
-            openSession: (sessionId: string) => (ctx as any).get?.('uiWorkspace')?.openSession?.(sessionId),
-            // 通知标题用会话名：会话列表里那一行的 title；空白会话 / 未命名会话取到空串就返回 undefined。
-            sessionTitle: (sessionId: string) => {
-              // eslint-disable-next-line @typescript-eslint/no-explicit-any -- DSH 注入服务无静态类型
-              const row = (ctx as any).get?.('sessions')?.list?.getSnapshot?.()?.byId?.[sessionId];
-              const name = typeof row?.title === 'string' ? row.title.trim() : '';
-              return name || undefined;
-            },
-          }),
-        'dsh-pet: notifications',
-      );
-```
-
-</details>
-
-**依据 3 · 源码核查**：[dsh-pet/src/client/notify.ts:121-153](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/client/notify.ts#L121-L153)
-
-跳转、窗口回焦与通知权限。
+跳转失败降级及浏览器通知门槛。
 
 <details>
-<summary>查看原文（33行）</summary>
+<summary>查看原文（55行）</summary>
 
 ```text
 export function jumpToSession(sessionId?: string): void {
@@ -327,80 +297,62 @@ function toast(title: string, body?: string, icon?: string, sessionId?: string):
   // 开关关着时维持「聚焦不打扰」；打开后照常弹，不再看页面是否活跃。
   if (!shouldRemind(notifyWhenFocused, isPageActive())) return;
   if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
-```
-
-</details>
-
-**依据 4 · 源码核查**：[dsh-pet/src/client/notify.ts:224-245](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/client/notify.ts#L224-L245)
-
-轮询变化进入通知，初始化读取用户开关。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-/** 一帧通知 → toast；由容器统一轮询 `/state` 发现 `sections.notify` 变化后调用。 */
-export function notifyFromFrame(frame: unknown): void {
-  toastFrame(frame as NotifyFrame);
+  console.log('[dsh-pet] 【弹窗】' + title + (body ? '：' + body : ''));
+  try {
+    const opts: NotificationOptions = {};
+    if (body) opts.body = truncate(body);
+    if (icon) opts.icon = icon;
+    // 点击行为与真实事件通知共用 wireNotificationClick；图标加载失败只降级为无图标，不会关闭弹窗。
+    const n = new Notification(title, opts);
+    wireNotificationClick(n, sessionId);
+  } catch {
+    /* 个别桌面壳在构造时抛错：忽略，不打断业务。 */
+  }
 }
 
 /**
- * 初始化通知引擎：记住会话跳转器、读总开关、兜底申请权限并跟踪页面聚焦；不做轮询。
- * @param navigator - 会话跳转与命名服务；不传时点击只叫窗口、标题回落固定文案。
- * @returns 释放函数，摘掉聚焦监听。
+ * 帧 → toast 并发出；未知帧静默跳过，帧里的 sessionId 一并透传给点击行为。
+ * 标题优先用会话名：同一个宿主上可以并行跑多条会话，通知里必须能认出是哪一条回来了。
  */
-export function initNotify(navigator?: SessionNavigator): () => void {
-  sessionNavigator = navigator;
-  // 总开关读成品配置（拉取失败不阻塞，默认开启）；之后由设置页保存后 reloadNotifications 重读。
-  void readNotifySettings().then((settings) => {
-    notifyEnabled = settings.enabled;
-    notifyWhenFocused = settings.whenFocused;
-    if (typeof Notification !== 'undefined' && settings.enabled && Notification.permission === 'default') {
-      // 兜底申请；无手势时浏览器可能压制，真正的申请在设置页开关或按钮点击处。
-      void requestNotificationPermission();
-    }
-  });
-  return initFocusTracking();
+function toastFrame(frame: NotifyFrame): void {
+  const sessionId = typeof frame.sessionId === 'string' ? frame.sessionId : undefined;
+  const t = frameToToast(frame, sessionTitleFrom(sessionNavigator, sessionId));
+  if (!t) return;
+  toast(t.title, t.body, PIC(t.icon), sessionId);
 ```
 
 </details>
 
 #### 缺口
 
-- 无后台休眠和实际通知结果。
-  **影响**：未知送达以及优于原生到何种程度。
-  **进一步探讨**：在普通浏览器录制审批事件、系统通知和跳转。
+- 缺少同宿主原生提醒与插件提醒的到达/回跳对照
+  **影响**：不能证明减少等待或提高正确返回率
+  **进一步探讨**：两条可控会话分别触发审批和长后台活动，记录通知时间、正确会话及误报
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 安装后会注册什么，卸载和断连释放什么？
+### Q02 · 组件加载、请求断连和卸载分别回收什么？
 
-**研究主题**：功能与机制、工程质量与复用、依赖、兼容与流程
+**研究主题**：依赖、兼容与流程、工程质量与复用、缺陷与关键质疑
 
 #### 完整回答
 
-Cordis 补丁插入 dsh-pet，包导出的宿主与浏览器入口分别指向 lib/index.js 和 lib/client.js。两路构建直接取宿主与客户端源码，浏览器包用闭包隔离重复加载的顶层声明，宿主为 ESM。独立桌宠 CLI 是另一个构建入口。DSH Web 侧在所需的宿主服务上装配业务状态、命令和监听，浏览器模块在 overlay 插槽注册组件并绑定通知。Node 最低版本来自组件清单，三个 DSH 兼容声明是作者的特定版本判断。
+固定 dsh-pet 子包有 bundle patch 挂载，exports 指向 lib/index.js 与 lib/client.js，tsdown 将宿主和客户端源码分别生成对应产物。宿主静态注入 webServer、agentDefaultModel、credentials、llm、commands、connection，因此只用通知也需要满足整个宿主组件的服务条件；兼容版本清单是作者声明，不能替代本次加载验证。apply 将路由、会话监听、命令、循环与 Helper 分开装配，独立 CLI 是另一构建入口，本次不把独立模式体验套给 Web。
 
-前缀路由将页面请求分派到状态、配置和聊天等处理器。客户端提前断开时路由触发 AbortController，将中止传给处理器并避免继续写回响应。配置请求的串行队列只管进入同一宿主进程的竞争，外部编辑仍须独立协调。卸载 effect 会清理工作状态与下载计时、持锁、播放回执、状态等候和 Helper，并由各个 effect 移除通知监听。已经交给模型或第三方的工作需要各自的撤销或超时凭证。
+HTTP 路由将响应断开转成 AbortSignal 并传入处理器，避免挂起长轮询继续等；配置读写共享同进程串行队列，不能保护外部编辑者。生命周期清理先标记已卸载，再停状态和下载定时器、释放占用锁、取消播放和状态等待并停 Helper，顺序避免状态等待先结束而锁释放通知失去消费者。清理本地等待不等于删除本地历史、撤销已送外部服务的内容，或取消一切在途模型工作。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-pet/package.json:43-74](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/package.json#L43-L74)
+**依据 1 · 源码核查**：[dsh-pet/package.json:49-64](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/package.json#L49-L64)
 
-包导出与产物范围。
+宿主和客户端导出。
 
 <details>
-<summary>查看原文（32行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-  "type": "module",
-  "main": "lib/index.js",
-  "bin": {
-    "dsh-pet-standalone": "lib/standalone.js"
-  },
-  "exports": {
     ".": {
       "types": "./lib/types/index.d.ts",
       "default": "./lib/index.js"
@@ -417,94 +369,18 @@ Cordis 补丁插入 dsh-pet，包导出的宿主与浏览器入口分别指向 l
     "lib",
     "src",
     "assets/webm",
-    "runtime/electron-helper",
-    "assets/fonts",
-    "assets/pic",
-    "assets/memes",
-    "assets/sound",
-    "assets/config.jsonc",
-    "assets/logo.png",
-    "assets/main-character.png",
-    "scripts/ensure-electron.mjs",
-    "cordis.patch.yml"
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-pet/package.json:101-143](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/package.json#L101-L143)
+**依据 2 · 源码核查**：[dsh-pet/tsdown.config.mjs:37-61](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/tsdown.config.mjs#L37-L61)
 
-Node 版本、Web 平台及兼容性声明。
-
-<details>
-<summary>查看原文（43行）</summary>
-
-```text
-  "license": "MIT",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "dependencies": {
-    "@andresaya/edge-tts": "^1.9.1",
-    "@anthropic-ai/sdk": "0.135.0",
-    "@electron-internal/extract-zip": "^1.0.5",
-    "@electron/get": "^5.1.0",
-    "openai": "7.39.0",
-    "zod": "4.6.7"
-  },
-  "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
-    "compatibility": {
-      "dshReleases": {
-        "0.2.1-rc.3": "compatible",
-        "0.2.2-alpha.2": "compatible",
-        "0.2.2-rc.1": "compatible"
-      }
-    },
-    "client": {
-      "inject": [
-        "@deepseek-ai/dsh-client-connection"
-      ],
-      "platform": "web"
-    }
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "^4.0.4",
-    "@deepseek-ai/dsh-agent-default-model": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-client-connection": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-client-ui-primitives": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-client-ui-slots": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-commands": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-credentials": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-home-paths": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-host-webserver": "^0.2.0-rc.1",
-    "@deepseek-ai/dsh-llm": "^0.2.0-rc.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-```
-
-</details>
-
-**依据 3 · 源码核查**：[dsh-pet/cordis.patch.yml:23-25](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/cordis.patch.yml#L23-L25)
-
-实际 Cordis 挂载。
-
-```text
-- insert:
-    - id: dsh-pet
-      name: 'dsh-pet'             # 模块名：解析到 lib/index.js
-```
-
-**依据 4 · 源码核查**：[dsh-pet/tsdown.config.mjs:36-77](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/tsdown.config.mjs#L36-L77)
-
-宿主、客户端和独立入口分支。
+实际构建输入。
 
 <details>
-<summary>查看原文（42行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
-export default defineConfig([
   {
     ...shared,
     entry: {
@@ -530,101 +406,42 @@ export default defineConfig([
   },
   {
     ...shared,
-    // 独立模式只在 Node ≥ 22.12 上运行（package.json 的 engines 已声明），因此目标可以是 es2022：
-    // es2020 目标会把 class field 一类语法降级成 `_defineProperty(...)`，进而把
-    // `@oxc-project/runtime` 拖成一条裸 import —— 那个包不在本包依赖里，装好的用户跑起来会
-    // ERR_MODULE_NOT_FOUND。提到 es2022 后这类降级辅助整体消失（与插件本体的 es2020 产物无关，
-    // 两者是不同的入口，DSH 侧仍按 es2020 发布）。
-    target: 'es2022',
-    entry: {
-      standalone: 'src/standalone/cli.ts',
-    },
-    // tsdown 默认把 dependencies/peerDependencies 全部外部化（本包那三个 DSH 专有包正是
-    // peerDependencies），所以这里必须先 noExternal 把它们拉回打包图，下面的 alias 才轮得到生效；
-    // 否则产物里留下裸 import，在没有 DSH 的环境里 ERR_MODULE_NOT_FOUND。
-    noExternal: [/^@deepseek-ai\/(?:dsh-home-paths|dsh-credentials|dsh-llm)$/],
-    // 除三个替身外，其余 @deepseek-ai/* 仍视为宿主提供（负向断言）
-    external: [/^@electron\//, /^node:/, /^@deepseek-ai\/(?!dsh-home-paths$|dsh-credentials$|dsh-llm$)/],
-    alias: {
 ```
 
 </details>
 
-**依据 5 · 源码核查**：[dsh-pet/src/host/index.ts:201-246](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/index.ts#L201-L246)
+**依据 3 · 源码核查**：[dsh-pet/src/host/index.ts:39-50](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/index.ts#L39-L50)
 
-实际注册路由、会话监听、命令和周期任务。
+必需宿主服务声明。
 
 <details>
-<summary>查看原文（46行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-        const provider = readAllConfig(configPaths).main?.speechProvider;
-        return typeof provider === 'string' && provider ? provider : undefined;
-      },
-    }),
-    // 长期记忆实现目录：设置页据此渲染下拉，配置项 memoryProvider 的取值就来自它
-    memory: { list: listChatMemoryProviders },
-  };
-  const httpRoute = createHttpRoute(deps);
-  registerHttpRoute(ctx, httpRoute.handlePetRoute);
+/** 插件行 id（与 cordis.patch.yml 一致） */
+export const name = 'pet';
+/** 需要注入的服务：webServer（路由）+ agentDefaultModel（当前服务商）+ credentials（凭证）+ llm（对话模型调用）+ commands（/balance 斜杠命令）+ connection（桌面 Helper「打开 AI 设置」用的已鉴权站点 URL） */
+export const inject = ['webServer', 'agentDefaultModel', 'credentials', 'llm', 'commands', 'connection'];
 
-  registerSessionWatch({
-    ctx,
-    cancelTerminalCleanup,
-    lastTodoText,
-    lastReplyText,
-    notifyActivityTimers,
-    publishWorkStatus,
-    pushNotifyFrame,
-    scheduleCompletionNotify,
-    scheduleTerminalCleanup,
-    terminalTimers,
-    toolsInFlight,
-    turnFlags,
-    workStatus,
-  });
+/** 检索查询的改写提示词：结合最近几轮还原指代，只要一条能拿去检索的查询，不要解释、不要多行。 */
+const REWRITE_QUERY_SYSTEM =
+  '把用户这句话改写成一条用于检索长期记忆的查询：结合最近几轮对话还原「它」「那个」「继续」这类指代，保留检索需要的名词与限定词，去掉寒暄、语气词与称呼，不要解释、不要引号、不要换行。只输出这条查询本身。';
 
-  registerBalanceCommand({ ctx, effectivePetList, refreshBalance, sleep, sleepRefusalText });
-
-  registerLoops({
-    ctx,
-    balancePeriodSec,
-    configPaths,
-    lastWhisperAt,
-    lock,
-    log,
-    publishWhisper,
-    publishSleepTalk,
-    refreshBalance,
-    sleep,
-    standaloneAiPolicy,
-    whisperPeriodSec,
-  });
-
-  registerPetCommand({ ctx, effectivePetList, petDisplayName, resolveActivePetId, setActivePetId });
-
-  registerChatCommand({ ctx, chatWithPet, log, publishWhisper, resolveActivePetId, sleep, sleepRefusalText });
+/** 宿主插件主体：注册 `/dsh-pet-7340` 前缀路由与斜杠命令（/balance /pet /chat）；ctx 暂用 any（peer 类型包本地不可解析）。 */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- DSH 注入的 ctx（webServer/locale 等 service 无静态类型）
+export function apply(ctx: any): void {
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[dsh-pet/src/host/plugin/http-route.ts:34-58](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/http-route.ts#L34-L58)
+**依据 4 · 源码核查**：[dsh-pet/src/host/plugin/http-route.ts:43-58](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/http-route.ts#L43-L58)
 
-配置写操作在同进程队列内排序。
+配置队列作用于同进程。
 
 <details>
-<summary>查看原文（25行）</summary>
+<summary>查看原文（16行）</summary>
 
 ```text
-  /** 单次业务路由（HTTP 落盘与桌面 Helper 管道共用同一份实现）：输入 rawUrl + method + body 文本，
-   *  返回 RouteResult，消费方各自落盘——业务逻辑只有一份，两端天然一致。
-   *  signal 可选：调用方断开时中止挂起等待（只有 /playback 的 wait 分支会用到；管道侧不传）。 */
-  const handlePetRoute = async (
-    rawUrl: string,
-    method: string,
-    body?: string,
-    signal?: AbortSignal,
-  ): Promise<RouteResult> => {
     const url = new URL(rawUrl, 'http://localhost');
     const rest = decodeURIComponent(url.pathname.slice(ROUTE_SEGMENT.length + 1));
     const run = (): Promise<RouteResult> => dispatchPetRoute(url, rest, method, body, signal);
@@ -645,12 +462,12 @@ export default defineConfig([
 
 </details>
 
-**依据 7 · 源码核查**：[dsh-pet/src/host/plugin/http-route.ts:72-99](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/http-route.ts#L72-L99)
+**依据 5 · 源码核查**：[dsh-pet/src/host/plugin/http-route.ts:72-94](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/http-route.ts#L72-L94)
 
-前缀路由及断连中止。
+路由注册与断连信号传递。
 
 <details>
-<summary>查看原文（28行）</summary>
+<summary>查看原文（23行）</summary>
 
 ```text
 export function registerHttpRoute(ctx: HostContext, handlePetRoute: HttpRouteHandler): void {
@@ -676,23 +493,19 @@ export function registerHttpRoute(ctx: HostContext, handlePetRoute: HttpRouteHan
             else if (result.kind === 'none') {
               /* 调用方已断开：不再写（写了会抛） */
             } else sendFile(req, res, result.file, result.contentType); // 非 async：流在 open 后自己 pipe，错误内部收口
-          } catch (e) {
-            res.off('close', onClose);
-            // 连接已断（挂起等待被中止后也可能撞上）→ 不再写，避免二次抛错
-            if (!res.destroyed && !res.writableEnded) {
-              // 请求体超限与客户端中断是用户侧问题，不能报成 500；断连时连响应都写不出去。
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[dsh-pet/src/host/plugin/lifecycle.ts:27-43](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/lifecycle.ts#L27-L43)
+**依据 6 · 源码核查**：[dsh-pet/src/host/plugin/lifecycle.ts:26-43](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/lifecycle.ts#L26-L43)
 
-effect 内停止计时、清理状态与 Helper。
+卸载资源清理顺序。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（18行）</summary>
 
 ```text
+/** 注册卸载清理；返回的清理函数由 ctx.effect 收集。 */
 export function registerLifecycle(deps: LifecycleInput): void {
   const { ctx, lock, markDisposed, playback, state, stopDownloadSlotTimer, stopHelper, stopWorkStatusFlush } = deps;
   // 随插件生命周期清理：桌面 Helper 回收（异步下载完成后不再拉起）+ 结束所有挂起的等待
@@ -714,28 +527,34 @@ export function registerLifecycle(deps: LifecycleInput): void {
 
 </details>
 
+#### 缺口
+
+- 未取得所声明宿主与发布成品的同版本加载记录
+  **影响**：源码接线成立，不表示该运行环境能完整注入或卸载
+  **进一步探讨**：固定实际宿主及成品，在临时profile观察加载、断连等待回收和卸载后的路由状态
+
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 可选聊天、长期记忆、语音和天气发送哪些数据？
+### Q03 · 聊天记忆如何召回、写入并隔离宠物？
 
-**研究主题**：依赖、兼容与流程、缺陷与关键质疑、功能与机制
+**研究主题**：功能与机制、依赖、兼容与流程、缺陷与关键质疑
 
 #### 完整回答
 
-闲聊读取环境及本地上下文，然后从宠物配置选记忆实现，未注册时回落内置。核心准备系统消息、历史和当前输入，给已选 provider 一次召回机会。超时、错误或无合法请求体时用本地准备的正文继续。生成优先用配置的 chatModel，失败时可转当前对话模型再次尝试。回话写入本地历史后，异步 capture 可将本轮用户文字与宠物回复交给同一 provider；生成期间清除本地历史会跳过此次写回和 capture。已经送出的服务端条目需单独检查。
+聊天核心先生成本地完整请求体，再给配置选择的记忆 provider 一次召回机会；按 provider 预算与结果竞争，超时、异常或非法形状都回退原请求，不把外部召回失败变成整轮聊天失败。生成使用得到的正文，回复先写本地历史，persisted 才异步 capture；若生成期间历史被删除导致代数改变，跳过本轮写回和 capture。已经发送的远端记录不会因此被删除。
 
-内置 PowerContext 适配从配置读服务地址和令牌，对相应宠物的 scope 做查找或创建。召回可用最近若干轮改写检索词，随后发送检索请求并把结果前置于用户正文；捕获端把用户和宠物的双向文本 POST 到 /v1/sources/content。记忆端点空缺或响应不可用时有回落。环境查询与聊天结合，天气路径可向 UAPI 传用户所设城市。DeepSeek 语音识别在选择该实现并执行时将 WAV 与凭据发到 ASR，缺凭据回不可用；合成由另一条按配置选择的实现处理。审批事件到通知帧的监听本身无需模型调用。试用者应为附加功能分别核对发送条件。
+PowerContext 按 endpoint 与 petId 缓存 scope，查询精确标题或创建一只宠物的 scope，再可选地用最近两轮改写检索句；它并行 POST 主题与原子检索。capture 把用户文字和宠物回复发送到 /v1/sources/content，source_id 为 dsh-pet:加轮次时间戳，scope_id 单独传入；服务端去重语义仅有本包注释，不能由请求体证明。先前命名格式与当前不同，同一轮跨版本重放是否形成两份远端源尚未核实。核心超时能结束等待，但该 provider 的 recall 实现未接收传入的整轮 signal，内部请求各有超时，不能说超时会立即终止所有出站。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/chat-memory.ts:182-222](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/chat-memory.ts#L182-L222)
+**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/chat-memory.ts:182-221](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/chat-memory.ts#L182-L221)
 
-召回复盖超时与非法形状，捕获独立异步。
+超时竞速、请求体检查与异步捕获。
 
 <details>
-<summary>查看原文（41行）</summary>
+<summary>查看原文（40行）</summary>
 
 ```text
   const recallChat = async (provider: ChatMemoryProvider, req: RecallRequest): Promise<ChatRequest | undefined> => {
@@ -778,50 +597,18 @@ export function registerLifecycle(deps: LifecycleInput): void {
           '[dsh-pet] 记忆接收失败 id=' + provider.id + '：' + (error instanceof Error ? error.message : String(error)),
         );
       });
-  };
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[dsh-pet/src/host/plugin/chat-memory.ts:408-505](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/chat-memory.ts#L408-L505)
+**依据 2 · 源码核查**：[dsh-pet/src/host/plugin/chat-memory.ts:439-505](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/chat-memory.ts#L439-L505)
 
-读环境，按配置选 provider，形成历史与输入并在成功写入后 capture。
+召回进入生成、持久后捕获和清历史分支。
 
 <details>
-<summary>查看原文（98行）</summary>
+<summary>查看原文（67行）</summary>
 
 ```text
-  const chatWithPet = async (
-    petId: string,
-    text: string,
-    image?: PetImageRef,
-  ): Promise<
-    | { ok: true; text: string; image?: string }
-    | { ok: false; reason: 'provider-missing' | 'generate-error' | 'unknown-pet'; message?: string }
-  > => {
-    // 环境（城市 + 天气）在锁外查：它是网络往返。
-    const env = await currentEnvironment();
-    const epochAtStart = deletedEpoch.get(petId) ?? 0;
-    // 读上下文只占一次短锁：召回与模型调用都在锁外。
-    const context = await withMemoryLock(() => readContext(petId, env));
-    if (context === null) return { ok: false, reason: 'unknown-pet', message: '没有这只桌宠：' + petId };
-    const { cfg, found, pool, actions, list, system } = context;
-    // 记忆实现：配置里的 id 决定用谁；未注册的 id 在解析时就回落内置，这里补一条日志说明。
-    const memoryConf = found.conf.memory;
-    const configuredId = String(
-      memoryConf && typeof memoryConf === 'object' ? ((memoryConf as Record<string, unknown>).provider ?? '') : '',
-    ).trim();
-    const provider = resolveChatMemoryProvider(configuredId);
-    if (configuredId !== '' && configuredId !== provider.id) {
-      log.warn('[dsh-pet] 记忆 provider 未注册：' + configuredId + '，本轮用 ' + provider.id);
-    }
-    // 图片只记尺寸与字节数（不记 base64）：模型不支持读图时 dsh-llm 会把它投影成占位文本，靠这行日志定位
-    if (image !== undefined) {
-      log.info(
-        `[dsh-pet] 对话附带图片 pet=${petId}，${image.width}x${image.height}，${image.bytes} 字节` +
-          '（模型不支持读图时内核会以占位文本代替）',
-      );
-    }
     // 记忆：核心先拼一份完整请求体，provider 可整份替换，也可原样交回。
     const prepared: ChatRequest = {
       system,
@@ -893,14 +680,30 @@ export function registerLifecycle(deps: LifecycleInput): void {
 
 </details>
 
-**依据 3 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:93-160](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/memory/powercontext.ts#L93-L160)
+**依据 3 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:96-140](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L96-L140)
 
-按宠物找容器、检索、写双向文本及标识。
+endpoint+petId缓存及scope查询/创建。
 
 <details>
-<summary>查看原文（68行）</summary>
+<summary>查看原文（45行）</summary>
 
 ```text
+export function createPowerContextMemory(deps: PowerContextDeps): ChatMemoryProvider {
+  /** 已探测到的 scope：一只宠物一份，键里带上地址——换了服务器不能继续往旧 scope 写。 */
+  const scopes = new Map<string, string>();
+
+  /**
+   * 取某只宠物的 scope id：先按标题查，没有才创建。
+   *
+   * 不用「幂等 POST 兜底创建」：那条路对已存在的 scope 会返回 409，语义不明确；
+   * 查询 + 创建虽然多一次往返，但「检测」与「创建」各自的结果都确定。
+   */
+  const ensureScope = async (petId: string): Promise<string | undefined> => {
+    const endpoint = deps.endpoint().trim();
+    if (endpoint === '') return undefined;
+    const cacheKey = endpoint + '\u0000' + petId;
+    const cached = scopes.get(cacheKey);
+    if (cached !== undefined) return cached;
     const title = scopeTitleOf(petId);
     const page = await callApi(deps, {
       method: 'GET',
@@ -930,8 +733,18 @@ export function registerLifecycle(deps: LifecycleInput): void {
     if (typeof id !== 'string' || id === '') return undefined;
     scopes.set(cacheKey, id);
     return id;
-  };
+```
 
+</details>
+
+**依据 4 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:143-182](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L143-L182)
+
+查询、双检索和真实capture内容/身份。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
   /** 查询串：改写优先（带最近两轮还原指代），没有就用原话；按字节截断，服务端限 8192。 */
   const buildQuery = async (req: RecallRequest): Promise<string> => {
     const rewritten = await rewriteWithin(deps.rewrite, {
@@ -946,292 +759,248 @@ export function registerLifecycle(deps: LifecycleInput): void {
     if (scopeId === undefined) return undefined;
     const query = await buildQuery(req);
     if (query === '') return undefined;
-    const hits = await search(deps, scopeId, query);
-    if (hits === undefined || hits.length === 0) return undefined;
-    const evidence = formatEvidence(hits);
-    if (evidence === '') return undefined;
+    // 两层并行：总耗时取较慢的那一路，不让一层慢拖成两层的和。
+    const [topics, atoms] = await Promise.all([searchTopics(deps, scopeId, query), search(deps, scopeId, query)]);
+    const evidence = formatEvidence({ topics, atoms });
+    if (evidence === '') {
+      logEmptyRecall(req.petId, topics, atoms);
+      return undefined;
+    }
     return { ...req.prepared, userText: evidence + '\n\n' + req.prepared.userText };
   };
 
   const capture = async (turn: CaptureTurn): Promise<void> => {
     const scopeId = await ensureScope(turn.petId);
     if (scopeId === undefined) return;
-    // 写的是 CaptureContentSourceRequest（202 受理，抽取在服务端后台跑）：
-    // source_id 由宠物与轮次时间戳推出来，同一轮重试不会在服务端留下两条证据。
+    // 写的是 CaptureContentSourceRequest（202 受理，抽取在服务端后台跑）。
+    // source_id 只带轮次时间戳：唯一性按 (scope, source_id) 算，而 scope 已是「一只宠物一个」，重试仍得同一个 id。
     // 注意不能走 /v1/scopes/{id}/sources——那条路收的是 CreateSourceRequest，不认 scope_id 与 source_id。
     await callApi(deps, {
       method: 'POST',
       path: '/v1/sources/content',
       body: {
         scope_id: scopeId,
-        source_id: 'dsh-pet:' + turn.petId + ':' + turn.ts,
+        source_id: 'dsh-pet:' + turn.ts,
         content: '用户：' + turn.userText + '\n宠物：' + turn.replyText,
-        metadata: { petId: turn.petId },
       },
       timeoutMs: CRUD_TIMEOUT_MS,
-```
-
-</details>
-
-**依据 4 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:206-230](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/memory/powercontext.ts#L206-L230)
-
-实发请求、Bearer、JSON 与超时拒绝。
-
-<details>
-<summary>查看原文（25行）</summary>
-
-```text
-async function callApi(deps: PowerContextDeps, call: ApiCall): Promise<unknown> {
-  const base = deps.endpoint().trim().replace(/\/+$/, '');
-  if (base === '') return undefined;
-  const token = deps.token().trim();
-  try {
-    const response = await fetch(base + call.path, {
-      method: call.method,
-      headers: {
-        'content-type': 'application/json',
-        ...(token === '' ? {} : { authorization: 'Bearer ' + token }),
-      },
-      ...(call.body === undefined ? {} : { body: JSON.stringify(call.body) }),
-      signal: AbortSignal.timeout(call.timeoutMs),
     });
-    if (!response.ok) {
-      defaultLog(
-        'warn',
-        'dsh-pet: PowerContext ' + call.method + ' ' + call.path.split('?')[0] + ' 返回 HTTP ' + response.status,
-      );
-      return undefined;
-    }
-    return await response.json();
-  } catch {
-    return undefined;
-  }
-```
-
-</details>
-
-**依据 5 · 源码核查**：[dsh-pet/src/host/index.ts:90-98](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/index.ts#L90-L98)
-
-城市来源与聊天服务实际接线。
-
-```text
-  // 天气城市覆盖：配置里写了就按它查，不再由 IP 归属地库决定。
-  // 只注入这一次——/environment 路由与 system 时间行调的是同一个 currentEnvironment，
-  // 各自再去读配置就会出现「气泡说扬州、碎碎念说南京」。
-  setCityProvider(() => {
-    const city = readAllConfig(configPaths).main?.environmentCity;
-    return typeof city === 'string' && city.trim() !== '' ? city.trim() : undefined;
-  });
-  const chatMemory = createChatMemory({ ctx, configPaths, log, memeDirsFor, playback, state, userRoot });
-  const { lastWhisperAt, publishWhisper, publishSleepTalk, chatWithPet, getActivePetId, setActivePetId } = chatMemory;
-```
-
-**依据 6 · 源码核查**：[dsh-pet/src/host/index.ts:119-134](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/index.ts#L119-L134)
-
-实际安装 ASR/TTS 实现及凭据解析。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-```text
-  // 内置语音实现与第三方走同一条注册路径：先登记，两个服务才解析得到各自的实现。
-  // 识别那侧惰性依赖宿主服务，没装语音输入插件也能登记——调用时才回 unsupported。
-  ensureEdgeProvider();
-  ensureDshSpeechProvider({ speechToText: () => setup.optionalService('speechToText') });
-  // DeepSeek 官方语音：鉴权复用 DSH 的 DEEPSEEK_API_KEY，与余额那条路一致；
-  // 独立模式依次借「语音专用 key」和「余额选 DeepSeek 时的那把」，最后才回落 DSH 凭据
-  const resolveDeepseekKey = async (): Promise<string | undefined> => {
-    const dedicated = setup.standaloneDeepseekKey();
-    if (dedicated) return dedicated;
-    const standalone = setup.standaloneAiBalance();
-    if (standalone?.provider === DEEPSEEK_OFFICIAL_PROVIDER_ID && standalone.apiKey) return standalone.apiKey;
-    const resolved = await ctx.credentials.resolve(credentialRef('DEEPSEEK_API_KEY'));
-    return resolved?.value;
-  };
-  ensureDeepseekTtsProvider({ resolveKey: resolveDeepseekKey });
-  ensureDeepseekAsrProvider({ resolveKey: resolveDeepseekKey });
-```
-
-</details>
-
-**依据 7 · 源码核查**：[dsh-pet/src/host/uapi.ts:123-149](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/uapi.ts#L123-L149)
-
-天气请求可采用配置城市。
-
-<details>
-<summary>查看原文（27行）</summary>
-
-```text
-export async function fetchUapiWeather(deps: UapiDeps = {}): Promise<UapiEnvironment | null> {
-  const now = deps.now ?? Date.now;
-  if (deps.force !== true && cached !== null && now() - cached.at < CACHE_TTL_MS) return cached.value;
-  if (inFlight !== null) return inFlight;
-  const pending = requestUapi(deps)
-    .then((value) => {
-      if (value !== null) cached = { value, at: now() };
-      return value;
-    })
-    .finally(() => {
-      inFlight = null;
-    });
-  inFlight = pending;
-  return pending;
-}
-
-/** 真正打一次上游；任何异常都折成 null。 */
-async function requestUapi(deps: UapiDeps): Promise<UapiEnvironment | null> {
-  // 带 city 就按城市查，不带则由上游按客户端 IP 自动定位；上游认得「扬州」这种不带「市」的写法
-  const city = (deps.city ?? '').trim();
-  const url = city === '' ? UAPI_URL : UAPI_URL + '&city=' + encodeURIComponent(city);
-  let body: Record<string, unknown> | undefined;
-  try {
-    body = recordOf(await fetchJson(url, { label: 'uapis.cn', fetchImpl: deps.fetchImpl, sleep: deps.sleep }));
-  } catch {
-    return null;
-  }
-```
-
-</details>
-
-**依据 8 · 源码核查**：[dsh-pet/src/host/voice/builtin-deepseek-asr.ts:25-48](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/voice/builtin-deepseek-asr.ts#L25-L48)
-
-实际音频出站请求及失败分支。
-
-<details>
-<summary>查看原文（24行）</summary>
-
-```text
-export function createDeepseekAsrProvider(deps: { resolveKey: ResolveKey }): SpeechProvider {
-  return {
-    id: DEEPSEEK_ASR_PROVIDER_ID,
-    name: 'DeepSeek',
-    timeoutMs: 60_000,
-    async transcribe({ audio, signal }) {
-      const key = await deps.resolveKey();
-      // 没配 key 是能力缺失，不是识别失败：让调用方看到「不可用」而不是「识别出错」
-      if (!key) throw new SpeechUnavailableError('DEEPSEEK_API_KEY is not configured');
-      const form = new FormData();
-      // 官方按文件内容检测格式，这里的 MIME 只影响服务端选路；端侧产出的就是 WAV
-      form.append('file', new Blob([audio], { type: 'audio/wav' }), 'speech.wav');
-      const res = await fetch(ASR_ENDPOINT, {
-        method: 'POST',
-        headers: { authorization: `Bearer ${key}` },
-        body: form,
-        signal,
-      });
-      if (!res.ok) throw new Error(`deepseek asr HTTP ${res.status}`);
-      const body = (await res.json()) as { text?: unknown };
-      // 宿主返回值不可信：不是字符串就当失败，不把对象塞进文字里
-      if (typeof body?.text !== 'string') throw new Error('deepseek asr returned invalid body');
-      return body.text;
-    },
 ```
 
 </details>
 
 #### 缺口
 
-- 外部服务可用性、保留与删除行为未知。
-  **影响**：不据此承诺可用性、完整停用或隐私合格。
-  **进一步探讨**：用合成文本与无敏感录音，按功能监测请求与清理。
+- PowerContext服务端scope与source去重实现及迁移行为未在本包内
+  **影响**：不能证明远端隔离/去重或旧格式重放没有重复
+  **进一步探讨**：在固定服务端版本以两只宠物和同一轮重试核对scope、源ID及新旧格式重放的实际条目
 
 <a id="research-q04"></a>
 
 <a id="detail-section-14"></a>
 
-### Q04 · 待办与周期任务如何影响持续成本和撤出？
+### Q04 · 双层召回是否必然同时保留概括和细节？
 
-**研究主题**：采用判断、效果与总成本、缺陷与关键质疑
+**研究主题**：贡献与相对优势、缺陷与关键质疑、新假设与验证
 
 #### 完整回答
 
-共享待办使用用户目录的独立存储，提醒检查订阅端、到期项和发声宠物。无在线监听时在选下一条之前返回，宠物不适合发声也不写。成功时写入当前显示可消费的 say，按 voiceTo 决定是否播报，随后更新已提醒时刻。需要关闭浏览器后可靠到达的任务超出这条已核查链路的保证。
+不必然。主题接口最多取两条，原子接口最多取三条，二者并行，任一路失败被当作空结果，另一层仍可供模型使用。相比只查原子细节，双层机制增加了关系摘要的输入来源，但摘要是服务端产物，本包没有证明其准确性。用户本次输入与旧记忆冲突时优先用户的提示是文字约束，不是冲突消解算法。
 
-余额周期启动即检查，只有醒着且启用余额的宠物才会触发刷新，后续间隔重读配置。配置读取错误时停定时器并记录日志。碎碎念走单队列的周期调度和在途请求，网络成本仍需测量。清理函数可移除定时器；浏览器可见、配置开关和宿主卸载分别验收。首次须确认兼容宿主、通知权限和功能隔离，持续须考虑提醒、媒体与模型调用。现金、机器占用和人工分钟均未知。
-
-仅在需要此提醒且已有兼容环境时，以临时 profile 和可控审批事件试验。只开启相关通知，查该环境的余额、闲聊、长记忆与语音开关和实际请求。若通知缺失、误跳或出现不合要求的请求，回到原生会话。退出时解除挂载并核对路由、等待和此前写出的本地或远端数据。
+证据总预算为 3072 UTF-8 字节，主题段先于原子段装配。fitSections 从第一段按顺序放整条内容；有内容后遇到一条放不下即返回，而不是跳过该条继续到下一层。第一条过长则截断后立即返回。因此长主题可能吃掉全部预算，或第二条主题放不下就使仍可放入的原子细节完全不进入正文。这是源码可推导的顺序偏置，不是已实测召回退化。可检验的假设是给两层各保留最小预算，再按任务相关性合并，在同时问关系与细节时可能降低漏答；对照要固定两层返回，比较最终回答对真实细节的支持度、遗漏、token和延迟。若任务只需概括而分层保底引入噪声，或准确率不升，假设不成立。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[dsh-pet/src/host/index.ts:100-105](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/index.ts#L100-L105)
+**依据 1 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:30-52](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L30-L52)
 
-余额实例与独立待办持久存储。
-
-```text
-  const balancePoll = createBalancePoll({ ctx, configPaths, getActivePetId, log, state, standaloneAiBalance });
-  const { effectivePetList, balancePeriodSec, whisperPeriodSec, refreshBalance, resolveActivePetId, petDisplayName } =
-    balancePoll;
-
-  // 待办清单：一份用户级数据（不分宠物），落盘在插件数据根；提醒循环与 /todos 路由共用同一个实例。
-  const todos = new TodoStore({ file: join(userRoot, TODO_FILE_NAME), log });
-```
-
-**依据 2 · 源码核查**：[dsh-pet/src/host/index.ts:229-274](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/index.ts#L229-L274)
-
-周期、待办和卸载回调的主入口接线。
-
-<details>
-<summary>查看原文（46行）</summary>
-
-```text
-  registerLoops({
-    ctx,
-    balancePeriodSec,
-    configPaths,
-    lastWhisperAt,
-    lock,
-    log,
-    publishWhisper,
-    publishSleepTalk,
-    refreshBalance,
-    sleep,
-    standaloneAiPolicy,
-    whisperPeriodSec,
-  });
-
-  registerPetCommand({ ctx, effectivePetList, petDisplayName, resolveActivePetId, setActivePetId });
-
-  registerChatCommand({ ctx, chatWithPet, log, publishWhisper, resolveActivePetId, sleep, sleepRefusalText });
-
-  // 待办提醒：随插件生命周期起停；锁被第三方持有时由 pickReminderSpeaker 跳过该宠物。
-  // 播报开关现读现用：改配置后下一次提醒即生效，不必重启。
-  registerTodoReminders({
-    ctx,
-    effectivePetList,
-    isVoiceTodoEnabled: () => readAllConfig(configPaths).main?.voiceTodoEnabled === true,
-    lock,
-    log,
-    sleep,
-    state,
-    todos,
-    waiterCount: () => state.waiterCount(),
-  });
-
-  registerLifecycle({
-    ctx,
-    lock,
-    markDisposed,
-    playback,
-    state,
-    stopDownloadSlotTimer,
-    stopHelper,
-    stopWorkStatusFlush,
-  });
-
-  // 路由就绪后拉起桌面 Helper（Electron 缺失时仅告警，不影响 DSH 与浏览器 overlay）
-  startHelper();
-```
-
-</details>
-
-**依据 3 · 源码核查**：[dsh-pet/src/host/plugin/todo-reminders.ts:88-110](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/todo-reminders.ts#L88-L110)
-
-按监听、时点和宠物状态判断，写提醒并更新历史。
+检索条数、时限与字节预算。
 
 <details>
 <summary>查看原文（23行）</summary>
 
 ```text
+/** 本机 CRUD 请求的超时（ms）：探 scope、建 scope、写证据都不跑模型，慢就是服务端出问题了。 */
+const CRUD_TIMEOUT_MS = 1_000;
+/** 检索请求的超时（ms）：hybrid 要现场调一次远程 embedding 模型，比 CRUD 慢一个量级。 */
+const SEARCH_TIMEOUT_MS = 5_000;
+/** 改写查询的预算（ms）：超时就用原句查，宁可查得糙也不拖住对话。 */
+const REWRITE_BUDGET_MS = 800;
+/** 召回总预算（ms）：改写预算 + 检索超时 + 余量，core 按这个值掐整轮。 */
+const RECALL_TIMEOUT_MS = 6_000;
+/** 改写查询时带上的历史轮数（1 轮 = 1 问 1 答）：只用来还原「它」「那家」这类指代。 */
+const REWRITE_HISTORY_ROUNDS = 2;
+/** 原子记忆检索条数：三条足够，再多只是把无关内容塞进上下文。 */
+const RECALL_LIMIT = 3;
+/** 主题记忆检索条数：一条主题就是整段对话的摘要，比原子记忆长得多，两条已能占满半个证据块。 */
+const TOPIC_RECALL_LIMIT = 2;
+/** 查询串的字节上限：服务端收 8192，留一半余量给中文。 */
+const QUERY_BYTES = 4_096;
+/** 证据块的总字节上限：超了从尾部丢句子，越靠后的命中分越低。 */
+const EVIDENCE_BYTES = 3_072;
+/** 证据块的表头：明确告诉模型这是检索到的旧信息，冲突时以用户当次输入为准。 */
+const EVIDENCE_HEADER = '以下是从长期记忆里检索到的相关信息，供你参考；与用户这次说的话冲突时，以用户为准：';
+/** 证据块的分层标题：先给概括再给细节，模型更容易把原子条目挂到对的关系上。 */
+const TOPIC_SECTION = '[主题记忆]';
+const ATOM_SECTION = '[原子记忆]';
+```
+
+</details>
+
+**依据 2 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:254-286](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L254-L286)
+
+两个不同查询接口和形状验证。
+
+<details>
+<summary>查看原文（33行）</summary>
+
+```text
+/** 检索原子记忆（逐条偏好与事实）；响应形状不对按失败处理。 */
+async function search(deps: PowerContextDeps, scopeId: string, query: string): Promise<MemoryHit[] | undefined> {
+  const result = await callApi(deps, {
+    method: 'POST',
+    path: '/v1/atomic-memory/search',
+    body: {
+      scope_id: scopeId,
+      query,
+      mode: 'hybrid',
+      limit: RECALL_LIMIT,
+    },
+    timeoutMs: SEARCH_TIMEOUT_MS,
+  });
+  const hits = (result as { hits?: unknown } | undefined)?.hits;
+  if (!Array.isArray(hits)) return undefined;
+  return hits.map(toHit).filter((hit): hit is MemoryHit => hit !== undefined);
+}
+
+/** 检索主题记忆（多轮对话沉淀成的摘要）；响应形状不对同样按失败处理。 */
+async function searchTopics(deps: PowerContextDeps, scopeId: string, query: string): Promise<TopicHit[] | undefined> {
+  const result = await callApi(deps, {
+    method: 'POST',
+    path: '/v1/topic-memory/search',
+    body: {
+      scope_id: scopeId,
+      query,
+      limit: TOPIC_RECALL_LIMIT,
+    },
+    timeoutMs: SEARCH_TIMEOUT_MS,
+  });
+  const hits = (result as { hits?: unknown } | undefined)?.hits;
+  if (!Array.isArray(hits)) return undefined;
+  return hits.map(toTopicHit).filter((hit): hit is TopicHit => hit !== undefined);
+```
+
+</details>
+
+**依据 3 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:327-370](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L327-L370)
+
+固定层顺序和遇到放不下即退出。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+function formatEvidence(layers: RecallLayers): string {
+  const lines = fitSections([
+    [TOPIC_SECTION, (layers.topics ?? []).map(topicLine)],
+    [ATOM_SECTION, (layers.atoms ?? []).map((hit) => evidenceLine(hit.kind, hit.text))],
+  ]);
+  return lines.length === 0 ? '' : EVIDENCE_HEADER + '\n' + lines.join('\n');
+}
+
+/**
+ * 在字节预算内摆放各段，段标题与每一行都计入。
+ *
+ * 超长从尾部丢整条：越靠后的命中分越低，先丢它们的损失最小。
+ * 首条就放不下时截断塞进去——单条啰嗦记忆不该让整轮召回作废。
+ *
+ * @param sections - 按展示顺序排列的段。
+ * @returns 放得下的行；空数组表示连第一个段标题都放不下。
+ */
+function fitSections(sections: readonly EvidenceSection[]): string[] {
+  const out: string[] = [];
+  let used = Buffer.byteLength(EVIDENCE_HEADER, 'utf8');
+  let hasContent = false;
+  for (const [title, lines] of sections) {
+    if (lines.length === 0) continue;
+    const titleCost = Buffer.byteLength('\n' + title, 'utf8');
+    if (used + titleCost > EVIDENCE_BYTES) break;
+    out.push(title);
+    used += titleCost;
+    for (const line of lines) {
+      const size = Buffer.byteLength('\n' + line, 'utf8');
+      if (used + size <= EVIDENCE_BYTES) {
+        out.push(line);
+        used += size;
+        hasContent = true;
+        continue;
+      }
+      if (hasContent) return out;
+      const room = EVIDENCE_BYTES - used - 1;
+      const truncated = room > 0 ? truncateBytes(line, room) : '';
+      if (truncated === '') return out;
+      out.push(truncated);
+      return out;
+    }
+  }
+  return out;
+```
+
+</details>
+
+#### 缺口
+
+- 缺少实际两层命中内容与同条件问答结果
+  **影响**：可证明装配策略，不能证明双层提升或预算保底有效
+  **进一步探讨**：准备短/长主题与关键原子细节四组固定响应，对照现策略和分层预算，检查最终问题回答
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 待办、轮询、天气和语音如何增加持续负担？
+
+**研究主题**：效果与总成本、功能与机制、工程质量与复用
+
+#### 完整回答
+
+待办提醒先检查是否有监听端，再挑到期项和可发声宠物；隐藏、锁定或睡眠的宠物不会被选中。它向状态写气泡后记录已提醒时刻，写入状态不等于操作系统已经展示或用户已阅读；没有监听时不推进时刻，后来上线仍可处理。余额轮询只在宠物启用余额且醒着时触发，碎碎念另外维护调度队列与在途生成，隐藏界面并不普遍等于停止所有宿主周期。
+
+可选聊天、长期记忆、语音和天气有不同出站责任。天气请求可发送所设城市，缺城市由上游按IP定位；DeepSeek ASR 在用户选用并识别时上传 WAV，并通过凭据取key，缺凭据明确不可用。双层记忆新增一次检索请求并可能使用嵌入/模型，实际价格和请求量未知。首次需核对宿主、通知权限和功能开关，持续需计入媒体、网络、模型请求与人工误报复核；失败恢复还要查数据已送到哪一层。退出需停挂载，并分别处理本地和远端留存，没有证据可把卸载称为所有数据撤回。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/todo-reminders.ts:64-110](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/todo-reminders.ts#L64-L110)
+
+监听、宠物选择、状态写入与已提醒标记。
+
+<details>
+<summary>查看原文（47行）</summary>
+
+```text
+export function pickReminderSpeaker(
+  pets: readonly Record<string, unknown>[],
+  isLocked: (petId: string) => boolean,
+  isSleeping: (petId: string) => boolean = () => false,
+): string | null {
+  let desktopOnly: string | null = null;
+  for (const pet of pets) {
+    const petId = String(pet.id ?? '');
+    if (petId === '') continue;
+    if (pet.display === 'none') continue;
+    if (isLocked(petId)) continue;
+    if (isSleeping(petId)) continue;
+    if (pet.display === 'web' || pet.display === 'both') return petId;
+    desktopOnly ??= petId;
+  }
+  return desktopOnly;
+}
+
+/**
+ * 跑一拍：最多提醒一条，成功后记下提醒时刻。
+ *
+ * @param deps - 存储、宠物列表、锁与状态写入。
+ * @returns 无返回值；没有到点或没有可开口的宠物时静默返回。
+ */
 export async function tickTodoReminders(deps: TodoReminderTickDeps): Promise<void> {
   // 没有端在线时整拍跳过、不推进 lastRemindedAt：下一次有人连上时还是「到点」状态。
   if (deps.hasListener !== undefined && !deps.hasListener()) return;
@@ -1259,9 +1028,9 @@ export async function tickTodoReminders(deps: TodoReminderTickDeps): Promise<voi
 
 </details>
 
-**依据 4 · 源码核查**：[dsh-pet/src/host/plugin/loops.ts:58-97](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/loops.ts#L58-L97)
+**依据 2 · 源码核查**：[dsh-pet/src/host/plugin/loops.ts:58-97](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/loops.ts#L58-L97)
 
-启动轮询、条件跳过读配置和停止分支。
+余额循环及清理条件。
 
 <details>
 <summary>查看原文（40行）</summary>
@@ -1311,64 +1080,139 @@ export async function tickTodoReminders(deps: TodoReminderTickDeps): Promise<voi
 
 </details>
 
-**依据 5 · 源码核查**：[dsh-pet/src/host/plugin/loops.ts:99-136](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/loops.ts#L99-L136)
+**依据 3 · 源码核查**：[dsh-pet/src/host/uapi.ts:139-150](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/uapi.ts#L139-L150)
 
-串行排队调用碎碎念。
+天气城市与请求失败降级。
 
 <details>
-<summary>查看原文（38行）</summary>
+<summary>查看原文（12行）</summary>
 
 ```text
-  // 碎碎念周期：host 侧调度。一拍 = 读一次配置 + 把「到点」的宠物排进错峰队列；下一拍按最短周期排。
-  // 用固定拍 + 逐宠物比对 lastWhisperAt，而不是每宠一个定时器：宠物随配置增删、周期随条目改，
-  // 固定拍天然跟上，不用维护一堆定时器的生命周期。
-  ctx.effect(() => {
-    let disposed = false;
-    let timer: ReturnType<typeof setTimeout> | null = null;
-    /** 待发布的宠物（FIFO）；一次只发一只，两只之间隔 {@link WHISPER_STAGGER_MS}。 */
-    const pending: string[] = [];
-    /** 队列内相邻两只之间的等待句柄；与拍定时器分开计，两者都要在卸载时清掉。 */
-    let drainTimer: ReturnType<typeof setTimeout> | null = null;
-
-    /** 是否已经有一只正在生成；同一时刻只允许一只，否则两只仍会同时写出气泡。 */
-    let pumping = false;
-
-    /**
-     * 从队列取下一只发布，等它写完再隔一个间隔发下一只。
-     *
-     * 间隔从「文字真的写进状态」算起，而不是从发起点算：单次生成耗时在 3–15 秒之间波动，
-     * 从发起点算的固定间隔会被慢的那只吃掉，两只又撞到一起。
-     */
-    async function pump(): Promise<void> {
-      if (disposed || pumping || drainTimer !== null) return;
-      const petId = pending.shift();
-      if (petId === undefined) return;
-      pumping = true;
-      try {
-        // kind=whisper 让生成侧按 voiceWhisperEnabled 决定要不要带 voiceTo。
-        await publishWhisper(petId, undefined, undefined, 'whisper');
-      } catch {
-        // 单只失败不挡住后面的宠物：原因已经由 publishWhisper 记过日志。
-      } finally {
-        pumping = false;
-      }
-      if (disposed || pending.length === 0) return;
-      drainTimer = setTimeout(() => {
-        drainTimer = null;
-        void pump();
-      }, WHISPER_STAGGER_MS);
+/** 真正打一次上游；任何异常都折成 null。 */
+async function requestUapi(deps: UapiDeps): Promise<UapiEnvironment | null> {
+  // 带 city 就按城市查，不带则由上游按客户端 IP 自动定位；上游认得「扬州」这种不带「市」的写法
+  const city = (deps.city ?? '').trim();
+  const url = city === '' ? UAPI_URL : UAPI_URL + '&city=' + encodeURIComponent(city);
+  let body: Record<string, unknown> | undefined;
+  try {
+    body = recordOf(await fetchJson(url, { label: 'uapis.cn', fetchImpl: deps.fetchImpl, sleep: deps.sleep }));
+  } catch {
+    return null;
+  }
+  return body === undefined ? null : toEnvironment(body, (deps.now ?? Date.now)());
 ```
 
 </details>
 
-**依据 6 · 源码核查**：[dsh-pet/src/host/plugin/lifecycle.ts:27-43](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/lifecycle.ts#L27-L43)
+**依据 4 · 源码核查**：[dsh-pet/src/host/voice/builtin-deepseek-asr.ts:24-48](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/voice/builtin-deepseek-asr.ts#L24-L48)
 
-卸载收尾覆盖的资源。
+音频上传、凭据、signal与返回验证。
 
 <details>
-<summary>查看原文（17行）</summary>
+<summary>查看原文（25行）</summary>
 
 ```text
+ */
+export function createDeepseekAsrProvider(deps: { resolveKey: ResolveKey }): SpeechProvider {
+  return {
+    id: DEEPSEEK_ASR_PROVIDER_ID,
+    name: 'DeepSeek',
+    timeoutMs: 60_000,
+    async transcribe({ audio, signal }) {
+      const key = await deps.resolveKey();
+      // 没配 key 是能力缺失，不是识别失败：让调用方看到「不可用」而不是「识别出错」
+      if (!key) throw new SpeechUnavailableError('DEEPSEEK_API_KEY is not configured');
+      const form = new FormData();
+      // 官方按文件内容检测格式，这里的 MIME 只影响服务端选路；端侧产出的就是 WAV
+      form.append('file', new Blob([audio], { type: 'audio/wav' }), 'speech.wav');
+      const res = await fetch(ASR_ENDPOINT, {
+        method: 'POST',
+        headers: { authorization: `Bearer ${key}` },
+        body: form,
+        signal,
+      });
+      if (!res.ok) throw new Error(`deepseek asr HTTP ${res.status}`);
+      const body = (await res.json()) as { text?: unknown };
+      // 宿主返回值不可信：不是字符串就当失败，不把对象塞进文字里
+      if (typeof body?.text !== 'string') throw new Error('deepseek asr returned invalid body');
+      return body.text;
+    },
+```
+
+</details>
+
+#### 缺口
+
+- 未测后台请求量、资源占用、通知合格率及费用
+  **影响**：无法判断常驻提醒收益是否覆盖媒体与扩展负担
+  **进一步探讨**：只启用目标提醒，在前后台和断连场景记请求数、合格到达、误报与人工时间；再逐项打开记忆和语音比较
+
+<a id="research-q06"></a>
+
+<a id="detail-section-16"></a>
+
+### Q06 · 哪些人可以先试提醒，如何检验记忆方向？
+
+**研究主题**：采用判断、场景与需求、效果与总成本、新假设与验证
+
+#### 完整回答
+
+已有兼容 DSH Web、常在长任务中离开页面且能使用临时 profile 的用户，可小范围试用可控审批提醒。先只开启所需通知，核对余额、碎碎念、长期记忆与语音开关，授予浏览器通知权限，用两条已知事件会话检查来源、弹窗与正确回跳；不以动画或弹窗替代原始审批。只偶尔看任务或宿主提醒已足够的人可继续原生流程，不承担额外常驻插件负担。
+
+通知比较从事件产生到正确回查并完成原界面确认计时，计入误报、切错会话、断连和人工恢复，记录实际请求及资源。记忆方向单独以固定返回的主题和原子内容对照预算策略，不能把通知试用成功当作聊天效果已证实。若提醒误跳、无授权弹窗之外还有不期望的出站，或不能确认卸载后工作已停止，应解除挂载并回原生会话，另查远端留存。当前源码足以限定一个可逆的提醒试用，仍无持续安装或跨宿主有效证据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[dsh-pet/src/client/notify.ts:147-175](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/client/notify.ts#L147-L175)
+
+通知必要条件及会话透传。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
+/** 发一条系统通知；总开关关闭、环境不支持、未授权或本页正在看时静默跳过。
+ * 日志只在门之后记录：被拦下的触发不产生「弹窗」日志。 */
+function toast(title: string, body?: string, icon?: string, sessionId?: string): void {
+  if (!notifyEnabled) return;
+  // 开关关着时维持「聚焦不打扰」；打开后照常弹，不再看页面是否活跃。
+  if (!shouldRemind(notifyWhenFocused, isPageActive())) return;
+  if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+  console.log('[dsh-pet] 【弹窗】' + title + (body ? '：' + body : ''));
+  try {
+    const opts: NotificationOptions = {};
+    if (body) opts.body = truncate(body);
+    if (icon) opts.icon = icon;
+    // 点击行为与真实事件通知共用 wireNotificationClick；图标加载失败只降级为无图标，不会关闭弹窗。
+    const n = new Notification(title, opts);
+    wireNotificationClick(n, sessionId);
+  } catch {
+    /* 个别桌面壳在构造时抛错：忽略，不打断业务。 */
+  }
+}
+
+/**
+ * 帧 → toast 并发出；未知帧静默跳过，帧里的 sessionId 一并透传给点击行为。
+ * 标题优先用会话名：同一个宿主上可以并行跑多条会话，通知里必须能认出是哪一条回来了。
+ */
+function toastFrame(frame: NotifyFrame): void {
+  const sessionId = typeof frame.sessionId === 'string' ? frame.sessionId : undefined;
+  const t = frameToToast(frame, sessionTitleFrom(sessionNavigator, sessionId));
+  if (!t) return;
+  toast(t.title, t.body, PIC(t.icon), sessionId);
+```
+
+</details>
+
+**依据 2 · 源码核查**：[dsh-pet/src/host/plugin/lifecycle.ts:26-43](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/plugin/lifecycle.ts#L26-L43)
+
+停止挂载的资源边界。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+/** 注册卸载清理；返回的清理函数由 ctx.effect 收集。 */
 export function registerLifecycle(deps: LifecycleInput): void {
   const { ctx, lock, markDisposed, playback, state, stopDownloadSlotTimer, stopHelper, stopWorkStatusFlush } = deps;
   // 随插件生命周期清理：桌面 Helper 回收（异步下载完成后不再拉起）+ 结束所有挂起的等待
@@ -1390,119 +1234,66 @@ export function registerLifecycle(deps: LifecycleInput): void {
 
 </details>
 
-#### 缺口
+**依据 3 · 源码核查**：[dsh-pet/src/host/memory/powercontext.ts:327-370](https://github.com/PC2005-cloud/dsh-pet/blob/fb38ce620576f5ed3735a99536d2b1a4a9eb313f/dsh-pet/src/host/memory/powercontext.ts#L327-L370)
 
-- 成本及真实退出结果未验证。
-  **影响**：无法承诺无后台请求或零清理负担。
-  **进一步探讨**：对照空 profile 记录请求、状态文件、人工准备和回滚。
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 如何检验通知改善了回查？
-
-**研究主题**：新假设与验证
-
-#### 完整回答
-
-待验证假设是携带会话标识的通知在用户看别的页面时能缩短返回当前审批的时间。宿主对完成状态做延迟确认，有待证明能减少误报且保持送达。没有会话归属的错误事件和系统未授权提供反例。
-
-在同一 DSH Web 和浏览器交替执行两条可控会话，一条出现审批，另一条含长后台活动，并注入一次完成前成员仍活动的情况。使用原生查看或插件提醒，均从同一前后台状态出发。记录提醒何时出现、是否打开正确会话、能否在原会话做确认，同时记录误报、焦点切换、额外请求和总人工时间。若正确回查数量和耗时没有改善，或误跳和不必要请求增加，不支持常驻使用。该对照属于待验证方案。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[dsh-pet/src/host/plugin/session-watch.ts:273-302](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/host/plugin/session-watch.ts#L273-L302)
-
-通知事件有来源和延迟完成分支。
+记忆假设需独立检验预算偏置。
 
 <details>
-<summary>查看原文（30行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
-        if (!shouldNotifySession(session)) return;
-        // 回复正文来源：只记最近一段 assistant 文本，供完成通知的正文使用。取不到就不记，
-        // 下游回落空正文（宁可少一行字，也不能让通知整体失效）。
-        if (event?.type === 'assistant/message') {
-          const text = lastAssistantText(event as { type?: string; data?: Record<string, unknown> });
-          if (text) lastReplyText.set(sessionIdOf(session), text);
-        }
-        // 活动门（issue #114）：「对话完成」延迟确认这条会话确实没活了再弹——团队会话里 Lead 的
-        // 这一轮结束 ≠ 团队收工，成员还在跑时弹「对话完成」是误报。生成失败/输出截断、权限申请、
-        // 用户选择不过这道门，直接放行（理由见 notify-events.ts 的 isCompletionTurnEnd）。
-        if (isCompletionTurnEnd(event)) {
-          scheduleCompletionNotify(sessionIdOf(session), event);
-          return;
-        }
-        // 非完成收尾（出错 / 输出截断 / 中止）用不到这段正文，一并清掉，免得留到下一次完成。
-        if (event?.type === 'turn/end') lastReplyText.delete(sessionIdOf(session));
-        const frame = reduceNotifyFrame(event as Parameters<typeof reduceNotifyFrame>[0]);
-        // 帧带上「这条通知是哪条会话发出的」：点击时网页据此跳到那条会话（见 withSessionId）
-        if (frame) pushNotifyFrame(withSessionId(frame, sessionIdOf(session)));
-      },
-    );
-    // agent/error（agent-loop dispatch.emit）：无回合位置的生成失败；0.1.5 新增，
-    // 低版本 DSH 无此事件 = 少一条通知（turn/end error 分支已覆盖大部分失败场景），不报错。
-    // 两道门都管不到它：载荷只有 { turn, step, error }，不带会话标识，无从判定来源。
-    const errorDispose = ctx.on(
-      'agent/error',
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- agent/error 载荷无公开类型，且低版本 DSH 可能不带 error 字段，只能 any 后按可选链取 payload?.error
-      (payload: any) => {
-        pushNotifyFrame(agentErrorFrame(payload?.error));
-      },
-```
+function formatEvidence(layers: RecallLayers): string {
+  const lines = fitSections([
+    [TOPIC_SECTION, (layers.topics ?? []).map(topicLine)],
+    [ATOM_SECTION, (layers.atoms ?? []).map((hit) => evidenceLine(hit.kind, hit.text))],
+  ]);
+  return lines.length === 0 ? '' : EVIDENCE_HEADER + '\n' + lines.join('\n');
+}
 
-</details>
-
-**依据 2 · 源码核查**：[dsh-pet/src/client/notify.ts:121-153](https://github.com/PC2005-cloud/dsh-pet/blob/ef174beecc79df76baf9ca06ed152237bbb96875/dsh-pet/src/client/notify.ts#L121-L153)
-
-点通知的权限制约和跳转结果。
-
-<details>
-<summary>查看原文（33行）</summary>
-
-```text
-export function jumpToSession(sessionId?: string): void {
-  if (sessionId !== undefined) {
-    // 跳转失败（会话已删 / 旧版没有该服务）绝不能连累「把窗口叫回来」那条腿。
-    try {
-      sessionNavigator?.openSession(sessionId);
-    } catch {
-      /* 不跳会话而已，继续叫窗口。 */
+/**
+ * 在字节预算内摆放各段，段标题与每一行都计入。
+ *
+ * 超长从尾部丢整条：越靠后的命中分越低，先丢它们的损失最小。
+ * 首条就放不下时截断塞进去——单条啰嗦记忆不该让整轮召回作废。
+ *
+ * @param sections - 按展示顺序排列的段。
+ * @returns 放得下的行；空数组表示连第一个段标题都放不下。
+ */
+function fitSections(sections: readonly EvidenceSection[]): string[] {
+  const out: string[] = [];
+  let used = Buffer.byteLength(EVIDENCE_HEADER, 'utf8');
+  let hasContent = false;
+  for (const [title, lines] of sections) {
+    if (lines.length === 0) continue;
+    const titleCost = Buffer.byteLength('\n' + title, 'utf8');
+    if (used + titleCost > EVIDENCE_BYTES) break;
+    out.push(title);
+    used += titleCost;
+    for (const line of lines) {
+      const size = Buffer.byteLength('\n' + line, 'utf8');
+      if (used + size <= EVIDENCE_BYTES) {
+        out.push(line);
+        used += size;
+        hasContent = true;
+        continue;
+      }
+      if (hasContent) return out;
+      const room = EVIDENCE_BYTES - used - 1;
+      const truncated = room > 0 ? truncateBytes(line, room) : '';
+      if (truncated === '') return out;
+      out.push(truncated);
+      return out;
     }
   }
-  window.focus();
-  if (!/electron/i.test(navigator.userAgent)) return;
-  const frame = document.createElement('iframe');
-  frame.style.display = 'none';
-  frame.src = 'dsh://open';
-  document.body.append(frame);
-  setTimeout(() => frame.remove(), 1000);
-}
-
-/** 点通知：收起弹窗并跳到它指的那条会话（跳转细化见 {@link jumpToSession}）。 */
-export function wireNotificationClick(n: Notification, sessionId?: string): void {
-  n.onclick = () => {
-    n.close();
-    jumpToSession(sessionId);
-  };
-}
-
-/** 发一条系统通知；总开关关闭、环境不支持、未授权或本页正在看时静默跳过。
- * 日志只在门之后记录：被拦下的触发不产生「弹窗」日志。 */
-function toast(title: string, body?: string, icon?: string, sessionId?: string): void {
-  if (!notifyEnabled) return;
-  // 开关关着时维持「聚焦不打扰」；打开后照常弹，不再看页面是否活跃。
-  if (!shouldRemind(notifyWhenFocused, isPageActive())) return;
-  if (typeof Notification === 'undefined' || Notification.permission !== 'granted') return;
+  return out;
 ```
 
 </details>
 
 #### 缺口
 
-- 没有同条件对照。
-  **影响**：称为待验证假设，采用只限小范围试用。
-  **进一步探讨**：交替使用原生和插件提醒，记录正确回查、误报与额外请求。
+- 没有原生与插件同条件长期任务的送达、正确回查和全周期人工数据
+  **影响**：试用结论不升级持续安装建议
+  **进一步探讨**：固定宿主与任务交替比较，若合格率和总时间未改善或不期望请求增加则停止
 
 [返回分类](../../views/categories/PERSONAL-PRODUCTIVITY.md) · [返回首页](../../../README.md)
