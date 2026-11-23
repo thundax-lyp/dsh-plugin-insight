@@ -1,0 +1,45 @@
+{
+    "repository": "Scodive/Paper-Agent-Skills",
+    "repository_id": 1141061224,
+    "captured_at": "2026-11-23T02:28:08.405Z",
+    "window_start": "2026-10-24T02:28:08.405Z",
+    "stars": 22,
+    "pushed_at": "2026-11-09T07:45:46Z",
+    "issues": {
+        "open": 0,
+        "closed": 0,
+        "created_30d": 0,
+        "closed_30d": 0,
+        "updated_30d": 0
+    },
+    "errors": [],
+    "archived": false,
+    "git_cache": {
+        "captured_at": "2026-11-22T20:19:55.278Z",
+        "source_repository": "thundax-lyp/dsh-plugin-meta",
+        "path": "data/GIT-META.jsonl",
+        "errors_path": "data/GIT-ERRORS.jsonl",
+        "commit_sha": "f8cca6d2308ce02ab3936d7fe48f08f906b099cd",
+        "blob_sha": "b3b2766c430a7563133f5f8560f218381b1164ec",
+        "errors_blob_sha": "84a3c86040a3e6d36319782e41161dc75316310a",
+        "latest_error": null
+    },
+    "npm": {
+        "package_name": "dsh-paper-agent-skills",
+        "captured_at": "2026-11-23T02:28:08.405Z",
+        "window_start": "2026-10-24",
+        "window_end": "2026-11-22",
+        "downloads_30d": null,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-24:2026-11-22/dsh-paper-agent-skills",
+        "error": "HTTP 404",
+        "publication": {
+            "first_published_at": null,
+            "captured_at": "2026-11-23T02:28:08.405Z",
+            "source_url": "https://registry.npmjs.org/dsh-paper-agent-skills",
+            "error": "HTTP 404",
+            "latest_version": null,
+            "latest_published_at": null,
+            "latest_error": "HTTP 404"
+        }
+    }
+}

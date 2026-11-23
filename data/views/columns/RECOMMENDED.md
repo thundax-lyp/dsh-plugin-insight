@@ -15,7 +15,9 @@
 | [dsh-plugin-veriscope](#plugin-1422943787-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 重放VeriScope归档或对已有逐条评分做三态阈值门禁，保存输入/策略绑定回执并重查当前有效性。 | 已有可信逐条分数与显式策略可试用，先用builtin和独立状态备份；PASS限输入范围，replay需固定环境且发布另负责。 |
 | [dsh-markdown-live](#plugin-1426477683-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 在 DSH 输入框实时着色/成形 Markdown，并让已发送用户文本复用宿主 Markdown 渲染器。 | Markdown重度用户可在固定样本上试用其显示层增强，前提是先验证发送字节、IME和撤销不变。 |
 | [CC Safety Net](#plugin-1122873619-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 等编码工具提供执行前规则，检查危险命令和敏感文件访问。 | 经常让 DSH 调用 shell 的工程师，可以在一次性工作区试验工具前置规则。 |
+| [Paper-Agent-Skills](#plugin-1141061224-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DSH 注册论文修订、审稿回复和演示故事板技能，并捆绑 Python 材料与编辑校验工具。 | 已有实验记录和单稿件的研究者可以在副本上试用 Paper-Agent 的论文修订流程。 |
 | [OpenBitFun Agent 工作区](#plugin-1147866277-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 独立 Agent 工作区，支持跨设备控制、远程工作区与可选 DSH 会话。 | 有常开开发主机的开发者可以用测试账号从手机观察隔离仓库里的一次长任务并处理低风险审批。 |
+| [DSH Preset Studio](#plugin-1159838840-packages-studio)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 在侧栏编辑本地预设文件、注入、文档、技能和工具接线，并管理预设安装。 | 经常维护本地 DSH 预设且能回查文件变更的使用者，可在可信且无符号链接的备份目录试用工作室。 |
 | [ModSearch](#plugin-1163808542-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DSH 提供多引擎网页搜索、X 搜索和页面读取。 | 在 DSH 中反复核对公开资料的用户，可以在可信出网配置下用无敏感查询试用 ModSearch。 |
 | [Tokdash](#plugin-1166078953-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 本地 AI 编码工具用量与费用看板，汇总会话、模型、缓存用量及使用报告。 | 保存 DSH 会话日志并愿意核对计数的个人开发者可试用本地 Tokdash 回顾用量。 |
 | [OpenWrite](#plugin-1171186947-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 为 DeepSeek Harness 提供长篇小说写作预设、创作工作台与 Core 桥接。 | 有独立备份的长篇作者可在空白副本试一次单章修订。 |
@@ -40,9 +42,9 @@
 | [DSH Memento](#plugin-1333471394-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 提供带审批策略与审计的跨会话记忆 | 可在隔离 profile 验证稳定约束复用。 |
 | [DSH Email](#plugin-1333512933-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 在 DSH 中浏览、搜索邮件并编辑回复草稿，支持确认发送与可选邮件任务。 | 需要在 DSH 中反复准备邮件回复的人，可以用虚构邮件和禁止外发的替身试一次草稿预览。 |
 | [DSH Taskboard](#plugin-1333732838-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 提供本地 SQLite 项目看板、Agent 任务工具、原生会话执行与自动化。 | 已有本地 DSH 项目且愿意人工验收的操作者可以在独立测试库中试用 Taskboard 管理多会话任务。 |
-| [DSH Market](#plugin-1333807290-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。 | 能复制 profile 且经常维护多个社区包的 DSH Web 用户，可以用市场试装一个非关键插件并核对实际生效。 |
+| [DSH Market 插件市场](#plugin-1333807290-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 在 DSH 中浏览、搜索、安装和更新社区插件，提供 AI 查找、配置备份与恢复入口。 | 常驻 DSH 且维护多个社区包、能复制 profile 的用户，可先试一个固定来源的非关键插件更新。 |
 | [dsh_kline](#plugin-1333960520-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 在 DSH 会话中查看 K 线、分析历史形态并把绘图应用到当前图。 | 需要在 DSH 复盘历史走势的用户，可以用可丢弃 profile 和固定日线样本核对一张图的标注。 |
-| [DSH Context](#plugin-1333961389-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 查看 DeepSeek Harness 会话的上下文组成、演变、事件和跨会话使用概况。 | 经常在 DSH Web 长会话中调用工具的开发者，可以在隔离会话中用上下文视图找出一笔已知的长工具输出。 |
+| [DSH Context](#plugin-1333961389-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 查看 DSH 会话的上下文组成、历史步骤、事件与跨会话用量概况。 | 需要追查长工具返回或 Agent 注入的个人 DSH 开发者可以用非敏感已知会话试查上下文来源。 |
 | [DSH Free Search](#plugin-1334384058-root)<br>[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md) | 为 DSH 提供多引擎网页搜索、可配置回退与分层网页提取。 | 经常用 DSH 查公开技术文档的开发者，可以先在独立 profile 用少量引擎查一组已知答案的问题。 |
 | [@awiki/dsh-plugin](#plugin-1334428397-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 将AWiki身份、私信、群聊与邮件接入DSH，提供Web界面和通信工具。 | 已有AWiki需求者可在关闭入站监听的前提下试用收发工具，先固定身份、审批和失败重放边界。 |
 | [DSH Config Manager](#plugin-1334434081-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 备份、迁移和同步 DSH 配置，并从其他工具导入会话。 | 能单独备份的 DSH 用户可在测试档案迁一个配置分区和几条虚构会话。 |
@@ -91,6 +93,7 @@
 | [dsh-redstone-music](#plugin-1401037852-root)<br>[![分类：内容生产](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%86%85%E5%AE%B9%E7%94%9F%E4%BA%A7&color=be185d)](../categories/CONTENT-CREATION.md) | 把 MIDI 与 SoundFont 渲染结果编排成 Minecraft 红石音乐数据包。 | 本地工件可控，但远程前必须证明听感和回滚。 |
 | [AI 残渣清运](#plugin-1406611614-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 按规则把代理副产物移入可恢复回收站，并支持项目结项归档。 | 规则稳定且有版本控制的项目可先 dry-run 后试用；正式产物零误收和可恢复是硬门槛。 |
 | [dsh-fullscreen-input](#plugin-1407166868-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 为DSH增加可移动缩放的全屏草稿编辑面板，共用引用与附件，Enter换行、Ctrl/Cmd+Enter发送。 | 仅建议在固定宿主、单会话、无敏感且另有副本的纯文本长草稿范围试用：先核主框同步，关闭面板后在宿主主框核对并发送；初期不在面板内新增附件或编辑引用，不以关闭面板当发送回执。 |
+| [dsh-ops](#plugin-1409893258-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 为 DSH 提供原生文件工具、可在代码中批处理的文件接口和可选 Bash 能力。 | 有可复位小仓库的 DSH 开发者可以对照已知清单试用 OPS 检索和文件改动。 |
 | [DeepSeek Harness Intelligent UI](#plugin-1412721907-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 在 DSH 会话内生成可交互组件、更新视图和运行隔离小部件。 | 要在 DSH 比较小型结构化数据的用户，可以先用一张非敏感的交互表检验筛选。 |
 | [军械库（DSH Armory）](#plugin-1413052822-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 为 DSH 提供 MCP、Skill、专家和插件的集中管理，并查看工具使用和发送清单。 | 维护多个 DSH 项目和 MCP 的用户，可以先在临时项目试导入一个可控连接。 |
 | [dsh-backup-sync](#plugin-1418642133-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 按模块备份和恢复 DSH 技能、插件、配置与记忆，支持基线合并及 WebDAV 同步。 | 适合有备用数据副本的多机 DSH 用户先试技能模块恢复，并暂停同时写入；暂不依赖其作为唯一备份。 |
@@ -109,9 +112,6 @@
 | [dsh-curate](#plugin-1428582868-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 按消息标重要性、改写模型可见文本，并以备份和区间摘要整理 DSH 会话上下文。 | 能明确长会话关键约束、并愿意先复制非关键会话的 DSH 用户，可试用逐消息标注、纠错和区间整理。 |
 | [LazyMind](#plugin-823606893-root)<br>[![分类：办公与运营](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%8A%9E%E5%85%AC%E4%B8%8E%E8%BF%90%E8%90%A5&color=0f766e)](../categories/OFFICE-OPERATIONS.md) | 提供知识、技能和可审核工作流的独立运行环境，并支持连接 DSH。 | 已有 DSH 与 LazyMind 的用户可以用测试账号在独立 profile 试做一份非敏感短演示稿。 |
 | [Superpowers DSH](#plugin-1333750613-root)<br>[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md) | 将上游软件开发方法作为可调用 DSH 技能注册 | 可在开发 profile 试用单个技能。 |
-| [dsh-composer-expand](#plugin-1334850903-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。 | 功能窄且无额外外部数据面，长稿单composer场景可控试用；先核IME/菜单/撤销和收起，广兼容表不等于操作验证。 |
-| [dsh-archived-conversations](#plugin-1335060115-root)<br>[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md) | 在DSH设置页列归档会话并只读预览最近六条用户/助手文本，不切换或恢复会话。 | 可信本地HTTP单用户辨认归档可试用，知晓不能恢复/全文且快切要核标题正文。 |
-| [dsh-recipe](#plugin-1336583700-root)<br>[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md) | 把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。 | 适合作场景清单与命令草案，逐组件检查并补profile、版本和配置后使用；不能按一行命令假定整套可靠。 |
 
 <a id="plugin-1422943787-root"></a>
 
@@ -179,6 +179,28 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1141061224-root"></a>
+
+## [Paper-Agent-Skills](../../plugins/scodive--paper-agent-skills/INSIGHT.md)
+
+[![分类：研究与知识](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E7%A0%94%E7%A9%B6%E4%B8%8E%E7%9F%A5%E8%AF%86&color=7c3aed)](../categories/RESEARCH-KNOWLEDGE.md)
+
+[![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Scodive/Paper-Agent-Skills)
+
+**主要用途**：为 DSH 注册论文修订、审稿回复和演示故事板技能，并捆绑 Python 材料与编辑校验工具。
+
+**建议**：试用
+
+**推荐理由**：已有实验记录和单稿件的研究者可以在副本上试用 Paper-Agent 的论文修订流程。它比直接让 Agent 改稿增加材料绑定、精确编辑和未解决项记录，但不能证明科学主张正确。若数字对应的方法或单位不符，或为了通过检查必须伪造证据，用户应停止应用并回到人工逐条修订。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q04](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q04) 先选一份有已知错误的稿件副本，核对diff和未解决项；科学证据不一致时停止应用，返回人工逐条修订。
+
+[查看完整分析 →](../../plugins/scodive--paper-agent-skills/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1147866277-root"></a>
 
 ## [OpenBitFun Agent 工作区](../../plugins/gcwing--openbitfun/INSIGHT.md)
@@ -198,6 +220,28 @@
 **试用条件**：用测试账号和可回滚仓库先跑一次短任务，再从第二设备核对任务 ID 与审批。断开后回主机确认文件结果，状态未知时暂停后续写入。见 [Q04](../../plugins/gcwing--openbitfun/INSIGHT.md#research-q04)。
 
 [查看完整分析 →](../../plugins/gcwing--openbitfun/INSIGHT.md)
+
+[返回表格](#column-index)
+
+<a id="plugin-1159838840-packages-studio"></a>
+
+## [DSH Preset Studio](../../plugins/hycally--dsh-preset-studio--packages-studio/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/HYcally/dsh-preset-studio) [![npm 30d 262](https://img.shields.io/static/v1?label=npm+30d&message=262&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-preset-studio) [![最新发布 2026-10-19](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-10-19&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-preset-studio)
+
+**主要用途**：在侧栏编辑本地预设文件、注入、文档、技能和工具接线，并管理预设安装。
+
+**建议**：试用
+
+**推荐理由**：经常维护本地 DSH 预设且能回查文件变更的使用者，可在可信且无符号链接的备份目录试用工作室。相比手改 YAML，它把条目需要的消费者和接线步骤显示在同一界面，源码支持这一操作增量。若新会话能力与界面状态不一致或安装状态不清，应停止写入并回到宿主管理器和编辑器恢复备份。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：先用可信、无符号链接的单一预设备份目录，核对接线、磁盘内容、新会话行为和卸载状态；任一不一致就停止写入并用宿主管理器与编辑器恢复。优先作者声明实测平台，其他平台先检查模板目录分隔符。依据见 [Q06](../../plugins/hycally--dsh-preset-studio--packages-studio/INSIGHT.md#research-q06)。
+
+[查看完整分析 →](../../plugins/hycally--dsh-preset-studio--packages-studio/INSIGHT.md)
 
 [返回表格](#column-index)
 
@@ -731,21 +775,21 @@
 
 <a id="plugin-1333807290-root"></a>
 
-## [DSH Market](../../plugins/dsh-market--dsh-market/INSIGHT.md)
+## [DSH Market 插件市场](../../plugins/dsh-market--dsh-market/INSIGHT.md)
 
 [![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
 
-[![GitHub ★ 12,571](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=12%2C571&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,289,262](https://img.shields.io/static/v1?label=npm+30d&message=1%2C289%2C262&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-16](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-16&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
+[![GitHub ★ 13,234](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=13%2C234&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/dsh-market/dsh-market) [![npm 30d 1,340,541](https://img.shields.io/static/v1?label=npm+30d&message=1%2C340%2C541&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket) [![最新发布 2026-11-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dshmarket)
 
-**主要用途**：在 DeepSeek Harness 中浏览、搜索、安装和管理社区插件。
+**主要用途**：在 DSH 中浏览、搜索、安装和更新社区插件，提供 AI 查找、配置备份与恢复入口。
 
 **建议**：试用
 
-**推荐理由**：能复制 profile 且经常维护多个社区包的 DSH Web 用户，可以用市场试装一个非关键插件并核对实际生效。相对逐个查清单和手工更新，市场可先筛掉声明明确冲突的候选，并把操作回执与检查结果放在同一处。遇到来源不明、激活回执与功能不符或无法恢复副本时，使用者应停止操作并退回宿主的插件管理入口。
+**推荐理由**：常驻 DSH 且维护多个社区包、能复制 profile 的用户，可先试一个固定来源的非关键插件更新。相比目录加 CLI 手工记录，源码把来源、兼容、激活和恢复信息带入同一交互，但没有证明更快办结。若来源不明、功能与回执矛盾、底层仍有写入或无法确认恢复，应停止变更并退回副本及宿主管理入口。
 
 **核查情况**：已核查固定版本源码；无同版本宿主验收记录。
 
-**试用条件**：先在复制的 Web profile 装一个已知来源的非关键插件，对照目标包和实际激活，确认能恢复副本。来源、包版本或功能无法对上时停止；仅需发现目录可沿用宿主 Discover。 [Q05](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q05)
+**试用条件**：[Q09](../../plugins/dsh-market--dsh-market/INSIGHT.md#research-q09) 先复制Web profile，留关键数据副本，只改一个非关键包并固定来源版本；查落盘、激活和真实功能，验证能恢复。AI与后台按需开启，底层写入未结束时不盲目重试。
 
 [查看完整分析 →](../../plugins/dsh-market--dsh-market/INSIGHT.md)
 
@@ -779,17 +823,17 @@
 
 [![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
 
-[![GitHub ★ 5,162](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C162&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 519,030](https://img.shields.io/static/v1?label=npm+30d&message=519%2C030&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-11-13](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-13&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
+[![GitHub ★ 5,419](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C419&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/bowenliang123/dsh-context) [![npm 30d 563,380](https://img.shields.io/static/v1?label=npm+30d&message=563%2C380&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context) [![最新发布 2026-11-21](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-21&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-context)
 
-**主要用途**：查看 DeepSeek Harness 会话的上下文组成、演变、事件和跨会话使用概况。
+**主要用途**：查看 DSH 会话的上下文组成、历史步骤、事件与跨会话用量概况。
 
 **建议**：试用
 
-**推荐理由**：经常在 DSH Web 长会话中调用工具的开发者，可以在隔离会话中用上下文视图找出一笔已知的长工具输出。相比看到压力后逐步翻日志，视图能把压力读数与历史步骤和候选来源放在同一会话。遇到访问权限说不清、报表与原始事件不符或历史不全时，开发者应停用视图并用原生日志复核。
+**推荐理由**：需要追查长工具返回或 Agent 注入的个人 DSH 开发者可以用非敏感已知会话试查上下文来源。它比只看压力环多提供历史步骤、事件和组成导航，但正确归因仍要回原日志确认。若步骤内容错位、历史覆盖无法解释或出现非预期会话访问，用户应停用该诊断路径并返回原生界面和原日志。
 
 **核查情况**：已核查固定版本源码；无同版本宿主验收记录。
 
-**试用条件**：有一笔已知长工具返回时可在个人隔离 Web profile 试查，保持额外提示词为空，发生空明细、跨会话错位或权限无法说明时停用插件并回到原始日志。[Q04](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q04)
+**试用条件**：[Q05](../../plugins/bowenliang123--dsh-context/INSIGHT.md#research-q05) 用已知源事件的个人非敏感会话试查，保持主动提示为空；错位、缺历史或访问边界不能解释时停用并回原日志。
 
 [查看完整分析 →](../../plugins/bowenliang123--dsh-context/INSIGHT.md)
 
@@ -1851,6 +1895,28 @@
 
 [返回表格](#column-index)
 
+<a id="plugin-1409893258-root"></a>
+
+## [dsh-ops](../../plugins/t-auto--dsh-ops/INSIGHT.md)
+
+[![分类：软件交付](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E8%BD%AF%E4%BB%B6%E4%BA%A4%E4%BB%98&color=334155)](../categories/SOFTWARE-DELIVERY.md)
+
+[![GitHub ★ 5,977](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C977&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 258,191](https://img.shields.io/static/v1?label=npm+30d&message=258%2C191&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-11-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
+
+**主要用途**：为 DSH 提供原生文件工具、可在代码中批处理的文件接口和可选 Bash 能力。
+
+**建议**：试用
+
+**推荐理由**：有可复位小仓库的 DSH 开发者可以对照已知清单试用 OPS 检索和文件改动。它比单看工具成功消息多提供修订、覆盖和副作用回执，但尚无同任务节时或节费结果。若回执无法解释、部分变更状态不明或退出后默认预设悬空，用户应停止 OPS 并回到官方工具核对实际文件。
+
+**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
+
+**试用条件**：[Q05](../../plugins/t-auto--dsh-ops/INSIGHT.md#research-q05) 从隔离仓库只读清单与可复位改动开始，发生部分结果先查实际文件；缺worker、回执或默认恢复失败时回官方工具。
+
+[查看完整分析 →](../../plugins/t-auto--dsh-ops/INSIGHT.md)
+
+[返回表格](#column-index)
+
 <a id="plugin-1412721907-root"></a>
 
 ## [DeepSeek Harness Intelligent UI](../../plugins/dreamfarer-space--deepseek-harness-intelligent-ui/INSIGHT.md)
@@ -2247,74 +2313,8 @@
 
 [返回表格](#column-index)
 
-<a id="plugin-1334850903-root"></a>
-
-## [dsh-composer-expand](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md)
-
-[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
-
-[![GitHub ★ 6](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=6&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/13071301808/dsh-composer-expand) [![npm 30d 969](https://img.shields.io/static/v1?label=npm+30d&message=969&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-composer-expand) [![最新发布 2026-09-05](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-05&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-composer-expand)
-
-**主要用途**：在DSH会话输入工具行增加展开按钮，切换70vh长稿视图、记忆浏览器状态，并在展开时调整普通Enter行为。
-
-**建议**：试用
-
-**推荐理由**：功能窄且无额外外部数据面，长稿单composer场景可控试用；先核IME/菜单/撤销和收起，广兼容表不等于操作验证。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：有条件试用，长草稿/单composer用户先核Enter、IME、菜单与收起行为；不作为草稿备份。详见[Q06](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md#research-q06)。
-
-[查看完整分析 →](../../plugins/13071301808--dsh-composer-expand/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1335060115-root"></a>
-
-## [dsh-archived-conversations](../../plugins/aks1st--dsh-archived-conversations/INSIGHT.md)
-
-[![分类：个人效率](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E4%B8%AA%E4%BA%BA%E6%95%88%E7%8E%87&color=2563eb)](../categories/PERSONAL-PRODUCTIVITY.md)
-
-[![npm 30d 804](https://img.shields.io/static/v1?label=npm+30d&message=804&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-archived-conversations) [![最新发布 2026-09-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-09-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-archived-conversations)
-
-**主要用途**：在DSH设置页列归档会话并只读预览最近六条用户/助手文本，不切换或恢复会话。
-
-**建议**：试用
-
-**推荐理由**：可信本地HTTP单用户辨认归档可试用，知晓不能恢复/全文且快切要核标题正文。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：本地HTTP单用户只读辨认可试用。详见[Q05](../../plugins/aks1st--dsh-archived-conversations/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/aks1st--dsh-archived-conversations/INSIGHT.md)
-
-[返回表格](#column-index)
-
-<a id="plugin-1336583700-root"></a>
-
-## [dsh-recipe](../../plugins/863683348--dsh-recipe/INSIGHT.md)
-
-[![分类：基础设施](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=&message=%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD&color=4338ca)](../categories/INFRASTRUCTURE.md)
-
-[![npm 30d 123](https://img.shields.io/static/v1?label=npm+30d&message=123&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe) [![最新发布 2026-08-17](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-08-17&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-recipe)
-
-**主要用途**：把本地场景配方展开成去重插件清单和安装命令，支持关键词搜索与多配方组合。
-
-**建议**：试用
-
-**推荐理由**：适合作场景清单与命令草案，逐组件检查并补profile、版本和配置后使用；不能按一行命令假定整套可靠。
-
-**核查情况**：已核查固定版本源码；无同版本宿主验收记录。
-
-**试用条件**：作为选型草案试用，补齐profile/版本/配置再执行。详见[Q05](../../plugins/863683348--dsh-recipe/INSIGHT.md#research-q05)。
-
-[查看完整分析 →](../../plugins/863683348--dsh-recipe/INSIGHT.md)
-
-[返回表格](#column-index)
-
 [返回首页](../../../README.md)
 
 ## 更新时间
 
-2026-11-19
+2026-11-23

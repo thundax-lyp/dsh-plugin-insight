@@ -1,44 +1,34 @@
 {
     "repository": "T-Auto/dsh-ops",
     "repository_id": 1409893258,
-    "captured_at": "2026-11-14T11:35:36.890Z",
-    "window_start": "2026-10-15T11:35:36.890Z",
-    "stars": 5782,
-    "pushed_at": "2026-11-14T11:16:32Z",
+    "captured_at": "2026-11-23T02:28:08.405Z",
+    "window_start": "2026-10-24T02:28:08.405Z",
+    "stars": 5977,
+    "pushed_at": "2026-11-22T09:43:54Z",
     "issues": {
-        "open": 62,
-        "closed": 442,
-        "created_30d": 447,
-        "closed_30d": 413,
-        "updated_30d": 475
+        "open": 29,
+        "closed": 526,
+        "created_30d": 375,
+        "closed_30d": 387,
+        "updated_30d": 417
     },
     "errors": [],
     "archived": false,
-    "git_cache": {
-        "captured_at": "2026-11-13T11:36:54.757Z",
-        "source_repository": "thundax-lyp/dsh-plugin-meta",
-        "path": "data/GIT-META.jsonl",
-        "errors_path": "data/GIT-ERRORS.jsonl",
-        "commit_sha": "1df1813a06fccf07f8cea14e5e23bd87133eec77",
-        "blob_sha": "d871afc1dbd83319c94b275acde8f27704d39aa2",
-        "errors_blob_sha": "89da96286f5fdd559e776fe9d6fd582058e6f94f",
-        "latest_error": null
-    },
     "npm": {
         "package_name": "dsh-ops",
-        "captured_at": "2026-11-14T10:32:50.352Z",
-        "window_start": "2026-10-15",
-        "window_end": "2026-11-13",
-        "downloads_30d": 229747,
-        "source_url": "https://api.npmjs.org/downloads/point/2026-10-15:2026-11-13/dsh-ops",
+        "captured_at": "2026-11-22T11:31:46.615Z",
+        "window_start": "2026-10-23",
+        "window_end": "2026-11-21",
+        "downloads_30d": 258191,
+        "source_url": "https://api.npmjs.org/downloads/point/2026-10-23:2026-11-21/dsh-ops",
         "error": null,
         "publication": {
             "first_published_at": "2026-10-08T11:18:08.527Z",
-            "captured_at": "2026-11-14T10:32:50.352Z",
+            "captured_at": "2026-11-22T11:31:46.615Z",
             "source_url": "https://registry.npmjs.org/dsh-ops",
             "error": null,
-            "latest_version": "0.5.4",
-            "latest_published_at": "2026-11-11T08:11:01.320Z",
+            "latest_version": "0.5.5",
+            "latest_published_at": "2026-11-14T11:56:18.686Z",
             "latest_error": null
         }
     }

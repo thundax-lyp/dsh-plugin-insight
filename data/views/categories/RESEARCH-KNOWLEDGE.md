@@ -132,6 +132,7 @@
 | [dshfind](#plugin-1333082908-root) | 围绕 DeepSeek Harness 的插件发现、学习和社区网站。 | [Q04](../../plugins/hikariming--dshfind/INSIGHT.md#research-q04) 将目录当候选入口，安装前回固定源码核权限和兼容；来源或安全条件不明就停止。 |
 | [EduWork Literature](#plugin-1369398336-packages-dsh-literature) | 为 DSH 提供 DBLP、arXiv 文献搜索、BibTeX 和可访问全文提取。 | 先用公开论文核对来源和引用；部分失败及取消后回原站和目录确认。 |
 | [Envoy](#plugin-1262941478-integrations-dsh-envoy-dsh) | DSH 子包注册 Envoy Skill、MCP 和链接读取提示，输出可定位资料。 | [Q03](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md#research-q03) 固定链接同预算人工对照。 |
+| [FIU Finance MCP for DeepSeek Harness](#plugin-1027441548-plugins-fiu-finance-mcp-dsh) | 通过标准输入输出适配器把 FIU 金融数据服务接入 DSH。 | [Q05](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md#research-q05) 先核实账号权限、目录和收费，再对一个已知标的核对时间与业务行；信息无法回查时停用并回到原界面。 |
 | [GEML for DeepSeek Harness](#plugin-1272251780-integrations-dsh-plugin) | 在 DeepSeek Harness 中加入 GEML 文档块 MCP 与文档、调用图技能。 | 先观察已知 CLI 版本和实际 cwd 后的只读定位，同仓规范作对照。 |
 | [GeoChat 画布](#plugin-959005755-plugins-deepseek-harness) | 让 DSH 模型操作会话右侧的 GeoGebra 画布 | [Q04](../../plugins/tiwe0--geochat--plugins-deepseek-harness/INSIGHT.md#research-q04) 使用固定 Web 版本对照双会话与断流。 |
 | [GLM-5.3-Flash J-Space能力报告](#plugin-1335867536-root) | 介绍J-Space选择性加载、任务状态记录与恢复协议，并汇总作者报告的基准估计。 | 长任务Agent研究者可阅读报告并提取状态外化与恢复的验证问题；先取得原始套件固定提交和任务级数据，不把README安装指令当作本仓库已提供实现；关键材料未补齐前仅观察。 |
@@ -139,6 +140,7 @@
 | [Hanai Worth 值见](#plugin-1334675451-root) | 将行情快照、研究会话与可校验报告归档集中在独立 DSH 工作台 | [Q04](../../plugins/hancao97--hanai-investment-dsh/INSIGHT.md#research-q04) 用虚构历史材料确认缓存、封存与迁移。 |
 | [hello-dsh](#plugin-1333303761-root) | 提供中文 DSH 入门教程、示例 Skill 和最小代码插件。 | [Q03](../../plugins/pingfanfan--hello-dsh/INSIGHT.md#research-q03) 先用临时环境和单个固定示例。 |
 | [hn](#plugin-1211255316-root) | 在终端浏览 Hacker News 故事和评论，并提供可选翻译。 | [Q03](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q03) 先用公开帖子并核模型端点；内容不全或不接受外发时返回网页和原文。 |
+| [Idea2Paper for DSH](#plugin-1190567416-integrations-dsh) | 在 DSH 中持续运行研究项目、计算实验、编写论文，并以独立评审和版本检查约束交付。 | 先在专用Linux/DSH profile中用本地Docker核对一个结果可人工复算的小任务，不立即接集群或昂贵外部服务。 |
 | [Jacobian](#plugin-1309745037-root) | 为 Agent 提供可搜索的数学操作、执行结果和类型化接口。 | [Q03](../../plugins/morluto--jacobian/INSIGHT.md#research-q03) 先检查后端和操作合同，以已知题及独立方法对照；结果不完整或不一致则停止依赖。 |
 | [KRouter](#plugin-1341648244-root) | 让多个编程Agent共享Markdown记忆，通过DSH七个查询工具提供canonical路由、分层全文召回、弱匹配拒答和来源收据。 | 有条件试用lookup-only。 |
 | [last30days-cn](#plugin-1196982492-root) | 检索中文平台近期讨论与热榜，整理附原始来源的研究结果。 | [Q04](../../plugins/jesseovo--last30days-skill-cn/INSIGHT.md#research-q04) 先在授权范围内选公开来源并检查状态和原文；覆盖不足时停止总体结论。 |
@@ -163,6 +165,7 @@
 | [OpenContext](#plugin-1329484633-root) | 面向Agent应用的记忆、检索和图修订基础设施，提供库facade及MCP/HTTP入口。 | [Q04](../../plugins/melandlabs--opencontext/INSIGHT.md#research-q04) 先loopback单用户只读及dryRun，再由host加授权。 |
 | [OpenQuantum](#plugin-1335086034-root) | 面向 DeepSeek Harness Desktop 与 Codex 的量子研究 Skills 和 Tools | [Q04](../../plugins/xi-zhao--openquantum/INSIGHT.md#research-q04) 仅隔离Home试支持域的重复复核任务，保留原SDK和结果包，先验失败/停止/回退。 |
 | [OpenViking DSH Memory](#plugin-1128123594-examples-dsh-memory-plugin) | 在 DeepSeek Harness 会话中接入 OpenViking 召回、消息捕获、Skill 和 MCP。 | [Q05](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md#research-q05) 建议先保留手动管理，在有授权的临时服务验证唯一标记、实际模型出口与停用后队列。 |
+| [Paper-Agent-Skills](#plugin-1141061224-root) | 为 DSH 注册论文修订、审稿回复和演示故事板技能，并捆绑 Python 材料与编辑校验工具。 | [Q04](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q04) 先选一份有已知错误的稿件副本，核对diff和未解决项；科学证据不一致时停止应用，返回人工逐条修订。 |
 | [PaperMachine](#plugin-1345235144-root) | 本地运行 Python/R 并以版本化产物和来源记录支持审阅的科研桌面客户端 | 建议有限试用，见 [Q05](../../plugins/superjj007--papermachine/INSIGHT.md#research-q05)：macOS上先以去敏且已有正确答案的小CSV验证执行轨迹、版本、人工编辑和备份恢复。 |
 | [PatentRadar](#plugin-1230059993-root) | 从公开专利号组织竞品候选、技术特征对照和公开证据线索，供人工复核。 | 仅用公开、可回源案例验证一份线索表；不能支持具体特征时回到人工检索。 |
 | [Polaris](#plugin-1309135706-root) | 独立桌面/Python研究工作台，以持久Voyage驱动真实实验执行与模型反思迭代；预算审批是条件开关，运行指标和自验证不等独立科研真值。 | 可丢弃合成已知答案任务，借已核API显式confirm_budget与正max_hours，固定允许模型/Runner资源；当前创建Modal未提交确认字段，不把默认GUI当有预算人工门，见[Q03](../../plugins/zju-real--polaris/INSIGHT.md#research-q03)。 |
@@ -2105,6 +2108,22 @@
 
 [查看完整分析](../../plugins/regrevia--envoy--integrations-dsh-envoy-dsh/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1027441548-plugins-fiu-finance-mcp-dsh"></a>
+
+## [FIU Finance MCP for DeepSeek Harness](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md)
+
+[![GitHub ★ 2](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=2&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/fiu-ai/mcp-server)
+
+> **用途**：面向已有 FIU 授权的 DSH 用户，将行情与公告等远端查询接入对话。
+
+> **亮点**：[Q01](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md#research-q01) 识别的增量是可按子目录安装的配置、固定适配器版本及环境约定；协议转发和金融数据属于外部依赖。
+
+> **思考**：[Q03](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md#research-q03) 显示请求成功仍可能没有业务行；[Q04](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md#research-q04) 的远端目录也不随adapter版本冻结，不能以配置加载成功证明数据足够完成任务。
+
+> **建议**：[Q04](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md#research-q04) 提出保存目录摘要并核对数据时间与empty状态的未验证假设，以误判和额外人工时间共同检验价值。
+
+[查看完整分析](../../plugins/fiu-ai--mcp-server--plugins-fiu-finance-mcp-dsh/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1272251780-integrations-dsh-plugin"></a>
 
 ## [GEML for DeepSeek Harness](../../plugins/geml-spec--geml--integrations-dsh-plugin/INSIGHT.md)
@@ -2216,6 +2235,22 @@
 > **建议**：[Q04](../../plugins/heartleo--hn-cli/INSIGHT.md#research-q04) 假设显示来源和完整性提示帮助读者判断，尚未验证。
 
 [查看完整分析](../../plugins/heartleo--hn-cli/INSIGHT.md) · [返回表格](#category-index)
+
+<a id="plugin-1190567416-integrations-dsh"></a>
+
+## [Idea2Paper for DSH](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md)
+
+[![GitHub ★ 38](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=38&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/kaust-ark/ARK)
+
+> **用途**：面向已有 Linux 与 DSH 环境的研究开发者，以同一持久项目串联实验、论文编写和独立评审，交付时保留结果与稿件版本的对应关系。
+
+> **亮点**：[Q01](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md#research-q01) 与 [Q02](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md#research-q02) 支持把持久会话、封存实验与同版本独立评审串成可恢复项目；[Q03](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md#research-q03) 展示deliver确实重新检查文件和回执。贡献在交付责任和证据生命周期的组合，不是科学推理正确性保证。
+
+> **思考**：[Q03](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md#research-q03) 显示最重要的两种边界：结构化评审仍可能误读科学证据；项目stopped也不证明所有Slurm操作已终止。采用必须把论文有效性与外部副作用逐项核对，不能只看成功状态。
+
+> **建议**：[Q05](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md#research-q05) 提出尚未验证的终止证明设计：将项目已停与每项后端已确认终止分别展示，避免把 Slurm 的 cancelling 或 submission_unknown 状态误当作资源已释放。先用提交回执丢失、取消仍活跃和查询失败做对照；若不能减少误报或明显增加无收益负担，就应停止该方向。
+
+[查看完整分析](../../plugins/kaust-ark--ark--integrations-dsh/INSIGHT.md) · [返回表格](#category-index)
 
 <a id="plugin-1309745037-root"></a>
 
@@ -2601,6 +2636,22 @@
 
 [查看完整分析](../../plugins/volcengine--openviking--examples-dsh-memory-plugin/INSIGHT.md) · [返回表格](#category-index)
 
+<a id="plugin-1141061224-root"></a>
+
+## [Paper-Agent-Skills](../../plugins/scodive--paper-agent-skills/INSIGHT.md)
+
+[![GitHub ★ 22](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=22&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/Scodive/Paper-Agent-Skills)
+
+> **用途**：面向已有稿件、实验记录和参考文献的研究者，在 DSH 中准备可追查的修订、回复和展示材料。
+
+> **亮点**：[Q02](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q02) 的材料摘要、精确行匹配和落盘前验证把写作建议接成可核对的编辑流程；[Q03](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q03) 明确机械通过与科学正确性分开。
+
+> **思考**：[Q03](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q03) 的数值与证据存在性校验不能保证方法、指标和单位相符，科学论证仍由Agent和研究者承担。
+
+> **建议**：[Q05](../../plugins/scodive--paper-agent-skills/INSIGHT.md#research-q05) 推导把主张绑定方法、数据集、split、指标和单位的未验证改进，以语义错配检出、误拒和总人工时间共同检验。
+
+[查看完整分析](../../plugins/scodive--paper-agent-skills/INSIGHT.md) · [返回表格](#category-index)
+
 <a id="plugin-1345235144-root"></a>
 
 ## [PaperMachine](../../plugins/superjj007--papermachine/INSIGHT.md)
@@ -2941,4 +2992,4 @@
 
 ## 更新时间
 
-2026-11-19
+2026-11-23

@@ -2,17 +2,17 @@
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
 
-源码版本：[58f6e28](https://github.com/T-Auto/dsh-ops/tree/58f6e2817618fae52476e8c7f1920aaeb4421c7a)
+源码版本：[bfdfdf6](https://github.com/T-Auto/dsh-ops/tree/bfdfdf68765f8bdd04914df0cade49de21913746)
 
 <!-- BEGIN META -->
-[![GitHub ★ 5,782](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C782&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 229,747](https://img.shields.io/static/v1?label=npm+30d&message=229%2C747&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-11-11](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-11&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
+[![GitHub ★ 5,977](https://img.shields.io/static/v1?label=GitHub+%E2%98%85&message=5%2C977&color=9a742f&logo=github&style=flat&labelColor=555555&logoColor=white)](https://github.com/T-Auto/dsh-ops) [![npm 30d 258,191](https://img.shields.io/static/v1?label=npm+30d&message=258%2C191&color=4f769b&logo=npm&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops) [![最新发布 2026-11-14](https://img.shields.io/static/v1?label=%E6%9C%80%E6%96%B0%E5%8F%91%E5%B8%83&message=2026-11-14&color=557c63&style=flat&labelColor=555555&logoColor=white)](https://www.npmjs.com/package/dsh-ops)
 <!-- END META -->
 
-> **功能**：给 DeepSeek Harness 增加 Native 文件工具、PTC 文件批处理与可选 Bash 能力。
+> **功能**：为 DSH 提供原生文件工具、可在代码中批处理的文件接口和可选 Bash 能力。
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，作用域内的工具替代与修订回执组合能把一部分可重复的文件核对放进宿主流程。[Q03](#research-q03) 的新版预设把程序形状反馈送到实际调用附近，便于比较批处理方法。
+> **亮点**：[Q01](#research-q01) 的作用域工具替代与[Q02](#research-q02) 的修订/后置回执组合提供可验收文件流程；[Q03](#research-q03) 把后续建议限定到当前可调用能力。
 
-> **主要限制**：[Q02](#research-q02) 的移动先发布目标，随后可能无法移除来源。[Q04](#research-q04) 的截断或不完整扫描也可能让局部结果看起来像任务已经办完。
+> **主要限制**：[Q02](#research-q02) 的move目标可先发布再删源失败，不能把报错当未执行；[Q04](#research-q04) 的扫描/页面/格式限制也使工具完整不等于任务无遗漏。
 
 **本文目录**
 
@@ -26,11 +26,12 @@
 - [2 未来设计假设（未验证）](#detail-section-8)
 - [3 辅助信息](#detail-section-9)
 - [4 研究问题与完整回答](#detail-section-10)
-  - [Q01 · 哪类仓库任务值得从官方文件工具切到 OPS？](#detail-section-11)
-  - [Q02 · 文件改写和搬移的权限、修订确认与失败回执怎样接线？](#detail-section-12)
-  - [Q03 · 新 ops-ptc 预设何时出现，批处理提示改变了什么？](#detail-section-13)
-  - [Q04 · 如何验收一页搜索结果没有漏项？](#detail-section-14)
-  - [Q05 · 安装、运行与退出该怎样做成本对照？](#detail-section-15)
+  - [Q01 · 何时替代官方工具，宿主过旧或Bash失效时怎样处理？](#detail-section-11)
+  - [Q02 · 写入与移动在部分成功或未知时能否直接重试？](#detail-section-12)
+  - [Q03 · PTC选取、批处理指导与下一步建议会授予执行权限吗？](#detail-section-13)
+  - [Q04 · 精简显示、搜索和PDF读取怎样影响完整性判断？](#detail-section-14)
+  - [Q05 · 安装、退出默认预设和失败恢复有哪些实际负担？](#detail-section-15)
+  - [Q06 · 把任务清单与回执联合验收能否减少遗漏和重复写入？](#detail-section-16)
 
 <a id="detail-section-1"></a>
 
@@ -40,9 +41,9 @@
 
 ### 1.1 用途与适用场景
 
-> **用途**：在 DSH 反复盘点仓库、读取目标段落并复核小批量改动的开发者，可以对照已知清单试验 OPS 文件工具与 PTC 结果。
+> **用途**：面向反复盘点仓库、检索段落并复核小批改动的开发者，把受策略限制的文件工具与结果回执接入DSH。
 
-原办法是使用官方文件工具与 Shell、逐次核对输出并保存修订。对简单或低频任务，切换工具层和 PTC 预设可能增加配置负担。
+官方文件工具、原生shell或简单脚本已可处理文件；OPS增加作用域内发布、修订和结构化恢复事实，收益仍需同任务比较。
 
 <a id="detail-section-3"></a>
 
@@ -51,67 +52,70 @@
 #### 能力
 
 | 能力 | 主要用途 | 使用条件与边界 |
-|---|---|---|
-| 原生文件和搜索 | 在会话内读取、匹配及操作文件 | 受宿主策略约束，需复核覆盖 |
-| 工具替代和回退 | 在适用模式选择 OPS 工具 | 同次作用域判定可保留官方定义 |
-| PTC 预设 | 在 run_code 中处理结构化文件任务 | 依赖宿主预设和作用域 |
-| 批处理提示 | 给部分程序形态附上后续上下文 | 启发式，效果需实测 |
+| --- | --- | --- |
+| 文件读取与搜索 | 盘点仓库和查看范围 | 扫描、页面与输出完整性分开验收 |
+| 文件写入/复制/移动 | 有revision约束的小批改动 | 策略允许；move限同文件系统，partial不重放 |
+| PTC文件API | 代码内批处理 | 当前scope/策略及nextTurn选取；发现不授予权限 |
+| 批处理指导 | 对根run_code程序形态反馈 | 非语义证明，会增加上下文 |
+| OPS(PTC)预设 | 提供内置模式与可选默认动作 | 显式设置、回读，退出恢复best effort |
+| 可选Bash | 对应Windows执行模式 | 依赖有效执行器，失败回退范围有限 |
 
 #### 启动与依赖
 
 | 依赖或条件 | 是否必需 | 用途 | 缺失或不满足时 |
-|---|---|---|---|
-| 包声明的 Node 和 DSH 版本 | 加载条件 | 解析发布入口与宿主 API | 需核对实际运行版本 |
-| sandboxPolicy、subprocess 和对应 worker | 原生文件工具必需 | 可控路径和底层执行 | 拒绝执行或证据不足 |
-| agentPresets、ptcRuntime、tools | 预设及 PTC 必需 | 注册和有权运行 API | 预设未就绪或调用不获准 |
-| 同文件系统 | move 必需 | 用硬链接发布目标 | 跨盘明确失败 |
+| --- | --- | --- | --- |
+| 包声明Node/DSH范围 | 加载必需 | 解析发布入口与宿主API | 已知过旧宿主激活拒绝，unknown不保证兼容 |
+| 对应平台原生worker、subprocess和sandboxPolicy | 文件执行必需 | 固定操作与权限 | 不可用或拒绝，保留回执与原工具 |
+| tools、systemPrompt与PTC运行时 | 对应模式必需 | 发布/发现/代码批处理 | 发现不等于当前API获准 |
+| agentPresets与settings | 预设及默认动作按需 | 注册和回读/恢复选择 | 无服务只能告警并人工选回 |
+| 同文件系统 | move必需 | 不覆盖硬链接发布 | 跨盘拒绝，不copy/delete降级 |
 
 #### 启动步骤
 
 | 步骤 | 执行者与动作 | 成功判据或失败处理 |
-|---|---|---|
-| 准备 | 开发者核对发行制品与主机版本 | 对应 worker 和工具服务可用 |
-| 初试 | 在隔离仓库按清单做只读检索 | 命中范围与排除项可解释 |
-| 复核 | 回读一次可恢复改动及权限 | 内容和旧、新修订一致 |
-| 退出 | 切回原预设并停用 OPS | 官方工具可见，缓存另行盘点 |
+| --- | --- | --- |
+| 1 | 用户核对版本、平台与隔离仓库 | worker及策略可说明 |
+| 2 | 宿主按模式发布/替代工具 | 作用域和当前可调用集合明确 |
+| 3 | Agent读取revision再作有界任务 | coverage、effectState和实际文件共同核对 |
+| 4 | 用户处理部分结果并退出试用 | 先查后置事实，再检查默认预设恢复；不盲重放 |
 
 #### 成本
 
 | 阶段 | 现金与资源成本 | 人工与时间投入 | 已知条件与未知项 |
-|---|---|---|---|
-| 首次使用 | 安装包及缓存资源 | 核对宿主、平台和工具链 | 启动时延未知 |
-| 持续使用 | 模型上下文和结果存储 | 检查模式、覆盖和修订 | 单任务用量未知 |
-| 失败恢复 | 可能另存结果或产生重复请求 | 查目标与来源后置事实，必要时回到原工具 | 并发与修复成本未知 |
+| --- | --- | --- | --- |
+| 首次使用 | 包/worker与缓存资源未知 | 核对平台、宿主、模式与策略 | 未测安装时延 |
+| 持续使用 | 模型上下文、反馈、溢出存储未知 | 检查回执和任务清单 | 不承诺节Token或省时 |
+| 失败恢复 | 重读/重复调用与存储未知 | 查两侧revision、权限和默认选择 | 未测异常恢复总成本 |
 
 #### 效果
 
 | 效果项 | 当前证据支持 | 尚不能确定 |
-|---|---|---|
-| 文件验收 | 权限、修订与部分变更有回执 | 跨平台和异常落盘行为 |
-| 搜索覆盖 | 区分遍历、输出限制与游标 | 同任务实测漏项率 |
-| 批处理 | PTC 程序附加针对性提示 | 提示导致的用量与质量变化 |
+| --- | --- | --- |
+| 文件办结 | revision/不覆盖/部分副作用回执 | 目标平台异常结果 |
+| 范围读取 | 按行和revision精简显示及完整性事实 | 端到端漏项率 |
+| 批处理 | 权限约束选择与程序形态反馈 | 合格率、轮次与总费用改善 |
 
-> **思考**：[Q02](#research-q02) 的移动先发布目标，随后可能无法移除来源。[Q04](#research-q04) 的截断或不完整扫描也可能让局部结果看起来像任务已经办完。
+> **思考**：[Q02](#research-q02) 的move目标可先发布再删源失败，不能把报错当未执行；[Q04](#research-q04) 的扫描/页面/格式限制也使工具完整不等于任务无遗漏。
 
 <a id="detail-section-4"></a>
 
 ### 1.3 工程亮点
 
-> **亮点**：[Q01](#research-q01) 和 [Q02](#research-q02) 显示，作用域内的工具替代与修订回执组合能把一部分可重复的文件核对放进宿主流程。[Q03](#research-q03) 的新版预设把程序形状反馈送到实际调用附近，便于比较批处理方法。
+> **亮点**：[Q01](#research-q01) 的作用域工具替代与[Q02](#research-q02) 的修订/后置回执组合提供可验收文件流程；[Q03](#research-q03) 把后续建议限定到当前可调用能力。
 
-[Q02](#research-q02) 的写入权限复核和 no-clobber 设计保留有限失败边界，[Q04](#research-q04) 的覆盖与显示页分别报告。复用时应将后置事实与工具状态共同记录。
+[Q02](#research-q02) 的不覆盖发布、修订复核与effectState值得复用；[Q03](#research-q03) 下一步建议与授权分离。[Q05](#research-q05) 默认预设best effort清理需保留失败告警，移植时不能只复制理想分支。
 
 <a id="detail-section-5"></a>
 
 ### 1.4 主要限制
 
-[Q02](#research-q02) 的移动先发布目标，随后可能无法移除来源。[Q04](#research-q04) 的截断或不完整扫描也可能让局部结果看起来像任务已经办完。
+[Q02](#research-q02) 的move目标可先发布再删源失败，不能把报错当未执行；[Q04](#research-q04) 的扫描/页面/格式限制也使工具完整不等于任务无遗漏。
 
 <a id="detail-section-6"></a>
 
 ### 1.5 使用建议
 
-[Q05](#research-q05) 建议隔离试用，从只读清单和可复位改动开始；不能解释回执或缺少预期结果时退回官方工具。
+[Q05](#research-q05) 从隔离仓库只读清单与可复位改动开始，发生部分结果先查实际文件；缺worker、回执或默认恢复失败时回官方工具。
 
 <a id="detail-section-7"></a>
 
@@ -119,18 +123,18 @@
 
 **核查状态**：已检查源码。
 
-固定源码支持模式挂载、受控文件操作和 PTC 提示。部分写入及不完整搜索仍需核对后置事实，实际节省与跨文件系统行为未验证。
+接线、权限、文件操作与回执边界已检查；未运行平台或宿主任务，性能收益未证；任务联合验收是未实现假设。
 
-- 已检查：作者 README、包清单、源码路径 cordis.patch.yml、src/index.ts、src/publication/replacements.ts、README.md、src/execution/files.ts、native/crates/ops-files/src/file_single.rs、src/presets/ops-ptc/register.ts、src/publication/ptc.ts、src/ptc/batching-guidance.ts、src/capabilities/file.ts、native/crates/ops-search/src/paging.rs、package.json、scripts/build.mjs、src/adapter/dsh/runtime-version.ts、src/cli/cache-reclaim.ts 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
+- 已检查：作者 README、包清单、源码路径 package.json、cordis.patch.yml、src/index.ts、src/adapter/dsh/host-floor.ts、src/consumer/mount.ts、src/publication/replacements.ts、src/publication/ptc.ts、src/execution/files.ts、native/crates/ops-files/src/file_single.rs、src/projections/ptc/outcome.ts、src/projections/ptc/next-step.ts、src/projections/native/ranges.ts、src/projections/native/render.ts、src/presets/ops-ptc/register.ts、native/crates/ops-documents/src/pdf_container.rs 及固定范围 inventory；组件：仓库根。抽读不冒充完整审计，来源和原文嵌入正式快照时保留。
 - 未执行：插件安装、目标代码与测试、真实宿主及模型任务。源码存在不等于运行通过。
-- 边界：核查根安装、原生文件与搜索、替换工具、PTC 预设与提示、宿主版本和缓存。未评测全部可选 Bash、TUI、下载及第三方集成，也未运行本机插件或基准。
-- 下一步：用固定模型和仓库比较官方工具与 OPS，再只切换 [Q03](#research-q03) 的提示开关。记录成功产物、令牌、轮次和人工修复，按 [Q04](#research-q04) 检查故意遗漏。
+- 边界：固定根组件，覆盖原生文件与搜索、PTC/预设和新增host-floor、恢复建议、显示及PDF容器限制；未全面评测可选Bash/TUI、全部文档提取和第三方集成。
+- 下一步：未运行目标。可用排除目录、长行、revision冲突与目标已发布场景对照任务清单/工具status，计合格结果和全部恢复投入，见[Q06](#research-q06)。
 
 **分析版本**
 
 - **仓库**：[T-Auto/dsh-ops](https://github.com/T-Auto/dsh-ops)
-- **版本号**：0.5.5（[固定提交 58f6e28](https://github.com/T-Auto/dsh-ops/tree/58f6e2817618fae52476e8c7f1920aaeb4421c7a)）
-- **版本日期**：2026-11-14（固定提交日期，北京时间；不是包发布日期）
+- **版本号**：0.5.6（[固定提交 bfdfdf6](https://github.com/T-Auto/dsh-ops/tree/bfdfdf68765f8bdd04914df0cade49de21913746)）
+- **版本日期**：2026-11-21（固定提交日期，北京时间；不是包发布日期）
 
 <a id="detail-section-8"></a>
 
@@ -138,9 +142,9 @@
 
 <a id="innovation"></a>
 
-[Q04](#research-q04) 提出把必须覆盖的路径和预期结果设为独立验收条件，再结合工具回执判定是否完成。用有意排除的匹配、长行和不可访问目录检验能否减少遗漏。
+[Q06](#research-q06) 提出把必查目录与预期后置状态联合回执验收的未验证假设，比较漏项、重复写入和全部人工/资源成本。
 
-用固定模型和仓库比较官方工具与 OPS，再只切换 [Q03](#research-q03) 的提示开关。记录成功产物、令牌、轮次和人工修复，按 [Q04](#research-q04) 检查故意遗漏。
+未运行目标。可用排除目录、长行、revision冲突与目标已发布场景对照任务清单/工具status，计合格结果和全部恢复投入，见[Q06](#research-q06)。
 
 <a id="detail-section-9"></a>
 
@@ -153,12 +157,12 @@
 
 | 扩展名 | 范围 | 文件数 | 总行 | 代码行 | 注释行 | 字数 |
 |---|---|---:|---:|---:|---:|---:|
-| .md | source | 137 | 17427 | — | — | 255977 |
-| .mjs | source | 68 | 15973 | 11190 | 3974 | — |
-| .mjs | example | 10 | 1750 | 1130 | 519 | — |
-| .ts | source | 257 | 23426 | 17460 | 5027 | — |
-| .tsx | source | 5 | 708 | 564 | 126 | — |
-| .mjs | test | 276 | 44232 | 38183 | 3963 | — |
+| .md | source | 148 | 19251 | — | — | 288297 |
+| .mjs | source | 73 | 17378 | 12217 | 4283 | — |
+| .mjs | example | 11 | 1815 | 1167 | 544 | — |
+| .ts | source | 260 | 24859 | 18290 | 5579 | — |
+| .tsx | source | 5 | 745 | 598 | 131 | — |
+| .mjs | test | 308 | 50070 | 42801 | 4843 | — |
 | .md | example | 1 | 19 | — | — | 100 |
 | .mts | test | 1 | 15 | 11 | 4 | — |
 | .ts | test | 10 | 467 | 362 | 89 | — |
@@ -167,80 +171,51 @@
 
 **活跃度**
 
-[![Issue 未关闭 62](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=62&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 447](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=447&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+created%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z) [![近30天关闭 413](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=413&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-15T11%3A35%3A36.890Z..2026-11-14T11%3A35%3A36.890Z)
+[![Issue 未关闭 29](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=Issue+%E6%9C%AA%E5%85%B3%E9%97%AD&message=29&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+is%3Aopen) [![近30天新建 375](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E6%96%B0%E5%BB%BA&message=375&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+created%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z) [![近30天关闭 387](https://img.shields.io/static/v1?style=flat&labelColor=555555&logoColor=white&label=%E8%BF%9130%E5%A4%A9%E5%85%B3%E9%97%AD&message=387&color=737b86&logo=github)](https://github.com/T-Auto/dsh-ops/issues?q=is%3Aissue+is%3Aclosed+closed%3A2026-10-24T02%3A28%3A08.405Z..2026-11-23T02%3A28%3A08.405Z)
 
 
 
-统计日期：2026-11-14。
+统计日期：2026-11-23。
 
 <a id="detail-section-10"></a>
 
 ## 4 研究问题与完整回答
 
-**插件研究总目标**：固定版本的 OPS 能否改善重复仓库任务的文件操作与 PTC 批处理，同时说明授权、回执和遗漏边界？
+**插件研究总目标**：文件/PTC工具的替代、修订与回执能否帮助开发者办结仓库任务，恢复建议是否扩大实际权限？
 
 <a id="research-q01"></a>
 
 <a id="detail-section-11"></a>
 
-### Q01 · 哪类仓库任务值得从官方文件工具切到 OPS？
+### Q01 · 何时替代官方工具，宿主过旧或Bash失效时怎样处理？
 
-**研究主题**：场景与需求、贡献与相对优势、功能与机制
+**研究主题**：场景与需求、功能与机制、贡献与相对优势、依赖、兼容与流程
 
 #### 完整回答
 
-在 DSH 反复盘点一个仓库、读取目标段落再审阅改动的开发者，可以用 OPS 的文件能力和结构化短结果，以人工清单检验覆盖。官方工具或脚本已经能完成任务，新增机制是把受限能力与结果回执放进同一宿主作用域。Bundle 单行加载根模块，再按配置挂载模式消费者。替代器把当前官方定义与 OPS 对应工具放到同一次作用域判定，在模式不匹配、无对应注册或对应 admission 不通过时保留官方工具。遇上外部条件不透明或同作用域第三方注册也不尝试覆盖。该判断发生在宿主解析工具时；若后续执行阶段故障，还要查看回执和实际文件，不能期待自动重放全部操作。作者希望减少上下文和调用轮次，这一效益仍需同一任务比较。
+面向在DSH里反复列文件、检索、读段落并审阅小批改动的开发者，OPS增加原生文件操作、可在代码中批处理的PTC接口及结构化回执。合格任务需同时满足必查路径覆盖和目标文件后置状态，不能只因工具返回completed就结束。官方工具或脚本仍是基线；新增价值是将作用域、工具可见性、修订和结果状态接入同一宿主流程，作者主张的节Token与轮次收益没有本轮实测。
+
+根补丁加载单行插件，apply先解析配置并assertHostFloor，再按模式装配consumer。明确低于包声明下限的宿主在激活时被拒绝；unknown版本放行，上界兼容仍不能由这个下限检查保证。consumer按Native/PTC呈现挂载工具和替代器，Bash执行器解析不可用时不遮蔽官方工具。replacement还识别若干不可恢复的Bash准备失败，以Agent为单位恢复官方工具；它只识别特定错误形态，不能推为任意运行失败都自动回退，也不会自动重放已发生的写操作。
+
+PTC路径基于当前可服务集合和对应发布定义判断遮蔽，不把“已发现工具”当成所有调用均获准。第三方同作用域注册或不可见的外部条件保留原工具，避免覆盖未知策略。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[cordis.patch.yml:9-34](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/cordis.patch.yml#L9-L34)
+**依据 1 · 源码核查**：[src/index.ts:33-75](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/index.ts#L33-L75)
 
-单行宿主和模式默认配置。
-
-<details>
-<summary>查看原文（26行）</summary>
-
-```text
-- insert:
-    - id: dsh-ops
-      name: dsh-ops
-      config:
-        # Four bundle switches that gate the same-named preset switch; then each
-        # preset. All default on. The default preset has no key: it is a one-shot
-        # action on the row's detail page, never an automatic write.
-        global:
-          bash: true
-          hidePwsh: true
-          hideOfficialTools: true
-          dynamicTools: true
-        minimal:
-          enabled: true
-          spillRetentionDays: 30
-          spillTotalBudgetMiB: 256
-          spillSweepEnabled: true
-        standard:
-          enabled: true
-          residentTools: true
-          spillRetentionDays: 30
-          spillTotalBudgetMiB: 256
-          spillSweepEnabled: true
-        ptc:
-          enabled: true
-          residentTools: true
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/index.ts:32-66](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/index.ts#L32-L66)
-
-根 apply 到有效模式消费者。
+host-floor、配置和mode消费器装配。
 
 <details>
-<summary>查看原文（35行）</summary>
+<summary>查看原文（43行）</summary>
 
 ```text
 export async function apply(root: Context, rawConfig: unknown): Promise<void> {
   const config = resolveMergedConfig(rawConfig)
+  // Activation-time host support boundary (#701): an older host hears one named
+  // diagnosis here instead of loading halfway and failing with TypeError scope
+  // errors backstage and EXECUTOR_UNAVAILABLE in front. An unknown host version
+  // cannot be proven below the floor, so it loads as before.
+  await assertHostFloor(root)
   const host = root
   const mount = async (module: { apply(...args: unknown[]): unknown }, state: { enabled: boolean; raw?: Record<string, unknown>; config: unknown }, slice?: Record<string, unknown>): Promise<void> => {
     if (!state.enabled) return
@@ -269,34 +244,158 @@ export async function apply(root: Context, rawConfig: unknown): Promise<void> {
     for (const mode of MODE_IDS) {
       const state = config[mode]
       const effective = resolveModeConfig(effectiveMode(state, config.global, typeof config.other.raw?.pwsh7Link === 'boolean' ? config.other.raw.pwsh7Link : companionVersion({ sweep: false }) !== undefined), mode)
-      await host.plugin({ name: `dsh-ops/consumer-${mode}`, apply(ctx: Context) {
+      await host.plugin({ name: `dsh-ops/consumer-${mode}`, async apply(ctx: Context) {
         applyResolvedMode(ctx, effective, mode, { enabled: state.enabled,
           discovery: { ...config.discovery.config, enabled: config.discovery.enabled },
           dynamic: dynamicForMode(state, config.global) })
+        // Built-in modes answer ops_status too (#753): the named diagnosis used
+        // to exist only behind an external preset row.
+        await mountModeDiagnostics(ctx, mode)
       } })
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[src/publication/replacements.ts:46-81](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/publication/replacements.ts#L46-L81)
+**依据 2 · 源码核查**：[src/adapter/dsh/host-floor.ts:89-96](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/adapter/dsh/host-floor.ts#L89-L96)
 
-查找继承来源、跳过不可归属的定义，并在同次判定保留官方回退。
-
-<details>
-<summary>查看原文（36行）</summary>
+只在已知版本低于声明下限时拒绝。
 
 ```text
-    /** Skip this controller's ancestor shadows and inspect the actual inherited official source. */
-    const sourceFor = (agent: Agent, name: string): ToolDefinition | undefined => {
-      for (const scope of [...scopeChainOf(agent).slice(1), undefined]) {
-        const source = tools.get(name, scope)
-        if (!source || sources.has(source)) continue
-        // The host has no public predicate reader for foreign conditional tools.
-        // Leave an official tool with its own unknown condition untouched.
-        return tools.executable(name, scope) === source ? source : undefined
-      }
-      return undefined
-    }
+export async function assertHostFloor(ctx: Context): Promise<void> {
+  const floor = declaredHostFloor()
+  if (floor === undefined) return
+  const { runtimeVersion: version } = await runtimeVersion(ctx)
+  if (version === 'unknown') return
+  if (versionBelowFloor(version, floor)) {
+    throw new Error(`This dsh-ops build requires DSH ${floor} or newer (package.json engines.dsh); the running host reports ${version}. Upgrade the host runtime instead of reloading this plugin: an older host loads it halfway at best, showing TypeError scope errors backstage and EXECUTOR_UNAVAILABLE in front.`)
+  }
+```
+
+**依据 3 · 源码核查**：[src/consumer/mount.ts:18-39](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/consumer/mount.ts#L18-L39)
+
+Bash解析状态和宿主装配。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+export function mountConsumer(ctx: Context, plan: ConsumerPlan): void {
+  const { gate, core } = plan
+  let ptc: ReturnType<typeof mountPtc> | undefined
+  let renderShellGuidance: (agent: Agent) => string = () => ''
+  const shellOwnsGuidance = (agent: Agent): boolean => Boolean(core.extraGuidance.trim()) && Boolean(renderShellGuidance(agent))
+  // A shell slot whose executor never resolved must never hide the official tools it was
+  // going to replace (#962): the replacement would advertise a counterpart that cannot run.
+  let bashUnavailable = false
+  if (plan.shell) {
+    // Host subprocess spills outlive the call that produced them upstream, so the
+    // row that publishes the shell also owns one bounded retention runtime.
+    const releaseSpillRetention = mountSpillRetention(spillRetentionConfig(core), {
+      report: message => ctx.logger?.warn?.(message),
+    })
+    ctx.effect(() => () => releaseSpillRetention(), 'dsh-ops: spill retention')
+    if (process.platform === 'win32') mountWorkspacePreparation(ctx)
+    const shells = resolveShells(core)
+    // Resolved once at mount: a slot whose executor never resolved publishes no tool at all, so the
+    // section below has to report that instead of rendering nothing for the whole session.
+    const bashResolution = shells.bash
+    bashUnavailable = !bashResolution.available
+    ctx.inject(['tools'], inner => mountSessionBash(inner, core, shells, gate))
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/consumer/mount.ts:59-69](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/consumer/mount.ts#L59-L69)
+
+Native/PTC及keepOfficial接线。
+
+<details>
+<summary>查看原文（11行）</summary>
+
+```text
+  if (plan.presentation === 'native') {
+    const residents = plan.files && plan.residentTools ? (plan.residentNames ?? NATIVE_RESIDENT_RAW) : []
+    const nativeOwnsGuidance = residents.length
+      ? mountNative(ctx, core, { id: plan.id, tools: residents, section: plan.section, gate, extraGuidanceOwner: shellOwnsGuidance })
+      : () => false
+    if (plan.discovery || plan.native.alwaysLoaded.length || plan.external.allowed.length) mountDiscovery(ctx,
+      { ...plan.native, enabled: plan.discovery }, { ...gate, guidance: core.promptPolicy, extraGuidance: core.extraGuidance,
+        extraGuidanceOwner: agent => shellOwnsGuidance(agent) || nativeOwnsGuidance(agent),
+        residentTools: () => residents.map(publicToolName), external: plan.external })
+  } else if (plan.files) ptc = mountPtc(ctx, plan.ptc, { ...gate, guidance: core.promptPolicy, resident: plan.residentTools, dynamic: plan.discovery })
+  if (plan.replaceOfficial) mountReplacements(ctx, { id: plan.id, targets: plan.replacementTargets, gate, keepOfficial: () => bashUnavailable, ptc })
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/publication/replacements.ts:13-34](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/replacements.ts#L13-L34)
+
+特定不可恢复Bash错误识别。
+
+<details>
+<summary>查看原文（22行）</summary>
+
+```text
+/** Bash preparation stages that no retry of the same call can repair; each lifts the official fallback (#962). */
+const UNRECOVERABLE_BASH_STAGES = new Set(['bash-runtime-missing', 'bash-ipc-mismatch', 'bash-lifecycle-lock-busy', 'bash-cache-unusable'])
+
+/**
+ * Whether one settled replacement-counterpart value reports a runtime failure that
+ * retrying the same call cannot repair (#962). Only Bash preparation stages without a
+ * retry remedy qualify: a staging interruption is repaired by the next call, and lifting
+ * the shadow for it would flap between two tool sets. The stage is the stable second
+ * segment of the model-facing EXECUTOR_UNAVAILABLE text (src/bash-runtime-failure.ts);
+ * bash-runtime-incompatible keeps its own complete message without that prefix, so its
+ * stage name inside the message is its identifier. PTC Outcome failures carry a structured
+ * error object, never this text, so they never classify.
+ * @param value - one settled tool-call value.
+ * @returns whether the official fallback must be restored for the calling agent.
+ */
+export function unrecoverableCounterpartRuntime(value: unknown): boolean {
+  if (value === null || typeof value !== 'object') return false
+  const error = (value as { error?: unknown }).error
+  if (typeof error !== 'string') return false
+  const stage = /^EXECUTOR_UNAVAILABLE:\s*([a-z-]+):/.exec(error)
+  if (stage !== null) return UNRECOVERABLE_BASH_STAGES.has(stage[1]!)
+  return error.includes('bash-runtime-incompatible')
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/publication/replacements.ts:82-95](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/replacements.ts#L82-L95)
+
+PTC可服务集合与发布定义共同判定。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+    const hiddenByPtc = (agent: Agent, official: string, counterpart: string): { hidden: boolean; state: string } => {
+      const raw = (RAW_OFFICIAL_REPLACEMENTS as Record<string, ApiName>)[official]
+      // A counterpart the publisher registered (even before the model selects it)
+      // proves a replacement exists; the value of its admission is not consulted,
+      // so loading the SDK cannot change this decision.
+      const served = ptc!.servable(agent)
+      const published = tools.get(counterpart, agent)
+      const candidate = served !== undefined && served.has(raw)
+      const hidden = candidate && published !== undefined && publicationAdmission(published) !== undefined
+      const state = served === undefined ? 'unattached'
+        : !candidate ? 'not-servable'
+        : hidden ? 'hidden'
+        : 'counterpart-missing'
+      return { hidden, state }
+```
+
+</details>
+
+**依据 7 · 源码核查**：[src/publication/replacements.ts:126-165](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/replacements.ts#L126-L165)
+
+作用域和probe失败时保留官方工具。
+
+<details>
+<summary>查看原文（40行）</summary>
+
+```text
     const apply = (agent: Agent, entry: Entry): void => {
       withToolChange([agent], () => {
         for (const [official, counterpart] of targets) {
@@ -317,59 +416,80 @@ export async function apply(root: Context, rawConfig: unknown): Promise<void> {
               // Own registrations bypass restrictions in the host view. The empty descendant
               // probe makes our shadow inherited, so even agent-local restrictions still apply.
               if (tools.get(official, entry.probe) !== definition || sourceFor(activation.agent, official) !== source) return false
-              if (keepOfficial() || !gate.allows(activation.agent)) return true
-              const replacement = tools.get(counterpart, activation.agent)
-              if (!replacement) return true
-              const admission = publicationAdmission(replacement)
-              return admission ? !await admission(activation) : tools.executable(counterpart, activation.agent) === undefined
+              if (keepOfficial() || broken.has(activation.agent) || !gate.allows(activation.agent)) return true
+              if (ptc && Object.hasOwn(RAW_OFFICIAL_REPLACEMENTS, official)) {
+                let ptcNowValue: boolean
+                try { ptcNowValue = await ptcNow(activation) }
+                catch (error) {
+                  // A probe failure carries no replacement proof. Verified host behaviour:
+                  // a rejected `when` fails the whole step resolve, so the documented
+                  // fail-open contract must be enforced here. Keep the official tool.
+                  notePtc(activation.agent, official, 'probe-failed')
+                  if (!probeFailures.has(activation.agent)) {
+                    probeFailures.add(activation.agent)
+                    ctx.logger.warn(`dsh-ops: ${mode} PTC presentation probe failed for ${official}: ${String(error)}`)
+                  }
+                  return true
+                }
+                if (ptcNowValue) {
+                  // Explicit implementation faults below must surface, not masquerade as a probe failure.
+                  const { hidden, state } = hiddenByPtc(activation.agent, official, counterpart)
+                  notePtc(activation.agent, official, state)
+                  return !hidden
 ```
 
 </details>
-
-**依据 4 · 作者声明**：[README.md:23-31](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/README.md#L23-L31)
-
-作者说明定位和性能目标。
-
-```text
-以提高token效率为目的，提供新增的ops系列工具并隐藏部分官方工具为方案的插件，低改动面，低侵入性，与其他插件广泛兼容。
-
-- Bash 与宿主 Shell 隐藏独立配置；Windows 可用 ops_bash 替代 pwsh，也可保留官方 Shell。
-- Native/PTC 消费者预设发布共享的有界工具面；Bash 由单行开关控制，关闭替换时原版工具保持可用。
-- 第五个内置模式 `ops-ptc` 继承 PTC 工具面，由插件运行时注册（定义来自随包片段 `presets/ops-ptc.patch.yml`，不是插件管理器行），并可开启批量调用上下文提示（`batchingGuidance`）：会话首轮注入一次英文教学（`prompts/batching-guidance.md`，进入历史、不改系统提示词），之后按根 `run_code` 程序形状（`bypass`/`plan`/`shape`，每类每轮一次、合规解锁）以 `additionalContexts` 纠偏、不阻断不改写程序；默认预设不强制：行详情页有一个按钮，点一次就把 `ops-ptc` 设为新会话默认，apply、重挂载与卸载都不会改你自己选的默认，详见[预设与默认模式](docs/预设与默认模式.md)。
-- 启用 DSH 预留的 `tools_addition` 动态工具加载，并提供渐进式纰漏的工具，作为高级功能（如pdf、word读取、超多文件批量修改）的加载平台，大大减少常见特定场景的token消耗量，且不会导致系统提示词膨胀
-- 为 Native 模式提供返回紧凑、带行号和更好错误回馈的工具以遏制报错循环，减少调用轮次
-- 为 PTC 模式提供一些返回结构化 JSON 值的工具以降低 ai 在 ptc 模式下编写 TypeScript 代码的token总量和心智负担
-- PTC SDK 目录包含 18 个 API：15 个文件/文档工具，加批处理、结果引用和加载器。
-```
-
-#### 缺口
-
-- 无同宿主和模型下使用官方工具的同任务对照
-  **影响**：可解释接线增量，无法量化令牌或时间收益
-  **进一步探讨**：用固定文件树比较交付文件、遗漏、模型请求大小及手工复核次数
 
 <a id="research-q02"></a>
 
 <a id="detail-section-12"></a>
 
-### Q02 · 文件改写和搬移的权限、修订确认与失败回执怎样接线？
+### Q02 · 写入与移动在部分成功或未知时能否直接重试？
 
 **研究主题**：功能与机制、缺陷与关键质疑、工程质量与复用
 
 #### 完整回答
 
-宿主桥从会话权威策略得出写入范围，对只读或越界写操作直接拒绝，并将可信根、凭据拒绝和权限信息封装给处理固定操作的原生 worker。准备与 WSL 路径都重新检查权威策略变化。新版的复制和移动先核对预期来源修订与目标不存在，再在事务锁下处理目标；复制使用临时文件流式形成事实，发布前复核实际内容与来源修订。目标文件系统可能不具备持久 ACL，Windows 创建新文件分支会报告能力警告，不能把复制或创建解释为跨平台完整权限移植。移动使用硬链接实现同文件系统不覆盖式发布，拒绝跨盘降级；目标先发布，再查新旧修订并删除来源。源删除或发布后检查失败时可能两个文件都在，RESULT_PARTIAL 需要人工查两侧，不能直接重放。宿主也会把超时、无有效 JSON 等写入结果标成未知。
+不能直接重试。宿主文件执行先拒绝凭据路径，按会话自己的临时根和沙箱策略计算写入根；只读或越界写直接拒绝，worker接收固定数据操作而非任意代码。原生transfer对来源revision和目标不存在先作快照校验，再按有序锁复核，复制只锁目标以允许读取不可写来源。该前置检查缩小误操作，但并不把跨步骤任务变成一项全局事务。
+
+copy使用发布函数保留facts和metadataWarnings。move用同文件系统硬链接作不覆盖发布，不降级跨盘copy/delete；发布目标后复核目标与来源revision，再删除来源。任何发布后复核或unlink失败都可能保留两个名称，源码明确RESULT_PARTIAL。此时应先读两端及revision，再决定人工恢复；重复移动可能被目标已存在拒绝，盲目清理也可能丢失需要的数据。
+
+PTC将未识别对象、unknown状态或失败无结构错误映射为RESULT_UNKNOWN，保留观测；partial和unknown不是“没做”。可靠办结需要工具回执与实际文件后置事实一起检查，不能只依据自动建议或一条失败消息判定可重试。平台ACL/扩展元数据仍有条件，不宣称所有复制完整保留安全属性。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/execution/files.ts:147-185](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/execution/files.ts#L147-L185)
+**依据 1 · 源码核查**：[src/execution/files.ts:123-158](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/execution/files.ts#L123-L158)
 
-权限根、凭据防护、请求上限和 worker 数据。
+凭据防护、会话临时根和只读拒绝。
 
 <details>
-<summary>查看原文（39行）</summary>
+<summary>查看原文（36行）</summary>
 
 ```text
+  // Credential locations are refused before the worker is spawned, so no read of one ever reaches a
+  // result. On by default; a row can turn the fence off for itself (report: credential fence).
+  if ((config?.denyCredentialReads ?? true) !== false) {
+    for (const target of reads ? reads.files.map(file => file.path) : [operationPath]) {
+      const verdict = credentialPath(target)
+      if (verdict.denied) {
+        const refusal = credentialRefusal(target, verdict.matched)
+        return credentialDenied(refusal.message)
+      }
+    }
+  }
+  const destination = ['copy', 'move'].includes(tool) ? absoluteTarget(args?.to, cwd) : undefined
+  if (['copy', 'move'].includes(tool) && !destination) return failure('INVALID_ARGUMENT', 'to must be a non-empty path.')
+  if (destination && (config?.denyCredentialReads ?? true) !== false) {
+    const verdict = credentialPath(destination)
+    if (verdict.denied) {
+      const refusal = credentialRefusal(destination, verdict.matched)
+      return credentialDenied(refusal.message)
+    }
+  }
+  // The temporary root is the session's OWN directory, not the shared system temp: the host sandbox
+  // grants `/tmp` to workspace-write on Linux, so endorsing the whole directory here would let one
+  // session replace another session's temporary files. The kernel still allows more than this fence
+  // does; the fence is deliberately the narrower of the two.
   const privateTemp = sessionTempDir(session.id)
   const anchors = sessionAnchors(policy, cwd)
   const trustedPath = (value: string): string => anchoredPath(value, anchors)
@@ -382,104 +502,18 @@ export async function apply(root: Context, rawConfig: unknown): Promise<void> {
   }
   if (mutates && policy.mode === 'read-only') return denied(policy, tool, requiredMode(policy), 'The user selected read-only; no files were changed.')
   if (mutates && policy.mode === 'workspace-write') {
-    for (const target of writeTargets) {
-      const identity = trustedPath(target)
-      if (!writeRoots.some(root => inside(root, identity))) {
-        return denied(policy, `${tool} outside the workspace, explicit writable roots or this session's temporary directory`, 'danger-full-access', 'The user authorized workspace writes only; no files were changed.')
-      }
-      if (inside(writeRoots[1], identity)) {
-        const created = ensureSessionTemp(writeRoots[1])
-        if (!created.ok) return failure('EXECUTOR_UNAVAILABLE', created.message)
-      }
-    }
-  }
-
-  // Do NOT realpath the caller's parents here: that would erase a symlink/junction before
-  // the no-follow native traversal could reject it (especially on create-only writes).
-  const workerArgs = reads
-    ? { ...args, files: reads.files.map(file => ({ ...file, path: trustedPath(file.path) })) }
-    : { ...args, path: trustedPath(operationPath), ...(destination ? { to: trustedPath(destination) } : {}) }
-  // Traversals skip credential directories by identity, so a glob or grep cannot even name a private
-  // key that sits below one.
-  const denyRoots = (config?.denyCredentialReads ?? true) !== false ? credentialRoots() : []
-  const storage = await resultStorage(ctx, session, exec.agent, file, tool, policy, denyRoots,
-    (config?.denyCredentialReads ?? true) !== false, signal).catch(() => undefined)
-  const envelope = workerEnvelope('file', { root: trustedPath(cwd), scope: String(session.id), tool, args: workerArgs, read_only: policy.mode === 'read-only', deny_roots: denyRoots, deny_credential_names: (config?.denyCredentialReads ?? true) !== false, ...(policy.mode === 'workspace-write' ? { write_roots: writeRoots } : {}), ...indexCacheRequest({ enabled: config?.indexCache === true }) }, config?.toolCallTimeoutMs, storage)
-  const input = JSON.stringify(envelope)
-  if (Buffer.byteLength(input) > 2 * 1024 * 1024) return failure('OUTPUT_LIMIT', tool === 'write_file'
-    ? 'write_file content makes the request exceed the 2 MiB byte budget; split it into smaller writes.'
-    : 'Request exceeds the 2 MiB byte budget.')
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[src/execution/files.ts:198-219](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/execution/files.ts#L198-L219)
+**依据 2 · 源码核查**：[native/crates/ops-files/src/file_single.rs:632-670](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/native/crates/ops-files/src/file_single.rs#L632-L670)
 
-准备与 WSL 切换前后的权威复核。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-    const current = policyService.resolve({ session })
-    if (!sameAuthority(current, policy)) {
-      if (!['read-only', 'workspace-write', 'danger-full-access'].includes(current?.mode) || !path.isAbsolute(current?.workspaceRoot ?? '')) return failure('EXECUTOR_UNAVAILABLE', 'Invalid authoritative DSH policy after preparation.')
-      const required = mutates ? requiredMode(current) : undefined
-      if (mutates && (current.mode === 'read-only' || (current.mode === 'workspace-write' && required === 'danger-full-access'))) return denied(current, tool, required, 'Authority changed during preparation; no files were changed.')
-      return authorityChanged(current, tool)
-    }
-    const delegated = await tryWslRead(subprocess, file, envelope, cwd, signal, () => {
-      const latest = policyService.resolve({ session })
-      return sameAuthority(latest, policy)
-    }, config)
-    let transportInput = input
-    if (signal.aborted) return failure('CANCELLED', 'The file call was cancelled before backend admission or result publication.')
-    const latest = policyService.resolve({ session })
-    if (!sameAuthority(latest, policy)) {
-      if (!['read-only', 'workspace-write', 'danger-full-access'].includes(latest?.mode) || !path.isAbsolute(latest?.workspaceRoot ?? '')) return failure('EXECUTOR_UNAVAILABLE', 'Invalid authoritative DSH policy after WSL preparation.')
-      const required = mutates ? requiredMode(latest) : undefined
-      if (mutates && (latest.mode === 'read-only' || (latest.mode === 'workspace-write' && required === 'danger-full-access'))) return denied(latest, tool, required, 'Authority changed during preparation; no files were changed.')
-      return authorityChanged(latest, tool)
-    }
-    if (!delegated.handled) {
-      if (signal.aborted || delegated.remainingMs < 1) return failure('TIMEOUT', 'The original call budget expired during WSL preparation; no replay was attempted.')
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/execution/files.ts:224-234](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/execution/files.ts#L224-L234)
-
-区分只读失败和变更未知。
+来源/目标校验与锁边界。
 
 <details>
-<summary>查看原文（11行）</summary>
+<summary>查看原文（39行）</summary>
 
 ```text
-    if (!result.readers) return failure('RESULT_UNKNOWN', mutates ? 'Worker output readers are unavailable; inspect postconditions.' : 'Read-only worker output readers are unavailable; no files were changed.', 'verify', mutates ? 'unknown' : 'none')
-    if (result.interrupted) {
-      const code = mutates ? 'RESULT_UNKNOWN' : signal.reason instanceof InvocationDeadlineError ? 'TIMEOUT' : signal.aborted ? 'ABORTED' : 'RESULT_UNKNOWN'
-      const message = mutates ? 'Worker interrupted; inspect postconditions.' : code === 'TIMEOUT' ? 'Read-only worker deadline expired; no files were changed.'
-        : code === 'ABORTED' ? 'Read-only worker was cancelled; no files were changed.' : 'Read-only worker was interrupted; no files were changed.'
-      return failure(code, message, 'execute', mutates ? 'unknown' : 'none')
-    }
-    if (result.lossy) return failure('OUTPUT_LIMIT', mutates ? 'Worker output exceeded the byte budget; operation facts may have changed.' : 'Read-only worker output exceeded the byte budget; no files were changed.', 'verify', mutates ? 'unknown' : 'none')
-    if (result.exitCode !== 0) return failure(mutates ? 'RESULT_UNKNOWN' : 'EXECUTOR_UNAVAILABLE', `Worker did not return a settled result: ${result.stderr.slice(0, 500)}${mutates ? '' : '; no files were changed.'}`, 'execute', mutates ? 'unknown' : 'none')
-    if (result.invalid === 'json') return failure('RESULT_UNKNOWN', mutates ? 'Worker returned invalid JSON; inspect postconditions.' : 'Read-only worker returned invalid JSON; no files were changed.', 'verify', mutates ? 'unknown' : 'none')
-    if (!result.value) return failure('RESULT_UNKNOWN', mutates ? 'Worker returned a non-object result; inspect postconditions.' : 'Read-only worker returned a non-object result; no files were changed.', 'verify', mutates ? 'unknown' : 'none')
-```
-
-</details>
-
-**依据 4 · 源码核查**：[native/crates/ops-files/src/file_single.rs:592-656](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/native/crates/ops-files/src/file_single.rs#L592-L656)
-
-固定修订、目标不存在、权限与锁。
-
-<details>
-<summary>查看原文（65行）</summary>
-
-```text
-fn transfer_file(request: &Request) -> Result<Value> {
-    let args: TransferArgs = serde_json::from_value(request.args.clone())?;
     valid_revision(&args.expected_revision, false)?;
     request.authorize_path(Path::new(&args.path))?;
     let source = crate::file_path::checked(&args.path)?;
@@ -519,89 +553,30 @@ fn transfer_file(request: &Request) -> Result<Value> {
         vec![lock_single(&args.to)?]
     } else {
         vec![lock_single(names[0])?, lock_single(names[1])?]
-    };
-    let moved_facts = if request.tool == "move" {
-        Some(check_file_revision(
-            &source.display,
-            &args.expected_revision,
-        )?)
-    } else {
-        None
-    };
-    let target = crate::file_path::checked_leaf(&args.to, true)?;
-    match target.parent.symlink_metadata(&target.name) {
-        Ok(_) => {
-            return Err(Failure::new(
-                "REVISION_CONFLICT",
-                "Destination exists; no clobber is permitted",
-            ));
-        }
-        Err(error) if error.kind() == std::io::ErrorKind::NotFound => (),
-        Err(error) => return Err(error.into()),
-    }
-    let mut output;
+```
+
+</details>
+
+**依据 3 · 源码核查**：[native/crates/ops-files/src/file_single.rs:692-740](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/native/crates/ops-files/src/file_single.rs#L692-L740)
+
+copy警告、move硬链接、跨盘拒绝及目标先发布后删源。
+
+<details>
+<summary>查看原文（49行）</summary>
+
+```text
     if request.tool == "copy" {
         let (facts, warnings) =
             publish_new(&dest, None, Some(&source), Some(&args.expected_revision))?;
-```
-
-</details>
-
-**依据 5 · 源码核查**：[native/crates/ops-files/src/file_single.rs:492-526](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/native/crates/ops-files/src/file_single.rs#L492-L526)
-
-元数据约束、准备失败清理和复制修订复核。
-
-<details>
-<summary>查看原文（35行）</summary>
-
-```text
-        #[cfg(unix)]
+        output = transfer_receipt(&dest, &facts);
         if !warnings.is_empty() {
-            return Err(Failure::new(
-                "METADATA_UNSUPPORTED",
-                "Copy metadata could not be fully restored; nothing published",
-            ));
+            output["items"][0]["metadataWarnings"] = json!(warnings);
         }
-        #[cfg(windows)]
-        if let Some(capabilities) = &new_file_volume {
-            if capabilities.persistent_acls() {
-                dsh_ops_windows_metadata::inherit_new_file_dacl(
-                    &checked.parent.try_clone()?.into_std_file(),
-                    &file.try_clone()?.into_std(),
-                )
-                .map_err(|error| Failure::new("METADATA_UNSUPPORTED", error))?;
-            } else {
-                warnings.extend(capabilities.warnings());
-            }
-        }
-        file.sync_all()?;
-        Ok((facts, warnings))
-    })();
-    let (facts, warnings) = match prepared {
-        Ok(prepared) => prepared,
-        Err(error) => {
-            publication::discard_sibling(&checked.parent, &temporary, file)?;
-            return Err(error);
-        }
-    };
-    if let (Some(source), Some(expected)) = (source, expected_source)
-        && let Err(error) = check_revision_value(&facts.revision, expected)
-            .and_then(|_| check_file_revision(&source.display, expected).map(|_| ()))
-    {
-        publication::discard_sibling(&checked.parent, &temporary, file)?;
-        return Err(error);
-```
-
-</details>
-
-**依据 6 · 源码核查**：[native/crates/ops-files/src/file_single.rs:666-702](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/native/crates/ops-files/src/file_single.rs#L666-L702)
-
-跨盘拒绝、目标发布后检查和来源删除失败。
-
-<details>
-<summary>查看原文（37行）</summary>
-
-```text
+    } else {
+        output = transfer_receipt(
+            &dest,
+            moved_facts.as_ref().expect("move revision was observed"),
+        );
         // A hard link is atomic no-clobber and preserves the original security metadata.
         // The OS rejects cross-device links; never degrade into copy/delete.
         source
@@ -643,32 +618,552 @@ fn transfer_file(request: &Request) -> Result<Value> {
 
 </details>
 
+**依据 4 · 源码核查**：[src/projections/ptc/outcome.ts:34-46](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L34-L46)
+
+错误结构与下一步安排。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+export function toOutcome(tool: string, args: unknown, value: unknown, surface?: NextStepSurface): Outcome<CanonicalData> {
+  const data = record(value)
+  if (!data) return failure(undefined, 'RESULT_UNKNOWN', 'The worker did not return a canonical object.', 'unknown')
+  const error = record(data.error)
+  if (error) {
+    const code = typeof error.code === 'string' ? error.code : 'RESULT_UNKNOWN'
+    const message = typeof error.message === 'string' ? error.message : 'The operation did not return a settled receipt.'
+    const state = effect(error, 'unknown')
+    const workerNext = typeof error.nextAction === 'string' ? error.nextAction : undefined
+    const retry = errorPolicy(code, state).retry
+    const recommended = nextStepFor(tool, args, { code, message, retry }, data, surface)
+      ?? (workerNext === undefined && retry === 'after-input-change' ? CHANGE_FIRST : undefined)
+    return failure(data, code, message, state, workerNext, recommended)
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/projections/ptc/outcome.ts:63-82](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L63-L82)
+
+unknown与部分操作的保留事实。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+  const next = typeof data.nextAction === 'string' ? data.nextAction : undefined
+  if (data.status === 'unknown' || count(data.unknown) > 0) {
+    return failure(data, 'RESULT_UNKNOWN', 'Some effects are unknown; inspect retained observations before any recovery.', 'unknown', next)
+  }
+  if (data.status === 'rejected' || data.status === 'conflict' || data.status === 'error') {
+    return failure(data, 'RESULT_UNKNOWN', 'A failed receipt omitted its structured error.', 'unknown', next)
+  }
+  // Batch summaries intentionally omit audit rows. Successful planning/execution is still complete.
+  if (tool === 'batch') {
+    if (data.status === 'completed' || data.status === 'planned') return { status: 'completed', data }
+    return failure(data, 'RESULT_PARTIAL', 'The batch contains failed or unsettled operations; inspect detailsRef.',
+      count(data.done) > 0 ? 'partial' : 'none', next)
+  }
+  // Stored rows are not echoed by put/release; their own successful operation is complete.
+  if (tool === 'result' && record(args)?.action !== 'page' && data.status === 'completed') return { status: 'completed', data }
+  if (count(data.failed) > 0) {
+    const recommended = nextStepFor(tool, args, { code: 'RESULT_PARTIAL', message: 'Some items failed; inspect each retained receipt.',
+      retry: 'never' }, data, surface)
+    return failure(data, 'RESULT_PARTIAL', 'Some items failed; inspect each retained receipt.',
+      effect(data, count(data.changed) > 0 ? 'partial' : 'none'), next, recommended)
+```
+
+</details>
+
 #### 缺口
 
-- 未在多文件系统和并发编辑条件下执行
-  **影响**：无法验证 ACL、竞争与故障后的实际文件集合
-  **进一步探讨**：对同卷、跨卷、目标先存在和并发改源分别核对目标内容、来源存在性与权限
+- 跨平台权限和异常落盘行为未执行。
+  **影响**：源码不能证明故障后文件/元数据在全部平台一致。
+  **进一步探讨**：用可复位文件分别在目标平台检验来源变化、目标存在、跨盘和unlink失败，并保存两侧后置事实。
 
 <a id="research-q03"></a>
 
 <a id="detail-section-13"></a>
 
-### Q03 · 新 ops-ptc 预设何时出现，批处理提示改变了什么？
+### Q03 · PTC选取、批处理指导与下一步建议会授予执行权限吗？
 
-**研究主题**：功能与机制、贡献与相对优势、工程质量与复用
+**研究主题**：功能与机制、贡献与相对优势、缺陷与关键质疑
 
 #### 完整回答
 
-根模块异步通过 agentPresets 服务注册第五个内置模式，依据可读取的随包定义并绑定注册释放。默认写入由明确调用触发，只有注册就绪才能请求修改，且回读宿主选择结果；卸载释放预设声明，保留既有选择，所以原先主动设成默认的使用者退出时应检查或改回默认。PTC 里先确认 Agent 拥有作用域且服务与策略允许，再检查宿主渲染为单一 run_code 场景。load_sdk 通过选择池将 API 加入 pending 并返回 nextTurn，不能把发现目录作为本轮执行许可。启用批处理指导时，可在已接收的用户批次附上教学上下文，后续只观察非取消、经后置链接受的根 run_code。根据计划、文件绕过和短程序形状，按 Agent 和轮次维护提示；合规后对应类别重新允许提示。响应追加上下文且保留工具值，构建提示失败时仍返回原决定。规则靠文本和字面形态，动态拼装、复杂语义和无检测调用点的程序不能完整识别。其价值是把反馈放到发生分散操作的回合附近，成本是多发上下文，任务改善要比较实测。
+不会。load_sdk只接受配置池和当前策略允许的API，选择先进入pending，返回nextTurn；step/end才把仍获准API移入selected，sandbox/mode会清pending并取消调用。发现名称或提示里出现一个命令不等于当步可执行。该区分使动态发现仍服从Agent作用域与沙箱，用户不能用重复load绕过只读限制。
+
+批处理指导只观察经下游接受、未取消的根run_code，读取完整程序形状并把notice排到下一pre-step，保留原工具结果不改。它是基于程序形态的教学反馈，不是语义证明或失败自动修复；复杂动态代码仍可能不符合检测假设。教过的标记在宿主实际提交对应user/message后才置位，拒绝批次不消耗提示机会。反馈本身带来额外上下文，减少轮次须对照测量。
+
+新next-step给目录、编码和revision冲突生成具体后续调用，但跨工具建议检查callable集合，只读时不建议重新提交变更。outcome调用nextStepFor并将建议放到失败或partial回执；continuation只描述安全读取，不能授权写重放。建议正确与否仍要和effectState及已发生副作用一起判断，RESULT_PARTIAL尤其不能按同参重新执行。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/presets/ops-ptc/register.ts:207-229](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/presets/ops-ptc/register.ts#L207-L229)
+**依据 1 · 源码核查**：[src/publication/ptc.ts:202-231](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/ptc.ts#L202-L231)
 
-默认只按动作写入并回读，卸载不自动改变选择。
+权限、选择拒绝及pending/nextTurn。
 
 <details>
-<summary>查看原文（23行）</summary>
+<summary>查看原文（30行）</summary>
+
+```text
+        if (!permitted(entry.agent, api)) {
+          const wasUsable = api !== 'load_sdk' && (resident.has(api) || entry.selected.has(api))
+          return failure('POLICY_DENIED', wasUsable
+            ? 'This API was admitted for the calling PTC scope, but the sandbox policy has since withdrawn its permission; the admission is revoked. No action executed.'
+            : 'The current sandbox policy does not permit this API for the calling PTC scope; no action executed.')
+        }
+        if (!selected(entry, api)) {
+          // A declared-but-unselected pool API points at the loader with an executable
+          // next step (#968); every other admission failure keeps the P5 refusal text.
+          const deferred = api === 'load_sdk' || full ? undefined : deferredRejection(entry, api)
+          if (deferred !== undefined) return deferred
+          return api !== 'load_sdk' && gate.dynamic !== false && !full
+            ? failure('SDK_NOT_LOADED', `This API (${String(api)}) is not loaded for the current step. Call tools.${publicToolName('load_sdk')} with its raw name; the selection takes effect on the next model step.`)
+            : failure('POLICY_DENIED', 'This API is not admitted for the current step and no loader can select it; no action executed.')
+        }
+        return failure('POLICY_DENIED', 'This API must be admitted for the calling PTC scope; no action executed.')
+      }
+      const ptc = await isPtc(entry.agent, exec.signal).catch(() => false)
+      if (!current() || !ptc || !current()) return refusal(ptc)
+      if (api === 'load_sdk') {
+        // Validate against the configured pool, then split permission refusals from
+        // pool refusals: a mutating API under read-only is inside its pool yet
+        // forbidden, and reloading cannot change that permission (#997).
+        const requested = requestedApis(args, gate.dynamic === false ? [] : loadable)
+        if (typeof requested === 'string') return failure('INVALID_ARGUMENT', requested)
+        const forbidden = requested.filter(name => !permitted(entry.agent, name))
+        if (forbidden.length) return failure('POLICY_DENIED',
+          'The current sandbox policy does not permit ' + forbidden.join(', ') + ' for the calling PTC scope; no action executed.')
+        for (const name of requested) entry.pending.add(name)
+        return { status: 'completed', tools: requested, nextTurn: true }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/publication/ptc.ts:453-470](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/ptc.ts#L453-L470)
+
+持久消息提交标记及step/end/策略撤回。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+    ctx.on('session/event', (session, event) => {
+      if ((event as { type: string }).type === 'agent-preset/selected') { refresh(); return }
+      for (const [agent, entry] of entries) if (agent.session === session) {
+        // The lesson counts as taught only once the host commits the exact message
+        // the pre-step delivered: a rejected or cancelled batch commits nothing, so
+        // the next accepted batch teaches again instead of going silent forever.
+        if (event.type === 'user/message') {
+          if (entry.lessonId !== undefined && (event.data as { id?: unknown }).id === entry.lessonId) {
+            entry.taught = true
+            entry.lessonId = undefined
+          }
+        } else if (event.type === 'step/end') {
+          for (const api of entry.pending) if (permitted(agent, api)) entry.selected.add(api)
+          entry.pending.clear()
+          rotateFiles(entry)
+        } else if (event.type === 'sandbox/mode') {
+          entry.pending.clear(); entry.calls.cancel('Sandbox authority changed')
+          rotateFiles(entry)
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/publication/ptc.ts:339-365](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/publication/ptc.ts#L339-L365)
+
+根run_code、accept、未取消及notice入队。
+
+<details>
+<summary>查看原文（27行）</summary>
+
+```text
+          // The program-shape trigger observes the ROOT run_code call: only there is
+          // the whole program text visible. Nested tools.ops_* calls carry a parent
+          // token, and their arguments say nothing about the shape of the step.
+          entry.disposers.push(agent.ctx!.on('tools/post-execute', async (exec, result, next) => {
+            const decision = await next()
+            if (decision.kind !== 'accept') return decision
+            if (exec.agent !== agent || exec.name !== 'run_code' || exec.parent !== undefined) return decision
+            if (exec.signal.aborted) return decision
+            const code = (exec.arguments as { code?: unknown } | undefined)?.code
+            try {
+              // Queue the corrective notice for the next pre-step, where it is
+              // delivered as user-role text; the tool result keeps its own value,
+              // content and contexts untouched.
+              const notice = shapeLatch.observe(agent, code)
+              if (notice !== undefined) {
+                entry.queuedGuidance.push(notice.text)
+                // Observation only: one line, no context, no new dependency.
+                if (gate.telemetry === true) {
+                  const counts = shapeLatch.stats(agent)
+                  ctx.logger.info('dsh-ops batching: turn=' + notice.turn + ' category=' + notice.category
+                    + ' plan=' + counts.plan + ' bypass=' + counts.bypass + ' shape=' + counts.shape + ' total=' + counts.total)
+                }
+              }
+            } catch (error) {
+              // A delivery failure is an optimisation loss, never a tool failure.
+              ctx.logger.warn('dsh-ops: batching notice queueing failed: ' + String(error))
+            }
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/projections/ptc/next-step.ts:7-50](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/next-step.ts#L7-L50)
+
+callable和readOnly限制下一步建议。
+
+<details>
+<summary>查看原文（44行）</summary>
+
+```text
+/** What the calling step can execute now, resolved by the dispatching runtime. */
+export interface NextStepSurface {
+  /** Public tool names the calling step admits. */
+  readonly callable: ReadonlySet<string>
+  /** True when the calling scope's sandbox policy forbids every mutation. */
+  readonly readOnly: boolean
+}
+
+const record = (value: unknown): CanonicalData | undefined =>
+  value !== null && typeof value === 'object' && !Array.isArray(value) ? value as CanonicalData : undefined
+const call = (rawName: string, args: CanonicalData): string => publicToolName(rawName) + ' ' + JSON.stringify(args)
+const admitted = (surface: NextStepSurface | undefined, rawName: string): boolean =>
+  surface !== undefined && surface.callable.has(publicToolName(rawName))
+
+/** Render the safe continuation token as an explicit, parameter-legal call. */
+export function continueReading(continuation: string): string | undefined {
+  const decoded = decodeContinuation(continuation)
+  return decoded !== undefined
+    ? `Continue this read with ${call(decoded.tool, decoded.args)}; a page that reports complete=true is the last one.`
+    : undefined
+}
+
+function directoryStep(path: string, surface: NextStepSurface | undefined): string {
+  if (admitted(surface, 'glob')) {
+    return `The path is a directory, not a file. List its immediate entries with ${call('glob', { path, pattern: ['*'] })}, then read one concrete file path.`
+  }
+  return 'The path is a directory, not a file, and no directory-listing API is callable in this step; supply one concrete file path.'
+}
+
+function encodingStep(tool: string, path: string, surface: NextStepSurface | undefined): string {
+  // The calling tool just executed, so the same tool stays callable; a cross-tool
+  // recommendation additionally requires an admitted surface entry.
+  if (tool === 'inspect_local_file' || admitted(surface, 'inspect_local_file')) {
+    return `The bytes are not valid UTF-8. Read a hex window with ${call('inspect_local_file', { path, view: 'hex' })}.`
+  }
+  return `File ${JSON.stringify(path)} is not valid UTF-8; no hex-capable reader is callable in this step.`
+}
+
+function revisionStep(path: string, surface: NextStepSurface | undefined): string {
+  const reader = admitted(surface, 'stat') ? 'stat' : admitted(surface, 'inspect_local_file') ? 'inspect_local_file' : undefined
+  const resubmit = surface?.readOnly === true ? '' : ', then re-submit with that expectedRevision'
+  return reader !== undefined
+    ? `The file changed since the revision you observed; nothing was applied. Read the current revision with ${call(reader, { path })}${resubmit}.`
+    : `The file changed since the revision you observed; nothing was applied. Read the current revision of ${JSON.stringify(path)} with a callable read API${resubmit}.`
+```
+
+</details>
+
+**依据 5 · 源码核查**：[src/projections/ptc/outcome.ts:34-46](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L34-L46)
+
+建议实际接到回执。
+
+<details>
+<summary>查看原文（13行）</summary>
+
+```text
+export function toOutcome(tool: string, args: unknown, value: unknown, surface?: NextStepSurface): Outcome<CanonicalData> {
+  const data = record(value)
+  if (!data) return failure(undefined, 'RESULT_UNKNOWN', 'The worker did not return a canonical object.', 'unknown')
+  const error = record(data.error)
+  if (error) {
+    const code = typeof error.code === 'string' ? error.code : 'RESULT_UNKNOWN'
+    const message = typeof error.message === 'string' ? error.message : 'The operation did not return a settled receipt.'
+    const state = effect(error, 'unknown')
+    const workerNext = typeof error.nextAction === 'string' ? error.nextAction : undefined
+    const retry = errorPolicy(code, state).retry
+    const recommended = nextStepFor(tool, args, { code, message, retry }, data, surface)
+      ?? (workerNext === undefined && retry === 'after-input-change' ? CHANGE_FIRST : undefined)
+    return failure(data, code, message, state, workerNext, recommended)
+```
+
+</details>
+
+**依据 6 · 源码核查**：[src/projections/ptc/outcome.ts:84-97](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L84-L97)
+
+只在安全continuation存在时返回partial续读。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  const incomplete = data.complete === false || data.truncated === true || data.scanComplete === false
+    || data.pageComplete === false || data.status === 'partial' || data.status === 'partial_completion'
+  if (incomplete) {
+    const continuation = continuationFor(tool, args, data)
+    if (continuation) {
+      const recommended = continueReading(continuation)
+      return { status: 'partial', data, coverage: { ...coverage(data, false), isComplete: false }, continuation,
+        ...(recommended !== undefined ? { nextAction: recommended } : {}) }
+    }
+    return failure(data, 'RESULT_PARTIAL', 'Observation is incomplete and has no safe continuation; refine the request.',
+      effect(data, count(data.changed) > 0 ? 'applied' : 'none'), next)
+  }
+  return { status: 'completed', data, ...(typeof data.scanComplete === 'boolean'
+    ? { coverage: { ...coverage(data, true), isComplete: true as const } } : {}) }
+```
+
+</details>
+
+<a id="research-q04"></a>
+
+<a id="detail-section-14"></a>
+
+### Q04 · 精简显示、搜索和PDF读取怎样影响完整性判断？
+
+**研究主题**：缺陷与关键质疑、工程质量与复用
+
+#### 完整回答
+
+Native精简多范围读取只在响应状态、revision、行数、nextOffset、complete、顺序路径都一致且没有截断/警告时使用紧凑格式，否则退回一般诊断渲染。它显式显示每文件revision和后续行，并说明可逆转义，不应把一段展示内容当原始文件字节直接粘回。输出更短属于呈现变化，不证明底层扫描更完整。
+
+搜索回执分开scanComplete和pageComplete，并保留scannedFiles、skipReasons、matchedObserved与matchedTotal；grep行数与正则匹配数也不必相同。PTC将扫描、页或输出不完整视为partial；没有安全游标时返回错误及保留观测，而不是伪造下一页。用户仍须以事先列明的必查目录验收，排除规则和索引覆盖可能使“完整扫描”不等于业务任务没有遗漏。
+
+文档读取也有格式边界。所查PDF container只支持有精确头和经典xref的PDF1.0—1.7，文件上限16MiB，并拒绝xref stream、增量等特征。普通文件名.pdf不能保证该读取路径可支持；不能把拒绝后没有文字解释成文件为空。本研究只核查这一显式限制，未声称完整审计PDF提取、编码或全部文件元数据。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[src/projections/native/ranges.ts:9-26](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/native/ranges.ts#L9-L26)
+
+紧凑范围渲染要求完整可核事实。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+function range(input: unknown, value: unknown): Range | undefined {
+  if (!record(input) || !record(value) || value.status !== 'completed' || value.error || value.reference || value.storageError
+    || value.truncated !== false || value.truncatedBy !== undefined || value.nextAction !== undefined
+    || value.metadataWarnings !== undefined || value.failed !== 0 || !integer(value.lineCount)
+    || !integer(value.nextOffset) || typeof value.path !== 'string' || !path.isAbsolute(value.path)
+    || typeof value.revision !== 'string' || !/^[a-f0-9]{64}$/.test(value.revision) || !Array.isArray(value.items)) return
+  const offset = input.offset ?? 1, limit = input.limit ?? 200
+  if (!integer(offset) || offset < 1 || !integer(limit) || limit < 1) return
+  const expected = Math.max(0, Math.min(limit, value.lineCount - offset + 1))
+  if (value.items.length !== expected || value.nextOffset !== offset + expected
+    || value.complete !== (offset - 1 + expected >= value.lineCount)) return
+  const lines: Range['lines'] = []
+  for (const [index, item] of value.items.entries()) {
+    if (!record(item) || item.line !== offset + index || item.path !== value.path || typeof item.text !== 'string'
+      || item.view === 'hex' || item.truncatedInLine === true || item.metadataWarnings !== undefined) return
+    lines.push({ line: offset + index, text: item.text })
+  }
+  return { path: value.path, revision: value.revision, total: value.lineCount, next: value.nextOffset, complete: value.complete, lines }
+```
+
+</details>
+
+**依据 2 · 源码核查**：[src/projections/native/ranges.ts:29-54](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/native/ranges.ts#L29-L54)
+
+revision、nextOffset与可逆转义提示。
+
+<details>
+<summary>查看原文（26行）</summary>
+
+```text
+export function compactRanges(input: Row, value: Row): string[] | undefined {
+  if (!Array.isArray(input.files) || !Array.isArray(value.items) || !input.files.length || input.files.length !== value.items.length
+    || value.reference || value.storageError || value.truncated !== false || value.failed !== 0 || value.pending !== 0
+    || value.total !== input.files.length || value.nextIndex !== input.files.length) return
+  const observed: Range[] = []
+  for (const [index, item] of value.items.entries()) {
+    const current = range(input.files[index], item)
+    if (!current) return
+    observed.push(current)
+  }
+  const parent = path.dirname(observed[0]!.path)
+  const base = observed.length > 1 && observed.every(item => path.dirname(item.path) === parent) ? parent : undefined
+  const output = base ? [`[Base: ${quoted(base)}]`] : []
+  for (const item of observed) {
+    const span = item.lines.length ? `${item.lines[0]!.line}-${item.lines.at(-1)!.line}` : 'none'
+    output.push(`=== FILE: ${quoted(base ? path.basename(item.path) : item.path)} (Lines ${span} of ${item.total}) ===`)
+    for (const line of item.lines) output.push(`${line.line}|${encodeSourceLine(line.text)}`)
+    if (!item.lines.length) output.push(item.total === 0 ? '(empty file)' : '(no lines in this range)')
+    output.push(`[revision=${item.revision}; ${item.complete ? 'end of file; complete=true' : `more lines; nextOffset=${item.next}`}]`)
+  }
+  // The compact reader states the escape contract once for the whole result (#939).
+  const escaped = observed.reduce(
+    (count, item) => count + item.lines.filter(line => encodeSourceLine(line.text) !== line.text).length, 0)
+  if (escaped) output.push(`[Notice: ${escaped} rendered line(s) use reversible escapes; ops_edit_file matches oldText as raw bytes first, then as this displayed form decoded.]`)
+  output.push(`[Notice: ${observed.length}/${input.files.length} requested ranges returned.]`)
+  return output
+```
+
+</details>
+
+**依据 3 · 源码核查**：[src/projections/native/render.ts:146-157](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/native/render.ts#L146-L157)
+
+扫描/页面/匹配等元数据分别显示。
+
+<details>
+<summary>查看原文（12行）</summary>
+
+```text
+function listing(tool: string, args: Row, value: Row): string[] {
+  const output: string[] = []
+  const represented: string[] = []
+  // These aliases are established by the search kernel, not inferred from equal-looking counts.
+  if ((tool === 'glob' || tool === 'grep') && value.scanComplete !== undefined) {
+    represented.push('skippedFiles')
+    if (count(value.matchedObserved) && value.matched === value.matchedObserved) represented.push('matched')
+    // Grep's total counts output rows, which can differ from regex matches.
+    if (tool === 'glob' && value.scanComplete === true && count(value.matchedTotal) && value.total === value.matchedTotal) represented.push('total')
+  }
+  if (value.scanComplete !== undefined) output.push(`[Notice: ${facts(value, ['scanComplete', 'pageComplete', 'scannedFiles', 'skippedFiles', 'skipReasons', 'matchedObserved', 'matchedTotal'])}.]`)
+  if (typeof value.nextAction === 'string' && (!record(value.error) || value.error.nextAction !== value.nextAction)) output.push(`Next: ${label(value.nextAction)}`)
+```
+
+</details>
+
+**依据 4 · 源码核查**：[src/projections/ptc/outcome.ts:84-97](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L84-L97)
+
+不完整无安全续读时不伪造分页。
+
+<details>
+<summary>查看原文（14行）</summary>
+
+```text
+  const incomplete = data.complete === false || data.truncated === true || data.scanComplete === false
+    || data.pageComplete === false || data.status === 'partial' || data.status === 'partial_completion'
+  if (incomplete) {
+    const continuation = continuationFor(tool, args, data)
+    if (continuation) {
+      const recommended = continueReading(continuation)
+      return { status: 'partial', data, coverage: { ...coverage(data, false), isComplete: false }, continuation,
+        ...(recommended !== undefined ? { nextAction: recommended } : {}) }
+    }
+    return failure(data, 'RESULT_PARTIAL', 'Observation is incomplete and has no safe continuation; refine the request.',
+      effect(data, count(data.changed) > 0 ? 'applied' : 'none'), next)
+  }
+  return { status: 'completed', data, ...(typeof data.scanComplete === 'boolean'
+    ? { coverage: { ...coverage(data, true), isComplete: true as const } } : {}) }
+```
+
+</details>
+
+**依据 5 · 源码核查**：[native/crates/ops-documents/src/pdf_container.rs:186-203](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/native/crates/ops-documents/src/pdf_container.rs#L186-L203)
+
+16MiB与经典xref格式边界。
+
+<details>
+<summary>查看原文（18行）</summary>
+
+```text
+pub fn parse(data: &[u8]) -> Result<Document<'_>> {
+    if data.len() > MAX_FILE {
+        return Err(limit("PDF file exceeds 16 MiB"));
+    }
+    if data.len() < 9
+        || &data[..7] != b"%PDF-1."
+        || !matches!(data[7], b'0'..=b'7')
+        || !matches!(data[8], 10 | 13)
+    {
+        return Err(unsupported(
+            "Only PDF 1.0-1.7 with an exact header and classic xref table is supported",
+        ));
+    }
+    let (xref, footer_start) = footer(data)?;
+    if !data[xref..].starts_with(b"xref") {
+        return Err(unsupported(
+            "PDF requires a classic xref table; xref streams are unsupported",
+        ));
+```
+
+</details>
+
+**依据 6 · 源码核查**：[native/crates/ops-documents/src/pdf_container.rs:247-266](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/native/crates/ops-documents/src/pdf_container.rs#L247-L266)
+
+增量等格式被拒绝。
+
+<details>
+<summary>查看原文（20行）</summary>
+
+```text
+    let trailer = lexer.value(0)?;
+    let trailer = trailer.dict()?;
+    // Only a trailer key means "this file has an earlier xref section"; the same
+    // names inside an object dictionary are ordinary keys (outline items carry
+    // `/Prev` for their previous sibling).
+    for key in [b"Prev".as_slice(), b"XRefStm"] {
+        if trailer.contains_key(key) {
+            return Err(unsupported(
+                "Encrypted, incremental, object-stream and xref-stream PDFs are unsupported",
+            ));
+        }
+    }
+    let size = get(trailer, b"Size")?.integer()?;
+    if size == 0
+        || size > MAX_OBJECTS
+        || entries.len() != size
+        || entries.keys().copied().ne(0..size)
+    {
+        return Err(bad(
+            "PDF xref must fully declare its bounded Size without incremental sections",
+```
+
+</details>
+
+<a id="research-q05"></a>
+
+<a id="detail-section-15"></a>
+
+### Q05 · 安装、退出默认预设和失败恢复有哪些实际负担？
+
+**研究主题**：效果与总成本、采用判断、依赖、兼容与流程
+
+#### 完整回答
+
+首次需核对包声明的Node/DSH范围、平台worker和宿主注入服务；版本下限检查只拒绝已知过旧版本，不代替发行物和平台实测。持续成本包含模型上下文、程序形态反馈、缓存/溢出结果磁盘以及策略与模式维护；失败成本包含部分操作后检查文件、重载依赖和人工恢复。现金、时延、资源峰值与节Token比例没有本轮测量，不能因为原生或批处理就写低成本。
+
+ops-ptc注册为宿主预设，设为新会话默认是明确动作且会回读；退出时除了释放声明，根effect还调用restoreLeftoverDefault。它仅在当前selectedDefault仍为本预设时选择宿主默认，设置服务不可用、无可用fallback或写失败会记录警告。因此当前实现有最佳努力恢复，不应沿用“永不改变默认”的旧注释作为行为结论，也不能宣称卸载必然恢复。用户须检查新会话默认是否仍有效。
+
+建议个人隔离小仓库先比较只读检索与一项可复位改动，预先记录必查目录、预期revision和输出。worker不可用、回执无法解释、部分变更后状态不明或退出预设仍悬空时停止OPS，回官方工具/原脚本处理；回收磁盘前保留所需结果并核对作业是否停止，不能把禁用等同于结果已回收。
+
+#### 证据与依据
+
+**依据 1 · 源码核查**：[package.json:1-3](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/package.json#L1-L3)
+
+固定版本。
+
+```text
+{
+  "name": "dsh-ops",
+  "version": "0.5.6",
+```
+
+**依据 2 · 源码核查**：[src/adapter/dsh/host-floor.ts:89-96](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/adapter/dsh/host-floor.ts#L89-L96)
+
+下限而非全兼容检查。
+
+```text
+export async function assertHostFloor(ctx: Context): Promise<void> {
+  const floor = declaredHostFloor()
+  if (floor === undefined) return
+  const { runtimeVersion: version } = await runtimeVersion(ctx)
+  if (version === 'unknown') return
+  if (versionBelowFloor(version, floor)) {
+    throw new Error(`This dsh-ops build requires DSH ${floor} or newer (package.json engines.dsh); the running host reports ${version}. Upgrade the host runtime instead of reloading this plugin: an older host loads it halfway at best, showing TypeError scope errors backstage and EXECUTOR_UNAVAILABLE in front.`)
+  }
+```
+
+**依据 3 · 源码核查**：[src/presets/ops-ptc/register.ts:218-233](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/presets/ops-ptc/register.ts#L218-L233)
+
+明确设置默认并回读。
+
+<details>
+<summary>查看原文（16行）</summary>
 
 ```text
 async function applyDefaultPreset(live: LiveRegistration, options: RegistrationOptions): Promise<PresetDefaultAction> {
@@ -687,590 +1182,310 @@ async function applyDefaultPreset(live: LiveRegistration, options: RegistrationO
   const after = currentDefault(registry)
   if (after !== PRESET_ID) return { status: 'failed', message: `the host did not keep the new default (it reports ${after ?? 'no default'})` }
   return { status: 'applied', message: 'new sessions now default to OPS (PTC)', defaultPreset: after }
-}
+```
 
+</details>
+
+**依据 4 · 源码核查**：[src/presets/ops-ptc/register.ts:265-293](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/presets/ops-ptc/register.ts#L265-L293)
+
+默认恢复条件与警告。
+
+<details>
+<summary>查看原文（29行）</summary>
+
+```text
 /**
- * Release the registration on teardown.
+ * Restore the profile default this row is about to strand.
  *
- * The default preset is left exactly as it is: reverting an operator's selection
- * would be the same surprise the removed forced default used to cause. Only the
-```
-
-</details>
-
-**依据 2 · 源码核查**：[src/presets/ops-ptc/register.ts:416-435](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/presets/ops-ptc/register.ts#L416-L435)
-
-注入宿主服务并绑定生命周期。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-export function registerOpsPtcPreset(root: Context, options: RegistrationOptions = {}): OpsPtcPreset {
-  const live: LiveRegistration = {}
-  root.inject(['agentPresets'], ctx => {
-    const registry = service<PresetRegistry>(ctx, 'agentPresets')
-    if (registry === undefined || typeof registry.register !== 'function') return
-    // One registration per injection: the same activation cannot register twice,
-    // while a remount injects a fresh child and registers again.
-    const activation: object = ctx.fiber ?? ctx
-    if (registered.has(activation)) return
-    registered.add(activation)
-    const slot: Slot = { disposed: false }
-    ctx.effect(() => () => {
-      slot.disposed = true
-      if (live.ctx === ctx) { live.ctx = undefined; live.registry = undefined }
-      releaseRegistration(ctx, slot, options)
-    }, 'dsh-ops: ops-ptc preset')
-    void activate(ctx, registry, slot, options, live).catch(error => {
-      warn(options, ctx, `dsh-ops: cannot register the ops-ptc agent preset: ${errorText(error)}; the preset stays unavailable.`)
-    })
-  })
-```
-
-</details>
-
-**依据 3 · 源码核查**：[src/presets/ops-ptc/register.ts:447-460](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/presets/ops-ptc/register.ts#L447-L460)
-
-读定义成功才挂载，异步卸载释放注册。
-
-<details>
-<summary>查看原文（14行）</summary>
-
-```text
-async function activate(ctx: Context, registry: PresetRegistry, slot: Slot, options: RegistrationOptions, live: LiveRegistration): Promise<void> {
-  const definition = await readOpsPtcDefinition(options, ctx)
-  if (definition === undefined || slot.disposed) return
-  // A failed registration leaves the default preset exactly as it was: this row
-  // never points new sessions at a preset it could not register.
-  const release = await registry.register(definition)
-  if (slot.disposed) {
-    await release()
+ * Unload and disable remove the ops-ptc preset, but the profile keeps the
+ * `selectedDefault` the operator's one click wrote: every new session then
+ * fails to compose against a preset that no longer exists (#928). The lease
+ * writes the host default back — only when the live value still names this
+ * row's preset; a default naming any other preset is an operator choice and is
+ * never touched. Best effort with a warning: a host without a usable settings
+ * service, or one that refuses the write, reports the leftover and its
+ * remediation instead of guessing.
+ * @param served - the last registration this row served.
+ * @param options - test seams; production passes none.
+ */
+async function restoreLeftoverDefault(served: LiveRegistration, options: RegistrationOptions): Promise<void> {
+  const { ctx, registry } = served
+  if (ctx === undefined || registry === undefined) return
+  if (currentDefault(registry) !== PRESET_ID) return
+  const fallback = hostDefaultOf(registry)
+  if (fallback === undefined) {
+    warn(options, ctx, 'dsh-ops: the profile still names the removed ops-ptc preset as its default; choose another default on the host settings page.')
     return
   }
-  slot.release = release
-  // The operator action reads this: only a registered preset may be made the default.
-  live.ctx = ctx
-  live.registry = registry
-```
-
-</details>
-
-**依据 4 · 源码核查**：[src/publication/ptc.ts:77-96](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/publication/ptc.ts#L77-L96)
-
-驻留与可选 API 的资格及 PTC 展示判据。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-    const resident = new Set<ApiName>(gate.resident === false ? [] : [...PTC_RESIDENT_TOOLS, ...config.alwaysLoaded])
-    // A loader-less scope can never select the allowed pool: registering it only
-    // lets a host that renders registered definitions declare unreachable APIs.
-    const selectable: ApiName[] = gate.dynamic === false ? [] : [...config.allowedTools, 'result' as ApiName]
-    const pool = new Set<ApiName>([...resident, ...selectable])
-    const owns = (agent: Agent): boolean => !stopped && gate.allows(agent) && Boolean(ownership?.owns(agent))
-    const permitted = (agent: Agent, api: ApiName | 'load_sdk'): boolean => {
-      if (!owns(agent) || !ctx.get('ptcRuntime') || !ctx.get('subprocess')) return false
-      const policy = ctx.get('sandboxPolicy')?.resolve({ session: agent.session })
-      return policy !== undefined && ['read-only', 'workspace-write', 'danger-full-access'].includes(policy.mode)
-        && (api === 'load_sdk' || api === 'result' || !capability(api)?.mutates || policy.mode !== 'read-only')
-    }
-    const loadable = [...new Set<ApiName>([...config.allowedTools, 'result'])]
-    const allowedApis = (agent: Agent): ApiName[] => gate.dynamic === false ? [] : loadable.filter(api => permitted(agent, api))
-    const selected = (entry: Entry, api: ApiName | 'load_sdk'): boolean => api === 'load_sdk'
-      ? gate.dynamic !== false : resident.has(api) || entry.selected.has(api)
-    const isPtc = async (agent: Agent, signal?: AbortSignal): Promise<boolean> => {
-      const assembly = await inspectPresentation(prompt, agent, signal)
-      return assembly.tools.length === 1 && assembly.tools[0]?.name === 'run_code'
-        && assembly.sections.some(section => section.name === 'tools:ptc-only' && Boolean(section.text.trim()))
-```
-
-</details>
-
-**依据 5 · 源码核查**：[src/publication/ptc.ts:111-125](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/publication/ptc.ts#L111-L125)
-
-执行前复核有效选择与提交后的加载信号。
-
-<details>
-<summary>查看原文（15行）</summary>
-
-```text
-    const execute = (entry: Entry, api: ApiName | 'load_sdk'): ToolDefinition['execute'] => async (args, exec) => {
-      // The public assembly may finish after its executor sections changed.
-      // Refuse that stale verdict rather than dispatching under the old text.
-      const revision = presentationRevision
-      const current = () => entries.get(entry.agent) === entry && exec.agent === entry.agent && !exec.signal.aborted
-        && revision === presentationRevision && permitted(entry.agent, api) && selected(entry, api)
-        && (capability(api)?.component === 'file' || tools.executable(publicToolName(api), entry.agent, exec.toolSet) === entry.definitions.get(publicToolName(api)))
-      if (!current() || !await isPtc(entry.agent, exec.signal).catch(() => false) || !current()) {
-        return failure('POLICY_DENIED', 'This API must be admitted for the calling PTC scope; no action executed.')
-      }
-      if (api === 'load_sdk') {
-        const requested = requestedApis(args, allowedApis(entry.agent))
-        if (typeof requested === 'string') return failure('INVALID_ARGUMENT', requested)
-        for (const name of requested) entry.pending.add(name)
-        return { status: 'completed', tools: requested, nextTurn: true }
-```
-
-</details>
-
-**依据 6 · 源码核查**：[src/publication/ptc.ts:178-221](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/publication/ptc.ts#L178-L221)
-
-指导输入、根调用筛选和追加上下文。
-
-<details>
-<summary>查看原文（44行）</summary>
-
-```text
-        if (gate.batching === true) {
-          entry.disposers.push(agent.ctx!.on('agent/pre-step', async (payload, next) => {
-            if (payload.agent === agent) shapeLatch.noteTurn(agent, payload.turn)
-            return next()
-          }))
-          // Teach the rules once, before the model's first request: a step-tail
-          // message rides the first accepted user batch and enters history.
-          // The provider must not latch here. A batch can still be withdrawn before
-          // admission (cancellation, rejection), and latching on the return value
-          // would then skip the lesson for the whole session without a trace.
-          entry.disposers.push(registerStepTailProvider(entry.ctx, agent, {
-            id: BATCHING_GUIDANCE_ID,
-            revision: BATCHING_GUIDANCE_REVISION,
-            provide() {
-              if (entry.taught) return undefined
-              const text = loadBatchingGuidance()
-              return text.length > 0 ? text : undefined
-            },
-          }))
-          // The program-shape trigger observes the ROOT run_code call: only there is
-          // the whole program text visible. Nested tools.ops_* calls carry a parent
-          // token, and their arguments say nothing about the shape of the step.
-          entry.disposers.push(agent.ctx!.on('tools/post-execute', async (exec, result, next) => {
-            const decision = await next()
-            if (decision.kind !== 'accept') return decision
-            if (exec.agent !== agent || exec.name !== 'run_code' || exec.parent !== undefined) return decision
-            if (exec.signal.aborted) return decision
-            const code = (exec.arguments as { code?: unknown } | undefined)?.code
-            const notice = shapeLatch.observe(agent, code)
-            if (notice === undefined) return decision
-            try {
-              const message = await guidanceMessage(notice.turn, notice.text)
-              // Observation only: one line, no context, no new dependency.
-              if (gate.telemetry === true) {
-                const counts = shapeLatch.stats(agent)
-                ctx.logger.info('dsh-ops batching: turn=' + notice.turn + ' category=' + notice.category
-                  + ' plan=' + counts.plan + ' bypass=' + counts.bypass + ' shape=' + counts.shape + ' total=' + counts.total)
-              }
-              // Append only: the tool result keeps its own value, content and contexts.
-              return { ...decision, additionalContexts: [...(decision.additionalContexts ?? []), message] }
-            } catch (error) {
-              // A delivery failure is an optimisation loss, never a tool failure.
-              ctx.logger.warn('dsh-ops: batching notice delivery failed: ' + String(error))
-              return decision
-```
-
-</details>
-
-**依据 7 · 源码核查**：[src/ptc/batching-guidance.ts:257-278](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/ptc/batching-guidance.ts#L257-L278)
-
-读取工具调用、首行计划、分支和字面 Shell 形状。
-
-<details>
-<summary>查看原文（22行）</summary>
-
-```text
-export function analyzeProgram(code: unknown): ProgramShape {
-  if (typeof code !== 'string' || code.length === 0) {
-    return { hasFirstLinePlan: false, declaredOperations: 0, dispatchSites: 0, hasBatchingStructure: false,
-      hasBranching: false, isWaiting: false, bypassesFileTools: false, chars: 0 }
+  const failure = await writeSelectedDefault(ctx, fallback, served.settings)
+  if (failure !== undefined) {
+    warn(options, ctx, `dsh-ops: ${failure}; the profile still names the removed ops-ptc preset, so new sessions may fail to compose until another default is chosen.`)
+    return
   }
-  const readable = readProgram(code)
-  // A commented-out call is not a call: dispatch sites are read from comment-free
-  // text, which is also what lets a truly dispatch-free program earn no notice.
-  const sites = [...readable.code.matchAll(DISPATCH)].filter(match => readable.bare.slice(match.index, match.index + 5) === 'tools')
-  const plan = parsePlan(code)
-  const shellForFiles = sites.some(match => SHELL_TOOL.test(match[1] ?? match[2] ?? '')
-    && literalShellFileWork(readable.code, match.index + match[0].length))
-  return {
-    hasFirstLinePlan: plan.length > 0,
-    declaredOperations: plan.length,
-    dispatchSites: sites.length,
-    hasBatchingStructure: BATCHED.test(code),
-    hasBranching: BRANCHING.test(code),
-    isWaiting: WAITING.test(code),
-    // Comments and message text are not file work; module specifiers stay readable
-    // so a real import of node:fs still bypasses.
-    bypassesFileTools: BYPASS.test(readable.bare) || shellForFiles,
+  warn(options, ctx, `dsh-ops: restored the default agent preset to ${fallback}, because the ops-ptc preset was removed with this row.`)
 ```
 
 </details>
 
-**依据 8 · 源码核查**：[src/ptc/batching-guidance.ts:301-311](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/ptc/batching-guidance.ts#L301-L311)
+**依据 5 · 源码核查**：[src/presets/ops-ptc/register.ts:491-501](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/presets/ops-ptc/register.ts#L491-L501)
 
-无调用点时不提示，短程序规则的例外。
+释放声明和根effect恢复接线。
 
 <details>
 <summary>查看原文（11行）</summary>
 
 ```text
-export function violationsOf(shape: ProgramShape): ProgramViolations {
-  // No dispatch site means there is no call shape to correct: a value program or a
-  // comment-only program must never earn a plan, bypass or shape notice.
-  if (shape.dispatchSites === 0) return { plan: false, bypass: false, shape: false }
-  return {
-    plan: !shape.hasFirstLinePlan,
-    bypass: shape.bypassesFileTools,
-    // Waiting on a job and branching are legitimate non-batched shapes, and a long
-    // program is not judged from its text alone.
-    shape: !shape.hasBatchingStructure && !shape.hasBranching && !shape.isWaiting && shape.chars < THIN_CODE_CHARS,
-  }
+      releaseRegistration(ctx, slot, options)
+    }, 'dsh-ops: ops-ptc preset')
+    void activate(ctx, registry, slot, options, live, served).catch(error => {
+      warn(options, ctx, `dsh-ops: cannot register the ops-ptc agent preset: ${errorText(error)}; the preset stays unavailable.`)
+    })
+  })
+  // The lease below is the row's own lifetime: the Loader reuses a row's fiber
+  // across a config remount, so a remount never fires it. It fires when the row
+  // is disabled or unloaded — the one moment the profile can be left naming a
+  // preset that no longer exists (#928).
+  root.effect(() => () => { void restoreLeftoverDefault(served, options) }, 'dsh-ops: ops-ptc preset default lease')
 ```
 
 </details>
 
-**依据 9 · 源码核查**：[src/ptc/batching-guidance.ts:385-411](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/ptc/batching-guidance.ts#L385-L411)
+**依据 6 · 源码核查**：[cordis.patch.yml:21-69](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/cordis.patch.yml#L21-L69)
 
-按 Agent 与轮次控制提示频率及重新启用。
+溢出/结果缓存设置与默认开关。
 
 <details>
-<summary>查看原文（27行）</summary>
+<summary>查看原文（49行）</summary>
 
 ```text
-export function createProgramLatch(): ProgramLatch {
-  const states = new WeakMap<Agent, { turn: number; armed: Record<BatchingCategory, boolean>; sent: Record<BatchingCategory, number> }>()
-  const fresh = (turn: number) => ({ turn, armed: { plan: true, bypass: true, shape: true }, sent: { plan: 0, bypass: 0, shape: 0 } })
-  const stateFor = (agent: Agent) => {
-    let state = states.get(agent)
-    if (state === undefined) { state = fresh(0); states.set(agent, state) }
-    return state
-  }
-  return {
-    noteTurn(agent, turn) {
-      const normalised = Number.isSafeInteger(turn) ? turn : 0
-      const state = states.get(agent)
-      // The host may announce one turn more than once; only a change starts a new turn.
-      if (state !== undefined && state.turn === normalised) return
-      states.set(agent, fresh(normalised))
-    },
-    observe(agent, code) {
-      const state = stateFor(agent)
-      const shape = analyzeProgram(code)
-      const violations = violationsOf(shape)
-      // A compliant program in a category restores that category's right to speak.
-      for (const entry of CATEGORY_PRIORITY) if (!violations[entry]) state.armed[entry] = true
-      const category = CATEGORY_PRIORITY.find(entry => violations[entry] && state.armed[entry])
-      if (category === undefined) return undefined
-      state.armed[category] = false
-      state.sent[category] += 1
-      return { category, turn: state.turn, text: noticeText(category, shape) }
+        minimal:
+          enabled: true
+          spillRetentionDays: 30
+          spillTotalBudgetMiB: 256
+          spillSweepEnabled: true
+        standard:
+          enabled: true
+          residentTools: true
+          spillRetentionDays: 30
+          spillTotalBudgetMiB: 256
+          spillSweepEnabled: true
+        ptc:
+          enabled: true
+          residentTools: true
+          spillRetentionDays: 30
+          spillTotalBudgetMiB: 256
+          spillSweepEnabled: true
+        # The batching-guidance arm: its preset inherits the PTC tool surface and
+        # turns the guidance on. Other modes keep the key absent (default false).
+        ops-ptc:
+          enabled: true
+          residentTools: true
+          batchingGuidance: true
+          spillRetentionDays: 30
+          spillTotalBudgetMiB: 256
+          spillSweepEnabled: true
+        cordis:
+          enabled: true
+          residentTools: true
+          spillRetentionDays: 30
+          spillTotalBudgetMiB: 256
+          spillSweepEnabled: true
+        discovery:
+          enabled: true
+        # Inert until template is set; off by default so an install that never
+        # opted in gets no listener at all.
+        download-guard:
+          enabled: false
+          downloadGuard:
+            template: ""
+        # Result-cache retention. The aggregate budgets stay 0 (report only): the default sweep
+        # only reclaims roots whose cache data is already gone. maxAgeMs is the idle grace that
+        # protects another live host sharing the temp directory.
+        resultCache:
+          enabled: true
+          maxRoots: 0
+          maxTotalBytes: 0
+          maxAgeMs: 3600000
+          sweepEnabled: true
 ```
 
 </details>
 
 #### 缺口
 
-- 没有指导开关对相同产物、令牌和轮次的对照
-  **影响**：帮助或扰乱模型的程度未知
-  **进一步探讨**：固定模型与任务，把提示关闭和启用分别重放，核对合格产物、额外上下文与重复工具调用
+- 实际发行物、平台运行及恢复耗时未核验。
+  **影响**：只能建议有界试用，不能承诺持续运行收益或卸载完全回收。
+  **进一步探讨**：按目标平台验证只读、可复位写入、失败回执与禁用后新会话默认，记录全部成本。
 
-<a id="research-q04"></a>
+<a id="research-q06"></a>
 
-<a id="detail-section-14"></a>
+<a id="detail-section-16"></a>
 
-### Q04 · 如何验收一页搜索结果没有漏项？
+### Q06 · 把任务清单与回执联合验收能否减少遗漏和重复写入？
 
-**研究主题**：功能与机制、缺陷与关键质疑、新假设与验证
+**研究主题**：新假设与验证
 
 #### 完整回答
 
-应区分扫描范围完整、当前显示页是否完整和是否仍有后续结果。只要扫描不完整、仍有页或输出预算截断，返回 complete 就不能作为任务完成；报告另给排除原因、已扫描文件和观察到的匹配数。仅遍历完整、存在下一页且当前页没有局部行时生成稳定游标。exactTotal=false 提早停在行限时，观察值是下界，不能靠当前偏移补成全量。显示行被部分截断时 nextOffset 不跳过这条剩余内容，建议用有界文件读取。这里的贡献是说明为何不全与如何补查，资料仍受扫描路径、排除项和索引来源约束。可以让任务侧把事先列出的必查目录作为验收清单，只在覆盖与结果同时满足时通过。用故意加入的排除文件、不可读目录和长行对比，若仍经常出现回执合规却漏掉必要命中，说明单靠工具回执不足。
+可以提出未验证假设：对仓库盘点或小批改动，预先固定必查路径与预期后置状态，再将scan/page完整性、effectState和实际revision共同作为完成判据，可能比单读completed或Next提示更少遗漏和重复写入。插件已经提供可用回执和受权限限制的建议，联合任务验收还需要调用方维护任务语义，不能算当前工具自动保证。
+
+最小验证用同一组有排除文件、长行、不可读目录、revision冲突、目标已发布但源删除失败的任务，比较只读工具status与联合清单。保持模型、平台、初始目录和权限一致，记录合格办结比例、重复变更、漏项、人工复核和全部调用/结果资源。若联合清单只是增加操作而不降低错误，或误把已应用副作用重新执行，则不支持推广。下一步建议是否可执行还应在只读和缺工具作用域下检验，不以出现命令文本作成功。
 
 #### 证据与依据
 
-**依据 1 · 源码核查**：[src/capabilities/file.ts:51-62](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/capabilities/file.ts#L51-L62)
+**依据 1 · 源码核查**：[src/projections/native/render.ts:146-157](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/native/render.ts#L146-L157)
 
-exactTotal 参数区分下界、总数与游标。
+可用于任务覆盖核对的事实。
 
 <details>
 <summary>查看原文（12行）</summary>
 
 ```text
-    caseInsensitive: { type: 'boolean', description: 'Ignore case; default false.' },
-    lineNumbers: { type: 'boolean', description: 'Include 1-based line numbers; default true.' },
-    beforeContext: range(0, 32, 'Lines before each match; default 0.'),
-    afterContext: range(0, 32, 'Lines after each match; default 0.'),
-    multiline: { type: 'boolean', description: 'Search whole-file text instead of individual lines; default false.' },
-    offset: integer,
-    limit: range(1, 10000, 'Default 100.'),
-    exactTotal: { type: 'boolean', description: 'Default true. False stops at the row limit with lower bounds and no stable cursor; summary and continuation still scan fully.' },
-    includeHidden: { type: 'boolean', description: 'Traverse dot-prefixed directories such as .github; default false. The plugin\'s own .dsh-ops sidecars stay excluded either way.' },
-    continuation: { ...string, description: 'Opaque cursor from a complete scan. Keep query options unchanged; omit offset or use nextOffset. SEARCH_STALE requires a fresh query.' },
-  }, ['pattern']),
-  stat: bounded({ path: filePath }, ['path']),
+function listing(tool: string, args: Row, value: Row): string[] {
+  const output: string[] = []
+  const represented: string[] = []
+  // These aliases are established by the search kernel, not inferred from equal-looking counts.
+  if ((tool === 'glob' || tool === 'grep') && value.scanComplete !== undefined) {
+    represented.push('skippedFiles')
+    if (count(value.matchedObserved) && value.matched === value.matchedObserved) represented.push('matched')
+    // Grep's total counts output rows, which can differ from regex matches.
+    if (tool === 'glob' && value.scanComplete === true && count(value.matchedTotal) && value.total === value.matchedTotal) represented.push('total')
+  }
+  if (value.scanComplete !== undefined) output.push(`[Notice: ${facts(value, ['scanComplete', 'pageComplete', 'scannedFiles', 'skippedFiles', 'skipReasons', 'matchedObserved', 'matchedTotal'])}.]`)
+  if (typeof value.nextAction === 'string' && (!record(value.error) || value.error.nextAction !== value.nextAction)) output.push(`Next: ${label(value.nextAction)}`)
 ```
 
 </details>
 
-**依据 2 · 源码核查**：[native/crates/ops-search/src/paging.rs:220-255](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/native/crates/ops-search/src/paging.rs#L220-L255)
+**依据 2 · 源码核查**：[src/projections/ptc/outcome.ts:63-97](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/outcome.ts#L63-L97)
 
-生成游标的前提、报告分类和总数写入。
+unknown/partial及安全续读边界。
 
 <details>
-<summary>查看原文（36行）</summary>
+<summary>查看原文（35行）</summary>
 
 ```text
-        .offset
-        .saturating_add(page.items.len())
-        .saturating_sub(usize::from(page.partial_item));
-    let more = next < item_total;
-    let continuation = (complete && more && !page.partial_item && next > page.offset)
-        .then(|| cursor.token(&snapshot, next));
-    let truncated_by = scan.stopped.unwrap_or(if page.output_cut {
-        TruncatedBy::OutputBudget
-    } else if more {
-        TruncatedBy::RowLimit
-    } else {
-        TruncatedBy::None
-    });
-    let report = SearchExecutionReport {
-        coverage: if complete {
-            SearchCoverage::Complete {
-                matched_total: observed,
-            }
-        } else {
-            SearchCoverage::Incomplete
-        },
-        page_complete: !page.output_cut,
-        scanned_files: scan.scanned,
-        skipped_files: scan.skipped,
-        skip_reasons: scan.reasons,
-        matched_observed: observed,
-        truncated_by,
-        continuation,
-    };
-    let mut output = json!({"status":"completed","phase":"verify","changed":0,"matched":observed,
-        "skipped":page.offset,"failed":scan.failed,"complete":complete && !more && !page.output_cut,
-        "truncated":!complete || more || page.output_cut,"items":page.items,"nextOffset":next});
-    if complete {
-        output["total"] = json!(item_total);
-        output["omitted"] = json!(item_total.saturating_sub(next));
+  const next = typeof data.nextAction === 'string' ? data.nextAction : undefined
+  if (data.status === 'unknown' || count(data.unknown) > 0) {
+    return failure(data, 'RESULT_UNKNOWN', 'Some effects are unknown; inspect retained observations before any recovery.', 'unknown', next)
+  }
+  if (data.status === 'rejected' || data.status === 'conflict' || data.status === 'error') {
+    return failure(data, 'RESULT_UNKNOWN', 'A failed receipt omitted its structured error.', 'unknown', next)
+  }
+  // Batch summaries intentionally omit audit rows. Successful planning/execution is still complete.
+  if (tool === 'batch') {
+    if (data.status === 'completed' || data.status === 'planned') return { status: 'completed', data }
+    return failure(data, 'RESULT_PARTIAL', 'The batch contains failed or unsettled operations; inspect detailsRef.',
+      count(data.done) > 0 ? 'partial' : 'none', next)
+  }
+  // Stored rows are not echoed by put/release; their own successful operation is complete.
+  if (tool === 'result' && record(args)?.action !== 'page' && data.status === 'completed') return { status: 'completed', data }
+  if (count(data.failed) > 0) {
+    const recommended = nextStepFor(tool, args, { code: 'RESULT_PARTIAL', message: 'Some items failed; inspect each retained receipt.',
+      retry: 'never' }, data, surface)
+    return failure(data, 'RESULT_PARTIAL', 'Some items failed; inspect each retained receipt.',
+      effect(data, count(data.changed) > 0 ? 'partial' : 'none'), next, recommended)
+  }
+  const incomplete = data.complete === false || data.truncated === true || data.scanComplete === false
+    || data.pageComplete === false || data.status === 'partial' || data.status === 'partial_completion'
+  if (incomplete) {
+    const continuation = continuationFor(tool, args, data)
+    if (continuation) {
+      const recommended = continueReading(continuation)
+      return { status: 'partial', data, coverage: { ...coverage(data, false), isComplete: false }, continuation,
+        ...(recommended !== undefined ? { nextAction: recommended } : {}) }
     }
+    return failure(data, 'RESULT_PARTIAL', 'Observation is incomplete and has no safe continuation; refine the request.',
+      effect(data, count(data.changed) > 0 ? 'applied' : 'none'), next)
+  }
+  return { status: 'completed', data, ...(typeof data.scanComplete === 'boolean'
+    ? { coverage: { ...coverage(data, true), isComplete: true as const } } : {}) }
 ```
 
 </details>
 
-**依据 3 · 源码核查**：[native/crates/ops-search/src/paging.rs:256-271](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/native/crates/ops-search/src/paging.rs#L256-L271)
+**依据 3 · 源码核查**：[native/crates/ops-files/src/file_single.rs:720-735](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/native/crates/ops-files/src/file_single.rs#L720-L735)
 
-不完整扫描和部分匹配行的进一步动作。
+发布后源仍可能保留，提供重复执行反例。
 
 <details>
 <summary>查看原文（16行）</summary>
 
 ```text
-    if !complete {
-        output["nextAction"] = json!(if scan.stopped == Some(TruncatedBy::RowLimit) {
-            "Stopped at the requested row limit (exactTotal=false). matchedObserved is a lower bound; no stable continuation is available. Start a fresh query with exactTotal=true for totals, resolving any reported scan gaps. If a line is only partly displayed, inspect its file with bounded text/hex ranges."
-        } else {
-            "Narrow path to a smaller readable subdirectory and start a fresh query. Check skipReasons for exclusions and scan gaps. No stable continuation is available for an incomplete traversal."
-        });
-        if !scan.gap_examples.is_empty() {
-            output["nextAction"] = json!(format!(
-                "{} Gap examples: {}",
-                output["nextAction"].as_str().unwrap(),
-                json!(scan.gap_examples)
-            ));
-        }
-    } else if page.partial_item {
-        output["nextAction"] = json!(
-            "A matching line is only partially displayed. Inspect that file with bounded text/hex ranges; nextOffset does not skip the undisplayed suffix."
+        check_applied_file_revision(
+            &args.to,
+            &args.expected_revision,
+            "Destination published but its revision differs; source was retained",
+        )?;
+        check_applied_file_revision(
+            &args.path,
+            &args.expected_revision,
+            "Destination published but source changed; source was retained",
+        )?;
+        source.parent.remove_file(&source.name).map_err(|error| {
+            applied_failure(
+                "RESULT_PARTIAL",
+                format!("Destination published but source unlink failed: {error}"),
+            )
+        })?;
 ```
 
 </details>
 
-#### 缺口
+**依据 4 · 源码核查**：[src/projections/ptc/next-step.ts:7-50](https://github.com/T-Auto/dsh-ops/blob/bfdfdf68765f8bdd04914df0cade49de21913746/src/projections/ptc/next-step.ts#L7-L50)
 
-- 缺少不同索引和文件树下漏报的独立对照
-  **影响**：不能将一次工具完成回执当作整库证明
-  **进一步探讨**：用已知匹配清单与故意不可读、被排除、长行等样例比较还需人工复核的范围
-
-<a id="research-q05"></a>
-
-<a id="detail-section-15"></a>
-
-### Q05 · 安装、运行与退出该怎样做成本对照？
-
-**研究主题**：依赖、兼容与流程、效果与总成本、采用判断、工程质量与复用
-
-#### 完整回答
-
-根包从 src 编译和打包到 lib，声明 Node ^22.19 或 >=24、DSH >=0.2.2-rc.1 且低于 0.2.3。宿主版本事实现在尝试通过唯一 installation 来源的 app-boot 解析，路径越界或解析失败报 unknown。源码与清单无法确认机器上可运行平台原生产物，也无法替代实际宿主版本和服务。作者把安装预演描述为解析 CLI 路径并打印计划，成功后仍需确认实际宿主与 worker。持续运行的成本包括模型调用、结果缓存的磁盘、模式与策略设置，以及操作部分成功时对文件的人工复核。缓存命令可预览，并要求用户声明所有宿主和 Bash 作业已停才执行回收；这个开关不能独立验证没有其他进程。使用小型隔离仓库先比较只读检索与一项可复位写入，检查目标修订、文件权限与输出是否完整。若找不到 worker、回执无法解释或默认预设退出后未恢复，先停止 OPS 并回到官方工具，清理磁盘前另留需要的结果。成本或收益均无量化结论。
-
-#### 证据与依据
-
-**依据 1 · 源码核查**：[package.json:185-198](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/package.json#L185-L198)
-
-打包构建入口。
+下一步文本受callable/只读限制但不授予权限。
 
 <details>
-<summary>查看原文（14行）</summary>
+<summary>查看原文（44行）</summary>
 
 ```text
-    "native/src",
-    "native/crates",
-    "native/windows-metadata",
-    "native/darwin-metadata",
-    "native/bash-ipc"
-  ],
-  "scripts": {
-    "build": "node scripts/build.mjs",
-    "prepack": "node bin/prepack.mjs",
-    "pretest": "node scripts/build.mjs",
-    "pretest:ptc": "node scripts/build.mjs",
-    "typecheck": "tsc -p . --noEmit",
-    "build:bash-ipc": "node bin/build-bash-ipc.mjs",
-    "build:ptc": "node bin/dsh-ops.mjs build-ptc",
-```
+/** What the calling step can execute now, resolved by the dispatching runtime. */
+export interface NextStepSurface {
+  /** Public tool names the calling step admits. */
+  readonly callable: ReadonlySet<string>
+  /** True when the calling scope's sandbox policy forbids every mutation. */
+  readonly readOnly: boolean
+}
 
-</details>
+const record = (value: unknown): CanonicalData | undefined =>
+  value !== null && typeof value === 'object' && !Array.isArray(value) ? value as CanonicalData : undefined
+const call = (rawName: string, args: CanonicalData): string => publicToolName(rawName) + ' ' + JSON.stringify(args)
+const admitted = (surface: NextStepSurface | undefined, rawName: string): boolean =>
+  surface !== undefined && surface.callable.has(publicToolName(rawName))
 
-**依据 2 · 源码核查**：[scripts/build.mjs:47-66](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/scripts/build.mjs#L47-L66)
+/** Render the safe continuation token as an explicit, parameter-legal call. */
+export function continueReading(continuation: string): string | undefined {
+  const decoded = decodeContinuation(continuation)
+  return decoded !== undefined
+    ? `Continue this read with ${call(decoded.tool, decoded.args)}; a page that reports complete=true is the last one.`
+    : undefined
+}
 
-编译和复制发布产物到 lib。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-  // tsc silently ignores unimported JavaScript when allowJs is disabled. Refuse it explicitly
-  // so a missed source migration cannot produce an apparently successful incomplete package.
-  requireTypedSource(source)
-  const result = spawnSync(process.execPath, [compiler, '-p', path.join(root, 'tsconfig.json')], {
-    cwd: root, stdio: 'inherit', windowsHide: true,
-  })
-  if (result.error) throw result.error
-  if (result.status !== 0) {
-    process.exitCode = result.status ?? 1
-    console.error('build: TypeScript compilation failed; assets were not copied.')
-  } else {
-    bundleClient(root)
-    const assets = copyAssets(source)
-    if (existsSync(path.join(source, 'ptc/contract.ts'))) {
-      const { writePtcDeclarations } = await import('./lib/build/ptc-sdk.mjs')
-      const sdk = await writePtcDeclarations(root)
-      console.log(`build: generated PTC declarations for ${sdk.tools} capabilities (${sdk.bytes} bytes)`)
-    }
-    console.log(`build: compiled src/ to lib/ and copied ${assets} assets`)
+function directoryStep(path: string, surface: NextStepSurface | undefined): string {
+  if (admitted(surface, 'glob')) {
+    return `The path is a directory, not a file. List its immediate entries with ${call('glob', { path, pattern: ['*'] })}, then read one concrete file path.`
   }
-```
+  return 'The path is a directory, not a file, and no directory-listing API is callable in this step; supply one concrete file path.'
+}
 
-</details>
-
-**依据 3 · 源码核查**：[package.json:276-279](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/package.json#L276-L279)
-
-声明 Node 与 DSH 版本。
-
-```text
-  "engines": {
-    "node": "^22.19 || >=24",
-    "dsh": ">=0.2.2-rc.1 <0.2.3-0"
+function encodingStep(tool: string, path: string, surface: NextStepSurface | undefined): string {
+  // The calling tool just executed, so the same tool stays callable; a cross-tool
+  // recommendation additionally requires an admitted surface entry.
+  if (tool === 'inspect_local_file' || admitted(surface, 'inspect_local_file')) {
+    return `The bytes are not valid UTF-8. Read a hex window with ${call('inspect_local_file', { path, view: 'hex' })}.`
   }
-```
+  return `File ${JSON.stringify(path)} is not valid UTF-8; no hex-capable reader is callable in this step.`
+}
 
-**依据 4 · 源码核查**：[src/adapter/dsh/runtime-version.ts:14-33](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/adapter/dsh/runtime-version.ts#L14-L33)
-
-宿主版本绑定安装来源，未知保留。
-
-<details>
-<summary>查看原文（20行）</summary>
-
-```text
-export async function runtimeVersion(ctx: Context): Promise<RuntimeVersion> {
-  try {
-    const packages = service<import('@deepseek-ai/dsh-app-boot').PluginPackages>(ctx, 'pluginPackages')
-    const entries = packages?.resolution?.entries.filter(entry =>
-      entry.scope === 'installation' && entry.name === '@deepseek-ai/dsh-app-boot') ?? []
-    // An ambiguous or absent host installation cannot establish which runtime serves this session.
-    if (entries.length !== 1 || !path.isAbsolute(entries[0]!.packageDir)) return { runtimeVersion: 'unknown' }
-    const require = createRequire(path.join(entries[0]!.packageDir, 'package.json'))
-    const file = realpathSync.native(require.resolve('@deepseek-ai/dsh-app-boot'))
-    const relative = path.relative(realpathSync.native(entries[0]!.packageDir), file)
-    if (relative === '..' || relative.startsWith(`..${path.sep}`) || path.isAbsolute(relative)) return { runtimeVersion: 'unknown' }
-    const boot = await import(pathToFileURL(file).href) as {
-      getDshRuntimeVersion?: () => unknown
-    }
-    const version = boot.getDshRuntimeVersion?.()
-    if (typeof version === 'string' && /^\d+\.\d+\.\d+(?:-[\w.-]+)?(?:\+[\w.-]+)?$/u.test(version)) {
-      return { runtimeVersion: version, runtimeVersionSource: 'host:app-boot/getDshRuntimeVersion' }
-    }
-  } catch { /* Optional host authority unavailable: do not infer a version from another source. */ }
-  return { runtimeVersion: 'unknown' }
+function revisionStep(path: string, surface: NextStepSurface | undefined): string {
+  const reader = admitted(surface, 'stat') ? 'stat' : admitted(surface, 'inspect_local_file') ? 'inspect_local_file' : undefined
+  const resubmit = surface?.readOnly === true ? '' : ', then re-submit with that expectedRevision'
+  return reader !== undefined
+    ? `The file changed since the revision you observed; nothing was applied. Read the current revision with ${call(reader, { path })}${resubmit}.`
+    : `The file changed since the revision you observed; nothing was applied. Read the current revision of ${JSON.stringify(path)} with a callable read API${resubmit}.`
 ```
 
 </details>
-
-**依据 5 · 源码核查**：[src/cli/cache-reclaim.ts:461-479](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/src/cli/cache-reclaim.ts#L461-L479)
-
-回收与预览的选择和离线确认。
-
-<details>
-<summary>查看原文（19行）</summary>
-
-```text
-export function commandCache(action: string, {
-  yes = false, dryRun = false, allHostsStopped = false, kinds, roots, json = false, home, now,
-}: {
-  yes?: boolean, dryRun?: boolean, allHostsStopped?: boolean, kinds?: readonly CacheKind[], roots?: string[], json?: boolean, home?: string, now?: number
-} = {}): number {
-  if (action !== 'status' && action !== 'reclaim') throw new Error('Expected cache status or cache reclaim.')
-  for (const kind of kinds ?? []) {
-    if (!CACHE_KINDS.includes(kind)) throw new Error('--kind must be one of ' + CACHE_KINDS.join(', ') + ', got ' + JSON.stringify(kind))
-  }
-  const apply = action === 'reclaim' && yes && !dryRun
-  if (apply && !allHostsStopped) {
-    console.error('dsh-ops: stop every OPS host and Bash job, then confirm with --yes --all-hosts-stopped. No cache was changed.')
-    return 2
-  }
-  if (action === 'status' && yes) throw new Error('--yes applies to cache reclaim only.')
-  const options = { ...(home === undefined ? {} : { home }), ...(now === undefined ? {} : { now }), roots: roots ?? [] }
-  const report: CacheInventory | CacheReclaimResult = apply
-    ? cacheReclaim({ ...options, apply: true, allHostsStopped, ...(kinds === undefined ? {} : { kinds }) })
-    : cacheInventory(options)
-```
-
-</details>
-
-**依据 6 · 作者声明**：[README.md:56-71](https://github.com/T-Auto/dsh-ops/blob/58f6e2817618fae52476e8c7f1920aaeb4421c7a/README.md#L56-L71)
-
-作者说明命令和预演范围。
-
-<details>
-<summary>查看原文（16行）</summary>
-
-````text
-### npm 一键安装
-
-#### 安装方法
-
-```console
-npx --yes dsh-ops@latest install --profile desktop
-npx --yes dsh-ops@latest install --profile web
-npx --yes dsh-ops@latest install --profile tui
-```
-
-必须显式选择目标 profile；`tui` 映射到 **dsh-TUI 产品的 `dsh-tui` profile**，不是旧的 `tui` 目录。请先初始化目标应用。该入口委托官方 DSH CLI 安装，不另写一套 profile 锁与回滚逻辑。
-
-桌面端必须使用桌面应用自带的 CLI；默认探测 `%LOCALAPPDATA%\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd`。安装在其它位置时加 `--dsh-cli "<安装目录>\resources\runtime\cli\bin\dsh.cmd"`。Web/TUI 需要可用的 DSH CLI，可同样显式指定。
-
-安装或卸载时可加 `--dry-run` 预演。它按指定路径或 `PATH`（Windows 同时使用 `PATHEXT`）解析 CLI，检查文件、POSIX 执行权限及通过 Node 启动的入口文件，并在预演时同样拒绝不安全的 Windows 命令脚本路径；检查失败返回非零。预演只打印计划，不启动 CLI、不修改 profile。成功表示这些静态检查已通过，不保证所选程序的身份、版本、profile 兼容性或后续安装结果。
-
-````
-
-</details>
-
-#### 缺口
-
-- 没有真实环境的制品合法性、同任务成本及退出观察
-  **影响**：可提出对照方法，持续采用证据不足
-  **进一步探讨**：用相同锁定样例比较合格产物、磁盘、调用轮次和人工修复，再验证停用后只保留预期数据
 
 [返回分类](../../views/categories/SOFTWARE-DELIVERY.md) · [返回首页](../../../README.md)
